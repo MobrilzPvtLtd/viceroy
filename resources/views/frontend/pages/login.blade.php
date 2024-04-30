@@ -45,11 +45,11 @@
                                         @csrf
                                         <div class="single_input">
                                             <label>Email</label>
-                                            <input type="text" placeholder="Email">
+                                            <input type="email" name="email" placeholder="Email">
                                         </div>
                                         <div class="single_input">
                                             <label>Password</label>
-                                            <input type="password" placeholder="********">
+                                            <input type="password" name="password"  placeholder="********">
                                             <span class="show_password">
                                                 <i class="far fa-eye open_eye"></i>
                                                 <i class="far fa-eye-slash close_eye"></i>
