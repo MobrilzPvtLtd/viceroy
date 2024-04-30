@@ -41,7 +41,7 @@
                             <div class="col-xl-6 wow fadeInLeft" data-wow-duration="1.5s">
                                 <div class=" login_text">
                                     <h4>Login</h4>
-                                    <form action="#">
+                                    <form action="{{ route('login') }}" method="POST">
                                         <div class="single_input">
                                             <label>Email</label>
                                             <input type="text" placeholder="Email">
