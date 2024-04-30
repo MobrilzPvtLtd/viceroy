@@ -1,0 +1,113 @@
+#container {
+    width: 80vw;
+    height: auto;
+    position: sticky;
+    top: 0;
+    transition: top 0.3s ease; /* Smooth transition effect */
+    background-color: #ffffff;
+    z-index: 1;
+    border-radius: 10px;
+
+  }
+  
+  
+  .sticky {
+    position: fixed;
+    top: 100px;
+    width: 80%;
+    height: auto !important;
+    padding: 10px;
+    z-index: 1;
+    background-color: #ffffff;
+  }
+
+.banner_search{
+    position: sticky;
+    bottom: 100px; 
+    z-index: 5;
+    
+    /* width: 80vw ; */
+}
+
+/* #pills-tabContent{
+    width: 80vw ;
+    position: fixed;
+} */
+/* .adv_search_area .show_search{
+    position: fixed;
+} */
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: var(--colorBlack);
+    color: white;
+    display: none;
+}
+.adv_search_area.show_search {
+    transform: scale(1);
+    position: absolute;
+    top: 7vw !important;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+.adv_search_area2.show_search {
+    transform: scale(1);
+    position: absolute;
+    top: 7vw !important;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+#home_form{
+    display: flex !important;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0px;
+}
+.select2-container {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    vertical-align: middle;
+    width: 110% !important;
+    
+}
+#min_max{
+    display: flex;
+    margin: 0;
+    padding: 0 5px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    
+    /* justify-content: space-evenly; */
+    /* margin-left: 20px; */
+}
+#min_max2{
+    display: flex;
+    margin: 0;
+    padding: 0 5px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+#min_max .select2-selection__rendered{
+    width: 8vw !important;
+}
+#min_max2 .select2-selection__rendered{
+    width: 8vw !important;
+}
