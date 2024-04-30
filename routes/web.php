@@ -24,6 +24,14 @@ require __DIR__.'/auth.php';
 
 // home route
 Route::get('home', [FrontendController::class, 'index'])->name('home');
+Route::get('about', [FrontendController::class, 'about'])->name('about');
+Route::get('buy', [FrontendController::class, 'buy'])->name('buy');
+Route::get('rent', [FrontendController::class, 'rent'])->name('rent');
+Route::get('holiday', [FrontendController::class, 'holiday'])->name('holiday');
+Route::get('services', [FrontendController::class, 'services'])->name('services');
+Route::get('contact', [FrontendController::class, 'contact'])->name('contact');
+Route::get('login', [FrontendController::class, 'login'])->name('login');
+Route::get('register', [FrontendController::class, 'register'])->name('register');
 
 // Language Switch
 Route::get('language/{language}', [LanguageController::class, 'switch'])->name('language.switch');

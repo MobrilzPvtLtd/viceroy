@@ -7,7 +7,10 @@
         <link type="image/png" href="{{ asset('img/favicon.png') }}" rel="icon">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title>@yield('title') | {{ config('app.name') }}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi"
+      />
         <meta name="description" content="{{ setting('meta_description') }}">
         <meta name="keyword" content="{{ setting('meta_keyword') }}">
         @include('frontend.includes.meta')
@@ -16,21 +19,38 @@
         <link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
         <link type="image/ico" href="{{ asset('img/favicon.png') }}" rel="icon" />
 
+        <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+        <link rel="stylesheet" href="assets/css/all.min.css" />
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/css/nice-select.css" />
+        <link rel="stylesheet" href="assets/css/slick.css" />
+        <link rel="stylesheet" href="assets/css/select2.min.css" />
+        <link rel="stylesheet" href="assets/css/animate.css" />
+        <link rel="stylesheet" href="assets/css/animated_barfiller.css" />
+        <link rel="stylesheet" href="assets/css/summernote.min.css" />
+        <link rel="stylesheet" href="assets/css/scroll_button.css" />
+        <link rel="stylesheet" href="assets/css/utilities.css" />
+        <link rel="stylesheet" href="assets/css/jquery.simple-bar-graph.min.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/responsive.css" />
+        <link rel="stylesheet" href="assets/css/aryann.css" />
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css"
+      />
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        @vite(['resources/css/app-frontend.css', 'resources/js/app-frontend.js'])
-
-        @livewireStyles
-
-        @stack('after-styles')
-
-        <x-google-analytics />
     </head>
 
     <body>
 
-        @include('frontend.includes.header')
+
+
+        @include('frontend.includes.nav')
 
         <main class="bg-white dark:bg-gray-800">
             @yield('content')
