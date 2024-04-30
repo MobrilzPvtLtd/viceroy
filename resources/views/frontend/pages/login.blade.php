@@ -42,6 +42,7 @@
                                 <div class=" login_text">
                                     <h4>Login</h4>
                                     <form action="{{ route('login') }}" method="POST">
+                                        @csrf
                                         <div class="single_input">
                                             <label>Email</label>
                                             <input type="text" placeholder="Email">
