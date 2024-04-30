@@ -49,7 +49,7 @@
           </ul>
           <ul class="menu_right d-flex align-items-center">
             <li>
-              <a class="user_icon" href=" ">
+              <a class="user_icon" href="{{ route('login') }}">
                 <span>
                   <img
                     src="assets/images/user_icon_1.png"
