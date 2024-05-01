@@ -39,20 +39,22 @@
                             <div class="col-xl-6 wow fadeInLeft" data-wow-duration="1.5s">
                                 <div class=" login_text">
                                     <h4>Login</h4>
+                                    <?php if ($errors->has('email')): ?>
+                                            <span class="error"><?php echo $errors->first('email'); ?></span>
+                                            <?php endif; ?>
+                                            <?php if ($errors->has('password')): ?>
+                                            <span class="error"><?php echo $errors->first('password'); ?></span>
+                                            <?php endif; ?>
                                     <form action="{{ route('login') }}" method="POST">
                                         @csrf
                                         <div class="single_input">
 
                                             <label>Email</label>
                                             <input type="email" name="email" placeholder="Email">
-                                            <?php if ($errors->has('email')): ?>
-                                            <span class="error"><?php echo $errors->first('email'); ?></span>
-                                            <?php endif; ?>
+
                                         </div>
                                         <div class="single_input">
-                                            <?php if ($errors->has('password')): ?>
-                                            <span class="error"><?php echo $errors->first('password'); ?></span>
-                                            <?php endif; ?>
+
                                             <label>Password</label>
                                             <input type="password" name="password" placeholder="********">
                                             <span class="show_password">
