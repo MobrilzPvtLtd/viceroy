@@ -5,6 +5,9 @@ use App\Http\Controllers\LanguageController;
 use App\Livewire\Privacy;
 use App\Livewire\Terms;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Backend\CountryController;
+use App\Http\Controllers\Backend\StateController;
+use App\Http\Controllers\Backend\CityController;
 
 /*
 *
@@ -22,6 +25,12 @@ require __DIR__.'/auth.php';
 * --------------------------------------------------------------------
 */
 
+//Country
+Route::resource('country', CountryController::class);
+//city
+Route::resource('state', StateController::class);
+//state
+Route::resource('city', CityController::class);
 // home route
 Route::get('home', [FrontendController::class, 'index'])->name('home');
 Route::get('about', [FrontendController::class, 'about'])->name('about');

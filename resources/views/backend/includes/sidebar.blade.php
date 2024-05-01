@@ -59,7 +59,7 @@ $notifications_latest = optional($notifications)->take(5);
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('log-viewer::logs.list') }}">
-                        <span class="nav-icon"><span class="nav-icon-bullet"></span></span> City
+                        <span class="nav-icon"><span class="nav-icon-bullet"></span></span> State
                     </a>
                 </li>
                 <li class="nav-item">
