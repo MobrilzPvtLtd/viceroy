@@ -1,9 +1,7 @@
-
-
 @extends('frontend.layouts.app')
 
 @section('title')
-    {{ app_name()}}
+    {{ app_name() }}
 @endsection
 
 @section('content')
@@ -25,13 +23,13 @@
         </div>
     </section>
     <!--=============================
-        BREADCRUMBS END
-    ==============================-->
+                    BREADCRUMBS END
+                ==============================-->
 
 
     <!--=============================
-        LOGIN START
-    ==============================-->
+                    LOGIN START
+                ==============================-->
     <section class="login_area pt_120 xs_pt_100 pb_120 xs_pb_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -44,12 +42,19 @@
                                     <form action="{{ route('login') }}" method="POST">
                                         @csrf
                                         <div class="single_input">
+
                                             <label>Email</label>
                                             <input type="email" name="email" placeholder="Email">
+                                            <?php if ($errors->has('email')): ?>
+                                            <span class="error"><?php echo $errors->first('email'); ?></span>
+                                            <?php endif; ?>
                                         </div>
                                         <div class="single_input">
+                                            <?php if ($errors->has('password')): ?>
+                                            <span class="error"><?php echo $errors->first('password'); ?></span>
+                                            <?php endif; ?>
                                             <label>Password</label>
-                                            <input type="password" name="password"  placeholder="********">
+                                            <input type="password" name="password" placeholder="********">
                                             <span class="show_password">
                                                 <i class="far fa-eye open_eye"></i>
                                                 <i class="far fa-eye-slash close_eye"></i>
@@ -83,6 +88,4 @@
             </div>
         </div>
     </section>
-
-
 @endsection

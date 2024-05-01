@@ -48,6 +48,7 @@
             </li>
           </ul>
           <ul class="menu_right d-flex align-items-center">
+            @guest
             <li>
               <a class="user_icon" href="{{ route('login') }}">
                 <span>
@@ -60,6 +61,33 @@
                 Login
               </a>
             </li>
+            @endguest
+
+            @auth
+            <li>
+                <a class="user_icon" href="{{ route('login') }}">
+                  <span>
+                    <img
+                      src="assets/images/user_icon_1.png"
+                      alt="user"
+                      class="img-fluid w-100"
+                    />
+                  </span>
+                  Hello  {{ Auth::user()->last_name }}
+                </a>
+                <ul>
+                    @can('view_backend')<li><a>Admin</a></li>@endif
+                    <li><a href="{{ route('frontend.users.profile') }}">Profile</a></li>
+                    <li><form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        {{ csrf_field() }}
+
+                        <button class="btn btn-text" type="submit">Logout</button>
+                    </form></li>
+                </ul>
+              </li>
+            @endauth
+
+
             <li>
               <a class="user_icon" href="">
                 <span>

@@ -34,6 +34,7 @@
         <link rel="stylesheet" href="assets/css/style.css" />
         <link rel="stylesheet" href="assets/css/responsive.css" />
         <link rel="stylesheet" href="assets/css/aryann.css" />
+        <link rel="stylesheet" href="assets/css/reset.css" />
         <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css"
