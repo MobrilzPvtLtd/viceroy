@@ -4,7 +4,7 @@
     ==============================-->
     <nav class="navbar navbar-expand-lg main_menu">
       <div class="container container_large">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="/">
           <img
             src="assets/images/logo_1.png"
             alt="FaxEstate"
