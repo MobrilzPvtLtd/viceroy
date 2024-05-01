@@ -23,13 +23,13 @@
         </div>
     </section>
     <!--=============================
-                    BREADCRUMBS END
-                ==============================-->
+                        BREADCRUMBS END
+                    ==============================-->
 
 
     <!--=============================
-                    LOGIN START
-                ==============================-->
+                        LOGIN START
+                    ==============================-->
     <section class="login_area pt_120 xs_pt_100 pb_120 xs_pb_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -40,11 +40,11 @@
                                 <div class=" login_text">
                                     <h4>Login</h4>
                                     <?php if ($errors->has('email')): ?>
-                                            <span class="error"><?php echo $errors->first('email'); ?></span>
-                                            <?php endif; ?>
-                                            <?php if ($errors->has('password')): ?>
-                                            <span class="error"><?php echo $errors->first('password'); ?></span>
-                                            <?php endif; ?>
+                                    <span class="error"><?php echo $errors->first('email'); ?></span>
+                                    <?php endif; ?>
+                                    <?php if ($errors->has('password')): ?>
+                                    <span class="error"><?php echo $errors->first('password'); ?></span>
+                                    <?php endif; ?>
                                     <form action="{{ route('login') }}" method="POST">
                                         @csrf
                                         <div class="single_input">
