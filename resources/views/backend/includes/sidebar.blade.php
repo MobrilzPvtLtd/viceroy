@@ -30,7 +30,7 @@ $notifications_latest = optional($notifications)->take(5);
                 @endif
             </a>
         </li>
-        
+
         @can('view_posts')
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('backend.posts.index') }}">
@@ -45,7 +45,32 @@ $notifications_latest = optional($notifications)->take(5);
                 </a>
             </li>
         @endcan
-       
+
+        @can('view_logs')
+        <li class="nav-group" aria-expanded="true">
+            <a class="nav-link nav-group-toggle" href="#">
+                <i class="nav-icon fa-solid fa-list-ul"></i>&nbsp;@lang('Address')
+            </a>
+            <ul class="nav-group-items compact" style="height: auto;">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('log-viewer::dashboard') }}">
+                        <span class="nav-icon"><span class="nav-icon-bullet"></span></span> Country
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('log-viewer::logs.list') }}">
+                        <span class="nav-icon"><span class="nav-icon-bullet"></span></span> City
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('log-viewer::logs.list') }}">
+                        <span class="nav-icon"><span class="nav-icon-bullet"></span></span> City
+                    </a>
+                </li>
+            </ul>
+        </li>
+    @endcan
+
 
         @can('edit_settings')
             <li class="nav-item">
