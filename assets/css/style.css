@@ -1420,12 +1420,12 @@ button {
 
 
 .adv_search_area2 {
-    width: 40%;
+    width: 25%;
     background: var(--colorWhite);
     height: auto !important;
     position: absolute;
     top: 100%;
-    left: 310ox;
+    /* left: 310px; */
     padding: 35px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     transform: scaleY(0);
