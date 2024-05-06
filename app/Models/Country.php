@@ -11,4 +11,9 @@ class Country extends Model
     protected $fillable = [
         'co_name',
     ];
+
+    public function cities()
+    {
+        return $this->hasMany(City::class);
+    }
 }

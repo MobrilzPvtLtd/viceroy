@@ -23,13 +23,13 @@
         </div>
     </section>
     <!--=============================
-                        BREADCRUMBS END
-                    ==============================-->
+                            BREADCRUMBS END
+                        ==============================-->
 
 
     <!--=============================
-                        LOGIN START
-                    ==============================-->
+                            LOGIN START
+                        ==============================-->
     <section class="login_area pt_120 xs_pt_100 pb_120 xs_pb_100">
         <div class="container">
             <div class="row justify-content-center">

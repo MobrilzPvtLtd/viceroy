@@ -26,11 +26,13 @@ require __DIR__.'/auth.php';
 */
 
 //Country
-Route::resource('country', CountryController::class);
+Route::resource('admin/country', CountryController::class);
 //city
-Route::resource('state', StateController::class);
+Route::resource('admin/state', StateController::class);
 //state
-Route::resource('city', CityController::class);
+Route::resource('admin/city', CityController::class);
+Route::get('fetch-state', [CityController::class, 'fetchState'])->name('fetch-state');
+// Route::post('admin/city', [CityController::class, 'ajx']);
 // home route
 Route::get('home', [FrontendController::class, 'index'])->name('home');
 Route::get('about', [FrontendController::class, 'about'])->name('about');

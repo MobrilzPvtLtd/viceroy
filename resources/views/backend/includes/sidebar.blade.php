@@ -46,24 +46,24 @@ $notifications_latest = optional($notifications)->take(5);
             </li>
         @endcan
 
-        @can('view_logs')
+        @can('country')
         <li class="nav-group" aria-expanded="true">
             <a class="nav-link nav-group-toggle" href="#">
                 <i class="nav-icon fa-solid fa-list-ul"></i>&nbsp;@lang('Address')
             </a>
             <ul class="nav-group-items compact" style="height: auto;">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('log-viewer::dashboard') }}">
+                    <a class="nav-link" href="/admin/country">
                         <span class="nav-icon"><span class="nav-icon-bullet"></span></span> Country
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('log-viewer::logs.list') }}">
+                    <a class="nav-link" href="/admin/state">
                         <span class="nav-icon"><span class="nav-icon-bullet"></span></span> State
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('log-viewer::logs.list') }}">
+                    <a class="nav-link" href="/admin/city">
                         <span class="nav-icon"><span class="nav-icon-bullet"></span></span> City
                     </a>
                 </li>

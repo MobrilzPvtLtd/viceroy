@@ -20,6 +20,7 @@
         <title>@yield('title') | {{ config('app.name') }}</title>
 
         <script src="{{ asset('vendor/jquery/jquery-3.6.4.min.js') }}"></script>
+        {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
 
         @vite(['resources/sass/app-backend.scss', 'resources/js/app-backend.js'])
 
@@ -45,10 +46,10 @@
         <!-- /Sidebar -->
 
         <div class="wrapper d-flex flex-column min-vh-100">
-          
+
           {{-- header --}}
           @include('backend.includes.header')
-          
+
           <div class="body flex-grow-1">
                 <div class="container-lg">
 
@@ -63,7 +64,7 @@
                     <!-- / Main content block -->
 
                 </div>
-            </div>            
+            </div>
 
             {{-- Footer block --}}
             <x-backend.includes.footer />
