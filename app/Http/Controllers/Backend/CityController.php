@@ -12,9 +12,12 @@ class CityController extends Controller
 {
     public function index()
     {
-        $cityWithRelations = City::with('country', 'state')->get();
-        // dd($cityWithRelations);
-        $citys = City::all();
+        // $citys = City::with('country', 'state')->get();
+
+        $citys = City::join('countries', 'countries.id', '=', 'cities.co_name')
+                ->join('states', 'states.id', '=', 'cities.st_name')
+                ->select('cities.*', 'states.st_name', 'countries.co_name')
+                ->get();
         return view('backend.city.index', compact('citys'));
     }
 
