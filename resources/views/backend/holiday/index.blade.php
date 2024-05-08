@@ -43,7 +43,7 @@
                                             @endphp
                                             @foreach ($images as $image)
                                                 <img src="{{ asset('public/uploads/' . trim($image)) }}" alt="Image"
-                                                    style="width: 30% ">
+                                                    style="width: 100% ">
                                             @endforeach
                                         </td>
                                         <td>{{ $holiday->url }}</td>
