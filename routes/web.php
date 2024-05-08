@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\CountryController;
 use App\Http\Controllers\Backend\StateController;
 use App\Http\Controllers\Backend\CityController;
+use App\Http\Controllers\Backend\HolidayController;
 
 /*
 *
@@ -24,7 +25,8 @@ require __DIR__.'/auth.php';
 *
 * --------------------------------------------------------------------
 */
-
+//holiday
+Route::resource('admin/holiday', HolidayController::class);
 //Country
 Route::resource('admin/country', CountryController::class);
 //city
@@ -32,7 +34,6 @@ Route::resource('admin/state', StateController::class);
 //state
 Route::resource('admin/city', CityController::class);
 Route::get('fetch-state', [CityController::class, 'fetchState'])->name('fetch-state');
-// Route::post('admin/city', [CityController::class, 'ajx']);
 // home route
 Route::get('home', [FrontendController::class, 'index'])->name('home');
 Route::get('about', [FrontendController::class, 'about'])->name('about');

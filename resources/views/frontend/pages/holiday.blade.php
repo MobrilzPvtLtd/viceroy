@@ -1,66 +1,67 @@
 @extends('frontend.layouts.app')
 @section('title')
-    {{ app_name()}}
+    {{ app_name() }}
 @endsection
 
 @section('content')
-	<style>
-	.about_text {
-    height: 100%;
-    display: block;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-}
+    <style>
+        .about_text {
+            height: 100%;
+            display: block;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+        }
 
-.single_discover {
-    margin-top: 25px;
-    padding: 20px 15px 10px 15px;
-    border: 1px solid var(--colorWhite);
-    background: var(--colorWhite);
-    box-shadow: 0px 24px 60px 0px rgba(3, 26, 38, 0.14);
-    transition: all linear .3s;
-    -webkit-transition: all linear .3s;
-    -moz-transition: all linear .3s;
-    -ms-transition: all linear .3s;
-    -o-transition: all linear .3s;
-    text-align: center;
-}
-
-
-.single_discover h6{
-    font-size: 25px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.single_discover p{
-    font-size: 18px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
+        .single_discover {
+            margin-top: 25px;
+            padding: 20px 15px 10px 15px;
+            border: 1px solid var(--colorWhite);
+            background: var(--colorWhite);
+            box-shadow: 0px 24px 60px 0px rgba(3, 26, 38, 0.14);
+            transition: all linear .3s;
+            -webkit-transition: all linear .3s;
+            -moz-transition: all linear .3s;
+            -ms-transition: all linear .3s;
+            -o-transition: all linear .3s;
+            text-align: center;
+        }
 
 
-.discover_img {
-    width: 80px;
-    height: 80px;
-    background: #cf9f3f;
-    font-size: 40px;
-    border-radius: 40px;
-    margin: 0 auto;
-}
-.discover_img h3{
-font-size:60px;
-color:#fff;
-}
-	</style>
+        .single_discover h6 {
+            font-size: 25px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .single_discover p {
+            font-size: 18px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+
+        .discover_img {
+            width: 80px;
+            height: 80px;
+            background: #cf9f3f;
+            font-size: 40px;
+            border-radius: 40px;
+            margin: 0 auto;
+        }
+
+        .discover_img h3 {
+            font-size: 60px;
+            color: #fff;
+        }
+    </style>
 
 
 
 
     <!--=============================
-        BREADCRUMBS START
-    ==============================-->
+                BREADCRUMBS START
+            ==============================-->
     <section class="breadcrumbs" style="background: url(assets/images/breadcrumbs_bg.jpg);">
         <div class="breadcrumbs_overly">
             <div class="container">
@@ -79,22 +80,24 @@ color:#fff;
         </div>
     </section>
     <!--=============================
-        BREADCRUMBS END
-    ==============================-->
+                BREADCRUMBS END
+            ==============================-->
 
-<section class="destination_area pt_115 xs_pt_110 pb_60 xs_pb_90">
+    <section class="destination_area pt_115 xs_pt_110 pb_60 xs_pb_90">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-xl-7 wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <div class="col-xl-7 wow fadeInUp" data-wow-duration="1.5s"
+                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                     <div class="section_heading mb_50">
                         <h2>Property Management & Pro Co-Hosting Services</h2>
                     </div>
                 </div>
             </div>
 
-		   <div class="row justify-content-between">
+            <div class="row justify-content-between">
 
-                <div class="col-xl-6 col-lg-6 wow fadeInRight" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInRight;">
+                <div class="col-xl-6 col-lg-6 wow fadeInRight" data-wow-duration="1.5s"
+                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInRight;">
                     <div class="about_text">
                         <div class="section_heading section_heading_left">
                             <h2 style="font-size:30px;">Our Mission</h2>
@@ -102,33 +105,33 @@ color:#fff;
                         <p>Through a combination of lectures, readings, and discussions, students will gain a solid
                             foundation in educational psychology With over $3 Billion in sales, due to our unparalleled
                             results, expertise and dedication.</p>
-							 <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
                             foundation in educational psychology With over $3 Billion in sales, due to our unparalleled
                             results, expertise and dedication.</p>
-							<br>
-							<div class="section_heading section_heading_left">
+                        <br>
+                        <div class="section_heading section_heading_left">
                             <h2 style="font-size:30px;">What We Do</h2>
                         </div>
                         <p>Through a combination of lectures, readings, and discussions, students will gain a solid
                             foundation in educational psychology With over $3 Billion in sales, due to our unparalleled
                             results, expertise and dedication.</p>
-							 <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
                             foundation in educational psychology With over $3 Billion in sales, due to our unparalleled
                             results, expertise and dedication.</p>
-							<br>
-							         <div class="section_heading section_heading_left">
+                        <br>
+                        <div class="section_heading section_heading_left">
                             <h2 style="font-size:30px;">Looking After Your Property</h2>
                         </div>
                         <p>Through a combination of lectures, readings, and discussions, students will gain a solid
                             foundation in educational psychology With over $3 Billion in sales, due to our unparalleled
                             results, expertise and dedication.</p>
-							 <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
                             foundation in educational psychology With over $3 Billion in sales, due to our unparalleled
                             results, expertise and dedication.</p>
-							  <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
                             foundation in educational psychology With over $3 Billion in sales, due to our unparalleled
                             results, expertise and dedication.</p>
-							 <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
                             foundation in educational psychology With over $3 Billion in sales, due to our unparalleled
                             results, expertise and dedication.</p>
 
@@ -136,36 +139,41 @@ color:#fff;
 
                     </div>
                 </div>
-				       <div class="col-xl-6 col-lg-6">
+                <div class="col-xl-6 col-lg-6">
                     <div class="row align-items-center">
-                        <div class="col-xl-12 col-sm-6 wow fadeInLeft" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInLeft;">
+                        <div class="col-xl-12 col-sm-6 wow fadeInLeft" data-wow-duration="1.5s"
+                            style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInLeft;">
                             <div class="about_area_img_1">
                                 <img src="assets/images/about_1.jpg" alt="img" class="img-fluid w-100">
                             </div>
-							<br>
-							 <div class="about_text">
-                        <div class="section_heading section_heading_left">
-                            <h2 style="font-size:30px;">Looking After Your Guest</h2>
-                        </div>
-                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
-                            foundation in educational psychology With over $3 Billion in sales, due to our unparalleled
-                            results, expertise and dedication.</p>
-							 <p>Through a combination of lectures, readings, and discussions, students will gain a solid
-                            foundation in educational psychology With over $3 Billion in sales, due to our unparalleled
-                            results, expertise and dedication.</p>
-							<br>
-							<div class="section_heading section_heading_left">
-                            <h2 style="font-size:30px;">Maximising Your Revenue</h2>
-                        </div>
-                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
-                            foundation in educational psychology With over $3 Billion in sales, due to our unparalleled
-                            results, expertise and dedication.</p>
-							 <p>Through a combination of lectures, readings, and discussions, students will gain a solid
-                            foundation in educational psychology With over $3 Billion in sales, due to our unparalleled
-                            results, expertise and dedication.</p>
+                            <br>
+                            <div class="about_text">
+                                <div class="section_heading section_heading_left">
+                                    <h2 style="font-size:30px;">Looking After Your Guest</h2>
+                                </div>
+                                <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                                    foundation in educational psychology With over $3 Billion in sales, due to our
+                                    unparalleled
+                                    results, expertise and dedication.</p>
+                                <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                                    foundation in educational psychology With over $3 Billion in sales, due to our
+                                    unparalleled
+                                    results, expertise and dedication.</p>
+                                <br>
+                                <div class="section_heading section_heading_left">
+                                    <h2 style="font-size:30px;">Maximising Your Revenue</h2>
+                                </div>
+                                <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                                    foundation in educational psychology With over $3 Billion in sales, due to our
+                                    unparalleled
+                                    results, expertise and dedication.</p>
+                                <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                                    foundation in educational psychology With over $3 Billion in sales, due to our
+                                    unparalleled
+                                    results, expertise and dedication.</p>
 
 
-                    </div>
+                            </div>
                         </div>
 
                     </div>
@@ -180,17 +188,13 @@ color:#fff;
         </div>
     </section>
 
-
-
-
-
-
-<section class="destination_area pt_115 xs_pt_110 pb_60 xs_pb_90" style="background:#fff5db;">
+    <section class="destination_area pt_115 xs_pt_110 pb_60 xs_pb_90" style="background:#fff5db;">
         <div class="container">
 
-		   <div class="row justify-content-between">
+            <div class="row justify-content-between">
 
-                <div class="col-xl-8 col-lg-6 wow fadeInRight" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInRight;">
+                <div class="col-xl-8 col-lg-6 wow fadeInRight" data-wow-duration="1.5s"
+                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInRight;">
                     <div class="about_text">
                         <div class="section_heading section_heading_left">
                             <h2 style="font-size:30px;">Why Short Term Rental?</h2>
@@ -198,17 +202,17 @@ color:#fff;
                         <p>Through a combination of lectures, readings, and discussions, students will gain a solid
                             foundation in educational psychology With over $3 Billion in sales, due to our unparalleled
                             results, expertise and dedication.</p>
-							 <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
                             foundation in educational psychology With over $3 Billion in sales, due to our unparalleled
                             results, expertise and dedication.</p>
-							<br>
-							<div class="section_heading section_heading_left">
+                        <br>
+                        <div class="section_heading section_heading_left">
                             <h2 style="font-size:30px;">What We Do For You?</h2>
                         </div>
                         <p>Through a combination of lectures, readings, and discussions, students will gain a solid
                             foundation in educational psychology With over $3 Billion in sales, due to our unparalleled
                             results, expertise and dedication.</p>
-							 <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
                             foundation in educational psychology With over $3 Billion in sales, due to our unparalleled
                             results, expertise and dedication.</p>
 
@@ -217,9 +221,10 @@ color:#fff;
 
                     </div>
                 </div>
-				       <div class="col-xl-3 col-lg-6">
+                <div class="col-xl-3 col-lg-6">
                     <div class="row align-items-center">
-                        <div class="col-xl-12 col-sm-6 wow fadeInLeft" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInLeft;">
+                        <div class="col-xl-12 col-sm-6 wow fadeInLeft" data-wow-duration="1.5s"
+                            style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInLeft;">
                             <div class="about_area_img_1">
                                 <img src="assets/images/about_1.jpg" alt="img" class="img-fluid w-100">
                             </div>
@@ -230,94 +235,110 @@ color:#fff;
                 </div>
             </div>
 
-			<div class="row">
-                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+            <div class="row">
+                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                     <div class="single_discover">
                         <div class="discover_img">
                             <h3> 1</h3>
                         </div>
 
-					   <h6>Listing Management </h6>
-					   <p>Through a combination of lectures, readings, and discussions, students will gain a solid foundation in educational psychology With over $3 Billion in sales,
-					   due to our unparalleled results, expertise and dedication. </p>
+                        <h6>Listing Management </h6>
+                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                            foundation in educational psychology With over $3 Billion in sales,
+                            due to our unparalleled results, expertise and dedication. </p>
                     </div>
                 </div>
 
-                 <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                     <div class="single_discover">
                         <div class="discover_img">
                             <h3> 2</h3>
                         </div>
 
-					   <h6>Listing Management </h6>
-					   <p>Through a combination of lectures, readings, and discussions, students will gain a solid foundation in educational psychology With over $3 Billion in sales,
-					   due to our unparalleled results, expertise and dedication. </p>
+                        <h6>Listing Management </h6>
+                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                            foundation in educational psychology With over $3 Billion in sales,
+                            due to our unparalleled results, expertise and dedication. </p>
                     </div>
                 </div>
-				      <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                     <div class="single_discover">
                         <div class="discover_img">
                             <h3> 3</h3>
                         </div>
 
-					   <h6>Listing Management </h6>
-					   <p>Through a combination of lectures, readings, and discussions, students will gain a solid foundation in educational psychology With over $3 Billion in sales,
-					   due to our unparalleled results, expertise and dedication. </p>
+                        <h6>Listing Management </h6>
+                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                            foundation in educational psychology With over $3 Billion in sales,
+                            due to our unparalleled results, expertise and dedication. </p>
                     </div>
                 </div>
-				      <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                     <div class="single_discover">
                         <div class="discover_img">
                             <h3> 4</h3>
                         </div>
 
-					   <h6>Listing Management </h6>
-					   <p>Through a combination of lectures, readings, and discussions, students will gain a solid foundation in educational psychology With over $3 Billion in sales,
-					   due to our unparalleled results, expertise and dedication. </p>
+                        <h6>Listing Management </h6>
+                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                            foundation in educational psychology With over $3 Billion in sales,
+                            due to our unparalleled results, expertise and dedication. </p>
                     </div>
                 </div>
-				      <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                     <div class="single_discover">
                         <div class="discover_img">
                             <h3> 5</h3>
                         </div>
 
-					   <h6>Listing Management </h6>
-					   <p>Through a combination of lectures, readings, and discussions, students will gain a solid foundation in educational psychology With over $3 Billion in sales,
-					   due to our unparalleled results, expertise and dedication. </p>
+                        <h6>Listing Management </h6>
+                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                            foundation in educational psychology With over $3 Billion in sales,
+                            due to our unparalleled results, expertise and dedication. </p>
                     </div>
                 </div>
-				      <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                     <div class="single_discover">
                         <div class="discover_img">
                             <h3> 6</h3>
                         </div>
 
-					   <h6>Listing Management </h6>
-					   <p>Through a combination of lectures, readings, and discussions, students will gain a solid foundation in educational psychology With over $3 Billion in sales,
-					   due to our unparalleled results, expertise and dedication. </p>
+                        <h6>Listing Management </h6>
+                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                            foundation in educational psychology With over $3 Billion in sales,
+                            due to our unparalleled results, expertise and dedication. </p>
                     </div>
                 </div>
-				      <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                     <div class="single_discover">
                         <div class="discover_img">
                             <h3> 7</h3>
                         </div>
 
-					   <h6>Listing Management </h6>
-					   <p>Through a combination of lectures, readings, and discussions, students will gain a solid foundation in educational psychology With over $3 Billion in sales,
-					   due to our unparalleled results, expertise and dedication. </p>
+                        <h6>Listing Management </h6>
+                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                            foundation in educational psychology With over $3 Billion in sales,
+                            due to our unparalleled results, expertise and dedication. </p>
                     </div>
                 </div>
-				      <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                     <div class="single_discover">
                         <div class="discover_img">
                             <h3> 8</h3>
                         </div>
 
-					   <h6>Listing Management </h6>
-					   <p>Through a combination of lectures, readings, and discussions, students will gain a solid foundation in educational psychology With over $3 Billion in sales,
-					   due to our unparalleled results, expertise and dedication. </p>
+                        <h6>Listing Management </h6>
+                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
+                            foundation in educational psychology With over $3 Billion in sales,
+                            due to our unparalleled results, expertise and dedication. </p>
                     </div>
                 </div>
             </div>
@@ -329,53 +350,67 @@ color:#fff;
     </section>
 
     <!--=============================
-        PROPERTY GRID VIEW START
-    ==============================-->
+                PROPERTY GRID VIEW START
+            ==============================-->
     <section class="property_list_view pt_120 xs_pt_100 pb_120 xs_pb_100">
         <div class="container">
             <div class="row">
-                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
-                    <div class=" single_property">
-                        <div class="single_property_img">
-                            <img src="assets/images/property_1.jpg" alt="img" class="img-fluid w-100">
+                @foreach ($holidays as $holiday)
+                    <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                        style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                        <div class=" single_property">
+                            <div class="single_property_img">
+                                @php
+                                    $images = json_decode($holiday->image);
+                                @endphp
 
-                        </div>
-                        <div class="single_property_text">
-                            <div class="single_property_top">
-                                <a class="item_title" href="https://www.airbnb.co.in/https://www.airbnb.co.in/">Hermosa Casa al Norte</a>
-                                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>28B Highgate Road, London</p>
-                                <ul class="d-flex flex-wrap">
-                                    <li>
-                                        <span><img src="assets/images/bad.png" alt="img" class="img-fluid w-100"></span>
-                                        8 Beds
-                                    </li>
-                                    <li>
-                                        <span><img src="assets/images/bathtab.png" alt="img" class="img-fluid w-100"></span>
-                                        6 Baths
-                                    </li>
-                                    <li>
-                                        <span><img src="assets/images/squre.png" alt="img" class="img-fluid w-100"></span>
-                                        2400 Sq Ft
-                                    </li>
-                                </ul>
+                                @foreach($images as $image)
+                                    <img src="{{ asset('public/uploads/' . trim($image)) }}" alt="Image" class="img-fluid w-100">
+                                @endforeach
                             </div>
-                            <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                                <p>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <span>4.5</span>
-                                </p>
+                            <div class="single_property_text">
+                                <div class="single_property_top">
+                                    <a class="item_title"
+                                        href="https://www.airbnb.co.in/https://www.airbnb.co.in/">{{ $holiday->name }}</a>
+                                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>{{ $holiday->address }}</p>
+                                    <ul class="d-flex flex-wrap">
+                                        <li>
+                                            <span><img src="assets/images/bad.png" alt="img"
+                                                    class="img-fluid w-100"></span>
+                                                    {{ $holiday->beds }} Beds
+                                        </li>
+                                        <li>
+                                            <span><img src="assets/images/bathtab.png" alt="img"
+                                                    class="img-fluid w-100"></span>
+                                                    {{ $holiday->bath }} Baths
+                                        </li>
+                                        <li>
+                                            <span><img src="assets/images/squre.png" alt="img"
+                                                    class="img-fluid w-100"></span>
+                                                    {{ $holiday->area }} Sq Ft
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="single_property_bottom d-flex flex-wrap justify-content-between">
+                                    <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
+                                            class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                                    {{-- <p>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <span>4.5</span>
+                                    </p> --}}
+                                </div>
+                                <span class="property_price">${{ $holiday->price }}</span>
                             </div>
-                            <span class="property_price">$12,000</span>
                         </div>
                     </div>
-                </div>
+                @endforeach
 
-                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                {{-- <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                     <div class=" single_property">
                         <div class="single_property_img">
                             <img src="assets/images/property_3.jpg" alt="img" class="img-fluid w-100">
@@ -387,21 +422,25 @@ color:#fff;
                                 <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>28B Highgate Road, London</p>
                                 <ul class="d-flex flex-wrap">
                                     <li>
-                                        <span><img src="assets/images/bad.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/bad.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         5 Beds
                                     </li>
                                     <li>
-                                        <span><img src="assets/images/bathtab.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/bathtab.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         4 Baths
                                     </li>
                                     <li>
-                                        <span><img src="assets/images/squre.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/squre.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         2300 Sq Ft
                                     </li>
                                 </ul>
                             </div>
                             <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
+                                        class="fas fa-arrow-right" aria-hidden="true"></i></a>
                                 <p>
                                     <i class="fas fa-star" aria-hidden="true"></i>
                                     <i class="fas fa-star" aria-hidden="true"></i>
@@ -415,7 +454,8 @@ color:#fff;
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                     <div class=" single_property">
                         <div class="single_property_img">
                             <img src="assets/images/property_4.jpg" alt="img" class="img-fluid w-100">
@@ -427,21 +467,25 @@ color:#fff;
                                 <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>28B Highgate Road, London</p>
                                 <ul class="d-flex flex-wrap">
                                     <li>
-                                        <span><img src="assets/images/bad.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/bad.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         6 Beds
                                     </li>
                                     <li>
-                                        <span><img src="assets/images/bathtab.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/bathtab.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         4 Baths
                                     </li>
                                     <li>
-                                        <span><img src="assets/images/squre.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/squre.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         2500 Sq Ft
                                     </li>
                                 </ul>
                             </div>
                             <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
+                                        class="fas fa-arrow-right" aria-hidden="true"></i></a>
                                 <p>
                                     <i class="fas fa-star" aria-hidden="true"></i>
                                     <i class="fas fa-star" aria-hidden="true"></i>
@@ -455,7 +499,8 @@ color:#fff;
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                     <div class=" single_property">
                         <div class="single_property_img">
                             <img src="assets/images/property_5.jpg" alt="img" class="img-fluid w-100">
@@ -467,21 +512,25 @@ color:#fff;
                                 <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>28B Highgate Road, London</p>
                                 <ul class="d-flex flex-wrap">
                                     <li>
-                                        <span><img src="assets/images/bad.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/bad.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         4 Beds
                                     </li>
                                     <li>
-                                        <span><img src="assets/images/bathtab.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/bathtab.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         3 Baths
                                     </li>
                                     <li>
-                                        <span><img src="assets/images/squre.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/squre.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         2200 Sq Ft
                                     </li>
                                 </ul>
                             </div>
                             <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
+                                        class="fas fa-arrow-right" aria-hidden="true"></i></a>
                                 <p>
                                     <i class="fas fa-star" aria-hidden="true"></i>
                                     <i class="fas fa-star" aria-hidden="true"></i>
@@ -495,7 +544,8 @@ color:#fff;
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                     <div class=" single_property">
                         <div class="single_property_img">
                             <img src="assets/images/property_6.jpg" alt="img" class="img-fluid w-100">
@@ -507,21 +557,25 @@ color:#fff;
                                 <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>28B Highgate Road, London</p>
                                 <ul class="d-flex flex-wrap">
                                     <li>
-                                        <span><img src="assets/images/bad.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/bad.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         3 Beds
                                     </li>
                                     <li>
-                                        <span><img src="assets/images/bathtab.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/bathtab.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         3 Baths
                                     </li>
                                     <li>
-                                        <span><img src="assets/images/squre.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/squre.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         2100 Sq Ft
                                     </li>
                                 </ul>
                             </div>
                             <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
+                                        class="fas fa-arrow-right" aria-hidden="true"></i></a>
                                 <p>
                                     <i class="fas fa-star" aria-hidden="true"></i>
                                     <i class="fas fa-star" aria-hidden="true"></i>
@@ -535,7 +589,8 @@ color:#fff;
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s" style="visibility: hidden; animation-duration: 1.5s; animation-name: none;">
+                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                    style="visibility: hidden; animation-duration: 1.5s; animation-name: none;">
                     <div class=" single_property">
                         <div class="single_property_img">
                             <img src="assets/images/property_1.jpg" alt="img" class="img-fluid w-100">
@@ -547,21 +602,25 @@ color:#fff;
                                 <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>28B Highgate Road, London</p>
                                 <ul class="d-flex flex-wrap">
                                     <li>
-                                        <span><img src="assets/images/bad.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/bad.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         8 Beds
                                     </li>
                                     <li>
-                                        <span><img src="assets/images/bathtab.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/bathtab.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         6 Baths
                                     </li>
                                     <li>
-                                        <span><img src="assets/images/squre.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/squre.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         2400 Sq Ft
                                     </li>
                                 </ul>
                             </div>
                             <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
+                                        class="fas fa-arrow-right" aria-hidden="true"></i></a>
                                 <p>
                                     <i class="fas fa-star" aria-hidden="true"></i>
                                     <i class="fas fa-star" aria-hidden="true"></i>
@@ -575,7 +634,8 @@ color:#fff;
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s" style="visibility: hidden; animation-duration: 1.5s; animation-name: none;">
+                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                    style="visibility: hidden; animation-duration: 1.5s; animation-name: none;">
                     <div class=" single_property">
                         <div class="single_property_img">
                             <img src="assets/images/property_2.jpg" alt="img" class="img-fluid w-100">
@@ -587,21 +647,25 @@ color:#fff;
                                 <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>28B Highgate Road, London</p>
                                 <ul class="d-flex flex-wrap">
                                     <li>
-                                        <span><img src="assets/images/bad.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/bad.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         3 Beds
                                     </li>
                                     <li>
-                                        <span><img src="assets/images/bathtab.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/bathtab.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         2 Baths
                                     </li>
                                     <li>
-                                        <span><img src="assets/images/squre.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/squre.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         1500 Sq Ft
                                     </li>
                                 </ul>
                             </div>
                             <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
+                                        class="fas fa-arrow-right" aria-hidden="true"></i></a>
                                 <p>
                                     <i class="fas fa-star" aria-hidden="true"></i>
                                     <i class="fas fa-star" aria-hidden="true"></i>
@@ -615,7 +679,8 @@ color:#fff;
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s" style="visibility: hidden; animation-duration: 1.5s; animation-name: none;">
+                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                    style="visibility: hidden; animation-duration: 1.5s; animation-name: none;">
                     <div class=" single_property">
                         <div class="single_property_img">
                             <img src="assets/images/property_3.jpg" alt="img" class="img-fluid w-100">
@@ -627,21 +692,25 @@ color:#fff;
                                 <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>28B Highgate Road, London</p>
                                 <ul class="d-flex flex-wrap">
                                     <li>
-                                        <span><img src="assets/images/bad.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/bad.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         5 Beds
                                     </li>
                                     <li>
-                                        <span><img src="assets/images/bathtab.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/bathtab.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         4 Baths
                                     </li>
                                     <li>
-                                        <span><img src="assets/images/squre.png" alt="img" class="img-fluid w-100"></span>
+                                        <span><img src="assets/images/squre.png" alt="img"
+                                                class="img-fluid w-100"></span>
                                         2300 Sq Ft
                                     </li>
                                 </ul>
                             </div>
                             <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
+                                        class="fas fa-arrow-right" aria-hidden="true"></i></a>
                                 <p>
                                     <i class="fas fa-star" aria-hidden="true"></i>
                                     <i class="fas fa-star" aria-hidden="true"></i>
@@ -654,10 +723,10 @@ color:#fff;
                             <span class="property_price">$29,000</span>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
     <!--=============================
-        PROPERTY GRID VIEW END
-  @endsection
+                PROPERTY GRID VIEW END
+@endsection

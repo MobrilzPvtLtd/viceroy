@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Holiday;
 
 class FrontendController extends Controller
 {
@@ -34,8 +35,8 @@ class FrontendController extends Controller
     }
     public function holiday()
     {
-
-        return view('frontend.pages.holiday');
+        $holidays = Holiday::get();
+        return view('frontend.pages.holiday',compact('holidays'));
     }
     public function services()
     {

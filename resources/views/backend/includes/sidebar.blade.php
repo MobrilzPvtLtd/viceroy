@@ -7,8 +7,7 @@ $notifications_latest = optional($notifications)->take(5);
 <div class="sidebar sidebar-dark sidebar-fixed border-end" id="sidebar">
     <div class="sidebar-header border-bottom">
         <div class="sidebar-brand d-sm-flex justify-content-center">
-            <img class="sidebar-brand-full" src="{{ asset('img/logo.png') }}" alt="{{ app_name() }}"
-                height="46">
+            <img class="sidebar-brand-full" src="{{ asset('img/logo.png') }}" alt="{{ app_name() }}" height="46">
             <img class="sidebar-brand-narrow" src="{{ asset('img/logo-square.jpg') }}" alt="{{ app_name() }}"
                 height="46">
         </div>
@@ -47,27 +46,35 @@ $notifications_latest = optional($notifications)->take(5);
         @endcan
 
         @can('country')
-        <li class="nav-group" aria-expanded="true">
-            <a class="nav-link nav-group-toggle" href="#">
-                <i class="nav-icon fa-solid fa-list-ul"></i>&nbsp;@lang('Address')
+            <li class="nav-group" aria-expanded="true">
+                <a class="nav-link nav-group-toggle" href="#">
+                    <i class="nav-icon fa-solid fa-list-ul"></i>&nbsp;@lang('Address')
+                </a>
+                <ul class="nav-group-items compact" style="height: auto;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/country">
+                            <span class="nav-icon"><span class="nav-icon-bullet"></span></span> Country
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/state">
+                            <span class="nav-icon"><span class="nav-icon-bullet"></span></span> State
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/city">
+                            <span class="nav-icon"><span class="nav-icon-bullet"></span></span> City
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        @endcan
+
+        @can('holiday')
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/holiday">
+                <i class="nav-icon fa-solid fa-hotel"></i>&nbsp;@lang('Holiday Rental')
             </a>
-            <ul class="nav-group-items compact" style="height: auto;">
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin/country">
-                        <span class="nav-icon"><span class="nav-icon-bullet"></span></span> Country
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin/state">
-                        <span class="nav-icon"><span class="nav-icon-bullet"></span></span> State
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin/city">
-                        <span class="nav-icon"><span class="nav-icon-bullet"></span></span> City
-                    </a>
-                </li>
-            </ul>
         </li>
     @endcan
 
