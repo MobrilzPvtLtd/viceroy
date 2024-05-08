@@ -33,6 +33,7 @@ class HolidayController extends Controller
             'bath' => 'required',
             'area' => 'required',
             'p_type' => 'required',
+            'url' => 'required',
         ]);
         $imagePaths = [];
         if ($request->hasFile('image')) {
@@ -58,16 +59,6 @@ class HolidayController extends Controller
         return view('backend.holiday.edit', compact('holiday'));
     }
 
-// public function update(Request $request, Holiday  $holiday)
-//     {
-//         $request->validate([
-//             'co_name' => 'required',
-//         ]);
-
-//         $holiday->fill($request->post())->save();
-
-//         return redirect()->route('holiday.index');
-//     }
 public function update(Request $request, $id)
 {
     $request->validate([
@@ -78,6 +69,7 @@ public function update(Request $request, $id)
         'bath' => 'required',
         'area' => 'required',
         'p_type' => 'required',
+        'url' => 'required',
     ]);
 
     $holiday = Holiday::findOrFail($id);

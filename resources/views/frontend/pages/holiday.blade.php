@@ -60,8 +60,8 @@
 
 
     <!--=============================
-                BREADCRUMBS START
-            ==============================-->
+                        BREADCRUMBS START
+                    ==============================-->
     <section class="breadcrumbs" style="background: url(assets/images/breadcrumbs_bg.jpg);">
         <div class="breadcrumbs_overly">
             <div class="container">
@@ -80,8 +80,8 @@
         </div>
     </section>
     <!--=============================
-                BREADCRUMBS END
-            ==============================-->
+                        BREADCRUMBS END
+                    ==============================-->
 
     <section class="destination_area pt_115 xs_pt_110 pb_60 xs_pb_90">
         <div class="container">
@@ -350,8 +350,8 @@
     </section>
 
     <!--=============================
-                PROPERTY GRID VIEW START
-            ==============================-->
+                        PROPERTY GRID VIEW START
+                    ==============================-->
     <section class="property_list_view pt_120 xs_pt_100 pb_120 xs_pb_100">
         <div class="container">
             <div class="row">
@@ -360,15 +360,19 @@
                         style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                         <div class=" single_property">
                             <div class="single_property_img">
+
                                 @php
                                     $images = json_decode($holiday->image);
                                 @endphp
 
-                                @foreach($images as $image)
-                                    <img src="{{ asset('public/uploads/' . trim($image)) }}" alt="Image" class="img-fluid w-100">
+                                @foreach ($images as $image)
+                                    <img src="{{ asset('public/uploads/' . trim($image)) }}" alt="Image"
+                                        class="img-fluid w-100">
                                 @endforeach
                             </div>
+
                             <div class="single_property_text">
+                                {{-- {{ $holiday->p_type }} --}}
                                 <div class="single_property_top">
                                     <a class="item_title"
                                         href="https://www.airbnb.co.in/https://www.airbnb.co.in/">{{ $holiday->name }}</a>
@@ -377,356 +381,74 @@
                                         <li>
                                             <span><img src="assets/images/bad.png" alt="img"
                                                     class="img-fluid w-100"></span>
-                                                    {{ $holiday->beds }} Beds
+                                            {{ $holiday->beds }} Beds
                                         </li>
                                         <li>
                                             <span><img src="assets/images/bathtab.png" alt="img"
                                                     class="img-fluid w-100"></span>
-                                                    {{ $holiday->bath }} Baths
+                                            {{ $holiday->bath }} Baths
                                         </li>
                                         <li>
                                             <span><img src="assets/images/squre.png" alt="img"
                                                     class="img-fluid w-100"></span>
-                                                    {{ $holiday->area }} Sq Ft
+                                            {{ $holiday->area }} Sq Ft
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                    <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
-                                            class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                                    {{-- <p>
+                                    <a class="read_btn" href="{{ $holiday->url }}">More Details<i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                                </div>
+                                <div class="single_property_bottom d-flex flex-wrap justify-content-between">
+                                    <a class="read_btn" ><i   aria-hidden="true"></i>{{ $holiday->p_type }}</a>
+                                </div>
+
+
+                                    {{-- <div class="single_property_bottom d-flex flex-wrap justify-content-between">
+                                        <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
+                                                class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                                        <p>
                                         <i class="fas fa-star" aria-hidden="true"></i>
                                         <i class="fas fa-star" aria-hidden="true"></i>
                                         <i class="fas fa-star" aria-hidden="true"></i>
                                         <i class="fas fa-star" aria-hidden="true"></i>
                                         <i class="fas fa-star" aria-hidden="true"></i>
                                         <span>4.5</span>
-                                    </p> --}}
-                                </div>
-                                <span class="property_price">${{ $holiday->price }}</span>
+                                    </p>
+                                    </div> --}}
+                                    <span class="property_price">${{ $holiday->price }}</span>
+
                             </div>
                         </div>
                     </div>
                 @endforeach
-
-                {{-- <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
-                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
-                    <div class=" single_property">
-                        <div class="single_property_img">
-                            <img src="assets/images/property_3.jpg" alt="img" class="img-fluid w-100">
-
-                        </div>
-                        <div class="single_property_text">
-                            <div class="single_property_top">
-                                <a class="item_title" href="https://www.airbnb.co.in/">South Side Garden House</a>
-                                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>28B Highgate Road, London</p>
-                                <ul class="d-flex flex-wrap">
-                                    <li>
-                                        <span><img src="assets/images/bad.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        5 Beds
-                                    </li>
-                                    <li>
-                                        <span><img src="assets/images/bathtab.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        4 Baths
-                                    </li>
-                                    <li>
-                                        <span><img src="assets/images/squre.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        2300 Sq Ft
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
-                                        class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                                <p>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <span>4.5</span>
-                                </p>
-                            </div>
-                            <span class="property_price">$29,000</span>
-                        </div>
+            </div>
+            <div class="row mt_50 wow fadeInUp" data-wow-duration="1.5s">
+                <div class="col-12">
+                    <div id="pagination_area">
+                        <nav aria-label="...">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a class="page-link" href="#"><i class="far fa-angle-double-left"
+                                            aria-hidden="true"></i></a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link active" href="#">01</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">02</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">03</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#"><i class="far fa-angle-double-right"
+                                            aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
-                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
-                    <div class=" single_property">
-                        <div class="single_property_img">
-                            <img src="assets/images/property_4.jpg" alt="img" class="img-fluid w-100">
-
-                        </div>
-                        <div class="single_property_text">
-                            <div class="single_property_top">
-                                <a class="item_title " href="https://www.airbnb.co.in/">Stunning mansion in Reno</a>
-                                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>28B Highgate Road, London</p>
-                                <ul class="d-flex flex-wrap">
-                                    <li>
-                                        <span><img src="assets/images/bad.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        6 Beds
-                                    </li>
-                                    <li>
-                                        <span><img src="assets/images/bathtab.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        4 Baths
-                                    </li>
-                                    <li>
-                                        <span><img src="assets/images/squre.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        2500 Sq Ft
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
-                                        class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                                <p>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <span>4.5</span>
-                                </p>
-                            </div>
-                            <span class="property_price">$24,000</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
-                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
-                    <div class=" single_property">
-                        <div class="single_property_img">
-                            <img src="assets/images/property_5.jpg" alt="img" class="img-fluid w-100">
-
-                        </div>
-                        <div class="single_property_text">
-                            <div class="single_property_top">
-                                <a class="item_title" href="https://www.airbnb.co.in/">Beautiful Condo in London</a>
-                                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>28B Highgate Road, London</p>
-                                <ul class="d-flex flex-wrap">
-                                    <li>
-                                        <span><img src="assets/images/bad.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        4 Beds
-                                    </li>
-                                    <li>
-                                        <span><img src="assets/images/bathtab.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        3 Baths
-                                    </li>
-                                    <li>
-                                        <span><img src="assets/images/squre.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        2200 Sq Ft
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
-                                        class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                                <p>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <span>4.5</span>
-                                </p>
-                            </div>
-                            <span class="property_price">$9,000</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
-                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
-                    <div class=" single_property">
-                        <div class="single_property_img">
-                            <img src="assets/images/property_6.jpg" alt="img" class="img-fluid w-100">
-
-                        </div>
-                        <div class="single_property_text">
-                            <div class="single_property_top">
-                                <a class="item_title" href="https://www.airbnb.co.in/">Kolte Patil Life Republic</a>
-                                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>28B Highgate Road, London</p>
-                                <ul class="d-flex flex-wrap">
-                                    <li>
-                                        <span><img src="assets/images/bad.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        3 Beds
-                                    </li>
-                                    <li>
-                                        <span><img src="assets/images/bathtab.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        3 Baths
-                                    </li>
-                                    <li>
-                                        <span><img src="assets/images/squre.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        2100 Sq Ft
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
-                                        class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                                <p>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <span>4.5</span>
-                                </p>
-                            </div>
-                            <span class="property_price">$11,000</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
-                    style="visibility: hidden; animation-duration: 1.5s; animation-name: none;">
-                    <div class=" single_property">
-                        <div class="single_property_img">
-                            <img src="assets/images/property_1.jpg" alt="img" class="img-fluid w-100">
-
-                        </div>
-                        <div class="single_property_text">
-                            <div class="single_property_top">
-                                <a class="item_title" href="https://www.airbnb.co.in/">Hermosa Casa al Norte</a>
-                                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>28B Highgate Road, London</p>
-                                <ul class="d-flex flex-wrap">
-                                    <li>
-                                        <span><img src="assets/images/bad.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        8 Beds
-                                    </li>
-                                    <li>
-                                        <span><img src="assets/images/bathtab.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        6 Baths
-                                    </li>
-                                    <li>
-                                        <span><img src="assets/images/squre.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        2400 Sq Ft
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
-                                        class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                                <p>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <span>4.5</span>
-                                </p>
-                            </div>
-                            <span class="property_price">$12,000</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
-                    style="visibility: hidden; animation-duration: 1.5s; animation-name: none;">
-                    <div class=" single_property">
-                        <div class="single_property_img">
-                            <img src="assets/images/property_2.jpg" alt="img" class="img-fluid w-100">
-
-                        </div>
-                        <div class="single_property_text">
-                            <div class="single_property_top">
-                                <a class="item_title " href="https://www.airbnb.co.in/">Leisure Beautiful Health</a>
-                                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>28B Highgate Road, London</p>
-                                <ul class="d-flex flex-wrap">
-                                    <li>
-                                        <span><img src="assets/images/bad.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        3 Beds
-                                    </li>
-                                    <li>
-                                        <span><img src="assets/images/bathtab.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        2 Baths
-                                    </li>
-                                    <li>
-                                        <span><img src="assets/images/squre.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        1500 Sq Ft
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
-                                        class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                                <p>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <span>4.5</span>
-                                </p>
-                            </div>
-                            <span class="property_price">$8,000</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
-                    style="visibility: hidden; animation-duration: 1.5s; animation-name: none;">
-                    <div class=" single_property">
-                        <div class="single_property_img">
-                            <img src="assets/images/property_3.jpg" alt="img" class="img-fluid w-100">
-
-                        </div>
-                        <div class="single_property_text">
-                            <div class="single_property_top">
-                                <a class="item_title" href="https://www.airbnb.co.in/">South Side Garden House</a>
-                                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>28B Highgate Road, London</p>
-                                <ul class="d-flex flex-wrap">
-                                    <li>
-                                        <span><img src="assets/images/bad.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        5 Beds
-                                    </li>
-                                    <li>
-                                        <span><img src="assets/images/bathtab.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        4 Baths
-                                    </li>
-                                    <li>
-                                        <span><img src="assets/images/squre.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        2300 Sq Ft
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
-                                        class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                                <p>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <span>4.5</span>
-                                </p>
-                            </div>
-                            <span class="property_price">$29,000</span>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
         </div>
     </section>
-    <!--=============================
-                PROPERTY GRID VIEW END
 @endsection

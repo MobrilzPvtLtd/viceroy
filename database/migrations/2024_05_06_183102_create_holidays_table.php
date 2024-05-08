@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('bath');
             $table->string('area');
             $table->string('image');
+            $table->string('url');
             $table->timestamps();
         });
     }

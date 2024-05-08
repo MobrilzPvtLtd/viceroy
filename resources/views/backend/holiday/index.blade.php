@@ -20,7 +20,8 @@
                                     <th scope="col">price</th>
                                     <th scope="col">Type of Property</th>
                                     <th scope="col">Area</th>
-                                     <th scope="col">Property Images</th>
+                                    <th scope="col">Property Images</th>
+                                    <th scope="col">URL</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -35,7 +36,17 @@
                                         <td>{{ $holiday->price }}</td>
                                         <td>{{ $holiday->p_type }}</td>
                                         <td>{{ $holiday->area }}</td>
-                                        <td>{{ $holiday->image }}</td>
+
+                                        <td>
+                                            @php
+                                                $images = json_decode($holiday->image);
+                                            @endphp
+                                            @foreach ($images as $image)
+                                                <img src="{{ asset('public/uploads/' . trim($image)) }}" alt="Image"
+                                                    style="width: 30% ">
+                                            @endforeach
+                                        </td>
+                                        <td>{{ $holiday->url }}</td>
 
                                         <td>
                                             <form action="{{ route('holiday.destroy', $holiday->id) }}" method="Post">

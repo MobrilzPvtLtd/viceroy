@@ -58,6 +58,10 @@
                                     <label for="city">Property Images</label>
                                     <input type="file" class="form-control" name="image[]" multiple>
                                 </div>
+                                <div class="form-group mb-2 col-4">
+                                    <label for="city">Url</label>
+                                    <input type="text" class="form-control"  name="url" placeholder="">
+                                </div>
 
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>

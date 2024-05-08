@@ -9,6 +9,6 @@ class Holiday extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name','price','address','beds','bath','area','p_type','image',
+        'name','price','address','beds','bath','area','p_type','image','url',
     ];
 }

@@ -54,6 +54,10 @@
                                     <input type="text" class="form-control" id="city" name="area" value="{{ $holiday->area }}">
                                 </div>
                                 <div class="form-group mb-2 col-4">
+                                    <label for="city">URL</label>
+                                    <input type="text" class="form-control" id="city" name="url" value="{{ $holiday->url }}">
+                                </div>
+                                <div class="form-group mb-2 col-4">
                                     <label for="city">Property Images</label>
                                     <input type="file" class="form-control" name="image[]" multiple value="{{ $holiday->image }}">
                                 </div>
