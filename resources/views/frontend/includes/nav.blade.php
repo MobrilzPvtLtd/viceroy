@@ -67,11 +67,7 @@
             <li>
                 <a class="user_icon" href="{{ route('login') }}">
                   <span>
-                    <img
-                      src="assets/images/user_icon_1.png"
-                      alt="user"
-                      class="img-fluid w-100"
-                    />
+                   
                   </span>
                   
                 </a>
@@ -88,7 +84,11 @@
                 </ul> -->
 
                 <div class="dropdown">
-    <button class="dropdown-btn"> Hello  {{ Auth::user()->last_name }} </button>
+    <button class="dropdown-btn"> <img
+                      src="assets/images/user_icon_1.png"
+                      alt="user"
+                      class="img-fluid w-100"
+                    />  Hello  {{ Auth::user()->last_name }} </button>
     <div class="dropdown-content">
         <a href="#">Admin</a>
         <a href="https://viceroy.ultimatetrueweb.com/profile">Profile</a>
