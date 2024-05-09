@@ -12,7 +12,7 @@ class HolidayController extends Controller
 
     public function index()
     {
-        $holidays = Holiday::orderBy('id','desc')->paginate(2);
+        $holidays = Holiday::orderBy('id','desc')->paginate(5);
         return view('backend.holiday.index', compact('holidays'));
 
     }
