@@ -83,10 +83,10 @@
                 <div class="dropdown">
     <button class="dropdown-btn"> <i class="fa fa-user" aria-hidden="true"></i>  Hello  {{ Auth::user()->last_name }} </button>
     <div class="dropdown-content">
-        <a href="#">Admin</a>
-        <a href="https://viceroy.ultimatetrueweb.com/profile">Profile</a>
-        <form id="logout-form" action="https://viceroy.ultimatetrueweb.com/logout" method="POST">
-            <input type="hidden" name="_token" value="acju7g63D9AE8VVQADoqm8zXJh8bGehQPD0FSae8" autocomplete="off">
+    @can('view_backend') <a>Admin</a>@endif
+        <a href="{{ route('frontend.users.profile') }}"> Profile</a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+        {{ csrf_field() }}
             <button class="btn btn-text" type="submit">Logout</button>
         </form>
     </div>
