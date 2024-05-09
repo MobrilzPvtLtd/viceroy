@@ -69,14 +69,28 @@ $notifications_latest = optional($notifications)->take(5);
                 </ul>
             </li>
         @endcan
+        @can('by property')
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/buy">
+                    <i class="nav-icon fa-solid fa-store"></i>&nbsp;@lang('Buy Property')
+                </a>
+            </li>
+        @endcan
+        @can('rent property')
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/rent">
+                    <i class="nav-icon fa-solid fa-house"></i>&nbsp;@lang('Rent Property')
+                </a>
+            </li>
+        @endcan
 
         @can('holiday')
-        <li class="nav-item">
-            <a class="nav-link" href="/admin/holiday">
-                <i class="nav-icon fa-solid fa-hotel"></i>&nbsp;@lang('Holiday Rental')
-            </a>
-        </li>
-    @endcan
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/holiday">
+                    <i class="nav-icon fa-solid fa-hotel"></i>&nbsp;@lang('Holiday Rental')
+                </a>
+            </li>
+        @endcan
 
 
         @can('edit_settings')

@@ -4,24 +4,22 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Holiday;
-use Illuminate\Support\Facades\DB;
+use App\Models\Buy;
 
-class HolidayController extends Controller
+class BuypropertyController extends Controller
 {
 
     public function index()
     {
-        $holidays = Holiday::orderBy('id','desc')->paginate(2);
-        return view('backend.holiday.index', compact('holidays'));
-
+        // $holidays = Holiday::all();
+        return view('backend.buy.index');
     }
 
 
 
     public function create()
     {
-        return view('backend.holiday.create');
+        return view('backend.buy.create');
     }
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Holiday;
+use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
 {
@@ -35,7 +36,7 @@ class FrontendController extends Controller
     }
     public function holiday()
     {
-        $holidays = Holiday::get();
+        $holidays = Holiday::orderBy('id','desc')->paginate(6);
         return view('frontend.pages.holiday',compact('holidays'));
     }
     public function services()
