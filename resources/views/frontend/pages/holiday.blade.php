@@ -425,6 +425,7 @@
             <div class="row mt_50 wow fadeInUp" data-wow-duration="1.5s">
                 <div class="col-12">
                     <div id="pagination_area">
+
                         <nav aria-label="...">
                             <ul class="pagination justify-content-center">
                                 <li class="page-item">
@@ -450,5 +451,17 @@
                 </div>
             </div>
         </div>
+
+
+<style>
+svg.w-5.h-5 {
+    width: 28px;
+}
+
+
+    </style>
+
+
+
     </section>
 @endsection
