@@ -87,7 +87,17 @@
                     </form></li>
                 </ul> -->
 
-
+                <div class="dropdown">
+    <button class="dropdown-btn">Menu</button>
+    <div class="dropdown-content">
+        <a href="#">Admin</a>
+        <a href="https://viceroy.ultimatetrueweb.com/profile">Profile</a>
+        <form id="logout-form" action="https://viceroy.ultimatetrueweb.com/logout" method="POST">
+            <input type="hidden" name="_token" value="acju7g63D9AE8VVQADoqm8zXJh8bGehQPD0FSae8" autocomplete="off">
+            <button class="btn btn-text" type="submit">Logout</button>
+        </form>
+    </div>
+</div>
 
               </li>
             @endauth
@@ -121,4 +131,44 @@
           </ul>
         </div>
       </div>
+
+
+      <style>
+        /* Dropdown Button */
+        .dropdown-btn {
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Links Inside the Dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change Color of Links on Hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show the Dropdown Content When Hovered Over Dropdown Button */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+
+
     </nav>
