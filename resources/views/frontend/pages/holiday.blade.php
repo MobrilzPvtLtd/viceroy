@@ -422,33 +422,8 @@
                     </div>
                 @endforeach
             </div>
-            <div class="row mt_50 wow fadeInUp" data-wow-duration="1.5s">
-                <div class="col-12">
-                    <div id="pagination_area">
-                        <nav aria-label="...">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item">
-                                    <a class="page-link" href="#"><i class="far fa-angle-double-left"
-                                            aria-hidden="true"></i></a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link active" href="#">01</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">02</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">03</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#"><i class="far fa-angle-double-right"
-                                            aria-hidden="true"></i></a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
+            {!! $holidays->links() !!}
+
         </div>
     </section>
 @endsection

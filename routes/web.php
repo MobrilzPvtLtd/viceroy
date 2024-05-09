@@ -9,6 +9,8 @@ use App\Http\Controllers\Backend\CountryController;
 use App\Http\Controllers\Backend\StateController;
 use App\Http\Controllers\Backend\CityController;
 use App\Http\Controllers\Backend\HolidayController;
+use App\Http\Controllers\Backend\RentpropertyController;
+use App\Http\Controllers\Backend\BuypropertyController;
 
 /*
 *
@@ -21,10 +23,15 @@ require __DIR__.'/auth.php';
 
 /*
 *
-* Frontend Routes
+* Frontend  & backend  Routes
+
 *
 * --------------------------------------------------------------------
 */
+//Rent porperty
+Route::resource('admin/rent', RentpropertyController::class);
+//buy property
+Route::resource('admin/buy',  BuypropertyController::class);
 //holiday
 Route::resource('admin/holiday', HolidayController::class);
 //Country
@@ -33,7 +40,7 @@ Route::resource('admin/country', CountryController::class);
 Route::resource('admin/state', StateController::class);
 //state
 Route::resource('admin/city', CityController::class);
-Route::get('fetch-state', [CityController::class, 'fetchState'])->name('fetch-state');
+Route::get('fetch-state', [CityController::class, 'fetchState'])->name('fetch-state'); //auto select country data
 // home route
 Route::get('home', [FrontendController::class, 'index'])->name('home');
 Route::get('about', [FrontendController::class, 'about'])->name('about');

@@ -62,7 +62,6 @@
 
                             </tbody>
                         </table>
-                        {!! $holidays->links() !!}
                     </div>
                 </div>
             </div>
