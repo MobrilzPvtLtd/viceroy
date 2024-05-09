@@ -376,9 +376,7 @@
                                 @endforeach
                             </div>
 
-                            <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
-                        style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
-                        <div class=" single_property">
+                            
 
                             <div class="single_property_text">
                                 {{-- {{ $holiday->p_type }} --}}
@@ -407,7 +405,9 @@
                                 <div class="single_property_bottom d-flex flex-wrap justify-content-between">
                                     <a class="read_btn" href="{{ $holiday->url }}">More Details<i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                                 </div>
-                                
+                                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                        style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                        <div class=" single_property">
 
 
                                     {{-- <div class="single_property_bottom d-flex flex-wrap justify-content-between">
