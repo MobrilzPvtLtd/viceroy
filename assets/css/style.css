@@ -7900,7 +7900,14 @@ span.relative.inline-flex.items-center.px-2.py-2.text-sm.font-medium.text-gray-5
 }
 
 
-
+.ak-4 {
+    position: absolute;
+    top: -200px;
+    background-color: #000;
+    padding: 7px;
+    border-radius: 12px;
+    text-transform: capitalize;
+}
 
 /*=============================
     DASHBOARD END
