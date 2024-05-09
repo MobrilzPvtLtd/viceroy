@@ -457,7 +457,9 @@
 svg.w-5.h-5 {
     width: 28px;
 }
-
+.flex.justify-between.flex-1.sm\:hidden {
+    visibility: hidden !important;
+}
 
     </style>
 
