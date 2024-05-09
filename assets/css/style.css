@@ -2054,7 +2054,7 @@ button {
 .find_state_text {
     text-align: center;
     position: relative;
-    z-index: 1;
+    z-index: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
