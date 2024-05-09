@@ -371,6 +371,10 @@
                                 @endforeach
                             </div>
 
+                            <div  id="ak-3" class="single_property_bottom d-flex flex-wrap justify-content-between">
+                                    <a class="read_btn" ><i   aria-hidden="true"></i>{{ $holiday->p_type }}</a>
+                                </div>
+
                             <div class="single_property_text">
                                 {{-- {{ $holiday->p_type }} --}}
                                 <div class="single_property_top">
@@ -398,9 +402,7 @@
                                 <div class="single_property_bottom d-flex flex-wrap justify-content-between">
                                     <a class="read_btn" href="{{ $holiday->url }}">More Details<i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                                 </div>
-                                <div  id="ak-3" class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                    <a class="read_btn" ><i   aria-hidden="true"></i>{{ $holiday->p_type }}</a>
-                                </div>
+                                
 
 
                                     {{-- <div class="single_property_bottom d-flex flex-wrap justify-content-between">
