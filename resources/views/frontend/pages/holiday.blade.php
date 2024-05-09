@@ -355,10 +355,12 @@
     <section class="property_list_view pt_120 xs_pt_100 pb_120 xs_pb_100">
         <div class="container">
             <div class="row">
-                @foreach ($holidays as $holiday)
-                    <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+
+            <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
                         style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                         <div class=" single_property">
+                @foreach ($holidays as $holiday)
+                    
 
                         <div  id="ak-3" class="single_property_bottom d-flex flex-wrap justify-content-between">
                                     <a class="read_btn" ><i   aria-hidden="true"></i>{{ $holiday->p_type }}</a>
