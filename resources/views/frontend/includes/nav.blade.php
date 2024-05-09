@@ -65,10 +65,7 @@
 
             @auth
             <li>
-                <a class="user_icon" href="{{ route('login') }}">
-                  <span>
-                   
-                  </span>
+                <a class="user_icon" href="{{ route('login') }}">                
                   
                 </a>
 
@@ -164,6 +161,10 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+        button.dropdown-btn {
+    color: #ffffff;
+    background-color: black;
+}
     </style>
 
 
