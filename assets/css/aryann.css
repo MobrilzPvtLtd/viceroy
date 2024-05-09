@@ -61,6 +61,11 @@
     -ms-transform: scale(1);
     -o-transform: scale(1);
 }
+
+.sticky {
+    width: 82vw !important;
+}
+
 #home_form {
     display: flex !important;
     justify-content: space-around;
