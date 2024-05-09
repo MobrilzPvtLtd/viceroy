@@ -7886,7 +7886,9 @@ button {
 .flex.justify-between.flex-1.sm\:hidden {
     visibility: hidden;
 }
-
+svg.w-5.h-5 {
+    width: 26px;
+}
 
 /*=============================
     DASHBOARD END
