@@ -75,7 +75,9 @@
                   </span>
                   Hello  {{ Auth::user()->last_name }}
                 </a>
-                <ul>
+
+
+                <!-- <ul>
                     @can('view_backend')<li><a>Admin</a></li>@endif
                     <li><a href="{{ route('frontend.users.profile') }}">Profile</a></li>
                     <li><form id="logout-form" action="{{ route('logout') }}" method="POST">
@@ -83,7 +85,10 @@
 
                         <button class="btn btn-text" type="submit">Logout</button>
                     </form></li>
-                </ul>
+                </ul> -->
+
+
+
               </li>
             @endauth
 
