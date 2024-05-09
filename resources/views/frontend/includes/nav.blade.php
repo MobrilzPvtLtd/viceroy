@@ -65,17 +65,12 @@
 
             @auth
             <li>
-                <a class="user_icon" href="{{ route('login') }}">
-                  <span>
-                    <img
-                      src="assets/images/user_icon_1.png"
-                      alt="user"
-                      class="img-fluid w-100"
-                    />
-                  </span>
-                  Hello  {{ Auth::user()->last_name }}
+                <a class="user_icon" href="{{ route('login') }}">                
+                  
                 </a>
-                <ul>
+
+
+                <!-- <ul>
                     @can('view_backend')<li><a>Admin</a></li>@endif
                     <li><a href="{{ route('frontend.users.profile') }}">Profile</a></li>
                     <li><form id="logout-form" action="{{ route('logout') }}" method="POST">
@@ -83,7 +78,20 @@
 
                         <button class="btn btn-text" type="submit">Logout</button>
                     </form></li>
-                </ul>
+                </ul> -->
+
+                <div class="dropdown">
+    <button class="dropdown-btn"> <i class="fa fa-user" aria-hidden="true"></i>  Hello  {{ Auth::user()->last_name }} </button>
+    <div class="dropdown-content">
+    @can('view_backend') <a>Admin</a>@endif
+        <a href="{{ route('frontend.users.profile') }}"> Profile</a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+        {{ csrf_field() }}
+            <button class="btn btn-text" type="submit">Logout</button>
+        </form>
+    </div>
+</div>
+
               </li>
             @endauth
 
@@ -116,4 +124,51 @@
           </ul>
         </div>
       </div>
+
+
+      <style>
+        /* Dropdown Button */
+        .dropdown-btn {
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Links Inside the Dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change Color of Links on Hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show the Dropdown Content When Hovered Over Dropdown Button */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        button.dropdown-btn {
+    color: #ffffff;
+    background-color: black;
+}
+.dropdown {
+    margin-top: -20px;
+}
+    </style>
+
+
     </nav>

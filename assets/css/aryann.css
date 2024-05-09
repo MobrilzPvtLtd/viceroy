@@ -61,12 +61,17 @@
     -ms-transform: scale(1);
     -o-transform: scale(1);
 }
+
+.sticky {
+    width: 82vw !important;
+}
+
 #home_form {
     display: flex !important;
     justify-content: space-around;
     align-items: center;
-    padding: 15px 150px;
-    gap: 75px;
+    padding: 15px 30px;
+    gap: 30px;
 }
 .select2-container {
     box-sizing: border-box;
