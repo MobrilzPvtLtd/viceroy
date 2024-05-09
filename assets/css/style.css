@@ -2352,7 +2352,7 @@ button {
     height: 100%;
     padding: 100px 0px 0px 100px;
     position: relative;
-    z-index: 1;
+    z-index: 0;
 }
 
 .footer_right::after {
