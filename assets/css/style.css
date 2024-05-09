@@ -7882,6 +7882,12 @@ button {
 }
 
 /* order invoice end */
+
+.flex.justify-between.flex-1.sm\:hidden {
+    visibility: hidden;
+}
+
+
 /*=============================
     DASHBOARD END
 =============================*/
