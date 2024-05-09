@@ -355,15 +355,10 @@
     <section class="property_list_view pt_120 xs_pt_100 pb_120 xs_pb_100">
         <div class="container">
             <div class="row">
-            
-                @foreach ($holidays as $holiday)                    
-
-                        <div  id="ak-3" class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                    <a class="read_btn" ><i   aria-hidden="true"></i>{{ $holiday->p_type }}</a>
-                                </div>
-
-
-
+                @foreach ($holidays as $holiday)
+                    <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                        style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                        <div class=" single_property">
                             <div class="single_property_img">
 
                                 @php
@@ -375,8 +370,6 @@
                                         class="img-fluid w-100">
                                 @endforeach
                             </div>
-
-                            
 
                             <div class="single_property_text">
                                 {{-- {{ $holiday->p_type }} --}}
@@ -405,9 +398,9 @@
                                 <div class="single_property_bottom d-flex flex-wrap justify-content-between">
                                     <a class="read_btn" href="{{ $holiday->url }}">More Details<i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                                 </div>
-                                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
-                        style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
-                        <div class=" single_property">
+                                <div class="single_property_bottom d-flex flex-wrap justify-content-between">
+                                    <a class="read_btn" ><i   aria-hidden="true"></i>{{ $holiday->p_type }}</a>
+                                </div>
 
 
                                     {{-- <div class="single_property_bottom d-flex flex-wrap justify-content-between">
