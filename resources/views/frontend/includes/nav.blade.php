@@ -73,7 +73,7 @@
                       class="img-fluid w-100"
                     />
                   </span>
-                  Hello  {{ Auth::user()->last_name }}
+                  
                 </a>
 
 
@@ -88,7 +88,7 @@
                 </ul> -->
 
                 <div class="dropdown">
-    <button class="dropdown-btn">Menu</button>
+    <button class="dropdown-btn"> Hello  {{ Auth::user()->last_name }} </button>
     <div class="dropdown-content">
         <a href="#">Admin</a>
         <a href="https://viceroy.ultimatetrueweb.com/profile">Profile</a>
