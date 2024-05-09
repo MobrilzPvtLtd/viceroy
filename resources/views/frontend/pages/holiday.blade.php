@@ -359,6 +359,13 @@
                     <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
                         style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                         <div class=" single_property">
+
+                        <div  id="ak-3" class="single_property_bottom d-flex flex-wrap justify-content-between">
+                                    <a class="read_btn" ><i   aria-hidden="true"></i>{{ $holiday->p_type }}</a>
+                                </div>
+
+
+
                             <div class="single_property_img">
 
                                 @php
@@ -371,9 +378,7 @@
                                 @endforeach
                             </div>
 
-                            <div  id="ak-3" class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                    <a class="read_btn" ><i   aria-hidden="true"></i>{{ $holiday->p_type }}</a>
-                                </div>
+                            
 
                             <div class="single_property_text">
                                 {{-- {{ $holiday->p_type }} --}}
