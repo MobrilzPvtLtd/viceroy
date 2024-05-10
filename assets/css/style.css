@@ -1,6 +1,6 @@
 /****************************************
 Template Name: FaxEstate - Real Estate & Property HTML5 Template.
-Author: ThemeLab-Portfolio 
+Author: ThemeLab-Portfolio
 Author Email: themelab.bd@gmail.com
 Version: 1.0
 Description: FaxEstate offers a full range of real estate solutions. It is especially made for any kind of real estate listing, including apartments, rentals, and agencies. The Bootstrap 5 framework was used to create the high-end HTML5 template FaxEstate, which is intended for real estate-related websites. Excellent responsiveness was used in the construction of the entire template. It has all the components you require for an effective real estate company website.
@@ -10,9 +10,9 @@ W3C HTML validation coding and 100% responsive, mobile-friendly design are guara
 
 CSS INDEX
 ===================================
-01. GLOBAL CSS 
+01. GLOBAL CSS
 02. HOME PAGE 01
-03. HOME PAGE 02 
+03. HOME PAGE 02
 04. HOME PAGE 03
 05. AGENT PAGE
 06. AGENT DETAILS
@@ -24,7 +24,7 @@ CSS INDEX
 12. LOGIN PAGE
 13. PRIVACY POLICY
 14. ERROR PAGE
-14. PROPERTY GRID VIEW 
+14. PROPERTY GRID VIEW
 15. PROPERTY LIST VIEW
 16. PROPERTY LEFT SIDEBAR
 17. PAYMENT PAGE
@@ -1165,7 +1165,7 @@ button {
     cursor: pointer;
     width: 100%;
     line-height: 30px;
- 
+
 }
 
 .adv_search_icon2 {
@@ -1176,7 +1176,7 @@ button {
     cursor: pointer;
     width: 100%;
     line-height: 30px;
- 
+
 }
 .adv_search_icon3 {
     /* position: absolute; */
@@ -1186,7 +1186,7 @@ button {
     cursor: pointer;
     width: 100%;
     line-height: 30px;
- 
+
 }
 .adv_search_icon4 {
     /* position: absolute; */
@@ -1196,7 +1196,7 @@ button {
     cursor: pointer;
     width: 100%;
     line-height: 30px;
- 
+
 }
 
 
@@ -2707,7 +2707,7 @@ button {
 .whtcall-mob-btn ul{
 	margin:0px;
 	padding:0px;
-	  
+
 
 }
 .whtcall-mob-btn ul li{
@@ -2737,7 +2737,7 @@ button {
 .whtcall-mob-btn ul li:last-child {
     float: right;
     border-radius: 5px 0px 0px 5px;
-   
+
 }
 
 
@@ -4757,8 +4757,8 @@ button {
     opacity: 1;
 }
 .owl-next:after{ content: "\f105"; }
- 
- 
+
+
  .owl-theme .owl-controls .owl-buttons div {
     color: #FFF;
     display: inline-block;
@@ -4773,12 +4773,12 @@ button {
     filter: Alpha(Opacity = 50);
     opacity: 1!important;
 }
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+
 @media only screen and (max-width: 479px){
     .testimonial{ padding: 70px 10px 30px; }
     .testimonial .description:before{ top: -20px }
@@ -7908,7 +7908,12 @@ span.relative.inline-flex.items-center.px-2.py-2.text-sm.font-medium.text-gray-5
     border-radius: 12px;
     text-transform: capitalize;
 }
-
+span.relative.inline-flex.items-center.px-4.py-2.-ml-px.text-sm.font-medium.text-gray-500.bg-white.border.border-gray-300.cursor-default.leading-5.dark\:bg-gray-800.dark\:border-gray-600 {
+    padding-bottom: 13px !important;
+    padding-top: 11px !important;
+    background-color: #e6b025 !important;
+    color: #000;
+}
 /*=============================
     DASHBOARD END
 =============================*/
