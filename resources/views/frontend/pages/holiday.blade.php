@@ -356,76 +356,57 @@
         <div class="container">
             <div class="row">
                 @foreach ($holidays as $holiday)
-                    <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
-                        style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
-                        <div class=" single_property">
-                            <div class="single_property_img">
+                <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
+                    <div class="single_property">
+                        <div class="single_property_img">
+                            @php
+                                $images = json_decode($holiday->image);
+                            @endphp
 
-                                @php
-                                    $images = json_decode($holiday->image);
-                                @endphp
+                            @foreach ($images as $image)
+                                <img src="{{ asset('public/uploads/' . trim($image)) }}" alt="Image"
+                                    class="img-fluid w-100">
+                            @endforeach
+                            {{-- <a class="feature_link" href="#">for sale</a> --}}
 
-                                @foreach ($images as $image)
-                                    <img src="{{ asset('public/uploads/' . trim($image)) }}" alt="Image"
-                                        class="img-fluid w-100">
-                                @endforeach
+                        </div>
+
+                        <div class="single_property_text">
+                            <div class="single_property_top">
+                                <a class="item_title" href=" ">{{ $holiday->name }}</a>
+                                <p>
+                                    <i class="fas fa-map-marker-alt"></i>{{ $holiday->address }}
+                                </p>
+                                <ul class="d-flex flex-wrap">
+                                    <li>
+                                        <span><img src="assets/images/bad.png" alt="img"
+                                                class="img-fluid w-100" /></span>
+                                        {{ $holiday->beds }} Beds
+                                    </li>
+                                    <li>
+                                        <span><img src="assets/images/bathtab.png" alt="img"
+                                                class="img-fluid w-100" /></span>
+                                        {{ $holiday->bath }} Baths
+                                    </li>
+                                    <li>
+                                        <span><img src="assets/images/squre.png" alt="img"
+                                                class="img-fluid w-100" /></span>
+                                        {{ $holiday->area }} Sq Ft
+                                    </li>
+                                </ul>
                             </div>
-
-                            <div class="single_property_text">
-                                {{-- {{ $holiday->p_type }} --}}
-                                <div class="single_property_top">
-                                    <a class="item_title" href="">{{ $holiday->name }}</a>
-                                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>{{ $holiday->address }}</p>
-                                    <ul class="d-flex flex-wrap">
-                                        <li>
-                                            <span><img src="assets/images/bad.png" alt="img"
-                                                    class="img-fluid w-100"></span>
-                                            {{ $holiday->beds }} Beds
-                                        </li>
-                                        <li>
-                                            <span><img src="assets/images/bathtab.png" alt="img"
-                                                    class="img-fluid w-100"></span>
-                                            {{ $holiday->bath }} Baths
-                                        </li>
-                                        <li>
-                                            <span><img src="assets/images/squre.png" alt="img"
-                                                    class="img-fluid w-100"></span>
-                                            {{ $holiday->area }} Sq Ft
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                    <a class="read_btn" href="{{ $holiday->url }}">More Details<i
-                                            class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                                </div>
-<<<<<<< HEAD
-                                <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                    <a class="read_btn"><i aria-hidden="true"></i>{{ $holiday->p_type }}</a>
-=======
-                                <div  class="ak-4">
-                                    <a class="read_btn" ><i   aria-hidden="true"></i>{{ $holiday->p_type }}</a>
->>>>>>> 56770b5739ffc1e94fff1e773e0d136266e38203
-                                </div>
-
-
-                                {{-- <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                        <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
-                                                class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                                        <p>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <span>4.5</span>
-                                    </p>
-                                    </div> --}}
-                                <span class="property_price">${{ $holiday->price }}</span>
-
+                            <div class="single_property_bottom d-flex flex-wrap justify-content-between">
+                                <a class="read_btn" href="{{ $holiday->url }}">More Details<i
+                                        class="fas fa-arrow-right"></i></a>
                             </div>
+                            <div class="single_property_bottom d-flex flex-wrap justify-content-between">
+                                <a class="read_btn"><i aria-hidden="true"></i>{{ $holiday->p_type }}</a>
+                            </div>
+                            <span class="property_price">${{ $holiday->price }}</span>
                         </div>
                     </div>
-                @endforeach
+                </div>
+            @endforeach
             </div>
             <div style="text-align: center">
                 {!! $holidays->links() !!}

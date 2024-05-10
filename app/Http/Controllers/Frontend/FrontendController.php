@@ -38,7 +38,7 @@ class FrontendController extends Controller
     }
     public function holiday()
     {
-        $holidays = Holiday::orderBy('id','desc')->paginate(8);
+        $holidays = Holiday::orderBy('id','desc')->paginate(6);
         return view('frontend.pages.holiday',compact('holidays'));
     }
     public function services()
