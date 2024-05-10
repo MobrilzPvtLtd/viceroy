@@ -26,7 +26,39 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($buys as $buy)
+                                <tr>
+                                    <td>{{ $buy->id }}</td>
+                                    <td>{{ $buy->name }}</td>
+                                    <td>{{ $buy->address }}</td>
+                                    <td>{{ $buy->beds }}</td>
+                                    <td>{{ $buy->bath }}</td>
+                                    <td>{{ $buy->price }}</td>
+                                    <td>{{ $buy->p_type }}</td>
+                                    <td>{{ $buy->area }}</td>
 
+                                    <td>
+                                        @php
+                                            $images = json_decode($buy->image);
+                                        @endphp
+                                        @foreach ($images as $image)
+                                            <img src="{{ asset('public/uploads/' . trim($image)) }}" alt="Image"
+                                                style="width: 100% ">
+                                        @endforeach
+                                    </td>
+                                    <td>{{ $buy->url }}</td>
+
+                                    <td>
+                                        <form action="{{ route('buy.destroy', $buy->id) }}" method="Post">
+                                            <a class="btn btn-primary"
+                                                href="{{ route('buy.edit', $buy->id) }}">Edit</a>
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
 
                             </tbody>
                         </table>

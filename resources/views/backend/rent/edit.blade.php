@@ -4,13 +4,13 @@
     <div class="card">
         <div class="card-body">
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('holiday.index') }}" enctype="multipart/form-data">
+                <a class="btn btn-primary" href="{{ route('rent.index') }}" enctype="multipart/form-data">
                     Back</a>
             </div>
             <div class="row mt-4">
                 <div class="col">
                     <div class="container mt-5">
-                        <form method="post" action="{{ route('holiday.update', $holiday->id) }}"
+                        <form method="post" action="{{ route('rent.update', $rent->id) }}"
                             enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
@@ -18,48 +18,48 @@
                             <div class="row">
                                 <div class="form-group mb-2 col-4">
                                     <label for="exampleInputEmail1">Property Name</label>
-                                    <input type="text" class="form-control" name="name" value="{{ $holiday->name }}">
+                                    <input type="text" class="form-control" name="name" value="{{ $rent->name }}">
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="ct_name">Address </label>
-                                    <input class="form-control"  name="address" value="{{ $holiday->address }}">
+                                    <input class="form-control"  name="address" value="{{ $rent->address }}">
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Beds</label>
-                                    <input type="text" class="form-control" name="beds" value="{{ $holiday->beds }}">
+                                    <input type="text" class="form-control" name="beds" value="{{ $rent->beds }}">
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Bath</label>
-                                    <input type="text" class="form-control"  name="bath" value="{{ $holiday->bath }}">
+                                    <input type="text" class="form-control"  name="bath" value="{{ $rent->bath }}">
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">price</label>
-                                    <input type="text" class="form-control"  name="price" value="{{ $holiday->price }}">
+                                    <input type="text" class="form-control"  name="price" value="{{ $rent->price }}">
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
                                     <label for="p_type">Type of Property</label>
                                     <select class="form-control" name="p_type">
                                         <option value="">Select property type</option>
-                                        <option value="premium" {{ $holiday->p_type === 'premium' ? 'selected' : '' }}>Premium</option>
-                                        <option value="budget" {{ $holiday->p_type === 'budget' ? 'selected' : '' }}>Budget</option>
-                                        <option value="standard" {{ $holiday->p_type === 'standard' ? 'selected' : '' }}>Standard</option>
+                                        <option value="premium" {{ $rent->p_type === 'premium' ? 'selected' : '' }}>Premium</option>
+                                        <option value="budget" {{ $rent->p_type === 'budget' ? 'selected' : '' }}>Budget</option>
+                                        <option value="standard" {{ $rent->p_type === 'standard' ? 'selected' : '' }}>Standard</option>
                                     </select>
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Area</label>
-                                    <input type="text" class="form-control" id="city" name="area" value="{{ $holiday->area }}">
+                                    <input type="text" class="form-control" id="city" name="area" value="{{ $rent->area }}">
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">URL</label>
-                                    <input type="text" class="form-control" id="city" name="url" value="{{ $holiday->url }}">
+                                    <input type="text" class="form-control" id="city" name="url" value="{{ $rent->url }}">
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Property Images</label>
-                                    <input type="file" class="form-control" name="image[]" multiple value="{{ $holiday->image }}">
+                                    <input type="file" class="form-control" name="image[]" multiple value="{{ $rent->image }}">
                                 </div>
 
                             </div>

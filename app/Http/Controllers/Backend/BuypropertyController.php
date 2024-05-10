@@ -11,8 +11,8 @@ class BuypropertyController extends Controller
 
     public function index()
     {
-        // $holidays = Holiday::all();
-        return view('backend.buy.index');
+        $buys = Buy::all();
+        return view('backend.buy.index',compact('buys'));
     }
 
 
@@ -44,19 +44,19 @@ class BuypropertyController extends Controller
                 $imagePaths[] = $filename;
             }
         }
-        $holidayData = $request->except('image');
-        $holidayData['image'] = json_encode($imagePaths);
-        Holiday::create($holidayData);
-        return redirect()->route('holiday.index')->with('success', 'Holiday has been created successfully.');
+        $buyData = $request->except('image');
+        $buyData['image'] = json_encode($imagePaths);
+        Buy::create($buyData);
+        return redirect()->route('buy.index')->with('success', 'Holiday has been created successfully.');
     }
 
     public function show()
     {
     }
 
-    public function edit(Holiday $holiday)
+    public function edit(Buy $buy)
     {
-        return view('backend.holiday.edit', compact('holiday'));
+        return view('backend.buy.edit', compact('buy'));
     }
 
 public function update(Request $request, $id)
@@ -72,7 +72,7 @@ public function update(Request $request, $id)
         'url' => 'required',
     ]);
 
-    $holiday = Holiday::findOrFail($id);
+    $buy = Buy::findOrFail($id);
 
     $imagePaths = [];
     if ($request->hasFile('image')) {
@@ -83,24 +83,24 @@ public function update(Request $request, $id)
             $imagePaths[] = $filename;
         }
         // Delete old images
-        foreach(json_decode($holiday->image) as $oldImage) {
+        foreach(json_decode($buy->image) as $oldImage) {
             if(file_exists(public_path('uploads/' . $oldImage))) {
                 unlink(public_path('uploads/' . $oldImage));
             }
         }
     }
 
-    $holidayData = $request->except('image');
-    $holidayData['image'] = json_encode($imagePaths);
+    $buyData = $request->except('image');
+    $buyData['image'] = json_encode($imagePaths);
 
-    $holiday->update($holidayData);
+    $buy->update($buyData);
 
-    return redirect()->route('holiday.index')->with('success', 'Holiday has been updated successfully.');
+    return redirect()->route('buy.index')->with('success', 'buy has been updated successfully.');
 }
 
-    public function destroy(Holiday $holiday)
+    public function destroy(Buy $buy)
     {
-        $holiday->delete();
-        return redirect()->route('holiday.index');
+        $buy->delete();
+        return redirect()->route('buy.index');
     }
 }

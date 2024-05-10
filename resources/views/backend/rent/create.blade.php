@@ -7,13 +7,13 @@
         <div class="card-body">
 
             <div class="pull-right mb-2">
-                <a class="btn btn-success" href="{{ route('holiday.index') }}"> holiday</a>
+                <a class="btn btn-success" href="{{ route('rent.index') }}"> rent</a>
             </div>
             <div class="row mt-4">
                 <div class="col">
                     <div class="container mt-5">
 
-                        <form method="POST" action="{{ route('holiday.store') }}" method="POST" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('rent.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="form-group mb-2 col-4">

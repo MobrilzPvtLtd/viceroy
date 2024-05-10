@@ -60,8 +60,8 @@
 
 
     <!--=============================
-                        BREADCRUMBS START
-                    ==============================-->
+                            BREADCRUMBS START
+                        ==============================-->
     <section class="breadcrumbs" style="background: url(assets/images/breadcrumbs_bg.jpg);">
         <div class="breadcrumbs_overly">
             <div class="container">
@@ -80,8 +80,8 @@
         </div>
     </section>
     <!--=============================
-                        BREADCRUMBS END
-                    ==============================-->
+                            BREADCRUMBS END
+                        ==============================-->
 
     <section class="destination_area pt_115 xs_pt_110 pb_60 xs_pb_90">
         <div class="container">
@@ -350,8 +350,8 @@
     </section>
 
     <!--=============================
-                        PROPERTY GRID VIEW START
-                    ==============================-->
+                            PROPERTY GRID VIEW START
+                        ==============================-->
     <section class="property_list_view pt_120 xs_pt_100 pb_120 xs_pb_100">
         <div class="container">
             <div class="row">
@@ -374,8 +374,7 @@
                             <div class="single_property_text">
                                 {{-- {{ $holiday->p_type }} --}}
                                 <div class="single_property_top">
-                                    <a class="item_title"
-                                        href="https://www.airbnb.co.in/https://www.airbnb.co.in/">{{ $holiday->name }}</a>
+                                    <a class="item_title" href="">{{ $holiday->name }}</a>
                                     <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>{{ $holiday->address }}</p>
                                     <ul class="d-flex flex-wrap">
                                         <li>
@@ -396,14 +395,15 @@
                                     </ul>
                                 </div>
                                 <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                    <a class="read_btn" href="{{ $holiday->url }}">More Details<i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                                    <a class="read_btn" href="{{ $holiday->url }}">More Details<i
+                                            class="fas fa-arrow-right" aria-hidden="true"></i></a>
                                 </div>
                                 <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                    <a class="read_btn" ><i   aria-hidden="true"></i>{{ $holiday->p_type }}</a>
+                                    <a class="read_btn"><i aria-hidden="true"></i>{{ $holiday->p_type }}</a>
                                 </div>
 
 
-                                    {{-- <div class="single_property_bottom d-flex flex-wrap justify-content-between">
+                                {{-- <div class="single_property_bottom d-flex flex-wrap justify-content-between">
                                         <a class="read_btn" href="https://www.airbnb.co.in/">More Details<i
                                                 class="fas fa-arrow-right" aria-hidden="true"></i></a>
                                         <p>
@@ -415,13 +415,16 @@
                                         <span>4.5</span>
                                     </p>
                                     </div> --}}
-                                    <span class="property_price">${{ $holiday->price }}</span>
+                                <span class="property_price">${{ $holiday->price }}</span>
 
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
-            {!! $holidays->links() !!}
+            <div style="text-align: center">
+                {!! $holidays->links() !!}
+            </div>
+
     </section>
 @endsection

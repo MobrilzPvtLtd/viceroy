@@ -4,27 +4,23 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Rent;
 
 class RentpropertyController extends Controller
 {
-    //
-}
-use App\Models\Holiday;
 
-class HolidayController extends Controller
-{
 
     public function index()
     {
-        $holidays = Holiday::all();
-        return view('backend.holiday.index', compact('holidays'));
+        $rents = Rent::all();
+        return view('backend.rent.index', compact('rents'));
     }
 
 
 
     public function create()
     {
-        return view('backend.holiday.create');
+        return view('backend.rent.create');
     }
 
 
@@ -49,19 +45,19 @@ class HolidayController extends Controller
                 $imagePaths[] = $filename;
             }
         }
-        $holidayData = $request->except('image');
-        $holidayData['image'] = json_encode($imagePaths);
-        Holiday::create($holidayData);
-        return redirect()->route('holiday.index')->with('success', 'Holiday has been created successfully.');
+        $rentData = $request->except('image');
+        $rentData['image'] = json_encode($imagePaths);
+        Rent::create($rentData);
+        return redirect()->route('rent.index')->with('success', 'rent has been created successfully.');
     }
 
     public function show()
     {
     }
 
-    public function edit(Holiday $holiday)
+    public function edit(Rent $rent)
     {
-        return view('backend.holiday.edit', compact('holiday'));
+        return view('backend.rent.edit', compact('rent'));
     }
 
 public function update(Request $request, $id)
@@ -77,7 +73,7 @@ public function update(Request $request, $id)
         'url' => 'required',
     ]);
 
-    $holiday = Holiday::findOrFail($id);
+    $rent = Rent::findOrFail($id);
 
     $imagePaths = [];
     if ($request->hasFile('image')) {
@@ -88,24 +84,24 @@ public function update(Request $request, $id)
             $imagePaths[] = $filename;
         }
         // Delete old images
-        foreach(json_decode($holiday->image) as $oldImage) {
+        foreach(json_decode($rent->image) as $oldImage) {
             if(file_exists(public_path('uploads/' . $oldImage))) {
                 unlink(public_path('uploads/' . $oldImage));
             }
         }
     }
 
-    $holidayData = $request->except('image');
-    $holidayData['image'] = json_encode($imagePaths);
+    $rentData = $request->except('image');
+    $rentData['image'] = json_encode($imagePaths);
 
-    $holiday->update($holidayData);
+    $rent->update($rentData);
 
-    return redirect()->route('holiday.index')->with('success', 'Holiday has been updated successfully.');
+    return redirect()->route('rent.index')->with('success', 'rent has been updated successfully.');
 }
 
-    public function destroy(Holiday $holiday)
+    public function destroy(Rent $rent)
     {
-        $holiday->delete();
-        return redirect()->route('holiday.index');
+        $rent->delete();
+        return redirect()->route('rent.index');
     }
 }

@@ -3,7 +3,7 @@
     <div class="card">
         <div class="card-body">
             <div class="pull-right mb-2">
-                <a class="btn btn-success" href="{{ route('holiday.create') }}"> Create Holiday</a>
+                <a class="btn btn-success" href="{{ route('rent.create') }}"> Create Rent</a>
             </div>
             <div class="row mt-4">
 
@@ -26,40 +26,39 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($holidays as $holiday)
-                                    <tr>
-                                        <td>{{ $holiday->id }}</td>
-                                        <td>{{ $holiday->name }}</td>
-                                        <td>{{ $holiday->address }}</td>
-                                        <td>{{ $holiday->beds }}</td>
-                                        <td>{{ $holiday->bath }}</td>
-                                        <td>{{ $holiday->price }}</td>
-                                        <td>{{ $holiday->p_type }}</td>
-                                        <td>{{ $holiday->area }}</td>
+                                @foreach ($rents as $rent)
+                                <tr>
+                                    <td>{{ $rent->id }}</td>
+                                    <td>{{ $rent->name }}</td>
+                                    <td>{{ $rent->address }}</td>
+                                    <td>{{ $rent->beds }}</td>
+                                    <td>{{ $rent->bath }}</td>
+                                    <td>{{ $rent->price }}</td>
+                                    <td>{{ $rent->p_type }}</td>
+                                    <td>{{ $rent->area }}</td>
 
-                                        <td>
-                                            @php
-                                                $images = json_decode($holiday->image);
-                                            @endphp
-                                            @foreach ($images as $image)
-                                                <img src="{{ asset('public/uploads/' . trim($image)) }}" alt="Image"
-                                                    style="width: 100% ">
-                                            @endforeach
-                                        </td>
-                                        <td>{{ $holiday->url }}</td>
+                                    <td>
+                                        @php
+                                            $images = json_decode($rent->image);
+                                        @endphp
+                                        @foreach ($images as $image)
+                                            <img src="{{ asset('public/uploads/' . trim($image)) }}" alt="Image"
+                                                style="width: 100% ">
+                                        @endforeach
+                                    </td>
+                                    <td>{{ $rent->url }}</td>
 
-                                        <td>
-                                            <form action="{{ route('holiday.destroy', $holiday->id) }}" method="Post">
-                                                <a class="btn btn-primary"
-                                                    href="{{ route('holiday.edit', $holiday->id) }}">Edit</a>
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
-
+                                    <td>
+                                        <form action="{{ route('rent.destroy', $rent->id) }}" method="Post">
+                                            <a class="btn btn-primary"
+                                                href="{{ route('rent.edit', $rent->id) }}">Edit</a>
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

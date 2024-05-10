@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Buy;
 use App\Models\Holiday;
+use App\Models\Rent;
 use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
@@ -26,17 +28,17 @@ class FrontendController extends Controller
 
     public function buy()
     {
-
-        return view('frontend.pages.buy');
+        $buys = Buy::orderBy('id','desc')->paginate(6);
+        return view('frontend.pages.buy',compact('buys'));
     }
     public function rent()
     {
-
-        return view('frontend.pages.rent');
+        $rents = Rent::orderBy('id','desc')->paginate(6);
+        return view('frontend.pages.rent',compact('rents'));
     }
     public function holiday()
     {
-        $holidays = Holiday::orderBy('id','desc')->paginate(6);
+        $holidays = Holiday::orderBy('id','desc')->paginate(8);
         return view('frontend.pages.holiday',compact('holidays'));
     }
     public function services()
