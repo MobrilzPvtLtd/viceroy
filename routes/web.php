@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\CityController;
 use App\Http\Controllers\Backend\HolidayController;
 use App\Http\Controllers\Backend\RentpropertyController;
 use App\Http\Controllers\Backend\BuypropertyController;
+use App\Http\Controllers\Backend\CurrencyController;
 
 /*
 *
@@ -28,6 +29,8 @@ require __DIR__.'/auth.php';
 *
 * --------------------------------------------------------------------
 */
+//Currency
+Route::resource('admin/currency', CurrencyController::class);
 //Rent porperty
 Route::resource('admin/rent', RentpropertyController::class);
 //buy property

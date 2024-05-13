@@ -119,7 +119,7 @@
                                             <div class="">
                                                 <label>Price</label>
                                                 <div class="adv_search_icon2">
-                                                    <select class="select_2 as_select buy_price" name="state">
+                                                    <select class="select_2 as_select rent_price" name="state">
                                                         <option value="">Select Price</option>
                                                     </select>
                                                 </div>
@@ -159,7 +159,7 @@
                                                 <select class="select_2" name="state">
                                                     <option value="">Select Property</option>
                                                     <option value="">Rent</option>
-                                                    <option value="">Buy</option>
+                                                    <option value="">rent</option>
                                                     <option value="">Sell</option>
                                                 </select>
                                             </div>
@@ -285,7 +285,7 @@
                                                 <select class="select_2" name="state">
                                                     <option value="">Select Property</option>
                                                     <option value="">Rent</option>
-                                                    <option value="">Buy</option>
+                                                    <option value="">rent</option>
                                                     <option value="">Sell</option>
                                                 </select>
                                             </div>
@@ -313,7 +313,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt_95 xs_mt_75">
+             <div class="row mt_95 xs_mt_75">
                 <div class="col-md-9">
                     <div class="row">
                         @foreach ($rents as $rent)
@@ -321,19 +321,73 @@
                                 <div class="single_property">
                                     <div class="single_property_img">
                                         @php
-                                        $images = json_decode($rent->image);
-                                    @endphp
+                                            $images = json_decode($rent->image);
+                                        @endphp
 
-                                    @foreach ($images as $image)
-                                        <img src="{{ asset('public/uploads/' . trim($image)) }}" alt="Image"
-                                            class="img-fluid w-100">
-                                    @endforeach
-                                    <a class="feature_link" href="#">for sale</a>
+                                        @foreach ($images as $image)
+                                            <img src="{{ asset('public/uploads/' . trim($image)) }}" alt="Image"
+                                                class="img-fluid w-100">
+                                        @endforeach
+                                        <a class="feature_link" href="#">for sale</a>
+                                        {{-- <div id="testimonial-slider1" class="owl-carousel">
+                                            <div class="testimonial">
+                                                <div class="pic">
+                                                    @php
+                                                        $images = json_decode($rent->image);
+                                                    @endphp
+
+                                                    @foreach ($images as $image)
+                                                        <img src="{{ asset('public/uploads/' . trim($image)) }}"
+                                                            alt="Image" class="img-fluid w-100">
+                                                    @endforeach
+                                                    <a class="feature_link" href="#">for sale</a>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial">
+                                                <div class="pic">
+                                                    @php
+                                                        $images = json_decode($rent->image);
+                                                    @endphp
+
+                                                    @foreach ($images as $image)
+                                                        <img src="{{ asset('public/uploads/' . trim($image)) }}"
+                                                            alt="Image" class="img-fluid w-100">
+                                                    @endforeach
+                                                    <a class="feature_link" href="#">for sale</a>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial">
+                                                <div class="pic">
+                                                    @php
+                                                        $images = json_decode($rent->image);
+                                                    @endphp
+
+                                                    @foreach ($images as $image)
+                                                        <img src="{{ asset('public/uploads/' . trim($image)) }}"
+                                                            alt="Image" class="img-fluid w-100">
+                                                    @endforeach
+                                                    <a class="feature_link" href="#">for sale</a>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial">
+                                                <div class="pic">
+                                                    @php
+                                                        $images = json_decode($rent->image);
+                                                    @endphp
+
+                                                    @foreach ($images as $image)
+                                                        <img src="{{ asset('public/uploads/' . trim($image)) }}"
+                                                            alt="Image" class="img-fluid w-100">
+                                                    @endforeach
+                                                    <a class="feature_link" href="#">for sale</a>
+                                                </div>
+                                            </div>
+                                        </div> --}}
                                     </div>
 
                                     <div class="single_property_text">
                                         <div class="single_property_top">
-                                            <a class="item_title" href="property_details.html">{{ $rent->name }}</a>
+                                            <a class="item_title" href=" ">{{ $rent->name }}</a>
                                             <p>
                                                 <i class="fas fa-map-marker-alt"></i>{{ $rent->address }}
                                             </p>
@@ -341,24 +395,23 @@
                                                 <li>
                                                     <span><img src="assets/images/bad.png" alt="img"
                                                             class="img-fluid w-100" /></span>
-                                                            {{ $rent->beds }} Beds
+                                                    {{ $rent->beds }} Beds
                                                 </li>
                                                 <li>
                                                     <span><img src="assets/images/bathtab.png" alt="img"
                                                             class="img-fluid w-100" /></span>
-                                                            {{ $rent->bath }} Baths
+                                                    {{ $rent->bath }} Baths
                                                 </li>
                                                 <li>
                                                     <span><img src="assets/images/squre.png" alt="img"
                                                             class="img-fluid w-100" /></span>
-                                                            {{ $rent->area }} Sq Ft
+                                                    {{ $rent->area }} Sq Ft
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="single_property_bottom d-flex flex-wrap justify-content-between">
                                             <a class="read_btn" href="{{ $rent->url }}">More Details<i
                                                     class="fas fa-arrow-right"></i></a>
-
                                         </div>
                                         <div class="single_property_bottom d-flex flex-wrap justify-content-between">
                                             <a class="read_btn"><i aria-hidden="true"></i>{{ $rent->p_type }}</a>
@@ -369,18 +422,20 @@
                             </div>
                         @endforeach
                     </div>
-                    <div style="text-align: center">
-                        {!! $rents->links() !!}
-                    </div>
-                </div>
 
+                </div>
                 <div class="col-md-3">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.0361376969!2d-74.30933885453035!3d40.69753995160874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1709299375137!5m2!1sen!2sin"
                         width="100%" height="1050" style="border: 0" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
+                <div style="text-align: center">
+                    {!! $rents->links() !!}
+                </div>
+
             </div>
+
 
 
         </div>

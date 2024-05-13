@@ -7895,25 +7895,21 @@ a.relative.inline-flex.items-center.px-4.py-2.-ml-px.text-sm.font-medium.text-gr
 }
 span.relative.inline-flex.items-center.px-2.py-2.text-sm.font-medium.text-gray-500.bg-white.border.border-gray-300.cursor-default.rounded-l-md.leading-5.dark\:bg-gray-800.dark\:border-gray-600 {
     padding-top: 8px !important;
-    padding-bottom: 14px !important;
+    padding-bottom: 13px !important;
     margin-right: 6px;
 }
-
-
-.ak-4 {
-    position: absolute;
-    top: -200px;
-    background-color: #000;
-    padding: 7px;
-    border-radius: 12px;
-    text-transform: capitalize;
+a.relative.inline-flex.items-center.px-2.py-2.-ml-px.text-sm.font-medium.text-gray-500.bg-white.border.border-gray-300.rounded-r-md.leading-5.hover\:text-gray-400.focus\:z-10.focus\:outline-none.focus\:ring.ring-gray-300.focus\:border-blue-300.active\:bg-gray-100.active\:text-gray-500.transition.ease-in-out.duration-150.dark\:bg-gray-800.dark\:border-gray-600.dark\:active\:bg-gray-700.dark\:focus\:border-blue-800 {
+    padding-bottom: 6px !important;
 }
+
+
 span.relative.inline-flex.items-center.px-4.py-2.-ml-px.text-sm.font-medium.text-gray-500.bg-white.border.border-gray-300.cursor-default.leading-5.dark\:bg-gray-800.dark\:border-gray-600 {
     padding-bottom: 13px !important;
     padding-top: 11px !important;
     background-color: #e6b025 !important;
     color: #000;
 }
+
 /*=============================
     DASHBOARD END
 =============================*/

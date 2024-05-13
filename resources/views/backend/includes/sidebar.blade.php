@@ -44,6 +44,13 @@ $notifications_latest = optional($notifications)->take(5);
                 </a>
             </li>
         @endcan
+        @can('CURRENCY')
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/currency">
+                <i class="nav-icon fa-solid fa-store"></i>&nbsp;@lang('Currency')
+            </a>
+        </li>
+    @endcan
 
         @can('country')
             <li class="nav-group" aria-expanded="true">
