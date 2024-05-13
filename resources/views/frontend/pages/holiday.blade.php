@@ -399,10 +399,10 @@
                                 <a class="read_btn" href="{{ $holiday->url }}">More Details<i
                                         class="fas fa-arrow-right"></i></a>
                             </div>
-                            <div class="single_property_bottom d-flex flex-wrap justify-content-between">
+                            {{-- <div class="single_property_bottom d-flex flex-wrap justify-content-between">
                                 <a class="read_btn"><i aria-hidden="true"></i>{{ $holiday->p_type }}</a>
-                            </div>
-                            <span class="property_price">${{ $holiday->price }}</span>
+                            </div> --}}
+                            <span class="property_price">{{ $holiday->p_type }}</span>
                         </div>
                     </div>
                 </div>

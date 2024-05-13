@@ -62,7 +62,7 @@
 
                             </tbody>
                         </table>
-                        {!! $holidays->links() !!}
+                        {{-- {!! $holidays->links() !!} --}}
                     </div>
                 </div>
             </div>
