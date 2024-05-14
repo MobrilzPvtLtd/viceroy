@@ -17,7 +17,7 @@
                         @csrf
                         <div class="form-group mb-2">
                             <label for="exampleInputEmail1">Country Name</label>
-                            <input type="text" class="form-control" name="co_name" placeholder="">
+                            <input type="text" class="form-control"value="{{ old('co_name') }}" name="co_name" placeholder="">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

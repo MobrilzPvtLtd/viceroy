@@ -62,6 +62,7 @@
         <!-- Scripts -->
         @livewireScripts
         @stack('after-scripts')
+        @yield('script')
     </body>
 
 </html>

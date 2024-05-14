@@ -19,7 +19,7 @@
 
                             <div class="form-group mb-2">
                                 <label for="exampleInputEmail1">Country Name</label>
-                                <select class="form-control" name="co_name" required focus>
+                                <select class="form-control" name="co_name"  value="{{ old('co_name') }}"required focus>
                                     <option value="" disabled selected> select Country</option>
                                     @foreach ($country as $country)
                                         {{-- <input type="text" class="form-control" name="co_name" placeholder=""> --}}
@@ -29,7 +29,7 @@
                             </div>
                             <div class="form-group mb-2">
                                 <label for="">State Name</label>
-                                <input type="text" class="form-control" name="st_name" placeholder="">
+                                <input type="text" class="form-control" name="st_name" value="{{ old('st_name') }}" placeholder="">
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>

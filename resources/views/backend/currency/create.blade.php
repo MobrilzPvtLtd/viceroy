@@ -18,22 +18,22 @@
                             <div class="row">
                                 <div class="form-group mb-2 col-4">
                                     <label for="exampleInputEmail1">Currency Code</label>
-                                    <input type="text" class="form-control"  name="code" placeholder="">
+                                    <input type="text" class="form-control" value="{{ old('code') }}" name="code" placeholder="">
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
                                     <label for="ct_name">Prefix </label>
-                                    <input type="text" class="form-control"  name="prefix" placeholder="">
+                                    <input type="text" class="form-control" value="{{ old('prefix') }}"  name="prefix" placeholder="">
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Suffix </label>
-                                    <input type="text" class="form-control"  name="suffix" placeholder="">
+                                    <input type="text" class="form-control" value="{{ old('suffix') }}" name="suffix" placeholder="">
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Base Conv. Rate</label>
-                                    <input type="text" class="form-control"  name="bcr" placeholder="">
+                                    <input type="text" class="form-control" value="{{ old('bcr') }}"  name="bcr" placeholder="">
                                 </div>
 
 

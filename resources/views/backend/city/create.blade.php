@@ -1,7 +1,4 @@
 @extends ('backend.layouts.app')
-
-
-
 @section('content')
     <div class="card">
         <div class="card-body">
@@ -18,7 +15,7 @@
                             <div class="row">
                                 <div class="form-group mb-2 col-4">
                                     <label for="exampleInputEmail1">Country Name</label>
-                                    <select class="form-control" id="co_name" name="co_name" required focus>
+                                    <select class="form-control" id="co_name" name="co_name" value="{{ old('co_name') }}"required focus>
                                         <option value="" disabled selected> select Country</option>
                                         @foreach ($country as $country)
                                             <option value="{{ $country->id }}">{{ $country->co_name }}</option>
@@ -27,7 +24,7 @@
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="st_name">State</label>
-                                    <select class="form-control" id="state" name="st_name" required>
+                                    <select class="form-control" id="state" name="st_name" value="{{ old('st_name') }}" required>
                                         <option value="" disabled selected> select State</option>
                                         {{-- @foreach ($state as $state)
                                         @endforeach --}}
@@ -37,7 +34,7 @@
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">City</label>
-                                    <input type="text" class="form-control" id="city" name="ct_name" placeholder="">
+                                    <input type="text" class="form-control" id="city" name="ct_name"  value="{{ old('ct_name') }}" placeholder="">
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>

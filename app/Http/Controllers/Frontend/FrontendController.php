@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\Buy;
 use App\Models\Holiday;
 use App\Models\Rent;
@@ -47,6 +48,14 @@ class FrontendController extends Controller
         $citys = City::all();
         $currencys = Currency::all();
         return view('frontend.pages.rent',compact('rents','countrys','citys','currencys'));
+    }
+    public function fetchCity(Request $request){
+        $options = "";
+        $city = City::where('co_name', $request->country)->get();
+        foreach($city as $cit){
+            $options .="<option value=".$cit->id.">".$cit->ct_name."</option>";
+        }
+        return response()->json($options);
     }
     public function holiday()
     {

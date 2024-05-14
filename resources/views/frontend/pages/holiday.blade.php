@@ -373,7 +373,7 @@
 
                         <div class="single_property_text">
                             <div class="single_property_top">
-                                <a class="item_title" href=" ">{{ $holiday->name }}</a>
+                                <a class="item_title" href="{{ $holiday->url }}">{{ $holiday->name }}</a>
                                 <p>
                                     <i class="fas fa-map-marker-alt"></i>{{ $holiday->address }}
                                 </p>

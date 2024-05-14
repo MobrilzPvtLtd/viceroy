@@ -18,31 +18,31 @@
                             <div class="row">
                                 <div class="form-group mb-2 col-4">
                                     <label for="exampleInputEmail1">Property Name</label>
-                                    <input type="text" class="form-control" id="city" name="name" placeholder="">
+                                    <input type="text" class="form-control" id="city" name="name" value="{{ old('name') }}" placeholder="">
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
                                     <label for="ct_name">Address  </label>
-                                    <textarea class="form-control" id="ct_name" name="address" placeholder=""></textarea>
+                                    <textarea class="form-control" id="ct_name" name="address" value="{{ old('address') }}" placeholder=""></textarea>
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Beds</label>
-                                    <input type="text" class="form-control" id="city" name="beds" placeholder="">
+                                    <input type="text" class="form-control" id="city" name="beds" value="{{ old('beds') }}" placeholder="">
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Bath</label>
-                                    <input type="text" class="form-control" id="city" name="bath" placeholder="">
+                                    <input type="text" class="form-control" id="city" name="bath" value="{{ old('bath') }}" placeholder="">
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">price</label>
-                                    <input type="text" class="form-control" id="city" name="price" placeholder="">
+                                    <input type="text" class="form-control" id="city" name="price" value="{{ old('price') }}" placeholder="">
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
                                     <label for="p_type">Type of Property</label>
-                                    <select class="form-control" id="p_type" name="p_type">
+                                    <select class="form-control" id="p_type" name="p_type" value="{{ old('p_type') }}">
                                         <option value="">select property </option>
                                         <option value="premium">Premium</option>
                                         <option value="budget">Budget</option>
@@ -52,15 +52,15 @@
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Area</label>
-                                    <input type="text" class="form-control" id="city" name="area" placeholder="">
+                                    <input type="text" class="form-control" id="city" name="area" value="{{ old('area') }}" placeholder="">
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Property Images</label>
-                                    <input type="file" class="form-control" name="image[]" multiple>
+                                    <input type="file" class="form-control" name="image[]"  value="{{ old('image[]') }}"multiple>
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Url</label>
-                                    <input type="text" class="form-control"  name="url" placeholder="">
+                                    <input type="text" class="form-control"  name="url" value="{{ old('url') }}"placeholder="">
                                 </div>
 
                             </div>

@@ -29,10 +29,10 @@
                                         </button>
                                     </li>
                                     <!--<li class="nav-item" role="presentation">
-                                                  <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                      data-bs-target="#pills-profile" type="button" role="tab"
-                                                      aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                              </li>-->
+                                                      <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                          data-bs-target="#pills-profile" type="button" role="tab"
+                                                          aria-controls="pills-profile" aria-selected="false">Sell</button>
+                                                  </li>-->
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
                                             data-bs-target="#pills-contact" type="button" role="tab"
@@ -49,7 +49,7 @@
                                         <div class="" id="home_form">
                                             <div class="">
                                                 <label>Country</label>
-                                                <select class="select_2" name="co_name">
+                                                <select class="" name="co_name" id="co_name" required focus>
                                                     <option value="" disabled selected> select Country</option>
                                                     @foreach ($countrys as $country)
                                                         <option value="{{ $country->id }}">{{ $country->co_name }}</option>
@@ -59,7 +59,7 @@
 
                                             <div class="">
                                                 <label>City</label>
-                                                <select class="select_2" name="ct_name">
+                                                <select class="" name="ct_name" id="city" required>
                                                     <option value="" disabled selected> select City</option>
                                                     @foreach ($citys as $city)
                                                         <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
@@ -77,8 +77,8 @@
 
                                                 <div class="adv_search_area">
                                                     <!-- <div class="adv_search_close adv_search_close_1">
-                                                                      <i class="fal fa-times"></i>
-                                                                    </div> -->
+                                                                          <i class="fal fa-times"></i>
+                                                                        </div> -->
 
                                                     <div id="min_max">
                                                         <select class="select_2" name="state">
@@ -112,8 +112,8 @@
 
                                                 <div class="adv_search_area2">
                                                     <!-- <div class="adv_search_close2">
-                                                                      <i class="fal fa-times"></i>
-                                                                    </div> -->
+                                                                          <i class="fal fa-times"></i>
+                                                                        </div> -->
 
                                                     <div class="" id="min_max2">
                                                         <div class="">
@@ -175,20 +175,22 @@
                                         <div class="" id="home_form">
                                             <div class="">
                                                 <label>Country</label>
-                                                <select class="select_2" name="state">
-                                                    <option value="">Select Country</option>
-                                                    <option value="">India</option>
-                                                    <option value="">United Arab Emirates Dubai</option>
-                                                    <option value="">United Kingdom London</option>
+                                                <select class="" name="co_name" id="co_name" required focus>
+                                                    <option value="" disabled selected> select Country</option>
+                                                    @foreach ($countrys as $country)
+                                                        <option value="{{ $country->id }}">{{ $country->co_name }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
                                                 </select>
                                             </div>
                                             <div class="">
                                                 <label>City</label>
-                                                <select class="select_2" name="state">
-                                                    <option value="">Select City</option>
-                                                    <option value="">India</option>
-                                                    <option value="">United Arab Emirates Dubai</option>
-                                                    <option value="">United Kingdom London</option>
+                                                <select class="" name="ct_name" id="city" required>
+                                                    <option value="" disabled selected> select City</option>
+                                                    @foreach ($citys as $city)
+                                                        <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
 
@@ -201,8 +203,8 @@
                                                 </div>
                                                 <div class="adv_search_area3">
                                                     <!-- <div class="adv_search_close3">
-                                      <i class="fal fa-times"></i>
-                                    </div> -->
+                                          <i class="fal fa-times"></i>
+                                        </div> -->
 
                                                     <div class="row mt_15">
                                                         <div class="col-lg-6 col-sm-6">
@@ -238,8 +240,8 @@
                                                 </div>
                                                 <div class="adv_search_area4">
                                                     <!-- <div class="adv_search_area4">
-                                      <i class="fal fa-times"></i>
-                                    </div> -->
+                                          <i class="fal fa-times"></i>
+                                        </div> -->
 
                                                     <div class="row mt_15">
                                                         <div class="col-lg-6 col-sm-6">
@@ -278,11 +280,11 @@
 
                                             <div class="">
                                                 <label>Currency</label>
-                                                <select class="select_2" name="state">
-                                                    <option value="">Select</option>
-                                                    <option value="">India</option>
-                                                    <option value="">United Arab Emirates Dubai</option>
-                                                    <option value="">United Kingdom London</option>
+                                                <select class="select1-selection__rendered" name="code">
+                                                    <option value="" disabled selected> select Currency</option>
+                                                    @foreach ($currencys as $currency)
+                                                        <option value="{{ $currency->id }}">{{ $currency->code }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="">
@@ -302,12 +304,12 @@
         </div>
     </section>
     <!--=============================
-                BANNER END
-            ==============================-->
+                    BANNER END
+                ==============================-->
 
     <!--=============================
-                ABOUT START
-            ==============================-->
+                    ABOUT START
+                ==============================-->
     <section class="about_area pt_120 xs_pt_100">
         <div class="container">
             <div class="row justify-content-between">
@@ -384,12 +386,12 @@
         </div>
     </section>
     <!--=============================
-                ABOUT END
-            ==============================-->
+                    ABOUT END
+                ==============================-->
 
     <!--=============================
-                DESTINATION START
-            ==============================-->
+                    DESTINATION START
+                ==============================-->
     <section class="destination_area pt_115 xs_pt_110 pb_60 xs_pb_90">
         <div class="container">
             <div class="row justify-content-center">
@@ -524,12 +526,12 @@
         </div>
     </section>
     <!--=============================
-                DESTINATION END
-            ==============================-->
+                    DESTINATION END
+                ==============================-->
 
     <!--=============================
-                PROPERTY START
-            ==============================-->
+                    PROPERTY START
+                ==============================-->
     <section class="property_area pt_60 xs_pt_95 pb_50 xs_pb_95">
         <div class="container">
             <div class="row justify-content-center text-align-center">
@@ -856,12 +858,12 @@
         </div>
     </section>
     <!--=============================
-                PROPERTY END
-            ==============================-->
+                    PROPERTY END
+                ==============================-->
 
     <!--=============================
-                AGENT START
-            ==============================-->
+                    AGENT START
+                ==============================-->
     <section class="agent_area pt_60 xs_pt_95 pb_70 xs_pb_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -1020,12 +1022,12 @@
         </div>
     </section>
     <!--=============================
-                AGENT END
-            ==============================-->
+                    AGENT END
+                ==============================-->
 
     <!--=============================
-                FIND STATE START
-            ==============================-->
+                    FIND STATE START
+                ==============================-->
     <section class="find_state" style="background: url(assets/images/find_state.jpg)">
         <div id="vbg12" data-vbg-loop="true" data-vbg="https://youtu.be/ec_fXMrD7Ow?si=m9LJu9X3lzTP5Erz"></div>
         <div class="container">
@@ -1040,24 +1042,24 @@
         </div>
     </section>
     <!--=============================
-                FIND STATE END
-            ==============================-->
+                    FIND STATE END
+                ==============================-->
 
     <!--=============================
-                BLOG START
-            ==============================-->
+                    BLOG START
+                ==============================-->
 
     <!--=============================
-                BLOG END
-            ==============================-->
+                    BLOG END
+                ==============================-->
 
     <!--=============================
-                DISCOVER START
-            ==============================-->
+                    DISCOVER START
+                ==============================-->
 
     <!--=============================
-                PARTNER START
-            ==============================-->
+                    PARTNER START
+                ==============================-->
     <section class="partner_area pt_30 pb_30">
         <div class="container">
             <div class="row justify-content-center">
@@ -1122,4 +1124,50 @@
             </div>
         </div>
     </section>
+@endsection
+@section('script')
+    <script>
+        $(document).ready(function() {
+            $('#co_name').change(function() {
+                var country = $(this).val();
+
+                $.ajax({
+                    type: 'GET',
+                    url: '{{ route('fetch-city') }}',
+                    data: {
+                        country: country
+                    },
+                    success: function(result) {
+                        console.log(result);
+                        $("#city").html(result);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+     <script>
+        $(document).ready(function() {
+            $('#co_name').change(function() {
+                var country = $(this).val();
+
+                $.ajax({
+                    type: 'GET',
+                    url: '{{ route('fetch-city') }}',
+                    data: {
+                        country: country
+                    },
+                    success: function(result) {
+                        console.log(result);
+                        $("#city").html(result);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
