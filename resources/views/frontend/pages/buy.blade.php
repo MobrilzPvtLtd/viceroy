@@ -62,20 +62,21 @@
                                     <div class="" id="home_form">
                                         <div class="">
                                             <label>Country</label>
-                                            <select class="select_2" name="state">
-                                                <option value="">Select Country</option>
-                                                <option value="">India</option>
-                                                <option value="">United Arab Emirates Dubai</option>
-                                                <option value="">United Kingdom London</option>
+                                            <select class="select_2" name="co_name">
+                                                <option value="" disabled selected> select Country</option>
+                                                @foreach ($countrys as $country)
+                                                    <option value="{{ $country->id }}">{{ $country->co_name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
+
                                         <div class="">
                                             <label>City</label>
-                                            <select class="select_2" name="state">
-                                                <option value="">Select City</option>
-                                                <option value="">India</option>
-                                                <option value="">United Arab Emirates Dubai</option>
-                                                <option value="">United Kingdom London</option>
+                                            <select class="select_2" name="ct_name">
+                                                <option value="" disabled selected> select City</option>
+                                                @foreach ($citys as $city)
+                                                    <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
 
@@ -89,11 +90,10 @@
 
                                             <div class="adv_search_area">
                                                 <!-- <div class="adv_search_close adv_search_close_1">
-                                                                  <i class="fal fa-times"></i>
-                                                                </div> -->
+                                                              <i class="fal fa-times"></i>
+                                                            </div> -->
 
                                                 <div id="min_max">
-
                                                     <select class="select_2" name="state">
                                                         <option value="">Min</option>
                                                         <option value="">01</option>
@@ -103,7 +103,6 @@
                                                         <option value="">05</option>
                                                     </select>
 
-
                                                     <select class="select_2" name="state">
                                                         <option value="">Max</option>
                                                         <option value="">01</option>
@@ -112,7 +111,6 @@
                                                         <option value="">04</option>
                                                         <option value="">05</option>
                                                     </select>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -120,15 +118,15 @@
                                         <div class="">
                                             <label>Price</label>
                                             <div class="adv_search_icon2">
-                                                <select class="select_2 as_select buy_price" name="state">
+                                                <select class="select_2 as_select rent_price" name="state">
                                                     <option value="">Select Price</option>
                                                 </select>
                                             </div>
 
                                             <div class="adv_search_area2">
                                                 <!-- <div class="adv_search_close2">
-                                                                  <i class="fal fa-times"></i>
-                                                                </div> -->
+                                                              <i class="fal fa-times"></i>
+                                                            </div> -->
 
                                                 <div class="" id="min_max2">
                                                     <div class="">
@@ -160,18 +158,18 @@
                                             <select class="select_2" name="state">
                                                 <option value="">Select Property</option>
                                                 <option value="">Rent</option>
-                                                <option value="">Buy</option>
+                                                <option value="">rent</option>
                                                 <option value="">Sell</option>
                                             </select>
                                         </div>
 
                                         <div class="">
                                             <label>Currency</label>
-                                            <select class="select_2" name="state">
-                                                <option value="">Select</option>
-                                                <option value="">India</option>
-                                                <option value="">United Arab Emirates Dubai</option>
-                                                <option value="">United Kingdom London</option>
+                                            <select class="select1-selection__rendered" name="code">
+                                                <option value="" disabled selected> select Currency</option>
+                                                @foreach ($currencys as $currency)
+                                                    <option value="{{ $currency->id }}">{{ $currency->code }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="">

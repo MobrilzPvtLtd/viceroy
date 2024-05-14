@@ -56,16 +56,14 @@
 
                         <div class="sticky" id="container">
                             <div class="tab-content" id="pills-tabContent">
-
-
                                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                                     aria-labelledby="pills-home-tab" tabindex="0">
                                     <form action="#">
                                         <div class="" id="home_form">
                                             <div class="">
                                                 <label>Country</label>
-                                                <option value="" disabled selected> select Country</option>
                                                 <select class="select_2" name="co_name">
+                                                    <option value="" disabled selected> select Country</option>
                                                     @foreach ($countrys as $country)
                                                         <option value="{{ $country->id }}">{{ $country->co_name }}</option>
                                                     @endforeach

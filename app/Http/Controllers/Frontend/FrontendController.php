@@ -20,7 +20,10 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        return view('frontend.index');
+        $countrys = Country::all();
+        $citys = City::all();
+        $currencys = Currency::all();
+        return view('frontend.index',compact('countrys','citys','currencys'));
 
     }
     public function about()
@@ -32,7 +35,10 @@ class FrontendController extends Controller
     public function buy()
     {
         $buys = Buy::orderBy('id','desc')->paginate(6);
-        return view('frontend.pages.buy',compact('buys'));
+        $countrys = Country::all();
+        $citys = City::all();
+        $currencys = Currency::all();
+        return view('frontend.pages.buy',compact('buys','countrys','citys','currencys'));
     }
     public function rent()
     {
