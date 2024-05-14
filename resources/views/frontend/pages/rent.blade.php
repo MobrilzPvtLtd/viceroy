@@ -25,12 +25,12 @@
         </div>
     </section>
     <!--=============================
-                BREADCRUMBS END
-            ==============================-->
+                            BREADCRUMBS END
+                        ==============================-->
 
     <!--=============================
-                PROPERTY GRID VIEW START
-            ==============================-->
+                            PROPERTY GRID VIEW START
+                        ==============================-->
     <section class="property_grid_view pb_120 xs_pb_100">
         <div class="container container-fluid">
             <div class="row justify-content-center wow fadeInUp" data-wow-duration="1.5s">
@@ -38,20 +38,20 @@
                     <div class="sticky" id="container">
                         <ul class="nav nav-pills" id="pills-tab" role="tablist">
                             <!-- <li class="nav-item" role="presentation">
-                                            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
-                                                data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-                                                aria-selected="true">Rent</button>
-                                        </li> -->
+                                                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                                                            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                                                            aria-selected="true">Rent</button>
+                                                    </li> -->
                             <!--<li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                data-bs-target="#pills-profile" type="button" role="tab"
-                                                aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                        </li>-->
+                                                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                            data-bs-target="#pills-profile" type="button" role="tab"
+                                                            aria-controls="pills-profile" aria-selected="false">Sell</button>
+                                                    </li>-->
                             <!-- <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                                data-bs-target="#pills-contact" type="button" role="tab"
-                                                aria-controls="pills-contact" aria-selected="false">Rent</button>
-                                        </li>-->
+                                                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                                            data-bs-target="#pills-contact" type="button" role="tab"
+                                                            aria-controls="pills-contact" aria-selected="false">Rent</button>
+                                                    </li>-->
                         </ul>
 
                         <div class="sticky" id="container">
@@ -64,20 +64,21 @@
                                         <div class="" id="home_form">
                                             <div class="">
                                                 <label>Country</label>
-                                                <select class="select_2" name="state">
-                                                    <option value="">Select Country</option>
-                                                    <option value="">India</option>
-                                                    <option value="">United Arab Emirates Dubai</option>
-                                                    <option value="">United Kingdom London</option>
+                                                <option value="" disabled selected> select Country</option>
+                                                <select class="select_2" name="co_name">
+                                                    @foreach ($countrys as $country)
+                                                        <option value="{{ $country->id }}">{{ $country->co_name }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
+
                                             <div class="">
                                                 <label>City</label>
-                                                <select class="select_2" name="state">
-                                                    <option value="">Select City</option>
-                                                    <option value="">India</option>
-                                                    <option value="">United Arab Emirates Dubai</option>
-                                                    <option value="">United Kingdom London</option>
+                                                <select class="select_2" name="ct_name">
+                                                    <option value="" disabled selected> select City</option>
+                                                    @foreach ($citys as $city)
+                                                        <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
 
@@ -91,8 +92,8 @@
 
                                                 <div class="adv_search_area">
                                                     <!-- <div class="adv_search_close adv_search_close_1">
-                                                      <i class="fal fa-times"></i>
-                                                    </div> -->
+                                                                  <i class="fal fa-times"></i>
+                                                                </div> -->
 
                                                     <div id="min_max">
                                                         <select class="select_2" name="state">
@@ -126,8 +127,8 @@
 
                                                 <div class="adv_search_area2">
                                                     <!-- <div class="adv_search_close2">
-                                                      <i class="fal fa-times"></i>
-                                                    </div> -->
+                                                                  <i class="fal fa-times"></i>
+                                                                </div> -->
 
                                                     <div class="" id="min_max2">
                                                         <div class="">
@@ -166,11 +167,11 @@
 
                                             <div class="">
                                                 <label>Currency</label>
-                                                <select class="select_2" name="state">
-                                                    <option value="">Select</option>
-                                                    <option value="">India</option>
-                                                    <option value="">United Arab Emirates Dubai</option>
-                                                    <option value="">United Kingdom London</option>
+                                                <select class="select1-selection__rendered" name="code">
+                                                    <option value="" disabled selected> select Currency</option>
+                                                    @foreach ($currencys as $currency)
+                                                        <option value="{{ $currency->id }}">{{ $currency->code }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="">
@@ -188,13 +189,15 @@
                                     <form action="#">
                                         <div class="" id="home_form">
                                             <div class="">
+
                                                 <label>Country</label>
                                                 <select class="select_2" name="state">
-                                                    <option value="">Select Country</option>
+                                                    {{-- <option value="">Select Country</option>
                                                     <option value="">India</option>
                                                     <option value="">United Arab Emirates Dubai</option>
-                                                    <option value="">United Kingdom London</option>
+                                                    <option value="">United Kingdom London</option> --}}
                                                 </select>
+
                                             </div>
                                             <div class="">
                                                 <label>City</label>
@@ -215,8 +218,8 @@
                                                 </div>
                                                 <div class="adv_search_area3">
                                                     <!-- <div class="adv_search_close3">
-                                                      <i class="fal fa-times"></i>
-                                                    </div> -->
+                                                                  <i class="fal fa-times"></i>
+                                                                </div> -->
 
                                                     <div class="row mt_15">
                                                         <div class="col-lg-6 col-sm-6">
@@ -252,8 +255,8 @@
                                                 </div>
                                                 <div class="adv_search_area4">
                                                     <!-- <div class="adv_search_area4">
-                                                      <i class="fal fa-times"></i>
-                                                    </div> -->
+                                                                  <i class="fal fa-times"></i>
+                                                                </div> -->
 
                                                     <div class="row mt_15">
                                                         <div class="col-lg-6 col-sm-6">
@@ -290,15 +293,15 @@
                                                 </select>
                                             </div>
 
-                                            <div class="">
+                                            {{-- <div class="">
                                                 <label>Currency</label>
                                                 <select class="select_2" name="state">
-                                                    <option value="">Select</option>
-                                                    <option value="">India</option>
-                                                    <option value="">United Arab Emirates Dubai</option>
-                                                    <option value="">United Kingdom London</option>
+                                                    <option value="" disabled selected> select Currency</option>
+                                                    @foreach ($currencys as $currency)
+                                                        <option value="{{ $currency->id }}">{{ $currency->code }}</option>
+                                                    @endforeach
                                                 </select>
-                                            </div>
+                                            </div> --}}
                                             <div class="">
                                                 <button class="common_btn banner_input_btn" type="submit"
                                                     style="width: 100%; margin-top: 30px">
@@ -309,11 +312,12 @@
                                     </form>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-             <div class="row mt_95 xs_mt_75">
+            <div class="row mt_95 xs_mt_75">
                 <div class="col-md-9">
                     <div class="row">
                         @foreach ($rents as $rent)

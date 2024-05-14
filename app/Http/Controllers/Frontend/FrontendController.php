@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Buy;
 use App\Models\Holiday;
 use App\Models\Rent;
+use App\Models\Country;
+use App\Models\Currency;
+use App\Models\City;
 use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
@@ -34,7 +37,10 @@ class FrontendController extends Controller
     public function rent()
     {
         $rents = Rent::orderBy('id','desc')->paginate(6);
-        return view('frontend.pages.rent',compact('rents'));
+        $countrys = Country::all();
+        $citys = City::all();
+        $currencys = Currency::all();
+        return view('frontend.pages.rent',compact('rents','countrys','citys','currencys'));
     }
     public function holiday()
     {
