@@ -65,8 +65,8 @@
 
             @auth
             <li>
-                <a class="user_icon" href="{{ route('login') }}">                
-                  
+                <a class="user_icon" href="{{ route('login') }}">
+
                 </a>
 
 
@@ -100,7 +100,7 @@
               <a class="user_icon" href="">
                 <span>
                   <img
-                    src="assets/images/h2.png"
+                    src="assets/images/h1.png"
                     alt="user"
                     class="img-fluid w-100"
                   />
