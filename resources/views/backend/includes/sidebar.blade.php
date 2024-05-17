@@ -37,13 +37,13 @@ $notifications_latest = optional($notifications)->take(5);
                 </a>
             </li>
         @endcan
-        @can('view_categories')
+        {{-- @can('view_categories')
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('backend.categories.index') }}">
                     <i class="nav-icon fa-solid fa-diagram-project"></i>&nbsp;@lang('Categories')
                 </a>
             </li>
-        @endcan
+        @endcan --}}
         @can('CURRENCY')
         <li class="nav-item">
             <a class="nav-link" href="/admin/currency">
@@ -76,20 +76,27 @@ $notifications_latest = optional($notifications)->take(5);
                 </ul>
             </li>
         @endcan
-        @can('by property')
+        @can('property')
             <li class="nav-item">
-                <a class="nav-link" href="/admin/buy">
-                    <i class="nav-icon fa-solid fa-store"></i>&nbsp;@lang('Buy Property')
+                <a class="nav-link" href="/admin/property">
+                    <i class="nav-icon fa-solid fa-store"></i>&nbsp;@lang('Property')
                 </a>
             </li>
         @endcan
-        @can('rent property')
+        @can('facilities')
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/facility">
+                <i class="nav-icon fa-solid fa-store"></i>&nbsp;@lang('facilities')
+            </a>
+        </li>
+    @endcan
+        {{-- @can('rent property')
             <li class="nav-item">
                 <a class="nav-link" href="/admin/rent">
                     <i class="nav-icon fa-solid fa-house"></i>&nbsp;@lang('Rent Property')
                 </a>
             </li>
-        @endcan
+        @endcan --}}
 
         @can('holiday')
             <li class="nav-item">

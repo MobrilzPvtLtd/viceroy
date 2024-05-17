@@ -373,7 +373,7 @@
 
                         <div class="single_property_text">
                             <div class="single_property_top">
-                                <a class="item_title" href="{{ $holiday->url }}">{{ $holiday->name }}</a>
+                                <a target="blank" class="item_title" href="{{ $holiday->url }}">{{ $holiday->name }}</a>
                                 <p>
                                     <i class="fas fa-map-marker-alt"></i>{{ $holiday->address }}
                                 </p>
@@ -396,7 +396,7 @@
                                 </ul>
                             </div>
                             <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                <a class="read_btn" href="{{ $holiday->url }}">More Details<i
+                                <a target="blank" class="read_btn" href="{{ $holiday->url }}">More Details<i
                                         class="fas fa-arrow-right"></i></a>
                             </div>
                             {{-- <div class="single_property_bottom d-flex flex-wrap justify-content-between">

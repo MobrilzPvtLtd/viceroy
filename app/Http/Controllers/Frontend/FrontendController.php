@@ -10,6 +10,7 @@ use App\Models\Rent;
 use App\Models\Country;
 use App\Models\Currency;
 use App\Models\City;
+use App\Models\Property;
 use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
@@ -35,19 +36,19 @@ class FrontendController extends Controller
 
     public function buy()
     {
-        $buys = Buy::orderBy('id','desc')->paginate(6);
+        $propertys = Property::orderBy('id','desc')->paginate(6);
         $countrys = Country::all();
         $citys = City::all();
         $currencys = Currency::all();
-        return view('frontend.pages.buy',compact('buys','countrys','citys','currencys'));
+        return view('frontend.pages.buy',compact('propertys','countrys','citys','currencys'));
     }
     public function rent()
     {
-        $rents = Rent::orderBy('id','desc')->paginate(6);
+        $propertys = Property::orderBy('id','desc')->paginate(6);
         $countrys = Country::all();
         $citys = City::all();
         $currencys = Currency::all();
-        return view('frontend.pages.rent',compact('rents','countrys','citys','currencys'));
+        return view('frontend.pages.rent', compact('propertys','countrys','citys','currencys'));
     }
     public function fetchCity(Request $request){
         $options = "";
@@ -61,6 +62,11 @@ class FrontendController extends Controller
     {
         $holidays = Holiday::orderBy('id','desc')->paginate(6);
         return view('frontend.pages.holiday',compact('holidays'));
+    }
+    public function propertydetails()
+    {
+
+        return view('frontend.pages.property_details');
     }
     public function services()
     {

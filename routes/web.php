@@ -9,9 +9,12 @@ use App\Http\Controllers\Backend\CountryController;
 use App\Http\Controllers\Backend\StateController;
 use App\Http\Controllers\Backend\CityController;
 use App\Http\Controllers\Backend\HolidayController;
-use App\Http\Controllers\Backend\RentpropertyController;
-use App\Http\Controllers\Backend\BuypropertyController;
+use App\Http\Controllers\Backend\PropertyController;
+use App\Http\Controllers\Backend\FacilitiesController;
 use App\Http\Controllers\Backend\CurrencyController;
+use App\Http\Controllers\Frontend\ContactController;
+
+
 
 /*
 *
@@ -29,12 +32,18 @@ require __DIR__.'/auth.php';
 *
 * --------------------------------------------------------------------
 */
+
+// emai sent
+Route::post('contact', [ContactController::class, 'submit'])->name('contact.submit');
+
 //Currency
 Route::resource('admin/currency', CurrencyController::class);
-//Rent porperty
-Route::resource('admin/rent', RentpropertyController::class);
-//buy property
-Route::resource('admin/buy',  BuypropertyController::class);
+
+// property
+Route::resource('admin/property',  PropertyController::class);
+// Facilities
+Route::resource('admin/facility',  FacilitiesController::class);
+
 //holiday
 Route::resource('admin/holiday', HolidayController::class);
 //Country
@@ -55,6 +64,7 @@ Route::get('services', [FrontendController::class, 'services'])->name('services'
 Route::get('contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('login', [FrontendController::class, 'login'])->name('login');
 Route::get('register', [FrontendController::class, 'register'])->name('register');
+Route::get('property_details', [FrontendController::class, 'propertydetails'])->name('property_details');
 
 // Language Switch
 Route::get('language/{language}', [LanguageController::class, 'switch'])->name('language.switch');

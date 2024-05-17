@@ -362,18 +362,18 @@
             <div class="row mt_95 xs_mt_75">
                 <div class="col-md-9">
                     <div class="row">
-                        @foreach ($buys as $buy)
+                        {{-- @foreach ($buys as $buy) --}}
                             <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
                                 <div class="single_property">
                                     <div class="single_property_img">
-                                        @php
+                                        {{-- @php
                                             $images = json_decode($buy->image);
                                         @endphp
 
                                         @foreach ($images as $image)
                                             <img src="{{ asset('public/uploads/' . trim($image)) }}" alt="Image"
                                                 class="img-fluid w-100">
-                                        @endforeach
+                                        @endforeach --}}
                                         <a class="feature_link" href="#">for sale</a>
                                         {{-- <div id="testimonial-slider1" class="owl-carousel">
                                             <div class="testimonial">
@@ -433,40 +433,40 @@
 
                                     <div class="single_property_text">
                                         <div class="single_property_top">
-                                            <a class="item_title" href=" ">{{ $buy->name }}</a>
+                                            {{-- <a class="item_title" href=" ">{{ $buy->name }}</a> --}}
                                             <p>
-                                                <i class="fas fa-map-marker-alt"></i>{{ $buy->address }}
+                                                {{-- <i class="fas fa-map-marker-alt"></i>{{ $buy->address }} --}}
                                             </p>
                                             <ul class="d-flex flex-wrap">
                                                 <li>
                                                     <span><img src="assets/images/bad.png" alt="img"
-                                                            class="img-fluid w-100" /></span>
-                                                    {{ $buy->beds }} Beds
+                                                            {{-- class="img-fluid w-100" /></span>
+                                                    {{ $buy->beds }} Beds --}}
                                                 </li>
                                                 <li>
                                                     <span><img src="assets/images/bathtab.png" alt="img"
-                                                            class="img-fluid w-100" /></span>
-                                                    {{ $buy->bath }} Baths
+                                                            {{-- class="img-fluid w-100" /></span>
+                                                    {{ $buy->bath }} Baths --}}
                                                 </li>
                                                 <li>
                                                     <span><img src="assets/images/squre.png" alt="img"
-                                                            class="img-fluid w-100" /></span>
-                                                    {{ $buy->area }} Sq Ft
+                                                            {{-- class="img-fluid w-100" /></span>
+                                                    {{ $buy->area }} Sq Ft --}}
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                            <a class="read_btn" href="{{ $buy->url }}">More Details<i
-                                                    class="fas fa-arrow-right"></i></a>
+                                            {{-- <a class="read_btn" href="{{ $buy->url }}">More Details<i
+                                                    class="fas fa-arrow-right"></i></a> --}}
                                         </div>
                                         <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                            <a class="read_btn"><i aria-hidden="true"></i>{{ $buy->p_type }}</a>
+                                            {{-- <a class="read_btn"><i aria-hidden="true"></i>{{ $buy->p_type }}</a> --}}
                                         </div>
-                                        <span class="property_price">${{ $buy->price }}</span>
+                                        {{-- <span class="property_price">${{ $buy->price }}</span> --}}
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                        {{-- @endforeach --}}
                     </div>
 
                 </div>
@@ -477,7 +477,7 @@
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div style="text-align: center">
-                    {!! $buys->links() !!}
+
                 </div>
 
             </div>
@@ -511,7 +511,7 @@
             </div>
         </div>
     </section>
-@endsection
+{{-- @endsection --}}
 @section('script')
 <script>
     $(document).ready(function() {
