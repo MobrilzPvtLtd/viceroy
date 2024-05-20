@@ -41,6 +41,7 @@ Route::resource('admin/currency', CurrencyController::class);
 
 // property
 Route::resource('admin/property',  PropertyController::class);
+Route::get('property_details/{id}', [PropertyController::class, 'show'])->name('property.show');
 // Facilities
 Route::resource('admin/facility',  FacilitiesController::class);
 

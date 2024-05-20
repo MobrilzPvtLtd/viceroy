@@ -65,9 +65,15 @@ class FrontendController extends Controller
     }
     public function propertydetails()
     {
+        $propertys = Property::orderBy('id','desc')->paginate(6);
 
-        return view('frontend.pages.property_details');
+        return view('frontend.pages.property_details' , compact('propertys'));
     }
+//     public function show($id)
+// {
+//     $property = Property::findOrFail($id);
+//     return view('frontend.pages.property_details', compact('property'));
+// }
     public function services()
     {
 

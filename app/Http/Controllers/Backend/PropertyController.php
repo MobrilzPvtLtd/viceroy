@@ -74,12 +74,14 @@ public function store(Request $request)
     // Create the property
     Property::create($propertyData);
 
-    return redirect()->route('property.index')->with('success', 'Rent has been created successfully.');
+    return redirect()->route('property.index')->with('success', 'property has been created successfully.');
 }
 
-    public function show()
-    {
-    }
+public function show($id)
+{
+    $propertys = Property::findOrFail($id);
+    return view('frontend.pages.property_details', compact('propertys'));
+}
 
     public function edit($id)
 {

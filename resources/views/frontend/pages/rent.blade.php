@@ -24,12 +24,12 @@
         </div>
     </section>
     <!--=============================
-                                            BREADCRUMBS END
-                                        ==============================-->
+                                                BREADCRUMBS END
+                                            ==============================-->
 
     <!--=============================
-                                            PROPERTY GRID VIEW START
-                                        ==============================-->
+                                                PROPERTY GRID VIEW START
+                                            ==============================-->
     <section class="property_grid_view pb_120 xs_pb_100">
         <div class="container-fluid">
             <div class="row justify-content-center wow fadeInUp" data-wow-duration="1.5s">
@@ -44,15 +44,15 @@
                                 </button>
                             </li>
                             <!--<li class="nav-item" role="presentation">
-                                                                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                                            data-bs-target="#pills-profile" type="button" role="tab"
-                                                                            aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                                                    </li>-->
+                                                                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                                                data-bs-target="#pills-profile" type="button" role="tab"
+                                                                                aria-controls="pills-profile" aria-selected="false">Sell</button>
+                                                                        </li>-->
                             <!--<li class="nav-item" role="presentation">
-                                                                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                                                            data-bs-target="#pills-contact" type="button" role="tab"
-                                                                            aria-controls="pills-contact" aria-selected="false">Rent</button>
-                                                                    </li>-->
+                                                                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                                                                data-bs-target="#pills-contact" type="button" role="tab"
+                                                                                aria-controls="pills-contact" aria-selected="false">Rent</button>
+                                                                        </li>-->
                         </ul>
 
                         <div class="tab-content" id="pills-tabContent">
@@ -72,7 +72,7 @@
 
                                         <div class="">
                                             <label>City</label>
-                                            <select class="" name="ct_name"  id="city" required>
+                                            <select class="" name="ct_name" id="city" required>
                                                 <option value="" disabled selected> select City</option>
                                                 @foreach ($citys as $city)
                                                     <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
@@ -90,8 +90,8 @@
 
                                             <div class="adv_search_area">
                                                 <!-- <div class="adv_search_close adv_search_close_1">
-                                                              <i class="fal fa-times"></i>
-                                                            </div> -->
+                                                                  <i class="fal fa-times"></i>
+                                                                </div> -->
 
                                                 <div id="min_max">
                                                     <select class="select_2" name="state">
@@ -125,8 +125,8 @@
 
                                             <div class="adv_search_area2">
                                                 <!-- <div class="adv_search_close2">
-                                                              <i class="fal fa-times"></i>
-                                                            </div> -->
+                                                                  <i class="fal fa-times"></i>
+                                                                </div> -->
 
                                                 <div class="" id="min_max2">
                                                     <div class="">
@@ -277,7 +277,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                            </div>-->
+                                                                                </div>-->
                                 </form>
                             </div>
                         </div>
@@ -357,24 +357,28 @@
                 </div>
             </section>
             <!--=============================
-                                            PROPERTY GRID VIEW END
-                                        ==============================-->
+                                                PROPERTY GRID VIEW END
+                                            ==============================-->
             <div class="row mt_95 xs_mt_75">
                 <div class="col-md-9">
                     <div class="row">
-                        {{-- @foreach ($rents as $rent) --}}
+                        @foreach ($propertys as $property)
                             <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
                                 <div class="single_property">
                                     <div class="single_property_img">
-                                        {{-- @php
-                                            $images = json_decode($rent->image);
+                                        @php
+                                            $images = unserialize($property->image);
                                         @endphp
-
-                                        @foreach ($images as $image)
-                                            <img src="{{ asset('public/uploads/' . trim($image)) }}" alt="Image"
-                                                class="img-fluid w-100">
-                                        @endforeach --}}
-                                        <a class="feature_link" href="#">for sale</a>
+                                        @if ($images !== false && is_array($images))
+                                            {{-- asset('public/uploads/' . $image) --}}
+                                            @foreach ($images as $image)
+                                                <img src="{{ asset('public/' . $image) }}" alt="Image"
+                                                    style="width: 100%">
+                                            @endforeach
+                                        @else
+                                            <p>No images available</p>
+                                        @endif
+                                        <a class="feature_link" href="#">{{ $property->property_status }}</a>
                                         {{-- <div id="testimonial-slider1" class="owl-carousel">
                                             <div class="testimonial">
                                                 <div class="pic">
@@ -433,26 +437,23 @@
 
                                     <div class="single_property_text">
                                         <div class="single_property_top">
-                                            {{-- <a class="item_title" href=" ">{{ $rent->name }}</a> --}}
+                                            <a class="item_title" href=" ">{{ $property->title }}</a>
                                             <p>
-                                                {{-- <i class="fas fa-map-marker-alt"></i>{{ $rent->address }} --}}
+                                                <i class="fas fa-map-marker-alt"></i>{{ $property->address }}
                                             </p>
                                             <ul class="d-flex flex-wrap">
                                                 <li>
                                                     <span><img src="assets/images/bad.png" alt="img"
-                                                            {{-- class="img-fluid w-100" /></span>
-                                                    {{ $rent->beds }} Beds --}}
-                                                </li>
+                                                            class="img-fluid w-100" /></span>
+                                                    {{ $property->bed }} Beds </li>
                                                 <li>
                                                     <span><img src="assets/images/bathtab.png" alt="img"
-                                                            {{-- class="img-fluid w-100" /></span>
-                                                    {{ $rent->bath }} Baths --}}
-                                                </li>
+                                                            class="img-fluid w-100" /></span>
+                                                      {{ $property->number_bathroom }} </li>
                                                 <li>
                                                     <span><img src="assets/images/squre.png" alt="img"
-                                                            {{-- class="img-fluid w-100" /></span>
-                                                    {{ $rent->area }} Sq Ft --}}
-                                                </li>
+                                                            class="img-fluid w-100" /></span>
+                                                            {{ $property->area }} Sq Ft </li>
                                             </ul>
                                         </div>
                                         <div class="single_property_bottom d-flex flex-wrap justify-content-between">
@@ -466,7 +467,7 @@
                                     </div>
                                 </div>
                             </div>
-                        {{-- @endforeach --}}
+                        @endforeach
                     </div>
 
                 </div>
@@ -508,31 +509,31 @@
                         </nav>
                     </div>
                 </div> --}}
-            </div>
+        </div>
         </div>
     </section>
 @endsection
 @section('script')
-<script>
-    $(document).ready(function() {
-        $('#co_name').change(function() {
-            var country = $(this).val();
+    <script>
+        $(document).ready(function() {
+            $('#co_name').change(function() {
+                var country = $(this).val();
 
-            $.ajax({
-                type: 'GET',
-                url: '{{ route('fetch-city') }}',
-                data: {
-                    country: country
-                },
-                success: function(result) {
-                    console.log(result);
-                    $("#city").html(result);
-                },
-                error: function(xhr, status, error) {
-                    console.error(xhr.responseText);
-                }
+                $.ajax({
+                    type: 'GET',
+                    url: '{{ route('fetch-city') }}',
+                    data: {
+                        country: country
+                    },
+                    success: function(result) {
+                        console.log(result);
+                        $("#city").html(result);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
             });
         });
-    });
-</script>
+    </script>
 @endsection
