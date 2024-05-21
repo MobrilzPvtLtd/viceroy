@@ -5,7 +5,7 @@
       <li>
         <a class="phone-top" href="tel:9876543210"
           ><img
-            src="assets/images/pp.png"
+            src="{{ asset('assets/images/pp.png') }}"
             style="width: 60px; float: left; padding: 4px"
         /></a>
       </li>
@@ -13,7 +13,7 @@
         <a
           href="https://api.whatsapp.com/send?phone=919876543210&amp;text=Please%20contact,%20I%20am%20looking%20for%20your%20services%20"
           ><img
-            src="assets/images/ww.png"
+            src="{{ asset('assets/images/ww.png') }}""
             style="width: 60px; float: left; padding: 4px"
           />
         </a>
@@ -33,7 +33,7 @@
                 <div class="footer_description">
                   <a class="footer_logo" href="index.html">
                     <img
-                      src="assets/images/logo_1.png"
+                      src="{{ asset('assets/images/logo_1.png') }}"
                       alt="logo"
                       class="img-fluid w-100"
                     />

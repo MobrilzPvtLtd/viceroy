@@ -6,7 +6,7 @@
       <div class="container container_large">
         <a class="navbar-brand" href="/">
           <img
-            src="assets/images/logo_1.png"
+            src="{{ asset('assets/images/logo_1.png')}}"
             alt="FaxEstate"
             class="img-fluid"
           />
@@ -53,7 +53,7 @@
               <a class="user_icon" href="{{ route('login') }}">
                 <span>
                   <img
-                    src="assets/images/user_icon_1.png"
+                    src="{{ asset('assets/images/user_icon_1.png')}}"
                     alt="user"
                     class="img-fluid w-100"
                   />
@@ -100,7 +100,7 @@
               <a class="user_icon" href="">
                 <span>
                   <img
-                    src="assets/images/h1.png"
+                    src="{{ asset('assets/images/h1.png') }}"
                     alt="user"
                     class="img-fluid w-100"
                   />

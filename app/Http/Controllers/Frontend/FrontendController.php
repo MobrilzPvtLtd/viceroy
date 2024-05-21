@@ -63,11 +63,10 @@ class FrontendController extends Controller
         $holidays = Holiday::orderBy('id','desc')->paginate(6);
         return view('frontend.pages.holiday',compact('holidays'));
     }
-    public function propertydetails()
+    public function propertydetails($id)
     {
-        $propertys = Property::orderBy('id','desc')->paginate(6);
-
-        return view('frontend.pages.property_details' , compact('propertys'));
+        $property = Property::where('id', $id)->first();
+        return view('frontend.pages.property_details', compact('property'));
     }
 //     public function show($id)
 // {

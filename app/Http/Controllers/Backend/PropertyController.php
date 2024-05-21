@@ -77,11 +77,11 @@ public function store(Request $request)
     return redirect()->route('property.index')->with('success', 'property has been created successfully.');
 }
 
-public function show($id)
-{
-    $propertys = Property::findOrFail($id);
-    return view('frontend.pages.property_details', compact('propertys'));
-}
+// public function show($id)
+// {
+//     $propertys = Property::findOrFail($id);
+//     return view('frontend.pages.property_details', compact('propertys'));
+// }
 
     public function edit($id)
 {

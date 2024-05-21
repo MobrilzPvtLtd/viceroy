@@ -19,38 +19,47 @@
         <link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
         <link type="image/ico" href="{{ asset('img/favicon.png') }}" rel="icon" />
 
-        <link rel="icon" type="image/png" href="assets/images/favicon.png" />
-        <link rel="stylesheet" href="assets/css/all.min.css" />
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="assets/css/nice-select.css" />
-        <link rel="stylesheet" href="assets/css/slick.css" />
-        <link rel="stylesheet" href="assets/css/select2.min.css" />
-        <link rel="stylesheet" href="assets/css/animate.css" />
-        <link rel="stylesheet" href="assets/css/animated_barfiller.css" />
-        <link rel="stylesheet" href="assets/css/summernote.min.css" />
-        <link rel="stylesheet" href="assets/css/scroll_button.css" />
-        <link rel="stylesheet" href="assets/css/utilities.css" />
-        <link rel="stylesheet" href="assets/css/jquery.simple-bar-graph.min.css" />
-        <link rel="stylesheet" href="assets/css/style.css" />
-        <link rel="stylesheet" href="assets/css/responsive.css" />
-        <link rel="stylesheet" href="assets/css/aryann.css" />
-        <link rel="stylesheet" href="assets/css/reset.css" />
-        <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css"
-      />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css"
-      />
+        <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/select2.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/animated_barfiller.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/summernote.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/scroll_button.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/utilities.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/jquery.simple-bar-graph.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/aryann.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}" />
+
+
+        {{-- <link rel="icon" type="image/png" href="{{asset('}assets/images/favicon.png')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/all.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/nice-select.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/slick.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/select2.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/animated_barfiller.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/summernote.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/scroll_button.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/utilities.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/jquery.simple-bar-graph.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css"> --}}
+
+
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
 
     <body>
-
-
-
         @include('frontend.includes.nav')
 
         <main class="bg-white dark:bg-gray-800">
