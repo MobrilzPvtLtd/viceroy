@@ -24,12 +24,12 @@
         </div>
     </section>
     <!--=============================
-                                                BREADCRUMBS END
-                                            ==============================-->
+                                                    BREADCRUMBS END
+                                                ==============================-->
 
     <!--=============================
-                                                PROPERTY GRID VIEW START
-                                            ==============================-->
+                                                    PROPERTY GRID VIEW START
+                                                ==============================-->
     <section class="property_grid_view pb_120 xs_pb_100">
         <div class="container-fluid">
             <div class="row justify-content-center wow fadeInUp" data-wow-duration="1.5s">
@@ -44,15 +44,15 @@
                                 </button>
                             </li>
                             <!--<li class="nav-item" role="presentation">
-                                                                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                                                data-bs-target="#pills-profile" type="button" role="tab"
-                                                                                aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                                                        </li>-->
+                                                                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                                                    data-bs-target="#pills-profile" type="button" role="tab"
+                                                                                    aria-controls="pills-profile" aria-selected="false">Sell</button>
+                                                                            </li>-->
                             <!--<li class="nav-item" role="presentation">
-                                                                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                                                                data-bs-target="#pills-contact" type="button" role="tab"
-                                                                                aria-controls="pills-contact" aria-selected="false">Rent</button>
-                                                                        </li>-->
+                                                                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                                                                    data-bs-target="#pills-contact" type="button" role="tab"
+                                                                                    aria-controls="pills-contact" aria-selected="false">Rent</button>
+                                                                            </li>-->
                         </ul>
 
                         <div class="tab-content" id="pills-tabContent">
@@ -90,8 +90,8 @@
 
                                             <div class="adv_search_area">
                                                 <!-- <div class="adv_search_close adv_search_close_1">
-                                                                  <i class="fal fa-times"></i>
-                                                                </div> -->
+                                                                      <i class="fal fa-times"></i>
+                                                                    </div> -->
 
                                                 <div id="min_max">
                                                     <select class="select_2" name="state">
@@ -125,8 +125,8 @@
 
                                             <div class="adv_search_area2">
                                                 <!-- <div class="adv_search_close2">
-                                                                  <i class="fal fa-times"></i>
-                                                                </div> -->
+                                                                      <i class="fal fa-times"></i>
+                                                                    </div> -->
 
                                                 <div class="" id="min_max2">
                                                     <div class="">
@@ -277,7 +277,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                </div>-->
+                                                                                    </div>-->
                                 </form>
                             </div>
                         </div>
@@ -357,8 +357,8 @@
                 </div>
             </section>
             <!--=============================
-                                                PROPERTY GRID VIEW END
-                                            ==============================-->
+                                                    PROPERTY GRID VIEW END
+                                                ==============================-->
             <div class="row mt_95 xs_mt_75">
                 <div class="col-md-9">
                     <div class="row">
@@ -378,7 +378,7 @@
                                         @else
                                             <p>No images available</p>
                                         @endif
-                                        <a class="feature_link" href="#">{{ $property->property_status }}</a>
+                                        <a class="feature_link" href="">{{ $property->type }}</a>
                                         {{-- <div id="testimonial-slider1" class="owl-carousel">
                                             <div class="testimonial">
                                                 <div class="pic">
@@ -445,19 +445,23 @@
                                                 <li>
                                                     <span><img src="assets/images/bad.png" alt="img"
                                                             class="img-fluid w-100" /></span>
-                                                    {{ $property->bed }} Beds </li>
+                                                    {{ $property->bed }} Beds
+                                                </li>
                                                 <li>
                                                     <span><img src="assets/images/bathtab.png" alt="img"
                                                             class="img-fluid w-100" /></span>
-                                                      {{ $property->number_bathroom }} </li>
+                                                    {{ $property->number_bathroom }}
+                                                </li>
                                                 <li>
                                                     <span><img src="assets/images/squre.png" alt="img"
                                                             class="img-fluid w-100" /></span>
-                                                            {{ $property->area }} Sq Ft </li>
+                                                    {{ $property->area }} Sq Ft
+                                                </li>
                                             </ul>
                                         </div>
                                         <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                            <a class="read_btn" href="property_details">More Details<i
+                                            <a target="blank"   class="read_btn"
+                                                href="{{ route('property_details', $property->id) }}">More Details<i
                                                     class="fas fa-arrow-right"></i></a>
                                         </div>
                                         <div class="single_property_bottom d-flex flex-wrap justify-content-between">
@@ -537,4 +541,3 @@
         });
     </script>
 @endsection
-

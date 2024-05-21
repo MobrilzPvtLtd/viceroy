@@ -29,6 +29,7 @@
                                     <th scope="col">Property floor_plan</th>
                                     <th scope="col">Property Video</th>
                                     <th scope="col">Property Map</th>
+                                    <th scope="col">Slag</th>
                                     <th scope="col">facilities</th>
                                     <th scope="col">Action</th>
                                 </tr>
@@ -78,6 +79,7 @@
 
                                     <td>{{ $property->video }}</td>
                                     <td>{{ $property->map }}</td>
+                                    <td>{{ $property->slag }}</td>
 
                                     <td>
                                         @php

@@ -42,6 +42,7 @@ public function store(Request $request)
         'map' => 'required',
         'video' => 'required',
         'p_id' => 'required',
+        'slag' => 'required',
         'facilities' => 'required',
 
     ]);
@@ -77,11 +78,10 @@ public function store(Request $request)
     return redirect()->route('property.index')->with('success', 'property has been created successfully.');
 }
 
-// public function show($id)
-// {
-//     $propertys = Property::findOrFail($id);
-//     return view('frontend.pages.property_details', compact('propertys'));
-// }
+public function show()
+{
+
+}
 
     public function edit($id)
 {
@@ -108,6 +108,7 @@ public function store(Request $request)
         'number_bathroom' => 'required',
         'year' => 'required',
         'map' => 'required',
+        'slag' => 'required',
         'video' => 'required',
     ]);
 

@@ -36,7 +36,7 @@ class FrontendController extends Controller
 
     public function buy()
     {
-        $propertys = Property::orderBy('id','desc')->paginate(6);
+        $propertys = Property::where('type', 'buy')->orderBy('id','desc')->paginate(6);
         $countrys = Country::all();
         $citys = City::all();
         $currencys = Currency::all();
@@ -44,7 +44,7 @@ class FrontendController extends Controller
     }
     public function rent()
     {
-        $propertys = Property::orderBy('id','desc')->paginate(6);
+        $propertys = Property::where('type', 'rent')->orderBy('id','desc')->paginate(6);
         $countrys = Country::all();
         $citys = City::all();
         $currencys = Currency::all();
@@ -63,9 +63,9 @@ class FrontendController extends Controller
         $holidays = Holiday::orderBy('id','desc')->paginate(6);
         return view('frontend.pages.holiday',compact('holidays'));
     }
-    public function propertydetails($id)
+    public function propertydetails($slag)
     {
-        $property = Property::where('id', $id)->first();
+        $property = Property::where('slag', $slag)->firstOrFail();
         return view('frontend.pages.property_details', compact('property'));
     }
 //     public function show($id)

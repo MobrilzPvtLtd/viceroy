@@ -65,7 +65,7 @@ Route::get('services', [FrontendController::class, 'services'])->name('services'
 Route::get('contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('login', [FrontendController::class, 'login'])->name('login');
 Route::get('register', [FrontendController::class, 'register'])->name('register');
-Route::get('property_details/{id}', [FrontendController::class, 'propertydetails'])->name('property_details');
+Route::get('property_details/{slag}', [FrontendController::class, 'propertydetails'])->name('property_details');
 
 // Language Switch
 Route::get('language/{language}', [LanguageController::class, 'switch'])->name('language.switch');
