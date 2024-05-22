@@ -63,7 +63,7 @@
                                         <div class="">
                                             <label>Country</label>
                                             <select class="" name="co_name" id="co_name" required focus>
-                                                <option value="" disabled selected> select Country</option>
+                                                <option value="" disabled selected> select country</option>
                                                 @foreach ($countrys as $country)
                                                     <option value="{{ $country->id }}">{{ $country->co_name }}</option>
                                                 @endforeach
@@ -73,7 +73,7 @@
                                         <div class="">
                                             <label>City</label>
                                             <select class="" name="ct_name" id="city" required>
-                                                <option value="" disabled selected> select City</option>
+                                                <option value="" disabled selected> select city</option>
                                                 @foreach ($citys as $city)
                                                     <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
                                                 @endforeach
@@ -84,7 +84,7 @@
                                             <label>Bedrooms</label>
                                             <div class="adv_search_icon">
                                                 <select class="" name="state">
-                                                    <option value=""  disabled selected >Select Bedrooms</option>
+                                                    <option value=""  disabled selected >Select bedrooms</option>
                                                     @foreach ($propertys as $property)
                                                         <option value="{{ $property->id }}">{{ $property->number_of_room }}</option>
                                                     @endforeach
@@ -120,7 +120,7 @@
                                             <label>Price</label>
                                             <div class="adv_search_icon2">
                                                 <select class="" name="state">
-                                                    <option value="">Select Price</option>
+                                                    <option value="">Select price</option>
                                                     @foreach ($propertys as $property)
                                                     <option value="{{ $property->id }}">{{ $property->price }}</option>
                                                 @endforeach
@@ -160,7 +160,7 @@
                                         <div class="">
                                             <label>Property Type</label>
                                             <select class="" name="state">
-                                                <option value="">Select Property</option>
+                                                <option value="">Select property</option>
                                                 @foreach ($propertys as $property)
                                                 <option value="{{ $property->id }}">{{ $property->type }}</option>
                                             @endforeach
@@ -170,7 +170,7 @@
                                         <div class="">
                                             <label>Currency</label>
                                             <select class="select1-selection__rendered" name="code">
-                                                <option value="" disabled selected> select Currency</option>
+                                                <option value="" disabled selected> select currency</option>
                                                 @foreach ($currencys as $currency)
                                                     <option value="{{ $currency->id }}">{{ $currency->code }}</option>
                                                 @endforeach
@@ -193,7 +193,7 @@
                                         <div class="col-lg-2">
                                             <label>Country</label>
                                             <select class="select_2" name="state">
-                                                <option value="">Select Country</option>
+                                                <option value="">Select country</option>
                                                 <option value="">India</option>
                                                 <option value="">United Arab Emirates Dubai</option>
                                                 <option value="">United Kingdom London</option>
