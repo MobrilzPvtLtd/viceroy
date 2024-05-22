@@ -70,12 +70,12 @@
                                             </select>
                                         </div>
 
-                                        <div class="">
+                                        <div class="" >
                                             <label>City</label>
-                                            <select class="" name="ct_name" id="city" required>
-                                                <option value="" disabled selected> select city</option>
+                                            <select class="" name="ct_name" id="city"  required>
+                                                <option value=""  disabled selected> select city</option>
                                                 @foreach ($citys as $city)
-                                                    <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
+                                                    <option  value="{{ $city->id }}">{{ $city->ct_name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -467,7 +467,7 @@
                                         </div>
                                         <div class="single_property_bottom d-flex flex-wrap justify-content-between">
                                             <a target="blank" class="read_btn"
-                                                href="{{ route('property_details', $property->slag) }}">More
+                                                href="{{ route('property', $property->slag) }}">More
                                                 Details<i class="fas fa-arrow-right"></i></a>
 
                                         </div>

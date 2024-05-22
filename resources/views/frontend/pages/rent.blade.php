@@ -464,7 +464,7 @@
                                         </div>
                                         <div class="single_property_bottom d-flex flex-wrap justify-content-between">
                                             <a target="blank"   class="read_btn"
-                                                href="{{ route('property_details', $property->slag) }}">More Details<i
+                                                href="{{ route('property', $property->slag) }}">More Details<i
                                                     class="fas fa-arrow-right"></i></a>
                                         </div>
                                         <div class="single_property_bottom d-flex flex-wrap justify-content-between">

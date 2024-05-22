@@ -67,7 +67,7 @@ class FrontendController extends Controller
     public function propertydetails($slag)
     {
         $property = Property::where('slag', $slag)->firstOrFail();
-        return view('frontend.pages.property_details', compact('property'));
+        return view('frontend.pages.property', compact('property'));
     }
 //     public function show($id)
 // {
