@@ -91,8 +91,7 @@
                                             <div class="adv_search_area">
                                                 <!-- <div class="adv_search_close adv_search_close_1">
                                                                       <i class="fal fa-times"></i>
-                                                                    </div> -->
-
+                                                                 </div> -->
                                                 <div id="min_max">
                                                     <select class="select_2" name="state">
                                                         <option value="">Min</option>
@@ -102,7 +101,6 @@
                                                         <option value="">04</option>
                                                         <option value="">05</option>
                                                     </select>
-
                                                     <select class="select_2" name="state">
                                                         <option value="">Max</option>
                                                         <option value="">01</option>
@@ -357,8 +355,8 @@
                 </div>
             </section>
             <!--=============================
-                                                    PROPERTY GRID VIEW END
-                                                ==============================-->
+                  PROPERTY GRID VIEW END
+                 ==============================-->
             <div class="row mt_95 xs_mt_75">
                 <div class="col-md-9">
                     <div class="row">
@@ -434,7 +432,6 @@
                                             </div>
                                         </div> --}}
                                     </div>
-
                                     <div class="single_property_text">
                                         <div class="single_property_top">
                                             <a class="item_title" href=" ">{{ $property->title }}</a>
@@ -450,7 +447,7 @@
                                                 <li>
                                                     <span><img src="assets/images/bathtab.png" alt="img"
                                                             class="img-fluid w-100" /></span>
-                                                    {{ $property->number_bathroom }}
+                                                    {{ $property->number_bathroom }} Baths
                                                 </li>
                                                 <li>
                                                     <span><img src="assets/images/squre.png" alt="img"
@@ -461,7 +458,7 @@
                                         </div>
                                         <div class="single_property_bottom d-flex flex-wrap justify-content-between">
                                             <a target="blank"   class="read_btn"
-                                                href="{{ route('property_details', $property->id) }}">More Details<i
+                                                href="{{ route('property_details', $property->slag) }}">More Details<i
                                                     class="fas fa-arrow-right"></i></a>
                                         </div>
                                         <div class="single_property_bottom d-flex flex-wrap justify-content-between">
@@ -473,7 +470,9 @@
                             </div>
                         @endforeach
                     </div>
-
+                    <div style="text-align: center">
+                        {!! $propertys->links() !!}
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <iframe

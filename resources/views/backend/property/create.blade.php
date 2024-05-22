@@ -21,8 +21,8 @@
                                     <label for="p_type">Type of Property</label>
                                     <select class="form-control" name="type" value="{{ old('type') }}">
                                         <option value="">select property </option>
-                                        <option value="for rent">For Rent </option>
-                                        <option value=" for buy">For Buy</option>
+                                        <option value="rent">For Rent </option>
+                                        <option value="buy">For Buy</option>
                                         {{-- <option value="budget">Budget</option>
                                         <option value="standard">Standard</option> --}}
 
@@ -123,7 +123,7 @@
                                         value="{{ old('p_id') }}"placeholder="">
                                 </div>
                                 <div class="form-group mb-2 col-4">
-                                    <label for="city">Slag</label>
+                                    <label for="city">Slug</label>
                                     <input type="text" class="form-control" name="slag"
                                         value="{{ old('slag') }}"placeholder="">
                                 </div>
