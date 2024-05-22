@@ -83,15 +83,18 @@
                                         <div class="">
                                             <label>Bedrooms</label>
                                             <div class="adv_search_icon">
-                                                <select class="select_2 as_select" name="state">
-                                                    <option value="">Select Bedrooms</option>
+                                                <select class="" name="state">
+                                                    <option value=""  disabled selected >Select Bedrooms</option>
+                                                    @foreach ($propertys as $property)
+                                                        <option value="{{ $property->id }}">{{ $property->number_of_room }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
 
-                                            <div class="adv_search_area">
-                                                <!-- <div class="adv_search_close adv_search_close_1">
+                                            {{-- <div class="adv_search_area">
+                                              <div class="adv_search_close adv_search_close_1">
                                                                       <i class="fal fa-times"></i>
-                                                                 </div> -->
+                                                                 </div>
                                                 <div id="min_max">
                                                     <select class="select_2" name="state">
                                                         <option value="">Min</option>
@@ -110,21 +113,24 @@
                                                         <option value="">05</option>
                                                     </select>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
 
                                         <div class="">
                                             <label>Price</label>
                                             <div class="adv_search_icon2">
-                                                <select class="select_2 as_select rent_price" name="state">
+                                                <select class="" name="state">
                                                     <option value="">Select Price</option>
+                                                    @foreach ($propertys as $property)
+                                                    <option value="{{ $property->id }}">{{ $property->price }}</option>
+                                                @endforeach
                                                 </select>
                                             </div>
 
-                                            <div class="adv_search_area2">
-                                                <!-- <div class="adv_search_close2">
+                                            {{-- <div class="adv_search_area2">
+                                                 <div class="adv_search_close2">
                                                                       <i class="fal fa-times"></i>
-                                                                    </div> -->
+                                                                    </div>
 
                                                 <div class="" id="min_max2">
                                                     <div class="">
@@ -148,16 +154,16 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
 
                                         <div class="">
                                             <label>Property Type</label>
-                                            <select class="select_2" name="state">
+                                            <select class="" name="state">
                                                 <option value="">Select Property</option>
-                                                <option value="">Rent</option>
-                                                <option value="">rent</option>
-                                                <option value="">Sell</option>
+                                                @foreach ($propertys as $property)
+                                                <option value="{{ $property->id }}">{{ $property->type }}</option>
+                                            @endforeach
                                             </select>
                                         </div>
 

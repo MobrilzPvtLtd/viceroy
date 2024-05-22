@@ -24,12 +24,12 @@
         </div>
     </section>
     <!--=============================
-                                                                    BREADCRUMBS END
-                                                                ==============================-->
+                                                                        BREADCRUMBS END
+                                                                    ==============================-->
 
     <!--=============================
-                                                                    PROPERTY GRID VIEW START
-                                                                ==============================-->
+                                                                        PROPERTY GRID VIEW START
+                                                                    ==============================-->
     <section class="property_grid_view pb_120 xs_pb_100">
         <div class="container-fluid">
             <div class="row justify-content-center wow fadeInUp" data-wow-duration="1.5s">
@@ -44,15 +44,15 @@
                                 </button>
                             </li>
                             <!--<li class="nav-item" role="presentation">
-                                                                                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                                                                    data-bs-target="#pills-profile" type="button" role="tab"
-                                                                                                    aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                                                                            </li>-->
+                                                                                                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                                                                        data-bs-target="#pills-profile" type="button" role="tab"
+                                                                                                        aria-controls="pills-profile" aria-selected="false">Sell</button>
+                                                                                                </li>-->
                             <!--<li class="nav-item" role="presentation">
-                                                                                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                                                                                    data-bs-target="#pills-contact" type="button" role="tab"
-                                                                                                    aria-controls="pills-contact" aria-selected="false">Rent</button>
-                                                                                            </li>-->
+                                                                                                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                                                                                        data-bs-target="#pills-contact" type="button" role="tab"
+                                                                                                        aria-controls="pills-contact" aria-selected="false">Rent</button>
+                                                                                                </li>-->
                         </ul>
 
                         <div class="tab-content" id="pills-tabContent">
@@ -83,15 +83,18 @@
                                         <div class="">
                                             <label>Bedrooms</label>
                                             <div class="adv_search_icon">
-                                                <select class="select_2 as_select" name="state">
+                                                <select class="" name="state">
                                                     <option value="">Select Bedrooms</option>
+                                                    @foreach ($propertys as $property)
+                                                        <option value="{{ $property->id }}">{{ $property->number_of_room }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
 
-                                            <div class="adv_search_area">
-                                                <!-- <div class="adv_search_close adv_search_close_1">
+                                            {{-- <div class="adv_search_area">
+                                            <div class="adv_search_close adv_search_close_1">
                                                                                       <i class="fal fa-times"></i>
-                                                                                    </div> -->
+                                                                                    </div>
 
                                                 <div id="min_max">
                                                     <select class="select_2" name="state">
@@ -112,21 +115,24 @@
                                                         <option value="">05</option>
                                                     </select>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
 
                                         <div class="">
                                             <label>Price</label>
                                             <div class="adv_search_icon2">
-                                                <select class="select_2 as_select rent_price" name="state">
+                                                <select class="" name="state">
                                                     <option value="">Select Price</option>
+                                                    @foreach ($propertys as $property)
+                                                    <option value="{{ $property->id }}">{{ $property->price }}</option>
+                                                @endforeach
                                                 </select>
                                             </div>
 
-                                            <div class="adv_search_area2">
-                                                <!-- <div class="adv_search_close2">
-                                                                                      <i class="fal fa-times"></i>
-                                                                                    </div> -->
+                                            {{-- <div class="adv_search_area2">
+                                                <div class="adv_search_close2">
+                                                                                          <i class="fal fa-times"></i>
+                                                                                        </div>
 
                                                 <div class="" id="min_max2">
                                                     <div class="">
@@ -150,16 +156,16 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
 
                                         <div class="">
                                             <label>Property Type</label>
-                                            <select class="select_2" name="state">
+                                            <select class="" name="state">
                                                 <option value="">Select Property</option>
-                                                <option value="">Rent</option>
-                                                <option value="">rent</option>
-                                                <option value="">Sell</option>
+                                                @foreach ($propertys as $property)
+                                                    <option value="{{ $property->id }}">{{ $property->type }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
 
@@ -277,7 +283,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                    </div>-->
+                                                                                                        </div>-->
                                 </form>
                             </div>
                         </div>
@@ -357,8 +363,8 @@
                 </div>
             </section>
             <!--=============================
-                                                                    PROPERTY GRID VIEW END
-                                                                ==============================-->
+                                                                        PROPERTY GRID VIEW END
+                                                                    ==============================-->
             <div class="row mt_95 xs_mt_75">
                 <div class="col-md-9">
                     <div class="row">

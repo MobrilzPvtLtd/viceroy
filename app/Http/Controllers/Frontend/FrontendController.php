@@ -22,10 +22,11 @@ class FrontendController extends Controller
      */
     public function index()
     {
+        $propertys = Property::all();
         $countrys = Country::all();
         $citys = City::all();
         $currencys = Currency::all();
-        return view('frontend.index',compact('countrys','citys','currencys'));
+        return view('frontend.index',compact('propertys','countrys','citys','currencys'));
 
     }
     public function about()

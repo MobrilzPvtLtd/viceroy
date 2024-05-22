@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('number_bathroom');
             $table->string('year');
             $table->string('facilities');
+            $table->string('slag');
             $table->string('floor_plan');
             $table->string('map');
             $table->string('video');

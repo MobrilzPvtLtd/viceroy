@@ -270,7 +270,7 @@
                     <div class="col-xl-4 wow fadeInUp" data-wow-duration="1.5s">
                         <div class=" single_property">
                             <div class="single_property_img">
-                                <img src="assets/images/property_4.jpg" alt="img" class="img-fluid w-100">
+                                <img src="{{ asset('assets/images/property_4.jpg') }}" alt="img" class="img-fluid w-100">
                                 <a class="feature_link" href="#">for sale</a>
                                 <ul class="d-flex flex-wrap">
                                     <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
