@@ -35,6 +35,12 @@
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
+                                    <label for="city">Slug</label>
+                                    <input type="text" class="form-control" name="slag"
+                                        value="{{ old('slag') }}"placeholder="">
+                                </div>
+
+                                <div class="form-group mb-2 col-4">
                                     <label for="ct_name">Address </label>
                                     <textarea class="form-control" id="ct_name" name="address" value="{{ old('address') }}" placeholder=""></textarea>
                                 </div>
@@ -122,12 +128,6 @@
                                     <input type="text" class="form-control" name="p_id"
                                         value="{{ old('p_id') }}"placeholder="">
                                 </div>
-                                <div class="form-group mb-2 col-4">
-                                    <label for="city">Slug</label>
-                                    <input type="text" class="form-control" name="slag"
-                                        value="{{ old('slag') }}"placeholder="">
-                                </div>
-
                             </div>
                             <div class="form-group">
                                 <label for="facilities">Facilities:</label><br>
