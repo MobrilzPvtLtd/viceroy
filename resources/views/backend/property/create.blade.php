@@ -29,6 +29,26 @@
                                     </select>
                                 </div>
                                 <div class="form-group mb-2 col-4">
+                                    <label for="exampleInputEmail1">Country Name</label>
+                                    <select class="form-control" id="co_name" name="country_id" value="{{ old('country_id') }}"required focus>
+                                        <option value="" disabled selected> select Country</option>
+                                        @foreach ($countrys as $country)
+                                            <option value="{{ $country->id }}">{{ $country->co_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="form-group mb-2 col-4">
+                                    <label>City</label>
+                                    <select class="form-control" name="city_id" id="city" required>
+                                        <option value="" disabled selected> select city</option>
+                                        @foreach ($citys as $city)
+                                            <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="form-group mb-2 col-4">
                                     <label for="exampleInputEmail1">Property Name</label>
                                     <input type="text" class="form-control" name="title" value="{{ old('title') }}"
                                         placeholder="">
@@ -164,20 +184,20 @@
             </div>
         </div>
     </div>
-    {{-- <script>
+    <script>
         $(document).ready(function() {
             $('#co_name').change(function() {
                 var country = $(this).val();
 
                 $.ajax({
                     type: 'GET',
-                    url: '{{ route('fetch-state') }}',
+                    url: '{{ route('fetch-city') }}',
                     data: {
                         country: country
                     },
                     success: function(result) {
                         console.log(result);
-                        $("#state").html(result);
+                        $("#city").html(result);
                     },
                     error: function(xhr, status, error) {
                         console.error(xhr.responseText);
@@ -185,5 +205,5 @@
                 });
             });
         });
-    </script> --}}
+    </script>
 @endsection

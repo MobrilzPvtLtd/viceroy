@@ -24,12 +24,12 @@
         </div>
     </section>
     <!--=============================
-                                                                        BREADCRUMBS END
-                                                                    ==============================-->
+                                                                            BREADCRUMBS END
+                                                                        ==============================-->
 
     <!--=============================
-                                                                        PROPERTY GRID VIEW START
-                                                                    ==============================-->
+                                                                            PROPERTY GRID VIEW START
+                                                                        ==============================-->
     <section class="property_grid_view pb_120 xs_pb_100">
         <div class="container-fluid">
             <div class="row justify-content-center wow fadeInUp" data-wow-duration="1.5s">
@@ -44,38 +44,38 @@
                                 </button>
                             </li>
                             <!--<li class="nav-item" role="presentation">
-                                                                                                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                                                                        data-bs-target="#pills-profile" type="button" role="tab"
-                                                                                                        aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                                                                                </li>-->
+                                                                                                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                                                                            data-bs-target="#pills-profile" type="button" role="tab"
+                                                                                                            aria-controls="pills-profile" aria-selected="false">Sell</button>
+                                                                                                    </li>-->
                             <!--<li class="nav-item" role="presentation">
-                                                                                                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                                                                                        data-bs-target="#pills-contact" type="button" role="tab"
-                                                                                                        aria-controls="pills-contact" aria-selected="false">Rent</button>
-                                                                                                </li>-->
+                                                                                                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                                                                                            data-bs-target="#pills-contact" type="button" role="tab"
+                                                                                                            aria-controls="pills-contact" aria-selected="false">Rent</button>
+                                                                                                    </li>-->
                         </ul>
 
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                                 aria-labelledby="pills-home-tab" tabindex="0">
-                                <form action="#">
+                                <form action="{{ route('buy')}}" method="GET">
                                     <div class="" id="home_form">
                                         <div class="">
                                             <label>Country</label>
                                             <select class="" name="co_name" id="co_name" required focus>
-                                                <option value="" disabled selected> select country</option>
+                                                <option value="" disabled selected>select country </option>
                                                 @foreach ($countrys as $country)
                                                     <option value="{{ $country->id }}">{{ $country->co_name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
 
-                                        <div class="" >
+                                        <div class="">
                                             <label>City</label>
-                                            <select class="" name="ct_name" id="city"  required>
-                                                <option value=""  disabled selected> select city</option>
+                                            <select class="" name="ct_name" id="city" required>
+                                                <option value=""> select city</option>
                                                 @foreach ($citys as $city)
-                                                    <option  value="{{ $city->id }}">{{ $city->ct_name }}</option>
+                                                    <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -83,10 +83,13 @@
                                         <div class="">
                                             <label>Bedrooms</label>
                                             <div class="adv_search_icon">
-                                                <select class="" name="state">
+                                                <select class="">
                                                     <option value="">Select bedrooms</option>
-                                                    @foreach ($propertys as $property)
+                                                    {{-- @foreach ($propertys as $property)
                                                         <option value="{{ $property->id }}">{{ $property->number_of_room }}</option>
+                                                    @endforeach --}}
+                                                    @foreach ($uniqueBedrooms as $bedroom)
+                                                        <option value="{{ $bedroom }}">{{ $bedroom }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -123,9 +126,9 @@
                                             <div class="adv_search_icon2">
                                                 <select class="" name="state">
                                                     <option value="">Select price</option>
-                                                    @foreach ($propertys as $property)
-                                                    <option value="{{ $property->id }}">{{ $property->price }}</option>
-                                                @endforeach
+                                                    @foreach ($uniquePrices as $price)
+                                                        <option value="{{ $price }}">{{ $price }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
 
@@ -163,8 +166,8 @@
                                             <label>Property Type</label>
                                             <select class="" name="state">
                                                 <option value="">Select property</option>
-                                                @foreach ($propertys as $property)
-                                                    <option value="{{ $property->id }}">{{ $property->type }}</option>
+                                                @foreach ($uniquePropertyTypes as $type)
+                                                    <option value="{{ $type }}">{{ $type }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -283,7 +286,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                        </div>-->
+                                                                                                            </div>-->
                                 </form>
                             </div>
                         </div>
@@ -363,8 +366,8 @@
                 </div>
             </section>
             <!--=============================
-                                                                        PROPERTY GRID VIEW END
-                                                                    ==============================-->
+                                                                            PROPERTY GRID VIEW END
+                                                                        ==============================-->
             <div class="row mt_95 xs_mt_75">
                 <div class="col-md-9">
                     <div class="row">

@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Property;
 use App\Models\Facilities;
+use App\Models\City;
+use App\Models\Currency;
+use App\Models\Country;
 
 class PropertyController extends Controller
 {
@@ -15,14 +18,21 @@ class PropertyController extends Controller
         $propertys = Property::all();
         return view('backend.property.index', compact('propertys'));
     }
-
-
-
+    public function fetchCity(Request $request)
+    {
+        $options = "";
+        $city = City::where('co_name', $request->country)->get();
+        foreach ($city as $cit) {
+            $options .= "<option value=" . $cit->id . ">" . $cit->ct_name . "</option>";
+        }
+        return response()->json($options);
+    }
     public function create()
     {
-
         $facilitiesy = Facilities::all();
-        return view('backend.property.create', compact('facilitiesy'));
+        $countrys = Country::all();
+        $citys = City::all();
+        return view('backend.property.create', compact('facilitiesy','countrys', 'citys'));
     }
 
     public function store(Request $request)
@@ -44,8 +54,10 @@ class PropertyController extends Controller
             'p_id' => 'required',
             'slag' => 'required|unique:properties,slag,',
             'facilities' => 'required',
-
         ]);
+
+        // $countrys = Country::where('id',$request->country_id)->first();
+        // $countrys = City::where('id',$request->city_id)->first();
 
         $imagePaths = [];
         if ($request->hasFile('image')) {

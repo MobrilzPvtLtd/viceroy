@@ -58,7 +58,7 @@
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                                 aria-labelledby="pills-home-tab" tabindex="0">
-                                <form action="#">
+                                <form action="{{ route('rent')}}" method="GET">
                                     <div class="" id="home_form">
                                         <div class="">
                                             <label>Country</label>
@@ -85,8 +85,8 @@
                                             <div class="adv_search_icon">
                                                 <select class="" name="state">
                                                     <option value=""  disabled selected >Select bedrooms</option>
-                                                    @foreach ($propertys as $property)
-                                                        <option value="{{ $property->id }}">{{ $property->number_of_room }}</option>
+                                                    @foreach ($uniqueBedrooms as $bedroom)
+                                                        <option value="{{ $bedroom }}">{{ $bedroom }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -121,9 +121,9 @@
                                             <div class="adv_search_icon2">
                                                 <select class="" name="state">
                                                     <option value="">Select price</option>
-                                                    @foreach ($propertys as $property)
-                                                    <option value="{{ $property->id }}">{{ $property->price }}</option>
-                                                @endforeach
+                                                    @foreach ($uniquePrices as $price)
+                                                        <option value="{{ $price }}">{{ $price }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
 
@@ -161,8 +161,8 @@
                                             <label>Property Type</label>
                                             <select class="" name="state">
                                                 <option value="">Select property</option>
-                                                @foreach ($propertys as $property)
-                                                <option value="{{ $property->id }}">{{ $property->type }}</option>
+                                                @foreach ($uniquePropertyTypes as $type)
+                                                <option value="{{ $type }}">{{ $type }}</option>
                                             @endforeach
                                             </select>
                                         </div>

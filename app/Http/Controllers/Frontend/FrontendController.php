@@ -20,60 +20,114 @@ class FrontendController extends Controller
      *
      * @return \Illuminate\Contracts\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
+        $query = Property::query()->whereIn('type', ['buy', 'rent']);
+        $query = Property::query()->where('type', 'buy');
+        if ($request->has('co_name') && $request->co_name != '') {
+            $query->where('country_id', $request->co_name);
+        }
+        if ($request->has('ct_name') && $request->ct_name != '') {
+            $query->where('city_id', $request->ct_name);
+        }
+        if ($request->has('bedrooms') && $request->bedrooms != '') {
+            $query->where('number_of_room', $request->bedrooms);
+        }
+        if ($request->has('price') && $request->price != '') {
+            $query->where('price', $request->price);
+        }
+        if ($request->has('type') && $request->type != '') {
+            $query->where('type', $request->type);
+        }
+        $propertys = $query->orderBy('id', 'desc')->paginate(6);
+        $uniquePropertyTypes = Property::whereIn('type', ['buy', 'rent'])->distinct()->pluck('type')->sort();
+        $uniqueBedrooms = Property::whereIn('type', ['buy', 'rent'])->distinct()->pluck('number_of_room')->sort();
+        $uniquePrices = Property::whereIn('type', ['buy', 'rent'])->distinct()->pluck('price')->sort();
         $propertys = Property::all();
         $countrys = Country::all();
         $citys = City::all();
         $currencys = Currency::all();
-        return view('frontend.index',compact('propertys','countrys','citys','currencys'));
-
-    }
-    public function about()
-    {
-        return view('frontend.pages.about');
-
+        return view('frontend.index', compact('propertys', 'countrys', 'citys', 'currencys','uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes'));
     }
 
-    public function buy()
+    public function buy(Request $request)
     {
-        $propertys = Property::where('type', 'buy')->orderBy('id','desc')->paginate(6);
+        $query = Property::query()->where('type', 'buy');
+        if ($request->has('co_name') && $request->co_name != '') {
+            $query->where('country_id', $request->co_name);
+        }
+        if ($request->has('ct_name') && $request->ct_name != '') {
+            $query->where('city_id', $request->ct_name);
+        }
+        if ($request->has('bedrooms') && $request->bedrooms != '') {
+            $query->where('number_of_room', $request->bedrooms);
+        }
+        if ($request->has('price') && $request->price != '') {
+            $query->where('price', $request->price);
+        }
+        if ($request->has('type') && $request->type != '') {
+            $query->where('type', $request->type);
+        }
+        $propertys = $query->orderBy('id', 'desc')->paginate(6);
+        $uniquePropertyTypes = Property::where('type', 'buy')->distinct()->pluck('type')->sort();
+        $uniqueBedrooms = Property::where('type', 'buy')->distinct()->pluck('number_of_room')->sort();
+        $uniquePrices = Property::where('type', 'buy')->distinct()->pluck('price')->sort();
+        $currencys = Currency::all();
+        $countrys = Country::all();
+        $citys = City::all();
+        return view('frontend.pages.buy', compact('propertys', 'countrys', 'citys', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes'));
+    }
+    public function rent(Request $request)
+    {
+        $query = Property::query()->where('type', 'rent');
+        if ($request->has('co_name') && $request->co_name != '') {
+            $query->where('country_id', $request->co_name);
+        }
+        if ($request->has('ct_name') && $request->ct_name != '') {
+            $query->where('city_id', $request->ct_name);
+        }
+        if ($request->has('bedrooms') && $request->bedrooms != '') {
+            $query->where('number_of_room', $request->bedrooms);
+        }
+        if ($request->has('price') && $request->price != '') {
+            $query->where('price', $request->price);
+        }
+        if ($request->has('type') && $request->type != '') {
+            $query->where('type', $request->type);
+        }
+        $propertys = $query->orderBy('id', 'desc')->paginate(6);
+        $uniquePropertyTypes = Property::where('type', 'rent')->distinct()->pluck('type')->sort();
+        $uniqueBedrooms = Property::where('type', 'rent')->distinct()->pluck('number_of_room')->sort();
+        $uniquePrices = Property::where('type', 'rent')->distinct()->pluck('price')->sort();
         $countrys = Country::all();
         $citys = City::all();
         $currencys = Currency::all();
-        return view('frontend.pages.buy',compact('propertys','countrys','citys','currencys'));
+        return view('frontend.pages.rent', compact('propertys', 'countrys', 'citys', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes'));
     }
-    public function rent()
+    public function fetchCity(Request $request)
     {
-        $propertys = Property::where('type', 'rent')->orderBy('id','desc')->paginate(6);
-        $countrys = Country::all();
-        $citys = City::all();
-        $currencys = Currency::all();
-        return view('frontend.pages.rent', compact('propertys','countrys','citys','currencys'));
-    }
-    public function fetchCity(Request $request){
         $options = "";
         $city = City::where('co_name', $request->country)->get();
-        foreach($city as $cit){
-            $options .="<option value=".$cit->id.">".$cit->ct_name."</option>";
+        foreach ($city as $cit) {
+            $options .= "<option value=" . $cit->id . ">" . $cit->ct_name . "</option>";
         }
         return response()->json($options);
     }
     public function holiday()
     {
-        $holidays = Holiday::orderBy('id','desc')->paginate(6);
-        return view('frontend.pages.holiday',compact('holidays'));
+        $holidays = Holiday::orderBy('id', 'desc')->paginate(6);
+        return view('frontend.pages.holiday', compact('holidays'));
     }
     public function propertydetails($slag)
     {
         $property = Property::where('slag', $slag)->firstOrFail();
         return view('frontend.pages.property', compact('property'));
     }
-//     public function show($id)
-// {
-//     $property = Property::findOrFail($id);
-//     return view('frontend.pages.property_details', compact('property'));
-// }
+    //     public function show($id)
+    // {
+    //     $property = Property::findOrFail($id);
+    //     return view('frontend.pages.property_details', compact('property'));
+    // }
     public function services()
     {
 
@@ -83,6 +137,9 @@ class FrontendController extends Controller
     {
 
         return view('frontend.pages.contact');
+    }                         public function about()
+    {
+        return view('frontend.pages.about');
     }
     public function login()
     {

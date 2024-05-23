@@ -41,6 +41,7 @@ Route::resource('admin/currency', CurrencyController::class);
 
 // property
 Route::resource('admin/property',  PropertyController::class);
+Route::get('fetch-city', [PropertyController::class, 'fetchCity'])->name('fetch-city');
 // Route::get('buy/{id}', [PropertyController::class, 'show'])->name('buy.show');
 // Facilities
 Route::resource('admin/facility',  FacilitiesController::class);
@@ -66,6 +67,8 @@ Route::get('contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('login', [FrontendController::class, 'login'])->name('login');
 Route::get('register', [FrontendController::class, 'register'])->name('register');
 Route::get('property/{slag}', [FrontendController::class, 'propertydetails'])->name('property');
+// Route::get('search', [PropertyController::class, 'search'])->name('property.search');
+
 
 // Language Switch
 Route::get('language/{language}', [LanguageController::class, 'switch'])->name('language.switch');
