@@ -54,7 +54,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css"> --}}
 
+        {{-- <link rel="stylesheet" href="{{ asset('build/assets/styles.css') }}"> --}}
+        @include('frontend.layouts.style')
 
+        {{-- @yield('style') --}}
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>

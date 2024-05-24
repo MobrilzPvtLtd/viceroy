@@ -62,7 +62,7 @@
                                     <div class="" id="home_form">
                                         <div class="">
                                             <label>Country</label>
-                                            <select class="" name="co_name" id="co_name" required focus>
+                                            <select class="select_label" name="co_name" id="co_name" required focus>
                                                 <option value="" disabled selected> select country</option>
                                                 @foreach ($countrys as $country)
                                                     <option value="{{ $country->id }}">{{ $country->co_name }}</option>
@@ -72,7 +72,7 @@
 
                                         <div class="">
                                             <label>City</label>
-                                            <select class="" name="ct_name" id="city" required>
+                                            <select class="select_label" name="ct_name" id="city" required>
                                                 <option value="" disabled selected> select city</option>
                                                 @foreach ($citys as $city)
                                                     <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
@@ -83,7 +83,7 @@
                                         <div class="">
                                             <label>Bedrooms</label>
                                             <div class="adv_search_icon">
-                                                <select class="" name="state">
+                                                <select class="select_label" name="state">
                                                     <option value=""  disabled selected >Select bedrooms</option>
                                                     @foreach ($uniqueBedrooms as $bedroom)
                                                         <option value="{{ $bedroom }}">{{ $bedroom }}</option>
@@ -119,7 +119,7 @@
                                         <div class="">
                                             <label>Price</label>
                                             <div class="adv_search_icon2">
-                                                <select class="" name="state">
+                                                <select class="select_label" name="state">
                                                     <option value="">Select price</option>
                                                     @foreach ($uniquePrices as $price)
                                                         <option value="{{ $price }}">{{ $price }}</option>
@@ -159,7 +159,7 @@
 
                                         <div class="">
                                             <label>Property Type</label>
-                                            <select class="" name="state">
+                                            <select class="select_label" name="state">
                                                 <option value="">Select property</option>
                                                 @foreach ($uniquePropertyTypes as $type)
                                                 <option value="{{ $type }}">{{ $type }}</option>
@@ -169,7 +169,7 @@
 
                                         <div class="">
                                             <label>Currency</label>
-                                            <select class="select1-selection__rendered" name="code">
+                                            <select class="select_label" name="code">
                                                 <option value="" disabled selected> select currency</option>
                                                 @foreach ($currencys as $currency)
                                                     <option value="{{ $currency->id }}">{{ $currency->code }}</option>

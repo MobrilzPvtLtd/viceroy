@@ -201,16 +201,16 @@
         document.getElementById("hidden_div").style.display = "none";
       }
     }
-  // const btn = document.querySelector(".buy_price")
-  // const price_div = document.querySelector(".adv_search_area2_buy_price")
-  // btn.addEventListener("click" ,(()=>{
-  //     if(price_div.style.opacity == "0"){
-  //         price_div.style.opacity == "1";
-  //     }
-  //     else{  price_div.style.opacity == "0";}
-  // }))
+  const btn = document.querySelector(".buy_price")
+  const price_div = document.querySelector(".adv_search_area2_buy_price")
+  btn.addEventListener("click" ,(()=>{
+      if(price_div.style.opacity == "0"){
+          price_div.style.opacity == "1";
+      }
+      else{  price_div.style.opacity == "0";}
+  }))
   </script>
-  <!-- <script>
+   <script>
    window.addEventListener('scroll', function() {
 var container = document.getElementById('container');
 var scrollPosition = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;

@@ -62,7 +62,7 @@
                                     <div class="" id="home_form">
                                         <div class="">
                                             <label>Country</label>
-                                            <select class="" name="co_name" id="co_name" required focus>
+                                            <select class="select_label" name="co_name" id="co_name" required focus>
                                                 <option value="" disabled selected>select country </option>
                                                 @foreach ($countrys as $country)
                                                     <option value="{{ $country->id }}">{{ $country->co_name }}</option>
@@ -72,7 +72,7 @@
 
                                         <div class="">
                                             <label>City</label>
-                                            <select class="" name="ct_name" id="city" required>
+                                            <select class="select_label" name="ct_name" id="city" required>
                                                 <option value=""> select city</option>
                                                 @foreach ($citys as $city)
                                                     <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
@@ -83,7 +83,7 @@
                                         <div class="">
                                             <label>Bedrooms</label>
                                             <div class="adv_search_icon">
-                                                <select class="">
+                                                <select class="select_label">
                                                     <option value="">Select bedrooms</option>
                                                     {{-- @foreach ($propertys as $property)
                                                         <option value="{{ $property->id }}">{{ $property->number_of_room }}</option>
@@ -123,8 +123,8 @@
 
                                         <div class="">
                                             <label>Price</label>
-                                            <div class="adv_search_icon2">
-                                                <select class="" name="state">
+                                            <div class="">
+                                                <select class="select_label" name="state">
                                                     <option value="">Select price</option>
                                                     @foreach ($uniquePrices as $price)
                                                         <option value="{{ $price }}">{{ $price }}</option>
@@ -164,7 +164,7 @@
 
                                         <div class="">
                                             <label>Property Type</label>
-                                            <select class="" name="state">
+                                            <select class="select_label" name="state">
                                                 <option value="">Select property</option>
                                                 @foreach ($uniquePropertyTypes as $type)
                                                     <option value="{{ $type }}">{{ $type }}</option>
@@ -174,7 +174,7 @@
 
                                         <div class="">
                                             <label>Currency</label>
-                                            <select class="" name="code">
+                                            <select class="select_label" name="code">
                                                 <option value="" disabled selected> select currency</option>
                                                 @foreach ($currencys as $currency)
                                                     <option value="{{ $currency->id }}">{{ $currency->code }}</option>
@@ -197,7 +197,7 @@
                                     <div class="row">
                                         <div class="col-lg-2">
                                             <label>Country</label>
-                                            <select class="select_2" name="state">
+                                            <select class="select_label" name="state">
                                                 <option value="">Select Country</option>
                                                 <option value="">India</option>
                                                 <option value="">United Arab Emirates Dubai</option>

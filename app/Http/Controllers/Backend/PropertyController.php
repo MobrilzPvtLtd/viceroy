@@ -56,9 +56,6 @@ class PropertyController extends Controller
             'facilities' => 'required',
         ]);
 
-        // $countrys = Country::where('id',$request->country_id)->first();
-        // $countrys = City::where('id',$request->city_id)->first();
-
         $imagePaths = [];
         if ($request->hasFile('image')) {
             foreach ($request->file('image') as $file) {

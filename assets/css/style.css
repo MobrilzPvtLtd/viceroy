@@ -7909,6 +7909,17 @@ span.relative.inline-flex.items-center.px-4.py-2.-ml-px.text-sm.font-medium.text
     background-color: #e6b025 !important;
     color: #000;
 }
+.home_form_label{
+    display: flex  !important;
+    flex-direction: column !important;
+align-items: center !important;
+justify-content: center !important;
+gap: 10px;
+}
+.home_form_label {
+    display: flex;
+    flex-direction: column;
+}
 
 /*=============================
     DASHBOARD END
