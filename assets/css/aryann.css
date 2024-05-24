@@ -41,7 +41,7 @@
     color: white;
     display: none;
 }
-.adv_search_area.show_search {
+.adv_search_area.show_search1 {
     transform: scale(1);
     position: absolute;
     top: 7vw !important;
@@ -51,7 +51,7 @@
     -ms-transform: scale(1);
     -o-transform: scale(1);
 }
-.adv_search_area2.show_search {
+.adv_search_area2.show_search2 {
     transform: scale(1);
     position: absolute;
     top: 7vw !important;
