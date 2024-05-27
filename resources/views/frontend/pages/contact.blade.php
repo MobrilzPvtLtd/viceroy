@@ -22,13 +22,13 @@
         </div>
     </section>
     <!--=============================
-                    BREADCRUMBS END
-                ==============================-->
+                        BREADCRUMBS END
+                    ==============================-->
 
 
     <!--=============================
-                    CONTACT START
-                ==============================-->
+                        CONTACT START
+                    ==============================-->
     <section class="contact_area pt_40 xs_pt_100 pb_120 xs_pb_100">
         <div class="container">
             <div class="row">
@@ -226,9 +226,11 @@
                     <form action="{{ route('contact.submit') }}" method="post" enctype="">
                         @csrf
                         <div class="row">
+                            @include('flash::alert-message')
+
                             <div class="col-md-6 col-lg-12 col-xl-6">
                                 <div class="contact_input">
-                                    <input type="text"  name="name" placeholder="Your Name">
+                                    <input type="text" name="name" placeholder="Your Name">
                                     <span class="contact_input_icon">
                                         <img src="assets/images/user_icon_3.png" alt="icon" class="img-fluid w-100">
                                     </span>
@@ -244,7 +246,7 @@
                             </div>
                             <div class="col-md-6 col-lg-12 col-xl-6">
                                 <div class="contact_input">
-                                    <input type="number" name="phone"  placeholder="Phone Number">
+                                    <input type="number" name="phone" placeholder="Phone Number">
                                     <span class="contact_input_icon">
                                         <img src="assets/images/call_2.png" alt="icon" class="img-fluid w-100">
                                     </span>

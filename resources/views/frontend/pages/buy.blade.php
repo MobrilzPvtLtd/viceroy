@@ -24,12 +24,12 @@
         </div>
     </section>
     <!--=============================
-                                                                            BREADCRUMBS END
-                                                                        ==============================-->
+                                                                                BREADCRUMBS END
+                                                                            ==============================-->
 
     <!--=============================
-                                                                            PROPERTY GRID VIEW START
-                                                                        ==============================-->
+                                                                                PROPERTY GRID VIEW START
+                                                                            ==============================-->
     <section class="property_grid_view pb_120 xs_pb_100">
         <div class="container-fluid">
             <div class="row justify-content-center wow fadeInUp" data-wow-duration="1.5s">
@@ -44,26 +44,27 @@
                                 </button>
                             </li>
                             <!--<li class="nav-item" role="presentation">
-                                                                                                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                                                                            data-bs-target="#pills-profile" type="button" role="tab"
-                                                                                                            aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                                                                                    </li>-->
+                                                                                                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                                                                                data-bs-target="#pills-profile" type="button" role="tab"
+                                                                                                                aria-controls="pills-profile" aria-selected="false">Sell</button>
+                                                                                                        </li>-->
                             <!--<li class="nav-item" role="presentation">
-                                                                                                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                                                                                            data-bs-target="#pills-contact" type="button" role="tab"
-                                                                                                            aria-controls="pills-contact" aria-selected="false">Rent</button>
-                                                                                                    </li>-->
+                                                                                                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                                                                                                data-bs-target="#pills-contact" type="button" role="tab"
+                                                                                                                aria-controls="pills-contact" aria-selected="false">Rent</button>
+                                                                                                        </li>-->
                         </ul>
 
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                                 aria-labelledby="pills-home-tab" tabindex="0">
-                                <form action="{{ route('buy')}}" method="GET">
+                                <form action="{{ route('buy') }}" method="GET">
                                     <div class="" id="home_form">
                                         <div class="">
                                             <label>Country</label>
                                             <select class="select_label" name="co_name" id="co_name" required focus>
                                                 <option value="" disabled selected>select country </option>
+
                                                 @foreach ($countrys as $country)
                                                     <option value="{{ $country->id }}">{{ $country->co_name }}</option>
                                                 @endforeach
@@ -166,8 +167,8 @@
                                             <label>Property Type</label>
                                             <select class="select_label" name="state">
                                                 <option value="">Select property</option>
-                                                @foreach ($uniquePropertyTypes as $type)
-                                                    <option value="{{ $type }}">{{ $type }}</option>
+                                                @foreach ($uniquePropertyTypes as $p_type)
+                                                    <option value="{{ $p_type }}">{{ $p_type }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -286,7 +287,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                            </div>-->
+                                                                                                                </div>-->
                                 </form>
                             </div>
                         </div>
@@ -366,11 +367,12 @@
                 </div>
             </section>
             <!--=============================
-                                                                            PROPERTY GRID VIEW END
-                                                                        ==============================-->
+                                                                                PROPERTY GRID VIEW END
+                                                                            ==============================-->
             <div class="row mt_95 xs_mt_75">
                 <div class="col-md-9">
                     <div class="row">
+                        @if(count($propertys) > 0)
                         @foreach ($propertys as $property)
                             <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
                                 <div class="single_property">
@@ -482,6 +484,9 @@
                                 </div>
                             </div>
                         @endforeach
+                        @else
+                     <div class="col-lg-12" style="text-align: center">No Property Found</div>
+                        @endif
                     </div>
                     <div style="text-align: center">
                         {!! $propertys->links() !!}

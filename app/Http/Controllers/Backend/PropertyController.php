@@ -52,7 +52,7 @@ class PropertyController extends Controller
             'map' => 'required',
             'video' => 'required',
             'p_id' => 'required',
-            'slag' => 'required|unique:properties,slag,',
+            // 'slag' => 'required|unique:properties,slag,',
             'facilities' => 'required',
         ]);
 

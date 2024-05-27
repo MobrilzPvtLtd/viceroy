@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
 
 class BackendController extends Controller
 {
@@ -15,4 +16,6 @@ class BackendController extends Controller
     {
         return view('backend.index');
     }
+
+
 }
