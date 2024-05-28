@@ -36,11 +36,11 @@ class FrontendController extends Controller
         if ($request->has('price') && $request->price != '') {
             $query->where('price', $request->price);
         }
-        if ($request->has('type') && $request->type != '') {
-            $query->where('type', $request->type);
+        if ($request->has('p_type') && $request->type != '') {
+            $query->where('p_type', $request->type);
         }
         $propertys = $query->orderBy('id', 'desc')->paginate(6);
-        $uniquePropertyTypes = Property::whereIn('type', ['buy', 'rent'])->distinct()->pluck('type')->sort();
+        $uniquePropertyTypes = Property::whereIn('type', ['buy', 'rent'])->distinct()->pluck('p_type')->sort();
         $uniqueBedrooms = Property::whereIn('type', ['buy', 'rent'])->distinct()->pluck('number_of_room')->sort();
         $uniquePrices = Property::whereIn('type', ['buy', 'rent'])->distinct()->pluck('price')->sort();
         $propertys = Property::all();
@@ -65,11 +65,11 @@ class FrontendController extends Controller
         if ($request->has('price') && $request->price != '') {
             $query->where('price', $request->price);
         }
-        if ($request->has('type') && $request->type != '') {
-            $query->where('type', $request->type);
+        if ($request->has('p_type') && $request->type != '') {
+            $query->where('p_type', $request->type);
         }
         $propertys = $query->orderBy('id', 'desc')->paginate(6);
-        $uniquePropertyTypes = Property::whereIn('type', ['buy', 'rent'])->distinct()->pluck('type')->sort();
+        $uniquePropertyTypes = Property::whereIn('type', ['buy', 'rent'])->distinct()->pluck('p_type')->sort();
         $uniqueBedrooms = Property::whereIn('type',  ['buy', 'rent'])->distinct()->pluck('number_of_room')->sort();
         $uniquePrices = Property::whereIn('type',  ['buy', 'rent'])->distinct()->pluck('price')->sort();
         $currencys = Currency::all();
@@ -92,11 +92,11 @@ class FrontendController extends Controller
         if ($request->has('price') && $request->price != '') {
             $query->where('price', $request->price);
         }
-        if ($request->has('type') && $request->type != '') {
-            $query->where('type', $request->type);
+        if ($request->has('p_type') && $request->type != '') {
+            $query->where('p_type', $request->type);
         }
         $propertys = $query->orderBy('id', 'desc')->paginate(6);
-        $uniquePropertyTypes = Property::whereIn('type',  ['rent', 'buy'])->distinct()->pluck('type')->sort();
+        $uniquePropertyTypes = Property::whereIn('type',  ['rent', 'buy'])->distinct()->pluck('p_type')->sort();
         $uniqueBedrooms = Property::whereIn('type',  ['rent', 'buy'])->distinct()->pluck('number_of_room')->sort();
         $uniquePrices = Property::whereIn('type',  ['rent', 'buy'])->distinct()->pluck('price')->sort();
         $countrys = Country::all();

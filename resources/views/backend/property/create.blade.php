@@ -54,11 +54,11 @@
                                         placeholder="">
                                 </div>
 
-                                <div class="form-group mb-2 col-4">
+                                {{-- <div class="form-group mb-2 col-4">
                                     <label for="city">Slug</label>
                                     <input type="text" class="form-control" name="slag"
                                         value="{{ old('slag') }}"placeholder="">
-                                </div>
+                                </div> --}}
 
                                 <div class="form-group mb-2 col-4">
                                     <label for="ct_name">Address </label>

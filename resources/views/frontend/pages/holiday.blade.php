@@ -54,6 +54,8 @@
             font-size: 60px;
             color: #fff;
         }
+
+        
     </style>
 
 
@@ -108,7 +110,7 @@
                         </p>
                         <br>
                         <div class="section_heading section_heading_left">
-                            <h2 style="font-size:30px;">What We Do</h2>
+                            <h2 style='font-size:30px;'>What We Do</h2>
                         </div>
                         <p>Our dynamic team helps your property reach its maximum potential by managing every aspect of your
                             listing for you. Our approach is simple and straightforward, comprising of a combination of

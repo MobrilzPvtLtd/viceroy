@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\PropertyController;
 use App\Http\Controllers\Backend\FacilitiesController;
 use App\Http\Controllers\Backend\CurrencyController;
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Backend\ContactsController;
 
 
 
@@ -38,6 +39,9 @@ Route::post('contact', [ContactController::class, 'submit'])->name('contact.subm
 
 //Currency
 Route::resource('admin/currency', CurrencyController::class);
+
+//Contact
+Route::resource('admin/massage', ContactsController::class);
 
 // property
 Route::resource('admin/property',  PropertyController::class);

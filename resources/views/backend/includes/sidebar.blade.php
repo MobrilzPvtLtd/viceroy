@@ -44,13 +44,21 @@ $notifications_latest = optional($notifications)->take(5);
                 </a>
             </li>
         @endcan --}}
+        @can('contact')
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/massage">
+                    <i class="nav-icon fa-solid fa-store"></i>&nbsp;@lang('Contact')
+                </a>
+            </li>
+        @endcan
         @can('CURRENCY')
-        <li class="nav-item">
-            <a class="nav-link" href="/admin/currency">
-                <i class="nav-icon fa-solid fa-store"></i>&nbsp;@lang('Currency')
-            </a>
-        </li>
-    @endcan
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/currency">
+                    <i class="nav-icon fa-solid fa-store"></i>&nbsp;@lang('Currency')
+                </a>
+            </li>
+        @endcan
+
 
         @can('country')
             <li class="nav-group" aria-expanded="true">
@@ -84,12 +92,12 @@ $notifications_latest = optional($notifications)->take(5);
             </li>
         @endcan
         @can('facilities')
-        <li class="nav-item">
-            <a class="nav-link" href="/admin/facility">
-                <i class="nav-icon fa-solid fa-store"></i>&nbsp;@lang('facilities')
-            </a>
-        </li>
-    @endcan
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/facility">
+                    <i class="nav-icon fa-solid fa-store"></i>&nbsp;@lang('facilities')
+                </a>
+            </li>
+        @endcan
         {{-- @can('rent property')
             <li class="nav-item">
                 <a class="nav-link" href="/admin/rent">
