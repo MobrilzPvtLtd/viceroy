@@ -288,7 +288,7 @@
                     </div>
                 </div>
             </div>
-
+            <div class="container">
             <div class="row mt_95 xs_mt_75">
                 <button id="btn001" onclick="func()" name="map-view">
                     <i class="fa-solid fa-map"> Map view</i>
@@ -391,7 +391,7 @@
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
-
+            </div>
         </div>
     </section>
 @endsection
