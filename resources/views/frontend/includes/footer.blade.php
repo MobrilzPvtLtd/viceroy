@@ -137,6 +137,23 @@
       SCROLL BUTTON END
   =================================-->
 
+
+
+
+<!--wow js-->
+<script src="assets/js/wow.min.js"></script>
+<!--animated barfiller js-->
+<script src="assets/js/animated_barfiller.js"></script>
+<!--simple-bar-graph js-->
+<script src="assets/js/jquery.simple-bar-graph.min.js"></script>
+<!--sticky sidebar js-->
+<script src="assets/js/sticky_sidebar.js"></script>
+<!--summernote js-->
+<script src="assets/js/summernote.min.js"></script>
+<!--scroll button js-->
+<script src="assets/js/scroll_button.js"></script>
+<!--main/custom js-->
+<script src="assets/js/script.js"></script>
 <!--jquery library js-->
 <script src="assets/js/jquery-3.7.1.min.js"></script>
 <!--bootstrap js-->
@@ -153,20 +170,12 @@
 <script src="assets/js/jquery.marquee.min.js"></script>
 <!--YTPlayer js-->
 <script src="assets/js/jquery.youtube-background.min.js"></script>
-<!--wow js-->
-<script src="assets/js/wow.min.js"></script>
-<!--animated barfiller js-->
-<script src="assets/js/animated_barfiller.js"></script>
-<!--simple-bar-graph js-->
-<script src="assets/js/jquery.simple-bar-graph.min.js"></script>
-<!--sticky sidebar js-->
-<script src="assets/js/sticky_sidebar.js"></script>
-<!--summernote js-->
-<script src="assets/js/summernote.min.js"></script>
-<!--scroll button js-->
-<script src="assets/js/scroll_button.js"></script>
-<!--main/custom js-->
-<script src="assets/js/script.js"></script>
+
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"
+></script>
+
 
 <script type="text/javascript">
     function showDiv(select) {
@@ -207,4 +216,157 @@
 closeBtn.addEventListener("click" , (()=>{
     console.log("hello guys")
 }))
+</script>
+
+
+
+<script>
+  $(document).ready(function () {
+    $("#testimonial-slider").owlCarousel({
+      items: 1,
+      itemsDesktop: [1000, 1],
+      itemsDesktopSmall: [979, 1],
+      itemsTablet: [768, 1],
+      pagination: false,
+      navigation: true,
+      navigationText: ["", ""],
+      autoPlay: true,
+    });
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    $("#testimonial-slider1").owlCarousel({
+      items: 1,
+      itemsDesktop: [1000, 1],
+      itemsDesktopSmall: [979, 1],
+      itemsTablet: [768, 1],
+      pagination: false,
+      navigation: true,
+      navigationText: ["", ""],
+      autoPlay: true,
+    });
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    $("#testimonial-slider2").owlCarousel({
+      items: 1,
+      itemsDesktop: [1000, 1],
+      itemsDesktopSmall: [979, 1],
+      itemsTablet: [768, 1],
+      pagination: false,
+      navigation: true,
+      navigationText: ["", ""],
+      autoPlay: true,
+    });
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    $("#testimonial-slider3").owlCarousel({
+      items: 1,
+      itemsDesktop: [1000, 1],
+      itemsDesktopSmall: [979, 1],
+      itemsTablet: [768, 1],
+      pagination: false,
+      navigation: true,
+      navigationText: ["", ""],
+      autoPlay: true,
+    });
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    $("#testimonial-slider5").owlCarousel({
+      items: 1,
+      itemsDesktop: [1000, 1],
+      itemsDesktopSmall: [979, 1],
+      itemsTablet: [768, 1],
+      pagination: false,
+      navigation: true,
+      navigationText: ["", ""],
+      autoPlay: true,
+    });
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    $("#testimonial-slider4").owlCarousel({
+      items: 1,
+      itemsDesktop: [1000, 1],
+      itemsDesktopSmall: [979, 1],
+      itemsTablet: [768, 1],
+      pagination: false,
+      navigation: true,
+      navigationText: ["", ""],
+      autoPlay: true,
+    });
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    $("#testimonial-slider6").owlCarousel({
+      items: 1,
+      itemsDesktop: [1000, 1],
+      itemsDesktopSmall: [979, 1],
+      itemsTablet: [768, 1],
+      pagination: false,
+      navigation: true,
+      navigationText: ["", ""],
+      autoPlay: true,
+    });
+  });
+</script>
+<script>
+  window.addEventListener("scroll", function () {
+    var container = document.getElementById("container");
+    var scrollPosition =
+      window.scrollY ||
+      window.scrollTop ||
+      document.getElementsByTagName("html")[0].scrollTop;
+
+    if (scrollPosition > window.innerHeight / 4) {
+      container.style.top = "11%";
+      container.style.position = "fixed";
+      container.style.width = "68vw";
+    } else {
+      container.style.top = "30%";
+      container.style.width = "68vw";
+    }
+  });
+
+  const mapView = document.querySelector("#btn001");
+  const listView = document.querySelector("#btn002");
+  const list = document.querySelector("#list001");
+  const map = document.querySelector("#map001");
+  console.log(map.name);
+  let state = false;
+  // mapView.addEventListener("click",
+  const func =() => {
+    // map.style.display = "block"
+    // list.style.display="none";
+    // console.log("map view ka data" , mapView.name)
+    if (state == false) {
+      state = true;
+      console.log("hariom", state);
+    } else {
+      state = false;
+      console.log("hariom22", state);
+    }
+
+    state == true
+      ? ((map.style.display = "block ") &&
+        (list.style.display = "none") &&
+        (mapView.style.display="none") &&
+        (listView.style.display="block")
+         )
+      : ((list.style.display = "block") &&
+        (map.style.display = "none") &&
+        (mapView.style.display = "block") &&
+        (listView.style.display = "none")
+
+      );
+  }
+
 </script>

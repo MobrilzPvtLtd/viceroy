@@ -23,53 +23,37 @@
         </div>
     </section>
     <!--=============================
-                BREADCRUMBS END
-            ==============================-->
+                        BREADCRUMBS END
+                    ==============================-->
 
 
     <!--=============================
-                PROPERTY DETAILS START
-            ==============================-->
+                        PROPERTY DETAILS START
+                    ==============================-->
     <section class="property_details pt_50 xs_pt_100 pb_105 xs_pb_85">
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
                 <div class=" col-xl-12">
 
-                    <div id="testimonial-slider" class="owl-carousel">
+                    <div id="testimonial-slider" class="">
+
                         <div class="testimonial">
                             <div class="pic">
-
+                                @php
+                                    $images = unserialize($property->image);
+                                @endphp
+                                @if (!empty($images))
+                                    <img src="{{ asset('public/' . $images[0]) }}" alt="Image" class="img-fluid w-100">
+                                @else
+                                    <p>No images available</p>
+                                @endif
                             </div>
-
-
                         </div>
                         <div class="testimonial">
                             <div class="pic">
-                                @foreach (unserialize($property->image) as $image)
-                                    <img src="{{ asset('public/' . $image) }}" alt="Image" class="img-fluid w-100">
-                                @endforeach
+
                             </div>
-
-
                         </div>
-                        {{-- <div class="testimonial">
-                            <div class="pic">
-                                <img src="{{asset('assets/images/property_details_img_3.jpg')}}" alt="img"
-                                    class="img-fluid w-100">
-
-
-                            </div>
-
-
-                        </div> --}}
-                        {{-- <div class="testimonial">
-                            <div class="pic">
-                                @foreach (unserialize($property->image) as $image)
-                                    <img src="{{ asset('public/' . $image) }}" alt="Image" class="img-fluid w-100">
-                                @endforeach
-                            </div>
-                        </div> --}}
-
                     </div>
                 </div>
             </div>
@@ -270,7 +254,8 @@
                     <div class="col-xl-4 wow fadeInUp" data-wow-duration="1.5s">
                         <div class=" single_property">
                             <div class="single_property_img">
-                                <img src="{{ asset('assets/images/property_4.jpg') }}" alt="img" class="img-fluid w-100">
+                                <img src="{{ asset('assets/images/property_4.jpg') }}" alt="img"
+                                    class="img-fluid w-100">
                                 <a class="feature_link" href="#">for sale</a>
                                 <ul class="d-flex flex-wrap">
                                     <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
@@ -284,17 +269,17 @@
                                     <p><i class="fas fa-map-marker-alt"></i>28B Highgate Road, London</p>
                                     <ul class="d-flex flex-wrap">
                                         <li>
-                                            <span><img src="assets/images/bad.png" alt="img"
+                                            <span><img src="{{ asset('assets/images/bad.png') }}" alt="img"
                                                     class="img-fluid w-100"></span>
                                             6 Beds
                                         </li>
                                         <li>
-                                            <span><img src="assets/images/bathtab.png" alt="img"
+                                            <span><img src="{{ asset('assets/images/bathtab.png') }}" alt="img"
                                                     class="img-fluid w-100"></span>
                                             4 Baths
                                         </li>
                                         <li>
-                                            <span><img src="assets/images/squre.png" alt="img"
+                                            <span><img src="{{ asset('assets/images/squre.png') }}" alt="img"
                                                     class="img-fluid w-100"></span>
                                             2500 Sq Ft
                                         </li>
@@ -318,7 +303,7 @@
                     <div class="col-xl-4 wow fadeInUp" data-wow-duration="1.5s">
                         <div class=" single_property">
                             <div class="single_property_img">
-                                <img src="assets/images/property_5.jpg" alt="img" class="img-fluid w-100">
+                                <img src=" {{ asset(' assets/images/property_5.jpg') }}" alt="img" class="img-fluid w-100">
                                 <a class="feature_link" href="#">for rent</a>
                                 <a class="feature_link feature" href="#">Featured</a>
                                 <ul class="d-flex flex-wrap">
@@ -333,17 +318,17 @@
                                     <p><i class="fas fa-map-marker-alt"></i>28B Highgate Road, London</p>
                                     <ul class="d-flex flex-wrap">
                                         <li>
-                                            <span><img src="assets/images/bad.png" alt="img"
+                                            <span><img src="{{ asset(' assets/images/property_5.jpg')}}" alt="img"
                                                     class="img-fluid w-100"></span>
                                             4 Beds
                                         </li>
                                         <li>
-                                            <span><img src="assets/images/bathtab.png" alt="img"
+                                            <span><img src="{{ asset('assets/images/bathtab.png') }}" alt="img"
                                                     class="img-fluid w-100"></span>
                                             3 Baths
                                         </li>
                                         <li>
-                                            <span><img src="assets/images/squre.png" alt="img"
+                                            <span><img src="{{ asset('assets/images/squre.png') }}" alt="img"
                                                     class="img-fluid w-100"></span>
                                             2200 Sq Ft
                                         </li>
@@ -367,7 +352,7 @@
                     <div class="col-xl-4 wow fadeInUp" data-wow-duration="1.5s">
                         <div class=" single_property">
                             <div class="single_property_img">
-                                <img src="assets/images/property_3.jpg" alt="img" class="img-fluid w-100">
+                                <img src="{{ asset('assets/images/property_3.jpg') }}" alt="img" class="img-fluid w-100">
                                 <a class="feature_link" href="#">for rent</a>
                                 <a class="feature_link feature" href="#">Featured</a>
                                 <ul class="d-flex flex-wrap">
@@ -382,17 +367,17 @@
                                     <p><i class="fas fa-map-marker-alt"></i>28B Highgate Road, London</p>
                                     <ul class="d-flex flex-wrap">
                                         <li>
-                                            <span><img src="assets/images/bad.png" alt="img"
+                                            <span><img src="{{ asset('assets/images/bad.png') }}" alt="img"
                                                     class="img-fluid w-100"></span>
                                             5 Beds
                                         </li>
                                         <li>
-                                            <span><img src="assets/images/bathtab.png" alt="img"
+                                            <span><img src="{{ asset('assets/images/bathtab.png') }}" alt="img"
                                                     class="img-fluid w-100"></span>
                                             4 Baths
                                         </li>
                                         <li>
-                                            <span><img src="assets/images/squre.png" alt="img"
+                                            <span><img src="{{ asset('assets/images/squre.png') }}" alt="img"
                                                     class="img-fluid w-100"></span>
                                             2300 Sq Ft
                                         </li>
@@ -416,7 +401,7 @@
                     <div class="col-xl-4 wow fadeInUp" data-wow-duration="1.5s">
                         <div class=" single_property">
                             <div class="single_property_img">
-                                <img src="assets/images/property_8.jpg" alt="img" class="img-fluid w-100">
+                                <img src="{{ asset('assets/images/property_8.jpg') }}" alt="img" class="img-fluid w-100">
                                 <a class="feature_link" href="#">for rent</a>
                                 <a class="feature_link feature" href="#">Featured</a>
                                 <ul class="d-flex flex-wrap">
@@ -431,17 +416,17 @@
                                     <p><i class="fas fa-map-marker-alt"></i>28B Highgate Road, London</p>
                                     <ul class="d-flex flex-wrap">
                                         <li>
-                                            <span><img src="assets/images/bad.png" alt="img"
+                                            <span><img src="{{ asset('assets/images/bad.png') }}" alt="img"
                                                     class="img-fluid w-100"></span>
                                             4 Beds
                                         </li>
                                         <li>
-                                            <span><img src="assets/images/bathtab.png" alt="img"
+                                            <span><img src="{{ asset('assets/images/bathtab.png') }}" alt="img"
                                                     class="img-fluid w-100"></span>
                                             3 Baths
                                         </li>
                                         <li>
-                                            <span><img src="assets/images/squre.png" alt="img"
+                                            <span><img src="{{ asset('assets/images/squre.png') }}" alt="img"
                                                     class="img-fluid w-100"></span>
                                             2200 Sq Ft
                                         </li>

@@ -44,17 +44,30 @@ $notifications_latest = optional($notifications)->take(5);
                 </a>
             </li>
         @endcan --}}
-        @can('contact')
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/massage">
-                    <i class="nav-icon fa-solid fa-store"></i>&nbsp;@lang('Contact')
+        @can('Inquiry')
+            <li class="nav-group" aria-expanded="true">
+                <a class="nav-link nav-group-toggle" href="">
+                    <i class="nav-icon fa-solid fa-question"></i>&nbsp;@lang('Inquirys')
                 </a>
+                <ul class="nav-group-items compact" style="height: auto;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/massage">
+                            <span class="nav-icon"><span class="nav-icon-bullet"></span></span> Inquiry
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/massage">
+                            <span class="nav-icon"><span class="nav-icon-bullet"></span></span>Property Inquiry
+                        </a>
+                    </li>
+                </ul>
             </li>
         @endcan
+
         @can('CURRENCY')
             <li class="nav-item">
                 <a class="nav-link" href="/admin/currency">
-                    <i class="nav-icon fa-solid fa-store"></i>&nbsp;@lang('Currency')
+                    <i class="nav-icon  fa-solid fa-money-bill-1-wave"></i>&nbsp;@lang('Currency')
                 </a>
             </li>
         @endcan
@@ -63,7 +76,7 @@ $notifications_latest = optional($notifications)->take(5);
         @can('country')
             <li class="nav-group" aria-expanded="true">
                 <a class="nav-link nav-group-toggle" href="#">
-                    <i class="nav-icon fa-solid fa-list-ul"></i>&nbsp;@lang('Address')
+                    <i class="nav-icon fa fa-address-card" aria-hidden="true"></i>&nbsp;@lang('Address')
                 </a>
                 <ul class="nav-group-items compact" style="height: auto;">
                     <li class="nav-item">
@@ -94,7 +107,7 @@ $notifications_latest = optional($notifications)->take(5);
         @can('facilities')
             <li class="nav-item">
                 <a class="nav-link" href="/admin/facility">
-                    <i class="nav-icon fa-solid fa-store"></i>&nbsp;@lang('facilities')
+                    <i class="nav-icon fa-solid fa-font-awesome"></i>&nbsp;@lang('facilities')
                 </a>
             </li>
         @endcan
