@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\FacilitiesController;
 use App\Http\Controllers\Backend\CurrencyController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Backend\ContactsController;
+use App\Http\Controllers\Backend\InquairyController ;
 
 
 
@@ -43,10 +44,12 @@ Route::resource('admin/currency', CurrencyController::class);
 //Contact
 Route::resource('admin/massage', ContactsController::class);
 
+//Inquairy property
+Route::resource('admin/inquairy', InquairyController::class);
+
 // property
 Route::resource('admin/property',  PropertyController::class);
 Route::get('fetch-city', [PropertyController::class, 'fetchCity'])->name('fetch-city');
-// Route::get('buy/{id}', [PropertyController::class, 'show'])->name('buy.show');
 // Facilities
 Route::resource('admin/facility',  FacilitiesController::class);
 
@@ -71,6 +74,7 @@ Route::get('contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('login', [FrontendController::class, 'login'])->name('login');
 Route::get('register', [FrontendController::class, 'register'])->name('register');
 Route::get('property/{slag}', [FrontendController::class, 'propertydetails'])->name('property');
+Route::get('cart-form', [FrontendController::class, 'cartform'])->name('cartform');
 // Route::get('search', [PropertyController::class, 'search'])->name('property.search');
 
 

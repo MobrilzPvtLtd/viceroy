@@ -12,4 +12,6 @@ class ContactsController extends Controller
         $contacts = Contact::all();
         return view('backend.contact.massage',compact('contacts'));
     }
+
+
 }

@@ -97,17 +97,17 @@
 
 
             <li>
-              <a class="user_icon" href="">
-                <span>
-                  <img
-                    src="{{ asset('assets/images/h1.png') }}"
-                    alt="user"
-                    class="img-fluid w-100"
-                  />
-                </span>
-                Cart
-              </a>
+                <div class="content">
+                    <div class="test-cart">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </div>
+                    <!-- <div class="test">
+                   <div class="test__product"></div>
+                   <button class="test__btn">ADD TO CART</button>
+                 </div> -->
+                </div>
             </li>
+
             <!-- <li>
                         <a class="user_icon" href="login.html">
                             <span> <img src="assets/images/h1.png" alt="user" class="img-fluid w-100">

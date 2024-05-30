@@ -56,7 +56,7 @@ $notifications_latest = optional($notifications)->take(5);
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/massage">
+                        <a class="nav-link" href="/admin/inquairy">
                             <span class="nav-icon"><span class="nav-icon-bullet"></span></span>Property Inquiry
                         </a>
                     </li>

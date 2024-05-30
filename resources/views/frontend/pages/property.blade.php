@@ -64,9 +64,7 @@
                             <h4>{{ $property->title }}</h4>
                             <ul class="property_details_share d-flex flex-wrap">
                                 <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="far fa-plus"></i></a></li>
-                                <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
-                                <li><a href="#"><i class="fas fa-print"></i></a></li>
+                               
                             </ul>
                         </div>
                         <div class="property_details_address d-flex flex-wrap justify-content-between">
