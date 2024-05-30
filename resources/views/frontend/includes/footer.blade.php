@@ -137,23 +137,6 @@
       SCROLL BUTTON END
   =================================-->
 
-
-
-
-<!--wow js-->
-<script src="assets/js/wow.min.js"></script>
-<!--animated barfiller js-->
-<script src="assets/js/animated_barfiller.js"></script>
-<!--simple-bar-graph js-->
-<script src="assets/js/jquery.simple-bar-graph.min.js"></script>
-<!--sticky sidebar js-->
-<script src="assets/js/sticky_sidebar.js"></script>
-<!--summernote js-->
-<script src="assets/js/summernote.min.js"></script>
-<!--scroll button js-->
-<script src="assets/js/scroll_button.js"></script>
-<!--main/custom js-->
-<script src="assets/js/script.js"></script>
 <!--jquery library js-->
 <script src="assets/js/jquery-3.7.1.min.js"></script>
 <!--bootstrap js-->
@@ -170,12 +153,20 @@
 <script src="assets/js/jquery.marquee.min.js"></script>
 <!--YTPlayer js-->
 <script src="assets/js/jquery.youtube-background.min.js"></script>
-
-<script
-  type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"
-></script>
-
+<!--wow js-->
+<script src="assets/js/wow.min.js"></script>
+<!--animated barfiller js-->
+<script src="assets/js/animated_barfiller.js"></script>
+<!--simple-bar-graph js-->
+<script src="assets/js/jquery.simple-bar-graph.min.js"></script>
+<!--sticky sidebar js-->
+<script src="assets/js/sticky_sidebar.js"></script>
+<!--summernote js-->
+<script src="assets/js/summernote.min.js"></script>
+<!--scroll button js-->
+<script src="assets/js/scroll_button.js"></script>
+<!--main/custom js-->
+<script src="assets/js/script.js"></script>
 
 <script type="text/javascript">
     function showDiv(select) {
@@ -212,161 +203,116 @@
 
         }
     });
+    window.addEventListener('scroll', function() {
+        var container = document.getElementById('container2');
+        var scrollPosition = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0]
+            .scrollTop;
+
+        if (scrollPosition > window.innerHeight / 4) {
+            container.style.top = '11%';
+            container.style.position = 'fixed';
+            container.style.width = '80vw';
+
+        } else {
+            container.style.top = '27%';
+            container.style.width = '80vw';
+
+        }
+    });
     const closeBtn = document.querySelector("#close_btn_minmax")
+    const close001 = document.querySelector("#close001")
+    const select_bedroom_btn =  document.querySelector("#select_bedroom_btn")
 closeBtn.addEventListener("click" , (()=>{
-    console.log("hello guys")
+    console.log("hello guys");
+    // close001.style.visibility = "hidden";
 }))
-</script>
+    const adv_search_icon = document.querySelector(".adv_search_icon")
+    const adv_search_icon2 = document.querySelector(".adv_search_icon2")
+    const min_max = document.querySelector("#close_btn_minmax")
+
+    select_bedroom_btn.addEventListener('click',(()=>{
+        console.log("hariom")
+        if (close001.style.display == "none"){
+            close001.style.display = "block";
+        }
+        else{ close001.style.display = "none"}
+        }))
+        adv_search_icon2.addEventListener("click", (()=>{
+            console.log("hariom2")
+    close001.style.display = "none"
+
+        }))
+//         const closeBtn = document.querySelector("#close_btn_minmax")
+//     const close009 = document.querySelector("#close009")
+//     const select_bedroom_btn =  document.querySelector("#select_bedroom_btn")
+// closeBtn.addEventListener("click" , (()=>{
+//     console.log("hello guys");
+//     // close001.style.visibility = "hidden";
+// }))
+//     const adv_search_icon = document.querySelector(".adv_search_icon")
+//     const adv_search_icon3 = document.querySelector(".adv_search_icon3")
+//     const min_max = document.querySelector("#close_btn_minmax")
+
+//     select_bedroom_btn.addEventListener('click',(()=>{
+//         console.log("hariom")
+//         if (close009.style.display == "none"){
+//             close009.style.display = "block";
+//         }
+//         else{ close009.style.display = "none"}
+//         }))
+//         adv_search_icon3.addEventListener("click", (()=>{
+//             console.log("hariom2")
+//     close009.style.display = "none"
+
+//         }))
 
 
+</script>
 
-<script>
-  $(document).ready(function () {
-    $("#testimonial-slider").owlCarousel({
-      items: 1,
-      itemsDesktop: [1000, 1],
-      itemsDesktopSmall: [979, 1],
-      itemsTablet: [768, 1],
-      pagination: false,
-      navigation: true,
-      navigationText: ["", ""],
-      autoPlay: true,
-    });
-  });
-</script>
-<script>
-  $(document).ready(function () {
-    $("#testimonial-slider1").owlCarousel({
-      items: 1,
-      itemsDesktop: [1000, 1],
-      itemsDesktopSmall: [979, 1],
-      itemsTablet: [768, 1],
-      pagination: false,
-      navigation: true,
-      navigationText: ["", ""],
-      autoPlay: true,
-    });
-  });
-</script>
-<script>
-  $(document).ready(function () {
-    $("#testimonial-slider2").owlCarousel({
-      items: 1,
-      itemsDesktop: [1000, 1],
-      itemsDesktopSmall: [979, 1],
-      itemsTablet: [768, 1],
-      pagination: false,
-      navigation: true,
-      navigationText: ["", ""],
-      autoPlay: true,
-    });
-  });
-</script>
-<script>
-  $(document).ready(function () {
-    $("#testimonial-slider3").owlCarousel({
-      items: 1,
-      itemsDesktop: [1000, 1],
-      itemsDesktopSmall: [979, 1],
-      itemsTablet: [768, 1],
-      pagination: false,
-      navigation: true,
-      navigationText: ["", ""],
-      autoPlay: true,
-    });
-  });
-</script>
-<script>
-  $(document).ready(function () {
-    $("#testimonial-slider5").owlCarousel({
-      items: 1,
-      itemsDesktop: [1000, 1],
-      itemsDesktopSmall: [979, 1],
-      itemsTablet: [768, 1],
-      pagination: false,
-      navigation: true,
-      navigationText: ["", ""],
-      autoPlay: true,
-    });
-  });
-</script>
-<script>
-  $(document).ready(function () {
-    $("#testimonial-slider4").owlCarousel({
-      items: 1,
-      itemsDesktop: [1000, 1],
-      itemsDesktopSmall: [979, 1],
-      itemsTablet: [768, 1],
-      pagination: false,
-      navigation: true,
-      navigationText: ["", ""],
-      autoPlay: true,
-    });
-  });
-</script>
-<script>
-  $(document).ready(function () {
-    $("#testimonial-slider6").owlCarousel({
-      items: 1,
-      itemsDesktop: [1000, 1],
-      itemsDesktopSmall: [979, 1],
-      itemsTablet: [768, 1],
-      pagination: false,
-      navigation: true,
-      navigationText: ["", ""],
-      autoPlay: true,
-    });
-  });
-</script>
-<script>
-  window.addEventListener("scroll", function () {
-    var container = document.getElementById("container");
-    var scrollPosition =
-      window.scrollY ||
-      window.scrollTop ||
-      document.getElementsByTagName("html")[0].scrollTop;
+{{-- cart script --}}
+{{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+  {{-- <script>
+    var APP = APP || {};
+    APP.sidecart = (function (APP, $) {
+      var $test = $(".test"),
+        $sidecart = $(".sidecart"),
+        $closeCart = $(".sidecart__close"),
+        $cartOverlay = $(".sidecart__overlay");
 
-    if (scrollPosition > window.innerHeight / 4) {
-      container.style.top = "11%";
-      container.style.position = "fixed";
-      container.style.width = "68vw";
-    } else {
-      container.style.top = "30%";
-      container.style.width = "68vw";
-    }
-  });
+      function bindEvents() {
+        console.log("sidecart init");
 
-  const mapView = document.querySelector("#btn001");
-  const listView = document.querySelector("#btn002");
-  const list = document.querySelector("#list001");
-  const map = document.querySelector("#map001");
-  console.log(map.name);
-  let state = false;
-  // mapView.addEventListener("click",
-  const func =() => {
-    // map.style.display = "block"
-    // list.style.display="none";
-    // console.log("map view ka data" , mapView.name)
-    if (state == false) {
-      state = true;
-      console.log("hariom", state);
-    } else {
-      state = false;
-      console.log("hariom22", state);
-    }
+        $(".sidecart__close, .sidecart__overlay, .test-cart").on("click", function () {
+          toggleCart();
+        });
 
-    state == true
-      ? ((map.style.display = "block ") &&
-        (list.style.display = "none") &&
-        (mapView.style.display="none") &&
-        (listView.style.display="block")
-         )
-      : ((list.style.display = "block") &&
-        (map.style.display = "none") &&
-        (mapView.style.display = "block") &&
-        (listView.style.display = "none")
+        $test.find(".test__btn").on("click", function () {
+          addItemToCart();
+        });
+      }
 
-      );
-  }
+      function toggleCart() {
+        $sidecart.toggleClass("sidecart--close");
+        $cartOverlay.toggleClass("sidecart__overlay--hide");
+      }
 
-</script>
+      function addItemToCart() {
+        var $items = $(".sidecart__items");
+        var $emptyText = $(".sidecart__empty-text");
+        $items.removeClass("sidecart__items--empty");
+        $emptyText.addClass("sidecart__empty-text--hide");
+
+        var $newItem = $("<div class='sidecart__item'>Item</div>");
+        $items.append($newItem);
+      }
+
+      function init() {
+        bindEvents();
+      }
+
+      return {
+        init: init,
+      };
+    })(APP, jQuery);
+    APP.sidecart.init();
+  </script> --}}

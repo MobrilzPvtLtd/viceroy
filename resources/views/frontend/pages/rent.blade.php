@@ -24,17 +24,17 @@
         </div>
     </section>
     <!--=============================
-                                                                                BREADCRUMBS END
-                                                                            ==============================-->
+                                                    BREADCRUMBS END
+                                                ==============================-->
 
     <!--=============================
-                                                                                PROPERTY GRID VIEW START
-                                                                            ==============================-->
+                                                    PROPERTY GRID VIEW START
+                                                ==============================-->
     <section class="property_grid_view pb_120 xs_pb_100">
         <div class="container-fluid">
             <div class="row justify-content-center wow fadeInUp" data-wow-duration="1.5s">
-                <div class="col-xl-12 col-lg-12">
-                    <div class="banner_search">
+                <div class="col-xl-12 col-lg-12 buy001">
+                    <div class="banner_search" id = "container2">
                         <ul class="nav nav-pills" id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
@@ -44,21 +44,21 @@
                                 </button>
                             </li>
                             <!--<li class="nav-item" role="presentation">
-                                                                                                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                                                                                data-bs-target="#pills-profile" type="button" role="tab"
-                                                                                                                aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                                                                                        </li>-->
+                                                                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                                                    data-bs-target="#pills-profile" type="button" role="tab"
+                                                                                    aria-controls="pills-profile" aria-selected="false">Sell</button>
+                                                                            </li>-->
                             <!--<li class="nav-item" role="presentation">
-                                                                                                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                                                                                                data-bs-target="#pills-contact" type="button" role="tab"
-                                                                                                                aria-controls="pills-contact" aria-selected="false">Rent</button>
-                                                                                                        </li>-->
+                                                                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                                                                    data-bs-target="#pills-contact" type="button" role="tab"
+                                                                                    aria-controls="pills-contact" aria-selected="false">Rent</button>
+                                                                            </li>-->
                         </ul>
 
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                                 aria-labelledby="pills-home-tab" tabindex="0">
-                                <form action="{{ route('rent') }}" method="GET">
+                                <form action="{{ route('rent')}}" method="GET">
                                     <div class="" id="home_form">
                                         <div class="">
                                             <label>Country</label>
@@ -80,21 +80,22 @@
                                             </select>
                                         </div>
 
-                                        <div class="">
+                                        <div class="home_form_label">
                                             <label>Bedrooms</label>
-                                            <div class="adv_search_icon">
-                                                <select class="select_label" name="state">
-                                                    <option value="" disabled selected>Select bedrooms</option>
+                                            <div class="adv_search_icon" id="select_bedroom_btn">
+                                                <input class="select_label select_bedroom_btn" name="state" type="button" value="Select bedrooms">
+                                                    {{-- <option value="">Select bedrooms</option>
                                                     @foreach ($uniqueBedrooms as $bedroom)
                                                         <option value="{{ $bedroom }}">{{ $bedroom }}</option>
-                                                    @endforeach
-                                                </select>
+                                                    @endforeach --}}
+                                                </input>
                                             </div>
 
-                                            {{-- <div class="adv_search_area">
-                                              <div class="adv_search_close adv_search_close_1">
+                                            <div class="adv_search_area show_search1" id="close001">
+                                                 <div id="close_btn_minmax" class="adv_search_close adv_search_close_1">
                                                                       <i class="fal fa-times"></i>
-                                                                 </div>
+                                                                    </div>
+
                                                 <div id="min_max">
                                                     <select class="select_2" name="state">
                                                         <option value="">Min</option>
@@ -104,6 +105,7 @@
                                                         <option value="">04</option>
                                                         <option value="">05</option>
                                                     </select>
+
                                                     <select class="select_2" name="state">
                                                         <option value="">Max</option>
                                                         <option value="">01</option>
@@ -113,7 +115,7 @@
                                                         <option value="">05</option>
                                                     </select>
                                                 </div>
-                                            </div> --}}
+                                            </div>
                                         </div>
 
                                         <div class="">
@@ -162,8 +164,8 @@
                                             <select class="select_label" name="state">
                                                 <option value="">Select property</option>
                                                 @foreach ($uniquePropertyTypes as $type)
-                                                    <option value="{{ $type }}">{{ $type }}</option>
-                                                @endforeach
+                                                <option value="{{ $type }}">{{ $type }}</option>
+                                            @endforeach
                                             </select>
                                         </div>
 
@@ -281,117 +283,244 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                                </div>-->
+                                                                                    </div>-->
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="container">
-            <div class="row mt_95 xs_mt_75">
-                <button id="btn001" onclick="func()" name="map-view">
-                    <i class="fa-solid fa-map"> Map view</i>
-                </button>
-                <button id="btn002" onclick="func()" name="list-view">
-                    <i class="fa-solid fa-list"> List view</i>
-                </button>
-                <div class="col-md-9 " id="list001">
-                    <div class="row" id="lits-item">
-                        @if (count($propertys) > 0)
-                            @foreach ($propertys as $property)
-                                <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
-                                    <div class="single_property">
-                                        <div class="single_property_img">
-                                            @php
-                                                $images = unserialize($property->image);
-                                            @endphp
-                                            @if ($images !== false && is_array($images))
-                                                {{-- asset('public/uploads/' . $image) --}}
-                                                @foreach ($images as $image)
-                                                    <img src="{{ asset('public/' . $image) }}" alt="Image"
-                                                        style="width: 100%">
-                                                @endforeach
-                                            @else
-                                                <p>No images available</p>
-                                            @endif
-                                            <a class="feature_link" href="">{{ $property->type }}</a>
-                                            <div id="testimonial-slider1" class="owl-carousel">
-                                                <div class="testimonial">
-                                                    <div class="pic">
-                                                        @php
-                                                            $images = unserialize($property->image);
-                                                        @endphp
-                                                        @if ($images !== false && is_array($images))
-                                                            {{-- asset('public/uploads/' . $image) --}}
-                                                            @foreach ($images as $image)
-                                                                <img src="{{ asset('public/' . $image) }}" alt="Image"
-                                                                    style="width: 100%">
-                                                            @endforeach
-                                                        @else
-                                                            <p>No images available</p>
-                                                        @endif
 
-                                                        <a class="feature_link" href="">{{ $property->type }}</a>
-                                                    </div>
-                                                </div>
-
-
-
-                                            </div>
-                                        </div>
-
-                                        <div class="single_property_text">
-                                            <div class="single_property_top">
-                                                <a class="item_title" href=" ">{{ $property->title }}</a>
-                                                <p>
-                                                    <i class="fas fa-map-marker-alt"></i>{{ $property->address }}
-                                                </p>
-                                                <ul class="d-flex flex-wrap">
-                                                    <li>
-                                                        <span><img src="assets/images/bad.png" alt="img"
-                                                                class="img-fluid w-100" /></span>
-                                                        {{ $property->bed }} Beds
-                                                    </li>
-                                                    <li>
-                                                        <span><img src="assets/images/bathtab.png" alt="img"
-                                                                class="img-fluid w-100" /></span>
-                                                        {{ $property->number_bathroom }} Baths
-                                                    </li>
-                                                    <li>
-                                                        <span><img src="assets/images/squre.png" alt="img"
-                                                                class="img-fluid w-100" /></span>
-                                                        {{ $property->area }} Sq Ft
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                                <a class="read_btn" href="{{ route('property', $property->slag) }}">More
-                                                    Details<i class="fas fa-arrow-right"></i></a>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        @else
-                            <div class="col-lg-12" style="text-align: center">No Property Found</div>
-                        @endif
-                        <div style="text-align: center">
-                            {!! $propertys->links() !!}
+            <section class="discover_area pt_70 xs_pt_95 pb_70 xs_pb_100"
+                style="background: url(assets/images/Discover_bg.jpg)">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-6 wow fadeInUp" data-wow-duration="1.5s"
+                            style="
+                  visibility: visible;
+                  animation-duration: 1.5s;
+                  animation-name: fadeInUp;
+                ">
+                            <div class="section_heading mb_25">
+                                <h2>Effortless path to discover your ideal apartment</h2>
+                            </div>
                         </div>
                     </div>
-
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                            style="
+                  visibility: visible;
+                  animation-duration: 1.5s;
+                  animation-name: fadeInUp;
+                ">
+                            <div class="single_discover">
+                                <div class="discover_img">
+                                    <img src="assets/images/search.png" alt="icon" class="img-fluid w-100" />
+                                </div>
+                                <a class="item_title" href="#">Search your Location</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                            style="
+                  visibility: visible;
+                  animation-duration: 1.5s;
+                  animation-name: fadeInUp;
+                ">
+                            <div class="single_discover">
+                                <div class="discover_img">
+                                    <img src="assets/images/house.png" alt="icon" class="img-fluid w-100" />
+                                </div>
+                                <a class="item_title" href="#">Check out The Residence</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                            style="
+                  visibility: visible;
+                  animation-duration: 1.5s;
+                  animation-name: fadeInUp;
+                ">
+                            <div class="single_discover">
+                                <div class="discover_img">
+                                    <img src="assets/images/bag.png" alt="icon" class="img-fluid w-100" />
+                                </div>
+                                <a class="item_title" href="#">Obtain your Perfect House</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                            style="
+                  visibility: visible;
+                  animation-duration: 1.5s;
+                  animation-name: fadeInUp;
+                ">
+                            <div class="single_discover">
+                                <div class="discover_img">
+                                    <img src="assets/images/happy.png" alt="icon" class="img-fluid w-100" />
+                                </div>
+                                <a class="item_title" href="#">Delight in your Residence</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </section>
+            <!--=============================
+                  PROPERTY GRID VIEW END
+                 ==============================-->
+            <div class="row mt_95 xs_mt_75">
+                <div class="col-md-9">
+                    <div class="row">
+                        @foreach ($propertys as $property)
+                            <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
+                                <div class="single_property">
+                                    <div class="single_property_img">
+                                        @php
+                                            $images = unserialize($property->image);
+                                        @endphp
+                                        @if ($images !== false && is_array($images))
+                                            {{-- asset('public/uploads/' . $image) --}}
+                                            @foreach ($images as $image)
+                                                <img src="{{ asset('public/' . $image) }}" alt="Image"
+                                                    style="width: 100%">
+                                            @endforeach
+                                        @else
+                                            <p>No images available</p>
+                                        @endif
+                                        <a class="feature_link" href="">{{ $property->type }}</a>
+                                        {{-- <div id="testimonial-slider1" class="owl-carousel">
+                                            <div class="testimonial">
+                                                <div class="pic">
+                                                    @php
+                                                        $images = json_decode($rent->image);
+                                                    @endphp
 
-                <div class="col-md-3" id="map001">
+                                                    @foreach ($images as $image)
+                                                        <img src="{{ asset('public/uploads/' . trim($image)) }}"
+                                                            alt="Image" class="img-fluid w-100">
+                                                    @endforeach
+                                                    <a class="feature_link" href="#">for sale</a>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial">
+                                                <div class="pic">
+                                                    @php
+                                                        $images = json_decode($rent->image);
+                                                    @endphp
+
+                                                    @foreach ($images as $image)
+                                                        <img src="{{ asset('public/uploads/' . trim($image)) }}"
+                                                            alt="Image" class="img-fluid w-100">
+                                                    @endforeach
+                                                    <a class="feature_link" href="#">for sale</a>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial">
+                                                <div class="pic">
+                                                    @php
+                                                        $images = json_decode($rent->image);
+                                                    @endphp
+
+                                                    @foreach ($images as $image)
+                                                        <img src="{{ asset('public/uploads/' . trim($image)) }}"
+                                                            alt="Image" class="img-fluid w-100">
+                                                    @endforeach
+                                                    <a class="feature_link" href="#">for sale</a>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial">
+                                                <div class="pic">
+                                                    @php
+                                                        $images = json_decode($rent->image);
+                                                    @endphp
+
+                                                    @foreach ($images as $image)
+                                                        <img src="{{ asset('public/uploads/' . trim($image)) }}"
+                                                            alt="Image" class="img-fluid w-100">
+                                                    @endforeach
+                                                    <a class="feature_link" href="#">for sale</a>
+                                                </div>
+                                            </div>
+                                        </div> --}}
+                                    </div>
+                                    <div class="single_property_text">
+                                        <div class="single_property_top">
+                                            <a class="item_title" href=" ">{{ $property->title }}</a>
+                                            <p>
+                                                <i class="fas fa-map-marker-alt"></i>{{ $property->address }}
+                                            </p>
+                                            <ul class="d-flex flex-wrap">
+                                                <li>
+                                                    <span><img src="assets/images/bad.png" alt="img"
+                                                            class="img-fluid w-100" /></span>
+                                                    {{ $property->bed }} Beds
+                                                </li>
+                                                <li>
+                                                    <span><img src="assets/images/bathtab.png" alt="img"
+                                                            class="img-fluid w-100" /></span>
+                                                    {{ $property->number_bathroom }} Baths
+                                                </li>
+                                                <li>
+                                                    <span><img src="assets/images/squre.png" alt="img"
+                                                            class="img-fluid w-100" /></span>
+                                                    {{ $property->area }} Sq Ft
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="single_property_bottom d-flex flex-wrap justify-content-between">
+                                            <a target="blank"   class="read_btn"
+                                                href="{{ route('property', $property->slag) }}">More Details<i
+                                                    class="fas fa-arrow-right"></i></a>
+                                        </div>
+                                        <div class="single_property_bottom d-flex flex-wrap justify-content-between">
+                                            {{-- <a class="read_btn"><i aria-hidden="true"></i>{{ $rent->p_type }}</a> --}}
+                                        </div>
+                                        {{-- <span class="property_price">${{ $rent->price }}</span> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div style="text-align: center">
+                        {!! $propertys->links() !!}
+                    </div>
+                </div>
+                <div class="col-md-3">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.0361376969!2d-74.30933885453035!3d40.69753995160874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1709299375137!5m2!1sen!2sin"
                         width="100%" height="1050" style="border: 0" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
+                <div style="text-align: center">
+                    {{-- {!! $rents->links() !!} --}}
+                </div>
+
             </div>
-            </div>
+
+            {{-- <div class="row mt_50 wow fadeInUp" data-wow-duration="1.5s">
+                <div class="col-12">
+                    <div id="pagination_area">
+                        <nav aria-label="...">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a class="page-link" href="#"><i class="far fa-angle-double-left"
+                                            aria-hidden="true"></i></a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link active" href="#">01</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">02</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">03</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#"><i class="far fa-angle-double-right"
+                                            aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div> --}}
+        </div>
         </div>
     </section>
 @endsection

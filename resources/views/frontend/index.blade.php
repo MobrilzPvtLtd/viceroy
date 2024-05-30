@@ -38,10 +38,10 @@
                                         </button>
                                     </li>
                                     <!--<li class="nav-item" role="presentation">
-                                                              <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                                  data-bs-target="#pills-profile" type="button" role="tab"
-                                                                  aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                                          </li>-->
+                                                                  <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                                      data-bs-target="#pills-profile" type="button" role="tab"
+                                                                      aria-controls="pills-profile" aria-selected="false">Sell</button>
+                                                              </li>-->
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
                                             data-bs-target="#pills-contact" type="button" role="tab"
@@ -77,19 +77,20 @@
 
                                             <div class="home_form_label">
                                                 <label>Bedrooms</label>
-                                                <div class="adv_search_icon">
-                                                    <select class="select_label" name="state">
-                                                        <option value="">Select bedrooms</option>
-                                                        {{-- @foreach ($uniqueBedrooms as $bedroom)
+                                                <div class="adv_search_icon" id="select_bedroom_btn">
+                                                    <input class="select_label select_bedroom_btn" name="state"
+                                                        type="button" value="Select bedrooms">
+                                                    {{-- <option value="">Select bedrooms</option>
+                                                        @foreach ($uniqueBedrooms as $bedroom)
                                                             <option value="{{ $bedroom }}">{{ $bedroom }}</option>
                                                         @endforeach --}}
-                                                    </select>
+                                                    </input>
                                                 </div>
 
-                                                <div class="adv_search_area show_search1">
-                                                     <div id="close_btn_minmax" class="adv_search_close adv_search_close_1">
-                                                                          <i class="fal fa-times"></i>
-                                                                        </div>
+                                                <div class="adv_search_area show_search1" id="close001">
+                                                    <div id="close_btn_minmax" class="adv_search_close adv_search_close_1">
+                                                        <i class="fal fa-times"></i>
+                                                    </div>
 
                                                     <div id="min_max">
                                                         <select class="select_2" name="state">
@@ -115,13 +116,38 @@
 
                                             <div class="home_form_label">
                                                 <label>Price</label>
-                                                <div class="adv_search_icon2">
-                                                    <select class="select_label" name="state">
-                                                        <option value="">Select price</option>
-                                                        @foreach ($uniquePrices as $price)
+                                                <div class="adv_search_icon2" id="select_bedroom_btn">
+                                                    <input class="select_label select_bedroom_btn" name="state"
+                                                        type="button" value="Select price">
+                                                    {{-- @foreach ($uniquePrices as $price)
                                                             <option value="{{ $price }}">{{ $price }}</option>
-                                                        @endforeach
-                                                    </select>
+                                                        @endforeach --}}
+                                                    </input>
+                                                </div>
+                                                <div class="adv_search_area show_search1" id="close001">
+                                                    <div id="close_btn_minmax" class="adv_search_close adv_search_close_1">
+                                                        <i class="fal fa-times"></i>
+                                                    </div>
+
+                                                    <div id="min_max">
+                                                        <select class="select_2" name="state">
+                                                            <option value="">Min</option>
+                                                            <option value="">01</option>
+                                                            <option value="">02</option>
+                                                            <option value="">03</option>
+                                                            <option value="">04</option>
+                                                            <option value="">05</option>
+                                                        </select>
+
+                                                        <select class="select_2" name="state">
+                                                            <option value="">Max</option>
+                                                            <option value="">01</option>
+                                                            <option value="">02</option>
+                                                            <option value="">03</option>
+                                                            <option value="">04</option>
+                                                            <option value="">05</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
 
                                                 {{-- <div class="adv_search_area2">
@@ -154,9 +180,9 @@
                                                 </div> --}}
                                             </div>
 
-                                            <div class="home_form_label">
+                                            <div class="home_form_label ">
                                                 <label>Property Type</label>
-                                                <select class="select_label" name="state">
+                                                <select class="select_label " name="state">
                                                     <option value="">Select property</option>
                                                     @foreach ($uniquePropertyTypes as $type)
                                                         <option value="{{ $type }}">{{ $type }}</option>
@@ -220,51 +246,10 @@
                                                         @endforeach
                                                     </select>
                                                 </div>
-                                                {{-- <div class="adv_search_area3">
-                                                     <div class="adv_search_close3">
-                                              <i class="fal fa-times"></i>
-                                              </div>
-
-                                                    <div class="row mt_15">
-                                                        <div class="col-lg-6 col-sm-6">
-                                                            <select class="select_2" name="state">
-                                                                <option value="">Min</option>
-                                                                <option value="">01</option>
-                                                                <option value="">02</option>
-                                                                <option value="">03</option>
-                                                                <option value="">04</option>
-                                                                <option value="">05</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-lg-6 col-sm-6">
-                                                            <select class="select_2" name="state">
-                                                                <option value="">Max</option>
-                                                                <option value="">01</option>
-                                                                <option value="">02</option>
-                                                                <option value="">03</option>
-                                                                <option value="">04</option>
-                                                                <option value="">05</option>
-                                                            </select>
-                                                        </div>
-                                                    </div> --}}
-                                                {{-- </div> --}}
-                                            </div>
-
-                                            <div class="home_form_label">
-                                                <label>Price</label>
-                                                <div class="adv_search_icon4">
-                                                    <select class="select_label" name="state">
-                                                        <option value="">Select price</option>
-                                                        @foreach ($uniquePrices as $price)
-                                                            <option value="{{ $price }}">{{ $price }}
-                                                            </option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                {{-- <div class="adv_search_area4">
-                                                     <div class="adv_search_area4">
-                                                <i class="fal fa-times"></i>
-                                               </div>
+                                                <div class="adv_search_area3">
+                                                    <div class="adv_search_close3">
+                                                        <i class="fal fa-times"></i>
+                                                    </div>
 
                                                     <div class="row mt_15">
                                                         <div class="col-lg-6 col-sm-6">
@@ -288,7 +273,48 @@
                                                             </select>
                                                         </div>
                                                     </div>
-                                                </div> --}}
+                                                </div>
+                                            </div>
+
+                                            <div class="home_form_label">
+                                                <label>Price</label>
+                                                <div class="adv_search_icon4">
+                                                    <select class="select_label" name="state">
+                                                        <option value="">Select price</option>
+                                                        @foreach ($uniquePrices as $price)
+                                                            <option value="{{ $price }}">{{ $price }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="adv_search_area4">
+                                                    <div class="adv_search_area4">
+                                                        <i class="fal fa-times"></i>
+                                                    </div>
+
+                                                    <div class="row mt_15">
+                                                        <div class="col-lg-6 col-sm-6">
+                                                            <select class="select_2" name="state">
+                                                                <option value="">Min</option>
+                                                                <option value="">01</option>
+                                                                <option value="">02</option>
+                                                                <option value="">03</option>
+                                                                <option value="">04</option>
+                                                                <option value="">05</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-lg-6 col-sm-6">
+                                                            <select class="select_2" name="state">
+                                                                <option value="">Max</option>
+                                                                <option value="">01</option>
+                                                                <option value="">02</option>
+                                                                <option value="">03</option>
+                                                                <option value="">04</option>
+                                                                <option value="">05</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
 
                                             <div class="home_form_label">
@@ -328,12 +354,12 @@
         </div>
     </section>
     <!--=============================
-                            BANNER END
-                        ==============================-->
+                                BANNER END
+                            ==============================-->
 
     <!--=============================
-                            ABOUT START
-                        ==============================-->
+                                ABOUT START
+                            ==============================-->
     <section class="about_area pt_120 xs_pt_100">
         <div class="container">
             <div class="row justify-content-between">
@@ -410,12 +436,12 @@
         </div>
     </section>
     <!--=============================
-                            ABOUT END
-                        ==============================-->
+                                ABOUT END
+                            ==============================-->
 
     <!--=============================
-                            DESTINATION START
-                        ==============================-->
+                                DESTINATION START
+                            ==============================-->
     <section class="destination_area pt_115 xs_pt_110 pb_60 xs_pb_90">
         <div class="container">
             <div class="row justify-content-center">
@@ -550,12 +576,12 @@
         </div>
     </section>
     <!--=============================
-                            DESTINATION END
-                        ==============================-->
+                                DESTINATION END
+                            ==============================-->
 
     <!--=============================
-                            PROPERTY START
-                        ==============================-->
+                                PROPERTY START
+                            ==============================-->
     <section class="property_area pt_60 xs_pt_95 pb_50 xs_pb_95">
         <div class="container">
             <div class="row justify-content-center text-align-center">
@@ -882,12 +908,12 @@
         </div>
     </section>
     <!--=============================
-                            PROPERTY END
-                        ==============================-->
+                                PROPERTY END
+                            ==============================-->
 
     <!--=============================
-                            AGENT START
-                        ==============================-->
+                                AGENT START
+                            ==============================-->
     <section class="agent_area pt_60 xs_pt_95 pb_70 xs_pb_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -1046,12 +1072,12 @@
         </div>
     </section>
     <!--=============================
-                            AGENT END
-                        ==============================-->
+                                AGENT END
+                            ==============================-->
 
     <!--=============================
-                            FIND STATE START
-                        ==============================-->
+                                FIND STATE START
+                            ==============================-->
     <section class="find_state" style="background: url(assets/images/find_state.jpg)">
         <div id="vbg12" data-vbg-loop="true" data-vbg="https://youtu.be/ec_fXMrD7Ow?si=m9LJu9X3lzTP5Erz"></div>
         <div class="container">
@@ -1066,24 +1092,24 @@
         </div>
     </section>
     <!--=============================
-                            FIND STATE END
-                        ==============================-->
+                                FIND STATE END
+                            ==============================-->
 
     <!--=============================
-                            BLOG START
-                        ==============================-->
+                                BLOG START
+                            ==============================-->
 
     <!--=============================
-                            BLOG END
-                        ==============================-->
+                                BLOG END
+                            ==============================-->
 
     <!--=============================
-                            DISCOVER START
-                        ==============================-->
+                                DISCOVER START
+                            ==============================-->
 
     <!--=============================
-                            PARTNER START
-                        ==============================-->
+                                PARTNER START
+                            ==============================-->
     <section class="partner_area pt_30 pb_30">
         <div class="container">
             <div class="row justify-content-center">
