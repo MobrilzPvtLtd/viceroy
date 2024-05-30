@@ -21,22 +21,22 @@ $notifications_latest = optional($notifications)->take(5);
                 <i class="nav-icon fa-solid fa-cubes"></i>&nbsp;@lang('Dashboard')
             </a>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link" href="{{ route('backend.notifications.index') }}">
                 <i class="nav-icon fa-regular fa-bell"></i>&nbsp;@lang('Notifications')
                 @if ($notifications_count)
                     &nbsp;<span class="badge badge-sm bg-info ms-auto">{{ $notifications_count }}</span>
                 @endif
             </a>
-        </li>
+        </li> --}}
 
-        @can('view_posts')
+        {{-- @can('view_posts')
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('backend.posts.index') }}">
                     <i class="nav-icon fa-regular fa-file-lines"></i>&nbsp;@lang('Posts')
                 </a>
             </li>
-        @endcan
+        @endcan --}}
         {{-- @can('view_categories')
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('backend.categories.index') }}">
@@ -56,7 +56,7 @@ $notifications_latest = optional($notifications)->take(5);
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/massage">
+                        <a class="nav-link" href="/admin/inquairy">
                             <span class="nav-icon"><span class="nav-icon-bullet"></span></span>Property Inquiry
                         </a>
                     </li>

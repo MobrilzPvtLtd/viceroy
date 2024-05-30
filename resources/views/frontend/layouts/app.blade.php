@@ -48,7 +48,7 @@
 
 <body>
     @include('frontend.includes.nav')
-
+    @include('frontend.includes.cart')
     <main class="bg-white dark:bg-gray-800">
         @yield('content')
     </main>

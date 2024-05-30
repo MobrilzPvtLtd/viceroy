@@ -163,6 +163,11 @@ class FrontendController extends Controller
         return view('frontend.privacy');
     }
 
+    public function cartform()
+    {
+        return view('frontend.pages.cart-form');
+    }
+
     /**
      * Terms & Conditions Page.
      *

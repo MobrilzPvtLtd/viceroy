@@ -288,8 +288,8 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row mt_95 xs_mt_75">
+        <div class="container">
+            <div class="row mt_95 xs_mt_75 ">
                 <button id="btn001" onclick="func()" name="map-view">
                     <i class="fa-solid fa-map"> Map view</i>
                 </button>
@@ -300,7 +300,8 @@
                     <div class="row" id="lits-item">
                         @if (count($propertys) > 0)
                             @foreach ($propertys as $property)
-                                <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
+
+                                <div class="col-xl-4 col-md-6 wow fadeInUp " data-wow-duration="1.5s">
                                     <div class="single_property">
                                         <div class="single_property_img">
                                             @php
