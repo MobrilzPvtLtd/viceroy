@@ -21,22 +21,36 @@ $notifications_latest = optional($notifications)->take(5);
                 <i class="nav-icon fa-solid fa-cubes"></i>&nbsp;@lang('Dashboard')
             </a>
         </li>
+<<<<<<< HEAD
         <li class="nav-item">
+=======
+        {{-- <li class="nav-item">
+>>>>>>> secondary/main
             <a class="nav-link" href="{{ route('backend.notifications.index') }}">
                 <i class="nav-icon fa-regular fa-bell"></i>&nbsp;@lang('Notifications')
                 @if ($notifications_count)
                     &nbsp;<span class="badge badge-sm bg-info ms-auto">{{ $notifications_count }}</span>
                 @endif
             </a>
+<<<<<<< HEAD
         </li>
 
         @can('view_posts')
+=======
+        </li> --}}
+
+        {{-- @can('view_posts')
+>>>>>>> secondary/main
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('backend.posts.index') }}">
                     <i class="nav-icon fa-regular fa-file-lines"></i>&nbsp;@lang('Posts')
                 </a>
             </li>
+<<<<<<< HEAD
         @endcan
+=======
+        @endcan --}}
+>>>>>>> secondary/main
         {{-- @can('view_categories')
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('backend.categories.index') }}">
@@ -44,6 +58,7 @@ $notifications_latest = optional($notifications)->take(5);
                 </a>
             </li>
         @endcan --}}
+<<<<<<< HEAD
         @can('contact')
             <li class="nav-item">
                 <a class="nav-link" href="/admin/massage">
@@ -55,6 +70,32 @@ $notifications_latest = optional($notifications)->take(5);
             <li class="nav-item">
                 <a class="nav-link" href="/admin/currency">
                     <i class="nav-icon fa-solid fa-store"></i>&nbsp;@lang('Currency')
+=======
+        @can('Inquiry')
+            <li class="nav-group" aria-expanded="true">
+                <a class="nav-link nav-group-toggle" href="">
+                    <i class="nav-icon fa-solid fa-question"></i>&nbsp;@lang('Inquirys')
+                </a>
+                <ul class="nav-group-items compact" style="height: auto;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/massage">
+                            <span class="nav-icon"><span class="nav-icon-bullet"></span></span> Inquiry
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/inquairy">
+                            <span class="nav-icon"><span class="nav-icon-bullet"></span></span>Property Inquiry
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        @endcan
+
+        @can('CURRENCY')
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/currency">
+                    <i class="nav-icon  fa-solid fa-money-bill-1-wave"></i>&nbsp;@lang('Currency')
+>>>>>>> secondary/main
                 </a>
             </li>
         @endcan
@@ -63,7 +104,11 @@ $notifications_latest = optional($notifications)->take(5);
         @can('country')
             <li class="nav-group" aria-expanded="true">
                 <a class="nav-link nav-group-toggle" href="#">
+<<<<<<< HEAD
                     <i class="nav-icon fa-solid fa-list-ul"></i>&nbsp;@lang('Address')
+=======
+                    <i class="nav-icon fa fa-address-card" aria-hidden="true"></i>&nbsp;@lang('Address')
+>>>>>>> secondary/main
                 </a>
                 <ul class="nav-group-items compact" style="height: auto;">
                     <li class="nav-item">
@@ -94,7 +139,11 @@ $notifications_latest = optional($notifications)->take(5);
         @can('facilities')
             <li class="nav-item">
                 <a class="nav-link" href="/admin/facility">
+<<<<<<< HEAD
                     <i class="nav-icon fa-solid fa-store"></i>&nbsp;@lang('facilities')
+=======
+                    <i class="nav-icon fa-solid fa-font-awesome"></i>&nbsp;@lang('facilities')
+>>>>>>> secondary/main
                 </a>
             </li>
         @endcan

@@ -4,66 +4,40 @@
 @endsection
 
 @section('content')
-    <section class="breadcrumbs" style="background: url(assets/images/breadcrumbs_bg.jpg)">
-        <div class="breadcrumbs_overly">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 justify-content-center">
-                        <div class="breadcrumb_text wow fadeInUp" data-wow-duration="1.5s">
-                            <h1>Rent Property</h1>
-                            <ul class="d-flex flex-wrap justify-content-center">
-                                <li>
-                                    <a href="#"><i class="fas fa-home"></i>Home</a>
-                                </li>
-                                <li><a href="#">Rent Property</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--=============================
-                                                    BREADCRUMBS END
-                                                ==============================-->
 
     <!--=============================
-                                                    PROPERTY GRID VIEW START
-                                                ==============================-->
+                                                                                BREADCRUMBS END
+                                                                            ==============================-->
+
+    <!--=============================
+                                                                                PROPERTY GRID VIEW START
+                                                                            ==============================-->
     <section class="property_grid_view pb_120 xs_pb_100">
         <div class="container-fluid">
             <div class="row justify-content-center wow fadeInUp" data-wow-duration="1.5s">
-                <div class="col-xl-12 col-lg-12 buy001">
-                    <div class="banner_search" id = "container2">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="banner_search">
                         <ul class="nav nav-pills" id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
                                     data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
                                     aria-selected="true">
-                                    Rent
+                                    Buy
                                 </button>
                             </li>
-                            <!--<li class="nav-item" role="presentation">
-                                                                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                                                    data-bs-target="#pills-profile" type="button" role="tab"
-                                                                                    aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                                                            </li>-->
-                            <!--<li class="nav-item" role="presentation">
-                                                                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                                                                    data-bs-target="#pills-contact" type="button" role="tab"
-                                                                                    aria-controls="pills-contact" aria-selected="false">Rent</button>
-                                                                            </li>-->
+                                                                                    </li>-->
                         </ul>
 
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                                 aria-labelledby="pills-home-tab" tabindex="0">
-                                <form action="{{ route('rent')}}" method="GET">
+                                <form action="{{ route('buy') }}" method="GET">
                                     <div class="" id="home_form">
                                         <div class="">
                                             <label>Country</label>
                                             <select class="select_label" name="co_name" id="co_name" required focus>
-                                                <option value="" disabled selected> select country</option>
+                                                <option value="" disabled selected>select country </option>
+
                                                 @foreach ($countrys as $country)
                                                     <option value="{{ $country->id }}">{{ $country->co_name }}</option>
                                                 @endforeach
@@ -73,28 +47,31 @@
                                         <div class="">
                                             <label>City</label>
                                             <select class="select_label" name="ct_name" id="city" required>
-                                                <option value="" disabled selected> select city</option>
+                                                <option value=""> select city</option>
                                                 @foreach ($citys as $city)
                                                     <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
 
-                                        <div class="home_form_label">
+                                        <div class="">
                                             <label>Bedrooms</label>
-                                            <div class="adv_search_icon" id="select_bedroom_btn">
-                                                <input class="select_label " name="state" type="button" value="Select bedrooms">
-                                                    {{-- <option value="">Select bedrooms</option>
+                                            <div class="adv_search_icon">
+                                                <select class="select_label">
+                                                    <option value="">Select bedrooms</option>
+                                                    {{-- @foreach ($propertys as $property)
+                                                        <option value="{{ $property->id }}">{{ $property->number_of_room }}</option>
+                                                    @endforeach --}}
                                                     @foreach ($uniqueBedrooms as $bedroom)
                                                         <option value="{{ $bedroom }}">{{ $bedroom }}</option>
-                                                    @endforeach --}}
-                                                </input>
+                                                    @endforeach
+                                                </select>
                                             </div>
 
-                                            <div class="adv_search_area show_search1" id="close001">
-                                                 <div id="close_btn_minmax" class="adv_search_close adv_search_close_1">
-                                                                      <i class="fal fa-times"></i>
-                                                                    </div>
+                                            {{-- <div class="adv_search_area">
+                                            <div class="adv_search_close adv_search_close_1">
+                                                                                      <i class="fal fa-times"></i>
+                                                                                    </div>
 
                                                 <div id="min_max">
                                                     <select class="select_2" name="state">
@@ -115,26 +92,24 @@
                                                         <option value="">05</option>
                                                     </select>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
 
                                         <div class="">
                                             <label>Price</label>
-                                            <div class="adv_search_icon2" id="select_price_btn">
-                                                <input type="button"
-                                                value="Select Price"
-                                                 class="select_label" name="state">
-                                                    <!-- <option value="">Select price</option>
+                                            <div class="">
+                                                <select class="select_label" name="state">
+                                                    <option value="">Select price</option>
                                                     @foreach ($uniquePrices as $price)
                                                         <option value="{{ $price }}">{{ $price }}</option>
-                                                    @endforeach -->
-                                                </input>
+                                                    @endforeach
+                                                </select>
                                             </div>
 
-                                         <div class="adv_search_area2" id="close002">
-                                                 <div class="adv_search_close3">
-                                                                      <i class="fal fa-times"></i>
-                                                                    </div>
+                                            {{-- <div class="adv_search_area2">
+                                                <div class="adv_search_close2">
+                                                                                          <i class="fal fa-times"></i>
+                                                                                        </div>
 
                                                 <div class="" id="min_max2">
                                                     <div class="">
@@ -158,16 +133,16 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                            </div> 
+                                            </div> --}}
                                         </div>
 
                                         <div class="">
                                             <label>Property Type</label>
                                             <select class="select_label" name="state">
                                                 <option value="">Select property</option>
-                                                @foreach ($uniquePropertyTypes as $type)
-                                                <option value="{{ $type }}">{{ $type }}</option>
-                                            @endforeach
+                                                @foreach ($uniquePropertyTypes as $p_type)
+                                                    <option value="{{ $p_type }}">{{ $p_type }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
 
@@ -196,8 +171,8 @@
                                     <div class="row">
                                         <div class="col-lg-2">
                                             <label>Country</label>
-                                            <select class="select_2" name="state">
-                                                <option value="">Select country</option>
+                                            <select class="select_label" name="state">
+                                                <option value="">Select Country</option>
                                                 <option value="">India</option>
                                                 <option value="">United Arab Emirates Dubai</option>
                                                 <option value="">United Kingdom London</option>
@@ -285,7 +260,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                    </div>-->
+                                                                                                                </div>-->
                                 </form>
                             </div>
                         </div>
@@ -365,11 +340,12 @@
                 </div>
             </section>
             <!--=============================
-                  PROPERTY GRID VIEW END
-                 ==============================-->
+                                                                                PROPERTY GRID VIEW END
+                                                                            ==============================-->
             <div class="row mt_95 xs_mt_75">
                 <div class="col-md-9">
                     <div class="row">
+                        @if(count($propertys) > 0)
                         @foreach ($propertys as $property)
                             <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
                                 <div class="single_property">
@@ -391,7 +367,7 @@
                                             <div class="testimonial">
                                                 <div class="pic">
                                                     @php
-                                                        $images = json_decode($rent->image);
+                                                        $images = json_decode($buy->image);
                                                     @endphp
 
                                                     @foreach ($images as $image)
@@ -404,7 +380,7 @@
                                             <div class="testimonial">
                                                 <div class="pic">
                                                     @php
-                                                        $images = json_decode($rent->image);
+                                                        $images = json_decode($buy->image);
                                                     @endphp
 
                                                     @foreach ($images as $image)
@@ -417,7 +393,7 @@
                                             <div class="testimonial">
                                                 <div class="pic">
                                                     @php
-                                                        $images = json_decode($rent->image);
+                                                        $images = json_decode($buy->image);
                                                     @endphp
 
                                                     @foreach ($images as $image)
@@ -430,7 +406,7 @@
                                             <div class="testimonial">
                                                 <div class="pic">
                                                     @php
-                                                        $images = json_decode($rent->image);
+                                                        $images = json_decode($buy->image);
                                                     @endphp
 
                                                     @foreach ($images as $image)
@@ -442,6 +418,7 @@
                                             </div>
                                         </div> --}}
                                     </div>
+
                                     <div class="single_property_text">
                                         <div class="single_property_top">
                                             <a class="item_title" href=" ">{{ $property->title }}</a>
@@ -467,18 +444,22 @@
                                             </ul>
                                         </div>
                                         <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                            <a target="blank"   class="read_btn"
-                                                href="{{ route('property', $property->slag) }}">More Details<i
-                                                    class="fas fa-arrow-right"></i></a>
+                                            <a target="blank" class="read_btn"
+                                                href="{{ route('property', $property->slag) }}">More
+                                                Details<i class="fas fa-arrow-right"></i></a>
+
                                         </div>
                                         <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                            {{-- <a class="read_btn"><i aria-hidden="true"></i>{{ $rent->p_type }}</a> --}}
+                                            {{-- <a class="read_btn"><i aria-hidden="true"></i>{{ $buy->p_type }}</a> --}}
                                         </div>
-                                        {{-- <span class="property_price">${{ $rent->price }}</span> --}}
+                                        {{-- <span class="property_price">${{ $buy->price }}</span> --}}
                                     </div>
                                 </div>
                             </div>
                         @endforeach
+                        @else
+                     <div class="col-lg-12" style="text-align: center">No Property Found</div>
+                        @endif
                     </div>
                     <div style="text-align: center">
                         {!! $propertys->links() !!}
@@ -491,7 +472,7 @@
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div style="text-align: center">
-                    {{-- {!! $rents->links() !!} --}}
+
                 </div>
 
             </div>

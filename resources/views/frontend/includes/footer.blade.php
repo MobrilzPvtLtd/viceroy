@@ -192,19 +192,186 @@
         var scrollPosition = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0]
             .scrollTop;
 
-        if (scrollPosition > window.innerHeight / 4) {
+        if (scrollPosition > window.innerHeight / 1.8) {
             container.style.top = '11%';
             container.style.position = 'fixed';
             container.style.width = '80vw';
 
         } else {
-            container.style.top = '70%';
+            // container.style.top = '70%';
             container.style.width = '80vw';
+            container.style.position = 'static';
+
+
+        }
+    });
+    window.addEventListener('scroll', function() {
+        var container2 = document.getElementById('container2');
+        var scrollPosition = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0]
+            .scrollTop;
+
+        if (scrollPosition > window.innerHeight / 4) {
+            container2.style.top = '4.5%';
+            container2.style.position = 'fixed';
+            container2.style.width = '80vw';
+
+        } else {
+            // container.style.margintop = '60vw';
+            container2.style.width = '80vw';
+            container2.style.position = 'static';
+
 
         }
     });
     const closeBtn = document.querySelector("#close_btn_minmax")
+    const close001 = document.querySelector("#close001")
+    const select_bedroom_btn =  document.querySelector("#select_bedroom_btn")
+    const select_price_btn =  document.querySelector("#select_price_btn")
+    const select_price_btn2 =  document.querySelector("#select_price_btn2")
+    const select_rooms_btn =  document.querySelector("#select_rooms_btn")
 closeBtn.addEventListener("click" , (()=>{
-    console.log("hello guys")
+    console.log("hello guys");
+    // close001.style.visibility = "hidden";
 }))
+    const adv_search_icon = document.querySelector(".adv_search_icon")
+    const adv_search_icon2 = document.querySelector(".adv_search_icon2")
+    const min_max = document.querySelector("#close_btn_minmax")
+
+    select_bedroom_btn.addEventListener('click',(()=>{
+        console.log("hariom")
+        if (close001.style.display == "none"){
+            close001.style.display = "block";
+            close002.style.display = "none";
+        }
+        else{ close001.style.display = "none"}
+        }))
+
+
+        select_price_btn.addEventListener('click',(()=>{
+        console.log("hariom")
+        if (close002.style.display == "none"){
+            close002.style.display = "block";
+            close001.style.display = "none";
+        }
+        else{ close002.style.display = "none"}
+        })) 
+
+
+
+        
+        
+        select_rooms_btn.addEventListener('click',(()=>{
+            console.log("hariom")
+            if (close003.style.display == "none"){
+                close003.style.display = "block";
+            }
+            else{ close003.style.display = "none"}
+        }))
+
+
+        select_price_btn2.addEventListener('click',(()=>{
+        console.log("hariom")
+        if (close004.style.display == "none"){
+            close004.style.display = "block";
+        }
+        else{ close004.style.display = "none"}
+        }))
+
+
+        select_price_btn.addEventListener("click", (()=>{
+            console.log("hariom2" , close001.style.display)
+    close001.style.display = "none"
+
+        }))
+        select_bedroom_btn.addEventListener("click", (()=>{
+            console.log("hariom2",close002.style.display)
+    close002.style.display = "none"
+
+        }))
+        select_rooms_btn.addEventListener("click", (()=>{
+            console.log("hariom2")
+    close004.style.display = "none"
+
+        }))
+
+
+
+        select_price_btn2.addEventListener("click", (()=>{
+            console.log("hariom2")
+            close003.style.display = "none"
+
+        }))
+//         const closeBtn = document.querySelector("#close_btn_minmax")
+//     const close009 = document.querySelector("#close009")
+//     const select_bedroom_btn =  document.querySelector("#select_bedroom_btn")
+// closeBtn.addEventListener("click" , (()=>{
+//     console.log("hello guys");
+//     // close001.style.visibility = "hidden";
+// }))
+//     const adv_search_icon = document.querySelector(".adv_search_icon")
+//     const adv_search_icon3 = document.querySelector(".adv_search_icon3")
+//     const min_max = document.querySelector("#close_btn_minmax")
+
+//     select_bedroom_btn.addEventListener('click',(()=>{
+//         console.log("hariom")
+//         if (close009.style.display == "none"){
+//             close009.style.display = "block";
+//         }
+//         else{ close009.style.display = "none"}
+//         }))
+//         adv_search_icon3.addEventListener("click", (()=>{
+//             console.log("hariom2")
+//     close009.style.display = "none"
+
+//         }))
+
+
 </script>
+
+{{-- cart script --}}
+{{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+  {{-- <script>
+    var APP = APP || {};
+    APP.sidecart = (function (APP, $) {
+      var $test = $(".test"),
+        $sidecart = $(".sidecart"),
+        $closeCart = $(".sidecart__close"),
+        $cartOverlay = $(".sidecart__overlay");
+
+      function bindEvents() {
+        console.log("sidecart init");
+
+        $(".sidecart__close, .sidecart__overlay, .test-cart").on("click", function () {
+          toggleCart();
+        });
+
+        $test.find(".test__btn").on("click", function () {
+          addItemToCart();
+        });
+      }
+
+      function toggleCart() {
+        $sidecart.toggleClass("sidecart--close");
+        $cartOverlay.toggleClass("sidecart__overlay--hide");
+      }
+
+      function addItemToCart() {
+        var $items = $(".sidecart__items");
+        var $emptyText = $(".sidecart__empty-text");
+        $items.removeClass("sidecart__items--empty");
+        $emptyText.addClass("sidecart__empty-text--hide");
+
+        var $newItem = $("<div class='sidecart__item'>Item</div>");
+        $items.append($newItem);
+      }
+
+      function init() {
+        bindEvents();
+      }
+
+      return {
+        init: init,
+      };
+    })(APP, jQuery);
+    APP.sidecart.init();
+  </script> --}}

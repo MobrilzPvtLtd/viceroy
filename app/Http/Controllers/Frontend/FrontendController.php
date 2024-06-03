@@ -52,7 +52,11 @@ class FrontendController extends Controller
 
     public function buy(Request $request)
     {
+<<<<<<< HEAD
         $query = Property::query()->whereIn('type',  ['buy', 'rent']);
+=======
+        $query = Property::where('type','buy');
+>>>>>>> secondary/main
         if ($request->has('co_name') && $request->co_name != '') {
             $query->where('country_id', $request->co_name);
         }
@@ -69,9 +73,16 @@ class FrontendController extends Controller
             $query->where('p_type', $request->type);
         }
         $propertys = $query->orderBy('id', 'desc')->paginate(6);
+<<<<<<< HEAD
         $uniquePropertyTypes = Property::whereIn('type', ['buy', 'rent'])->distinct()->pluck('p_type')->sort();
         $uniqueBedrooms = Property::whereIn('type',  ['buy', 'rent'])->distinct()->pluck('number_of_room')->sort();
         $uniquePrices = Property::whereIn('type',  ['buy', 'rent'])->distinct()->pluck('price')->sort();
+=======
+        // dd($propertys);
+        $uniquePropertyTypes = Property::where('type','buy')->distinct()->pluck('p_type')->sort();
+        $uniqueBedrooms = Property::where('type','buy')->distinct()->pluck('number_of_room')->sort();
+        $uniquePrices = Property::where('type', 'buy')->distinct()->pluck('price')->sort();
+>>>>>>> secondary/main
         $currencys = Currency::all();
         $countrys = Country::all();
         $citys = City::all();
@@ -79,7 +90,11 @@ class FrontendController extends Controller
     }
     public function rent(Request $request)
     {
+<<<<<<< HEAD
         $query = Property::query()->where('type',  ['rent', 'buy']);
+=======
+        $query = Property::query()->where('type','rent');
+>>>>>>> secondary/main
         if ($request->has('co_name') && $request->co_name != '') {
             $query->where('country_id', $request->co_name);
         }
@@ -96,9 +111,15 @@ class FrontendController extends Controller
             $query->where('p_type', $request->type);
         }
         $propertys = $query->orderBy('id', 'desc')->paginate(6);
+<<<<<<< HEAD
         $uniquePropertyTypes = Property::whereIn('type',  ['rent', 'buy'])->distinct()->pluck('p_type')->sort();
         $uniqueBedrooms = Property::whereIn('type',  ['rent', 'buy'])->distinct()->pluck('number_of_room')->sort();
         $uniquePrices = Property::whereIn('type',  ['rent', 'buy'])->distinct()->pluck('price')->sort();
+=======
+        $uniquePropertyTypes = Property::where('type','rent')->distinct()->pluck('p_type')->sort();
+        $uniqueBedrooms = Property::where('type','rent')->distinct()->pluck('number_of_room')->sort();
+        $uniquePrices = Property::where('type','rent')->distinct()->pluck('price')->sort();
+>>>>>>> secondary/main
         $countrys = Country::all();
         $citys = City::all();
         $currencys = Currency::all();
@@ -162,6 +183,14 @@ class FrontendController extends Controller
         return view('frontend.privacy');
     }
 
+<<<<<<< HEAD
+=======
+    public function cartform()
+    {
+        return view('frontend.pages.cart-form');
+    }
+
+>>>>>>> secondary/main
     /**
      * Terms & Conditions Page.
      *

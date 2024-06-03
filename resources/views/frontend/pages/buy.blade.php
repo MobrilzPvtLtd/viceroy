@@ -33,8 +33,8 @@
     <section class="property_grid_view pb_120 xs_pb_100">
         <div class="container-fluid">
             <div class="row justify-content-center wow fadeInUp" data-wow-duration="1.5s">
-                <div class="col-xl-12 col-lg-12">
-                    <div class="banner_search">
+                <div class="col-xl-12 col-lg-12 buy001">
+                    <div class="banner_search" id = "container2">
                         <ul class="nav nav-pills" id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
@@ -81,24 +81,21 @@
                                             </select>
                                         </div>
 
-                                        <div class="">
+                                        <div class="home_form_label">
                                             <label>Bedrooms</label>
-                                            <div class="adv_search_icon">
-                                                <select class="select_label">
-                                                    <option value="">Select bedrooms</option>
-                                                    {{-- @foreach ($propertys as $property)
-                                                        <option value="{{ $property->id }}">{{ $property->number_of_room }}</option>
-                                                    @endforeach --}}
+                                            <div class="adv_search_icon" id="select_bedroom_btn">
+                                                <input class="select_label select_bedroom_btn" name="state" type="button" value="Select bedrooms">
+                                                    {{-- <option value="">Select bedrooms</option>
                                                     @foreach ($uniqueBedrooms as $bedroom)
                                                         <option value="{{ $bedroom }}">{{ $bedroom }}</option>
-                                                    @endforeach
-                                                </select>
+                                                    @endforeach --}}
+                                                </input>
                                             </div>
 
-                                            {{-- <div class="adv_search_area">
-                                            <div class="adv_search_close adv_search_close_1">
-                                                                                      <i class="fal fa-times"></i>
-                                                                                    </div>
+                                            <div class="adv_search_area show_search1" id="close001">
+                                                 <div id="close_btn_minmax" class="adv_search_close adv_search_close_1">
+                                                                      <i class="fal fa-times"></i>
+                                                                    </div>
 
                                                 <div id="min_max">
                                                     <select class="select_2" name="state">
@@ -119,22 +116,25 @@
                                                         <option value="">05</option>
                                                     </select>
                                                 </div>
-                                            </div> --}}
+                                            </div>
                                         </div>
 
                                         <div class="">
                                             <label>Price</label>
-                                            <div class="">
-                                                <select class="select_label" name="state">
-                                                    <option value="">Select price</option>
+                                            <div class="adv_search_icon2" id="select_price_btn">
+                                                <input 
+                                                type="button"
+                                                value = "Select Price"
+                                                class="select_label" name="state">
+                                                    <!-- <option value="">Select price</option>
                                                     @foreach ($uniquePrices as $price)
                                                         <option value="{{ $price }}">{{ $price }}</option>
-                                                    @endforeach
-                                                </select>
+                                                    @endforeach -->
+                                                </input>
                                             </div>
 
-                                            {{-- <div class="adv_search_area2">
-                                                <div class="adv_search_close2">
+                                             <div class="adv_search_area2" id="close002">
+                                                <div class="adv_search_close3">
                                                                                           <i class="fal fa-times"></i>
                                                                                         </div>
 
@@ -160,7 +160,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                            </div> --}}
+                                            </div> 
                                         </div>
 
                                         <div class="">
