@@ -173,9 +173,14 @@ class Image implements ImageDriver
         return $this->imageDriver->getSize();
     }
 
-    public function fit(Fit $fit, ?int $desiredWidth = null, ?int $desiredHeight = null): static
-    {
-        $this->imageDriver->fit($fit, $desiredWidth, $desiredHeight);
+    public function fit(
+        Fit $fit,
+        ?int $desiredWidth = null,
+        ?int $desiredHeight = null,
+        bool $relative = false,
+        string $backgroundColor = '#ffffff'
+    ): static {
+        $this->imageDriver->fit($fit, $desiredWidth, $desiredHeight, $relative, $backgroundColor);
 
         return $this;
     }

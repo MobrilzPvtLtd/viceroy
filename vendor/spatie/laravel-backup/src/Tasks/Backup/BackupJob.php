@@ -251,9 +251,13 @@ class BackupJob
 
                 $dbType = mb_strtolower(basename(str_replace('\\', '/', get_class($dbDumper))));
 
-                $dbName = $dbDumper->getDbName();
-                if ($dbDumper instanceof Sqlite) {
+
+                if (config('backup.backup.database_dump_filename_base') === 'connection') {
+                    $dbName = $key;
+                } elseif ($dbDumper instanceof Sqlite) {
                     $dbName = $key . '-database';
+                } else {
+                    $dbName = $dbDumper->getDbName();
                 }
 
                 $timeStamp = '';

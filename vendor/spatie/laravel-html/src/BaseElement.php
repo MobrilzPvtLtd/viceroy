@@ -170,6 +170,17 @@ abstract class BaseElement implements Htmlable, HtmlElement
     }
 
     /**
+     * @param string $attribute
+     * @param string|null $value
+     *
+     * @return static
+     */
+    public function aria($attribute, $value = null)
+    {
+        return $this->attribute("aria-{$attribute}", $value);
+    }
+
+    /**
      * @param \Spatie\Html\HtmlElement|string|iterable|int|float|null $children
      * @param callable|null $mapper
      *
@@ -465,6 +476,8 @@ abstract class BaseElement implements Htmlable, HtmlElement
     {
         if ($children instanceof HtmlElement) {
             $children = [$children];
+        } elseif ($children instanceof Htmlable) {
+            $children = $children->toHtml();
         }
 
         $children = Collection::make($children);

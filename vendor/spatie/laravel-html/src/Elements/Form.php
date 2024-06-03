@@ -3,10 +3,14 @@
 namespace Spatie\Html\Elements;
 
 use Spatie\Html\BaseElement;
+use Spatie\Html\Elements\Attributes\Autocomplete;
+use Spatie\Html\Elements\Attributes\Name;
 use Spatie\Html\Elements\Attributes\Target;
 
 class Form extends BaseElement
 {
+    use Autocomplete;
+    use Name;
     use Target;
 
     protected $tag = 'form';

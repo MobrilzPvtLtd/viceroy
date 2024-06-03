@@ -23,13 +23,6 @@
             </div>
         </div>
     </section>
-    <!--=============================
-                                                                                BREADCRUMBS END
-                                                                            ==============================-->
-
-    <!--=============================
-                                                                                PROPERTY GRID VIEW START
-                                                                            ==============================-->
     <section class="property_grid_view pb_120 xs_pb_100">
         <div class="container-fluid">
             <div class="row justify-content-center wow fadeInUp" data-wow-duration="1.5s">
@@ -43,16 +36,6 @@
                                     Buy
                                 </button>
                             </li>
-                            <!--<li class="nav-item" role="presentation">
-                                                                                                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                                                                                data-bs-target="#pills-profile" type="button" role="tab"
-                                                                                                                aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                                                                                        </li>-->
-                            <!--<li class="nav-item" role="presentation">
-                                                                                                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                                                                                                data-bs-target="#pills-contact" type="button" role="tab"
-                                                                                                                aria-controls="pills-contact" aria-selected="false">Rent</button>
-                                                                                                        </li>-->
                         </ul>
 
                         <div class="tab-content" id="pills-tabContent">
@@ -84,8 +67,9 @@
                                         <div class="home_form_label">
                                             <label>Bedrooms</label>
                                             <div class="adv_search_icon" id="select_bedroom_btn">
-                                                <input class="select_label select_bedroom_btn" name="state" type="button" value="Select bedrooms">
-                                                    {{-- <option value="">Select bedrooms</option>
+                                                <input class="select_label select_bedroom_btn" name="state" type="button"
+                                                    value="Select bedrooms">
+                                                {{-- <option value="">Select bedrooms</option>
                                                     @foreach ($uniqueBedrooms as $bedroom)
                                                         <option value="{{ $bedroom }}">{{ $bedroom }}</option>
                                                     @endforeach --}}
@@ -93,9 +77,9 @@
                                             </div>
 
                                             <div class="adv_search_area show_search1" id="close001">
-                                                 <div id="close_btn_minmax" class="adv_search_close adv_search_close_1">
-                                                                      <i class="fal fa-times"></i>
-                                                                    </div>
+                                                <div id="close_btn_minmax" class="adv_search_close adv_search_close_1">
+                                                    <i class="fal fa-times"></i>
+                                                </div>
 
                                                 <div id="min_max">
                                                     <select class="select_2" name="state">
@@ -284,7 +268,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                                </div>-->
+                                                                                                                        </div>-->
                                 </form>
                             </div>
                         </div>
@@ -364,30 +348,30 @@
                 </div>
             </section>
             <!--=============================
-                                                                                PROPERTY GRID VIEW END
-                                                                            ==============================-->
+                                                                                        PROPERTY GRID VIEW END
+                                                                                    ==============================-->
             <div class="row mt_95 xs_mt_75">
                 <div class="col-md-9">
                     <div class="row">
-                        @if(count($propertys) > 0)
-                        @foreach ($propertys as $property)
-                            <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
-                                <div class="single_property">
-                                    <div class="single_property_img">
-                                        @php
-                                            $images = unserialize($property->image);
-                                        @endphp
-                                        @if ($images !== false && is_array($images))
-                                            {{-- asset('public/uploads/' . $image) --}}
-                                            @foreach ($images as $image)
-                                                <img src="{{ asset('public/' . $image) }}" alt="Image"
-                                                    style="width: 100%">
-                                            @endforeach
-                                        @else
-                                            <p>No images available</p>
-                                        @endif
-                                        <a class="feature_link" href="">{{ $property->type }}</a>
-                                        {{-- <div id="testimonial-slider1" class="owl-carousel">
+                        @if (count($propertys) > 0)
+                            @foreach ($propertys as $property)
+                                <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
+                                    <div class="single_property">
+                                        <div class="single_property_img">
+                                            @php
+                                                $images = unserialize($property->image);
+                                            @endphp
+                                            @if ($images !== false && is_array($images))
+                                                {{-- asset('public/uploads/' . $image) --}}
+                                                @foreach ($images as $image)
+                                                    <img src="{{ asset('public/' . $image) }}" alt="Image"
+                                                        style="width: 100%">
+                                                @endforeach
+                                            @else
+                                                <p>No images available</p>
+                                            @endif
+                                            <a class="feature_link" href="">{{ $property->type }}</a>
+                                            {{-- <div id="testimonial-slider1" class="owl-carousel">
                                             <div class="testimonial">
                                                 <div class="pic">
                                                     @php
@@ -441,48 +425,49 @@
                                                 </div>
                                             </div>
                                         </div> --}}
-                                    </div>
+                                        </div>
 
-                                    <div class="single_property_text">
-                                        <div class="single_property_top">
-                                            <a class="item_title" href=" ">{{ $property->title }}</a>
-                                            <p>
-                                                <i class="fas fa-map-marker-alt"></i>{{ $property->address }}
-                                            </p>
-                                            <ul class="d-flex flex-wrap">
-                                                <li>
-                                                    <span><img src="assets/images/bad.png" alt="img"
-                                                            class="img-fluid w-100" /></span>
-                                                    {{ $property->bed }} Beds
-                                                </li>
-                                                <li>
-                                                    <span><img src="assets/images/bathtab.png" alt="img"
-                                                            class="img-fluid w-100" /></span>
-                                                    {{ $property->number_bathroom }} Baths
-                                                </li>
-                                                <li>
-                                                    <span><img src="assets/images/squre.png" alt="img"
-                                                            class="img-fluid w-100" /></span>
-                                                    {{ $property->area }} Sq Ft
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                            <a target="blank" class="read_btn"
-                                                href="{{ route('property', $property->slag) }}">More
-                                                Details<i class="fas fa-arrow-right"></i></a>
+                                        <div class="single_property_text">
+                                            <div class="single_property_top">
+                                                <a class="item_title" href=" ">{{ $property->title }}</a>
+                                                <p>
+                                                    <i class="fas fa-map-marker-alt"></i>{{ $property->address }}
+                                                </p>
+                                                <ul class="d-flex flex-wrap">
+                                                    <li>
+                                                        <span><img src="assets/images/bad.png" alt="img"
+                                                                class="img-fluid w-100" /></span>
+                                                        {{ $property->bed }} Beds
+                                                    </li>
+                                                    <li>
+                                                        <span><img src="assets/images/bathtab.png" alt="img"
+                                                                class="img-fluid w-100" /></span>
+                                                        {{ $property->number_bathroom }} Baths
+                                                    </li>
+                                                    <li>
+                                                        <span><img src="assets/images/squre.png" alt="img"
+                                                                class="img-fluid w-100" /></span>
+                                                        {{ $property->area }} Sq Ft
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="single_property_bottom d-flex flex-wrap justify-content-between">
+                                                <a target="blank" class="read_btn"
+                                                    href="{{ route('property', $property->slag) }}">More
+                                                    Details<i class="fas fa-arrow-right">
+                                                    </i></a>
 
+                                            </div>
+                                            <div class="single_property_bottom d-flex flex-wrap justify-content-between">
+                                                {{-- <a class="read_btn"><i aria-hidden="true"></i>{{ $buy->p_type }}</a> --}}
+                                            </div>
+                                            {{-- <span class="property_price">${{ $buy->price }}</span> --}}
                                         </div>
-                                        <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                            {{-- <a class="read_btn"><i aria-hidden="true"></i>{{ $buy->p_type }}</a> --}}
-                                        </div>
-                                        {{-- <span class="property_price">${{ $buy->price }}</span> --}}
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
                         @else
-                     <div class="col-lg-12" style="text-align: center">No Property Found</div>
+                            <div class="col-lg-12" style="text-align: center">No Property Found</div>
                         @endif
                     </div>
                     <div style="text-align: center">
@@ -501,32 +486,6 @@
 
             </div>
 
-            {{-- <div class="row mt_50 wow fadeInUp" data-wow-duration="1.5s">
-                <div class="col-12">
-                    <div id="pagination_area">
-                        <nav aria-label="...">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item">
-                                    <a class="page-link" href="#"><i class="far fa-angle-double-left"
-                                            aria-hidden="true"></i></a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link active" href="#">01</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">02</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">03</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#"><i class="far fa-angle-double-right"
-                                            aria-hidden="true"></i></a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div> --}}
         </div>
         </div>
     </section>

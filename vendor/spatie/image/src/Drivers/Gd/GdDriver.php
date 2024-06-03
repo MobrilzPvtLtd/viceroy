@@ -86,7 +86,7 @@ class GdDriver implements ImageDriver
 
         $this->setExif($path);
 
-        $image = imagecreatefromstring($contents);
+        $image = @imagecreatefromstring($contents);
 
         if (! $image) {
             throw CouldNotLoadImage::make($path);
@@ -151,6 +151,7 @@ class GdDriver implements ImageDriver
         switch (strtolower($extension)) {
             case 'jpg':
             case 'jpeg':
+            case 'jfif':
                 imagejpeg($this->image, $path, $this->quality);
                 break;
             case 'png':
@@ -185,6 +186,7 @@ class GdDriver implements ImageDriver
         switch (strtolower($imageFormat)) {
             case 'jpg':
             case 'jpeg':
+            case 'jfif':
                 imagejpeg($this->image, null, $this->quality);
                 break;
             case 'png':
@@ -223,8 +225,13 @@ class GdDriver implements ImageDriver
         return new Size($this->getWidth(), $this->getHeight());
     }
 
-    public function fit(Fit $fit, ?int $desiredWidth = null, ?int $desiredHeight = null): static
-    {
+    public function fit(
+        Fit $fit,
+        ?int $desiredWidth = null,
+        ?int $desiredHeight = null,
+        bool $relative = false,
+        string $backgroundColor = '#ffffff'
+    ): static {
         if ($fit === Fit::Crop) {
             return $this->fitCrop($fit, $this->getWidth(), $this->getHeight(), $desiredWidth, $desiredHeight);
         }
@@ -246,7 +253,7 @@ class GdDriver implements ImageDriver
         );
 
         if ($fit->shouldResizeCanvas()) {
-            $this->resizeCanvas($desiredWidth, $desiredHeight, AlignPosition::Center);
+            $this->resizeCanvas($desiredWidth, $desiredHeight, AlignPosition::Center, $relative, $backgroundColor);
         }
 
         return $this;
@@ -554,7 +561,7 @@ class GdDriver implements ImageDriver
             return;
         }
 
-        $result = exif_read_data($path);
+        $result = @exif_read_data($path);
 
         if (! is_array($result)) {
             $this->exif = [];

@@ -231,6 +231,7 @@ trait HasPermissions
         }
 
         if ($permission instanceof Permission) {
+            $guardName = $permission->guard_name ?? $guardName;
             $permission = $permission->name;
         }
 
@@ -352,7 +353,7 @@ trait HasPermissions
     }
 
     /**
-     * Returns permissions ids as array keys
+     * Returns array of permissions ids
      *
      * @param  string|int|array|Permission|Collection|\BackedEnum  $permissions
      */

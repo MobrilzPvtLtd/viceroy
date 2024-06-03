@@ -2,6 +2,102 @@
 
 All notable changes to `image` will be documented in this file
 
+## 3.6.2 - 2024-05-23
+
+### What's Changed
+
+* Update overview.md by @schmeits in https://github.com/spatie/image/pull/253
+* Update saving-images.md by @schmeits in https://github.com/spatie/image/pull/256
+* Update introduction.md by @schmeits in https://github.com/spatie/image/pull/255
+* Update basic-usage.md by @schmeits in https://github.com/spatie/image/pull/254
+* Update composer.json by @thanosalexandris in https://github.com/spatie/image/pull/257
+
+### New Contributors
+
+* @schmeits made their first contribution in https://github.com/spatie/image/pull/253
+* @thanosalexandris made their first contribution in https://github.com/spatie/image/pull/257
+
+**Full Changelog**: https://github.com/spatie/image/compare/3.6.1...3.6.2
+
+## 3.6.1 - 2024-05-17
+
+### What's Changed
+
+* Ability to resize canvas when keeping fill background a certain color by @OzanKurt in https://github.com/spatie/image/pull/249
+
+### New Contributors
+
+* @OzanKurt made their first contribution in https://github.com/spatie/image/pull/249
+
+**Full Changelog**: https://github.com/spatie/image/compare/3.6.0...3.6.1
+
+## 3.6.0 - 2024-05-07
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 1.6.0 to 2.0.0 by @dependabot in https://github.com/spatie/image/pull/244
+* Bump dependabot/fetch-metadata from 2.0.0 to 2.1.0 by @dependabot in https://github.com/spatie/image/pull/251
+* Convert Unit and Orientation to BackedEnum by @MrMeshok in https://github.com/spatie/image/pull/252
+
+### New Contributors
+
+* @MrMeshok made their first contribution in https://github.com/spatie/image/pull/252
+
+**Full Changelog**: https://github.com/spatie/image/compare/3.5.0...3.6.0
+
+## 3.5.0 - 2024-04-17
+
+### What's Changed
+
+* Fix saving jfif image by @clementbirkle in https://github.com/spatie/image/pull/248
+
+### New Contributors
+
+* @clementbirkle made their first contribution in https://github.com/spatie/image/pull/248
+
+**Full Changelog**: https://github.com/spatie/image/compare/3.4.2...3.5.0
+
+## 3.4.2 - 2024-04-15
+
+### What's Changed
+
+* Bump aglipanci/laravel-pint-action from 2.3.1 to 2.4 by @dependabot in https://github.com/spatie/image/pull/246
+* Suppress warnings from exif_read_data by @glennjacobs in https://github.com/spatie/image/pull/247
+* Suppress warnings from imagecreatefromstring by @mattmcdonald-uk in https://github.com/spatie/image/pull/243
+
+### New Contributors
+
+* @glennjacobs made their first contribution in https://github.com/spatie/image/pull/247
+* @mattmcdonald-uk made their first contribution in https://github.com/spatie/image/pull/243
+
+**Full Changelog**: https://github.com/spatie/image/compare/3.4.0...3.4.2
+
+## 3.4.1 - 2024-04-15
+
+### What's Changed
+
+* Bump aglipanci/laravel-pint-action from 2.3.1 to 2.4 by @dependabot in https://github.com/spatie/image/pull/246
+* Suppress warnings from exif_read_data by @glennjacobs in https://github.com/spatie/image/pull/247
+
+### New Contributors
+
+* @glennjacobs made their first contribution in https://github.com/spatie/image/pull/247
+
+**Full Changelog**: https://github.com/spatie/image/compare/3.4.0...3.4.1
+
+## 3.4.0 - 2024-03-05
+
+### What's Changed
+
+* Bump ramsey/composer-install from 2 to 3 by @dependabot in https://github.com/spatie/image/pull/241
+* Add a ->text method to the package by @riasvdv in https://github.com/spatie/image/pull/242
+
+### New Contributors
+
+* @riasvdv made their first contribution in https://github.com/spatie/image/pull/242
+
+**Full Changelog**: https://github.com/spatie/image/compare/3.3.8...3.4.0
+
 ## 3.3.8 - 2024-03-04
 
 ### What's Changed

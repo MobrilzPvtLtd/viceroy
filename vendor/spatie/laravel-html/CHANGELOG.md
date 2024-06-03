@@ -2,6 +2,37 @@
 
 All notable changes to `laravel-html` will be documented in this file.
 
+## 3.8.0 - 2024-04-24
+
+### What's Changed
+
+* Add autocomplete attribute helper to the form element by @raveren in https://github.com/spatie/laravel-html/pull/221
+* Added support for Htmlable contents in BaseElement by @hemmesdev in https://github.com/spatie/laravel-html/pull/215
+* Register Service Provider in Laravel 11 by @gqrdev in https://github.com/spatie/laravel-html/pull/224
+* Add name attribute to form element by @bskl in https://github.com/spatie/laravel-html/pull/223
+
+### New Contributors
+
+* @hemmesdev made their first contribution in https://github.com/spatie/laravel-html/pull/215
+* @gqrdev made their first contribution in https://github.com/spatie/laravel-html/pull/224
+
+**Full Changelog**: https://github.com/spatie/laravel-html/compare/3.7.0...3.8.0
+
+## 3.7.0 - 2024-03-23
+
+### What's Changed
+
+* Fix return value in docs in element-methods.md by @raveren in https://github.com/spatie/laravel-html/pull/218
+* Add autocomplete attribute helper to input, select and textarea by @raveren in https://github.com/spatie/laravel-html/pull/219
+* Fix link with version in documentation by @fey in https://github.com/spatie/laravel-html/pull/217
+
+### New Contributors
+
+* @raveren made their first contribution in https://github.com/spatie/laravel-html/pull/218
+* @fey made their first contribution in https://github.com/spatie/laravel-html/pull/217
+
+**Full Changelog**: https://github.com/spatie/laravel-html/compare/3.6.0...3.7.0
+
 ## 3.6.0 - 2024-03-08
 
 ### What's Changed

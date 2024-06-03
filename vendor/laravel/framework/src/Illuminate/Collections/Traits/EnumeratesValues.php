@@ -2,6 +2,7 @@
 
 namespace Illuminate\Support\Traits;
 
+use BackedEnum;
 use CachingIterator;
 use Closure;
 use Exception;
@@ -172,6 +173,28 @@ trait EnumeratesValues
         return static::range(1, $number)
             ->unless($callback == null)
             ->map($callback);
+    }
+
+    /**
+     * Get the average value of a given key.
+     *
+     * @param  (callable(TValue): float|int)|string|null  $callback
+     * @return float|int|null
+     */
+    public function avg($callback = null)
+    {
+        $callback = $this->valueRetriever($callback);
+
+        $reduced = $this->reduce(static function (&$reduce, $value) use ($callback) {
+            if (! is_null($resolved = $callback($value))) {
+                $reduce[0] += $resolved;
+                $reduce[1]++;
+            }
+
+            return $reduce;
+        }, [0, 0]);
+
+        return $reduced[1] ? $reduced[0] / $reduced[1] : null;
     }
 
     /**
@@ -410,6 +433,10 @@ trait EnumeratesValues
      */
     public function mapInto($class)
     {
+        if (is_subclass_of($class, BackedEnum::class)) {
+            return $this->map(fn ($value, $key) => $class::from($value));
+        }
+
         return $this->map(fn ($value, $key) => new $class($value, $key));
     }
 

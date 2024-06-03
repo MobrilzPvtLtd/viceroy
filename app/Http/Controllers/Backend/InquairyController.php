@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Checkout;
 
 class InquairyController extends Controller
 {
     public function index()
     {
-     return view('backend.inquairy.inquairy');
+        $checkouts = Checkout::all();
+        return view('backend.inquairy.inquairy', compact('checkouts'));
     }
 }

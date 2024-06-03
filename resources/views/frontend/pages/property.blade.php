@@ -23,13 +23,13 @@
         </div>
     </section>
     <!--=============================
-                        BREADCRUMBS END
-                    ==============================-->
+                                    BREADCRUMBS END
+                                ==============================-->
 
 
     <!--=============================
-                        PROPERTY DETAILS START
-                    ==============================-->
+                                    PROPERTY DETAILS START
+                                ==============================-->
     <section class="property_details pt_50 xs_pt_100 pb_105 xs_pb_85">
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
@@ -63,8 +63,9 @@
                         <div class=" d-flex flex-wrap justify-content-between">
                             <h4>{{ $property->title }}</h4>
                             <ul class="property_details_share d-flex flex-wrap">
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                               
+
+                                <button type="submit" id="addToCart" data-id="{{ $property->id }}" class=" btn btn-primary"><i class=" fas fa-heart"></i></button>
+
                             </ul>
                         </div>
                         <div class="property_details_address d-flex flex-wrap justify-content-between">
@@ -301,7 +302,8 @@
                     <div class="col-xl-4 wow fadeInUp" data-wow-duration="1.5s">
                         <div class=" single_property">
                             <div class="single_property_img">
-                                <img src=" {{ asset(' assets/images/property_5.jpg') }}" alt="img" class="img-fluid w-100">
+                                <img src=" {{ asset(' assets/images/property_5.jpg') }}" alt="img"
+                                    class="img-fluid w-100">
                                 <a class="feature_link" href="#">for rent</a>
                                 <a class="feature_link feature" href="#">Featured</a>
                                 <ul class="d-flex flex-wrap">
@@ -316,7 +318,7 @@
                                     <p><i class="fas fa-map-marker-alt"></i>28B Highgate Road, London</p>
                                     <ul class="d-flex flex-wrap">
                                         <li>
-                                            <span><img src="{{ asset(' assets/images/property_5.jpg')}}" alt="img"
+                                            <span><img src="{{ asset(' assets/images/property_5.jpg') }}" alt="img"
                                                     class="img-fluid w-100"></span>
                                             4 Beds
                                         </li>
@@ -350,7 +352,8 @@
                     <div class="col-xl-4 wow fadeInUp" data-wow-duration="1.5s">
                         <div class=" single_property">
                             <div class="single_property_img">
-                                <img src="{{ asset('assets/images/property_3.jpg') }}" alt="img" class="img-fluid w-100">
+                                <img src="{{ asset('assets/images/property_3.jpg') }}" alt="img"
+                                    class="img-fluid w-100">
                                 <a class="feature_link" href="#">for rent</a>
                                 <a class="feature_link feature" href="#">Featured</a>
                                 <ul class="d-flex flex-wrap">
@@ -399,7 +402,8 @@
                     <div class="col-xl-4 wow fadeInUp" data-wow-duration="1.5s">
                         <div class=" single_property">
                             <div class="single_property_img">
-                                <img src="{{ asset('assets/images/property_8.jpg') }}" alt="img" class="img-fluid w-100">
+                                <img src="{{ asset('assets/images/property_8.jpg') }}" alt="img"
+                                    class="img-fluid w-100">
                                 <a class="feature_link" href="#">for rent</a>
                                 <a class="feature_link feature" href="#">Featured</a>
                                 <ul class="d-flex flex-wrap">
@@ -449,4 +453,51 @@
             </div>
         </div>
     </section>
+@endsection
+@section('script')
+    <script>
+        $(document).ready(function() {
+
+
+            $('#addToCart').click(function() {
+                var itemId = $(this).data('id');
+                $.ajax({
+                    url: '/cart/add',
+                    type: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        id: itemId
+                    },
+                    success: function(response) {
+
+                        var responseData = JSON.parse(response);
+
+                        $('#cartItems').html('');
+
+                        $.each(responseData.CartDetails, function(key, val) {
+
+                            var cartItems = val;
+
+                            console.log(cartItems);
+
+                            $('#cartItems').prepend(
+                                '<li class="grid_4 item container"><div class="preview">   <img style="width: 100px;" src="/public/' +
+                                cartItems.image +
+                                '"></div>                 <div class="details" data-price="15.50"><h3>' +
+                                cartItems.title +
+                                '</h3>      </div><div class="inner_container"><div class="col_1of2 align-center picker"><p><a href="#" OnClick="RemoveFromCart(' +
+                                cartItems.id +
+                                ')" class="btn-remove"><i class="far fa-trash-alt"></i></a></p></div></div></li>'
+                                );
+
+                        });
+
+                    },
+                    error: function(xhr, status, error) {
+                        alert('An error occurred: ' + error);
+                    }
+                });
+            });
+        });
+    </script>
 @endsection

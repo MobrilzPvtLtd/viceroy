@@ -13,17 +13,34 @@
                             <thead>
                                 <tr>
 
-                                    {{-- <th scope="col">Id</th> --}}
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Property Name</th>
+                                    <th scope="col">Property Image</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Phone</th>
-                                    <th scope="col">Subject</th>
-                                    <th scope="col">Message</th>
+                                    <th scope="col">Number</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Start Time</th>
+                                    <th scope="col">End Time</th>
+                                    <th scope="col">Massage</th>
                                     {{-- <th scope="col">Action</th> --}}
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($checkouts as $checkout)
+                                <tr>
+                                    <td>{{ $checkout->id }}</td>
+                                    <td>{{ $checkout->title }}</td>
+                                    <td>{{ $checkout->image }}</td>
+                                    <td>{{ $checkout->name }}</td>
+                                    <td>{{ $checkout->number }}</td>
+                                    <td>{{ $checkout->date }}</td>
+                                    <td>{{ $checkout->st_time }}</td>
+                                    <td>{{ $checkout->en_time }}</td>
+                                    <td>{{ $checkout->massage }}</td>
 
+
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

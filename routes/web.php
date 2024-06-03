@@ -15,6 +15,8 @@ use App\Http\Controllers\Backend\CurrencyController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Backend\ContactsController;
 use App\Http\Controllers\Backend\InquairyController ;
+use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\CheckoutController;
 
 
 
@@ -34,9 +36,16 @@ require __DIR__.'/auth.php';
 *
 * --------------------------------------------------------------------
 */
+// cart
+Route::post('cart/add', [CartController::class, 'add'])->name('cart.add');
+Route::get('cart/view', [CartController::class, 'viewCartData']);
+Route::post('cart/delete', [CartController::class, 'DeleteIteme']);
 
-// emai sent
+// contact
 Route::post('contact', [ContactController::class, 'submit'])->name('contact.submit');
+
+// checkout
+Route::post('checkout', [CheckoutController::class, 'submit'])->name('checkout.submit');
 
 //Currency
 Route::resource('admin/currency', CurrencyController::class);
@@ -74,7 +83,7 @@ Route::get('contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('login', [FrontendController::class, 'login'])->name('login');
 Route::get('register', [FrontendController::class, 'register'])->name('register');
 Route::get('property/{slag}', [FrontendController::class, 'propertydetails'])->name('property');
-Route::get('cart-form', [FrontendController::class, 'cartform'])->name('cartform');
+Route::get('checkout', [FrontendController::class, 'cartform'])->name('cartform');
 // Route::get('search', [PropertyController::class, 'search'])->name('property.search');
 
 

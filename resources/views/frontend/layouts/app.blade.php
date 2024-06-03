@@ -34,6 +34,10 @@
     <link rel="stylesheet" href="{{ asset('assets/css/aryann.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}" />
 
+
+    <!--jquery library js-->
+    <script src="/assets/js/jquery-3.7.1.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" />
@@ -59,6 +63,7 @@
     @livewireScripts
     @stack('after-scripts')
     @yield('script')
+
 </body>
 
 </html>

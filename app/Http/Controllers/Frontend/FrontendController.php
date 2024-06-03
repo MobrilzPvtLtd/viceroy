@@ -163,9 +163,14 @@ class FrontendController extends Controller
         return view('frontend.privacy');
     }
 
-    public function cartform()
+    public function cartform(Request $request)
     {
-        return view('frontend.pages.cart-form');
+        $cart = $request->session()->get('cart', []);
+        $sessionData = [];
+        $sessionData['CartCount'] = count($cart);
+        $sessionData['CartDetails'] = $cart;
+
+        return view('frontend.pages.checkout', $sessionData);
     }
 
     /**

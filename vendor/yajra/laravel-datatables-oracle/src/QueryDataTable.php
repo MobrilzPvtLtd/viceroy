@@ -174,23 +174,28 @@ class QueryDataTable extends DataTableAbstract
 
         if ($this->isComplexQuery($builder)) {
             $builder->select(DB::raw('1 as dt_row_count'));
-            if ($this->ignoreSelectInCountQuery || ! $this->isComplexQuery($builder)) {
+            $clone = $builder->clone();
+            $clone->setBindings([]);
+            if ($clone instanceof EloquentBuilder) {
+                $clone->getQuery()->wheres = [];
+            } else {
+                $clone->wheres = [];
+            }
+
+            if ($this->isComplexQuery($clone)) {
+                if (! $this->ignoreSelectInCountQuery) {
+                    $builder = clone $this->query;
+                }
+
                 return $this->getConnection()
                     ->query()
                     ->fromRaw('('.$builder->toSql().') count_row_table')
                     ->setBindings($builder->getBindings());
             }
-
-            $builder = clone $this->query;
-
-            return $this->getConnection()
-                ->query()
-                ->fromRaw('('.$builder->toSql().') count_row_table')
-                ->setBindings($builder->getBindings());
         }
-
         $row_count = $this->wrap('row_count');
         $builder->select($this->getConnection()->raw("'1' as {$row_count}"));
+
         if (! $this->keepSelectBindings) {
             $builder->setBindings([], 'select');
         }
@@ -921,6 +926,7 @@ class QueryDataTable extends DataTableAbstract
             ->map(fn ($value) => $connection->escape($value));
 
         switch ($driverName) {
+            case 'mariadb':
             case 'mysql':
                 $this->query->orderByRaw("FIELD($keyName, ".$orderedKeys->implode(',').')');
 

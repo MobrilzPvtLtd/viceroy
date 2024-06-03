@@ -4,8 +4,9 @@ namespace Nasirkhan\ModuleManager;
 
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\ServiceProvider;
+use Nasirkhan\ModuleManager\Commands\AuthPermissionsCommand;
+use Nasirkhan\ModuleManager\Commands\InsertDemoDataCommand;
 use Nasirkhan\ModuleManager\Commands\ModuleBuildCommand;
-use Nasirkhan\ModuleManager\Commands\TestCommand;
 
 class ModuleManagerServiceProvider extends ServiceProvider
 {
@@ -54,8 +55,16 @@ class ModuleManagerServiceProvider extends ServiceProvider
              */
             if ($this->app->runningInConsole()) {
                 $this->commands([
-                    // TestCommand::class,
+
+                    // Insert Demo Data Command
+                    InsertDemoDataCommand::class,
+
+                    // Auth Permission Command
+                    AuthPermissionsCommand::class,
+
+                    // Module Build Command to Create Module
                     ModuleBuildCommand::class,
+
                 ]);
             }
         }

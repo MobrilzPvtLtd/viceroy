@@ -29,14 +29,6 @@ class ContactController extends Controller
         $contact->message = $request->message;
         $contact->save();
 
-        // $contact = [
-        //     'name' => $contact->name,
-        //     'email' => $contact->email,
-        //     'phone' => $contact->phone,
-        //     'message' => $contact->message,
-        //     'sub' => $contact->sub,
-        // ];
-
         // Send email
         Mail::to($contact->email)->send(new ContactMail($contact));
 

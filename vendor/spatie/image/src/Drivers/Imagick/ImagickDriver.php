@@ -120,8 +120,13 @@ class ImagickDriver implements ImageDriver
         return $this;
     }
 
-    public function fit(Fit $fit, ?int $desiredWidth = null, ?int $desiredHeight = null): static
-    {
+    public function fit(
+        Fit $fit,
+        ?int $desiredWidth = null,
+        ?int $desiredHeight = null,
+        bool $relative = false,
+        ?string $backgroundColor = null,
+    ): static {
         if ($fit === Fit::Crop) {
             return $this->fitCrop($fit, $this->getWidth(), $this->getHeight(), $desiredWidth, $desiredHeight);
         }
@@ -138,7 +143,7 @@ class ImagickDriver implements ImageDriver
         }
 
         if ($fit->shouldResizeCanvas()) {
-            $this->resizeCanvas($desiredWidth, $desiredHeight, AlignPosition::Center, false, null);
+            $this->resizeCanvas($desiredWidth, $desiredHeight, AlignPosition::Center, $relative, $backgroundColor);
         }
 
         return $this;
@@ -237,7 +242,13 @@ class ImagickDriver implements ImageDriver
 
         $extension = pathinfo($path, PATHINFO_EXTENSION);
 
-        if (! in_array(strtoupper($extension), Imagick::queryFormats('*'))) {
+        $formats = Imagick::queryFormats('*');
+
+        if (in_array('JPEG', $formats)) {
+            $formats[] = 'JFIF';
+        }
+
+        if (! in_array(strtoupper($extension), $formats)) {
             throw UnsupportedImageFormat::make($extension);
         }
 

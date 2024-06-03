@@ -59,6 +59,11 @@ trait InteractsWithProperties
                 $propertyName = $property->afterLast('.');
                 $objectName = $property->beforeLast('.');
 
+                if (method_exists($this->{$objectName}, 'reset')) {
+                    $this->{$objectName}->reset($propertyName);
+                    continue;
+                }
+
                 $object = data_get($freshInstance, $objectName, null);
 
                 if (is_object($object)) {
@@ -89,6 +94,23 @@ trait InteractsWithProperties
         $keysToReset = array_diff(array_keys($this->all()), $properties);
 
         $this->reset($keysToReset);
+    }
+
+    public function pull($properties = null)
+    {
+        $wantsASingleValue = is_string($properties);
+
+        $properties = is_array($properties) ? $properties : func_get_args();
+
+        $beforeReset = match (true) {
+            empty($properties) => $this->all(),
+            $wantsASingleValue => $this->getPropertyValue($properties[0]),
+            default => $this->only($properties),
+        };
+
+        $this->reset($properties);
+
+        return $beforeReset;
     }
 
     public function only($properties)

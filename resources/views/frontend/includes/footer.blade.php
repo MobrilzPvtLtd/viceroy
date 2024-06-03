@@ -137,8 +137,7 @@
       SCROLL BUTTON END
   =================================-->
 
-<!--jquery library js-->
-<script src="assets/js/jquery-3.7.1.min.js"></script>
+
 <!--bootstrap js-->
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <!--font-awesome js-->
@@ -270,7 +269,7 @@ closeBtn.addEventListener("click" , (()=>{
 </script>
 
 {{-- cart script --}}
-{{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+
   {{-- <script>
     var APP = APP || {};
     APP.sidecart = (function (APP, $) {

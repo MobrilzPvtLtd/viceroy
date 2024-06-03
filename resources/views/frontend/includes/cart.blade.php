@@ -243,136 +243,64 @@
          <h1 class="sidecart__title-text">Cart</h1>
      </div>
      <div class="sidecart__items sidecart__items--empty">
-         <!-- <h2 class="sidecart__empty-text">No items in cart.</h2> -->
-         <ul class="items">
-             <li class="grid_4 item container">
-                 <!-- <a href="#" class="btn-remove">
-          <i class="far fa-trash-alt"></i>
-        </a> -->
-                 <div class="preview">
-                     <img src="https://assets.cookfood.net/product_916_2793.jpg" />
-                 </div>
-                 <div class="details" data-price="15.50">
-                     <h3>
-                         Lasagne Al Forno
-                     </h3>
-                     <p>Serves 4 (1480g)</p>
 
-                 </div>
-                 <div class="inner_container">
+         <ul class="items" id ="cartItems">
 
-                     <div class="col_1of2 align-center picker">
-                         <p>
-                             <!-- <a href="#" class="btn-quantity plus">
-                <i class="fas fa-plus"></i>
-              </a>
-            <div class="col_1of2 quantity-text">
-              <p><span class="current_quantity">1</span> @ £15.50</p>
-            </div>
-            <a href="#" class="btn-quantity minus">
-              <i class="fas fa-minus"></i>
-            </a> -->
-                             <a href="#" class="btn-remove">
-                                 <i class="far fa-trash-alt"></i>
-                             </a>
-                         </p>
-                         <input type="hidden" class="quantity_field" name="quantity" data-price="15.50"
-                             value="1" />
-                     </div>
-                 </div>
 
-             </li>
-             <li class="grid_4 item container ">
-                 <!-- <a href="#" class="btn-remove">
-          <i class="far fa-trash-alt"></i>
-        </a> -->
-                 <div class="preview">
-                     <img src="https://assets.cookfood.net/product_916_2793.jpg" />
-                 </div>
-                 <div class="details" data-price="15.50">
-                     <h3>
-                         Lasagne Al Forno
-                     </h3>
-                     <p>Serves 4 (1480g)</p>
-
-                 </div>
-                 <div class="inner_container">
-
-                     <div class="col_1of2 align-center picker">
-                         <p>
-                             <!-- <a href="#" class="btn-quantity plus">
-                <i class="fas fa-plus"></i>
-              </a>
-            <div class="col_1of2 quantity-text">
-              <p><span class="current_quantity">1</span> @ £15.50</p>
-            </div>
-            <a href="#" class="btn-quantity minus">
-              <i class="fas fa-minus"></i>
-            </a> -->
-                             <a href="#" class="btn-remove">
-                                 <i class="far fa-trash-alt"></i>
-                             </a>
-                         </p>
-                         <input type="hidden" class="quantity_field" name="quantity" data-price="15.50"
-                             value="1" />
-                     </div>
-                 </div>
-
-             </li>
          </ul>
      </div>
      <div class="sidecart__footer">
-         <a href="/cart-form" class="common_btn">More Details</a>
+         <a href="/checkout" class="common_btn">More Details</a>
      </div>
  </div>
 
-    <!-- CART SCRIPT STARTS -->
+ <!-- CART SCRIPT STARTS -->
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    var APP = APP || {};
-    APP.sidecart = (function (APP, $) {
-      var $test = $(".test"),
-        $sidecart = $(".sidecart"),
-        $closeCart = $(".sidecart__close"),
-        $cartOverlay = $(".sidecart__overlay");
 
-      function bindEvents() {
-        console.log("sidecart init");
+ <script>
+     var APP = APP || {};
+     APP.sidecart = (function(APP, $) {
+         var $test = $(".test"),
+             $sidecart = $(".sidecart"),
+             $closeCart = $(".sidecart__close"),
+             $cartOverlay = $(".sidecart__overlay");
 
-        $(".sidecart__close, .sidecart__overlay, .test-cart").on("click", function () {
-          toggleCart();
-        });
+         function bindEvents() {
+             console.log("sidecart init");
 
-        $test.find(".test__btn").on("click", function () {
-          addItemToCart();
-        });
-      }
+             $(".sidecart__close, .sidecart__overlay, .test-cart").on("click", function() {
+                 toggleCart();
+             });
 
-      function toggleCart() {
-        $sidecart.toggleClass("sidecart--close");
-        $cartOverlay.toggleClass("sidecart__overlay--hide");
-      }
+             $test.find(".test__btn").on("click", function() {
+                 addItemToCart();
+             });
+         }
 
-      function addItemToCart() {
-        var $items = $(".sidecart__items");
-        var $emptyText = $(".sidecart__empty-text");
-        $items.removeClass("sidecart__items--empty");
-        $emptyText.addClass("sidecart__empty-text--hide");
+         function toggleCart() {
+             $sidecart.toggleClass("sidecart--close");
+             $cartOverlay.toggleClass("sidecart__overlay--hide");
+         }
 
-        var $newItem = $("<div class='sidecart__item'>Item</div>");
-        $items.append($newItem);
-      }
+         function addItemToCart() {
+             var $items = $(".sidecart__items");
+             var $emptyText = $(".sidecart__empty-text");
+             $items.removeClass("sidecart__items--empty");
+             $emptyText.addClass("sidecart__empty-text--hide");
 
-      function init() {
-        bindEvents();
-      }
+             var $newItem = $("<div class='sidecart__item'>Item</div>");
+             $items.append($newItem);
+         }
 
-      return {
-        init: init,
-      };
-    })(APP, jQuery);
-    APP.sidecart.init();
-  </script>
+         function init() {
+             bindEvents();
+         }
 
-<!-- CART SCRIPT ENDS -->
+         return {
+             init: init,
+         };
+     })(APP, jQuery);
+     APP.sidecart.init();
+ </script>
+
+ <!-- CART SCRIPT ENDS -->
