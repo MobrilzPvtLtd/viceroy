@@ -1,0 +1,3829 @@
+@media (min-width: 1400px) and (max-width: 1600px) {
+
+    /*================================
+        HOME PAGE 01 START
+    ================================*/
+    .container {
+        max-width: 1320px;
+    }
+
+    .banner_text h1 {
+        font-size: 66px;
+    }
+
+    .banner_search form ul {
+        width: 87%;
+    }
+
+    .banner_input_btn {
+        margin-left: 10px;
+    }
+
+    .footer_right::after {
+        left: 25px;
+    }
+
+    .footer_right {
+        padding: 100px 0px 0px 100px;
+    }
+
+    /*================================
+        HOME PAGE 01 END
+    ================================*/
+
+    /*================================
+        HOME PAGE 02 START
+    ================================*/
+    .single_property_2 .single_property_img {
+        height: 220px;
+    }
+
+    .category_property_area .nextArrow,
+    .category_property_area .prevArrow {
+        right: 68px;
+    }
+
+    .category_property_area .prevArrow {
+        right: 124px;
+    }
+
+    .category_property_item_img {
+        height: 305px;
+    }
+
+    .banner_2_text h1,
+    .banner_2_text h1 span {
+        font-size: 56px;
+    }
+
+    .banner_2_text p {
+        max-width: 95%;
+    }
+
+    .banner_2_search form ul {
+        width: 85%;
+    }
+
+    .banner_2_search form ul li {
+        width: 22.7%;
+    }
+
+    .banner_2_text h1 span::after {
+        top: 22px;
+    }
+
+    /*================================
+        HOME PAGE 02 END
+    ================================*/
+
+    /*================================
+        HOME PAGE 03 START
+    ================================*/
+    .banner_area_3 .banner_search form ul {
+        width: 89%;
+    }
+
+    .banner_area_3 .banner_search form ul li {
+        width: 23.3%;
+    }
+
+    .single_property_3 .single_property_img {
+        height: 230px;
+    }
+
+    .about_2_text ul li {
+        min-width: 40%;
+    }
+
+    .testimonial_2 .slick-list.draggable {
+        padding: 0px 150px !important;
+    }
+
+    .testimonial_item_2_img {
+        height: 375px;
+    }
+
+    .testimonial_item_2_text .testimonial_2_description {
+        font-size: 18px;
+    }
+
+    /*================================
+        HOME PAGE 03 END
+    ================================*/
+
+    /*================================
+        AGENCIES DETAILS START
+    ================================*/
+    .agencies_details_img {
+        height: 375px;
+    }
+
+    .popular_blog_text {
+        width: 66%;
+    }
+
+    .agencies_details .single_agent_img {
+        height: 290px;
+    }
+
+    /*================================
+        AGENCIES DETAILS END
+    ================================*/
+
+    .single_agencies_img {
+        height: 260px;
+    }
+
+    .agent_details_area_img {
+        height: 430px;
+    }
+
+    .property_grid_view .banner_search {
+        margin-top: -70px;
+    }
+
+    .property_grid_view .banner_search form ul {
+        width: 89%;
+    }
+
+    .property_grid_view form ul li {
+        width: 23.33%;
+    }
+
+    /*================================
+        DASHBOARD START
+    ================================*/
+    .dashboard_sidebar {
+        width: 18%;
+    }
+
+    .dashboard_sidebar.dash_show_menu {
+        left: 0;
+    }
+
+    .dashboard_sidebar_menu ul {
+        max-height: 340px;
+    }
+
+    .dashboard_content {
+        width: 82%;
+    }
+
+    .dashboard_overview_item .icon {
+        margin-right: 20px;
+        width: 65px;
+        font-size: 25px;
+    }
+
+    .dashboard_sidebar_user {
+        padding: 50px 30px;
+    }
+
+    .dashboard_sidebar_user h3 {
+        font-size: 18px;
+    }
+
+    .dashboard_overview_review .single_review_text h3 span {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .dashboard_profile_img {
+        height: 370px;
+    }
+
+    /*================================
+        DASHBOARD END
+    ================================*/
+}
+
+@media (min-width: 1200px) and (max-width: 1399.99px) {
+
+    /*================================
+        HOME PAGE 01 START
+    ================================*/
+    .container {
+        max-width: 1140px !important;
+    }
+
+    .main_menu .navbar-nav .nav-item .nav-link {
+        font-size: 15px;
+        margin: 0px 12px;
+    }
+
+    .banner_search form ul {
+        width: 88%;
+    }
+
+    .banner_text h1 {
+        font-size: 66px;
+    }
+
+    .single_destination {
+        height: 235px;
+    }
+
+    .single_property_text {
+        margin: -60px 10px 0px 10px;
+    }
+
+    .single_property_top {
+        padding: 20px;
+    }
+
+    .single_property_top ul li {
+        font-size: 14px;
+    }
+
+    .single_property_top ul {
+        gap: 10px;
+    }
+
+    .single_agent_img {
+        height: 280px;
+    }
+
+    .find_state {
+        height: 450px;
+    }
+
+    .blog_text {
+        padding: 20px;
+    }
+
+    .footer_link h4 {
+        font-size: 18px;
+    }
+
+    .footer_right h4 {
+        font-size: 18px;
+    }
+
+    .footer_right {
+        padding: 40px 0px 0px 70px;
+    }
+
+    .footer_right::after {
+        left: 15px;
+    }
+
+    .footer_description {
+        padding-bottom: 140px;
+    }
+
+    .footer_description::after {
+        bottom: -30px;
+    }
+
+    .blog_img {
+        height: 225px;
+    }
+
+    /*================================
+        HOME PAGE 01 END
+    ================================*/
+
+    /*================================
+        HOME PAGE 02 START
+    ================================*/
+    .banner_2_text p {
+        max-width: 85%;
+    }
+
+    .banner_area_2 {
+        padding-left: 40px;
+    }
+
+    .banner_area_2 .banner_search form ul li {
+        width: 22.5%;
+    }
+
+    .single_amenites li a {
+        padding: 12px 20px;
+    }
+
+    .single_property_2 .single_property_img {
+        height: 185px;
+    }
+
+    .category_property_area .nextArrow,
+    .category_property_area .prevArrow {
+        right: 56px;
+    }
+
+    .category_property_area .prevArrow {
+        right: 112px;
+    }
+
+    .category_property_item_img {
+        height: 330px;
+    }
+
+    .enquiry_text ul li h5 {
+        max-width: 100%;
+    }
+
+    .agent_2_img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .testimonial_description p {
+        font-size: 18px;
+    }
+
+    .single_blog_2_img {
+        height: 205px;
+    }
+
+    .footer_2 .copyright_spacing {
+        padding-left: 60px !important;
+    }
+
+    .footer_2 .copyright_area::after {
+        left: -72px;
+    }
+
+    /*================================
+        HOME PAGE 02 END
+    ================================*/
+
+    /*================================
+        HOME PAGE 03 START
+    ================================*/
+    .single_property_3 .single_property_img {
+        height: 195px;
+    }
+
+    .about_2_text ul li {
+        min-width: 45%;
+    }
+
+    .about_2_img {
+        height: 560px;
+    }
+
+    .about_2_img .circle_box {
+        right: -20px;
+    }
+
+    .explore_listing_item {
+        padding: 15px;
+    }
+
+    .explore_listing_item .item_title {
+        font-size: 16px;
+    }
+
+    .testimonial_2 .slick-list.draggable {
+        padding: 0px 100px !important;
+    }
+
+    .testimonial_item_2_img {
+        height: 430px;
+    }
+
+    .testimonial_item_2_text .testimonial_2_description {
+        font-size: 18px;
+    }
+
+    .single_blog_3_img {
+        height: 355px;
+    }
+
+    .single_discover {
+        padding: 40px;
+    }
+
+    /*================================
+        HOME PAGE 03 END
+    ================================*/
+
+    /*================================
+        ABOUT PAGE START
+    ================================*/
+    .breadcrumb_text h1 {
+        font-size: 56px;
+    }
+
+    .breadcrumbs_overly {
+        padding: 185px 0px 115px 0px;
+    }
+
+    /*================================
+        ABOUT PAGE END
+    ================================*/
+
+    /*================================
+        AGENCIES DETAILS START
+    ================================*/
+    .popular_blog_text {
+        width: 66%;
+    }
+
+    .agencies_details_img {
+        height: 330px;
+    }
+
+    .agencies_details_header .text h2 {
+        font-size: 22px;
+    }
+
+    .agencies_details .single_agent_img {
+        height: 250px;
+    }
+
+    /*================================
+        AGENCIES DETAILS END
+    ================================*/
+
+    /*================================
+        AGENCIES START
+    ================================*/
+    .single_agencies_img {
+        height: 225px;
+    }
+
+    .single_agencies_text .item_title {
+        font-size: 18px;
+    }
+
+    .single_agencies_text {
+        padding: 30px;
+    }
+
+    /*================================
+        AGENCIES END
+    ================================*/
+
+    /*================================
+        AGENCIES DETAILS START
+    ================================*/
+    .agent_details_area {
+        padding: 30px;
+    }
+
+    .agent_details_area_img {
+        height: 390px;
+    }
+
+    .agent_details_area_text {
+        margin-left: 20px;
+    }
+
+    .agent_details_area_text h2 {
+        font-size: 28px;
+    }
+
+    .agent_social_media li a {
+        padding: 8px 20px;
+    }
+
+    .agent_social_media {
+        margin-top: 25px;
+    }
+
+    .agent_info li {
+        font-size: 15px;
+    }
+
+    /*================================
+        AGENCIES DETAILS END
+    ================================*/
+
+    /*================================
+        BLOG DETAILS START
+    ================================*/
+    .blog_details_img_1 {
+        height: 320px;
+    }
+
+    .blog_details_img_2 {
+        height: 320px;
+    }
+
+    .blog_shear_area_left {
+        margin-bottom: 20px;
+    }
+
+    .blog_comment_text {
+        width: 86% !important;
+    }
+
+    .blog_state p {
+        padding: 0px 30px;
+    }
+
+    .blog_state {
+        padding: 45px 0px 180px 0px;
+    }
+
+    .blog_details_right_header .blog_details_tag {
+        margin-bottom: 25px;
+    }
+
+    /*================================
+        BLOG DETAILS END
+    ================================*/
+
+    /*================================
+        CONTACT START
+    ================================*/
+    .contact_address_text {
+        width: 83%;
+    }
+
+    .contact_map {
+        height: 450px;
+    }
+
+    /*================================
+        CONTACT END
+    ================================*/
+
+    .property_list_item .single_property_img {
+        height: 250px;
+    }
+
+    .property_grid_view .banner_search {
+        margin-top: -60px;
+    }
+
+    .property_grid_view .banner_search form ul {
+        gap: 17px;
+    }
+
+    /*================================
+        PROPERTY DETAILS START
+    ================================*/
+    .property_details_large_img {
+        height: 490px;
+    }
+
+    .single_property_details {
+        padding: 30px;
+    }
+
+    .property_details_sidebar {
+        padding: 30px;
+    }
+
+    .apertment_layout {
+        height: 670px;
+    }
+
+    .single_review_text {
+        width: 88%;
+    }
+
+    /*================================
+        PROPERTY DETAILS END
+    ================================*/
+
+    /*================================
+        DASHBOARD START
+    ================================*/
+    .dashboard_sidebar {
+        width: 22%;
+    }
+
+    .dashboard_sidebar.dash_show_menu {
+        left: 0;
+    }
+
+    .dashboard_sidebar_menu ul {
+        max-height: 340px;
+    }
+
+    .dashboard_content {
+        width: 78%;
+    }
+
+    .dashboard_overview_review .single_review_text span {
+        display: block;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .dashboard_sidebar_user h3 {
+        font-size: 18px;
+    }
+
+    .dashboard_profile_img {
+        height: 360px;
+    }
+
+    /*================================
+        DASHBOARD END
+    ================================*/
+}
+
+@media (min-width: 992px) and (max-width: 1199.99px) {
+
+    /*================================
+        HOME PAGE 01 START
+    ================================*/
+    /* menu start */
+    .main_menu .navbar-brand {
+        width: 160px;
+    }
+
+    .main_menu .navbar-nav .nav-item .nav-link {
+        font-size: 14px;
+        margin: 0px 12px;
+    }
+
+    .user_icon {
+        font-size: 14px;
+    }
+
+    .main_menu .common_btn {
+        padding: 11px 20px;
+    }
+
+    /* menu end */
+
+    /* banner start */
+    .banner_text h1 {
+        font-size: 60px;
+    }
+
+    .banner_search form ul {
+        width: 87%;
+    }
+
+    .banner_search form ul li {
+        width: 22.5%;
+    }
+
+    .adv_search_area {
+        padding: 25px 25px 10px 25px;
+    }
+
+    .adv_search_area .select2-container {
+        margin-bottom: 15px;
+    }
+
+    /* banner end */
+
+    /* about start */
+    .about_area_img_1 {
+        height: 320px;
+    }
+
+    .about_area_img_2 {
+        height: 200px;
+    }
+
+    .section_heading h2 {
+        font-size: 32px;
+    }
+
+    .about_text {
+        margin-top: 20px;
+    }
+
+    /* about end */
+    .single_destination {
+        height: 250px;
+    }
+
+    .single_property_img {
+        height: 310px;
+    }
+
+    .single_agent_img {
+        height: 320px;
+    }
+
+    .find_state_text h2 {
+        font-size: 120px;
+    }
+
+    .find_state {
+        height: 600px;
+    }
+
+    .blog_img {
+        height: 290px;
+    }
+
+    .single_discover {
+        padding: 40px;
+    }
+
+    .container_large {
+        padding-right: calc(var(--bs-gutter-x) * .5);
+        padding-left: calc(var(--bs-gutter-x) * .5);
+    }
+
+    .footer_description::after {
+        display: none;
+    }
+
+    .footer_right {
+        padding: 60px 45px;
+    }
+
+    .footer_right::after {
+        left: -30px;
+    }
+
+    .footer_description {
+        padding-bottom: 0;
+    }
+
+    .progress-wrap {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .container {
+        max-width: 960px;
+    }
+
+    .banner_search .tab-content {
+        padding: 25px;
+    }
+
+    /*================================
+        HOME PAGE 01 END
+    ================================*/
+
+    /*================================
+        HOME PAGE 02 START
+    ================================*/
+    .main_menu_2 .menu_right li:first-child {
+        display: none;
+    }
+
+    .banner_2_text p {
+        max-width: 75%;
+    }
+
+    .banner_2_text {
+        margin-top: 110px;
+    }
+
+    .banner_area_2 {
+        padding: 0px 20px;
+    }
+
+    .banner_2_search .tab-content {
+        padding: 0;
+    }
+
+    .banner_2_text h1,
+    .banner_2_text h1 span {
+        max-width: 85%;
+    }
+
+    .single_property_2 .single_property_img {
+        height: 245px;
+    }
+
+    .category_property_area .nextArrow,
+    .category_property_area .prevArrow {
+        right: 43px;
+    }
+
+    .category_property_area .prevArrow {
+        right: 98px;
+    }
+
+    .category_property_item_img {
+        height: 270px;
+    }
+
+    .enquiry_text ul li h5 {
+        max-width: 100%;
+    }
+
+    .testimonial_description p {
+        font-size: 16px;
+    }
+
+    .testimonial_description {
+        padding-top: 40px;
+        padding-left: 50px;
+    }
+
+    .testimonial .slick-dots {
+        bottom: 0px;
+    }
+
+    .single_blog_2_img {
+        height: 270px;
+    }
+
+    .footer_2 .copyright_spacing {
+        padding-left: 30px !important;
+    }
+
+    .footer_2 .footer_description::before {
+        right: 15px;
+    }
+
+    .footer_2 .footer_link h4 {
+        font-size: 18px;
+    }
+
+    .footer_2 .copyright_area::after {
+        left: -57px;
+    }
+
+    .footer_2 .footer_description::after {
+        display: block;
+    }
+
+    .footer_2 .footer_description {
+        padding-bottom: 130px;
+    }
+
+    .footer_2 .footer_description::after {
+        width: 220px;
+        height: 93px;
+    }
+
+    .banner_2_search {
+        bottom: -165px;
+    }
+
+    /*================================
+        HOME PAGE 02 END
+    ================================*/
+
+    /*================================
+        HOME PAGE 03 START
+    ================================*/
+    .about_2_img {
+        height: 565px;
+    }
+
+    .about_2_img .circle_box {
+        top: 15px;
+    }
+
+    .about_2_text {
+        padding-left: 0;
+    }
+
+    .testimonial_2 .section_heading p {
+        margin-top: 20px;
+    }
+
+    .testimonial_2 .slick-list.draggable {
+        padding: 0px !important;
+    }
+
+    .testimonial_item_2 {
+        opacity: 1;
+    }
+
+    .testimonial_item_2_img {
+        height: 430px;
+    }
+
+    .testimonial_item_2_text .testimonial_2_designation {
+        font-size: 14px;
+    }
+
+    .testimonial_item_2_text::after {
+        width: 213px;
+        height: 170px;
+        right: 20px;
+    }
+
+    .single_property_3 .single_property_img {
+        height: 250px;
+    }
+
+    .single_blog_3_img {
+        height: 455px;
+    }
+
+    .about_2_text ul li {
+        min-width: 50%;
+    }
+
+    /*================================
+        HOME PAGE 03 END
+    ================================*/
+
+    /*================================
+        ABOUT PAGE START
+    ================================*/
+    .breadcrumb_text h1 {
+        font-size: 48px;
+    }
+
+    .breadcrumbs_overly {
+        padding: 170px 0px 90px 0px;
+    }
+
+    /*================================
+        ABOUT PAGE END
+    ================================*/
+
+    /*================================
+        AGENCIES DETAILS START
+    ================================*/
+    .agencies_details_img {
+        height: 305px;
+    }
+
+    .agencies_details_header {
+        padding: 15px;
+    }
+
+    .agencies_details_header {
+        width: 90%;
+        margin-left: 5%;
+        padding: 15px;
+    }
+
+    .agencies_details_header .img {
+        width: 150px;
+    }
+
+    .agencies_details_header .text h2 {
+        font-size: 20px;
+    }
+
+    .agencies_details_text .agent_map {
+        height: 300px;
+    }
+
+    .agencies_tabs {
+        margin-left: 12px;
+    }
+
+    .blog_details_right_header {
+        padding-left: 20px;
+        padding-top: 22px;
+    }
+
+    .blog_details_right form {
+        margin-left: 20px;
+        padding-bottom: 25px;
+    }
+
+    .popular_blog_text {
+        width: 63%;
+    }
+
+    .blog_details_right_header.sidebar_blog {
+        padding-bottom: 25px;
+    }
+
+    .categories_property {
+        margin-bottom: 25px;
+    }
+
+    .agencies_details .single_property_img {
+        height: 205px;
+    }
+
+    .agencies_details .single_property_text {
+        margin: 0;
+    }
+
+    .agencies_details .item_title {
+        font-size: 18px;
+    }
+
+    .agencies_details .single_agent_img {
+        height: 330px;
+    }
+
+    .popular_blog_img {
+        width: 80px;
+        height: 90px;
+    }
+
+    .agencies_details .popular_blog_text a {
+        font-size: 16px;
+    }
+
+    /*================================
+        AGENCIES DETAILS END
+    ================================*/
+
+    /*================================
+        AGENCIES START
+    ================================*/
+    .single_agencies_img {
+        height: 185px;
+    }
+
+    .single_agencies_text {
+        padding: 25px;
+    }
+
+    .single_agencies_text .item_title {
+        font-size: 18px;
+    }
+
+    /*================================
+        AGENCIES END
+    ================================*/
+
+    /*================================
+        AGENCIES DETAILS START
+    ================================*/
+    .agent_details_area {
+        padding: 30px;
+    }
+
+    .agent_details_area_img {
+        height: 405px;
+    }
+
+    .agent_details_area_text {
+        margin-left: 0;
+    }
+
+    .agent_details_area_text h2 {
+        font-size: 28px;
+    }
+
+    .agent_social_media li a {
+        padding: 8px 20px;
+    }
+
+    .agent_social_media {
+        margin-top: 25px;
+    }
+
+    /*================================
+        AGENCIES DETAILS END
+    ================================*/
+
+    /*================================
+        BLOG DETAILS START
+    ================================*/
+    .blog_details_img_1 {
+        height: 270px;
+    }
+
+    .blog_details_img_2 {
+        height: 270px;
+    }
+
+    .blog_shear_area_left {
+        margin-bottom: 20px;
+    }
+
+    .blog_comment_text {
+        width: 86% !important;
+    }
+
+    .blog_comment_reply {
+        margin-left: 0;
+    }
+
+    .blog_state p {
+        padding: 0px 30px;
+    }
+
+    .blog_state {
+        padding: 45px 0px 180px 0px;
+    }
+
+    .blog_details_right_header .blog_details_tag {
+        margin-bottom: 25px;
+    }
+
+    /*================================
+        BLOG DETAILS END
+    ================================*/
+
+    /*================================
+        CONTACT START
+    ================================*/
+    .contact_address h4 {
+        font-size: 34px;
+    }
+
+    .contact_address_text a {
+        font-size: 15px;
+    }
+
+    .contact_address_text {
+        width: 80%;
+    }
+
+    .contact_map {
+        height: 400px;
+    }
+
+    /*================================
+        CONTACT END
+    ================================*/
+
+    .login_text {
+        padding: 50px;
+    }
+
+    .other_login_option li {
+        width: 48%;
+    }
+
+    .single_pricing {
+        padding: 30px;
+    }
+
+    .property_sm_margin {
+        margin-bottom: 50px;
+    }
+
+    .property_list_item {
+        margin: 15px 0px 43px 0px;
+    }
+
+    .property_grid_view .banner_search {
+        margin-top: -50px;
+    }
+
+    /*================================
+        PROPERTY DETAILS START
+    ================================*/
+    .property_details_large_img {
+        height: 410px;
+    }
+
+    .property_details_slider .slider-nav2 {
+        width: 500px;
+    }
+
+    .property_details_small_img {
+        height: auto;
+    }
+
+    .property_details_share {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .property_apartment_details li,
+    .property_facilities ul li {
+        width: 50%;
+    }
+
+    .apertment_layout {
+        height: 550px;
+    }
+
+    .apertment_map {
+        height: 350px;
+    }
+
+    .apertment_video {
+        height: 310px;
+    }
+
+    .apartment_review_counter {
+        margin-bottom: 25px;
+    }
+
+    .single_review_text {
+        width: 86%;
+    }
+
+    .single_property_details {
+        padding: 30px;
+    }
+
+    .single_property_details h4 {
+        font-size: 24px;
+    }
+
+    .property_details_sidebar {
+        padding: 30px;
+    }
+
+    /*================================
+        PROPERTY DETAILS END
+    ================================*/
+
+    /*================================
+        DASHBOARD START
+    ================================*/
+    .dashboard_sidebar {
+        width: 25%;
+    }
+
+    .dashboard_sidebar_menu ul {
+        max-height: 340px;
+    }
+
+    .dashboard_content {
+        width: 75%;
+    }
+
+    .dashboard_overview_review .single_review_text {
+        width: 88%;
+        margin-left: 20px;
+    }
+
+    .dashboard_sidebar_user h3 {
+        font-size: 18px;
+    }
+
+    .dashboard_profile_img {
+        height: 390px;
+        border-right: 0;
+        margin-right: 0;
+        padding: 0;
+    }
+
+    .dashboard_profile_text {
+        padding: 30px 30px 30px 0px;
+    }
+
+    .dashboard_invoice_header .text {
+        width: 50%;
+    }
+
+    /*================================
+        DASHBOARD END
+    ================================*/
+}
+
+@media (min-width: 768px) and (max-width: 991.99px) {
+
+    /*================================
+        HOME PAGE 01 START
+    ================================*/
+    /* menu start */
+    .main_menu .container {
+        padding: 20px 0px;
+    }
+
+    .main_menu #navbarNav {
+        margin-top: 19px;
+        border-top: 1px solid #eeeeee52;
+    }
+
+    .main_menu .navbar-nav {
+        background: var(--colorBlack);
+        line-height: 60px;
+        padding: 15px 0px;
+    }
+
+    .main_menu .menu_right {
+        background: var(--colorBlack);
+        padding-left: 20px;
+        border-top: 1px solid #eeeeee52;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .main_menu .navbar-nav .nav-item .nav-link {
+        display: inline-block;
+    }
+
+    .main_menu .droap_menu {
+        max-height: 250px;
+        left: 20px;
+    }
+
+    /* menu end */
+
+    /* banner start */
+    .banner_area {
+        height: auto;
+    }
+
+    .banner_text {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .banner_text h1 {
+        font-size: 54px;
+    }
+
+    .banner_text p {
+        padding-right: 100px;
+    }
+
+    .banner_contant {
+        padding-top: 175px;
+        padding-bottom: 100px;
+    }
+
+    .banner_search form ul {
+        width: 100%;
+    }
+
+    .banner_search form ul li {
+        width: 48%;
+    }
+
+    .banner_input_btn {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .adv_search_area {
+        padding: 25px 25px 10px 25px;
+    }
+
+    .adv_search_area.show_search {
+        top: 107%;
+    }
+
+    .adv_search_area .select2-container {
+        margin-bottom: 15px;
+    }
+
+    /* banner end */
+
+    /* about start */
+    .about_area_img_1 {
+        height: 500px;
+    }
+
+    .about_area_img_2 {
+        height: 315px;
+    }
+
+    .section_heading h2 {
+        font-size: 28px;
+    }
+
+    .about_text {
+        margin-top: 20px;
+    }
+
+    /* about end */
+    .single_destination {
+        height: 250px;
+    }
+
+    .single_property_img {
+        height: 230px;
+    }
+
+    .single_property_text {
+        margin: 0;
+    }
+
+    .item_title {
+        font-size: 18px;
+    }
+
+    .single_agent_img {
+        height: 365px !important;
+    }
+
+    .find_state_text h2 {
+        font-size: 80px;
+    }
+
+    .find_state {
+        height: 450px;
+    }
+
+    .blog_text {
+        margin-top: 0;
+        width: 100%;
+        margin-left: 0;
+        padding: 25px;
+    }
+
+    .blog_img {
+        height: 215px;
+    }
+
+    .single_discover {
+        padding: 40px;
+    }
+
+    .container_large {
+        padding-right: calc(var(--bs-gutter-x) * .5);
+        padding-left: calc(var(--bs-gutter-x) * .5);
+    }
+
+    .footer_description::after {
+        display: none;
+    }
+
+    .footer_right {
+        padding: 60px 45px;
+    }
+
+    .footer_right::after {
+        left: -30px;
+    }
+
+    .footer_description {
+        padding-bottom: 0;
+    }
+
+    .progress-wrap {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .main_menu .navbar-brand {
+        margin-left: 12px;
+    }
+
+    /*================================
+        HOME PAGE 01 END
+    ================================*/
+
+    /*================================
+        HOME PAGE 02 START
+    ================================*/
+    .main_menu_2 .navbar-toggler {
+        border-radius: 6px;
+        background: var(--colorBlue);
+        border: none;
+        color: var(--colorWhite);
+    }
+
+    .main_menu_2 .menu_right,
+    .main_menu_2 .navbar-nav {
+        background: var(--colorWhite);
+        border-top: 0;
+        border-bottom: 1px solid #b6b3b352;
+    }
+
+    .main_menu_2 .menu_right li:first-child {
+        display: none;
+    }
+
+    .banner_area_2 {
+        height: auto;
+        padding: 50px;
+    }
+
+    .banner_2_text {
+        margin-top: 0;
+    }
+
+    .banner_2_text h1,
+    .banner_2_text h1 span {
+        font-size: 54px;
+        line-height: initial;
+    }
+
+    .banner_2_text h1 span::after {
+        top: 20px;
+    }
+
+    .banner_2_search {
+        bottom: -110px;
+    }
+
+    .banner_2_search .tab-content {
+        padding: 0;
+    }
+
+    .single_amenites li a {
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .single_amenites li a span {
+        width: 20px;
+        height: 20px;
+    }
+
+    .single_property_2 .single_property_img {
+        height: 175px;
+    }
+
+    .category_property_item_img {
+        height: 280px;
+    }
+
+    .enquiry_text ul li {
+        margin-bottom: 30px;
+    }
+
+    .enquiry_form {
+        padding: 35px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .enquiry_form h2 {
+        font-size: 22px;
+    }
+
+    .client_feedback_text_right {
+        display: none;
+    }
+
+    .testimonial_item_tetle {
+        margin-top: 0;
+    }
+
+    .testimonial_description {
+        border-top: 1px solid rgba(3, 26, 38, 0.10);
+        padding-top: 20px;
+        margin-top: 20px;
+        margin-left: 15px;
+        padding-left: 0;
+    }
+
+    .testimonial_description::after {
+        display: none;
+    }
+
+    .testimonial .slick-dots {
+        position: initial;
+        margin-bottom: 15px;
+    }
+
+    .single_blog_2_img {
+        height: 190px;
+    }
+
+    .footer_2 .footer_description::before {
+        display: none;
+    }
+
+    .banner_2_search form ul li {
+        width: 48.2%;
+    }
+
+    .category_property_area .nextArrow,
+    .category_property_area .prevArrow {
+        right: 50px;
+    }
+
+    .category_property_area .prevArrow {
+        right: 105px;
+    }
+
+    .footer_2 .copyright_spacing {
+        padding-top: 50px !important;
+        padding-left: 12px !important;
+    }
+
+    .footer_link h4 {
+        font-size: 18px;
+    }
+
+    .banner_2_text p {
+        max-width: 95%;
+    }
+
+    /*================================
+        HOME PAGE 02 END
+    ================================*/
+
+    /*================================
+        HOME PAGE 03 START
+    ================================*/
+    .banner_area_3 .banner_contant {
+        padding-top: 175px;
+    }
+
+    .about_2_img {
+        height: auto;
+        margin-bottom: 25px;
+    }
+
+    .about_2_img .circle_box {
+        top: 15px;
+        right: -30px;
+    }
+
+    .about_2_text {
+        padding-left: 0;
+    }
+
+    .explore_listing_item .img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .explore_listing_item {
+        padding: 15px;
+    }
+
+    .testimonial_2 .section_heading p {
+        margin-top: 20px;
+    }
+
+    .testimonial_2 .slick-list.draggable {
+        padding: 0px !important;
+    }
+
+    .testimonial_item_2 {
+        opacity: 1;
+    }
+
+    .testimonial_item_2_img {
+        height: 350px;
+    }
+
+    .testimonial_item_2_text {
+        padding-left: 15px;
+    }
+
+    .testimonial_item_2_text .testimonial_2_description {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .testimonial_item_2_text .testimonial_2_designation {
+        font-size: 14px;
+    }
+
+    .testimonial_item_2_text::after {
+        width: 213px;
+        height: 170px;
+        right: 20px;
+    }
+
+    .single_property_3 .single_property_img {
+        height: 185px;
+    }
+
+    .single_blog_3_img {
+        height: 335px;
+    }
+
+    /*================================
+        HOME PAGE 03 END
+    ================================*/
+
+    /*================================
+        ABOUT PAGE START
+    ================================*/
+    .breadcrumb_text h1 {
+        font-size: 38px;
+        margin-bottom: 10px;
+    }
+
+    .breadcrumbs_overly {
+        padding: 170px 0px 90px 0px;
+    }
+
+    /*================================
+        ABOUT PAGE END
+    ================================*/
+
+    /*================================
+        AGENCIES DETAILS START
+    ================================*/
+    .agencies_details_img {
+        height: 305px;
+    }
+
+    .agencies_details_header {
+        padding: 15px;
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .agencies_details_header .img {
+        width: 150px;
+    }
+
+    .agencies_details_header .text h2 {
+        font-size: 20px;
+    }
+
+    .agencies_details_area {
+        margin-bottom: 50px;
+    }
+
+    .agencies_tabs {
+        margin-left: 12px;
+    }
+
+    .blog_details_right_header {
+        padding-left: 20px;
+        padding-top: 22px;
+    }
+
+    .blog_details_right form {
+        margin-left: 20px;
+        padding-bottom: 25px;
+    }
+
+    .popular_blog_text {
+        width: 70%;
+    }
+
+    .blog_details_right_header.sidebar_blog {
+        padding-bottom: 25px;
+    }
+
+    .categories_property {
+        margin-bottom: 25px;
+    }
+
+    /*================================
+        AGENCIES DETAILS END
+    ================================*/
+
+    /*================================
+        AGENCIES START
+    ================================*/
+    .single_agencies_img {
+        height: 210px;
+    }
+
+    .single_agencies_text {
+        padding: 25px;
+    }
+
+    .agencies_page .margin_sm {
+        margin-bottom: 50px;
+    }
+
+    /*================================
+        AGENCIES END
+    ================================*/
+
+    /*================================
+        AGENCIES DETAILS START
+    ================================*/
+    .agent_details_area {
+        padding: 30px;
+    }
+
+    .agent_details_area_img {
+        height: 416px;
+    }
+
+    .agent_details_area_text {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .agent_details_area_text h2 {
+        font-size: 28px;
+    }
+
+    /*================================
+        AGENCIES DETAILS END
+    ================================*/
+
+    /*================================
+        BLOG DETAILS START
+    ================================*/
+    .blog_details_img_1 {
+        height: 305px;
+    }
+
+    .blog_details_img_2 {
+        height: 305px;
+    }
+
+    .blog_shear_area_left {
+        margin-bottom: 20px;
+    }
+
+    .blog_comment_text {
+        width: 86%;
+    }
+
+    .blog_comment_reply .blog_comment_text {
+        width: 86%;
+    }
+
+    .blog_comment_reply {
+        margin-left: 0;
+    }
+
+    .blog_details_left form {
+        margin-bottom: 50px;
+    }
+
+    .blog_state p {
+        padding: 0px 30px;
+    }
+
+    .blog_state {
+        padding: 45px 0px 230px 0px;
+    }
+
+    .blog_details_right_header .blog_details_tag {
+        margin-bottom: 25px;
+    }
+
+    /*================================
+        BLOG DETAILS END
+    ================================*/
+    .checkout_left {
+        margin-bottom: 25px;
+    }
+
+    /*================================
+        CONTACT START
+    ================================*/
+    .contact_address_text {
+        margin-left: 0;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .contact_address_text a {
+        font-size: 16px;
+    }
+
+    .contact_area form {
+        margin-top: 45px;
+    }
+
+    .contact_map {
+        height: 300px;
+    }
+
+    /*================================
+        CONTACT END
+    ================================*/
+
+    /*================================
+        CONTACT START
+    ================================*/
+    .contact_address ul {
+        flex-direction: inherit;
+    }
+
+    .contact_address_text {
+        margin-left: 0;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .contact_area form {
+        margin-top: 45px;
+    }
+
+    .contact_map {
+        height: 400px;
+    }
+
+    .contact_address ul li {
+        width: 28%;
+    }
+
+    /*================================
+        CONTACT END
+    ================================*/
+
+    .other_login_option li {
+        width: 48%;
+    }
+
+    .single_pricing {
+        padding: 30px;
+    }
+
+    .single_pricing h2 {
+        font-size: 32px;
+    }
+
+    .property_sm_margin {
+        margin-bottom: 50px;
+    }
+
+    .property_list_item .single_property_img {
+        height: 250px;
+    }
+
+    .property_list_item {
+        margin: 17px 0px 43px 0px;
+    }
+
+    .property_grid_view .banner_search {
+        margin-top: 100px;
+    }
+
+    .property_grid_view .banner_search .nav {
+        border: 1px solid rgba(3, 26, 38, 0.10);
+    }
+
+    /*================================
+        PROPERTY DETAILS START
+    ================================*/
+    .property_details_large_img {
+        height: 305px;
+    }
+
+    .property_details_slider .slider-nav2 {
+        width: 400px;
+        margin-top: -75px;
+    }
+
+    .property_details_small_img {
+        height: auto;
+    }
+
+    .single_property_details h4 {
+        font-size: 24px;
+    }
+
+    .property_details_share {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .property_apartment_details li,
+    .property_facilities ul li {
+        width: 50%;
+    }
+
+    .apertment_layout {
+        height: 610px;
+    }
+
+    .apertment_map {
+        height: 350px;
+    }
+
+    .apertment_video {
+        height: 350px;
+    }
+
+    .apartment_review_counter {
+        margin-bottom: 25px;
+    }
+
+    .single_review_text {
+        width: 86%;
+    }
+
+    .details_apertment_form {
+        margin-bottom: 25px;
+    }
+
+    /*================================
+        PROPERTY DETAILS END
+    ================================*/
+
+    /*================================
+        DASHBOARD START
+    ================================*/
+    .sidebar_menu_icon {
+        display: block;
+    }
+
+    .dashboard_sidebar {
+        width: 300px;
+        left: -300px;
+    }
+
+    .dashboard_sidebar.dash_show_menu {
+        left: 0;
+    }
+
+    .dashboard_sidebar_menu ul {
+        max-height: 340px;
+    }
+
+    .dashboard_content {
+        width: 100%;
+        padding: 80px 30px 30px 30px;
+    }
+
+    .dashboard_overview_review .single_review_text {
+        width: 88%;
+        margin-left: 20px;
+    }
+
+    .dashboard_profile_text .list li span {
+        width: 80px;
+    }
+
+    .dashboard_profile_img {
+        height: 290px;
+        border-right: 0;
+        margin-right: 0;
+        padding: 0;
+    }
+
+    .dashboard_profile_text {
+        padding: 30px 30px 30px 0px;
+    }
+
+    /*================================
+        DASHBOARD END
+    ================================*/
+
+    .login_text {
+        padding: 50px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.99px) {
+
+    /*================================
+        HOME PAGE 01 START
+    ================================*/
+    /* menu start */
+    .main_menu .container {
+        padding: 20px 0px;
+    }
+
+    .main_menu #navbarNav {
+        margin-top: 19px;
+        border-top: 1px solid #eeeeee52;
+    }
+
+    .main_menu .navbar-nav {
+        background: var(--colorBlack);
+        line-height: 60px;
+        padding: 15px 0px;
+    }
+
+    .main_menu .menu_right {
+        background: var(--colorBlack);
+        padding-left: 20px;
+        border-top: 1px solid #eeeeee52;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .main_menu .navbar-nav .nav-item .nav-link {
+        display: inline-block;
+    }
+
+    .main_menu .droap_menu {
+        max-height: 250px;
+        left: 20px;
+    }
+
+    /* menu end */
+
+    /* banner start */
+    .banner_area {
+        height: auto;
+    }
+
+    .banner_text {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .banner_text h1 {
+        font-size: 42px;
+    }
+
+    .banner_text p {
+        padding-right: 0;
+    }
+
+    .banner_contant {
+        padding-top: 175px;
+        padding-bottom: 100px;
+    }
+
+    .banner_search form ul {
+        width: 100%;
+    }
+
+    .banner_search form ul li {
+        width: 47.5%;
+    }
+
+    .banner_input_btn {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .adv_search_area {
+        padding: 25px 25px 10px 25px;
+    }
+
+    .adv_search_area.show_search {
+        top: 107%;
+    }
+
+    .adv_search_area .select2-container {
+        margin-bottom: 15px;
+    }
+
+    /* banner end */
+
+    /* about start */
+    .about_area_img_1 {
+        height: 365px;
+    }
+
+    .about_area_img_2 {
+        height: 230px;
+    }
+
+    .section_heading h2 {
+        font-size: 28px;
+    }
+
+    .about_text {
+        margin-top: 20px;
+    }
+
+    /* about end */
+    .single_destination {
+        height: 280px;
+    }
+
+    .single_property_img {
+        height: 350px;
+    }
+
+    .single_agent_img {
+        height: 265px;
+    }
+
+    .find_state_text h2 {
+        font-size: 65px;
+    }
+
+    .find_state {
+        height: 350px;
+    }
+
+    .agent_name a {
+        font-size: 16px;
+    }
+
+    .single_discover {
+        padding: 25px;
+    }
+
+    .container,
+    .container-sm {
+        max-width: 540px !important;
+    }
+
+    .footer_description::after {
+        width: 200px;
+        height: 85px;
+    }
+
+    .footer_right {
+        padding: 35px 25px;
+    }
+
+    .footer_right::after {
+        left: -30px;
+    }
+
+    .footer_link {
+        margin-top: 50px;
+    }
+
+    .footer_description {
+        padding-bottom: 110px;
+    }
+
+    .progress-wrap {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .main_menu .navbar-brand {
+        margin-left: 12px;
+    }
+
+    .blog_img {
+        height: 330px;
+    }
+
+    /*================================
+        HOME PAGE 01 END
+    ================================*/
+
+    /*================================
+        HOME PAGE 02 START
+    ================================*/
+    .main_menu_2 .navbar-toggler {
+        border-radius: 6px;
+        background: var(--colorBlue);
+        border: none;
+        color: var(--colorWhite);
+    }
+
+    .main_menu_2 .menu_right,
+    .main_menu_2 .navbar-nav {
+        background: var(--colorWhite);
+        border-top: 0;
+        border-bottom: 1px solid #b6b3b352;
+    }
+
+    .main_menu_2 .menu_right li:first-child {
+        display: none;
+    }
+
+    .banner_area_2 {
+        height: auto;
+        padding: 35px;
+    }
+
+    .banner_2_text {
+        margin-top: 0;
+    }
+
+    .banner_2_text h1,
+    .banner_2_text h1 span {
+        font-size: 38px;
+        line-height: initial;
+    }
+
+    .banner_2_text h1 span::after {
+        top: 5px;
+    }
+
+    .banner_2_search {
+        bottom: -65px;
+    }
+
+    .banner_2_search .tab-content {
+        padding: 0;
+    }
+
+    .single_amenites li a {
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .single_amenites li a span {
+        width: 20px;
+        height: 20px;
+    }
+
+    .single_property_2 .single_property_img {
+        height: 280px;
+    }
+
+    .category_property_item_img {
+        height: 320px;
+    }
+
+    .enquiry_text ul li {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .enquiry_form {
+        padding: 35px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .enquiry_form h2 {
+        font-size: 22px;
+    }
+
+    .client_feedback_text_right {
+        display: none;
+    }
+
+    .testimonial_item_tetle {
+        margin-top: 0;
+    }
+
+    .testimonial_description {
+        border-top: 1px solid rgba(3, 26, 38, 0.10);
+        padding-top: 20px;
+        margin-top: 20px;
+        margin-left: 15px;
+        padding-left: 0;
+    }
+
+    .testimonial_description::after {
+        display: none;
+    }
+
+    .testimonial .slick-dots {
+        position: initial;
+        margin-bottom: 15px;
+    }
+
+    .single_blog_2_img {
+        height: 310px;
+    }
+
+    .footer_2 .footer_description::before {
+        display: none;
+    }
+
+    .banner_2_search form ul li {
+        width: 47%;
+    }
+
+    .banner_2_text p {
+        max-width: 100%;
+    }
+
+    /*================================
+        HOME PAGE 02 END
+    ================================*/
+
+    /*================================
+        HOME PAGE 03 START
+    ================================*/
+    .banner_area_3 .banner_contant {
+        padding-top: 175px;
+    }
+
+    .about_2_img {
+        height: auto;
+        margin-bottom: 25px;
+    }
+
+    .about_2_img .circle_box {
+        top: 15px;
+        right: -30px;
+    }
+
+    .about_2_text {
+        padding-left: 0;
+    }
+
+    .explore_listing_item .img {
+        width: 70px;
+        height: 70px;
+        margin-right: 10px;
+    }
+
+    .explore_listing_item {
+        padding: 10px;
+    }
+
+    .explore_listing_item .item_title {
+        font-size: 12px;
+    }
+
+    .explore_listing_item .text p {
+        font-size: 12px;
+    }
+
+    .testimonial_2 .section_heading p {
+        margin-top: 20px;
+    }
+
+    .testimonial_2 .slick-list.draggable {
+        padding: 0px !important;
+    }
+
+    .testimonial_item_2 {
+        opacity: 1;
+    }
+
+    .testimonial_item_2_img {
+        height: 245px;
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+
+    .testimonial_item_2_text {
+        padding: 30px;
+    }
+
+    .testimonial_item_2_text .testimonial_2_description {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .testimonial_item_2_text .testimonial_2_designation {
+        font-size: 14px;
+    }
+
+    .testimonial_item_2_text::after {
+        width: 213px;
+        height: 170px;
+        right: 20px;
+    }
+
+    .single_property_3 .single_property_img {
+        height: 285px;
+    }
+
+    .single_blog_3_img {
+        height: 515px;
+    }
+
+    /*================================
+        HOME PAGE 03 END
+    ================================*/
+
+    /*================================
+        ABOUT PAGE START
+    ================================*/
+    .breadcrumb_text h1 {
+        font-size: 34px;
+        margin-bottom: 10px;
+    }
+
+    .breadcrumbs_overly {
+        padding: 170px 0px 90px 0px;
+    }
+
+    /*================================
+        ABOUT PAGE END
+    ================================*/
+
+    /*================================
+        AGENCIES DETAILS START
+    ================================*/
+    .agencies_details_img {
+        height: 230px;
+    }
+
+    .agencies_details_header {
+        margin-top: 25px;
+        width: 100%;
+        margin-left: 0;
+        padding: 25px;
+    }
+
+    .agencies_details_header .img {
+        width: 110px;
+        border: 0;
+    }
+
+    .agencies_details_header .text h2 {
+        font-size: 18px;
+    }
+
+    .agencies_details_text .agent_map {
+        height: 300px;
+    }
+
+    .agencies_details_area {
+        margin-bottom: 50px;
+    }
+
+    .agencies_tabs {
+        margin-left: 12px;
+    }
+
+    .blog_details_right_header {
+        padding-left: 20px;
+        padding-top: 22px;
+    }
+
+    .blog_details_right form {
+        margin-left: 20px;
+        padding-bottom: 25px;
+    }
+
+    .popular_blog_text {
+        width: 70%;
+    }
+
+    .blog_details_right_header.sidebar_blog {
+        padding-bottom: 25px;
+    }
+
+    .categories_property {
+        margin-bottom: 25px;
+    }
+
+    /*================================
+        AGENCIES DETAILS END
+    ================================*/
+
+    /*================================
+        AGENCIES START
+    ================================*/
+    .single_agencies_img {
+        height: 325px;
+    }
+
+    .agencies_page .margin_sm {
+        margin-bottom: 50px;
+    }
+
+    #pagination_area ul {
+        gap: 10px;
+    }
+
+    /*================================
+        AGENCIES END
+    ================================*/
+
+    /*================================
+        AGENCIES DETAILS START
+    ================================*/
+    .agent_details_area {
+        padding: 30px;
+    }
+
+    .agent_details_area_img {
+        height: 525px;
+    }
+
+    .agent_details_area_text {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .agent_details_area_text h2 {
+        font-size: 28px;
+    }
+
+    /*================================
+        AGENCIES DETAILS END
+    ================================*/
+
+    /*================================
+        BLOG DETAILS START
+    ================================*/
+    .blog_details_img_1 {
+        height: 225px;
+    }
+
+    .blog_details_review {
+        padding: 40px;
+    }
+
+    .blog_details_review::after {
+        display: none;
+    }
+
+    .blog_details_img_2 {
+        height: 225px;
+    }
+
+    .blog_shear_area_left {
+        margin-bottom: 20px;
+    }
+
+    .blog_comment_text {
+        width: 100% !important;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .blog_comment_reply {
+        margin-left: 0;
+    }
+
+    .blog_details_left form {
+        margin-bottom: 50px;
+    }
+
+    .blog_state p {
+        padding: 0px 30px;
+    }
+
+    .blog_state {
+        padding: 45px 0px 230px 0px;
+    }
+
+    .blog_details_right_header .blog_details_tag {
+        margin-bottom: 25px;
+    }
+
+    /*================================
+        BLOG DETAILS END
+    ================================*/
+
+    /*================================
+        CHECKOUT START
+    ================================*/
+    .checkout_left {
+        padding: 40px;
+        margin-bottom: 25px;
+    }
+
+    .checkout_right {
+        padding: 40px;
+    }
+
+    /*================================
+        CHECKOUT END
+    ================================*/
+
+    /*================================
+        CONTACT START
+    ================================*/
+    .contact_address h4 {
+        font-size: 32px;
+    }
+
+    .contact_address_text {
+        margin-left: 0;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .contact_address_text a {
+        font-size: 16px;
+    }
+
+    .contact_area form {
+        margin-top: 45px;
+    }
+
+    .contact_map {
+        height: 350px;
+    }
+
+    .contact_address ul li {
+        width: 46%;
+    }
+
+    /*================================
+        CONTACT END
+    ================================*/
+
+    .login_text {
+        padding: 40px;
+    }
+
+    .other_login_option li {
+        width: 48%;
+    }
+
+    .privacy_policy_area {
+        padding: 8px 30px 30px 30px;
+    }
+
+    .privacy_policy_area h4 {
+        font-size: 18px;
+    }
+
+    .payment_area {
+        margin-bottom: 25px;
+    }
+
+    .single_pricing h2 {
+        font-size: 32px;
+    }
+
+    .single_pricing p {
+        padding-right: 0;
+    }
+
+    .single_payment {
+        max-height: 95px;
+    }
+
+    .property_sm_margin {
+        margin-bottom: 50px;
+    }
+
+    .blog_details_right_header h3,
+    .sidebar_wizerd .accordion-button,
+    .sidebar_wizerd h3 {
+        font-size: 16px;
+    }
+
+    .sidebar_amenities .accordion-button::after {
+        height: 39px;
+        line-height: 39px;
+    }
+
+    /*================================
+        PROPERTY LIST START
+    ================================*/
+    .property_list_item .single_property_img {
+        height: 350px;
+    }
+
+    .property_list_item .single_property_top {
+        padding: 30px 20px 20px 20px;
+        width: 100%;
+    }
+
+    .property_list_item .single_property_bottom {
+        padding: 10px 20px;
+    }
+
+    .property_list_item .single_property_text {
+        margin: 0;
+    }
+
+    .property_list_item .property_price {
+        right: 10px;
+    }
+
+    .property_grid_view .banner_search {
+        margin-top: 100px;
+    }
+
+    .property_grid_view .banner_search .nav {
+        border: 1px solid rgba(3, 26, 38, 0.10);
+    }
+
+    /*================================
+        PROPERTY LIST END
+    ================================*/
+
+    /*================================
+        PROPERTY DETAILS START
+    ================================*/
+    .property_details_large_img {
+        height: 225px;
+    }
+
+    .property_details_slider .slider-nav2 {
+        width: 260px;
+        position: relative;
+        margin-top: -30px;
+    }
+
+    .property_details_small_img {
+        height: auto;
+    }
+
+    .single_property_details {
+        padding: 30px;
+    }
+
+    .single_property_details h4 {
+        font-size: 22px;
+    }
+
+    .property_details_share {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .property_details_address h3 {
+        margin-top: 20px;
+    }
+
+    .property_apartment_details li {
+        width: 100%;
+    }
+
+    .property_facilities ul li {
+        width: 50%;
+    }
+
+    .apertment_layout {
+        height: 450px;
+    }
+
+    .apertment_map {
+        height: 280px;
+    }
+
+    .apertment_video {
+        height: 260px;
+    }
+
+    .apartment_review_counter {
+        margin-bottom: 25px;
+    }
+
+    .single_review_text {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .single_review_text h3 span {
+        color: #FFA800;
+        display: block;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .details_apertment_form {
+        margin-bottom: 25px;
+    }
+
+    .property_details_sidebar {
+        padding: 25px;
+    }
+
+    .property_list_item {
+        margin: 0px 0px 25px 0px;
+    }
+
+    /*================================
+        PROPERTY DETAILS END
+    ================================*/
+
+    /*================================
+        DASHBOARD START
+    ================================*/
+    .sidebar_menu_icon {
+        display: block;
+    }
+
+    .dashboard_sidebar {
+        width: 300px;
+        left: -300px;
+    }
+
+    .dashboard_sidebar.dash_show_menu {
+        left: 0;
+    }
+
+    .dashboard_sidebar_menu ul {
+        max-height: 340px;
+    }
+
+    .dashboard_content {
+        width: 100%;
+        padding: 80px 30px 30px 30px;
+    }
+
+    .dashboard_profile_img {
+        border-right: 0;
+        margin-right: 0;
+        height: auto;
+    }
+
+    .dashboard_profile_text {
+        padding: 25px;
+    }
+
+    .dashboard_invoice_header .text {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .dashboard_invoice_header .text ul li span {
+        width: 100%;
+    }
+
+    .dashboard_invoice_header {
+        padding-bottom: 0;
+    }
+
+    /*================================
+        DASHBOARD END
+    ================================*/
+}
+
+@media (max-width: 575.99px) {
+
+    /*================================
+        HOME PAGE 01 START
+    ================================*/
+    /* menu start */
+    .main_menu .container {
+        padding: 20px 0px;
+    }
+
+    .main_menu #navbarNav {
+        margin-top: 19px;
+        border-top: 1px solid #eeeeee52;
+    }
+
+    .main_menu .navbar-nav {
+        background: var(--colorBlack);
+        line-height: 60px;
+        padding: 15px 0px;
+    }
+
+    .main_menu .menu_right {
+        background: var(--colorBlack);
+        padding-left: 20px;
+        border-top: 1px solid #eeeeee52;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .main_menu .navbar-nav .nav-item .nav-link {
+        display: inline-block;
+    }
+
+    .main_menu .droap_menu {
+        max-height: 250px;
+        left: 20px;
+    }
+
+    .main_menu .common_btn {
+        padding: 11px 25px;
+    }
+
+    .menu_offcanvas .offcanvas-body {
+        padding: 50px 30px 30px 30px;
+    }
+
+    .offcanvas_blog ul li .text {
+        width: 65%;
+    }
+
+    /* menu end */
+
+    /* banner start */
+    .banner_area {
+        height: auto;
+    }
+
+    .banner_text {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .banner_text h1 {
+        font-size: 36px;
+    }
+
+    .banner_text p {
+        padding-right: 0;
+        font-size: 18px;
+    }
+
+    .banner_contant {
+        padding-top: 175px;
+        padding-bottom: 100px;
+    }
+
+    .banner_search form ul {
+        width: 100%;
+    }
+
+    .banner_search .tab-content {
+        padding: 25px;
+    }
+
+    .banner_search form ul li {
+        width: 100%;
+    }
+
+    .banner_input_btn {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .adv_search_area {
+        padding: 25px 25px 10px 25px;
+    }
+
+    .adv_search_area.show_search {
+        top: 105%;
+    }
+
+    .adv_search_area .select2-container {
+        margin-bottom: 15px;
+    }
+
+    /* banner end */
+
+    /* about start */
+    .about_area_img_1 {
+        height: auto;
+        margin-bottom: 25px;
+    }
+
+    .about_area_img_2 {
+        height: auto;
+    }
+
+    .section_heading h2 {
+        font-size: 22px;
+    }
+
+    .about_text {
+        margin-top: 20px;
+    }
+
+    .about_text ul li {
+        width: 100%;
+    }
+
+    /* about end */
+    .single_destination {
+        height: auto;
+    }
+
+    .single_property_img {
+        height: auto;
+    }
+
+    .single_property_text {
+        margin: 0;
+    }
+
+    .single_property_bottom p {
+        font-size: 13px;
+    }
+
+    .single_agent_img {
+        height: auto;
+    }
+
+    .find_state_text h2 {
+        font-size: 36px;
+    }
+
+    .find_state {
+        height: 350px;
+    }
+
+    .blog_text {
+        padding: 25px;
+    }
+
+    .item_title {
+        font-size: 16px;
+    }
+
+    .single_discover {
+        padding: 25px;
+    }
+
+    .container_large {
+        padding-right: calc(var(--bs-gutter-x) * .5);
+        padding-left: calc(var(--bs-gutter-x) * .5);
+    }
+
+    .footer_description::after {
+        width: 200px;
+        height: 85px;
+    }
+
+    .footer_right {
+        padding: 35px 25px;
+    }
+
+    .footer_right::after {
+        left: -30px;
+    }
+
+    .footer_link {
+        margin-top: 50px;
+    }
+
+    .footer_description {
+        padding-bottom: 110px;
+    }
+
+    .progress-wrap {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .main_menu .navbar-brand {
+        margin-left: 12px;
+    }
+
+    .blog_img {
+        height: auto;
+    }
+
+    .blog_text {
+        margin-top: 0;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /*================================
+        HOME PAGE 01 END
+    ================================*/
+
+    /*================================
+        HOME PAGE 02 START
+    ================================*/
+    .main_menu_2 .navbar-toggler {
+        border-radius: 6px;
+        background: var(--colorBlue);
+        border: none;
+        color: var(--colorWhite);
+    }
+
+    .main_menu_2 .menu_right,
+    .main_menu_2 .navbar-nav {
+        background: var(--colorWhite);
+        border-top: 0;
+        border-bottom: 1px solid #b6b3b352;
+    }
+
+    .main_menu_2 .menu_right li:first-child {
+        display: none;
+    }
+
+    .banner_area_2 {
+        height: auto;
+        padding: 20px;
+    }
+
+    .banner_2_text {
+        margin-top: 0;
+    }
+
+    .banner_2_text h1,
+    .banner_2_text h1 span {
+        font-size: 32px;
+        line-height: initial;
+    }
+
+    .banner_2_text h1 span::after {
+        top: 5px;
+    }
+
+    .banner_2_search {
+        padding: 20px;
+        bottom: -45px;
+    }
+
+    .banner_2_search .tab-content {
+        padding: 0;
+    }
+
+    .single_amenites li a {
+        font-size: 13px;
+        font-weight: 500;
+        padding: 8px 15px;
+    }
+
+    .single_amenites li a span {
+        width: 20px;
+        height: 20px;
+    }
+
+    .single_property_2 .single_property_img {
+        height: auto;
+    }
+
+    .category_property_item_img {
+        height: auto;
+    }
+
+    .enquiry_text ul li {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .enquiry_form {
+        padding: 35px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .enquiry_form h2 {
+        font-size: 22px;
+    }
+
+    .client_feedback_text_right {
+        display: none;
+    }
+
+    .testimonial_item_tetle {
+        margin-top: 0;
+    }
+
+    .testimonial_description {
+        border-top: 1px solid rgba(3, 26, 38, 0.10);
+        padding-top: 20px;
+        margin-top: 20px;
+        margin-left: 15px;
+        padding-left: 0;
+    }
+
+    .testimonial_description::after {
+        display: none;
+    }
+
+    .testimonial .slick-dots {
+        position: initial;
+        margin-bottom: 15px;
+    }
+
+    .single_blog_2_img {
+        height: auto;
+    }
+
+    .footer_2 .footer_description::before {
+        display: none;
+    }
+
+    .testimonial_description p {
+        font-size: 16px;
+    }
+
+    .banner_2_text p {
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    /*================================
+        HOME PAGE 02 END
+    ================================*/
+
+    /*================================
+        HOME PAGE 03 START
+    ================================*/
+    .banner_area_3 .banner_contant {
+        padding-top: 175px;
+    }
+
+    .explore_listing .read_btn,
+    .latest_property .read_btn {
+        margin-top: 20px;
+    }
+
+    .about_2_img {
+        height: auto;
+        margin-bottom: 25px;
+    }
+
+    .about_2_img .circle_box {
+        top: 15px;
+        right: -30px;
+    }
+
+    .about_2_text {
+        padding-left: 0;
+    }
+
+    .about_2_text ul li {
+        margin-top: 20px;
+    }
+
+    .explore_listing_item .img {
+        width: 80px;
+        height: 70px;
+        margin-right: 10px;
+    }
+
+    .explore_listing_item {
+        padding: 10px;
+    }
+
+    .explore_listing_item .item_title {
+        font-size: 14px;
+    }
+
+    .testimonial_2 .section_heading p {
+        margin-top: 20px;
+    }
+
+    .testimonial_2 .slick-list.draggable {
+        padding: 0px !important;
+    }
+
+    .testimonial_item_2 {
+        opacity: 1;
+    }
+
+    .testimonial_item_2_img {
+        height: auto;
+    }
+
+    .testimonial_item_2_text {
+        padding: 30px;
+    }
+
+    .testimonial_item_2_text .testimonial_2_description {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .testimonial_item_2_text .testimonial_2_designation {
+        font-size: 14px;
+    }
+
+    .testimonial_item_2_text::after {
+        width: 213px;
+        height: 170px;
+        right: 20px;
+    }
+
+    .single_property_3 .single_property_img {
+        height: auto;
+    }
+
+    .single_blog_3_img {
+        height: auto;
+    }
+
+    /*================================
+        HOME PAGE 03 END
+    ================================*/
+
+    /*================================
+        ABOUT PAGE START
+    ================================*/
+    .breadcrumb_text h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .breadcrumb_text ul li a {
+        font-size: 14px;
+    }
+
+    .breadcrumbs_overly {
+        padding: 140px 0px 60px 0px;
+    }
+
+    /*================================
+        ABOUT PAGE END
+    ================================*/
+
+    /*================================
+        AGENCIES DETAILS START
+    ================================*/
+    .agencies_details_img {
+        height: 200px;
+    }
+
+    .agencies_details_header {
+        margin-top: 25px;
+        width: 100%;
+        margin-left: 0;
+        padding: 25px;
+    }
+
+    .agencies_details_header .img {
+        width: 110px;
+        border: 0;
+    }
+
+    .agencies_details_header .text h2 {
+        font-size: 18px;
+    }
+
+    .agencies_details_text .agent_map {
+        height: 250px;
+    }
+
+    .agencies_details_area {
+        margin-bottom: 50px;
+    }
+
+    .agencies_tabs {
+        margin-left: 12px;
+    }
+
+    .blog_details_right_header {
+        padding-left: 20px;
+        padding-top: 22px;
+    }
+
+    .blog_details_right form {
+        margin-left: 20px;
+        padding-bottom: 25px;
+    }
+
+    .popular_blog_text {
+        width: 60%;
+    }
+
+    .blog_details_right_header.sidebar_blog {
+        padding-bottom: 25px;
+    }
+
+    .categories_property {
+        margin-bottom: 25px;
+    }
+
+    .blog_details_right_header .blog_details_tag {
+        margin-bottom: 25px;
+    }
+
+    /*================================
+        AGENCIES DETAILS END
+    ================================*/
+
+    /*================================
+        AGENCIES START
+    ================================*/
+    .single_agencies_img {
+        height: auto;
+    }
+
+    .single_agencies_text {
+        padding: 25px;
+    }
+
+    .agencies_page .margin_sm {
+        margin-bottom: 50px;
+    }
+
+    #pagination_area ul {
+        gap: 10px;
+    }
+
+    /*================================
+        AGENCIES END
+    ================================*/
+
+    /*================================
+        AGENCIES DETAILS START
+    ================================*/
+    .agent_details_area {
+        padding: 20px;
+    }
+
+    .agent_details_area_img {
+        height: auto;
+    }
+
+    .agent_details_area_text {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .agent_details_area_text h2 {
+        font-size: 24px;
+    }
+
+    .agent_property_quantity {
+        display: none;
+    }
+
+    /*================================
+        AGENCIES DETAILS END
+    ================================*/
+
+    /*================================
+        BLOG DETAILS START
+    ================================*/
+    .blog_details_img_1 {
+        height: auto;
+    }
+
+    .blog_details_engage {
+        gap: 15px;
+    }
+
+    .blog_details_left h2 {
+        font-size: 22px;
+    }
+
+    .blog_details_review {
+        padding: 30px;
+    }
+
+    .blog_details_review p {
+        font-size: 14px;
+    }
+
+    .blog_details_review::after {
+        display: none;
+    }
+
+    .blog_details_img_2 {
+        height: auto;
+    }
+
+    .blog_shear_area_left {
+        margin-bottom: 20px;
+    }
+
+    .blog_shear_area_left h5 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .blog_comment_text {
+        width: 100% !important;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .blog_comment_reply {
+        margin-left: 0;
+    }
+
+    .blog_details_left form {
+        margin-bottom: 50px;
+    }
+
+    .blog_state p {
+        padding: 0px 30px;
+    }
+
+    .blog_state {
+        padding: 45px 0px 130px 0px;
+    }
+
+    /*================================
+        BLOG DETAILS END
+    ================================*/
+
+    /*================================
+        CHECKOUT START
+    ================================*/
+    .checkout_left {
+        padding: 30px;
+        margin-bottom: 25px;
+    }
+
+    .checkout_heading {
+        font-size: 20px;
+    }
+
+    .checkout_right {
+        padding: 30px;
+    }
+
+    /*================================
+        CHECKOUT END
+    ================================*/
+
+    /*================================
+        CONTACT START
+    ================================*/
+    .contact_address h4 {
+        font-size: 26px;
+    }
+
+    .contact_address_text {
+        margin-left: 0;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .contact_address_text a {
+        font-size: 16px;
+    }
+
+    .contact_area form {
+        margin-top: 45px;
+    }
+
+    .contact_map {
+        height: 300px;
+    }
+
+    /*================================
+        CONTACT END
+    ================================*/
+    .main_error h2 {
+        font-size: 130px;
+        margin-top: 20px;
+    }
+
+    .main_error h4 {
+        font-size: 28px;
+    }
+
+    .faq_accordion button {
+        font-size: 14px;
+    }
+
+    .faq_accordion .accordion-body {
+        font-size: 14px;
+    }
+
+    .login_text {
+        padding: 30px;
+    }
+
+    .login_text h4 {
+        font-size: 24px;
+    }
+
+    .other_login_option li {
+        width: 100%;
+    }
+
+    .privacy_policy_area {
+        padding: 8px 30px 30px 30px;
+    }
+
+    .privacy_policy_area h4 {
+        font-size: 18px;
+    }
+
+    .payment_area {
+        margin-bottom: 25px;
+    }
+
+    .single_pricing {
+        padding: 30px;
+    }
+
+    .single_payment {
+        max-height: inherit;
+    }
+
+    .payment_modal .modal-body {
+        padding: 20px;
+    }
+
+    .property_sm_margin {
+        margin-bottom: 50px;
+    }
+
+    .blog_details_right_header h3,
+    .sidebar_wizerd .accordion-button,
+    .sidebar_wizerd h3 {
+        font-size: 16px;
+    }
+
+    .sidebar_amenities .accordion-button::after {
+        height: 39px;
+        line-height: 39px;
+    }
+
+    .sidebar_wizerd {
+        padding-right: 20px;
+        padding-bottom: 25px;
+        padding-top: 22px;
+    }
+
+    /*================================
+        PROPERTY LIST START
+    ================================*/
+    .property_list_item .single_property_img {
+        height: auto;
+    }
+
+    .property_list_item .single_property_top {
+        padding: 30px 20px 20px 20px;
+        width: 100%;
+    }
+
+    .property_list_item .single_property_bottom {
+        padding: 10px 20px;
+    }
+
+    .property_list_item .single_property_text {
+        margin: 0;
+    }
+
+    .property_list_item .property_price {
+        right: 10px;
+    }
+
+    .property_grid_view .banner_search {
+        margin-top: 100px;
+    }
+
+    .property_grid_view .banner_search .nav {
+        border: 1px solid rgba(3, 26, 38, 0.10);
+    }
+
+    /*================================
+        PROPERTY LIST END
+    ================================*/
+
+    /*================================
+        PROPERTY DETAILS START
+    ================================*/
+    .property_details_large_img {
+        height: auto;
+    }
+
+    .property_details_slider .slider-nav2 {
+        width: 260px;
+        position: relative;
+        margin-top: -15px;
+    }
+
+    .property_details_small_img {
+        height: auto;
+    }
+
+    .single_property_details {
+        padding: 25px;
+    }
+
+    .single_property_details h4 {
+        font-size: 20px;
+    }
+
+    .property_details_share {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .property_details_address h3 {
+        margin-top: 20px;
+    }
+
+    .property_facilities ul li,
+    .property_apartment_details li {
+        width: 100%;
+    }
+
+    .apertment_layout {
+        height: auto;
+    }
+
+    .apertment_map {
+        height: 220px;
+    }
+
+    .apertment_video {
+        height: 190px;
+    }
+
+    .apartment_review_counter {
+        margin-bottom: 25px;
+    }
+
+    .single_review_text {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .single_review_text h3 span {
+        color: #FFA800;
+        display: block;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .details_apertment_form {
+        margin-bottom: 25px;
+    }
+
+    .property_details_sidebar {
+        padding: 25px;
+    }
+
+    .property_list_item {
+        margin: 0px 0px 25px 0px;
+    }
+
+    /*================================
+        PROPERTY DETAILS END
+    ================================*/
+
+    /*================================
+        DASHBOARD START
+    ================================*/
+    .sidebar_menu_icon {
+        display: block;
+    }
+
+    .dashboard_sidebar {
+        width: 270px;
+        left: -270px;
+    }
+
+    .dashboard_sidebar.dash_show_menu {
+        left: 0;
+    }
+
+    .dashboard_sidebar_menu ul {
+        max-height: 340px;
+    }
+
+    .dashboard_content {
+        width: 100%;
+        padding: 65px 20px 20px 20px;
+    }
+
+    .dashboard_content .dashboard_title {
+        font-size: 20px;
+        display: block;
+    }
+
+    .dashboard_overview_item .icon {
+        margin-right: 25px;
+    }
+
+    .dashboard_content .dashboard_title .common_btn {
+        margin-top: 15px;
+    }
+
+    .dashboard_profile_img {
+        border-right: 0;
+        margin-right: 0;
+        padding: 0;
+        height: auto;
+    }
+
+    .dashboard_profile_text {
+        padding: 25px;
+    }
+
+    .dashboard_profile_text .list li span {
+        width: 100%;
+    }
+
+    .dashboard_profile_text h3 {
+        font-size: 18px;
+    }
+
+    .add_property_info h3,
+    .dashboard_profile_edit h3 {
+        font-size: 18px;
+    }
+
+    .dashboard_invoice_logo_area .text {
+        margin-top: 25px;
+    }
+
+    .dashboard_invoice_header .text {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .dashboard_invoice_header .text ul li span {
+        width: 100%;
+    }
+
+    .dashboard_invoice_header {
+        padding-bottom: 0;
+    }
+
+    .dashboard_invoice_footer a {
+        position: initial;
+        margin-top: 30px;
+    }
+
+    .dashboard_invoice_header .text h2 {
+        font-size: 18px;
+    }
+
+    /*================================
+        DASHBOARD END
+    ================================*/
+}

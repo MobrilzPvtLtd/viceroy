@@ -1,0 +1,10 @@
+[14-Apr-2024 17:04:02 UTC] PHP Warning:  require(/home3/ultimm7k/viceroy.ultimatetrueweb.com/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home3/ultimm7k/viceroy.ultimatetrueweb.com/public/index.php on line 13
+[14-Apr-2024 17:04:02 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home3/ultimm7k/viceroy.ultimatetrueweb.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/ultimm7k/viceroy.ultimatetrueweb.com/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home3/ultimm7k/viceroy.ultimatetrueweb.com/public/index.php on line 13
+[14-Apr-2024 17:04:33 UTC] PHP Warning:  require(/home3/ultimm7k/viceroy.ultimatetrueweb.com/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home3/ultimm7k/viceroy.ultimatetrueweb.com/public/index.php on line 13
+[14-Apr-2024 17:04:33 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home3/ultimm7k/viceroy.ultimatetrueweb.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/ultimm7k/viceroy.ultimatetrueweb.com/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home3/ultimm7k/viceroy.ultimatetrueweb.com/public/index.php on line 13

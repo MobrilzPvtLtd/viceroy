@@ -1,0 +1,174 @@
+<body>
+    <!--=============================
+        MAIN MENU START
+    ==============================-->
+    <nav class="navbar navbar-expand-lg main_menu">
+      <div class="container container_large">
+        <a class="navbar-brand" href="/">
+          <img
+            src="{{ asset('assets/images/logo_1.png')}}"
+            alt="FaxEstate"
+            class="img-fluid"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars bar_icon"></i>
+          <i class="far fa-times close_icon"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav m-auto">
+            <li class="nav-item">
+              <a class="nav-link " href="{{ route('frontend.index') }}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('buy') }}">Buy Property </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('rent') }}">Rent Property </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('holiday') }}">Holiday Rental </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('about') }}">about us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('services') }}">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
+            </li>
+          </ul>
+          <ul class="menu_right d-flex align-items-center">
+            @guest
+            <li>
+              <a class="user_icon" href="{{ route('login') }}">
+                <span>
+                  <img
+                    src="{{ asset('assets/images/user_icon_1.png')}}"
+                    alt="user"
+                    class="img-fluid w-100"
+                  />
+                </span>
+                Login
+              </a>
+            </li>
+            @endguest
+
+            @auth
+            <li>
+                <a class="user_icon" href="{{ route('login') }}">
+
+                </a>
+
+
+                <!-- <ul>
+                    @can('view_backend')<li><a>Admin</a></li>@endif
+                    <li><a href="{{ route('frontend.users.profile') }}">Profile</a></li>
+                    <li><form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        {{ csrf_field() }}
+
+                        <button class="btn btn-text" type="submit">Logout</button>
+                    </form></li>
+                </ul> -->
+
+                <div class="dropdown">
+    <button class="dropdown-btn"> <i class="fa fa-user" aria-hidden="true"></i>  Hello  {{ Auth::user()->last_name }} </button>
+    <div class="dropdown-content">
+    @can('view_backend') <a>Admin</a>@endif
+        <a href="{{ route('frontend.users.profile') }}"> Profile</a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+        {{ csrf_field() }}
+            <button class="btn btn-text" type="submit">Logout</button>
+        </form>
+    </div>
+</div>
+
+              </li>
+            @endauth
+
+
+            <li>
+                <div class="content">
+                    <div class="test-cart">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </div>
+                    <!-- <div class="test">
+                   <div class="test__product"></div>
+                   <button class="test__btn">ADD TO CART</button>
+                 </div> -->
+                </div>
+            </li>
+
+            <!-- <li>
+                        <a class="user_icon" href="login.html">
+                            <span> <img src="assets/images/h1.png" alt="user" class="img-fluid w-100">
+                            </span>
+                            Save
+                        </a>
+                    </li>-->
+            <!--<li class="manu_btn">
+                        <a class="common_btn" href="dashboard_add_property.html">Add Listing</a>
+                    </li>-->
+            <!--<li class="manu_btn">
+                        <a class="common_btn" href="dashboard_add_property.html">Add Listing</a>
+                    </li>-->
+          </ul>
+        </div>
+      </div>
+
+
+      <style>
+        /* Dropdown Button */
+        .dropdown-btn {
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Links Inside the Dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change Color of Links on Hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show the Dropdown Content When Hovered Over Dropdown Button */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        button.dropdown-btn {
+    color: #ffffff;
+    background-color: black;
+}
+.dropdown {
+    margin-top: -20px;
+}
+    </style>
+
+
+    </nav>

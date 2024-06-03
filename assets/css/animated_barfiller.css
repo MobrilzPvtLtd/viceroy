@@ -1,0 +1,29 @@
+.barfiller {
+  width: 65%;
+  height: 20px;
+  background: #F3F5F9;
+}
+
+.barfiller .fill {
+  display: block;
+  position: relative;
+  width: 0px;
+  height: 100%;
+  background: var(--colorOrange) !important;
+  z-index: 1;
+}
+
+.barfiller .tipWrap {
+  display: none;
+}
+
+.barfiller .tip {
+  left: auto !important;
+  right: 0;
+  position: absolute;
+  z-index: 2;
+  color: var(--colorBlack);
+  font-family: var(--headingFont);
+  font-size: 15px;
+  font-weight: 400;
+}
