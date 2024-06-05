@@ -11,6 +11,7 @@ use App\Models\Country;
 use App\Models\Currency;
 use App\Models\City;
 use App\Models\Property;
+use App\Models\Brands;
 use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
@@ -46,8 +47,9 @@ class FrontendController extends Controller
         $propertys = Property::all();
         $countrys = Country::all();
         $citys = City::all();
+        $brand = Brands::all();
         $currencys = Currency::all();
-        return view('frontend.index', compact('propertys', 'countrys', 'citys', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes'));
+        return view('frontend.index', compact('propertys', 'countrys', 'citys', 'brand','currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes'));
     }
 
     public function buy(Request $request)
@@ -180,6 +182,7 @@ class FrontendController extends Controller
      */
     public function terms()
     {
+
         return view('frontend.pages.terms&con');
     }
 }
