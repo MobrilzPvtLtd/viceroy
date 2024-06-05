@@ -1130,19 +1130,18 @@
                 <div class="col-xl-12">
                     <div class="marquee_animi">
                         <ul class="single_partner">
-                            <li>
+                            @foreach ($brands as $brand)
                                 @if ($brand->image)
-                                    <img src="{{ asset('public/images/' . $brand->image) }}" alt="{{ $brand->image }}"
-                                        width="100">
+                                    <li>
+                                        <a href="agencies_details.html">
+                                            <img src="{{ asset('public/images/' . $brand->image) }}" alt="img" class="img-fluid w-100" />
+                                        </a>
+                                    </li>
                                 @else
                                     No Image
                                 @endif
-                            </li>
+                            @endforeach
                             {{-- <li>
-                                <a href="agencies_details.html"><img src="assets/images/partner_10.png" alt="img"
-                                        class="img-fluid w-100" /></a>
-                            </li>
-                            <li>
                                 <a href="agencies_details.html"><img src="assets/images/partner_3.png" alt="img"
                                         class="img-fluid w-100" /></a>
                             </li>

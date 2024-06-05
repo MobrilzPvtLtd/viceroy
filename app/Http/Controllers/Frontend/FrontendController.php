@@ -47,9 +47,9 @@ class FrontendController extends Controller
         $propertys = Property::all();
         $countrys = Country::all();
         $citys = City::all();
-        $brand = Brands::all();
+        $brands = Brands::all();
         $currencys = Currency::all();
-        return view('frontend.index', compact('propertys', 'countrys', 'citys', 'brand','currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes'));
+        return view('frontend.index', compact('propertys', 'countrys', 'citys', 'brands','currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes'));
     }
 
     public function buy(Request $request)
