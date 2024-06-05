@@ -160,7 +160,7 @@ class FrontendController extends Controller
      */
     public function privacy()
     {
-        return view('frontend.privacy');
+        return view('frontend.pages.privacy&poly');
     }
 
     public function cartform(Request $request)
@@ -180,6 +180,6 @@ class FrontendController extends Controller
      */
     public function terms()
     {
-        return view('frontend.terms');
+        return view('frontend.pages.terms&con');
     }
 }

@@ -17,6 +17,8 @@ use App\Http\Controllers\Backend\ContactsController;
 use App\Http\Controllers\Backend\InquairyController ;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
+use App\Http\Controllers\Backend\BrandsController;
+
 
 
 
@@ -36,32 +38,27 @@ require __DIR__.'/auth.php';
 *
 * --------------------------------------------------------------------
 */
+//Brands
+Route::resource('admin/brand', BrandsController::class);
 // cart
 Route::post('cart/add', [CartController::class, 'add'])->name('cart.add');
 Route::get('cart/view', [CartController::class, 'viewCartData']);
 Route::post('cart/delete', [CartController::class, 'DeleteIteme']);
-
 // contact
 Route::post('contact', [ContactController::class, 'submit'])->name('contact.submit');
-
 // checkout
 Route::post('checkout', [CheckoutController::class, 'submit'])->name('checkout.submit');
-
 //Currency
 Route::resource('admin/currency', CurrencyController::class);
-
 //Contact
 Route::resource('admin/massage', ContactsController::class);
-
 //Inquairy property
 Route::resource('admin/inquairy', InquairyController::class);
-
 // property
 Route::resource('admin/property',  PropertyController::class);
 Route::get('fetch-city', [PropertyController::class, 'fetchCity'])->name('fetch-city');
 // Facilities
 Route::resource('admin/facility',  FacilitiesController::class);
-
 //holiday
 Route::resource('admin/holiday', HolidayController::class);
 //Country
@@ -84,6 +81,8 @@ Route::get('login', [FrontendController::class, 'login'])->name('login');
 Route::get('register', [FrontendController::class, 'register'])->name('register');
 Route::get('property/{slag}', [FrontendController::class, 'propertydetails'])->name('property');
 Route::get('checkout', [FrontendController::class, 'cartform'])->name('cartform');
+Route::get('terms&con', [FrontendController::class, 'terms'])->name('terms&con');
+Route::get('privacy&poly', [FrontendController::class, 'privacy'])->name('privacy&poly');
 // Route::get('search', [PropertyController::class, 'search'])->name('property.search');
 
 

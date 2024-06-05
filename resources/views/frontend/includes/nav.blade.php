@@ -126,7 +126,7 @@
                         });
                     },
                     error: function(xhr, status, error) {
-                        alert('An error occurred: ' + error);
+                        console.log('An error occurred: ' + error);
                     }
                 });
 
@@ -165,7 +165,7 @@
 
                     },
                     error: function(xhr, status, error) {
-                        alert('An error occurred: ' + error);
+                        console.log('An error occurred: ' + error);
                     }
                 });
             });

@@ -62,8 +62,8 @@
                                 <ul>
                                     <li><a href="{{ route('contact') }}">Contact Us</a></li>
                                     <li><a href="{{ route('login') }}">Login</a></li>
-                                    <li><a href="#">Term & Condition</a></li>
-                                    <li><a href="#">Privacy policy</a></li>
+                                    <li><a href="{{ route('terms&con') }}">Term & Condition</a></li>
+                                    <li><a href="{{ route('privacy&poly') }}">Privacy policy</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -137,7 +137,8 @@
       SCROLL BUTTON END
   =================================-->
 
-
+<!--jquery library js-->
+<script src="assets/js/jquery-3.7.1.min.js"></script>
 <!--bootstrap js-->
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <!--font-awesome js-->
@@ -191,36 +192,43 @@
         var scrollPosition = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0]
             .scrollTop;
 
-        if (scrollPosition > window.innerHeight / 4) {
+        if (scrollPosition > window.innerHeight / 1.8) {
             container.style.top = '11%';
             container.style.position = 'fixed';
             container.style.width = '80vw';
 
         } else {
-            container.style.top = '70%';
+            // container.style.top = '70%';
             container.style.width = '80vw';
+            container.style.position = 'sticky';
+
 
         }
     });
     window.addEventListener('scroll', function() {
-        var container = document.getElementById('container2');
+        var container2 = document.getElementById('container2');
         var scrollPosition = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0]
             .scrollTop;
 
         if (scrollPosition > window.innerHeight / 4) {
-            container.style.top = '11%';
-            container.style.position = 'fixed';
-            container.style.width = '80vw';
+            container2.style.top = '4.5%';
+            container2.style.position = 'fixed';
+            container2.style.width = '80vw';
 
         } else {
-            container.style.top = '27%';
-            container.style.width = '80vw';
+            // container.style.margintop = '60vw';
+            container2.style.width = '80vw';
+            container2.style.position = 'sticky';
+
 
         }
     });
     const closeBtn = document.querySelector("#close_btn_minmax")
     const close001 = document.querySelector("#close001")
     const select_bedroom_btn =  document.querySelector("#select_bedroom_btn")
+    const select_price_btn =  document.querySelector("#select_price_btn")
+    const select_price_btn2 =  document.querySelector("#select_price_btn2")
+    const select_rooms_btn =  document.querySelector("#select_rooms_btn")
 closeBtn.addEventListener("click" , (()=>{
     console.log("hello guys");
     // close001.style.visibility = "hidden";
@@ -233,12 +241,64 @@ closeBtn.addEventListener("click" , (()=>{
         console.log("hariom")
         if (close001.style.display == "none"){
             close001.style.display = "block";
+            close002.style.display = "none";
         }
         else{ close001.style.display = "none"}
         }))
-        adv_search_icon2.addEventListener("click", (()=>{
-            console.log("hariom2")
+
+
+        select_price_btn.addEventListener('click',(()=>{
+        console.log("hariom")
+        if (close002.style.display == "none"){
+            close002.style.display = "block";
+            close001.style.display = "none";
+        }
+        else{ close002.style.display = "none"}
+        }))
+
+
+
+
+
+        select_rooms_btn.addEventListener('click',(()=>{
+            console.log("hariom")
+            if (close003.style.display == "none"){
+                close003.style.display = "block";
+            }
+            else{ close003.style.display = "none"}
+        }))
+
+
+        select_price_btn2.addEventListener('click',(()=>{
+        console.log("hariom")
+        if (close004.style.display == "none"){
+            close004.style.display = "block";
+        }
+        else{ close004.style.display = "none"}
+        }))
+
+
+        select_price_btn.addEventListener("click", (()=>{
+            console.log("hariom2" , close001.style.display)
     close001.style.display = "none"
+
+        }))
+        select_bedroom_btn.addEventListener("click", (()=>{
+            console.log("hariom2",close002.style.display)
+    close002.style.display = "none"
+
+        }))
+        select_rooms_btn.addEventListener("click", (()=>{
+            console.log("hariom2")
+    close004.style.display = "none"
+
+        }))
+
+
+
+        select_price_btn2.addEventListener("click", (()=>{
+            console.log("hariom2")
+            close003.style.display = "none"
 
         }))
 //         const closeBtn = document.querySelector("#close_btn_minmax")
@@ -269,7 +329,7 @@ closeBtn.addEventListener("click" , (()=>{
 </script>
 
 {{-- cart script --}}
-
+{{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
   {{-- <script>
     var APP = APP || {};
     APP.sidecart = (function (APP, $) {

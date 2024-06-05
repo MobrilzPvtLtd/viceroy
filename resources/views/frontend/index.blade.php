@@ -116,7 +116,7 @@
 
                                             <div class="home_form_label">
                                                 <label>Price</label>
-                                                <div class="adv_search_icon2" id="select_bedroom_btn">
+                                                <div class="adv_search_icon2" id="select_price_btn">
                                                     <input class="select_label select_bedroom_btn" name="state"
                                                         type="button" value="Select price">
                                                     {{-- @foreach ($uniquePrices as $price)
@@ -124,12 +124,12 @@
                                                         @endforeach --}}
                                                     </input>
                                                 </div>
-                                                <div class="adv_search_area show_search1" id="close001">
-                                                    <div id="close_btn_minmax" class="adv_search_close adv_search_close_1">
+                                                <div class="adv_search_area show_search2" id="close002">
+                                                    <div id="close_btn_minmax" class="adv_search_close adv_search_close">
                                                         <i class="fal fa-times"></i>
                                                     </div>
 
-                                                    <div id="min_max">
+                                                    <div id="min_max2">
                                                         <select class="select_2" name="state">
                                                             <option value="">Min</option>
                                                             <option value="">01</option>
@@ -227,7 +227,8 @@
                                             </div>
                                             <div class="home_form_label">
                                                 <label>City</label>
-                                                <select class="select_label" name="ct_name" id="city" required>
+                                                <select
+                                                class="select_label" name="ct_name" id="city" required>
                                                     <option value="" disabled selected> select city</option>
                                                     @foreach ($citys as $city)
                                                         <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
@@ -237,21 +238,22 @@
 
                                             <div class="home_form_label">
                                                 <label>Rooms</label>
-                                                <div class="adv_search_icon3">
-                                                    <select class="select_label" name="state">
-                                                        <option value="">Select rooms</option>
+                                                <div class="adv_search_icon3" id="select_rooms_btn" >
+                                                    <input type = "button"
+                                                    value = "Select Rooms" class="select_label" name="state">
+                                                        <!-- <option value="">Select rooms</option>
                                                         @foreach ($uniqueBedrooms as $bedroom)
                                                             <option value="{{ $bedroom }}">{{ $bedroom }}
                                                             </option>
-                                                        @endforeach
+                                                        @endforeach -->
                                                     </select>
                                                 </div>
-                                                <div class="adv_search_area3">
+                                                <div class="adv_search_area" id= "close003">
                                                     <div class="adv_search_close3">
                                                         <i class="fal fa-times"></i>
                                                     </div>
 
-                                                    <div class="row mt_15">
+                                                    <div class="" id="min_max3">
                                                         <div class="col-lg-6 col-sm-6">
                                                             <select class="select_2" name="state">
                                                                 <option value="">Min</option>
@@ -278,21 +280,21 @@
 
                                             <div class="home_form_label">
                                                 <label>Price</label>
-                                                <div class="adv_search_icon4">
-                                                    <select class="select_label" name="state">
-                                                        <option value="">Select price</option>
+                                                <div class="adv_search_icon4" id="select_price_btn2">
+                                                    <input type = "button" value= "Select Price" class="select_label" name="state">
+                                                        <!-- <option value="">Select price</option>
                                                         @foreach ($uniquePrices as $price)
                                                             <option value="{{ $price }}">{{ $price }}
                                                             </option>
-                                                        @endforeach
-                                                    </select>
+                                                        @endforeach -->
+                                                    </input>
                                                 </div>
-                                                <div class="adv_search_area4">
+                                                <div class="adv_search_area4" id="close004">
                                                     <div class="adv_search_area4">
                                                         <i class="fal fa-times"></i>
                                                     </div>
 
-                                                    <div class="row mt_15">
+                                                    <div class="" id="min_max4">
                                                         <div class="col-lg-6 col-sm-6">
                                                             <select class="select_2" name="state">
                                                                 <option value="">Min</option>
@@ -327,7 +329,7 @@
                                                 </select>
                                             </div>
 
-                                            <div class="">
+                                            <div class="home_form_label">
                                                 <label>Currency</label>
                                                 <select class="select_label" name="code">
                                                     <option value="" disabled selected> select currency</option>
@@ -1132,7 +1134,7 @@
                                 <a href="agencies_details.html"><img src="assets/images/partner_1.png" alt="img"
                                         class="img-fluid w-100" /></a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a href="agencies_details.html"><img src="assets/images/partner_10.png" alt="img"
                                         class="img-fluid w-100" /></a>
                             </li>
@@ -1167,7 +1169,7 @@
                             <li>
                                 <a href="agencies_details.html"><img src="assets/images/partner_10.png" alt="img"
                                         class="img-fluid w-100" /></a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </div>

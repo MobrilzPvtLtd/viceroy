@@ -126,6 +126,13 @@ $notifications_latest = optional($notifications)->take(5);
                 </a>
             </li>
         @endcan
+        @can('Brand')
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/brand">
+                <i class="nav-icon fa-solid fa-hotel"></i>&nbsp;@lang('Our Brands')
+            </a>
+        </li>
+    @endcan
 
 
         @can('edit_settings')
