@@ -86,7 +86,7 @@
 
     background-color: #ffffff00;
     width: 80vw;
-    height: auto;
+    height: fit-content !important;
     position: sticky;
     top: 0;
     transition: top 0.3s ease;

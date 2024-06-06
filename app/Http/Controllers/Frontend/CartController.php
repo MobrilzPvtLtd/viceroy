@@ -57,8 +57,17 @@ class CartController extends Controller
     {
 
         $SessionData = [];
-        $SessionData['CartCount'] = count($request->session()->get('cart'));
-        $SessionData['CartDetails'] = $request->session()->get('cart');
+        if ($request->session()->has('cart'))
+        {
+            $SessionData['CartCount'] = count($request->session()->get('cart'));
+            $SessionData['CartDetails'] = $request->session()->get('cart');
+
+        }else{
+            $SessionData['CartCount'] = 0;
+            $SessionData['CartDetails'] = array();
+        }
+       
+        
 
         echo json_encode($SessionData);
     }

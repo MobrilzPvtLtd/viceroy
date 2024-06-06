@@ -193,7 +193,7 @@
             .scrollTop;
 
         if (scrollPosition > window.innerHeight / 1.8) {
-            container.style.top = '11%';
+           // container.style.top = '11%';
             container.style.position = 'fixed';
             container.style.width = '80vw';
 
@@ -214,11 +214,14 @@
             container2.style.top = '4.5%';
             container2.style.position = 'fixed';
             container2.style.width = '80vw';
+            // container2.style.zIndex = 0;
 
         } else {
             // container.style.margintop = '60vw';
             container2.style.width = '80vw';
             container2.style.position = 'sticky';
+            // container2.style.zIndex = 0;
+
 
 
         }
@@ -230,7 +233,7 @@
     const select_price_btn2 =  document.querySelector("#select_price_btn2")
     const select_rooms_btn =  document.querySelector("#select_rooms_btn")
 closeBtn.addEventListener("click" , (()=>{
-    console.log("hello guys");
+   // console.log("hello guys");
     // close001.style.visibility = "hidden";
 }))
     const adv_search_icon = document.querySelector(".adv_search_icon")
@@ -248,7 +251,7 @@ closeBtn.addEventListener("click" , (()=>{
 
 
         select_price_btn.addEventListener('click',(()=>{
-        console.log("hariom")
+       // console.log("hariom")
         if (close002.style.display == "none"){
             close002.style.display = "block";
             close001.style.display = "none";
@@ -261,7 +264,8 @@ closeBtn.addEventListener("click" , (()=>{
 
 
         select_rooms_btn.addEventListener('click',(()=>{
-            console.log("hariom")
+          
+          console.log("hariom")
             if (close003.style.display == "none"){
                 close003.style.display = "block";
             }
