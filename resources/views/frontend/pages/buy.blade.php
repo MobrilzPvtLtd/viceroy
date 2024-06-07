@@ -527,7 +527,8 @@
                 </script>
 
                 <script
-                    src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyBdKrQSqBJxnw50zyCo8kXtK6aook1d3rk"
+                    src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{$_ENV['GOOGLE_MAP_API']}}
+"
                     defer></script>
 
                 <style>
