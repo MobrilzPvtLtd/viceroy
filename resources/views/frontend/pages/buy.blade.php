@@ -463,18 +463,7 @@
                         var markers = <?php echo json_encode($markers); ?>;
 
                         // Info window content
-                        var infoWindowContent = [
-                            ['<div class="info_content">' +
-                                '<h2>Brooklyn Museum</h2>' +
-                                '<h3>200 Eastern Pkwy, Brooklyn, NY 11238</h3>' +
-                                '<p>The Brooklyn Museum is an art museum located in the New York City borough of Brooklyn.</p>' +
-                                '</div>'],
-                            ['<div class="info_content">' +
-                                '<h2>Central Library</h2>' +
-                                '<h3>10 Grand Army Plaza, Brooklyn, NY 11238</h3>' +
-                                '<p>The Central Library is the main branch of the Brooklyn Public Library, located at Flatbush Avenue.</p>' +
-                                '</div>']
-                        ];
+                        var infoWindowContent = <?php echo json_encode($infowindow); ?>;
 
                         // Add multiple markers to map
                         var infoWindow = new google.maps.InfoWindow(), marker, i;
