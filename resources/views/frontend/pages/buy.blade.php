@@ -485,8 +485,8 @@
                             map.setTilt(50);
 
                             // Multiple markers location, latitude, and longitude
-                            var markers = {{ $markers }};
-                            var infoWindowContent = {{ $infowindow }};
+                            var markers = '';
+                            var infoWindowContent = '';
 
                             for (var i = 0; i < markers.length; i++) {
                                 var markerData = markers[i];
