@@ -16,6 +16,7 @@
     "require": {
         "php": "^8.2",
         "arcanedev/log-viewer": "^11.0",
+        "guzzlehttp/guzzle": "^7.8",
         "hashids/hashids": "^5.0",
         "laracasts/flash": "^3.2",
         "laravel/framework": "^11.0",

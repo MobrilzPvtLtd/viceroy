@@ -1,7 +1,4 @@
 @extends ('backend.layouts.app')
-
-
-
 @section('content')
     <div class="card">
         <div class="card-body">
@@ -148,6 +145,7 @@
                                     <input type="text" class="form-control" name="p_id"
                                         value="{{ old('p_id') }}"placeholder="">
                                 </div>
+
                             </div>
                             <div class="form-group">
                                 <label for="facilities">Facilities:</label><br>

@@ -3,12 +3,16 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use App\Models\Property;
 use App\Models\Facilities;
 use App\Models\City;
 use App\Models\Currency;
 use App\Models\Country;
+use GuzzleHttp\Client;
+
+
 
 class PropertyController extends Controller
 {
@@ -32,8 +36,10 @@ class PropertyController extends Controller
         $facilitiesy = Facilities::all();
         $countrys = Country::all();
         $citys = City::all();
-        return view('backend.property.create', compact('facilitiesy','countrys', 'citys'));
+        return view('backend.property.create', compact('facilitiesy', 'countrys', 'citys'));
     }
+
+
 
     public function store(Request $request)
     {
@@ -43,6 +49,7 @@ class PropertyController extends Controller
             'p_type' => 'required',
             'bed' => 'required',
             'area' => 'required',
+            'address' => 'required',
             'price' => 'required',
             'desc' => 'required',
             'number_of_room' => 'required',
@@ -52,7 +59,6 @@ class PropertyController extends Controller
             'map' => 'required',
             'video' => 'required',
             'p_id' => 'required',
-            // 'slag' => 'required|unique:properties,slag,',
             'facilities' => 'required',
         ]);
 
@@ -75,16 +81,42 @@ class PropertyController extends Controller
                 $floor_planPaths[] = 'uploads/blueprints/' . $filename; // Store the file path directly
             }
         }
+
+        // Geocode the address
+        $address = $request->input('address');
+        $apiKey = env('GEO_CODE_GOOGLE_MAP_API');
+        $client = new Client();
+        $response = $client->get('https://maps.googleapis.com/maps/api/geocode/json', [
+            'query' => [
+                'address' => $address,
+                'key' => $apiKey,
+            ],
+        ]);
+
+        $geoData = json_decode($response->getBody(), true);
+
+        $latitude = null;
+        $longitude = null;
+
+        if (!empty($geoData['results'][0])) {
+            $location = $geoData['results'][0]['geometry']['location'];
+            $latitude = $location['lat'];
+            $longitude = $location['lng'];
+        }
+
         // Prepare data for database insertion
         $facilities = $request->input('facilities', []);
         $propertyData = $request->except('image', 'floor_plan', 'facilities');
         $propertyData['image'] = serialize($imagePaths);
         $propertyData['floor_plan'] = serialize($floor_planPaths);
         $propertyData['facilities'] = serialize($facilities);
+        $propertyData['latitude'] = $latitude;
+        $propertyData['longitude'] = $longitude;
+
         // Create the property
         Property::create($propertyData);
 
-        return redirect()->route('property.index')->with('success', 'property has been created successfully.');
+        return redirect()->route('property.index')->with('success', 'Property has been created successfully.');
     }
 
     public function show()
@@ -94,14 +126,15 @@ class PropertyController extends Controller
     public function edit($id)
     {
         $property = Property::findOrFail($id);
-        // Deserialize image paths and floor plan paths
         $property->image = unserialize($property->image);
         $property->floor_plan = unserialize($property->floor_plan);
         $facilities = Facilities::all();
         $selectedFacilities = unserialize($property->facilities);
 
-        return view('backend.property.edit', compact('property','facilities','selectedFacilities'));
+        return view('backend.property.edit', compact('property', 'facilities', 'selectedFacilities'));
     }
+
+
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -110,6 +143,7 @@ class PropertyController extends Controller
             'p_type' => 'required',
             'bed' => 'required',
             'area' => 'required',
+            'address' => 'required',
             'price' => 'required',
             'desc' => 'required',
             'number_of_room' => 'required',
@@ -119,13 +153,11 @@ class PropertyController extends Controller
             'map' => 'required',
             'video' => 'required',
             'p_id' => 'required',
-            'slag' => 'required',
             'facilities' => 'required',
         ]);
 
         $property = Property::findOrFail($id);
 
-        // Handle image uploads
         $imagePaths = unserialize($property->image);
         if ($request->hasFile('image')) {
             foreach ($request->file('image') as $file) {
@@ -136,7 +168,6 @@ class PropertyController extends Controller
             }
         }
 
-        // Handle floor plan uploads
         $floor_planPaths = unserialize($property->floor_plan);
         if ($request->hasFile('floor_plan')) {
             foreach ($request->file('floor_plan') as $file) {
@@ -147,18 +178,42 @@ class PropertyController extends Controller
             }
         }
 
-        // Prepare data for database update
+        $newAddress = $request->input('address');
+        $latitude = $property->latitude;
+        $longitude = $property->longitude;
+
+        if ($newAddress !== $property->address) {
+            $apiKey = env('GEO_CODE_GOOGLE_MAP_API');
+            $client = new Client();
+            $response = $client->get('https://maps.googleapis.com/maps/api/geocode/json', [
+                'query' => [
+                    'address' => $newAddress,
+                    'key' => $apiKey,
+                ],
+            ]);
+
+            $geoData = json_decode($response->getBody(), true);
+
+            if (!empty($geoData['results'][0])) {
+                $location = $geoData['results'][0]['geometry']['location'];
+                $latitude = $location['lat'];
+                $longitude = $location['lng'];
+            }
+        }
+
         $facilities = $request->input('facilities', []);
         $propertyData = $request->except('image', 'floor_plan', 'facilities');
         $propertyData['image'] = serialize($imagePaths);
         $propertyData['floor_plan'] = serialize($floor_planPaths);
         $propertyData['facilities'] = serialize($facilities);
+        $propertyData['latitude'] = $latitude;
+        $propertyData['longitude'] = $longitude;
 
-        // Update the property
         $property->update($propertyData);
 
         return redirect()->route('property.index')->with('success', 'Property has been updated successfully.');
     }
+
 
     public function destroy($id)
     {

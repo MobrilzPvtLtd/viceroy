@@ -31,6 +31,9 @@ return new class extends Migration
             $table->string('floor_plan');
             $table->string('map');
             $table->string('video');
+            $table->string('long');
+            $table->string('lat');
+
             $table->timestamps();
         });
     }

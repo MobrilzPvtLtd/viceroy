@@ -49,12 +49,11 @@ class FrontendController extends Controller
         $citys = City::all();
         $brands = Brands::all();
         $currencys = Currency::all();
-        return view('frontend.index', compact('propertys', 'countrys', 'citys', 'brands','currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes'));
+        return view('frontend.index', compact('propertys', 'countrys', 'citys', 'brands', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes'));
     }
-
     public function buy(Request $request)
     {
-        $query = Property::where('type','buy');
+        $query = Property::where('type', 'buy');
         if ($request->has('co_name') && $request->co_name != '') {
             $query->where('country_id', $request->co_name);
         }
@@ -71,18 +70,61 @@ class FrontendController extends Controller
             $query->where('p_type', $request->type);
         }
         $propertys = $query->orderBy('id', 'desc')->paginate(6);
-        // dd($propertys);
-        $uniquePropertyTypes = Property::where('type','buy')->distinct()->pluck('p_type')->sort();
-        $uniqueBedrooms = Property::where('type','buy')->distinct()->pluck('number_of_room')->sort();
+        $uniquePropertyTypes = Property::where('type', 'buy')->distinct()->pluck('p_type')->sort();
+        $uniqueBedrooms = Property::where('type', 'buy')->distinct()->pluck('number_of_room')->sort();
         $uniquePrices = Property::where('type', 'buy')->distinct()->pluck('price')->sort();
         $currencys = Currency::all();
         $countrys = Country::all();
         $citys = City::all();
-        return view('frontend.pages.buy', compact('propertys', 'countrys', 'citys', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes'));
+        // get map data
+        $markers = [];
+        $infowindow = [];
+        foreach ($propertys as $property) {
+            if (!empty($property->latitude) && !empty($property->longitude)) {
+                $markers[] = array($property->address, $property->latitude, $property->longitude);
+
+                $infowindow[] = '<div class="info_content">
+                                        .<h2>' . $property->title . '</h2>
+                                        <h3>' . $property->address . '</h3>
+                                        <a href="' . $property->slag . '">Show Property</a>
+                                        </div>';
+            }
+        }
+
+
+        // $markers = array_values($markers);
+        // $markers = json_encode($markers);
+
+
+        // $infowindow = array_values($infowindow);
+        // $infowindow = json_encode($infowindow);
+        $markers = htmlspecialchars(json_encode(array_values($markers)), ENT_QUOTES, 'UTF-8');
+        $infowindow = htmlspecialchars(json_encode(array_values($infowindow)), ENT_QUOTES, 'UTF-8');
+
+        //echo $markers; die();
+
+
+        // $ReturData = array();
+        // $ReturData['markers'] = $markers;
+        // $ReturData['countrys'] = $countrys;
+        // $ReturData['propertys'] = $propertys;
+        // $ReturData['citys'] = $citys;
+        // $ReturData['currencys'] = $currencys;
+        // $ReturData['uniqueBedrooms'] = $uniqueBedrooms;
+        // $ReturData['uniquePrices'] = $uniquePrices;
+        // $ReturData['uniquePropertyTypes'] = $uniquePropertyTypes;
+        // $ReturData['infowindow'] = $infowindow;
+
+        // dd($markers);
+
+        // return view('frontend.pages.buy')->with('data', $ReturData);
+
+
+        return view('frontend.pages.buy', compact('propertys', 'countrys', 'citys', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes', 'markers', 'infowindow'));
     }
     public function rent(Request $request)
     {
-        $query = Property::query()->where('type','rent');
+        $query = Property::query()->where('type', 'rent');
         if ($request->has('co_name') && $request->co_name != '') {
             $query->where('country_id', $request->co_name);
         }
@@ -99,9 +141,9 @@ class FrontendController extends Controller
             $query->where('p_type', $request->type);
         }
         $propertys = $query->orderBy('id', 'desc')->paginate(6);
-        $uniquePropertyTypes = Property::where('type','rent')->distinct()->pluck('p_type')->sort();
-        $uniqueBedrooms = Property::where('type','rent')->distinct()->pluck('number_of_room')->sort();
-        $uniquePrices = Property::where('type','rent')->distinct()->pluck('price')->sort();
+        $uniquePropertyTypes = Property::where('type', 'rent')->distinct()->pluck('p_type')->sort();
+        $uniqueBedrooms = Property::where('type', 'rent')->distinct()->pluck('number_of_room')->sort();
+        $uniquePrices = Property::where('type', 'rent')->distinct()->pluck('price')->sort();
         $countrys = Country::all();
         $citys = City::all();
         $currencys = Currency::all();

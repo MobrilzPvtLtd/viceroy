@@ -19,11 +19,9 @@
                                 <div class="form-group mb-2 col-4">
                                     <label for="p_type">Type of Property</label>
                                     <select class="form-control" name="type" value="">
-                                        <option value="{{ $property->type }}">select property </option>
-                                        <option value="for rent">For Rent </option>
-                                        <option value=" for buy">For Buy</option>
-                                        {{-- <option value="budget">Budget</option>
-                                        <option value="standard">Standard</option> --}}
+                                        <option value="">{{ $property->type }} </option>
+                                        <option value="rent">For Rent </option>
+                                        <option value="buy">For Buy</option>
 
                                     </select>
                                 </div>
@@ -35,7 +33,7 @@
 
                                 <div class="form-group mb-2 col-4">
                                     <label for="ct_name">Address </label>
-                                    <textarea class="form-control" name="address" value="{{ $property->address }}" placeholder=""></textarea>
+                                    <textarea class="form-control" name="address" value="" placeholder="">{{ $property->address }}</textarea>
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
@@ -63,7 +61,7 @@
                                 <div class="form-group mb-2 col-4">
                                     <label for="p_type">Type of Property</label>
                                     <select class="form-control" name="p_type" value="">
-                                        <option value="{{ $property->p_type }}">select property </option>
+                                        <option value="">{{ $property->p_type }}</option>
                                         <option value="Apartment">Apartment</option>
                                         <option value="Villa">Villa</option>
                                         <option value="Plot">Plot</option>
@@ -108,8 +106,8 @@
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">property_status</label>
                                     <select class="form-control" id="p_type" name="property_status"
-                                        value="{{ $property->property_status }}">
-                                        <option value="">select property </option>
+                                        value="">
+                                        <option value="">{{ $property->property_status }} </option>
                                         <option value="For Sale">For Sale </option>
                                         <option value="For Buy">For Buy</option>
                                         {{-- <option value="standard">Standard</option> --}}
@@ -126,7 +124,15 @@
                                     <input type="text" class="form-control" name="slag"
                                         value="{{ $property->slag }}"placeholder="">
                                 </div>
+                                <div class="form-group mb-2 col-4">
+                                    <label for="long">Longitude</label>
+                                    <input type="text" class="form-control" name="long" value="{{ $property->longitude }}" placeholder="" disabled>
+                                </div>
 
+                                <div class="form-group mb-2 col-4">
+                                    <label for="lati">Latitude</label>
+                                    <input type="text" class="form-control" name="lati" value="{{ $property->latitude }}" placeholder="" disabled>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="facilities">Facilities:</label><br>
