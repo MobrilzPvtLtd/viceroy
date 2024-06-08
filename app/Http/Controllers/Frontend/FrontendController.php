@@ -98,8 +98,8 @@ class FrontendController extends Controller
 
         // $infowindow = array_values($infowindow);
         // $infowindow = json_encode($infowindow);
-        $markers = htmlspecialchars(json_encode(array_values($markers)), ENT_QUOTES, 'UTF-8');
-        $infowindow = htmlspecialchars(json_encode(array_values($infowindow)), ENT_QUOTES, 'UTF-8');
+        $markers = $markers; //htmlspecialchars(json_encode(array_values($markers)), ENT_QUOTES, 'UTF-8');
+        $infowindow = $infowindow; // htmlspecialchars(json_encode(array_values($infowindow)), ENT_QUOTES, 'UTF-8');
 
         //echo $markers; die();
 
