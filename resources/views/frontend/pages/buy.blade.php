@@ -460,10 +460,7 @@
                         map.setTilt(50);
 
                         // Multiple markers location, latitude, and longitude
-                        var markers = [
-                            ['Brooklyn Museum, NY', "40.671349546127146", "-73.96375730105808"],
-                            ['Central Library, Brooklyn, NY', 40.67254944015601, -73.9682162170653]
-                        ];
+                        var markers = <?php echo json_encode($markers); ?>;
 
                         // Info window content
                         var infoWindowContent = [
