@@ -486,7 +486,7 @@
 
                             // Multiple markers location, latitude, and longitude
                             var markers = <?php echo json_encode($markers); ?>;
-                            var infoWindowContent = '';
+                            var infoWindowContent = <?php echo json_encode($infowindow); ?>;
 
                             for (var i = 0; i < markers.length; i++) {
                                 var markerData = markers[i];
