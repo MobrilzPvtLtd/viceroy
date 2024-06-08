@@ -485,7 +485,7 @@
                             map.setTilt(50);
 
                             // Multiple markers location, latitude, and longitude
-                            var markers = <?php echo htmlspecialchars(json_encode(array_values($markers)), ENT_QUOTES, 'UTF-8') ?>");
+                            var markers = <?php echo htmlspecialchars(json_encode(array_values($markers)), ENT_QUOTES, 'UTF-8') ?>;
                             var infoWindowContent = JSON.parse("{{ $infowindow }}");
 
                             for (var i = 0; i < markers.length; i++) {
