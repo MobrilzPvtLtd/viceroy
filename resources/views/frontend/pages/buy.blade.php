@@ -522,17 +522,7 @@
 
                     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ env('GOOGLE_MAP_API') }}" defer></script>
 
-                    <!-- Add a div element where the map will be displayed -->
-                    <div id="mapCanvas" style="width: 100%; height: 500px;"></div>
-
-                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ env('GOOGLE_MAP_API') }}" defer></script>
-
-                    <!-- Add a div element where the map will be displayed -->
-                    <div id="mapCanvas" style="width: 100%; height: 500px;"></div>
-
-                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ $_ENV['GOOGLE_MAP_API'] }}
-                                        " defer></script>
-
+                  
                     <style>
                         #mapCanvas {
                             height: 400px;
