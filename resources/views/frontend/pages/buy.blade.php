@@ -463,7 +463,7 @@
                         var markers = <?php echo json_encode($markers); ?>;
 
                         // Info window content
-                        var infoWindowContent = <?php echo htmlspecialchars(json_encode($infowindow)); ?>;
+                        var infoWindowContent = <?php echo json_encode($infowindow); ?>;
 
                         // Add multiple markers to map
                         var infoWindow = new google.maps.InfoWindow(), marker, i;

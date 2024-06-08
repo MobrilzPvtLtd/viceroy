@@ -83,7 +83,7 @@ class FrontendController extends Controller
             if (!empty($property->latitude) && !empty($property->longitude)) {
                 $markers[] = array($property->address, $property->latitude, $property->longitude);
 
-                $infowindow[] = '<div class="info_content"><h2>' . $property->title . '</h2><h3>' . $property->address . '</h3><a href="' . $property->slag . '">Show Property</a></div>';
+                $infowindow[] = '<div class=\'info_content\'><h2>' . $property->title . '</h2><h3>' . $property->address . '</h3><a href="' . $property->slag . '">Show Property</a></div>';
             }
         }
 
