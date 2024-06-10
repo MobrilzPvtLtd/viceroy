@@ -17,14 +17,15 @@
 
                             <div class="row">
                                 <div class="form-group mb-2 col-4">
-                                    <label for="p_type">Type of Property</label>
+                                    <label for="">Type of Property</label>
                                     <select class="form-control" name="type" value="">
                                         <option value="">{{ $property->type }} </option>
-                                        <option value="rent">For Rent </option>
-                                        <option value="buy">For Buy</option>
+                                        <option value="rent"> Rent </option>
+                                        <option value="buy"> Buy</option>
 
                                     </select>
                                 </div>
+
                                 <div class="form-group mb-2 col-4">
                                     <label for="exampleInputEmail1">Property Name</label>
                                     <input type="text" class="form-control" name="title" value="{{ $property->title }}"
@@ -59,7 +60,7 @@
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
-                                    <label for="p_type">Type of Property</label>
+                                    <label>Type of Property</label>
                                     <select class="form-control" name="p_type" value="">
                                         <option value="">{{ $property->p_type }}</option>
                                         <option value="Apartment">Apartment</option>
@@ -138,8 +139,8 @@
                                     <textarea type="text" class="form-control" name="desc" placeholder="">{{ $property->desc }}</textarea>
                                 </div>
                                 <div class="form-group mb-2 col-4">
-                                    <label for="city">property_status</label>
-                                    <select class="form-control" id="p_type" name="property_status" value="">
+                                    <label >property_status</label>
+                                    <select class="form-control" id="" name="property_status" value="">
                                         <option value="">{{ $property->property_status }} </option>
                                         <option value="For Sale">For Sale </option>
                                         <option value="For Buy">For Buy</option>

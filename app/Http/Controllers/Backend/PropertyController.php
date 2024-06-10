@@ -68,7 +68,7 @@ class PropertyController extends Controller
                 $extension = $file->getClientOriginalExtension();
                 $filename = time() . '_' . uniqid() . '.' . $extension;
                 $file->move(public_path('uploads'), $filename);
-                $imagePaths[] = 'uploads/' . $filename; // Store the file path directly
+                $imagePaths[] = 'uploads/' . $filename;
             }
         }
 
@@ -78,7 +78,7 @@ class PropertyController extends Controller
                 $extension = $file->getClientOriginalExtension();
                 $filename = time() . '_' . uniqid() . '.' . $extension;
                 $file->move(public_path('uploads/blueprints'), $filename);
-                $floor_planPaths[] = 'uploads/blueprints/' . $filename; // Store the file path directly
+                $floor_planPaths[] = 'uploads/blueprints/' . $filename;
             }
         }
 

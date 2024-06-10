@@ -15,7 +15,7 @@
                             @csrf
                             <div class="row">
                                 <div class="form-group mb-2 col-4">
-                                    <label for="p_type">Type of Property</label>
+                                    <label for="">Type of Property</label>
                                     <select class="form-control" name="type" value="{{ old('type') }}">
                                         <option value="">select property </option>
                                         <option value="rent">For Rent </option>
@@ -59,7 +59,7 @@
                                 </div> --}}
 
                                 <div class="form-group mb-2 col-4">
-                                    <label for="ct_name">Address </label>
+                                    <label for="">full Address </label>
                                     <textarea class="form-control" id="ct_name" name="address" value="{{ old('address') }}" placeholder=""></textarea>
                                 </div>
 
@@ -86,7 +86,7 @@
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
-                                    <label for="p_type">Type of Property</label>
+                                    <label>Type of Property</label>
                                     <select class="form-control" name="p_type" value="{{ old('p_type') }}">
                                         <option value="">select property </option>
                                         <option value="Apartment">Apartment</option>
@@ -132,7 +132,7 @@
                                     <textarea type="text" class="form-control" name="desc" value="{{ old('desc') }}"placeholder=""></textarea>
                                 </div>
                                 <div class="form-group mb-2 col-4">
-                                    <label for="city">property_status</label>
+                                    <label>property_status</label>
                                     <select class="form-control" id="p_type" name="property_status"
                                         value="{{ old('property_status') }}">
                                         <option value="">select property </option>
