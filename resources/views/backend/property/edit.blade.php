@@ -133,6 +133,10 @@
                                     <label for="lati">Latitude</label>
                                     <input type="text" class="form-control" name="lati" value="{{ $property->latitude }}" placeholder="" disabled>
                                 </div>
+                                <div class="form-group mb-2 col-4">
+                                    <label for="featured">Featured</label>
+                                    <input type="checkbox" name="featured" value="1" {{ $property->featured ? 'checked' : '' }}>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="facilities">Facilities:</label><br>

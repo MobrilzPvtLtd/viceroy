@@ -33,6 +33,7 @@ return new class extends Migration
             $table->string('video');
             $table->string('long');
             $table->string('lat');
+            $table->boolean('featured');
 
             $table->timestamps();
         });

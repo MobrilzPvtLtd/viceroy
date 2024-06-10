@@ -27,7 +27,8 @@
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="exampleInputEmail1">Country Name</label>
-                                    <select class="form-control" id="co_name" name="country_id" value="{{ old('country_id') }}"required focus>
+                                    <select class="form-control" id="co_name" name="country_id"
+                                        value="{{ old('country_id') }}"required focus>
                                         <option value="" disabled selected> select Country</option>
                                         @foreach ($countrys as $country)
                                             <option value="{{ $country->id }}">{{ $country->co_name }}</option>
@@ -104,12 +105,13 @@
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="image">Property Images</label>
-                                    <input type="file" class="form-control" name="image[]" value="{{ old('image[]') }}"
-                                        multiple>
+                                    <input type="file" class="form-control" name="image[]"
+                                        value="{{ old('image[]') }}" multiple>
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Property Video</label>
-                                    <input type="text" class="form-control" name="video" value="{{ old('video') }}">
+                                    <input type="text" class="form-control" name="video"
+                                        value="{{ old('video') }}">
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Map</label>
@@ -144,6 +146,11 @@
                                     <label for="city">Property ID</label>
                                     <input type="text" class="form-control" name="p_id"
                                         value="{{ old('p_id') }}"placeholder="">
+                                </div>
+                                <div class="form-group mb-2 col-4">
+                                    <label for="featured">Featured</label>
+                                    <input type="checkbox" name="featured" value="1">
+
                                 </div>
 
                             </div>

@@ -18,6 +18,7 @@ use App\Http\Controllers\Backend\InquairyController ;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Backend\BrandsController;
+use App\Http\Controllers\Backend\ProfessionalsController;
 
 
 
@@ -37,7 +38,8 @@ require __DIR__.'/auth.php';
 
 *
 * --------------------------------------------------------------------
-*/
+*///professionals
+Route::resource('admin/professionals', ProfessionalsController::class);
 //Brands
 Route::resource('admin/brand', BrandsController::class);
 // cart

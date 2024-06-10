@@ -106,12 +106,13 @@ class PropertyController extends Controller
 
         // Prepare data for database insertion
         $facilities = $request->input('facilities', []);
-        $propertyData = $request->except('image', 'floor_plan', 'facilities');
+        $propertyData = $request->except('image', 'floor_plan', 'facilities','featured');
         $propertyData['image'] = serialize($imagePaths);
         $propertyData['floor_plan'] = serialize($floor_planPaths);
         $propertyData['facilities'] = serialize($facilities);
         $propertyData['latitude'] = $latitude;
         $propertyData['longitude'] = $longitude;
+        $propertyData['featured'] = $request->has('featured');
 
         // Create the property
         Property::create($propertyData);

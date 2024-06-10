@@ -12,6 +12,7 @@ use App\Models\Currency;
 use App\Models\City;
 use App\Models\Property;
 use App\Models\Brands;
+use App\Models\Professionals;
 use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
@@ -49,7 +50,9 @@ class FrontendController extends Controller
         $citys = City::all();
         $brands = Brands::all();
         $currencys = Currency::all();
-        return view('frontend.index', compact('propertys', 'countrys', 'citys', 'brands', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes'));
+        $professionals = Professionals::all();
+        $featureds = Property::where('featured', true)->paginate(6);
+        return view('frontend.index', compact('propertys', 'countrys', 'citys', 'brands', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes','featureds','professionals'));
     }
     public function buy(Request $request)
     {
@@ -87,35 +90,8 @@ class FrontendController extends Controller
             }
         }
 
-
-        // $markers = array_values($markers);
-        // $markers = json_encode($markers);
-
-
-        // $infowindow = array_values($infowindow);
-        // $infowindow = json_encode($infowindow);
-        $markers = $markers; 
+        $markers = $markers;
         $infowindow = $infowindow;
-
-        //echo $markers; die();
-
-
-        // $ReturData = array();
-        // $ReturData['markers'] = $markers;
-        // $ReturData['countrys'] = $countrys;
-        // $ReturData['propertys'] = $propertys;
-        // $ReturData['citys'] = $citys;
-        // $ReturData['currencys'] = $currencys;
-        // $ReturData['uniqueBedrooms'] = $uniqueBedrooms;
-        // $ReturData['uniquePrices'] = $uniquePrices;
-        // $ReturData['uniquePropertyTypes'] = $uniquePropertyTypes;
-        // $ReturData['infowindow'] = $infowindow;
-
-        // dd($markers);
-
-        // return view('frontend.pages.buy')->with('data', $ReturData);
-
-
         return view('frontend.pages.buy', compact('propertys', 'countrys', 'citys', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes', 'markers', 'infowindow'));
     }
     public function rent(Request $request)

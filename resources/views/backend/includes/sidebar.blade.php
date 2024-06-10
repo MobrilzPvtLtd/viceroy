@@ -127,12 +127,19 @@ $notifications_latest = optional($notifications)->take(5);
             </li>
         @endcan
         @can('Brand')
-        <li class="nav-item">
-            <a class="nav-link" href="/admin/brand">
-                <i class="nav-icon fa-solid fa-hotel"></i>&nbsp;@lang('Our Brands')
-            </a>
-        </li>
-    @endcan
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/brand">
+                    <i class="nav-icon fa-solid fa-hotel"></i>&nbsp;@lang('Our Brands')
+                </a>
+            </li>
+        @endcan
+        @can('professionals')
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/professionals">
+                    <i class="nav-icon fa-solid fa-hotel"></i>&nbsp;@lang('Professionals')
+                </a>
+            </li>
+        @endcan
 
 
         @can('edit_settings')
