@@ -119,7 +119,19 @@ class FrontendController extends Controller
         $countrys = Country::all();
         $citys = City::all();
         $currencys = Currency::all();
-        return view('frontend.pages.rent', compact('propertys', 'countrys', 'citys', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes'));
+        $markers = [];
+        $infowindow = [];
+        foreach ($propertys as $property) {
+            if (!empty($property->latitude) && !empty($property->longitude)) {
+                $markers[] = array($property->address, $property->latitude, $property->longitude);
+
+                $infowindow[] = array('<div class="info_content"><h2>' . $property->title . '</h2><h3>' . $property->address . '</h3><a href="/property/' . $property->slag . '">Show Property</a></div>');
+            }
+        }
+
+        $markers = $markers;
+        $infowindow = $infowindow;
+        return view('frontend.pages.rent', compact('propertys', 'countrys', 'citys', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes', 'markers', 'infowindow'));
     }
     public function fetchCity(Request $request)
     {
@@ -198,5 +210,9 @@ class FrontendController extends Controller
     {
 
         return view('frontend.pages.terms&con');
+    }
+    public function explor()
+    {
+        return view('frontend.pages.explor');
     }
 }

@@ -78,12 +78,26 @@
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="image">Property Images</label>
-                                    <input type="file" class="form-control" name="image[]" value=""
-                                        multiple>
+                                    <input type="file" class="form-control" name="image[]" value="" multiple>
+                                    @if (!empty($property->image) && is_array($property->image))
+                                        <div class="form-group mb-2 col-12">
+                                            <label>Existing Images:</label>
+                                            <div class="row">
+                                                @foreach ($property->image as $image)
+                                                    <div class="col-md-2">
+                                                        <img src="{{ asset('public/' . $image) }}" alt="Property Image"
+                                                            class="img-thumbnail" style="width: 100px; height: auto;">
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    @endif
                                 </div>
+
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Property Video</label>
-                                    <input type="text" class="form-control" name="video" value="{{ $property->video }}">
+                                    <input type="text" class="form-control" name="video"
+                                        value="{{ $property->video }}">
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Map</label>
@@ -91,8 +105,28 @@
                                         value="{{ $property->map }}">
                                 </div>
                                 <div class="form-group mb-2 col-4">
-                                    <label for="floor_plan">floor_plan</label>
+                                    <label for="floor_plan">Floor Plan</label>
                                     <input type="file" class="form-control" name="floor_plan[]" multiple>
+                                    @php
+                                    // Check if $property->floor_plan is serialized
+                                    $floorPlans = is_string($property->floor_plan) ? unserialize($property->floor_plan) : $property->floor_plan;
+                                @endphp
+
+                                @if (!empty($floorPlans) && is_array($floorPlans))
+                                    <div class="form-group mb-2 col-12">
+                                        <label>Existing Floor Plans:</label>
+                                        <div class="row">
+                                            @foreach ($floorPlans as $floor_plan)
+                                                <div class="col-md-2">
+                                                    <img src="{{ asset('public/' . $floor_plan) }}" alt="Property Floor Plan"
+                                                        class="img-thumbnail" style="width: 100px; height: auto;">
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                @else
+                                    <p>No floor plans available</p>
+                                @endif
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city"> Originating Year</label>
@@ -105,8 +139,7 @@
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">property_status</label>
-                                    <select class="form-control" id="p_type" name="property_status"
-                                        value="">
+                                    <select class="form-control" id="p_type" name="property_status" value="">
                                         <option value="">{{ $property->property_status }} </option>
                                         <option value="For Sale">For Sale </option>
                                         <option value="For Buy">For Buy</option>
@@ -126,16 +159,19 @@
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="long">Longitude</label>
-                                    <input type="text" class="form-control" name="long" value="{{ $property->longitude }}" placeholder="" disabled>
+                                    <input type="text" class="form-control" name="long"
+                                        value="{{ $property->longitude }}" placeholder="" disabled>
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
                                     <label for="lati">Latitude</label>
-                                    <input type="text" class="form-control" name="lati" value="{{ $property->latitude }}" placeholder="" disabled>
+                                    <input type="text" class="form-control" name="lati"
+                                        value="{{ $property->latitude }}" placeholder="" disabled>
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="featured">Featured</label>
-                                    <input type="checkbox" name="featured" value="1" {{ $property->featured ? 'checked' : '' }}>
+                                    <input type="checkbox" name="featured" value="1"
+                                        {{ $property->featured ? 'checked' : '' }}>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -150,7 +186,7 @@
                                         </div>
                                     @endforeach
                                 </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
                 </div>

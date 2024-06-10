@@ -53,14 +53,15 @@
 
                                         <td>
                                             @php
-                                                $images = unserialize($property->image);
-                                            @endphp
-                                            @if (!empty($images) && is_array($images) && count($images) > 0)
-                                                <img src="{{ asset('public/' . $images[0]) }}" alt="Image"
-                                                    class="img-fluid w-100">
-                                            @else
-                                                <p>No images available</p>
-                                            @endif
+                                            $images = unserialize($property->image);
+                                        @endphp
+
+                                        @if (!empty($images) && is_array($images) && count($images) > 0)
+                                            <img src="{{ asset('public/'.$images[0]) }}" alt="Image" class="img-fluid w-100">
+                                        @else
+                                            <p>No images available</p>
+                                        @endif
+
                                         </td>
                                         <td>
                                             @php

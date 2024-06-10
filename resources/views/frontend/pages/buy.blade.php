@@ -388,16 +388,11 @@
                                                                                         @else
                                                                                             <p>No images available</p>
                                                                                         @endif
-
                                                                                         <a class="feature_link" href="">{{ $property->type }}</a>
                                                                                     </div>
                                                                                 </div>
-
-
-
                                                                             </div>
                                                                         </div>
-
                                                                         <div class="single_property_text">
                                                                             <div class="single_property_top">
                                                                                 <a class="item_title"
@@ -468,7 +463,7 @@
                         // Add multiple markers to map
                         var infoWindow = new google.maps.InfoWindow(), marker, i;
 
-                        // Place each marker on the map  
+                        // Place each marker on the map
                         for (i = 0; i < markers.length; i++) {
                             var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
                             bounds.extend(position);
@@ -478,7 +473,7 @@
                                 title: markers[i][0]
                             });
 
-                            // Add info window to marker    
+                            // Add info window to marker
                             google.maps.event.addListener(marker, 'click', (function (marker, i) {
                                 return function () {
                                     infoWindow.setContent(infoWindowContent[i][0]);

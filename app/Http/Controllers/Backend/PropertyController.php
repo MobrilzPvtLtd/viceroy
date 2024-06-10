@@ -106,7 +106,7 @@ class PropertyController extends Controller
 
         // Prepare data for database insertion
         $facilities = $request->input('facilities', []);
-        $propertyData = $request->except('image', 'floor_plan', 'facilities','featured');
+        $propertyData = $request->except('image', 'floor_plan', 'facilities', 'featured');
         $propertyData['image'] = serialize($imagePaths);
         $propertyData['floor_plan'] = serialize($floor_planPaths);
         $propertyData['facilities'] = serialize($facilities);
@@ -138,6 +138,8 @@ class PropertyController extends Controller
 
     public function update(Request $request, $id)
     {
+        $property = Property::findOrFail($id);
+
         $request->validate([
             'title' => 'required',
             'type' => 'required',
@@ -156,11 +158,15 @@ class PropertyController extends Controller
             'p_id' => 'required',
             'facilities' => 'required',
         ]);
-
-        $property = Property::findOrFail($id);
-
-        $imagePaths = unserialize($property->image);
+        $imagePaths = unserialize($property->image) ?? [];
         if ($request->hasFile('image')) {
+            foreach ($imagePaths as $oldImage) {
+                if (file_exists(public_path($oldImage))) {
+                    unlink(public_path($oldImage));
+                }
+            }
+            $imagePaths = [];
+
             foreach ($request->file('image') as $file) {
                 $extension = $file->getClientOriginalExtension();
                 $filename = time() . '_' . uniqid() . '.' . $extension;
@@ -168,9 +174,15 @@ class PropertyController extends Controller
                 $imagePaths[] = 'uploads/' . $filename;
             }
         }
-
-        $floor_planPaths = unserialize($property->floor_plan);
+        $floor_planPaths = unserialize($property->floor_plan) ?? [];
         if ($request->hasFile('floor_plan')) {
+            // Delete old floor plans
+            foreach ($floor_planPaths as $oldFloorPlan) {
+                if (file_exists(public_path($oldFloorPlan))) {
+                    unlink(public_path($oldFloorPlan));
+                }
+            }
+            $floor_planPaths = [];
             foreach ($request->file('floor_plan') as $file) {
                 $extension = $file->getClientOriginalExtension();
                 $filename = time() . '_' . uniqid() . '.' . $extension;
@@ -179,53 +191,49 @@ class PropertyController extends Controller
             }
         }
 
-        $newAddress = $request->input('address');
+        $address = $request->input('address');
+        $apiKey = env('GEO_CODE_GOOGLE_MAP_API');
+        $client = new Client();
+        $response = $client->get('https://maps.googleapis.com/maps/api/geocode/json', [
+            'query' => [
+                'address' => $address,
+                'key' => $apiKey,
+            ],
+        ]);
+
+        $geoData = json_decode($response->getBody(), true);
+
         $latitude = $property->latitude;
         $longitude = $property->longitude;
 
-        if ($newAddress !== $property->address) {
-            $apiKey = env('GEO_CODE_GOOGLE_MAP_API');
-            $client = new Client();
-            $response = $client->get('https://maps.googleapis.com/maps/api/geocode/json', [
-                'query' => [
-                    'address' => $newAddress,
-                    'key' => $apiKey,
-                ],
-            ]);
-
-            $geoData = json_decode($response->getBody(), true);
-
-            if (!empty($geoData['results'][0])) {
-                $location = $geoData['results'][0]['geometry']['location'];
-                $latitude = $location['lat'];
-                $longitude = $location['lng'];
-            }
+        if (!empty($geoData['results'][0])) {
+            $location = $geoData['results'][0]['geometry']['location'];
+            $latitude = $location['lat'];
+            $longitude = $location['lng'];
         }
 
         $facilities = $request->input('facilities', []);
-        $propertyData = $request->except('image', 'floor_plan', 'facilities');
+        $propertyData = $request->except('image', 'floor_plan', 'facilities', 'featured');
         $propertyData['image'] = serialize($imagePaths);
         $propertyData['floor_plan'] = serialize($floor_planPaths);
         $propertyData['facilities'] = serialize($facilities);
         $propertyData['latitude'] = $latitude;
         $propertyData['longitude'] = $longitude;
+        $propertyData['featured'] = $request->has('featured');
 
         $property->update($propertyData);
 
         return redirect()->route('property.index')->with('success', 'Property has been updated successfully.');
     }
-
-
     public function destroy($id)
     {
         $property = Property::findOrFail($id);
 
-        // Delete associated images and floor plans from storage
         if (!empty($property->image)) {
             $imagePaths = unserialize($property->image);
             foreach ($imagePaths as $imagePath) {
                 if (file_exists(public_path($imagePath))) {
-                    unlink(public_path($imagePath)); // Delete image from storage
+                    unlink(public_path($imagePath));
                 }
             }
         }
@@ -233,12 +241,11 @@ class PropertyController extends Controller
             $floorPlanPaths = unserialize($property->floor_plan);
             foreach ($floorPlanPaths as $floorPlanPath) {
                 if (file_exists(public_path($floorPlanPath))) {
-                    unlink(public_path($floorPlanPath)); // Delete floor plan from storage
+                    unlink(public_path($floorPlanPath));
                 }
             }
         }
 
-        // Delete the property from the database
         $property->delete();
 
         return redirect()->route('property.index')->with('success', 'Rent has been deleted successfully.');
