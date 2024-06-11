@@ -38,10 +38,10 @@
                                         </button>
                                     </li>
                                     <!--<li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                            data-bs-target="#pills-profile" type="button" role="tab"
-                                            aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                    </li>-->
+                                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                data-bs-target="#pills-profile" type="button" role="tab"
+                                                aria-controls="pills-profile" aria-selected="false">Sell</button>
+                                        </li>-->
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
                                             data-bs-target="#pills-contact" type="button" role="tab"
@@ -195,7 +195,7 @@
                                             </div>
                                             <div class="home_form_label">
                                                 <label>City</label>
-                                                <select class="select_label" name="ct_name"  id="rent_city" required>
+                                                <select class="select_label" name="ct_name" id="rent_city" required>
                                                     <option value="" disabled selected> select city</option>
                                                     @foreach ($citys as $city)
                                                         <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
@@ -391,12 +391,12 @@
         </div>
     </section>
     <!--=============================
-                                                                            ABOUT END
-                                                                        ==============================-->
+                                                                                ABOUT END
+                                                                            ==============================-->
 
     <!--=============================
-                                                                            DESTINATION START
-                                                                        ==============================-->
+                                                                                DESTINATION START
+                                                                            ==============================-->
     <section class="destination_area pt_115 xs_pt_110 pb_60 xs_pb_90">
         <div class="container">
             <div class="row justify-content-center">
@@ -531,12 +531,12 @@
         </div>
     </section>
     <!--=============================
-                                                                            DESTINATION END
-                                                                        ==============================-->
+                                                                                DESTINATION END
+                                                                            ==============================-->
 
     <!--=============================
-                                                                            PROPERTY START
-                                                                        ==============================-->
+                                                                                PROPERTY START
+                                                                            ==============================-->
     <section class="property_area pt_60 xs_pt_95 pb_50 xs_pb_95">
         <div class="container">
             <div class="row justify-content-center text-align-center">
@@ -610,280 +610,22 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
-                            <div class="single_property">
-                                <div class="single_property_img">
-                                    <img src="assets/images/property_2.jpg" alt="img" class="img-fluid w-100" />
-                                    <a class="feature_link" href="#">for sale</a>
-                                    <ul class="d-flex flex-wrap">
-                                        <li>
-                                            <a href="#"><i class="fas fa-heart" aria-hidden="true"></i> SAVE</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="single_property_text">
-                                    <div class="single_property_top">
-                                        <a class="item_title" href="#">Leisure Beautiful Health</a>
-                                        <p>
-                                            <i class="fas fa-map-marker-alt"></i>28B Highgate Road,
-                                            London
-                                        </p>
-                                        <ul class="d-flex flex-wrap">
-                                            <li>
-                                                <span><img src="assets/images/bad.png" alt="img"
-                                                        class="img-fluid w-100" /></span>
-                                                3 Beds
-                                            </li>
-                                            <li>
-                                                <span><img src="assets/images/bathtab.png" alt="img"
-                                                        class="img-fluid w-100" /></span>
-                                                2 Baths
-                                            </li>
-                                            <li>
-                                                <span><img src="assets/images/squre.png" alt="img"
-                                                        class="img-fluid w-100" /></span>
-                                                1500 Sq Ft
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                        <a class="read_btn" href="#">More Details<i class="fas fa-arrow-right"></i></a>
-                                        <p>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <span>4.5</span>
-                                        </p>
-                                    </div>
-                                    <span class="property_price">$8,000</span>
-                                </div>
-                            </div>
-                        </div> --}}
-                    {{-- <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
-                            <div class="single_property">
-                                <div class="single_property_img">
-                                    <img src="assets/images/property_3.jpg" alt="img" class="img-fluid w-100" />
-                                    <a class="feature_link" href="#">for rent</a>
-                                    <a class="feature_link feature" href="#">Featured</a>
-                                    <ul class="d-flex flex-wrap">
-                                        <li>
-                                            <a href="#"><i class="fas fa-heart" aria-hidden="true"></i> SAVE</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="single_property_text">
-                                    <div class="single_property_top">
-                                        <a class="item_title" href="#">South Side Garden House</a>
-                                        <p>
-                                            <i class="fas fa-map-marker-alt"></i>28B Highgate Road,
-                                            London
-                                        </p>
-                                        <ul class="d-flex flex-wrap">
-                                            <li>
-                                                <span><img src="assets/images/bad.png" alt="img"
-                                                        class="img-fluid w-100" /></span>
-                                                5 Beds
-                                            </li>
-                                            <li>
-                                                <span><img src="assets/images/bathtab.png" alt="img"
-                                                        class="img-fluid w-100" /></span>
-                                                4 Baths
-                                            </li>
-                                            <li>
-                                                <span><img src="assets/images/squre.png" alt="img"
-                                                        class="img-fluid w-100" /></span>
-                                                2300 Sq Ft
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                        <a class="read_btn" href="#">More Details<i class="fas fa-arrow-right"></i></a>
-                                        <p>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <span>4.5</span>
-                                        </p>
-                                    </div>
-                                    <span class="property_price">$29,000</span>
-                                </div>
-                            </div>
-                        </div> --}}
-                    {{-- <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
-                            <div class="single_property">
-                                <div class="single_property_img">
-                                    <img src="assets/images/property_4.jpg" alt="img" class="img-fluid w-100" />
-                                    <a class="feature_link" href="#">for sale</a>
-                                    <ul class="d-flex flex-wrap">
-                                        <li>
-                                            <a href="#"><i class="fas fa-heart" aria-hidden="true"></i> SAVE</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="single_property_text">
-                                    <div class="single_property_top">
-                                        <a class="item_title" href="#">Stunning mansion in Reno</a>
-                                        <p>
-                                            <i class="fas fa-map-marker-alt"></i>28B Highgate Road,
-                                            London
-                                        </p>
-                                        <ul class="d-flex flex-wrap">
-                                            <li>
-                                                <span><img src="assets/images/bad.png" alt="img"
-                                                        class="img-fluid w-100" /></span>
-                                                6 Beds
-                                            </li>
-                                            <li>
-                                                <span><img src="assets/images/bathtab.png" alt="img"
-                                                        class="img-fluid w-100" /></span>
-                                                4 Baths
-                                            </li>
-                                            <li>
-                                                <span><img src="assets/images/squre.png" alt="img"
-                                                        class="img-fluid w-100" /></span>
-                                                2500 Sq Ft
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                        <a class="read_btn" href="#">More Details<i class="fas fa-arrow-right"></i></a>
-                                        <p>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <span>4.5</span>
-                                        </p>
-                                    </div>
-                                    <span class="property_price">$24,000</span>
-                                </div>
-                            </div>
-                        </div> --}}
-                    {{-- <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
-                            <div class="single_property">
-                                <div class="single_property_img">
-                                    <img src="assets/images/property_5.jpg" alt="img" class="img-fluid w-100" />
-                                    <a class="feature_link" href="#">for rent</a>
-                                    <a class="feature_link feature" href="#">Featured</a>
-                                    <ul class="d-flex flex-wrap">
-                                        <li>
-                                            <a href="#"><i class="fas fa-heart" aria-hidden="true"></i> SAVE</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="single_property_text">
-                                    <div class="single_property_top">
-                                        <a class="item_title" href="#">Beautiful Condo in London</a>
-                                        <p>
-                                            <i class="fas fa-map-marker-alt"></i>28B Highgate Road,
-                                            London
-                                        </p>
-                                        <ul class="d-flex flex-wrap">
-                                            <li>
-                                                <span><img src="assets/images/bad.png" alt="img"
-                                                        class="img-fluid w-100" /></span>
-                                                4 Beds
-                                            </li>
-                                            <li>
-                                                <span><img src="assets/images/bathtab.png" alt="img"
-                                                        class="img-fluid w-100" /></span>
-                                                3 Baths
-                                            </li>
-                                            <li>
-                                                <span><img src="assets/images/squre.png" alt="img"
-                                                        class="img-fluid w-100" /></span>
-                                                2200 Sq Ft
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                        <a class="read_btn" href="#">More Details<i class="fas fa-arrow-right"></i></a>
-                                        <p>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <span>4.5</span>
-                                        </p>
-                                    </div>
-                                    <span class="property_price">$9,000</span>
-                                </div>
-                            </div>
-                        </div> --}}
-                    {{-- <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
-                            <div class="single_property">
-                                <div class="single_property_img">
-                                    <img src="assets/images/property_6.jpg" alt="img" class="img-fluid w-100" />
-                                    <a class="feature_link" href="#">for rent</a>
-                                    <ul class="d-flex flex-wrap">
-                                        <li>
-                                            <a href="#"><i class="fas fa-heart" aria-hidden="true"></i> SAVE</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="single_property_text">
-                                    <div class="single_property_top">
-                                        <a class="item_title" href="#">Kolte Patil Life Republic</a>
-                                        <p>
-                                            <i class="fas fa-map-marker-alt"></i>28B Highgate Road,
-                                            London
-                                        </p>
-                                        <ul class="d-flex flex-wrap">
-                                            <li>
-                                                <span><img src="assets/images/bad.png" alt="img"
-                                                        class="img-fluid w-100" /></span>
-                                                3 Beds
-                                            </li>
-                                            <li>
-                                                <span><img src="assets/images/bathtab.png" alt="img"
-                                                        class="img-fluid w-100" /></span>
-                                                3 Baths
-                                            </li>
-                                            <li>
-                                                <span><img src="assets/images/squre.png" alt="img"
-                                                        class="img-fluid w-100" /></span>
-                                                2100 Sq Ft
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                        <a class="read_btn" href="#">More Details<i class="fas fa-arrow-right"></i></a>
-                                        <p>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <span>4.5</span>
-                                        </p>
-                                    </div>
-                                    <span class="property_price">$11,000</span>
-                                </div>
-                            </div>
-                        </div> --}}
-                    {{-- <div class="text-center mt_50 wow fadeInUp" data-wow-duration="1.5s">
-                            <a class="common_btn" href="#">Browse More Properties</a>
-                        </div> --}}
                 @endforeach
                 <div style="text-align: center">
-                    {!! $featureds->links() !!}
+                    {!! $propertys->links() !!}
                 </div>
+
             </div>
+
         </div>
     </section>
     <!--=============================
-                                                                            PROPERTY END
-                                                                        ==============================-->
+                                                                                PROPERTY END
+                                                                            ==============================-->
 
     <!--=============================
-                                                                            AGENT START
-                                                                        ==============================-->
+                                                                                AGENT START
+                                                                            ==============================-->
     <section class="agent_area pt_60 xs_pt_95 pb_70 xs_pb_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -940,7 +682,7 @@
                             </div>
                         </div>
                     </div>
-                                        {{-- <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
+                    {{-- <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
                                                     <div class="single_agent">
                                                         <div class="single_agent_img">
                                                             <img src="assets/images/agent_2.jpg" alt="img" class="img-fluid w-100" />
@@ -976,7 +718,7 @@
                                                         </div>
                                                     </div>
                                                 </div> --}}
-                                        {{-- <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
+                    {{-- <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
                                                     <div class="single_agent">
                                                         <div class="single_agent_img">
                                                             <img src="assets/images/agent_3.jpg" alt="img" class="img-fluid w-100" />
@@ -1012,7 +754,7 @@
                                                         </div>
                                                     </div>
                                                 </div> --}}
-                                        {{-- <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
+                    {{-- <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
                                 <div class="single_agent">
                                     <div class="single_agent_img">
                                         <img src="assets/images/agent_4.jpg" alt="img" class="img-fluid w-100" />
@@ -1055,12 +797,12 @@
 
     </section>
     <!--=============================
-                                                                            AGENT END
-                                                                        ==============================-->
+                                                                                AGENT END
+                                                                            ==============================-->
 
     <!--=============================
-                                                                            FIND STATE START
-                                                                        ==============================-->
+                                                                                FIND STATE START
+                                                                            ==============================-->
     <section class="find_state" style="background: url(assets/images/find_state.jpg)">
         <div id="vbg12" data-vbg-loop="true" data-vbg="https://youtu.be/ec_fXMrD7Ow?si=m9LJu9X3lzTP5Erz"></div>
         <div class="container">
@@ -1075,24 +817,24 @@
         </div>
     </section>
     <!--=============================
-                                                                            FIND STATE END
-                                                                        ==============================-->
+                                                                                FIND STATE END
+                                                                            ==============================-->
 
     <!--=============================
-                                                                            BLOG START
-                                                                        ==============================-->
+                                                                                BLOG START
+                                                                            ==============================-->
 
     <!--=============================
-                                                                            BLOG END
-                                                                        ==============================-->
+                                                                                BLOG END
+                                                                            ==============================-->
 
     <!--=============================
-                                                                            DISCOVER START
-                                                                        ==============================-->
+                                                                                DISCOVER START
+                                                                            ==============================-->
 
     <!--=============================
-                                                                            PARTNER START
-                                                                        ==============================-->
+                                                                                PARTNER START
+                                                                            ==============================-->
     <section class="partner_area pt_30 pb_30">
         <div class="container">
             <div class="row justify-content-center">
