@@ -159,8 +159,8 @@ class FrontendController extends Controller
     // }
     public function services()
     {
-
-        return view('frontend.pages.services');
+        $brands = Brands::all();
+        return view('frontend.pages.services',compact('brands'));
     }
     public function contact()
     {
@@ -170,7 +170,8 @@ class FrontendController extends Controller
     public function about()
     {
         $professionals = Professionals::all();
-        return view('frontend.pages.about',compact('professionals'));
+        $brands = Brands::all();
+        return view('frontend.pages.about',compact('professionals','brands'));
     }
     public function login()
     {
