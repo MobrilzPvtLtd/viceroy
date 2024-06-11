@@ -136,7 +136,7 @@ $notifications_latest = optional($notifications)->take(5);
         @can('professionals')
             <li class="nav-item">
                 <a class="nav-link" href="/admin/professionals">
-                    <i class="nav-icon fa-solid fa-hotel"></i>&nbsp;@lang('Professionals')
+                    <i class="nav-icon fa-solid fa-hotel"></i>&nbsp;@lang('Our Realtors')
                 </a>
             </li>
         @endcan
