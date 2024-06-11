@@ -73,35 +73,43 @@
             <div class="col-xl-5 wow fadeInRight" data-wow-duration="1.5s">
                 <div class="footer_right">
                     <h4>Get in Touch with Us</h4>
-                    <form action="" method="post" enctype="">
+                    <form action="{{ route('contact.submit') }}" method="post" enctype="">
+                        @csrf
                         <div class="row">
+                            @include('flash::alert-message')
                             <div class="col-md-6">
                                 <div class="footer_form_input">
-                                    <input type="text" placeholder="First name" />
+                                    <input type="text"name="name" placeholder="your name" />
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            {{-- <div class="col-md-6">
                                 <div class="footer_form_input">
                                     <input type="text" placeholder="Last name" />
                                 </div>
+                            </div> --}}
+                            <div class="col-md-6">
+                                <div class="footer_form_input">
+                                    <input type="email" name="email" placeholder="Email" />
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="footer_form_input">
-                                    <input type="email" placeholder="Email" />
+                                    <input type="number" name="phone" placeholder="Phone number" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="footer_form_input">
-                                    <input type="text" placeholder="Phone number" />
+                                    <input type="text"name="sub" placeholder="subject" />
                                 </div>
                             </div>
+
                             <div class="col-xl-12">
                                 <div class="footer_form_input">
-                                    <textarea rows="2" placeholder="Message"></textarea>
+                                    <textarea rows="2" name="message" placeholder="Message"></textarea>
                                 </div>
                             </div>
                             <div class="col-xl-12">
-                                <button class="common_btn footer_btn">Send Message</button>
+                                <button type="submit" class="common_btn footer_btn">Send Message</button>
                             </div>
                         </div>
                     </form>
@@ -193,7 +201,7 @@
             .scrollTop;
 
         if (scrollPosition > window.innerHeight / 1.8) {
-           // container.style.top = '11%';
+            // container.style.top = '11%';
             container.style.position = 'fixed';
             container.style.width = '80vw';
 
@@ -228,113 +236,115 @@
     });
     const closeBtn = document.querySelector("#close_btn_minmax")
     const close001 = document.querySelector("#close001")
-    const select_bedroom_btn =  document.querySelector("#select_bedroom_btn")
-    const select_price_btn =  document.querySelector("#select_price_btn")
-    const select_price_btn2 =  document.querySelector("#select_price_btn2")
-    const select_rooms_btn =  document.querySelector("#select_rooms_btn")
-closeBtn.addEventListener("click" , (()=>{
-   // console.log("hello guys");
-    // close001.style.visibility = "hidden";
-}))
+    const select_bedroom_btn = document.querySelector("#select_bedroom_btn")
+    const select_price_btn = document.querySelector("#select_price_btn")
+    const select_price_btn2 = document.querySelector("#select_price_btn2")
+    const select_rooms_btn = document.querySelector("#select_rooms_btn")
+    closeBtn.addEventListener("click", (() => {
+        // console.log("hello guys");
+        // close001.style.visibility = "hidden";
+    }))
     const adv_search_icon = document.querySelector(".adv_search_icon")
     const adv_search_icon2 = document.querySelector(".adv_search_icon2")
     const min_max = document.querySelector("#close_btn_minmax")
 
-    select_bedroom_btn.addEventListener('click',(()=>{
+    select_bedroom_btn.addEventListener('click', (() => {
         console.log("hariom")
-        if (close001.style.display == "none"){
+        if (close001.style.display == "none") {
             close001.style.display = "block";
             close002.style.display = "none";
+        } else {
+            close001.style.display = "none"
         }
-        else{ close001.style.display = "none"}
-        }))
+    }))
 
 
-        select_price_btn.addEventListener('click',(()=>{
-       // console.log("hariom")
-        if (close002.style.display == "none"){
+    select_price_btn.addEventListener('click', (() => {
+        // console.log("hariom")
+        if (close002.style.display == "none") {
             close002.style.display = "block";
             close001.style.display = "none";
+        } else {
+            close002.style.display = "none"
         }
-        else{ close002.style.display = "none"}
-        }))
+    }))
 
 
 
 
 
-        select_rooms_btn.addEventListener('click',(()=>{
+    select_rooms_btn.addEventListener('click', (() => {
 
-          console.log("hariom")
-            if (close003.style.display == "none"){
-                close003.style.display = "block";
-            }
-            else{ close003.style.display = "none"}
-        }))
-
-
-        select_price_btn2.addEventListener('click',(()=>{
         console.log("hariom")
-        if (close004.style.display == "none"){
-            close004.style.display = "block";
-        }
-        else{ close004.style.display = "none"}
-        }))
-
-
-        select_price_btn.addEventListener("click", (()=>{
-            console.log("hariom2" , close001.style.display)
-    close001.style.display = "none"
-
-        }))
-        select_bedroom_btn.addEventListener("click", (()=>{
-            console.log("hariom2",close002.style.display)
-    close002.style.display = "none"
-
-        }))
-        select_rooms_btn.addEventListener("click", (()=>{
-            console.log("hariom2")
-    close004.style.display = "none"
-
-        }))
-
-
-
-        select_price_btn2.addEventListener("click", (()=>{
-            console.log("hariom2")
+        if (close003.style.display == "none") {
+            close003.style.display = "block";
+        } else {
             close003.style.display = "none"
-
-        }))
-//         const closeBtn = document.querySelector("#close_btn_minmax")
-//     const close009 = document.querySelector("#close009")
-//     const select_bedroom_btn =  document.querySelector("#select_bedroom_btn")
-// closeBtn.addEventListener("click" , (()=>{
-//     console.log("hello guys");
-//     // close001.style.visibility = "hidden";
-// }))
-//     const adv_search_icon = document.querySelector(".adv_search_icon")
-//     const adv_search_icon3 = document.querySelector(".adv_search_icon3")
-//     const min_max = document.querySelector("#close_btn_minmax")
-
-//     select_bedroom_btn.addEventListener('click',(()=>{
-//         console.log("hariom")
-//         if (close009.style.display == "none"){
-//             close009.style.display = "block";
-//         }
-//         else{ close009.style.display = "none"}
-//         }))
-//         adv_search_icon3.addEventListener("click", (()=>{
-//             console.log("hariom2")
-//     close009.style.display = "none"
-
-//         }))
+        }
+    }))
 
 
+    select_price_btn2.addEventListener('click', (() => {
+        console.log("hariom")
+        if (close004.style.display == "none") {
+            close004.style.display = "block";
+        } else {
+            close004.style.display = "none"
+        }
+    }))
+
+
+    select_price_btn.addEventListener("click", (() => {
+        console.log("hariom2", close001.style.display)
+        close001.style.display = "none"
+
+    }))
+    select_bedroom_btn.addEventListener("click", (() => {
+        console.log("hariom2", close002.style.display)
+        close002.style.display = "none"
+
+    }))
+    select_rooms_btn.addEventListener("click", (() => {
+        console.log("hariom2")
+        close004.style.display = "none"
+
+    }))
+
+
+
+    select_price_btn2.addEventListener("click", (() => {
+        console.log("hariom2")
+        close003.style.display = "none"
+
+    }))
+    //         const closeBtn = document.querySelector("#close_btn_minmax")
+    //     const close009 = document.querySelector("#close009")
+    //     const select_bedroom_btn =  document.querySelector("#select_bedroom_btn")
+    // closeBtn.addEventListener("click" , (()=>{
+    //     console.log("hello guys");
+    //     // close001.style.visibility = "hidden";
+    // }))
+    //     const adv_search_icon = document.querySelector(".adv_search_icon")
+    //     const adv_search_icon3 = document.querySelector(".adv_search_icon3")
+    //     const min_max = document.querySelector("#close_btn_minmax")
+
+    //     select_bedroom_btn.addEventListener('click',(()=>{
+    //         console.log("hariom")
+    //         if (close009.style.display == "none"){
+    //             close009.style.display = "block";
+    //         }
+    //         else{ close009.style.display = "none"}
+    //         }))
+    //         adv_search_icon3.addEventListener("click", (()=>{
+    //             console.log("hariom2")
+    //     close009.style.display = "none"
+
+    //         }))
 </script>
 
 {{-- cart script --}}
 {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
-  {{-- <script>
+{{-- <script>
     var APP = APP || {};
     APP.sidecart = (function (APP, $) {
       var $test = $(".test"),
