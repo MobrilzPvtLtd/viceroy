@@ -20,8 +20,6 @@
                                         <option value="">select property </option>
                                         <option value="rent">For Rent </option>
                                         <option value="buy">For Buy</option>
-                                        {{-- <option value="budget">Budget</option>
-                                        <option value="standard">Standard</option> --}}
 
                                     </select>
                                 </div>

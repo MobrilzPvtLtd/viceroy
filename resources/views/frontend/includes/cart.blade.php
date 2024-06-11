@@ -165,7 +165,7 @@
          cursor: pointer;
          text-align: left;
          transition: all 0.2s ease-in-out;
-         color: #fff;
+         color:#000000;
      }
 
      .test-cart:hover {

@@ -22,7 +22,7 @@
                     <div class="row justify-content-between">
                         <div class="col-xl-6 col-sm-10 col-md-4 wow fadeInLeft" data-wow-duration="2s">
                             <div class="footer_description">
-                                <a class="footer_logo" href="index.html">
+                                <a class="footer_logo" href="">
                                     <img src="{{ asset('assets/images/logo_1.png') }}" alt="logo"
                                         class="img-fluid w-100" />
                                 </a>
@@ -73,7 +73,7 @@
             <div class="col-xl-5 wow fadeInRight" data-wow-duration="1.5s">
                 <div class="footer_right">
                     <h4>Get in Touch with Us</h4>
-                    <form action="#">
+                    <form action="" method="post" enctype="">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="footer_form_input">
@@ -264,7 +264,7 @@ closeBtn.addEventListener("click" , (()=>{
 
 
         select_rooms_btn.addEventListener('click',(()=>{
-          
+
           console.log("hariom")
             if (close003.style.display == "none"){
                 close003.style.display = "block";
