@@ -25,7 +25,7 @@ class FrontendController extends Controller
     public function index(Request $request)
     {
         $query = Property::query()->whereIn('type', ['buy', 'rent']);
-        $query = Property::query()->where('type', 'buy');
+
         if ($request->has('co_name') && $request->co_name != '') {
             $query->where('country_id', $request->co_name);
         }
@@ -45,13 +45,13 @@ class FrontendController extends Controller
         $uniquePropertyTypes = Property::whereIn('type', ['buy', 'rent'])->distinct()->pluck('p_type')->sort();
         $uniqueBedrooms = Property::whereIn('type', ['buy', 'rent'])->distinct()->pluck('number_of_room')->sort();
         $uniquePrices = Property::whereIn('type', ['buy', 'rent'])->distinct()->pluck('price')->sort();
-        $propertys = Property::all();
         $countrys = Country::all();
         $citys = City::all();
         $brands = Brands::all();
         $currencys = Currency::all();
         $professionals = Professionals::all();
         $featureds = Property::where('featured', true)->paginate(6);
+
         return view('frontend.index', compact('propertys', 'countrys', 'citys', 'brands', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes','featureds','professionals'));
     }
     public function buy(Request $request)

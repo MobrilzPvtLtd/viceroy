@@ -85,10 +85,6 @@
                                             <div class="adv_search_icon" id="select_bedroom_btn">
                                                 <input class="select_label " name="state" type="button"
                                                     value="Select bedrooms">
-                                                {{-- <option value="">Select bedrooms</option>
-                                                    @foreach ($uniqueBedrooms as $bedroom)
-                                                        <option value="{{ $bedroom }}">{{ $bedroom }}</option>
-                                                    @endforeach --}}
                                                 </input>
                                             </div>
 
