@@ -50,7 +50,7 @@ class FrontendController extends Controller
         $brands = Brands::all();
         $currencys = Currency::all();
         $professionals = Professionals::all();
-        $featureds = Property::where('featured', true)->paginate(6);
+        $featureds = Property::where('featured', true)->whereIn('type', ['buy', 'rent'])->paginate(6);
 
         return view('frontend.index', compact('propertys', 'countrys', 'citys', 'brands', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes','featureds','professionals'));
     }
