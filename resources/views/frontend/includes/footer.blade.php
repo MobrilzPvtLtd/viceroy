@@ -31,7 +31,7 @@
                                     Aenean quis orci sit amet odio maximus sagittis et eu
                                     odio.
                                 </p>
-                                <ul class="d-flex flex-wrap">
+                                {{-- <ul class="d-flex flex-wrap">
                                     <li>
                                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                                     </li>
@@ -41,7 +41,7 @@
                                     <li>
                                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                                     </li>
-                                </ul>
+                                </ul> --}}
                             </div>
                         </div>
                         <div class="col-xl-3 col-sm-6 col-md-4 wow fadeInLeft" data-wow-duration="1.5s">

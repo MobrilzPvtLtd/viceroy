@@ -889,7 +889,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-7 wow fadeInUp" data-wow-duration="1.5s">
                     <div class="section_heading mb_25">
-                        <h2>Meet the Realty Professionals</h2>
+                        <h2>Our Realtors</h2>
                     </div>
                 </div>
             </div>
@@ -910,7 +910,7 @@
                                 @endif
                                 <div class="single_agent_overly">
                                     {{-- <p>4 listings</p> --}}
-                                    <ul class="d-flex flex-wrap">
+                                    {{-- <ul class="d-flex flex-wrap">
                                         <li>
                                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                                         </li>
@@ -920,7 +920,7 @@
                                         <li>
                                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </div>
                             <div class="agent_text">
@@ -930,7 +930,7 @@
                                 </div>
                                 <ul class="agent_contact">
                                     <li>
-                                        <a href="callto:1234567890"><i class="fas fa-phone-alt"></i>(+88)
+                                        <a href=""><i class="fas fa-phone-alt"></i>
                                             {{ $professional->number }}</a>
                                     </li>
                                     <li>
@@ -940,79 +940,79 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
-                                <div class="single_agent">
-                                    <div class="single_agent_img">
-                                        <img src="assets/images/agent_2.jpg" alt="img" class="img-fluid w-100" />
-                                        <div class="single_agent_overly">
-                                            <p>03 listings</p>
-                                            <ul class="d-flex flex-wrap">
-                                                <li>
-                                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="agent_text">
-                                        <div class="agent_name">
-                                            <a class="item_title" href="#">Nathaneal Down</a>
-                                            <span>Real Estate Broker</span>
-                                        </div>
-                                        <ul class="agent_contact">
-                                            <li>
-                                                <a href="callto:1234567890"><i class="fas fa-phone-alt"></i>(+88) 587 - 5643</a>
-                                            </li>
-                                            <li>
-                                                <a href="mailto:example@gmail.com"><i
-                                                        class="fas fa-envelope"></i>example@gmail.com</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div> --}}
-                    {{-- <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
-                                <div class="single_agent">
-                                    <div class="single_agent_img">
-                                        <img src="assets/images/agent_3.jpg" alt="img" class="img-fluid w-100" />
-                                        <div class="single_agent_overly">
-                                            <p>6 listings</p>
-                                            <ul class="d-flex flex-wrap">
-                                                <li>
-                                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="agent_text">
-                                        <div class="agent_name">
-                                            <a class="item_title" href="#">Hugh Saturation</a>
-                                            <span>Buying Agent</span>
-                                        </div>
-                                        <ul class="agent_contact">
-                                            <li>
-                                                <a href="callto:1234567890"><i class="fas fa-phone-alt"></i>(+88) 587 - 5643</a>
-                                            </li>
-                                            <li>
-                                                <a href="mailto:example@gmail.com"><i
-                                                        class="fas fa-envelope"></i>example@gmail.com</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div> --}}
-                    {{-- <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
+                                        {{-- <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
+                                                    <div class="single_agent">
+                                                        <div class="single_agent_img">
+                                                            <img src="assets/images/agent_2.jpg" alt="img" class="img-fluid w-100" />
+                                                            <div class="single_agent_overly">
+                                                                <p>03 listings</p>
+                                                                <ul class="d-flex flex-wrap">
+                                                                    <li>
+                                                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="agent_text">
+                                                            <div class="agent_name">
+                                                                <a class="item_title" href="#">Nathaneal Down</a>
+                                                                <span>Real Estate Broker</span>
+                                                            </div>
+                                                            <ul class="agent_contact">
+                                                                <li>
+                                                                    <a href="callto:1234567890"><i class="fas fa-phone-alt"></i>(+88) 587 - 5643</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="mailto:example@gmail.com"><i
+                                                                            class="fas fa-envelope"></i>example@gmail.com</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div> --}}
+                                        {{-- <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
+                                                    <div class="single_agent">
+                                                        <div class="single_agent_img">
+                                                            <img src="assets/images/agent_3.jpg" alt="img" class="img-fluid w-100" />
+                                                            <div class="single_agent_overly">
+                                                                <p>6 listings</p>
+                                                                <ul class="d-flex flex-wrap">
+                                                                    <li>
+                                                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="agent_text">
+                                                            <div class="agent_name">
+                                                                <a class="item_title" href="#">Hugh Saturation</a>
+                                                                <span>Buying Agent</span>
+                                                            </div>
+                                                            <ul class="agent_contact">
+                                                                <li>
+                                                                    <a href="callto:1234567890"><i class="fas fa-phone-alt"></i>(+88) 587 - 5643</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="mailto:example@gmail.com"><i
+                                                                            class="fas fa-envelope"></i>example@gmail.com</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div> --}}
+                                        {{-- <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
                                 <div class="single_agent">
                                     <div class="single_agent_img">
                                         <img src="assets/images/agent_4.jpg" alt="img" class="img-fluid w-100" />

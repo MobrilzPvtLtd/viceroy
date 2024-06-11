@@ -169,7 +169,8 @@ class FrontendController extends Controller
     }
     public function about()
     {
-        return view('frontend.pages.about');
+        $professionals = Professionals::all();
+        return view('frontend.pages.about',compact('professionals'));
     }
     public function login()
     {
