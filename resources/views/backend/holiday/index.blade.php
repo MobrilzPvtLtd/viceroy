@@ -39,13 +39,19 @@
 
                                         <td>
                                             @php
-                                                $images = json_decode($holiday->image);
+                                                $images = json_decode($holiday->image, true);
                                             @endphp
-                                            @foreach ($images as $image)
-                                                <img src="{{ asset('public/uploads/' . trim($image)) }}" alt="Image"
-                                                    style="width: 100% ">
-                                            @endforeach
+                                            @if($images)
+                                                @php
+                                                    $latestImage = end($images);
+                                                @endphp
+                                                <img src="{{ asset('public/uploads/' . trim($latestImage)) }}" alt="Image" style="width: 100px; height: auto;">
+                                            @else
+                                                <p>No images available</p>
+                                            @endif
                                         </td>
+
+
                                         <td>{{ $holiday->url }}</td>
 
                                         <td>

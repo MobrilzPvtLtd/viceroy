@@ -12,9 +12,8 @@ class HolidayController extends Controller
 
     public function index()
     {
-        $holidays = Holiday::orderBy('id','desc')->paginate(5);
+        $holidays = Holiday::orderBy('id', 'desc')->paginate(5);
         return view('backend.holiday.index', compact('holidays'));
-
     }
 
 
@@ -61,44 +60,53 @@ class HolidayController extends Controller
         return view('backend.holiday.edit', compact('holiday'));
     }
 
-public function update(Request $request, $id)
-{
-    $request->validate([
-        'name' => 'required',
-        'price' => 'required',
-        'address' => 'required',
-        'beds' => 'required',
-        'bath' => 'required',
-        'area' => 'required',
-        'p_type' => 'required',
-        'url' => 'required',
-    ]);
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'address' => 'required',
+            'beds' => 'required',
+            'bath' => 'required',
+            'area' => 'required',
+            'p_type' => 'required',
+            'url' => 'required',
+        ]);
 
-    $holiday = Holiday::findOrFail($id);
+        $holiday = Holiday::findOrFail($id);
 
-    $imagePaths = [];
-    if ($request->hasFile('image')) {
-        foreach ($request->file('image') as $file) {
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '_' . uniqid() . '.' . $extension;
-            $file->move(public_path('uploads'), $filename);
-            $imagePaths[] = $filename;
-        }
-        // Delete old images
-        foreach(json_decode($holiday->image) as $oldImage) {
-            if(file_exists(public_path('uploads/' . $oldImage))) {
-                unlink(public_path('uploads/' . $oldImage));
+        $imagePaths = [];
+        if ($request->hasFile('image')) {
+            // Upload new images
+            foreach ($request->file('image') as $file) {
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . '_' . uniqid() . '.' . $extension;
+                $file->move(public_path('uploads'), $filename);
+                $imagePaths[] = $filename;
+            }
+            // Delete old images
+            if ($holiday->image) {
+                foreach (json_decode($holiday->image) as $oldImage) {
+                    if (file_exists(public_path('uploads/' . $oldImage))) {
+                        unlink(public_path('uploads/' . $oldImage));
+                    }
+                }
             }
         }
+
+        // Update other holiday data
+        $holidayData = $request->except('image');
+
+        // If new images were uploaded, update the image field
+        if (!empty($imagePaths)) {
+            $holidayData['image'] = json_encode($imagePaths);
+        }
+
+        $holiday->update($holidayData);
+
+        return redirect()->route('holiday.index')->with('success', 'Holiday has been updated successfully.');
     }
 
-    $holidayData = $request->except('image');
-    $holidayData['image'] = json_encode($imagePaths);
-
-    $holiday->update($holidayData);
-
-    return redirect()->route('holiday.index')->with('success', 'Holiday has been updated successfully.');
-}
 
     public function destroy(Holiday $holiday)
     {

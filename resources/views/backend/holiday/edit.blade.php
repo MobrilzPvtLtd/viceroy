@@ -59,8 +59,24 @@
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Property Images</label>
-                                    <input type="file" class="form-control" name="image[]" multiple value="{{ $holiday->image }}">
+                                    <input type="file" class="form-control" name="image[]" multiple value="">
+                                    <div>
+                                        @if (!empty($holiday->image))
+                                            @foreach (json_decode($holiday->image) as $image)
+                                                <div class="image-thumbnail" style="display: inline-block; margin-right: 10px;">
+                                                    <img src="{{ asset('public/uploads/' . $image) }}" alt="Image" style="width: 100px; height: auto;">
+                                                </div>
+                                            @endforeach
+                                        @else
+                                            <p>No images available</p>
+                                        @endif
+                                    </div>
                                 </div>
+                                {{-- <div class="form-group mb-2 col-12">
+                                    <label for="city">Property Images</label>
+
+                                    <input type="file" class="form-control" name="image[]" multiple>
+                                </div> --}}
 
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
