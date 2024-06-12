@@ -52,15 +52,19 @@
                 <div class="col-xl-5 col-lg-6 wow fadeInRight" data-wow-duration="1.5s">
                     <div class="about_text">
                         <div class="section_heading section_heading_left">
-                            <h2>We help clients buy and Sell houses since 2001</h2>
+                            <h2>Unlocking Opportunities. Exceeding Expectations.</h2>
                         </div>
-                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
-                            foundation in educational psychology With over $3 Billion in sales, due to our unparalleled
-                            results, expertise and dedication.</p>
-                        <p>Through a combination of lectures, readings, and discussions, students will gain a solid
-                            foundation in educational psychology With over $3 Billion in sales, due to our unparalleled
-                            results, expertise and dedication.</p>
-                        <ul class="d-flex flex-wrap pt_15">
+                        <p>Welcome home! Whether you're a seasoned investor or a first-time buyer, we understand that finding the perfect property is a journey! At Viceroy Realty, we are here to guide you every step of the way. Browse through our extensive listings, explore vibrant neighbourhoods and connect with our team of dedicated realtors. Let's turn your dream into your reality.</p>
+
+                        <h4 class="pt-4">And why just stop there?</h4>
+                                                <ul class="d-flex flex-wrap pt_15">
+                        <p>_Unlock the Potential of Your Home… _by availing of our Holiday Home rental management services. We can transform your vacation home into a thriving business thereby allowing you to maximise rental income, simplify guest communication and also ensure a seamless guest experience.</p>
+                        <p>Imagine turning your underutilised property into a source of consistent income and joy for travellers. You would have the benefits of professional booking and inquiry management thereby freeing up your time along with top-notch cleaning, maintenance and guest support for worry-free rentals.</p>                      <ul class="d-flex flex-wrap pt_15">
+                        <p>Bonus advantage is that the Home Owner (or their personal guests) would have the ability to utilise their now fully serviced apartment whenever they visit Goa by simply blocking the dates on the calendar themselves.</p>                        <ul class="d-flex flex-wrap pt_15">
+                        <p>We also provide a solution to a common problem that most home owners face when they can’t take time off to visit Goa for the purpose of civil, repair, legal or administrative work for the apartment /house. To resolve this issue we extend comprehensive estate management services for the estate owner; be it for scheduled maintenance, timely legal support, earning potential revenue or estate related accounting.</p>
+
+
+                        {{-- <ul class="d-flex flex-wrap pt_15">
                             <li>
                                 <div class="about_icon">
                                     <img src="assets/images/about_icon_1.png" alt="icon" class="img-fluid w-100">
@@ -97,7 +101,7 @@
                                     <span>Professional services</span>
                                 </div>
                             </li>
-                        </ul>
+                        </ul> --}}
 
                     </div>
                 </div>

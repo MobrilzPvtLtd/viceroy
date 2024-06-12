@@ -49,7 +49,7 @@ class FrontendController extends Controller
         $citys = City::all();
         $brands = Brands::all();
         $currencys = Currency::all();
-        $professionals = Professionals::all();
+        $professionals = Professionals::paginate(4);
 
 
         return view('frontend.index', compact('propertys', 'countrys', 'citys', 'brands', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes','professionals'));

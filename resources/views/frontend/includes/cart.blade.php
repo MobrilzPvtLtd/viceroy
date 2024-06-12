@@ -166,6 +166,7 @@
          text-align: left;
          transition: all 0.2s ease-in-out;
          color:#000000;
+         margin-right: 52px;
      }
 
      .test-cart:hover {

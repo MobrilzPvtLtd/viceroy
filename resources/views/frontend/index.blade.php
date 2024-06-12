@@ -791,6 +791,9 @@
                                 </div>
                             </div> --}}
                 @endforeach
+                <div style="text-align: center">
+                    {!! $professionals->links() !!}
+                </div>
             </div>
 
         </div>
