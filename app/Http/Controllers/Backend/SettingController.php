@@ -66,18 +66,19 @@ class SettingController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $rules = Setting::getValidationRules();
-        $data = $request->validate($request, $rules);
+{
+    $rules = Setting::getValidationRules();
+    $data = $request->validate($rules); // Corrected line
 
-        $validSettings = array_keys($rules);
+    $validSettings = array_keys($rules);
 
-        foreach ($data as $key => $val) {
-            if (in_array($key, $validSettings)) {
-                Setting::add($key, $val, Setting::getDataType($key));
-            }
+    foreach ($data as $key => $val) {
+        if (in_array($key, $validSettings)) {
+            Setting::add($key, $val, Setting::getDataType($key));
         }
-
-        return redirect()->back()->with('status', 'Settings has been saved.');
     }
+
+    return redirect()->back()->with('status', 'Settings have been saved.');
+}
+
 }

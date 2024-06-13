@@ -15,3 +15,25 @@
         </button>
     </div>
 @endif
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Function to remove the alert after a set duration
+        function autoDismissAlert(alertElement, duration) {
+            setTimeout(function() {
+                if (alertElement) {
+                    alertElement.classList.remove('show');
+                    alertElement.addEventListener('transitionend', () => alertElement.remove());
+                }
+            }, duration);
+        }
+
+        // Select all alert elements
+        const alerts = document.querySelectorAll('.alert-dismissible');
+
+        // Set auto-dismiss for each alert
+        alerts.forEach(alert => {
+            autoDismissAlert(alert, 5000); // 5000 milliseconds = 5 seconds
+        });
+    });
+</script>
+

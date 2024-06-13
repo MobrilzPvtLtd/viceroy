@@ -30,6 +30,6 @@ class CheckoutController extends Controller
         $checkout->massage = $request->massage;
         $checkout->save();
 
-        return redirect()->back()->with('success', 'Country has been created successfully.');
+        return redirect()->back()->with('success', 'inquiry has been submitted successfully.');
     }
 }

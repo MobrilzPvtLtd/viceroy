@@ -15,7 +15,7 @@
 
                                     <th scope="col">Id</th>
                                     <th scope="col">Property Name</th>
-                                    <th scope="col">Property Image</th>
+                                    <th scope="col">Email</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Number</th>
                                     <th scope="col">Date</th>
@@ -30,7 +30,7 @@
                                 <tr>
                                     <td>{{ $checkout->id }}</td>
                                     <td>{{ $checkout->title }}</td>
-                                    <td>{{ $checkout->image }}</td>
+                                    <td>{{ Auth::user()->email }}</td>
                                     <td>{{ $checkout->name }}</td>
                                     <td>{{ $checkout->number }}</td>
                                     <td>{{ $checkout->date }}</td>

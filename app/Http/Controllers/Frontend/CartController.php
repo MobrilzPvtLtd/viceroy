@@ -8,10 +8,10 @@ use App\Models\Property;
 
 class CartController extends Controller
 {
+
     public function add(Request $request)
     {
         $propertyId = $request->input('id');
-
         $SessionData = [];
 
         $property = Property::find($propertyId);
@@ -41,6 +41,7 @@ class CartController extends Controller
         $SessionData['Status'] = 1;
         $SessionData['Message'] = 'Property added to cart';
 
+        // dd(count($SessionData));
 
         echo json_encode($SessionData);
     }
@@ -66,8 +67,8 @@ class CartController extends Controller
             $SessionData['CartCount'] = 0;
             $SessionData['CartDetails'] = array();
         }
-       
-        
+
+
 
         echo json_encode($SessionData);
     }

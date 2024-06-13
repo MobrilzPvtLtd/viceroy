@@ -88,6 +88,9 @@
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             </div>
                         </div>
+                        <p class="notify001">
+                            1
+                        </p>
                     </li>
                 </ul>
             </div>

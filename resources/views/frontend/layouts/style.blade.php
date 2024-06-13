@@ -470,4 +470,26 @@ select.select_2 {
   .test__btn:hover {
     background: #05c305;
   } */
+
+
+  p.notify001 {
+    color: #fff;
+    background-color: #e6b025;
+    width: 2vw;
+    height: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    position: absolute;
+    right: 40px;
+    font-size: 17px;
+    top: 15px;
+}
+button#addToCart {
+    background-color: #e6b025;
+    border-color: #e6b025;
+    border-radius: 37px;
+    height: 6vh;
+}
 </style>

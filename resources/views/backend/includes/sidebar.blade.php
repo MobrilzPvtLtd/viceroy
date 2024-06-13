@@ -47,7 +47,9 @@ $notifications_latest = optional($notifications)->take(5);
         @can('Inquiry')
             <li class="nav-group" aria-expanded="true">
                 <a class="nav-link nav-group-toggle" href="">
-                    <i class="nav-icon fa-solid fa-question"></i>&nbsp;@lang('Inquirys')
+                    <i class="nav-icon fa-solid fa-question"></i>&nbsp;@lang('Inquirys')<p class="notify001">
+                        1
+                    </p>
                 </a>
                 <ul class="nav-group-items compact" style="height: auto;">
                     <li class="nav-item">
@@ -58,6 +60,7 @@ $notifications_latest = optional($notifications)->take(5);
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/inquairy">
                             <span class="nav-icon"><span class="nav-icon-bullet"></span></span>Property Inquiry
+
                         </a>
                     </li>
                 </ul>
@@ -150,13 +153,13 @@ $notifications_latest = optional($notifications)->take(5);
             </li>
         @endcan
 
-        @can('view_backups')
+        {{-- @can('view_backups')
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('backend.backups.index') }}">
                     <i class="nav-icon fa-solid fa-box-archive"></i>&nbsp;@lang('Backups')
                 </a>
             </li>
-        @endcan
+        @endcan --}}
 
         @can('view_users')
             <li class="nav-item">
@@ -174,7 +177,7 @@ $notifications_latest = optional($notifications)->take(5);
             </li>
         @endcan
 
-        @can('view_logs')
+        {{-- @can('view_logs')
             <li class="nav-group" aria-expanded="true">
                 <a class="nav-link nav-group-toggle" href="#">
                     <i class="nav-icon fa-solid fa-list-ul"></i>&nbsp;@lang('Logs')
@@ -192,10 +195,23 @@ $notifications_latest = optional($notifications)->take(5);
                     </li>
                 </ul>
             </li>
-        @endcan
+        @endcan --}}
 
     </ul>
     <div class="sidebar-footer border-top d-none d-md-flex">
         <button class="sidebar-toggler" data-coreui-toggle="unfoldable" type="button"></button>
     </div>
 </div>
+<style>
+    p.notify001 {
+    color: #fff;
+    background-color: #e62525;
+    width: 1.5vw;
+    height: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 41px;
+    font-size: 12px;
+}
+</style>

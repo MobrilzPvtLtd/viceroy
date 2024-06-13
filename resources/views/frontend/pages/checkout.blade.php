@@ -76,6 +76,7 @@
                     <input type="hidden" value="{{$cartItem['title']}}" name="title">
                     <input type="hidden" value="{{$cartItem['image']}}" name="image">
                     <div class="row">
+                        @include('flash::alert-message')
                         <div class="col-md-6 col-lg-12 col-xl-6">
                             <div class="contact_input">
                                 <input type="text"name="name" placeholder="First Name" />
@@ -117,7 +118,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="contact_input">
-                                <button  type="submit" class="common_btn">Send Message</button>
+                                <button  type="submit" class="common_btn">Submit your inquiry</button>
                             </div>
                         </div>
                     </div>
