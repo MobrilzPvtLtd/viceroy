@@ -11,25 +11,36 @@ class CheckoutController extends Controller
 {
     public function submit(Request $request)
     {
+        // Uncomment and adjust validation rules if needed
         // $request->validate([
-        //      'co_name' => 'required',
-        //     'st_name'=> 'required',
+        //     'co_name' => 'required',
+        //     'st_name' => 'required',
         // ]);
 
-        $title = $request->title;
-        $image = $request->image;
-
+        // Get titles and store in session
+        $titles = $request->input('title');
+        $images = $request->input('image');
+        // $request->session()->put('selected_titles', json_encode($titles));
+        // dd($titles,$images);
+        $name = $request->name;
+        $number = $request->number;
+        $date = $request->date;
+        $st_time = $request->st_time;
+        $en_time = $request->en_time;
+        $massage = $request->massage;
         $checkout = new Checkout();
-        $checkout->title = $title;
-        $checkout->image = $image;
-        $checkout->name = $request->name;
-        $checkout->number = $request->number;
-        $checkout->date = $request->date;
-        $checkout->st_time = $request->st_time;
-        $checkout->en_time = $request->en_time;
-        $checkout->massage = $request->massage;
+        $checkout->title = json_encode($titles);
+        $checkout->image = json_encode($images);
+        $checkout->name = $name;
+        $checkout->number = $number;
+        $checkout->date = $date;
+        $checkout->st_time = $st_time;
+        $checkout->en_time = $en_time;
+        $checkout->massage = $massage;
         $checkout->save();
 
-        return redirect()->back()->with('success', 'inquiry has been submitted successfully.');
+        // Redirect back with success message
+        return redirect()->back()->with('success', 'Inquiry has been submitted successfully.');
     }
+
 }

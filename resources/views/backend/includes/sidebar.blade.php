@@ -2,6 +2,8 @@
 $notifications = optional(auth()->user())->unreadNotifications;
 $notifications_count = optional($notifications)->count();
 $notifications_latest = optional($notifications)->take(5);
+$total_enquiry = App\Models\Contact::where('is_view', 0)->count();
+$total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
 ?>
 
 <div class="sidebar sidebar-dark sidebar-fixed border-end" id="sidebar">
@@ -48,19 +50,29 @@ $notifications_latest = optional($notifications)->take(5);
             <li class="nav-group" aria-expanded="true">
                 <a class="nav-link nav-group-toggle" href="">
                     <i class="nav-icon fa-solid fa-question"></i>&nbsp;@lang('Inquirys')<p class="notify001">
-                        1
+                        {{$total_enquiry + $total_checkouts}}
                     </p>
                 </a>
                 <ul class="nav-group-items compact" style="height: auto;">
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/massage">
-                            <span class="nav-icon"><span class="nav-icon-bullet"></span></span> Inquiry
+                        <a class="nav-link" href="{{route('massage.index')}}">
+                            <span class="nav-icon">
+                                <span class="nav-icon-bullet"></span>
+                            </span> <span id="is_view">Inquiry</span>
+                            <p class="notify001">
+                                {{$total_enquiry}}
+                            </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/inquairy">
-                            <span class="nav-icon"><span class="nav-icon-bullet"></span></span>Property Inquiry
-
+                        <a class="nav-link" href="{{route('inquairy.index')}}">
+                        
+                            <span class="nav-icon">
+                                <span class="nav-icon-bullet"></span>
+                            </span> <span id="is_viewchackout">Property Inquiry</span>
+                            <p class="notify001">
+                                {{$total_checkouts}}
+                            </p>
                         </a>
                     </li>
                 </ul>

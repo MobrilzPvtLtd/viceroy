@@ -33,8 +33,8 @@
     <section class="contact_area pt_40 xs_pt_100 pb_120 xs_pb_100">
         <div class="container d-flex">
             <div class="row justify-content-between">
-                @if ($CartCount > 0)
-                    @foreach ($CartDetails as $cartItem)
+                @if ($sessionData['CartDetails'] > 0)
+                    @foreach ($sessionData['CartDetails'] as $cartItem)
                         <div class="col-xxl-4 col-lg-5 wow fadeInLeft w-75" data-wow-duration="1.5s">
                             <li class="grid_4 item">
                                 <div class="preview">
@@ -73,8 +73,18 @@
             <div class="col-xxl-7 col-lg-7 wow fadeInRight" data-wow-duration="1.5s">
                 <form action="{{route('checkout.submit')}}" method="POST">
                     @csrf
-                    <input type="hidden" value="{{$cartItem['title']}}" name="title">
-                    <input type="hidden" value="{{$cartItem['image']}}" name="image">
+                    @php
+                        $titles = [];
+                        foreach ($sessionData['CartDetails'] as $cartItems) {
+                            $titles[] = $cartItems['title'];
+                            $images[] = $cartItems['image'];
+                        }
+
+                        $titlesString = implode(', ', $titles);
+                        $imagesString = implode(', ', $images);
+                    @endphp
+                    <input type="hidden" name="title[]" value="{{ $titlesString }}">
+                    <input type="hidden" value="{{ $imagesString }}" name="image[]">
                     <div class="row">
                         @include('flash::alert-message')
                         <div class="col-md-6 col-lg-12 col-xl-6">

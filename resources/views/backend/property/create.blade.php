@@ -50,12 +50,6 @@
                                         placeholder="">
                                 </div>
 
-                                {{-- <div class="form-group mb-2 col-4">
-                                    <label for="city">Slug</label>
-                                    <input type="text" class="form-control" name="slag"
-                                        value="{{ old('slag') }}"placeholder="">
-                                </div> --}}
-
                                 <div class="form-group mb-2 col-4">
                                     <label for="">full Address </label>
                                     <textarea class="form-control" id="ct_name" name="address" value="{{ old('address') }}" placeholder=""></textarea>
@@ -90,7 +84,6 @@
                                         <option value="Apartment">Apartment</option>
                                         <option value="Villa">Villa</option>
                                         <option value="Plot">Plot</option>
-                                        <option value="Unique">Unique</option>
                                         <option value="Bungalows">Bungalows</option>
                                         <option value="Flats">Flats</option>
 
@@ -107,7 +100,7 @@
                                         value="{{ old('image[]') }}" multiple>
                                 </div>
                                 <div class="form-group mb-2 col-4">
-                                    <label for="city">Property Video</label>
+                                    <label >Property Video</label>
                                     <input type="text" class="form-control" name="video"
                                         value="{{ old('video') }}">
                                 </div>
@@ -129,17 +122,16 @@
                                     <label for="city">Discription</label>
                                     <textarea type="text" class="form-control" name="desc" value="{{ old('desc') }}"placeholder=""></textarea>
                                 </div>
-                                <div class="form-group mb-2 col-4">
+                                {{-- <div class="form-group mb-2 col-4">
                                     <label>property_status</label>
                                     <select class="form-control" id="p_type" name="property_status"
                                         value="{{ old('property_status') }}">
                                         <option value="">select property </option>
                                         <option value="For Sale">For Sale </option>
                                         <option value="For Buy">For Buy</option>
-                                        {{-- <option value="standard">Standard</option> --}}
 
                                     </select>
-                                </div>
+                                </div> --}}
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Property ID</label>
                                     <input type="text" class="form-control" name="p_id"

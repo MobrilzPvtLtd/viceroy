@@ -64,7 +64,7 @@
                             <h4>{{ $property->title }}</h4>
                             <ul class="property_details_share d-flex flex-wrap">
 
-                                <button type="submit" id="addToCart" data-id="{{ $property->id }}" class=" btn btn-primary"><i class="fa fa-shopping-cart"></i></button>
+                                <button type="submit" id="addToCart" data-id="{{ $property->id }}" class=" btn btn-primary"><i class="fa fa-heart"></i></button>
 
                             </ul>
                         </div>
@@ -453,6 +453,7 @@
             </div>
         </div>
     </section>
+
 @endsection
 @section('script')
 <script>
@@ -477,6 +478,11 @@
                 success: function(response) {
                     var responseData = JSON.parse(response);
                     $('#cartItems').html('');
+                    console.log(responseData);
+
+                    var cartCount = 0;
+
+                    // var cartCount = responseData.CartDetails.length;
 
                     $.each(responseData.CartDetails, function(key, val) {
                         var cartItems = val;
@@ -490,7 +496,13 @@
                             cartItems.id +
                             ')" class="btn-remove"><i class="far fa-trash-alt"></i></a></p></div></div></li>'
                         );
+
+                        cartCount++;
                     });
+
+                    // Update cart count
+                    $('#cartCount').text(cartCount);
+
                 },
                 error: function(xhr, status, error) {
                     console.log('An error occurred: ' + error);
@@ -499,5 +511,6 @@
         });
     });
 </script>
+
 
 @endsection

@@ -12,7 +12,6 @@
                         <table id="datatable" class="table table-hover">
                             <thead>
                                 <tr>
-
                                     <th scope="col">Id</th>
                                     <th scope="col">Property Name</th>
                                     <th scope="col">Email</th>
@@ -27,20 +26,29 @@
                             </thead>
                             <tbody>
                                 @foreach ($checkouts as $checkout)
-                                <tr>
-                                    <td>{{ $checkout->id }}</td>
-                                    <td>{{ $checkout->title }}</td>
-                                    <td>{{ Auth::user()->email }}</td>
-                                    <td>{{ $checkout->name }}</td>
-                                    <td>{{ $checkout->number }}</td>
-                                    <td>{{ $checkout->date }}</td>
-                                    <td>{{ $checkout->st_time }}</td>
-                                    <td>{{ $checkout->en_time }}</td>
-                                    <td>{{ $checkout->massage }}</td>
-
-
-                                </tr>
-                            @endforeach
+                                    @php
+                                        $titlesArray = json_decode($checkout->title, true);
+                                    @endphp
+                                    <tr>
+                                        <td>{{ $checkout->id }}</td>
+                                        <td>
+                                            @if (is_array($titlesArray))
+                                                @foreach ($titlesArray as $title)
+                                                    {{ $title }}<br>
+                                                @endforeach
+                                            @else
+                                                No titles available
+                                            @endif
+                                        </td>
+                                        <td>{{ Auth::user()->email }}</td>
+                                        <td>{{ $checkout->name }}</td>
+                                        <td>{{ $checkout->number }}</td>
+                                        <td>{{ $checkout->date }}</td>
+                                        <td>{{ $checkout->st_time }}</td>
+                                        <td>{{ $checkout->en_time }}</td>
+                                        <td>{{ $checkout->massage }}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

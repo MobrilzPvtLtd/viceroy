@@ -159,11 +159,11 @@
          height: 50px;
          /* background: #fff; */
          padding: 10px;
-         border-radius: 50%;
-         font-size: 20px;
+         border-radius: 57%;
+         font-size: 27px;
          margin-bottom: 0px;
          cursor: pointer;
-         text-align: left;
+         text-align:center;
          transition: all 0.2s ease-in-out;
          color:#000000;
          margin-right: 52px;

@@ -138,16 +138,7 @@
                                     <label for="city">Discription</label>
                                     <textarea type="text" class="form-control" name="desc" placeholder="">{{ $property->desc }}</textarea>
                                 </div>
-                                <div class="form-group mb-2 col-4">
-                                    <label >property_status</label>
-                                    <select class="form-control" id="" name="property_status" value="">
-                                        <option value="{{ $property->property_status }} ">{{ $property->property_status }} </option>
-                                        <option value="For Sale">For Sale </option>
-                                        <option value="For Buy">For Buy</option>
-                                        {{-- <option value="standard">Standard</option> --}}
 
-                                    </select>
-                                </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Property ID</label>
                                     <input type="text" class="form-control" name="p_id"

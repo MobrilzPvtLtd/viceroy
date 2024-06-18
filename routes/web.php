@@ -14,7 +14,7 @@ use App\Http\Controllers\Backend\FacilitiesController;
 use App\Http\Controllers\Backend\CurrencyController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Backend\ContactsController;
-use App\Http\Controllers\Backend\InquairyController ;
+use App\Http\Controllers\Backend\InquairyController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Backend\BrandsController;
@@ -46,6 +46,8 @@ Route::resource('admin/brand', BrandsController::class);
 Route::post('cart/add', [CartController::class, 'add'])->name('cart.add');
 Route::get('cart/view', [CartController::class, 'viewCartData']);
 Route::post('cart/delete', [CartController::class, 'DeleteIteme']);
+Route::get('/cart/count', [CartController::class, 'count'])->name('cart.count');
+
 // contact
 Route::post('contact', [ContactController::class, 'submit'])->name('contact.submit');
 // checkout
@@ -54,6 +56,9 @@ Route::post('checkout', [CheckoutController::class, 'submit'])->name('checkout.s
 Route::resource('admin/currency', CurrencyController::class);
 //Contact
 Route::resource('admin/massage', ContactsController::class);
+Route::post('is_view', [ContactsController::class, 'is_view'])->name('is_view');
+Route::post('is_viewchackout', [ContactsController::class, 'is_viewchackout'])->name('is_viewchackout');
+
 //Inquairy property
 Route::resource('admin/inquairy', InquairyController::class);
 // property

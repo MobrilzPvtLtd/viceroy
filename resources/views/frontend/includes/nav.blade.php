@@ -57,14 +57,14 @@
 
 
                             <!-- <ul>
-                            @can('view_backend')<li><a>Admin</a></li>@endif
-                            <li><a href="{{ route('frontend.users.profile') }}">Profile</a></li>
-                            <li><form id="logout-form" action="{{ route('logout') }}" method="POST">
-                                {{ csrf_field() }}
+                                @can('view_backend')<li><a>Admin</a></li>@endif
+                                <li><a href="{{ route('frontend.users.profile') }}">Profile</a></li>
+                                <li><form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                    {{ csrf_field() }}
 
-                                <button class="btn btn-text" type="submit">Logout</button>
-                            </form></li>
-                        </ul> -->
+                                    <button class="btn btn-text" type="submit">Logout</button>
+                                </form></li>
+                            </ul> -->
 
                             <div class="dropdown">
                                 <button class="dropdown-btn"> <i class="fa fa-user" aria-hidden="true"></i> Hello
@@ -85,11 +85,11 @@
                     <li>
                         <div class="content">
                             <div class="test-cart" id='cart'>
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                <i class="fa fa-heart" aria-hidden="true"></i>
                             </div>
                         </div>
-                        <p class="notify001">
-                            1
+                        <p class="notify001" id="cartCount">
+                            {{ session()->has('cart') ? count(session('cart')) : 0 }}
                         </p>
                     </li>
                 </ul>
@@ -120,13 +120,15 @@
                                 '</div>' +
                                 '<div class="inner_container">' +
                                 '<div class="col_1of2 align-center picker">' +
-                                '<p><a href="#" onclick="RemoveFromCart(' + cartItem.id + ')" class="btn-remove">' +
+                                '<p><a href="#" onclick="RemoveFromCart(' + cartItem.id +
+                                ')" class="btn-remove">' +
                                 '<i class="far fa-trash-alt"></i></a></p>' +
                                 '</div>' +
                                 '</div>' +
                                 '</li>'
                             );
                         });
+                        location.reload();
                     },
                     error: function(xhr, status, error) {
                         console.log('An error occurred: ' + error);

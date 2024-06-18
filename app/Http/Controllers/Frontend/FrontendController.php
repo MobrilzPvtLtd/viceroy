@@ -49,7 +49,7 @@ class FrontendController extends Controller
         $citys = City::all();
         $brands = Brands::all();
         $currencys = Currency::all();
-        $professionals = Professionals::paginate(4);
+        $professionals = Professionals::all();
 
 
         return view('frontend.index', compact('propertys', 'countrys', 'citys', 'brands', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes','professionals'));
@@ -200,7 +200,7 @@ class FrontendController extends Controller
         $sessionData['CartCount'] = count($cart);
         $sessionData['CartDetails'] = $cart;
 
-        return view('frontend.pages.checkout', $sessionData);
+        return view('frontend.pages.checkout', compact('sessionData'));
     }
 
     /**

@@ -11,6 +11,7 @@ class InquairyController extends Controller
     public function index()
     {
         $checkouts = Checkout::all();
-        return view('backend.inquairy.inquairy', compact('checkouts'));
+        $titles = Checkout::all();
+        return view('backend.inquairy.inquairy', compact('checkouts','titles'));
     }
 }

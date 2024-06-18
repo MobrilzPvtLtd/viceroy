@@ -79,6 +79,48 @@
         @stack('after-scripts')
         <!-- / Scripts -->
 
+        <script>
+            $("#is_view").click(function() {
+                $(document).ready(function() {
+                $.ajax({
+                    url: '/is_view',
+                    type: 'post',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                    },
+                    success: function(response) {
+                        console.log(response);
+                        // $('#cartItems').html('');
+                    },
+                    error: function(xhr, status, error) {
+                        console.log('An error occurred: ' + error);
+                    }
+                });
+                });
+            });
+        </script>
+         <script>
+            $("#is_viewchackout").click(function() {
+                $(document).ready(function() {
+                    // alert(123);
+                $.ajax({
+                    url: '/is_viewchackout',
+                    type: 'post',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                    },
+                    success: function(response) {
+                        console.log(response);
+                        // $('#cartItems').html('');
+                    },
+                    error: function(xhr, status, error) {
+                        console.log('An error occurred: ' + error);
+                    }
+                });
+                });
+            });
+        </script>
+
     </body>
 
 </html>
