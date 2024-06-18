@@ -9,8 +9,7 @@
     <title>@yield('title') | {{ config('app.name') }}</title>
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
-    <meta name="description" content="{{ setting('meta_description') }}">
-    <meta name="keyword" content="{{ setting('meta_keyword') }}">
+
     @include('frontend.includes.meta')
 
     <!-- Shortcut Icon -->
@@ -34,6 +33,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/aryann.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}" />
 
+    @yield('CustomCss')
 
     <!--jquery library js-->
     <script src="/assets/js/jquery-3.7.1.min.js"></script>

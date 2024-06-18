@@ -3,6 +3,13 @@
     {{ app_name() }}
 @endsection
 
+@section('CustomCss')
+
+<meta name="description" content="test">
+<link rel="stylesheet" href="{{ asset('assets/css/buy.css') }}" />
+
+@endsection
+
 @section('content')
     <section class="breadcrumbs" style="background: url(assets/images/breadcrumbs_bg.jpg)">
         <div class="breadcrumbs_overly">
