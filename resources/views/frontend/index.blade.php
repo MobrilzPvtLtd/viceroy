@@ -3,6 +3,12 @@
 @section('title')
     {{ app_name() }}
 @endsection
+@section('CustomCss')
+
+<meta name="description" content="test">
+<link rel="stylesheet" href="{{ asset('assets/css/home.css') }}" />
+
+@endsection
 {{-- @section('style')
     <style>
         .banner_area div {

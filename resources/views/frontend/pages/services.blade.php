@@ -3,7 +3,12 @@
 @section('title')
     {{ app_name()}}
 @endsection
+@section('CustomCss')
 
+<meta name="description" content="test">
+<link rel="stylesheet" href="{{ asset('assets/css/services.css') }}" />
+
+@endsection
 @section('content')
 	<style>
 	.about_text {

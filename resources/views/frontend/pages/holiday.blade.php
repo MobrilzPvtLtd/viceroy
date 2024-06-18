@@ -2,7 +2,12 @@
 @section('title')
     {{ app_name() }}
 @endsection
+@section('CustomCss')
 
+<meta name="description" content="test">
+<link rel="stylesheet" href="{{ asset('assets/css/holiday.css') }}" />
+
+@endsection
 @section('content')
     <style>
         .about_text {
@@ -55,7 +60,7 @@
             color: #fff;
         }
 
-        
+
     </style>
 
 

@@ -2,6 +2,12 @@
 @section('title')
     {{ app_name() }}
 @endsection
+@section('CustomCss')
+
+<meta name="description" content="test">
+<link rel="stylesheet" href="{{ asset('assets/css/about.css') }}" />
+
+@endsection
 
 @section('content')
     <section class="breadcrumbs" style="background: url(assets/images/breadcrumbs_bg.jpg);">
