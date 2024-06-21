@@ -58,6 +58,11 @@
                                     <input type="text" class="form-control" id="city" name="url" value="{{ $holiday->url }}">
                                 </div>
                                 <div class="form-group mb-2 col-4">
+                                    <label for="featured">Featured</label>
+                                    <input type="checkbox" name="featured" value="1"
+                                        {{ $holiday->featured ? 'checked' : '' }}>
+                                </div>
+                                <div class="form-group mb-2 col-4">
                                     <label for="city">Property Images</label>
                                     <input type="file" class="form-control" name="image[]" multiple value="">
                                     <div>
@@ -72,11 +77,6 @@
                                         @endif
                                     </div>
                                 </div>
-                                {{-- <div class="form-group mb-2 col-12">
-                                    <label for="city">Property Images</label>
-
-                                    <input type="file" class="form-control" name="image[]" multiple>
-                                </div> --}}
 
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>

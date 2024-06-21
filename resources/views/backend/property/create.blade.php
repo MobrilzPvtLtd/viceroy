@@ -72,6 +72,21 @@
                                         value="{{ old('number_of_room') }}" placeholder="">
                                 </div>
                                 <div class="form-group mb-2 col-4">
+                                    <label for="city">Hall</label>
+                                    <input type="text" class="form-control" name="hall"
+                                        value="{{ old('hall') }}" placeholder="">
+                                </div>
+                                <div class="form-group mb-2 col-4">
+                                    <label for="city">Kichen</label>
+                                    <input type="text" class="form-control"  name="kichen"
+                                        value="{{ old('kichen') }}" placeholder="">
+                                </div>
+                                <div class="form-group mb-2 col-4">
+                                    <label for="city">Dining</label>
+                                    <input type="text" class="form-control"  name="dining"
+                                        value="{{ old('dining') }}" placeholder="">
+                                </div>
+                                <div class="form-group mb-2 col-4">
                                     <label for="city">price</label>
                                     <input type="text" class="form-control" id="city" name="price"
                                         value="{{ old('price') }}" placeholder="">
@@ -79,8 +94,8 @@
 
                                 <div class="form-group mb-2 col-4">
                                     <label>Type of Property</label>
-                                    <select class="form-control" name="p_type" value="{{ old('p_type') }}">
-                                        <option value="">select property </option>
+                                    <select class="form-control" name="p_type" value="">
+                                        <option value="{{ old('p_type') }}">select property </option>
                                         <option value="Apartment">Apartment</option>
                                         <option value="Villa">Villa</option>
                                         <option value="Plot">Plot</option>
@@ -122,27 +137,10 @@
                                     <label for="city">Discription</label>
                                     <textarea type="text" class="form-control" name="desc" value="{{ old('desc') }}"placeholder=""></textarea>
                                 </div>
-                                {{-- <div class="form-group mb-2 col-4">
-                                    <label>property_status</label>
-                                    <select class="form-control" id="p_type" name="property_status"
-                                        value="{{ old('property_status') }}">
-                                        <option value="">select property </option>
-                                        <option value="For Sale">For Sale </option>
-                                        <option value="For Buy">For Buy</option>
-
-                                    </select>
-                                </div> --}}
-                                <div class="form-group mb-2 col-4">
-                                    <label for="city">Property ID</label>
-                                    <input type="text" class="form-control" name="p_id"
-                                        value="{{ old('p_id') }}"placeholder="">
-                                </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="featured">Featured</label>
                                     <input type="checkbox" name="featured" value="1">
-
                                 </div>
-
                             </div>
                             <div class="form-group">
                                 <label for="facilities">Facilities:</label><br>

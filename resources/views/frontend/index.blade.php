@@ -4,10 +4,8 @@
     {{ app_name() }}
 @endsection
 @section('CustomCss')
-
-<meta name="description" content="test">
-<link rel="stylesheet" href="{{ asset('assets/css/home.css') }}" />
-
+    <meta name="description" content="test">
+    <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}" />
 @endsection
 {{-- @section('style')
     <style>
@@ -44,10 +42,10 @@
                                         </button>
                                     </li>
                                     <!--<li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                data-bs-target="#pills-profile" type="button" role="tab"
-                                                aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                        </li>-->
+                                                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                        data-bs-target="#pills-profile" type="button" role="tab"
+                                                        aria-controls="pills-profile" aria-selected="false">Sell</button>
+                                                </li>-->
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
                                             data-bs-target="#pills-contact" type="button" role="tab"
@@ -397,12 +395,12 @@
         </div>
     </section>
     <!--=============================
-                                                                                ABOUT END
-                                                                            ==============================-->
+                                                                                        ABOUT END
+                                                                                    ==============================-->
 
     <!--=============================
-                                                                                DESTINATION START
-                                                                            ==============================-->
+                                                                                        DESTINATION START
+                                                                                    ==============================-->
     <section class="destination_area pt_115 xs_pt_110 pb_60 xs_pb_90">
         <div class="container">
             <div class="row justify-content-center">
@@ -537,12 +535,12 @@
         </div>
     </section>
     <!--=============================
-                                                                                DESTINATION END
-                                                                            ==============================-->
+                                                                                        DESTINATION END
+                                                                                    ==============================-->
 
     <!--=============================
-                                                                                PROPERTY START
-                                                                            ==============================-->
+                                                                                        PROPERTY START
+                                                                                    ==============================-->
     <section class="property_area pt_60 xs_pt_95 pb_50 xs_pb_95">
         <div class="container">
             <div class="row justify-content-center text-align-center">
@@ -578,7 +576,7 @@
                             </div>
                             <div class="single_property_text">
                                 <div class="single_property_top">
-                                    <a class="item_title" href="">{{ $property->title }}</a>
+                                    <a class="item_title" href="{{ route('property', $property->slag) }}">{{ $property->title }}</a>
                                     <p>
                                         <i class="fas fa-map-marker-alt"></i>{{ $property->address }}
                                     </p>
@@ -625,13 +623,91 @@
 
         </div>
     </section>
-    <!--=============================
-                                                                                PROPERTY END
-                                                                            ==============================-->
+
+
+    <section class="property_area pt_60 xs_pt_95 pb_50 xs_pb_95">
+        <div class="container">
+            <div class="row justify-content-center text-align-center">
+                <div class="col-xl-6 wow fadeInUp" data-wow-duration="1.5s">
+                    <div class="section_heading mb_25">
+                        <h2> Book your Holiday Rental Listings.</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                @foreach ($holidays as $holiday)
+                    <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
+                        <div class="single_property">
+                            <div class="single_property_img">
+                                @php
+                                    $images = json_decode($holiday->image);
+                                @endphp
+
+                                @foreach ($images as $image)
+                                    <img src="{{ asset('public/uploads/' . trim($image)) }}" alt="Image"
+                                        class="img-fluid w-100">
+                                @endforeach
+                                {{-- <a class="feature_link" href="#">for sale</a> --}}
+                                @if ($holiday->featured)
+                                    <a class="feature_link feature" href="#">Featured</a>
+                                @endif
+
+                            </div>
+
+                            <div class="single_property_text">
+                                <div class="single_property_top">
+                                    <a target="blank" class="item_title"
+                                        href="{{ $holiday->url }}">{{ $holiday->name }}</a>
+                                    <p>
+                                        <i class="fas fa-map-marker-alt"></i>{{ $holiday->address }}
+                                    </p>
+                                    <ul class="d-flex flex-wrap">
+                                        <li>
+                                            <span><img src="assets/images/bad.png" alt="img"
+                                                    class="img-fluid w-100" /></span>
+                                            {{ $holiday->beds }} Beds
+                                        </li>
+                                        <li>
+                                            <span><img src="assets/images/bathtab.png" alt="img"
+                                                    class="img-fluid w-100" /></span>
+                                            {{ $holiday->bath }} Baths
+                                        </li>
+                                        <li>
+                                            <span><img src="assets/images/squre.png" alt="img"
+                                                    class="img-fluid w-100" /></span>
+                                            {{ $holiday->area }} Sq Ft
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="single_property_bottom d-flex flex-wrap justify-content-between">
+                                    <a target="blank" class="read_btn" href="{{ $holiday->url }}">More Details<i
+                                            class="fas fa-arrow-right"></i></a>
+                                </div>
+                                {{-- <div class="single_property_bottom d-flex flex-wrap justify-content-between">
+                            <a class="read_btn"><i aria-hidden="true"></i>{{ $holiday->p_type }}</a>
+                        </div> --}}
+                                <span class="property_price">{{ $holiday->p_type }}</span>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+                <div style="text-align: center">
+                    {!! $holidays->links() !!}
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 
     <!--=============================
-                                                                                AGENT START
-                                                                            ==============================-->
+                                                                                        PROPERTY END
+                                                                                    ==============================-->
+
+    <!--=============================
+                                                                                        AGENT START
+                                                                                    ==============================-->
     <section class="agent_area pt_60 xs_pt_95 pb_70 xs_pb_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -806,12 +882,12 @@
 
     </section>
     <!--=============================
-                                                                                AGENT END
-                                                                            ==============================-->
+                                                                                        AGENT END
+                                                                                    ==============================-->
 
     <!--=============================
-                                                                                FIND STATE START
-                                                                            ==============================-->
+                                                                                        FIND STATE START
+                                                                                    ==============================-->
     <section class="find_state" style="background: url(assets/images/find_state.jpg)">
         <div id="vbg12" data-vbg-loop="true" data-vbg="https://youtu.be/ec_fXMrD7Ow?si=m9LJu9X3lzTP5Erz"></div>
         <div class="container">
@@ -826,24 +902,24 @@
         </div>
     </section>
     <!--=============================
-                                                                                FIND STATE END
-                                                                            ==============================-->
+                                                                                        FIND STATE END
+                                                                                    ==============================-->
 
     <!--=============================
-                                                                                BLOG START
-                                                                            ==============================-->
+                                                                                        BLOG START
+                                                                                    ==============================-->
 
     <!--=============================
-                                                                                BLOG END
-                                                                            ==============================-->
+                                                                                        BLOG END
+                                                                                    ==============================-->
 
     <!--=============================
-                                                                                DISCOVER START
-                                                                            ==============================-->
+                                                                                        DISCOVER START
+                                                                                    ==============================-->
 
     <!--=============================
-                                                                                PARTNER START
-                                                                            ==============================-->
+                                                                                        PARTNER START
+                                                                                    ==============================-->
     <section class="partner_area pt_30 pb_30">
         <div class="container">
             <div class="row justify-content-center">

@@ -23,21 +23,34 @@
         </div>
     </section>
     <!--=============================
-                                    BREADCRUMBS END
-                                ==============================-->
+                                        BREADCRUMBS END
+                                    ==============================-->
 
 
     <!--=============================
-                                    PROPERTY DETAILS START
-                                ==============================-->
+                                        PROPERTY DETAILS START
+                                    ==============================-->
     <section class="property_details pt_50 xs_pt_100 pb_105 xs_pb_85">
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
                 <div class=" col-xl-12">
 
                     <div id="testimonial-slider" class="">
-
-                        <div class="testimonial">
+                        @if ($property->image)
+                            @php
+                                $images = unserialize($property->image);
+                            @endphp
+                            @if ($images && count($images) > 0)
+                                @foreach ($images as $index => $image)
+                                    <div class="img-fluid w-100 {{ $index == 0 ? 'active' : '' }}">
+                                        <img src="{{ asset('public/' . $image) }}" alt="Image">
+                                    </div>
+                                @endforeach
+                            @endif
+                        @else
+                            <p>No images available</p>
+                        @endif
+                        {{-- <div class="testimonial">
                             <div class="pic">
                                 @php
                                     $images = unserialize($property->image);
@@ -48,12 +61,12 @@
                                     <p>No images available</p>
                                 @endif
                             </div>
-                        </div>
-                        <div class="testimonial">
+                        </div> --}}
+                        {{-- <div class="testimonial">
                             <div class="pic">
 
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -64,15 +77,15 @@
                             <h4>{{ $property->title }}</h4>
                             <ul class="property_details_share d-flex flex-wrap">
 
-                                <button type="submit" id="addToCart" data-id="{{ $property->id }}" class=" btn btn-primary"><i class="fa fa-heart"></i></button>
+                                <button type="submit" id="addToCart" data-id="{{ $property->id }}"
+                                    class=" btn btn-primary"><i class="fa fa-heart"></i></button>
 
                             </ul>
                         </div>
                         <div class="property_details_address d-flex flex-wrap justify-content-between">
                             <ul class="d-flex flex-wrap">
                                 <li><i class="fas fa-map-marker-alt"></i>{{ $property->address }}</li>
-                                {{-- <li><i class="far fa-clock"></i>10 months ago</li> --}}
-                                <li><span>{{ $property->property_status }}</span></li>
+                                <li><span>{{ $property->typ }}</span></li>
                             </ul>
                             <h3>$ {{ $property->price }}</h3>
                         </div>
@@ -456,61 +469,76 @@
 
 @endsection
 @section('script')
-<script>
-    var isAuthenticated = @json(Auth::check());
-</script>
-<script>
-    $(document).ready(function() {
-        $('#addToCart').click(function() {
-            if (!isAuthenticated) {
-                window.location.href = '{{ route('login') }}';
-                return;
-            }
-
-            var itemId = $(this).data('id');
-            $.ajax({
-                url: '/cart/add',
-                type: 'POST',
-                data: {
-                    _token: '{{ csrf_token() }}',
-                    id: itemId
-                },
-                success: function(response) {
-                    var responseData = JSON.parse(response);
-                    $('#cartItems').html('');
-                    console.log(responseData);
-
-                    var cartCount = 0;
-
-                    // var cartCount = responseData.CartDetails.length;
-
-                    $.each(responseData.CartDetails, function(key, val) {
-                        var cartItems = val;
-
-                        $('#cartItems').prepend(
-                            '<li class="grid_4 item container"><div class="preview">   <img style="width: 100px;" src="/public/' +
-                            cartItems.image +
-                            '"></div>                 <div class="details" data-price="15.50"><h3>' +
-                            cartItems.title +
-                            '</h3>      </div><div class="inner_container"><div class="col_1of2 align-center picker"><p><a href="#" OnClick="RemoveFromCart(' +
-                            cartItems.id +
-                            ')" class="btn-remove"><i class="far fa-trash-alt"></i></a></p></div></div></li>'
-                        );
-
-                        cartCount++;
-                    });
-
-                    // Update cart count
-                    $('#cartCount').text(cartCount);
-
-                },
-                error: function(xhr, status, error) {
-                    console.log('An error occurred: ' + error);
+    <script>
+        var isAuthenticated = @json(Auth::check());
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#addToCart').click(function() {
+                if (!isAuthenticated) {
+                    window.location.href = '{{ route('login') }}';
+                    return;
                 }
+
+                var itemId = $(this).data('id');
+                $.ajax({
+                    url: '/cart/add',
+                    type: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        id: itemId
+                    },
+                    success: function(response) {
+                        var responseData = JSON.parse(response);
+                        $('#cartItems').html('');
+                        console.log(responseData);
+
+                        var cartCount = 0;
+
+                        // var cartCount = responseData.CartDetails.length;
+
+                        $.each(responseData.CartDetails, function(key, val) {
+                            var cartItems = val;
+
+                            $('#cartItems').prepend(
+                                '<li class="grid_4 item container"><div class="preview">   <img style="width: 100px;" src="/public/' +
+                                cartItems.image +
+                                '"></div>                 <div class="details" data-price="15.50"><h3>' +
+                                cartItems.title +
+                                '</h3>      </div><div class="inner_container"><div class="col_1of2 align-center picker"><p><a href="#" OnClick="RemoveFromCart(' +
+                                cartItems.id +
+                                ')" class="btn-remove"><i class="far fa-trash-alt"></i></a></p></div></div></li>'
+                            );
+
+                            cartCount++;
+                        });
+
+                        // Update cart count
+                        $('#cartCount').text(cartCount);
+
+                    },
+                    error: function(xhr, status, error) {
+                        console.log('An error occurred: ' + error);
+                    }
+                });
             });
         });
-    });
-</script>
-
-
+    </script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js">
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#testimonial-slider").owlCarousel({
+                items: 1,
+                itemsDesktop: [1000, 1],
+                itemsDesktopSmall: [979, 1],
+                itemsTablet: [768, 1],
+                pagination: false,
+                navigation: true,
+                navigationText: ["", ""],
+                autoPlay: true
+            });
+        });
+    </script>
 @endsection

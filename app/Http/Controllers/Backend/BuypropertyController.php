@@ -12,6 +12,7 @@ class BuypropertyController extends Controller
     public function index()
     {
         $buys = Buy::all();
+
         return view('backend.buy.index',compact('buys'));
     }
 

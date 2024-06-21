@@ -45,8 +45,9 @@ class HolidayController extends Controller
                 $imagePaths[] = $filename;
             }
         }
-        $holidayData = $request->except('image');
+        $holidayData = $request->except('image','featured');
         $holidayData['image'] = json_encode($imagePaths);
+        $holidayData['featured'] = $request->has('featured');
         Holiday::create($holidayData);
         return redirect()->route('holiday.index')->with('success', 'Holiday has been created successfully.');
     }
@@ -94,10 +95,10 @@ class HolidayController extends Controller
             }
         }
 
-        // Update other holiday data
-        $holidayData = $request->except('image');
 
-        // If new images were uploaded, update the image field
+        $holidayData = $request->except('image','featured');
+        $holidayData['featured'] = $request->has('featured');
+
         if (!empty($imagePaths)) {
             $holidayData['image'] = json_encode($imagePaths);
         }

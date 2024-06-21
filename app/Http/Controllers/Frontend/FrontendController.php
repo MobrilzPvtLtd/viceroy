@@ -41,7 +41,8 @@ class FrontendController extends Controller
         if ($request->has('p_type') && $request->type != '') {
             $query->where('p_type', $request->type);
         }
-        $propertys = Property::where('featured', '!=', 0)->paginate(4);
+        $propertys = Property::where('featured', '!=', 0)->paginate(6);
+        $holidays = Holiday::where('featured', '!=', 0)->paginate(6);
         $uniquePropertyTypes = Property::whereIn('type', ['buy', 'rent'])->distinct()->pluck('p_type')->sort();
         $uniqueBedrooms = Property::whereIn('type', ['buy', 'rent'])->distinct()->pluck('number_of_room')->sort();
         $uniquePrices = Property::whereIn('type', ['buy', 'rent'])->distinct()->pluck('price')->sort();
@@ -52,7 +53,7 @@ class FrontendController extends Controller
         $professionals = Professionals::all();
 
 
-        return view('frontend.index', compact('propertys', 'countrys', 'citys', 'brands', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes','professionals'));
+        return view('frontend.index', compact('propertys', 'countrys', 'citys', 'brands', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes','professionals','holidays'));
     }
     public function buy(Request $request)
     {
@@ -89,7 +90,6 @@ class FrontendController extends Controller
                 $infowindow[] = array('<div class="info_content"><h2>' . $property->title . '</h2><h3>' . $property->address . '</h3><a href="/property/' . $property->slag . '">Show Property</a></div>');
             }
         }
-
         $markers = $markers;
         $infowindow = $infowindow;
         return view('frontend.pages.buy', compact('propertys', 'countrys', 'citys', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes', 'markers', 'infowindow'));

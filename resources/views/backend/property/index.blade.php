@@ -13,14 +13,15 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Id</th>
-                                    <th scope="col">Property ID</th>
                                     <th scope="col">Property Name</th>
-                                    <th scope="col">Property Type</th>
                                     <th scope="col">Type of Property</th>
                                     <th scope="col"> Address</th>
                                     <th scope="col">Beds Rooms </th>
                                     <th scope="col">Bath Rooms</th>
                                     <th scope="col">Number of Rooms</th>
+                                    <th scope="col">Hall</th>
+                                    <th scope="col">kichen</th>
+                                    <th scope="col">Dining</th>
                                     <th scope="col">Area</th>
                                     <th scope="col">Discription</th>
                                     <th scope="col">price</th>
@@ -38,7 +39,6 @@
                                 @foreach ($propertys as $property)
                                     <tr>
                                         <td>{{ $property->id }}</td>
-                                        <td>{{ $property->p_id }}</td>
                                         <td>{{ $property->title }}</td>
                                         <td>{{ $property->type }}</td>
                                         <td>{{ $property->p_type }}</td>
@@ -46,6 +46,9 @@
                                         <td>{{ $property->bed }}</td>
                                         <td>{{ $property->number_bathroom }}</td>
                                         <td>{{ $property->number_of_room }}</td>
+                                        <td>{{ $property->hall }}</td>
+                                        <td>{{ $property->kichan }}</td>
+                                        <td>{{ $property->dining }}</td>
                                         <td>{{ $property->area }}</td>
                                         <td>{{ $property->desc }}</td>
                                         <td>{{ $property->price }}</td>

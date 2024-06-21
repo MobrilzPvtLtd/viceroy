@@ -53,13 +53,15 @@ class PropertyController extends Controller
             'price' => 'required',
             'desc' => 'required',
             'number_of_room' => 'required',
-            'property_status' => 'required',
             'number_bathroom' => 'required',
             'year' => 'required',
             'map' => 'required',
             'video' => 'required',
-            'p_id' => 'required',
             'facilities' => 'required',
+            'hall' => 'required',
+            'kichen' => 'required',
+            'dining' => 'required',
+
         ]);
 
         $imagePaths = [];
@@ -150,13 +152,14 @@ class PropertyController extends Controller
             'price' => 'required',
             'desc' => 'required',
             'number_of_room' => 'required',
-            'property_status' => 'required',
             'number_bathroom' => 'required',
             'year' => 'required',
             'map' => 'required',
             'video' => 'required',
-            'p_id' => 'required',
             'facilities' => 'required',
+             'hall' => 'required',
+             'kichen' => 'required',
+             'dining' => 'required',
         ]);
         $imagePaths = unserialize($property->image) ?? [];
         if ($request->hasFile('image')) {

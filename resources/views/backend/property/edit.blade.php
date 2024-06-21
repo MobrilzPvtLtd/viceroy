@@ -54,6 +54,21 @@
                                         value="{{ $property->number_of_room }}" placeholder="">
                                 </div>
                                 <div class="form-group mb-2 col-4">
+                                    <label for="city">Hall</label>
+                                    <input type="text" class="form-control" name="hall"
+                                        value="{{ $property->hall }}" placeholder="">
+                                </div>
+                                <div class="form-group mb-2 col-4">
+                                    <label for="city">Kichen</label>
+                                    <input type="text" class="form-control"  name="kichen"
+                                        value="{{ $property->kichen }}" placeholder="">
+                                </div>
+                                <div class="form-group mb-2 col-4">
+                                    <label for="city">Dining</label>
+                                    <input type="text" class="form-control"  name="dining"
+                                        value="{{ $property->dining }}" placeholder="">
+                                </div>
+                                <div class="form-group mb-2 col-4">
                                     <label for="city">price</label>
                                     <input type="text" class="form-control" id="city" name="price"
                                         value="{{ $property->price }}" placeholder="">
@@ -139,11 +154,6 @@
                                     <textarea type="text" class="form-control" name="desc" placeholder="">{{ $property->desc }}</textarea>
                                 </div>
 
-                                <div class="form-group mb-2 col-4">
-                                    <label for="city">Property ID</label>
-                                    <input type="text" class="form-control" name="p_id"
-                                        value="{{ $property->p_id }}"placeholder="">
-                                </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Slag</label>
                                     <input type="text" class="form-control" name="slag"

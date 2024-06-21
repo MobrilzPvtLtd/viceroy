@@ -34,6 +34,9 @@ return new class extends Migration
             $table->string('long');
             $table->string('lat');
             $table->boolean('featured');
+            $table->string('hall');
+            $table->string('kichan');
+            $table->string('dining');
 
             $table->timestamps();
         });

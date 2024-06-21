@@ -366,13 +366,15 @@
                                                 @if ($images !== false && is_array($images))
                                                     {{-- asset('public/uploads/' . $image) --}}
                                                     @foreach ($images as $image)
-                                                        <img src="{{ asset('public/' . $image) }}" alt="Image"
-                                                            style="width: 100%">
+                                                        <img src="{{ asset('public/' . $image) }}" alt="Image" style="width: 100%">
                                                     @endforeach
                                                 @else
                                                     <p>No images available</p>
                                                 @endif
                                                 <a class="feature_link" href="">{{ $property->type }}</a>
+                                                @if ($property->featured)
+                                                    <a class="feature_link feature" href="#">Featured</a>
+                                                @endif
                                                 <div id="testimonial-slider1" class="owl-carousel">
                                                     <div class="testimonial">
                                                         <div class="pic">
@@ -408,14 +410,29 @@
                                                             {{ $property->bed }} Beds
                                                         </li>
                                                         <li>
-                                                            <span><img src="assets/images/bathtab.png" alt="img"
+                                                            <span><img src="assets/images/bath.png" alt="img"
                                                                     class="img-fluid w-100" /></span>
                                                             {{ $property->number_bathroom }} Baths
                                                         </li>
                                                         <li>
-                                                            <span><img src="assets/images/squre.png" alt="img"
+                                                            <span><img src="assets/images/LAND.png" alt="img"
                                                                     class="img-fluid w-100" /></span>
                                                             {{ $property->area }} Sq Ft
+                                                        </li>
+                                                        <li>
+                                                            <span><img src="assets/images/squre.png" alt="img"
+                                                                    class="img-fluid w-100" /></span>
+                                                            {{ $property->hall }}  Hall
+                                                        </li>
+                                                        <li>
+                                                            <span><img src="assets/images/squre.png" alt="img"
+                                                                    class="img-fluid w-100" /></span>
+                                                            {{ $property->kichan }}  kichan
+                                                        </li>
+                                                        <li>
+                                                            <span><img src="assets/images/dining.png" alt="img"
+                                                                    class="img-fluid w-100" /></span>
+                                                            {{ $property->dining }}  dining
                                                         </li>
                                                     </ul>
                                                 </div>

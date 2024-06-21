@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('area');
             $table->string('image');
             $table->string('url');
+            $table->boolean('featured');
             $table->timestamps();
         });
     }
