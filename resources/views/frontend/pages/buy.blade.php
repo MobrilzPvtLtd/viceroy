@@ -142,11 +142,16 @@
 
                                         <div class="home_form_label">
                                             <label>Property Type</label>
-                                            <select class="select_label" name="state">
+                                            <select class="select_label" name="p_type">
                                                 <option value="">Select property</option>
-                                                @foreach ($uniquePropertyTypes as $p_type)
+                                                {{-- @foreach ($uniquePropertyTypes as $p_type)
                                                     <option value="{{ $p_type }}">{{ $p_type }}</option>
-                                                @endforeach
+                                                @endforeach --}}
+                                                <option value="Apartment">Apartment</option>
+                                                <option value="Villa">Villa</option>
+                                                <option value="Plot">Plot</option>
+                                                <option value="Bungalows">Bungalows</option>
+                                                <option value="Flats">Flats</option>
                                             </select>
                                         </div>
 
@@ -420,14 +425,14 @@
                                                             {{ $property->area }} Sq Ft
                                                         </li>
                                                         <li>
-                                                            <span><img src="assets/images/squre.png" alt="img"
+                                                            <span><img src="assets/images/hall.png" alt="img"
                                                                     class="img-fluid w-100" /></span>
                                                             {{ $property->hall }}  Hall
                                                         </li>
                                                         <li>
-                                                            <span><img src="assets/images/squre.png" alt="img"
+                                                            <span><img src="assets/images/amenities_img_7.png" alt="img"
                                                                     class="img-fluid w-100" /></span>
-                                                            {{ $property->kichan }}  kichan
+                                                            {{ $property->kichen }}  kichan
                                                         </li>
                                                         <li>
                                                             <span><img src="assets/images/dining.png" alt="img"

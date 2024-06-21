@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('p_type');
             $table->string('bed');
             $table->string('area');
+            $table->string('size');
             $table->string('address');
             $table->string('price');
             $table->string('desc');

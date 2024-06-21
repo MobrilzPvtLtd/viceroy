@@ -7,16 +7,6 @@
     <meta name="description" content="test">
     <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}" />
 @endsection
-{{-- @section('style')
-    <style>
-        .banner_area div {
-    height: 100%;
-    color: red;
-}
-
-    </style>
-@endsection --}}
-
 @section('content')
     <section class="banner_area" style="background: url(assets/images/banner_bg.jpg)">
         <div class="container container_large">
@@ -31,289 +21,29 @@
                                 psychology.
                             </p>
                         </div>
-                        <div class="sticky" id="container">
                             <div class="tab-content" id="pills-tabContent">
-                                <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
-                                            data-bs-target="#pills-home" type="button" role="tab"
-                                            aria-controls="pills-home" aria-selected="true">
-                                            Buy
-                                        </button>
-                                    </li>
-                                    <!--<li class="nav-item" role="presentation">
-                                                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                        data-bs-target="#pills-profile" type="button" role="tab"
-                                                        aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                                </li>-->
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                            data-bs-target="#pills-contact" type="button" role="tab"
-                                            aria-controls="pills-contact" aria-selected="false">
-                                            Rent
-                                        </button>
-                                    </li>
-                                </ul>
-
-                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                                    aria-labelledby="pills-home-tab" tabindex="0">
-                                    <form action="{{ route('home') }}" method="GET">
-                                        <div class="" id="home_form">
-                                            <div class="home_form_label">
-                                                <label>Country</label>
-                                                <select class="select_label" name="co_name" id="co_name" required focus>
-                                                    <option value="" disabled selected> select country</option>
-                                                    @foreach ($countrys as $country)
-                                                        <option value="{{ $country->id }}">{{ $country->co_name }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-
-                                            <div class="home_form_label">
-                                                <label>City</label>
-                                                <select class="select_label" name="ct_name" id="city" required>
-                                                    <option value="" disabled selected> select city</option>
-                                                    @foreach ($citys as $city)
-                                                        <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-
-                                            <div class="home_form_label">
-                                                <label>Bedrooms</label>
-                                                <div class="adv_search_icon" id="select_bedroom_btn">
-                                                    <input class="select_label select_bedroom_btn" name="state"
-                                                        type="button" value="Select bedrooms">
-                                                    {{-- <option value="">Select bedrooms</option>
-                                                        @foreach ($uniqueBedrooms as $bedroom)
-                                                            <option value="{{ $bedroom }}">{{ $bedroom }}</option>
-                                                        @endforeach --}}
-                                                    </input>
-                                                </div>
-
-                                                <div class="adv_search_area show_search1" id="close001">
-                                                    <div id="close_btn_minmax" class="adv_search_close adv_search_close_1">
-                                                        <i class="fal fa-times"></i>
-                                                    </div>
-
-                                                    <div id="min_max">
-                                                        <select class="select_2" name="state">
-                                                            <option value="">Min</option>
-                                                            @foreach ($uniqueBedrooms as $bedroom)
-                                                                <option value="{{ $bedroom }}">{{ $bedroom }}
-                                                                </option>
-                                                            @endforeach
-                                                        </select>
-
-                                                        <select class="select_2" name="state">
-                                                            <option value="">Max</option>
-                                                            @foreach ($uniqueBedrooms as $bedroom)
-                                                                <option value="{{ $bedroom }}">{{ $bedroom }}
-                                                                </option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="home_form_label">
-                                                <label>Price</label>
-                                                <div class="adv_search_icon2" id="select_price_btn">
-                                                    <input class="select_label select_bedroom_btn" name="state"
-                                                        type="button" value="Select price">
-                                                    {{-- @foreach ($uniquePrices as $price)
-                                                            <option value="{{ $price }}">{{ $price }}</option>
-                                                        @endforeach --}}
-                                                    </input>
-                                                </div>
-                                                <div class="adv_search_area show_search2" id="close002">
-                                                    <div id="close_btn_minmax" class="adv_search_close adv_search_close">
-                                                        <i class="fal fa-times"></i>
-                                                    </div>
-
-                                                    <div id="min_max2">
-                                                        <select class="select_2" name="state">
-                                                            <option value="">Min</option>
-                                                            @foreach ($uniquePrices as $price)
-                                                                <option value="{{ $price }}">{{ $price }}
-                                                                </option>
-                                                            @endforeach
-                                                        </select>
-
-                                                        <select class="select_2" name="state">
-                                                            <option value="">Max</option>
-                                                            @foreach ($uniquePrices as $price)
-                                                                <option value="{{ $price }}">{{ $price }}
-                                                                </option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="home_form_label ">
-                                                <label>Property Type</label>
-                                                <select class="select_label " name="state">
-                                                    <option value="">Select property</option>
-                                                    @foreach ($uniquePropertyTypes as $type)
-                                                        <option value="{{ $type }}">{{ $type }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-
-                                            <div class="home_form_label">
-                                                <label>Currency</label>
-                                                <select class="select_label" name="code">
-                                                    <option value="" disabled selected> select currency</option>
-                                                    @foreach ($currencys as $currency)
-                                                        <option value="{{ $currency->id }}">{{ $currency->code }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <div class="">
-                                                <button class="common_btn banner_input_btn" type="submit"
-                                                    style="width: 100%; margin-top: 30px">
-                                                    search
-                                                </button>
-                                            </div>
+                                <div class="form-container">
+                                    <h2>Want do you want ? </h2>
+                                    <form id="property-form" method="post">
+                                        <div class="checkbox-group">
+                                            <label>
+                                                <input type="radio" name="property-action" value="rent-house">
+                                                I want to rent a Property
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="property-action" value="buy-house">
+                                                I want to buy a Property
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="property-action" value="holiday-rental">
+                                                I want to book a holiday rental
+                                            </label>
                                         </div>
+                                        <button type="submit" class="submit-btn">Submit</button>
                                     </form>
-                                </div>
 
-                                <div class="tab-pane fade" id="pills-contact" role="tabpanel"
-                                    aria-labelledby="pills-contact-tab" tabindex="0">
-                                    <form action="{{ route('home') }}" method="GET">
-                                        <div class="" id="home_form">
-                                            <div class="home_form_label">
-                                                <label>Country</label>
-                                                <select class="select_label" name="co_name" id="rent_co_name" required
-                                                    focus>
-                                                    <option value="" disabled selected> select country</option>
-                                                    @foreach ($countrys as $country)
-                                                        <option value="{{ $country->id }}">{{ $country->co_name }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                                </select>
-                                            </div>
-                                            <div class="home_form_label">
-                                                <label>City</label>
-                                                <select class="select_label" name="ct_name" id="rent_city" required>
-                                                    <option value="" disabled selected> select city</option>
-                                                    @foreach ($citys as $city)
-                                                        <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-
-                                            <div class="home_form_label">
-                                                <label>Rooms</label>
-                                                <div class="adv_search_icon3" id="select_rooms_btn">
-                                                    <input type = "button" value = "Select Rooms" class="select_label"
-                                                        name="state">
-
-                                                    </select>
-                                                </div>
-                                                <div class="adv_search_area" id= "close003">
-                                                    <div class="adv_search_close3">
-                                                        <i class="fal fa-times"></i>
-                                                    </div>
-
-                                                    <div class="" id="min_max3">
-                                                        <div class="col-lg-6 col-sm-6">
-                                                            <select class="select_2" name="state">
-                                                                <option value="">Min</option>
-                                                                @foreach ($uniqueBedrooms as $bedroom)
-                                                                    <option value="{{ $bedroom }}">
-                                                                        {{ $bedroom }}
-                                                                    </option>
-                                                                @endforeach
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-lg-6 col-sm-6">
-                                                            <select class="select_2" name="state">
-                                                                <option value="">Max</option>
-                                                                @foreach ($uniqueBedrooms as $bedroom)
-                                                                    <option value="{{ $bedroom }}">
-                                                                        {{ $bedroom }}
-                                                                    </option>
-                                                                @endforeach
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="home_form_label">
-                                                <label>Price</label>
-                                                <div class="adv_search_icon4" id="select_price_btn2">
-                                                    <input type = "button" value= "Select Price" class="select_label"
-                                                        name="state">
-
-                                                    </input>
-                                                </div>
-                                                <div class="adv_search_area4" id="close004">
-                                                    <div class="adv_search_area4">
-                                                        <i class="fal fa-times"></i>
-                                                    </div>
-
-                                                    <div class="" id="min_max4">
-                                                        <div class="col-lg-6 col-sm-6">
-                                                            <select class="select_2" name="state">
-                                                                <option value="">Min</option>
-                                                                @foreach ($uniquePrices as $price)
-                                                                    <option value="{{ $price }}">
-                                                                        {{ $price }}
-                                                                    </option>
-                                                                @endforeach
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-lg-6 col-sm-6">
-                                                            <select class="select_2" name="state">
-                                                                <option value="">Max</option>
-                                                                @foreach ($uniquePrices as $price)
-                                                                    <option value="{{ $price }}">
-                                                                        {{ $price }}
-                                                                    </option>
-                                                                @endforeach
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="home_form_label">
-                                                <label>Property Type</label>
-                                                <select class="select_label" name="state">
-                                                    <option value="">Select property</option>
-                                                    @foreach ($uniquePropertyTypes as $type)
-                                                        <option value="{{ $type }}">{{ $type }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-
-                                            <div class="home_form_label">
-                                                <label>Currency</label>
-                                                <select class="select_label" name="code">
-                                                    <option value="" disabled selected> select currency</option>
-                                                    @foreach ($currencys as $currency)
-                                                        <option value="{{ $currency->id }}">{{ $currency->code }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <div class="">
-                                                <button class="common_btn banner_input_btn" type="submit"
-                                                    style="width: 100%; margin-top: 30px">
-                                                    search
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -596,6 +326,21 @@
                                                     class="img-fluid w-100" /></span>
                                             {{ $property->area }} Sq Ft
                                         </li>
+                                        <li>
+                                            <span><img src="assets/images/hall.png" alt="img"
+                                                    class="img-fluid w-100" /></span>
+                                            {{ $property->hall }}  Hall
+                                        </li>
+                                        <li>
+                                            <span><img src="assets/images/amenities_img_7.png" alt="img"
+                                                    class="img-fluid w-100" /></span>
+                                            {{ $property->kichan }}  kichan
+                                        </li>
+                                        <li>
+                                            <span><img src="assets/images/dining.png" alt="img"
+                                                    class="img-fluid w-100" /></span>
+                                            {{ $property->dining }}  dining
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="single_property_bottom d-flex flex-wrap justify-content-between">
@@ -678,6 +423,7 @@
                                                     class="img-fluid w-100" /></span>
                                             {{ $holiday->area }} Sq Ft
                                         </li>
+
                                     </ul>
                                 </div>
                                 <div class="single_property_bottom d-flex flex-wrap justify-content-between">
@@ -950,38 +696,6 @@
                                     No Image
                                 @endif
                             @endforeach
-                            {{-- <li>
-                                <a href="agencies_details.html"><img src="assets/images/partner_3.png" alt="img"
-                                        class="img-fluid w-100" /></a>
-                            </li>
-                            <li>
-                                <a href="agencies_details.html"><img src="assets/images/partner_4.png" alt="img"
-                                        class="img-fluid w-100" /></a>
-                            </li>
-                            <li>
-                                <a href="agencies_details.html"><img src="assets/images/partner_5.png" alt="img"
-                                        class="img-fluid w-100" /></a>
-                            </li>
-                            <li>
-                                <a href="agencies_details.html"><img src="assets/images/partner_6.png" alt="img"
-                                        class="img-fluid w-100" /></a>
-                            </li>
-                            <li>
-                                <a href="agencies_details.html"><img src="assets/images/partner_7.png" alt="img"
-                                        class="img-fluid w-100" /></a>
-                            </li>
-                            <li>
-                                <a href="agencies_details.html"><img src="assets/images/partner_8.png" alt="img"
-                                        class="img-fluid w-100" /></a>
-                            </li>
-                            <li>
-                                <a href="agencies_details.html"><img src="assets/images/partner_9.png" alt="img"
-                                        class="img-fluid w-100" /></a>
-                            </li>
-                            <li>
-                                <a href="agencies_details.html"><img src="assets/images/partner_10.png" alt="img"
-                                        class="img-fluid w-100" /></a>
-                            </li> --}}
                         </ul>
                     </div>
                 </div>
@@ -1034,4 +748,26 @@
             });
         });
     </script>
+    <script>
+        document.getElementById('property-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const selectedAction = document.querySelector('input[name="property-action"]:checked').value;
+            let redirectUrl = '';
+            switch(selectedAction) {
+                case 'rent-house':
+                    redirectUrl = '/rent';
+                    break;
+                case 'buy-house':
+                    redirectUrl = '/buy';
+                    break;
+                case 'holiday-rental':
+                    redirectUrl = '/holiday';
+                    break;
+                default:
+                    redirectUrl = '/';
+            }
+            window.location.href = redirectUrl;
+        });
+        </script>
+
 @endsection

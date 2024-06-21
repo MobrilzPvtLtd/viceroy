@@ -435,7 +435,22 @@
                                                         <li>
                                                             <span><img src="assets/images/squre.png" alt="img"
                                                                     class="img-fluid w-100" /></span>
-                                                            {{ $property->area }} Sq Ft
+                                                            {{ $property->area }} {{ $property->size }}
+                                                        </li>
+                                                        <li>
+                                                            <span><img src="assets/images/hall.png" alt="img"
+                                                                    class="img-fluid w-100" /></span>
+                                                            {{ $property->hall }}  Hall
+                                                        </li>
+                                                        <li>
+                                                            <span><img src="assets/images/amenities_img_7.png" alt="img"
+                                                                    class="img-fluid w-100" /></span>
+                                                            {{ $property->kichen }}  kichan
+                                                        </li>
+                                                        <li>
+                                                            <span><img src="assets/images/dining.png" alt="img"
+                                                                    class="img-fluid w-100" /></span>
+                                                            {{ $property->dining }}  dining
                                                         </li>
                                                     </ul>
                                                 </div>

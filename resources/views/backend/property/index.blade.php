@@ -50,6 +50,7 @@
                                         <td>{{ $property->kichan }}</td>
                                         <td>{{ $property->dining }}</td>
                                         <td>{{ $property->area }}</td>
+                                        <td>{{ $property->size }}</td>
                                         <td>{{ $property->desc }}</td>
                                         <td>{{ $property->price }}</td>
                                         <td>{{ $property->year }}</td>

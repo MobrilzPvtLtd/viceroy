@@ -106,8 +106,15 @@
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Area</label>
-                                    <input type="text" class="form-control" id="city" name="area"
+                                    <div class="d-flex">
+                                        <input type="text" class="form-control"  name="area"
                                         value="{{ old('area') }}" placeholder="">
+                                        <select class="form-control" value="" name="size">
+                                            <option value="Sq fit">Sq fit</option>
+                                            <option value="Sq meter">Sq meter</option>
+
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="image">Property Images</label>

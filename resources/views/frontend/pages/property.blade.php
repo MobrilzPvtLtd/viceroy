@@ -23,18 +23,17 @@
         </div>
     </section>
     <!--=============================
-                                        BREADCRUMBS END
-                                    ==============================-->
+                                            BREADCRUMBS END
+                                        ==============================-->
 
 
     <!--=============================
-                                        PROPERTY DETAILS START
-                                    ==============================-->
+                                            PROPERTY DETAILS START
+                                        ==============================-->
     <section class="property_details pt_50 xs_pt_100 pb_105 xs_pb_85">
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
                 <div class=" col-xl-12">
-
                     <div id="testimonial-slider" class="">
                         @if ($property->image)
                             @php
@@ -50,23 +49,6 @@
                         @else
                             <p>No images available</p>
                         @endif
-                        {{-- <div class="testimonial">
-                            <div class="pic">
-                                @php
-                                    $images = unserialize($property->image);
-                                @endphp
-                                @if (!empty($images))
-                                    <img src="{{ asset('public/' . $images[0]) }}" alt="Image" class="img-fluid w-100">
-                                @else
-                                    <p>No images available</p>
-                                @endif
-                            </div>
-                        </div> --}}
-                        {{-- <div class="testimonial">
-                            <div class="pic">
-
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -85,7 +67,7 @@
                         <div class="property_details_address d-flex flex-wrap justify-content-between">
                             <ul class="d-flex flex-wrap">
                                 <li><i class="fas fa-map-marker-alt"></i>{{ $property->address }}</li>
-                                <li><span>{{ $property->typ }}</span></li>
+                                <li><span>{{ $property->type }}</span></li>
                             </ul>
                             <h3>$ {{ $property->price }}</h3>
                         </div>
@@ -114,14 +96,14 @@
                     <div class="single_property_details mt_25 wow fadeInUp" data-wow-duration="1.5s">
                         <h4>Property Details</h4>
                         <ul class=" property_apartment_details d-flex flex-wrap mt_10">
-                            <li>
+                            {{-- <li>
                                 <p>Property ID:<span>{{ $property->p_id }}</span></p>
-                            </li>
+                            </li> --}}
                             <li>
                                 <p>Rooms:<span>{{ $property->number_of_room }}</span></p>
                             </li>
                             <li>
-                                <p>Property Status:<span>{{ $property->property_status }}</span></p>
+                                <p>Property Status:<span>{{ $property->type }}</span></p>
                             </li>
                             <li>
                                 <p>Property Price:<span>${{ $property->price }}</span></p>
