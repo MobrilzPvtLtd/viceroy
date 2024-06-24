@@ -87,6 +87,21 @@
                                         class="img-fluid w-100"></span>
                                 {{ $property->area }} Sq Ft
                             </li>
+                            <li>
+                                <span><img src="{{ asset('assets/images/hall.png') }}" alt="img"
+                                        class="img-fluid w-100" /></span>
+                                {{ $property->hall }}  Hall
+                            </li>
+                            <li>
+                                <span><img src="{{ asset('assets/images/amenities_img_7.png') }}" alt="img"
+                                        class="img-fluid w-100" /></span>
+                                {{ $property->kichen }}  kichan
+                            </li>
+                            <li>
+                                <span><img src="{{ asset('assets/images/dining.png') }}" alt="img"
+                                        class="img-fluid w-100" /></span>
+                                {{ $property->dining }}  dining
+                            </li>
                         </ul>
                     </div>
                     <div class="single_property_details mt_25 wow fadeInUp" data-wow-duration="1.5s">

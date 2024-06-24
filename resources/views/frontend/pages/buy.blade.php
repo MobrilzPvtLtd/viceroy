@@ -422,7 +422,7 @@
                                                         <li>
                                                             <span><img src="assets/images/LAND.png" alt="img"
                                                                     class="img-fluid w-100" /></span>
-                                                            {{ $property->area }} Sq Ft
+                                                            {{ $property->area }} {{ $property->size }}
                                                         </li>
                                                         <li>
                                                             <span><img src="assets/images/hall.png" alt="img"
