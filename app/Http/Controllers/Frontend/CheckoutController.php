@@ -11,7 +11,6 @@ class CheckoutController extends Controller
 {
     public function submit(Request $request)
     {
-        // dd(123);
         // Uncomment and adjust validation rules if needed
         // $request->validate([
         //     'co_name' => 'required',
@@ -41,7 +40,8 @@ class CheckoutController extends Controller
         $checkout->save();
 
         // Redirect back with success message
-        return redirect()->back()->with('success', 'Inquiry has been submitted successfully.');
+        return redirect()->route('thanks')->with('success', 'Inquiry has been submitted successfully.');
+
     }
 
 }

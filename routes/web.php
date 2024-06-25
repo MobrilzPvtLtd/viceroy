@@ -90,6 +90,8 @@ Route::get('property/{slag}', [FrontendController::class, 'propertydetails'])->n
 Route::get('checkout', [FrontendController::class, 'cartform'])->name('cartform');
 Route::get('terms&con', [FrontendController::class, 'terms'])->name('terms&con');
 Route::get('privacy&poly', [FrontendController::class, 'privacy'])->name('privacy&poly');
+Route::get('thanks', [FrontendController::class, 'thanks'])->name('thanks');
+
 // Route::get('search', [PropertyController::class, 'search'])->name('property.search');
 
 

@@ -213,8 +213,8 @@ class FrontendController extends Controller
 
         return view('frontend.pages.terms&con');
     }
-    public function explor()
+    public function thanks()
     {
-        return view('frontend.pages.explor');
+        return view('frontend.pages.thanks');
     }
 }
