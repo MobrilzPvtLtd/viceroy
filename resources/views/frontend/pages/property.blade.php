@@ -23,13 +23,13 @@
         </div>
     </section>
     <!--=============================
-                                            BREADCRUMBS END
-                                        ==============================-->
+                                                BREADCRUMBS END
+                                            ==============================-->
 
 
     <!--=============================
-                                            PROPERTY DETAILS START
-                                        ==============================-->
+                                                PROPERTY DETAILS START
+                                            ==============================-->
     <section class="property_details pt_50 xs_pt_100 pb_105 xs_pb_85">
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
@@ -90,17 +90,17 @@
                             <li>
                                 <span><img src="{{ asset('assets/images/hall.png') }}" alt="img"
                                         class="img-fluid w-100" /></span>
-                                {{ $property->hall }}  Hall
+                                {{ $property->hall }} Hall
                             </li>
                             <li>
                                 <span><img src="{{ asset('assets/images/amenities_img_7.png') }}" alt="img"
                                         class="img-fluid w-100" /></span>
-                                {{ $property->kichen }}  kichan
+                                {{ $property->kichen }} kichan
                             </li>
                             <li>
                                 <span><img src="{{ asset('assets/images/dining.png') }}" alt="img"
                                         class="img-fluid w-100" /></span>
-                                {{ $property->dining }}  dining
+                                {{ $property->dining }} dining
                             </li>
                         </ul>
                     </div>
@@ -202,41 +202,48 @@
                     <div class="sticky_sidebar">
                         <div class="property_details_sidebar">
                             <h4>Schedule a Call</h4>
-                            <form action="#" class="schedule_form">
+                            <form action="{{ route('checkout.submit') }}" method="POST" class="schedule_form">
+                                @csrf
+                                <input type="hidden" name="title" value="{{ $property->title }}">
                                 <div class="row">
                                     <div class="col-lg-12 col-md-6">
                                         <div class="schedule_input">
-                                            <input type="text" placeholder="Date">
+                                            <label for="startTime"> Date</label>
+                                            <input type="date" name="date" placeholder="Date">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-6">
                                         <div class="schedule_input">
-                                            <input type="text" placeholder="Time">
+                                            <label for="startTime">Start Time</label>
+                                            <input type="time" name="st_time" placeholder="start Time">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-6">
                                         <div class="schedule_input">
-                                            <input type="text" placeholder="Name">
+                                            <label for="startTime">End Time</label>
+                                            <input type="time" name="en_time" placeholder="End Time">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-6">
                                         <div class="schedule_input">
-                                            <input type="text" placeholder="Phone">
+                                            <label for="startTime">Name</label>
+                                            <input type="text" name="name" placeholder="Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-6">
+                                        <div class="schedule_input">
+                                            <label for="startTime">Phone</label>
+                                            <input type="text" name="number"   placeholder="Phone">
                                         </div>
                                     </div>
                                     <div class="col-xl-12">
                                         <div class="schedule_input">
-                                            <input type="email" placeholder="Email">
+                                            <textarea rows="5" name="massage" placeholder="Message"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-xl-12">
                                         <div class="schedule_input">
-                                            <textarea rows="5" placeholder="Message"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <div class="schedule_input">
-                                            <a href="#" class="common_btn">Schedule-a-Tour-Form</a>
+                                            <button type="submit" class="common_btn">Schedule-a-Tour-Form</button>
                                         </div>
                                     </div>
                                 </div>

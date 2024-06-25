@@ -37,7 +37,7 @@
                                                     {{ $title }}<br>
                                                 @endforeach
                                             @else
-                                                No titles available
+                                                {{$checkout->title}}
                                             @endif
                                         </td>
                                         <td>{{ Auth::user()->email }}</td>

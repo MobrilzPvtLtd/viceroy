@@ -49,7 +49,7 @@ $total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
         @can('Inquiry')
             <li class="nav-group" aria-expanded="true">
                 <a class="nav-link nav-group-toggle" href="">
-                    <i class="nav-icon fa-solid fa-question"></i>&nbsp;@lang('Inquirys')<p class="notify001">
+                    <i class="nav-icon fa-solid fa-question"></i>&nbsp;@lang('Contact enquiry')<p class="notify001">
                         {{$total_enquiry + $total_checkouts}}
                     </p>
                 </a>
@@ -58,7 +58,7 @@ $total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
                         <a class="nav-link" href="{{route('massage.index')}}">
                             <span class="nav-icon">
                                 <span class="nav-icon-bullet"></span>
-                            </span> <span id="is_view">Inquiry</span>
+                            </span> <span id="is_view">enquiry</span>
                             <p class="notify001">
                                 {{$total_enquiry}}
                             </p>
@@ -66,10 +66,10 @@ $total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('inquairy.index')}}">
-                        
+
                             <span class="nav-icon">
                                 <span class="nav-icon-bullet"></span>
-                            </span> <span id="is_viewchackout">Property Inquiry</span>
+                            </span> <span id="is_viewchackout">Property enquiry</span>
                             <p class="notify001">
                                 {{$total_checkouts}}
                             </p>

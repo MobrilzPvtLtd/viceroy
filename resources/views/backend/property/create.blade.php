@@ -15,7 +15,7 @@
                             @csrf
                             <div class="row">
                                 <div class="form-group mb-2 col-4">
-                                    <label for="">Type of Property</label>
+                                    <label for="">Property List</label>
                                     <select class="form-control" name="type" value="{{ old('type') }}">
                                         <option value="">select property </option>
                                         <option value="rent">For Rent </option>
@@ -60,24 +60,13 @@
                                     <input type="text" class="form-control" id="city" name="bed"
                                         value="{{ old('bed') }}" placeholder="">
                                 </div>
-
-                                <div class="form-group mb-2 col-4">
-                                    <label for="city">Bath Rooms</label>
-                                    <input type="text" class="form-control" id="city" name="number_bathroom"
-                                        value="{{ old('number_bathroom') }}" placeholder="">
-                                </div>
-                                <div class="form-group mb-2 col-4">
-                                    <label for="city">number_of_room</label>
-                                    <input type="text" class="form-control" id="city" name="number_of_room"
-                                        value="{{ old('number_of_room') }}" placeholder="">
-                                </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Hall</label>
                                     <input type="text" class="form-control" name="hall"
                                         value="{{ old('hall') }}" placeholder="">
                                 </div>
                                 <div class="form-group mb-2 col-4">
-                                    <label for="city">Kichen</label>
+                                    <label for="city">Kitchen</label>
                                     <input type="text" class="form-control"  name="kichen"
                                         value="{{ old('kichen') }}" placeholder="">
                                 </div>
@@ -87,7 +76,18 @@
                                         value="{{ old('dining') }}" placeholder="">
                                 </div>
                                 <div class="form-group mb-2 col-4">
-                                    <label for="city">price</label>
+                                    <label for="city">Bath Rooms</label>
+                                    <input type="text" class="form-control" id="city" name="number_bathroom"
+                                        value="{{ old('number_bathroom') }}" placeholder="">
+                                </div>
+                                <div class="form-group mb-2 col-4">
+                                    <label for="city">Total Rooms</label>
+                                    <input type="text" class="form-control" id="city" name="number_of_room"
+                                        value="{{ old('number_of_room') }}" placeholder="">
+                                </div>
+
+                                <div class="form-group mb-2 col-4">
+                                    <label for="city">Price</label>
                                     <input type="text" class="form-control" id="city" name="price"
                                         value="{{ old('price') }}" placeholder="">
                                 </div>
@@ -144,7 +144,7 @@
                                     <label for="city">Discription</label>
                                     <textarea type="text" class="form-control" name="desc" value="{{ old('desc') }}"placeholder=""></textarea>
                                 </div>
-                                <div class="form-group mb-2 col-4">
+                                <div class="form-group mb-2 col-4" style="margin-top:40px">
                                     <label for="featured">Featured</label>
                                     <input type="checkbox" name="featured" value="1">
                                 </div>

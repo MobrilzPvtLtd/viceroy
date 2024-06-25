@@ -11,6 +11,7 @@ class CheckoutController extends Controller
 {
     public function submit(Request $request)
     {
+        // dd(123);
         // Uncomment and adjust validation rules if needed
         // $request->validate([
         //     'co_name' => 'required',

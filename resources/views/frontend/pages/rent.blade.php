@@ -156,9 +156,14 @@
                                             <label>Property Type</label>
                                             <select class="select_label" name="state">
                                                 <option value="">Select property</option>
-                                                @foreach ($uniquePropertyTypes as $type)
+                                                {{-- @foreach ($uniquePropertyTypes as $type)
                                                     <option value="{{ $type }}">{{ $type }}</option>
-                                                @endforeach
+                                                @endforeach --}}
+                                                <option value="Apartment">Apartment</option>
+                                                <option value="Villa">Villa</option>
+                                                <option value="Plot">Plot</option>
+                                                <option value="Bungalows">Bungalows</option>
+                                                <option value="Flats">Flats</option>
                                             </select>
                                         </div>
 
