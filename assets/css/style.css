@@ -7920,7 +7920,53 @@ gap: 10px;
     display: flex;
     flex-direction: column;
 }
+.checkbox-group label {
+    display: flex;
+    gap: 20px;
+    
+}
+.checkbox-group span{
+    width: 15vw;
+    text-align: left;
+}
+.checkbox-group input[type="radio"]{
+    width: 15px !important;
+}
+.form-container {
+    height: 50% !important;
+}
+.banner_text {
 
+    padding-top: 50px;
+}
+@media screen and (min-width:1025px) and (max-width:1300px) {
+    .form-container {
+        height: 15.5rem !important;
+    }
+    .menu_right {
+        gap: 50px;
+    }
+
+    .checkbox-group span {
+        width: 16vw;
+        text-align: left;
+    }
+}
+@media screen and (min-width:1325px) and (max-width:1600px) {
+    .form-container {
+        height: 15.5rem !important;
+    }
+
+}
+@media screen and (min-width:1625px) and (max-width:1800px) {
+    .form-container {
+        height: 15.5rem !important;
+    }
+
+}
+/* .checkbox-group input, textarea {
+    width: 15% !important;
+} */
 /*=============================
     DASHBOARD END
 =============================*/

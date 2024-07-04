@@ -28,15 +28,15 @@
                                         <div class="checkbox-group">
                                             <label>
                                                 <input type="radio" name="property-action" value="rent-house">
-                                                I want to rent a Property
+                                                <span>I want to rent a Property</span>
                                             </label>
                                             <label>
                                                 <input type="radio" name="property-action" value="buy-house">
-                                                I want to buy a Property
+                                                <span>I want to buy a Property</span>
                                             </label>
                                             <label>
                                                 <input type="radio" name="property-action" value="holiday-rental">
-                                                I want to book a holiday rental
+                                                <span>I want to book a holiday rental</span>
                                             </label>
                                         </div>
                                         <button type="submit" class="submit-btn">Submit</button>
