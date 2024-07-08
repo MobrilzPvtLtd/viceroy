@@ -14,7 +14,7 @@
                 <div class="col-xl-11 col-xxl-9">
                     <div class="banner_contant">
                         <div class="banner_text">
-                            <h1>Building houses that feel like home - with us.</h1>
+                            <h1>Buildings houses that feel like home - with us.</h1>
                             <p>
                                 Through a combination of lectures, readings, and discussions,
                                 students will gain a solid foundation in educational
