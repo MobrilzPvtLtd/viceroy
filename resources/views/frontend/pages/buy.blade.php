@@ -54,7 +54,7 @@
                                     <div class="" id="home_form">
                                         <div class="home_form_label">
                                             <label>Country</label>
-                                            <select class="select_label" name="co_name" id="co_name" required focus>
+                                            <select class="select_label s1" name="co_name" id="co_name" required focus>
                                                 <option value="" disabled selected>select country </option>
 
                                                 @foreach ($countrys as $country)
@@ -65,7 +65,7 @@
 
                                         <div class="home_form_label">
                                             <label>City</label>
-                                            <select class="select_label" name="ct_name" id="city" required>
+                                            <select class="select_label s1" name="ct_name" id="city" required>
                                                 <option value=""> select city</option>
                                                 @foreach ($citys as $city)
                                                     <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
@@ -73,7 +73,7 @@
                                             </select>
                                         </div>
 
-                                        <div class="home_form_label">
+                                        <div class="home_form_label s2">
                                             <label>Bedrooms</label>
                                             <div class="adv_search_icon" id="select_bedroom_btn">
                                                 <input class="select_label select_bedroom_btn" name="state" type="button"
@@ -104,10 +104,10 @@
                                             </div>
                                         </div>
 
-                                        <div class="home_form_label">
+                                        <div class="home_form_label s2">
                                             <label>Price</label>
                                             <div class="adv_search_icon2" id="select_price_btn">
-                                                <input type="button" value="Select Price" class="select_label"
+                                                <input type="button" value="Select Price" class="select_label s22"
                                                     name="state">
 
                                                 </input>
@@ -463,7 +463,7 @@
                     </div>
 
                     <div class="col-md-3" id="map001">
-                        <div id="mapCanvas"></div>
+                        <div id="mapCanvas" style="height: 600px"></div>
                     </div>
 
                     <script>

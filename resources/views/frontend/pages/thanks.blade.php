@@ -28,7 +28,7 @@
     .container h1 {
       font-size: 2.5em;
       margin-bottom: 20px;
-      color: #007bff;
+      color: #e6b025;
     }
     .container p {
       font-size: 1.2em;
@@ -40,14 +40,14 @@
       padding: 10px 20px;
       font-size: 1em;
       color: #fff;
-      background-color: #007bff;
+      background-color: #e6b025;
       border: none;
       border-radius: 5px;
       text-decoration: none;
       transition: background-color 0.3s ease;
     }
     .container .cta-button:hover {
-      background-color: #0056b3;
+      background-color: #000;
     }
   </style>
 </head>
