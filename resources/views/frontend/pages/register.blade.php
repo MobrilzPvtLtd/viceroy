@@ -42,15 +42,15 @@
                                     <form action="#">
                                         <div class="single_input">
                                             <label>Name</label>
-                                            <input type="text" placeholder="Name">
+                                            <input type="text" name="name" placeholder="Name">
                                         </div>
                                         <div class="single_input">
                                             <label>Email</label>
-                                            <input type="email" placeholder="Email">
+                                            <input type="email" name="email" placeholder="Email">
                                         </div>
                                         <div class="single_input">
                                             <label>Password</label>
-                                            <input type="password" placeholder="********">
+                                            <input type="password" name="password" placeholder="********">
                                             <span class="show_password">
                                                 <i class="far fa-eye open_eye"></i>
                                                 <i class="far fa-eye-slash close_eye"></i>
@@ -58,7 +58,7 @@
                                         </div>
                                         <div class="single_input">
                                             <label>Confirm password</label>
-                                            <input type="password" placeholder="********">
+                                            <input type="password" name="password" placeholder="********">
                                             <span class="show_confirm_password">
                                                 <i class="far fa-eye open_eye"></i>
                                                 <i class="far fa-eye-slash close_eye"></i>

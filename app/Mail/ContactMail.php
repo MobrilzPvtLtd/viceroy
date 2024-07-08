@@ -27,7 +27,7 @@ class ContactMail extends Mailable
      * Build the message.
      *
      * @return $this
-     */
+     */     
     public function build(){
 
         return $this->view('mail.contact-email')->subject("A new email for contact form");
