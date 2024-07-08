@@ -95,8 +95,7 @@
                         @include('flash::alert-message')
                         <div class="col-md-6 col-lg-12 col-xl-6">
                             <div class="contact_input">
-                                <label for="Name">Name</label>
-                                <input type="text"umbername="name" placeholder="e.g John Paul" required />
+                                <input type="text"name="name" placeholder="First Name" />
                                 <span class="contact_input_icon">
                                     <img src="assets/images/user_icon_3.png" alt="icon" class="img-fluid w-100" />
                                 </span>
@@ -105,8 +104,7 @@
 
                         <div class="col-md-6 col-lg-12 col-xl-6">
                             <div class="contact_input">
-                                <label for="Phone">Phone Number</label>
-                                <input type="text" name="number" placeholder="e.g 9098876234" required />
+                                <input type="text" name="number" placeholder="Phone Number" />
                                 <span class="contact_input_icon">
                                     <img src="assets/images/call_2.png" alt="icon" class="img-fluid w-100" />
                                 </span>
@@ -114,24 +112,24 @@
                         </div>
                         <div class="col-md-6 col-lg-12 col-xl-6">
                             <div class="contact_input">
-                                <label for="Date">Date</label>
-                                <input type="date" name="date" placeholder="" required />
+                                <input type="date" name="date" placeholder="" />
 
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-12 col-xl-6 dt" style="display: flex">
+                        <div class="col-md-6 col-lg-12 col-xl-6">
                             <div class="contact_input">
                                 <label for="startTime">Start Time</label>
-                                <input type="time" id="startTime" name="st_time" placeholder="Start Time" required value="fgsdf"/>
+                                <input type="time" id="startTime" name="st_time" placeholder="Start Time" />
                             </div>
+                            <span>To</span>
                             <div class="contact_input">
                                 <label for="endTime">End Time</label>
-                                <input type="time" id="endTime" name="en_time" placeholder="End Time" required />
+                                <input type="time" id="endTime" name="en_time" placeholder="End Time" />
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="contact_input">
-                                <textarea rows="6" name="massage" placeholder="Write Message..." required></textarea>
+                                <textarea rows="6" name="massage" placeholder="Write Message..."></textarea>
                             </div>
                         </div>
                         <div class="col-md-12">

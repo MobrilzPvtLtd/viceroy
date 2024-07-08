@@ -86,7 +86,7 @@
                                         <div class="home_form_label">
                                             <label>Bedrooms</label>
                                             <div class="adv_search_icon" id="select_bedroom_btn">
-                                                <input class="select_label s22" name="state" type="button"
+                                                <input class="select_label " name="state" type="button"
                                                     value="Select bedrooms">
                                                 </input>
                                             </div>
@@ -118,7 +118,7 @@
                                         <div class="home_form_label">
                                             <label>Price</label>
                                             <div class="adv_search_icon2" id="select_price_btn">
-                                                <input type="button" value="Select Price" class="select_label s22"
+                                                <input type="button" value="Select Price" class="select_label"
                                                     name="state">
 
                                                 </input>
@@ -481,7 +481,7 @@
                     </div>
 
                     <div class="col-md-3" id="map001">
-                        <div id="mapCanvas" style="height: 600px"></div>
+                        <div id="mapCanvas"></div>
                     </div>
 
                     <script>

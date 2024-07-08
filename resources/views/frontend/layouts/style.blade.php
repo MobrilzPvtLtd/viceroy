@@ -20,7 +20,7 @@
     background: white;
     border: 1px solid #ccc;
     padding: 10px 18px;
-    /* padding-right: 5px; */
+    padding-right: 5px;
     font-size: 16px;
     position: relative;
     width: 100%;
@@ -491,45 +491,5 @@ button#addToCart {
     border-color: #e6b025;
     border-radius: 37px;
     height: 6vh;
-}
-
-@media screen and (min-width:1025px) and (max-width:1300px) {
-    .select_label {
-        /* padding-right: 5px; */
-        font-size: 10px;
-
-    }
-    select.select_2 {
-    padding: 10px 20px;
-}
-.adv_search_area {
-    width: 23%;
-}
-.adv_search_area {
-
-    padding: 30px;
-}
-.adv_search_area2 {
-
-    padding: 30px;
-
-}
-select.select_2 {
-    font-size: 10px;
-}
-.adv_search_area2 {
-    width: 23%;
-}
-.s22 {
-        padding: 3px 15px;
-    }
-}
-
-
-
-
-button.gm-control-active {
-    height: 19px !important;
-    top: 19px !important;
 }
 </style>
