@@ -450,7 +450,7 @@
                                                         <li>
                                                             <span><img src="assets/images/amenities_img_7.png" alt="img"
                                                                     class="img-fluid w-100" /></span>
-                                                            {{ $property->kichen }}  kichan
+                                                            {{ $property->kichen }}  Kitchen
                                                         </li>
                                                         <li>
                                                             <span><img src="assets/images/dining.png" alt="img"

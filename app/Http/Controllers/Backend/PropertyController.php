@@ -52,12 +52,11 @@ class PropertyController extends Controller
             'size' => 'required',
             'address' => 'required',
             'price' => 'required',
-            'desc' => 'required',
+            'desc' => '',
             'number_of_room' => 'required',
             'number_bathroom' => 'required',
-            'year' => 'required',
-            'map' => 'required',
-            'video' => 'required',
+            'year' => '',
+            'video' => '',
             'facilities' => 'required',
             'hall' => 'required',
             'kichen' => 'required',
@@ -128,15 +127,20 @@ class PropertyController extends Controller
     }
 
     public function edit($id)
-    {
-        $property = Property::findOrFail($id);
-        $property->image = unserialize($property->image);
-        $property->floor_plan = unserialize($property->floor_plan);
-        $facilities = Facilities::all();
-        $selectedFacilities = unserialize($property->facilities);
+{
+    $property = Property::findOrFail($id);
+    $property->image = unserialize($property->image);
+    $property->floor_plan = unserialize($property->floor_plan);
+    $facilities = Facilities::all();
+    $selectedFacilities = unserialize($property->facilities);
 
-        return view('backend.property.edit', compact('property', 'facilities', 'selectedFacilities'));
-    }
+    // Retrieve countries and cities
+    $countrys = Country::all();
+    $citys = City::all();
+
+    return view('backend.property.edit', compact('property', 'facilities', 'selectedFacilities', 'countrys', 'citys'));
+}
+
 
 
     public function update(Request $request, $id)

@@ -23,13 +23,13 @@
         </div>
     </section>
     <!--=============================
-                                                BREADCRUMBS END
-                                            ==============================-->
+                                                    BREADCRUMBS END
+                                                ==============================-->
 
 
     <!--=============================
-                                                PROPERTY DETAILS START
-                                            ==============================-->
+                                                    PROPERTY DETAILS START
+                                                ==============================-->
     <section class="property_details pt_50 xs_pt_100 pb_105 xs_pb_85">
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
@@ -95,7 +95,7 @@
                             <li>
                                 <span><img src="{{ asset('assets/images/amenities_img_7.png') }}" alt="img"
                                         class="img-fluid w-100" /></span>
-                                {{ $property->kichen }} kichan
+                                {{ $property->kichen }} Kitchen
                             </li>
                             <li>
                                 <span><img src="{{ asset('assets/images/dining.png') }}" alt="img"
@@ -181,12 +181,77 @@
                     </div>
                     <div class="single_property_details mt_25 wow fadeInUp" data-wow-duration="1.5s">
                         <h4>Map Location</h4>
-                        <div class=" apertment_map">
-                            <iframe src={{ $property->map }} width="600" height="450" style="border:0;"
-                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+                        <div class="apertment_map">
+                            <div id="mapCanvas"></div>
                         </div>
+                        <script>
+                            // Initialize and add the map
+                            function initMap() {
+                                var map;
+                                var bounds = new google.maps.LatLngBounds();
+                                var mapOptions = {
+                                    mapTypeId: 'roadmap'
+                                };
+
+                                // Display a map on the web page
+                                map = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
+                                map.setTilt(50);
+
+                                // Multiple markers location, latitude, and longitude
+                                var markers = @json($markers);
+
+                                // Info window content
+                                var infoWindowContent = @json($infowindow);
+
+                                // Add multiple markers to map
+                                var infoWindow = new google.maps.InfoWindow(),
+                                    marker, i;
+
+                                // Place each marker on the map
+                                for (i = 0; i < markers.length; i++) {
+                                    var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+                                    bounds.extend(position);
+                                    marker = new google.maps.Marker({
+                                        position: position,
+                                        map: map,
+                                        title: markers[i][0]
+                                    });
+
+                                    // Add info window to marker
+                                    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                                        return function() {
+                                            infoWindow.setContent(infoWindowContent[i][0]);
+                                            infoWindow.open(map, marker);
+                                        }
+                                    })(marker, i));
+
+                                    // Center the map to fit all markers on the screen
+                                    map.fitBounds(bounds);
+                                }
+
+                                // Set zoom level
+                                var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+                                    this.setZoom(14);
+                                    google.maps.event.removeListener(boundsListener);
+                                });
+                            }
+
+                            window.initMap = initMap;
+                        </script>
+
+                        <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ env('GEO_CODE_GOOGLE_MAP_API') }}" defer>
+                        </script>
+
+                        <style>
+                            #mapCanvas {
+                                height: 400px;
+                                /* The height is 400 pixels */
+                                width: 100%;
+                                /* The width is the width of the web page */
+                            }
+                        </style>
                     </div>
+
                     <div class="single_property_details mt_25 wow fadeInUp" data-wow-duration="1.5s">
                         <h4>Property Video</h4>
                         <div class=" apertment_video">
@@ -233,7 +298,7 @@
                                     <div class="col-lg-12 col-md-6">
                                         <div class="schedule_input">
                                             <label for="startTime">Phone</label>
-                                            <input type="text" name="number"   placeholder="Phone">
+                                            <input type="text" name="number" placeholder="Phone">
                                         </div>
                                     </div>
                                     <div class="col-xl-12">

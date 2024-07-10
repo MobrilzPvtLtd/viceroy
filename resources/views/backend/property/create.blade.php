@@ -57,38 +57,38 @@
 
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Bed Rooms</label>
-                                    <input type="text" class="form-control" id="city" name="bed"
+                                    <input type="number" class="form-control" id="city" name="bed"
                                         value="{{ old('bed') }}" placeholder="">
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Hall</label>
-                                    <input type="text" class="form-control" name="hall"
+                                    <input type="number" class="form-control" name="hall"
                                         value="{{ old('hall') }}" placeholder="">
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Kitchen</label>
-                                    <input type="text" class="form-control"  name="kichen"
+                                    <input type="number" class="form-control"  name="kichen"
                                         value="{{ old('kichen') }}" placeholder="">
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Dining</label>
-                                    <input type="text" class="form-control"  name="dining"
+                                    <input type="number" class="form-control"  name="dining"
                                         value="{{ old('dining') }}" placeholder="">
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Bath Rooms</label>
-                                    <input type="text" class="form-control" id="city" name="number_bathroom"
+                                    <input type="number" class="form-control" id="city" name="number_bathroom"
                                         value="{{ old('number_bathroom') }}" placeholder="">
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Total Rooms</label>
-                                    <input type="text" class="form-control" id="city" name="number_of_room"
+                                    <input type="number" class="form-control" id="city" name="number_of_room"
                                         value="{{ old('number_of_room') }}" placeholder="">
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Price</label>
-                                    <input type="text" class="form-control" id="city" name="price"
+                                    <input type="number" class="form-control" id="city" name="price"
                                         value="{{ old('price') }}" placeholder="">
                                 </div>
 
@@ -107,7 +107,7 @@
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Area</label>
                                     <div class="d-flex">
-                                        <input type="text" class="form-control"  name="area"
+                                        <input type="number" class="form-control"  name="area"
                                         value="{{ old('area') }}" placeholder="">
                                         <select class="form-control" value="" name="size">
                                             <option value="Sq fit">Sq fit</option>
@@ -126,11 +126,11 @@
                                     <input type="text" class="form-control" name="video"
                                         value="{{ old('video') }}">
                                 </div>
-                                <div class="form-group mb-2 col-4">
+                                {{-- <div class="form-group mb-2 col-4">
                                     <label for="city">Map</label>
                                     <input type="text" class="form-control" name="map"
                                         value="{{ old('map') }}">
-                                </div>
+                                </div> --}}
                                 <div class="form-group mb-2 col-4">
                                     <label for="floor_plan">floor_plan</label>
                                     <input type="file" class="form-control" name="floor_plan[]" multiple>

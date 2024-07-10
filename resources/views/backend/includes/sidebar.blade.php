@@ -50,28 +50,28 @@ $total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
             <li class="nav-group" aria-expanded="true">
                 <a class="nav-link nav-group-toggle" href="">
                     <i class="nav-icon fa-solid fa-question"></i>&nbsp;@lang('Contact enquiry')<p class="notify001">
-                        {{$total_enquiry + $total_checkouts}}
+                        {{ $total_enquiry + $total_checkouts }}
                     </p>
                 </a>
                 <ul class="nav-group-items compact" style="height: auto;">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('massage.index')}}">
+                        <a class="nav-link" href="{{ route('massage.index') }}">
                             <span class="nav-icon">
                                 <span class="nav-icon-bullet"></span>
                             </span> <span id="is_view">enquiry</span>
                             <p class="notify001">
-                                {{$total_enquiry}}
+                                {{ $total_enquiry }}
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('inquairy.index')}}">
+                        <a class="nav-link" href="{{ route('inquairy.index') }}">
 
                             <span class="nav-icon">
                                 <span class="nav-icon-bullet"></span>
                             </span> <span id="is_viewchackout">Property enquiry</span>
                             <p class="notify001">
-                                {{$total_checkouts}}
+                                {{ $total_checkouts }}
                             </p>
                         </a>
                     </li>
@@ -157,14 +157,6 @@ $total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
         @endcan
 
 
-        @can('edit_settings')
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('backend.settings') }}">
-                    <i class="nav-icon fa-solid fa-gears"></i>&nbsp;@lang('Settings')
-                </a>
-            </li>
-        @endcan
-
         {{-- @can('view_backups')
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('backend.backups.index') }}">
@@ -181,13 +173,13 @@ $total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
             </li>
         @endcan
 
-        @can('view_roles')
+        {{-- @can('view_roles')
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('backend.roles.index') }}">
                     <i class="nav-icon fa-solid fa-user-shield"></i>&nbsp;@lang('Roles')
                 </a>
             </li>
-        @endcan
+        @endcan --}}
 
         {{-- @can('view_logs')
             <li class="nav-group" aria-expanded="true">
@@ -208,6 +200,13 @@ $total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
                 </ul>
             </li>
         @endcan --}}
+        @can('edit_settings')
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('backend.settings') }}">
+                    <i class="nav-icon fa-solid fa-gears"></i>&nbsp;@lang('Settings')
+                </a>
+            </li>
+        @endcan
 
     </ul>
     <div class="sidebar-footer border-top d-none d-md-flex">
@@ -216,14 +215,14 @@ $total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
 </div>
 <style>
     p.notify001 {
-    color: #fff;
-    background-color: #e62525;
-    width: 1.5vw;
-    height: 3vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 41px;
-    font-size: 12px;
-}
+        color: #fff;
+        background-color: #e62525;
+        width: 1.5vw;
+        height: 3vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 41px;
+        font-size: 12px;
+    }
 </style>
