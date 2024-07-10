@@ -17,7 +17,7 @@
 
                             <div class="row">
                                 <div class="form-group mb-2 col-4">
-                                    <label for="">Type of Property</label>
+                                    <label for="">Property List</label>
                                     <select class="form-control" name="type" value="">
                                         <option value="{{ $property->type }} ">{{ $property->type }} </option>
                                         <option value="rent"> Rent </option>
@@ -25,15 +25,40 @@
 
                                     </select>
                                 </div>
-
                                 <div class="form-group mb-2 col-4">
-                                    <label for="exampleInputEmail1">Property Name</label>
-                                    <input type="text" class="form-control" name="title" value="{{ $property->title }}"
-                                        placeholder="">
+                                    <label for="exampleInputEmail1">Country Name</label>
+                                    <select class="form-control" id="co_name" name="country_id" required>
+                                        <option value="" disabled>Select Country</option>
+                                        @foreach ($countrys as $country)
+                                            <option value="{{ $country->id }}"
+                                                {{ $country->id == $property->country_id ? 'selected' : '' }}>
+                                                {{ $country->co_name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
-                                    <label for="ct_name">Address </label>
+                                    <label>City</label>
+                                    <select class="form-control" name="city_id" id="city" required>
+                                        <option value="" disabled>Select City</option>
+                                        @foreach ($citys as $city)
+                                            <option value="{{ $city->id }}"
+                                                {{ $city->id == $property->city_id ? 'selected' : '' }}>
+                                                {{ $city->ct_name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="form-group mb-2 col-4">
+                                    <label for="exampleInputEmail1">Property Name</label>
+                                    <input type="text" class="form-control" name="title"
+                                        value="{{ $property->title }}" placeholder="">
+                                </div>
+
+                                <div class="form-group mb-2 col-4">
+                                    <label for="ct_name">full Address </label>
                                     <textarea class="form-control" name="address" value="" placeholder="">{{ $property->address }}</textarea>
                                 </div>
 
@@ -42,6 +67,21 @@
                                     <input type="text" class="form-control" id="city" name="bed"
                                         value="{{ $property->bed }}" placeholder="">
                                 </div>
+                                <div class="form-group mb-2 col-4">
+                                    <label for="city">Hall</label>
+                                    <input type="text" class="form-control" name="hall" value="{{ $property->hall }}"
+                                        placeholder="">
+                                </div>
+                                <div class="form-group mb-2 col-4">
+                                    <label for="city">Kitchen</label>
+                                    <input type="text" class="form-control" name="kichen"
+                                        value="{{ $property->kichen }}" placeholder="">
+                                </div>
+                                <div class="form-group mb-2 col-4">
+                                    <label for="city">Dining</label>
+                                    <input type="text" class="form-control" name="dining"
+                                        value="{{ $property->dining }}" placeholder="">
+                                </div>
 
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Bath Rooms</label>
@@ -49,25 +89,11 @@
                                         value="{{ $property->number_bathroom }}" placeholder="">
                                 </div>
                                 <div class="form-group mb-2 col-4">
-                                    <label for="city">number_of_room</label>
+                                    <label for="city">Total Rooms</label>
                                     <input type="text" class="form-control" id="city" name="number_of_room"
                                         value="{{ $property->number_of_room }}" placeholder="">
                                 </div>
-                                <div class="form-group mb-2 col-4">
-                                    <label for="city">Hall</label>
-                                    <input type="text" class="form-control" name="hall"
-                                        value="{{ $property->hall }}" placeholder="">
-                                </div>
-                                <div class="form-group mb-2 col-4">
-                                    <label for="city">Kichen</label>
-                                    <input type="text" class="form-control"  name="kichen"
-                                        value="{{ $property->kichen }}" placeholder="">
-                                </div>
-                                <div class="form-group mb-2 col-4">
-                                    <label for="city">Dining</label>
-                                    <input type="text" class="form-control"  name="dining"
-                                        value="{{ $property->dining }}" placeholder="">
-                                </div>
+
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">price</label>
                                     <input type="text" class="form-control" id="city" name="price"
@@ -90,7 +116,8 @@
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Area</label>
                                     <div class="d-flex">
-                                        <input type="text" value="{{ $property->area }}" class="form-control"  name="area" placeholder="">
+                                        <input type="number" value="{{ $property->area }}" class="form-control"
+                                            name="area" placeholder="">
                                         <select class="form-control" value="" name="size">
                                             <option value="{{ $property->size }}">{{ $property->size }}</option>
                                             <option value="Sq fit">Sq fit</option>
@@ -122,34 +149,37 @@
                                     <input type="text" class="form-control" name="video"
                                         value="{{ $property->video }}">
                                 </div>
-                                <div class="form-group mb-2 col-4">
+                                {{-- <div class="form-group mb-2 col-4">
                                     <label for="city">Map</label>
                                     <input type="text" class="form-control" name="map"
                                         value="{{ $property->map }}">
-                                </div>
+                                </div> --}}
                                 <div class="form-group mb-2 col-4">
                                     <label for="floor_plan">Floor Plan</label>
                                     <input type="file" class="form-control" name="floor_plan[]" multiple>
                                     @php
-                                    // Check if $property->floor_plan is serialized
-                                    $floorPlans = is_string($property->floor_plan) ? unserialize($property->floor_plan) : $property->floor_plan;
-                                @endphp
+                                        // Check if $property->floor_plan is serialized
+                                        $floorPlans = is_string($property->floor_plan)
+                                            ? unserialize($property->floor_plan)
+                                            : $property->floor_plan;
+                                    @endphp
 
-                                @if (!empty($floorPlans) && is_array($floorPlans))
-                                    <div class="form-group mb-2 col-12">
-                                        <label>Existing Floor Plans:</label>
-                                        <div class="row">
-                                            @foreach ($floorPlans as $floor_plan)
-                                                <div class="col-md-2">
-                                                    <img src="{{ asset('public/' . $floor_plan) }}" alt="Property Floor Plan"
-                                                        class="img-thumbnail" style="width: 100px; height: auto;">
-                                                </div>
-                                            @endforeach
+                                    @if (!empty($floorPlans) && is_array($floorPlans))
+                                        <div class="form-group mb-2 col-12">
+                                            <label>Existing Floor Plans:</label>
+                                            <div class="row">
+                                                @foreach ($floorPlans as $floor_plan)
+                                                    <div class="col-md-2">
+                                                        <img src="{{ asset('public/' . $floor_plan) }}"
+                                                            alt="Property Floor Plan" class="img-thumbnail"
+                                                            style="width: 100px; height: auto;">
+                                                    </div>
+                                                @endforeach
+                                            </div>
                                         </div>
-                                    </div>
-                                @else
-                                    <p>No floor plans available</p>
-                                @endif
+                                    @else
+                                        <p>No floor plans available</p>
+                                    @endif
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city"> Originating Year</label>
@@ -179,7 +209,7 @@
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="featured">Featured</label>
-                                    <input type="checkbox" name="featured" value="1"
+                                    <input type="checkbox" name="featured"style="margin-top:40px" value="1"
                                         {{ $property->featured ? 'checked' : '' }}>
                                 </div>
                             </div>
@@ -216,4 +246,26 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('#co_name').change(function() {
+                var country = $(this).val();
+
+                $.ajax({
+                    type: 'GET',
+                    url: '{{ route('fetch-city') }}',
+                    data: {
+                        country: country
+                    },
+                    success: function(result) {
+                        console.log(result);
+                        $("#city").html(result);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
 @endsection

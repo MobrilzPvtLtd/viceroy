@@ -53,7 +53,7 @@ class FrontendController extends Controller
         $professionals = Professionals::all();
 
 
-        return view('frontend.index', compact('propertys', 'countrys', 'citys', 'brands', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes','professionals','holidays'));
+        return view('frontend.index', compact('propertys', 'countrys', 'citys', 'brands', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes', 'professionals', 'holidays'));
     }
     public function buy(Request $request)
     {
@@ -150,8 +150,45 @@ class FrontendController extends Controller
     public function propertydetails($slag)
     {
         $property = Property::where('slag', $slag)->firstOrFail();
-        return view('frontend.pages.property', compact('property'));
+
+        // Geocode the address
+        $address = $property->address;
+        $apiKey = env('GEO_CODE_GOOGLE_MAP_API');
+        $client = new \GuzzleHttp\Client();
+        $response = $client->get('https://maps.googleapis.com/maps/api/geocode/json', [
+            'query' => [
+                'address' => $address,
+                'key' => $apiKey,
+            ],
+        ]);
+
+        $geoData = json_decode($response->getBody(), true);
+
+        $latitude = null;
+        $longitude = null;
+
+        if (!empty($geoData['results'][0])) {
+            $location = $geoData['results'][0]['geometry']['location'];
+            $latitude = $location['lat'];
+            $longitude = $location['lng'];
+        }
+
+        // Create the markers array
+        $markers = [
+            [$property->title, $latitude, $longitude]
+        ];
+
+        // Optionally, add more properties or points of interest here
+        // Example: $markers[] = ['Other Property', other_lat, other_lng];
+
+        // Info window content for the markers
+        $infowindow = [
+            [$property->title]
+        ];
+
+        return view('frontend.pages.property', compact('property', 'latitude', 'longitude', 'markers', 'infowindow'));
     }
+
     //     public function show($id)
     // {
     //     $property = Property::findOrFail($id);
@@ -160,7 +197,7 @@ class FrontendController extends Controller
     public function services()
     {
         $brands = Brands::all();
-        return view('frontend.pages.services',compact('brands'));
+        return view('frontend.pages.services', compact('brands'));
     }
     public function contact()
     {
@@ -171,7 +208,7 @@ class FrontendController extends Controller
     {
         $professionals = Professionals::all();
         $brands = Brands::all();
-        return view('frontend.pages.about',compact('professionals','brands'));
+        return view('frontend.pages.about', compact('professionals', 'brands'));
     }
     public function login()
     {
