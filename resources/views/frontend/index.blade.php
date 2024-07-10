@@ -680,6 +680,7 @@
                     </div>
                 </div>
             </div>
+        <marquee width="100%" behavior="scroll" direction="left" scrollamount="12" loop="infinite">
             <div class="row justify-content-between">
                 <div class="col-xl-12">
                     <div class="marquee_animi">
@@ -700,8 +701,10 @@
                     </div>
                 </div>
             </div>
+        </marquee>
         </div>
     </section>
+
 @endsection
 @section('script')
     <script>

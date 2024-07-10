@@ -12,7 +12,7 @@
     <style>
         .about_text {
             height: 100%;
-            display: block;
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: start;
@@ -132,6 +132,15 @@
                         <p>Your property is our priority. Our dedicated team will always be on-hand to manage any and all
                             maintenance issues that may arise at your property and will ensure that it is cleaned thoroughly
                             each time. We are just a phone call away and ready to assist with any task.</p>
+                            <br>
+                            <div class="section_heading section_heading_left">
+                                <h2 style="font-size:30px;">Looking After Your Guest</h2>
+                            </div>
+                            <p>
+                                We operate with your guest's best interest in mind, ensuring that their time spent in
+                                your property is enjoyable and that every requirement is met with a positive and
+                                professional response. You can rest assured that every guest is taken care of by us.
+                            </p>
 
                     </div>
                 </div>
@@ -144,14 +153,7 @@
                             </div>
                             <br>
                             <div class="about_text">
-                                <div class="section_heading section_heading_left">
-                                    <h2 style="font-size:30px;">Looking After Your Guest</h2>
-                                </div>
-                                <p>
-                                    We operate with your guest's best interest in mind, ensuring that their time spent in
-                                    your property is enjoyable and that every requirement is met with a positive and
-                                    professional response. You can rest assured that every guest is taken care of by us.
-                                </p>
+
 
                                 <div class="section_heading section_heading_left">
                                     <h2 style="font-size:30px;">Maximising Your Revenue</h2>
