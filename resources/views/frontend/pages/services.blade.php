@@ -168,26 +168,37 @@ color:#fff;
 
     <section class="partner_area pt_60 pb_60">
         <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-xl-12">
-                    <div class="marquee_animi">
-                        <ul class="single_partner">
-                            @foreach ($brands as $brand)
-                            @if ($brand->image)
-                                <li>
-                                    <a href="agencies_details.html">
-                                        <img src="{{ asset('public/images/' . $brand->image) }}" alt="img"
-                                            class="img-fluid w-100" />
-                                    </a>
-                                </li>
-                            @else
-                                No Image
-                            @endif
-                        @endforeach
-                        </ul>
+            <div class="row justify-content-center">
+                <div class="col-xl-7 wow fadeInUp" data-wow-duration="1.5s"
+                    style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
+                    <div class="section_heading mb_25">
+                        <h2>Our Brands</h2>
                     </div>
                 </div>
             </div>
+
+            <marquee width="100%" behavior="scroll" direction="left" scrollamount="12" loop="infinite">
+                <div class="row justify-content-between">
+                    <div class="col-xl-12">
+                        <div class="marquee_animi">
+                            <ul class="single_partner">
+                                @foreach ($brands as $brand)
+                                    @if ($brand->image)
+                                        <li>
+                                            <a href="agencies_details.html">
+                                                <img src="{{ asset('public/images/' . $brand->image) }}" alt="img"
+                                                    class="img-fluid w-100" />
+                                            </a>
+                                        </li>
+                                    @else
+                                        No Image
+                                    @endif
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </marquee>
         </div>
     </section>
     @endsection
