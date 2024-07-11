@@ -255,9 +255,7 @@
                     <div class="single_property_details mt_25 wow fadeInUp" data-wow-duration="1.5s">
                         <h4>Property Video</h4>
                         <div class=" apertment_video">
-                            <iframe src="{{ $property->video }}" title="YouTube video player"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$property->video}}?v=HieAP-xAlq4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
 
@@ -384,7 +382,7 @@
                     <div class="col-xl-4 wow fadeInUp" data-wow-duration="1.5s">
                         <div class=" single_property">
                             <div class="single_property_img">
-                                <img src=" {{ asset(' assets/images/property_5.jpg') }}" alt="img"
+                                <img src=" {{ asset('assets/images/property_5.jpg') }}" alt="img"
                                     class="img-fluid w-100">
                                 <a class="feature_link" href="#">for rent</a>
                                 <a class="feature_link feature" href="#">Featured</a>
@@ -400,7 +398,7 @@
                                     <p><i class="fas fa-map-marker-alt"></i>28B Highgate Road, London</p>
                                     <ul class="d-flex flex-wrap">
                                         <li>
-                                            <span><img src="{{ asset(' assets/images/property_5.jpg') }}" alt="img"
+                                            <span><img src="{{ asset(' assets/images/property_4.jpg') }}" alt="img"
                                                     class="img-fluid w-100"></span>
                                             4 Beds
                                         </li>
@@ -500,12 +498,12 @@
                                     <p><i class="fas fa-map-marker-alt"></i>28B Highgate Road, London</p>
                                     <ul class="d-flex flex-wrap">
                                         <li>
-                                            <span><img src="{{ asset('assets/images/bad.png') }}" alt="img"
+                                            <span><img src="{{asset('assets/images/bad.png')}}" alt="img"
                                                     class="img-fluid w-100"></span>
                                             4 Beds
                                         </li>
                                         <li>
-                                            <span><img src="{{ asset('assets/images/bathtab.png') }}" alt="img"
+                                            <span><img src="{{asset('assets/images/bathtab.png') }}" alt="img"
                                                     class="img-fluid w-100"></span>
                                             3 Baths
                                         </li>

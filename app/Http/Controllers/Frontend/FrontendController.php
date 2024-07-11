@@ -73,7 +73,7 @@ class FrontendController extends Controller
         if ($request->has('p_type') && $request->type != '') {
             $query->where('p_type', $request->type);
         }
-        $propertys = $query->orderBy('id', 'desc')->paginate(6);
+        $propertys = $query->orderBy('id', 'desc')->get();
         $uniquePropertyTypes = Property::where('type', 'buy')->distinct()->pluck('p_type')->sort();
         $uniqueBedrooms = Property::where('type', 'buy')->distinct()->pluck('number_of_room')->sort();
         $uniquePrices = Property::where('type', 'buy')->distinct()->pluck('price')->sort();
@@ -112,7 +112,7 @@ class FrontendController extends Controller
         if ($request->has('p_type') && $request->type != '') {
             $query->where('p_type', $request->type);
         }
-        $propertys = $query->orderBy('id', 'desc')->paginate(6);
+        $propertys = $query->orderBy('id', 'desc')->get();
         $uniquePropertyTypes = Property::where('type', 'rent')->distinct()->pluck('p_type')->sort();
         $uniqueBedrooms = Property::where('type', 'rent')->distinct()->pluck('number_of_room')->sort();
         $uniquePrices = Property::where('type', 'rent')->distinct()->pluck('price')->sort();
@@ -150,7 +150,7 @@ class FrontendController extends Controller
     public function propertydetails($slag)
     {
         $property = Property::where('slag', $slag)->firstOrFail();
-
+        // dd($property->video);
         // Geocode the address
         $address = $property->address;
         $apiKey = env('GEO_CODE_GOOGLE_MAP_API');
@@ -178,10 +178,6 @@ class FrontendController extends Controller
             [$property->title, $latitude, $longitude]
         ];
 
-        // Optionally, add more properties or points of interest here
-        // Example: $markers[] = ['Other Property', other_lat, other_lng];
-
-        // Info window content for the markers
         $infowindow = [
             [$property->title]
         ];

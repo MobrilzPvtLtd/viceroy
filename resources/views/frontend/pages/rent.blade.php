@@ -27,12 +27,12 @@
         </div>
     </section>
     <!--=============================
-                                                                    BREADCRUMBS END
-                                                                ==============================-->
+                                                                        BREADCRUMBS END
+                                                                    ==============================-->
 
     <!--=============================
-                                                                    PROPERTY GRID VIEW START
-                                                                ==============================-->
+                                                                        PROPERTY GRID VIEW START
+                                                                    ==============================-->
     <section class="property_grid_view pb_120 xs_pb_100">
         <div class="container-fluid">
             <div class="row justify-content-center wow fadeInUp" data-wow-duration="1.5s">
@@ -47,15 +47,15 @@
                                 </button>
                             </li>
                             <!--<li class="nav-item" role="presentation">
-                                                                                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                                                                    data-bs-target="#pills-profile" type="button" role="tab"
-                                                                                                    aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                                                                            </li>-->
+                                                                                                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                                                                        data-bs-target="#pills-profile" type="button" role="tab"
+                                                                                                        aria-controls="pills-profile" aria-selected="false">Sell</button>
+                                                                                                </li>-->
                             <!--<li class="nav-item" role="presentation">
-                                                                                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                                                                                    data-bs-target="#pills-contact" type="button" role="tab"
-                                                                                                    aria-controls="pills-contact" aria-selected="false">Rent</button>
-                                                                                            </li>-->
+                                                                                                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                                                                                        data-bs-target="#pills-contact" type="button" role="tab"
+                                                                                                        aria-controls="pills-contact" aria-selected="false">Rent</button>
+                                                                                                </li>-->
                         </ul>
 
                         <div class="tab-content" id="pills-tabContent">
@@ -281,7 +281,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                    </div>-->
+                                                                                                        </div>-->
                                 </form>
                             </div>
                         </div>
@@ -361,8 +361,8 @@
                 </div>
             </section>
             <!--=============================
-                                  PROPERTY GRID VIEW END
-                                 ==============================-->
+                                      PROPERTY GRID VIEW END
+                                     ==============================-->
             <div class="container">
                 <div class="row mt_95 xs_mt_75">
                     <button id="btn001" onclick="func()" name="map-view">
@@ -422,7 +422,8 @@
 
                                             <div class="single_property_text">
                                                 <div class="single_property_top">
-                                                    <a class="item_title" href="{{ route('property', $property->slag) }} ">{{ $property->title }}</a>
+                                                    <a class="item_title"
+                                                        href="{{ route('property', $property->slag) }} ">{{ $property->title }}</a>
                                                     <p>
                                                         <i class="fas fa-map-marker-alt"></i>{{ $property->address }}
                                                     </p>
@@ -445,17 +446,17 @@
                                                         <li>
                                                             <span><img src="assets/images/hall.png" alt="img"
                                                                     class="img-fluid w-100" /></span>
-                                                            {{ $property->hall }}  Hall
+                                                            {{ $property->hall }} Hall
                                                         </li>
                                                         <li>
-                                                            <span><img src="assets/images/amenities_img_7.png" alt="img"
-                                                                    class="img-fluid w-100" /></span>
-                                                            {{ $property->kichen }}  Kitchen
+                                                            <span><img src="assets/images/amenities_img_7.png"
+                                                                    alt="img" class="img-fluid w-100" /></span>
+                                                            {{ $property->kichen }} Kitchen
                                                         </li>
                                                         <li>
                                                             <span><img src="assets/images/dining.png" alt="img"
                                                                     class="img-fluid w-100" /></span>
-                                                            {{ $property->dining }}  dining
+                                                            {{ $property->dining }} dining
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -473,9 +474,9 @@
                             @else
                                 <div class="col-lg-12" style="text-align: center">No Property Found</div>
                             @endif
-                            <div style="text-align: center">
+                            {{-- <div style="text-align: center">
                                 {!! $propertys->links() !!}
-                            </div>
+                            </div> --}}
                         </div>
 
                     </div>
@@ -510,7 +511,7 @@
                             // Place each marker on the map
                             for (i = 0; i < markers.length; i++) {
                                 var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-                                bounds.extend(position);
+                                bounds.extend(position); // Extend bounds to include each marker's position
                                 marker = new google.maps.Marker({
                                     position: position,
                                     map: map,
@@ -524,14 +525,15 @@
                                         infoWindow.open(map, marker);
                                     }
                                 })(marker, i));
-
-                                // Center the map to fit all markers on the screen
-                                map.fitBounds(bounds);
                             }
 
-                            // Set zoom level
-                            var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-                                this.setZoom(14);
+                            // Fit the map bounds to include all markers
+                            map.fitBounds(bounds);
+
+                            // Set zoom level based on bounds
+                            var boundsListener = google.maps.event.addListener(map, 'bounds_changed', function(event) {
+                                // Set the zoom level after the map bounds are changed
+                                this.setZoom(Math.min(this.getZoom(), 14)); // You can adjust the max zoom level here
                                 google.maps.event.removeListener(boundsListener);
                             });
                         }
@@ -539,8 +541,8 @@
                         window.initMap = initMap;
                     </script>
 
-                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ $_ENV['GOOGLE_MAP_API'] }}
-                                                                                        " defer></script>
+                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ $_ENV['GOOGLE_MAP_API'] }}" defer>
+                    </script>
 
                     <style>
                         #mapCanvas {
