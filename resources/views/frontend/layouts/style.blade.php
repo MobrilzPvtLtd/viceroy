@@ -262,7 +262,7 @@ select.select_2 {
     /* margin-left: 20px; */
 }
 .adv_search_area{
-    width: 18%;
+    width: 25%;
 }
 
 .adv_search_close3 {
