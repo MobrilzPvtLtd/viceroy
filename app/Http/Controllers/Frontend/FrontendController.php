@@ -144,7 +144,7 @@ class FrontendController extends Controller
     }
     public function holiday()
     {
-        $holidays = Holiday::orderBy('id', 'desc')->paginate(6);
+        $holidays = Holiday::orderBy('id', 'desc')->get();
         return view('frontend.pages.holiday', compact('holidays'));
     }
     public function propertydetails($slag)

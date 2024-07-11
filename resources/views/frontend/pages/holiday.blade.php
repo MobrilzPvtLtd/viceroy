@@ -404,9 +404,9 @@
                     </div>
                 @endforeach
             </div>
-            <div style="text-align: center">
+            {{-- <div style="text-align: center">
                 {!! $holidays->links() !!}
-            </div>
+            </div> --}}
 
     </section>
 @endsection
