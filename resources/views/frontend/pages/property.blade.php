@@ -2,7 +2,34 @@
 @section('title')
     {{ app_name() }}
 @endsection
+{{-- <style>
+    .img-fluid img {
+    height: 720px !important;
+    width: 968px !important;
+}
 
+.img-fluid {
+    display: flex;
+    justify-content: center;
+    overflow:  !important;
+}
+div#testimonial-slider {
+    overflow: hidden !important;
+    width: 82%;
+    display: flex !important;
+    justify-content: center;
+}
+
+.testimonial-slider-main {
+    display: flex;
+    justify-content: center;
+}
+.owl-theme .owl-controls {
+    margin-top: 10px;
+    text-align: center;
+    width: 99% !important;
+}
+</style> --}}
 @section('content')
     <section class="breadcrumbs" style="background: url('{{ asset('assets/images/breadcrumbs_bg.jpg') }}')">
 
@@ -33,7 +60,7 @@
     <section class="property_details pt_50 xs_pt_100 pb_105 xs_pb_85">
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
-                <div class=" col-xl-12">
+                <div class=" col-xl-12 testimonial-slider-main">
                     <div id="testimonial-slider" class="">
                         @if ($property->image)
                             @php
@@ -42,7 +69,7 @@
                             @if ($images && count($images) > 0)
                                 @foreach ($images as $index => $image)
                                     <div class="img-fluid w-100 {{ $index == 0 ? 'active' : '' }}">
-                                        <img src="{{ asset('public/' . $image) }}" alt="Image">
+                                        <img width="100" src="{{ asset('public/' . $image) }}" alt="Image">
                                     </div>
                                 @endforeach
                             @endif
