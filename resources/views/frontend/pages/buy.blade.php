@@ -268,7 +268,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                                                    </div>-->
+                                                                                                                                        </div>-->
                                 </form>
                             </div>
                         </div>

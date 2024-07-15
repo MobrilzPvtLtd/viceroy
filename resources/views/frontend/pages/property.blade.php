@@ -206,6 +206,7 @@ div#testimonial-slider {
                             @endif
                         </div>
                     </div>
+
                     <div class="single_property_details mt_25 wow fadeInUp" data-wow-duration="1.5s">
                         <h4>Map Location</h4>
                         <div class="apertment_map">

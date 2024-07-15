@@ -27,12 +27,12 @@
         </div>
     </section>
     <!--=============================
-                                                                        BREADCRUMBS END
-                                                                    ==============================-->
+                                                                            BREADCRUMBS END
+                                                                        ==============================-->
 
     <!--=============================
-                                                                        PROPERTY GRID VIEW START
-                                                                    ==============================-->
+                                                                            PROPERTY GRID VIEW START
+                                                                        ==============================-->
     <section class="property_grid_view pb_120 xs_pb_100">
         <div class="container-fluid">
             <div class="row justify-content-center wow fadeInUp" data-wow-duration="1.5s">
@@ -47,15 +47,15 @@
                                 </button>
                             </li>
                             <!--<li class="nav-item" role="presentation">
-                                                                                                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                                                                        data-bs-target="#pills-profile" type="button" role="tab"
-                                                                                                        aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                                                                                </li>-->
+                                                                                                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                                                                            data-bs-target="#pills-profile" type="button" role="tab"
+                                                                                                            aria-controls="pills-profile" aria-selected="false">Sell</button>
+                                                                                                    </li>-->
                             <!--<li class="nav-item" role="presentation">
-                                                                                                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                                                                                        data-bs-target="#pills-contact" type="button" role="tab"
-                                                                                                        aria-controls="pills-contact" aria-selected="false">Rent</button>
-                                                                                                </li>-->
+                                                                                                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                                                                                            data-bs-target="#pills-contact" type="button" role="tab"
+                                                                                                            aria-controls="pills-contact" aria-selected="false">Rent</button>
+                                                                                                    </li>-->
                         </ul>
 
                         <div class="tab-content" id="pills-tabContent">
@@ -281,7 +281,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                        </div>-->
+                                                                                                            </div>-->
                                 </form>
                             </div>
                         </div>
@@ -361,8 +361,8 @@
                 </div>
             </section>
             <!--=============================
-                                      PROPERTY GRID VIEW END
-                                     ==============================-->
+                                          PROPERTY GRID VIEW END
+                                         ==============================-->
             <div class="container">
                 <div class="row mt_95 xs_mt_75">
                     <button id="btn001" onclick="func()" name="map-view">
@@ -543,15 +543,6 @@
 
                     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ $_ENV['GOOGLE_MAP_API'] }}" defer>
                     </script>
-
-                    <style>
-                        #mapCanvas {
-                            height: 400px;
-                            /* The height is 400 pixels */
-                            width: 100%;
-                            /* The width is the width of the web page */
-                        }
-                    </style>
                 </div>
             </div>
         </div>
