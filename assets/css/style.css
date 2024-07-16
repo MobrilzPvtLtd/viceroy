@@ -7951,10 +7951,7 @@ gap: 10px;
         width: 16vw;
         text-align: left;
     }
-    .home_form_label label {
-        font-weight: 600;
-        font-size: 13px;
-    }
+
     .select_label {
         appearance: none;
         -webkit-appearance: none;
@@ -7986,6 +7983,10 @@ gap: 10px;
     }
 
 }
+
+
+
+
 /* .checkbox-group input, textarea {
     width: 15% !important;
 } */
