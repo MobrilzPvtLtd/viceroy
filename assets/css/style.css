@@ -7983,6 +7983,13 @@ gap: 10px;
     }
 
 }
+@media screen and (min-width:1025px) and (max-width:1101px) {
+    .home_form_label label {
+        font-weight: 600;
+        font-size: 13px;
+    }
+}
+
 
 
 
