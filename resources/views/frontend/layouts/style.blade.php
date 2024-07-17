@@ -489,8 +489,9 @@ select.select_2 {
 button#addToCart {
     background-color: #e6b025;
     border-color: #e6b025;
-    border-radius: 37px;
+    border-radius: 50px;
     height: 6vh;
+    width: 3vw;
 }
 
 @media screen and (min-width:1025px) and (max-width:1300px) {

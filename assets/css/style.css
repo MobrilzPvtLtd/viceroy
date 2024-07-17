@@ -8015,3 +8015,7 @@ gap: 10px;
 /*=============================
     DASHBOARD END
 =============================*/
+.wish001 {
+    display: flex;
+    justify-content: space-between;
+}
