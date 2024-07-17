@@ -306,7 +306,11 @@
                             </div>
                             <div class="single_property_text">
                                 <div class="single_property_top">
+                                    <div class="wish001">
                                     <a class="item_title" href="{{ route('property', $property->slag) }}">{{ $property->title }}</a>
+                                    <button type="submit" id="addToCart" data-id="{{ $property->id }}"
+                                        class=" btn btn-primary"><i class="fa fa-heart"></i></button>
+                                    </div>
                                     <p>
                                         <i class="fas fa-map-marker-alt"></i>{{ $property->address }}
                                     </p>
@@ -375,7 +379,7 @@
             <div class="row justify-content-center text-align-center">
                 <div class="col-xl-6 wow fadeInUp" data-wow-duration="1.5s">
                     <div class="section_heading mb_25">
-                        <h2> Book your Holiday Rental Listings.</h2>
+                        <h2> Book your Holiday Rental Listings1.</h2>
                     </div>
                 </div>
             </div>
@@ -402,8 +406,12 @@
 
                             <div class="single_property_text">
                                 <div class="single_property_top">
-                                    <a target="blank" class="item_title"
+                                    <div class="wish001" >
+                                        <a target="blank" class="item_title"
                                         href="{{ $holiday->url }}">{{ $holiday->name }}</a>
+                                        <button type="submit" id="addToCart" data-id="{{ $property->id }}"
+                                            class=" btn btn-primary"><i class="fa fa-heart"></i></button>
+                                    </div>
                                     <p>
                                         <i class="fas fa-map-marker-alt"></i>{{ $holiday->address }}
                                     </p>

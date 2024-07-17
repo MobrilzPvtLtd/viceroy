@@ -7951,10 +7951,7 @@ gap: 10px;
         width: 16vw;
         text-align: left;
     }
-    .home_form_label label {
-        font-weight: 600;
-        font-size: 13px;
-    }
+
     .select_label {
         appearance: none;
         -webkit-appearance: none;
@@ -7986,9 +7983,39 @@ gap: 10px;
     }
 
 }
+@media screen and (min-width:1025px) and (max-width:1101px) {
+    .home_form_label label {
+        font-weight: 600;
+        font-size: 13px;
+    }
+}
+@media screen and (min-width:1025px) and (max-width:1100px) {
+    .home_form_label label {
+        font-weight: 600;
+        font-size: 10px;
+    }
+    }
+
+    @media screen and (min-width:1240px) and (max-width:1350px) {
+        .home_form_label label {
+            font-size: 15px;
+        }
+        }
+    @media screen and (min-width:1251px) and (max-width:1450px) {
+        .home_form_label label {
+            font-size: 15px;
+        }
+        }
+
+
+
 /* .checkbox-group input, textarea {
     width: 15% !important;
 } */
 /*=============================
     DASHBOARD END
 =============================*/
+.wish001 {
+    display: flex;
+    justify-content: space-between;
+}

@@ -422,8 +422,17 @@
 
                                             <div class="single_property_text">
                                                 <div class="single_property_top">
+
+                                                    <div class="wish001">
+                                                        <a class="item_title" href="{{ route('property', $property->slag) }} ">{{ $property->title }}</a>
+                                                    <button type="submit" id="addToCart" data-id="{{ $property->id }}"
+                                                        class=" btn btn-primary"><i class="fa fa-heart"></i></button>
+                                                    </div>
+
+
                                                     <a class="item_title"
                                                         href="{{ route('property', $property->slag) }} ">{{ $property->title }}</a>
+
                                                     <p>
                                                         <i class="fas fa-map-marker-alt"></i>{{ $property->address }}
                                                     </p>
