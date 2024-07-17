@@ -8001,6 +8001,11 @@ gap: 10px;
             font-size: 15px;
         }
         }
+    @media screen and (min-width:1251px) and (max-width:1450px) {
+        .home_form_label label {
+            font-size: 15px;
+        }
+        }
 
 
 
