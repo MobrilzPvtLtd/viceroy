@@ -4,10 +4,8 @@
 @endsection
 
 @section('CustomCss')
-
-<meta name="description" content="test">
-<link rel="stylesheet" href="{{ asset('assets/css/buy.css') }}" />
-
+    <meta name="description" content="test">
+    <link rel="stylesheet" href="{{ asset('assets/css/buy.css') }}" />
 @endsection
 
 @section('content')
@@ -97,7 +95,8 @@
                                                     <select class="select_2" name="state">
                                                         <option value="">Max</option>
                                                         @foreach ($uniqueBedrooms as $bedroom)
-                                                            <option value="{{ $bedroom }}">{{ $bedroom }}</option>
+                                                            <option value="{{ $bedroom }}">{{ $bedroom }}
+                                                            </option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -269,7 +268,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                                                </div>-->
+                                                                                                                                        </div>-->
                                 </form>
                             </div>
                         </div>
@@ -371,7 +370,8 @@
                                                 @if ($images !== false && is_array($images))
                                                     {{-- asset('public/uploads/' . $image) --}}
                                                     @foreach ($images as $image)
-                                                        <img src="{{ asset('public/' . $image) }}" alt="Image" style="width: 100%">
+                                                        <img src="{{ asset('public/' . $image) }}" alt="Image"
+                                                            style="width: 100%">
                                                     @endforeach
                                                 @else
                                                     <p>No images available</p>
@@ -431,17 +431,17 @@
                                                         <li>
                                                             <span><img src="assets/images/hall.png" alt="img"
                                                                     class="img-fluid w-100" /></span>
-                                                            {{ $property->hall }}  Hall
+                                                            {{ $property->hall }} Hall
                                                         </li>
                                                         <li>
-                                                            <span><img src="assets/images/amenities_img_7.png" alt="img"
-                                                                    class="img-fluid w-100" /></span>
-                                                            {{ $property->kichen }}  Kitchen
+                                                            <span><img src="assets/images/amenities_img_7.png"
+                                                                    alt="img" class="img-fluid w-100" /></span>
+                                                            {{ $property->kichen }} Kitchen
                                                         </li>
                                                         <li>
                                                             <span><img src="assets/images/dining.png" alt="img"
                                                                     class="img-fluid w-100" /></span>
-                                                            {{ $property->dining }}  dining
+                                                            {{ $property->dining }} dining
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -459,9 +459,9 @@
                             @else
                                 <div class="col-lg-12" style="text-align: center">No Property Found</div>
                             @endif
-                            <div style="text-align: center">
+                            {{-- <div style="text-align: center">
                                 {!! $propertys->links() !!}
-                            </div>
+                            </div> --}}
                         </div>
 
                     </div>
@@ -496,7 +496,7 @@
                             // Place each marker on the map
                             for (i = 0; i < markers.length; i++) {
                                 var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-                                bounds.extend(position);
+                                bounds.extend(position); // Extend bounds to include each marker's position
                                 marker = new google.maps.Marker({
                                     position: position,
                                     map: map,
@@ -510,14 +510,15 @@
                                         infoWindow.open(map, marker);
                                     }
                                 })(marker, i));
-
-                                // Center the map to fit all markers on the screen
-                                map.fitBounds(bounds);
                             }
 
-                            // Set zoom level
-                            var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-                                this.setZoom(14);
+                            // Fit the map bounds to include all markers
+                            map.fitBounds(bounds);
+
+                            // Set zoom level based on bounds
+                            var boundsListener = google.maps.event.addListener(map, 'bounds_changed', function(event) {
+                                // Set the zoom level after the map bounds are changed
+                                this.setZoom(Math.min(this.getZoom(), 14)); // You can adjust the max zoom level here
                                 google.maps.event.removeListener(boundsListener);
                             });
                         }
@@ -525,8 +526,8 @@
                         window.initMap = initMap;
                     </script>
 
-                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ $_ENV['GOOGLE_MAP_API'] }}
-                                                            " defer></script>
+                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ $_ENV['GOOGLE_MAP_API'] }}" defer>
+                    </script>
 
                     <style>
                         #mapCanvas {
@@ -536,6 +537,7 @@
                             /* The width is the width of the web page */
                         }
                     </style>
+
                 </div>
 
             </div>

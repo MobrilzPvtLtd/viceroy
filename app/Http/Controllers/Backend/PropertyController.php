@@ -61,7 +61,6 @@ class PropertyController extends Controller
             'hall' => 'required',
             'kichen' => 'required',
             'dining' => 'required',
-
         ]);
 
         $imagePaths = [];
@@ -115,6 +114,17 @@ class PropertyController extends Controller
         $propertyData['latitude'] = $latitude;
         $propertyData['longitude'] = $longitude;
         $propertyData['featured'] = $request->has('featured');
+        if (!empty($request->video)) {
+            $video = explode("=", $request->video);
+
+            if (count($video) > 1) {
+                $propertyData['video'] = $video[1];
+            } else {
+                $propertyData['video'] = $request->video;
+            }
+        } else {
+            $propertyData['video'] = null;
+        }
 
         // Create the property
         Property::create($propertyData);
@@ -127,26 +137,24 @@ class PropertyController extends Controller
     }
 
     public function edit($id)
-{
-    $property = Property::findOrFail($id);
-    $property->image = unserialize($property->image);
-    $property->floor_plan = unserialize($property->floor_plan);
-    $facilities = Facilities::all();
-    $selectedFacilities = unserialize($property->facilities);
+    {
+        $property = Property::findOrFail($id);
+        $property->image = unserialize($property->image);
+        $property->floor_plan = unserialize($property->floor_plan);
+        $facilities = Facilities::all();
+        $selectedFacilities = unserialize($property->facilities);
 
-    // Retrieve countries and cities
-    $countrys = Country::all();
-    $citys = City::all();
+        // Retrieve countries and cities
+        $countrys = Country::all();
+        $citys = City::all();
 
-    return view('backend.property.edit', compact('property', 'facilities', 'selectedFacilities', 'countrys', 'citys'));
-}
+        return view('backend.property.edit', compact('property', 'facilities', 'selectedFacilities', 'countrys', 'citys'));
+    }
 
 
 
     public function update(Request $request, $id)
     {
-        $property = Property::findOrFail($id);
-
         $request->validate([
             'title' => 'required',
             'type' => 'required',
@@ -156,26 +164,21 @@ class PropertyController extends Controller
             'size' => 'required',
             'address' => 'required',
             'price' => 'required',
-            'desc' => 'required',
+            'desc' => '',
             'number_of_room' => 'required',
             'number_bathroom' => 'required',
-            'year' => 'required',
-            'map' => 'required',
-            'video' => 'required',
+            'year' => '',
+            'video' => '',
             'facilities' => 'required',
-             'hall' => 'required',
-             'kichen' => 'required',
-             'dining' => 'required',
+            'hall' => 'required',
+            'kichen' => 'required',
+            'dining' => 'required',
         ]);
-        $imagePaths = unserialize($property->image) ?? [];
-        if ($request->hasFile('image')) {
-            foreach ($imagePaths as $oldImage) {
-                if (file_exists(public_path($oldImage))) {
-                    unlink(public_path($oldImage));
-                }
-            }
-            $imagePaths = [];
 
+        $property = Property::findOrFail($id);
+
+        $imagePaths = unserialize($property->image) ?: [];
+        if ($request->hasFile('image')) {
             foreach ($request->file('image') as $file) {
                 $extension = $file->getClientOriginalExtension();
                 $filename = time() . '_' . uniqid() . '.' . $extension;
@@ -183,15 +186,9 @@ class PropertyController extends Controller
                 $imagePaths[] = 'uploads/' . $filename;
             }
         }
-        $floor_planPaths = unserialize($property->floor_plan) ?? [];
+
+        $floor_planPaths = unserialize($property->floor_plan) ?: [];
         if ($request->hasFile('floor_plan')) {
-            // Delete old floor plans
-            foreach ($floor_planPaths as $oldFloorPlan) {
-                if (file_exists(public_path($oldFloorPlan))) {
-                    unlink(public_path($oldFloorPlan));
-                }
-            }
-            $floor_planPaths = [];
             foreach ($request->file('floor_plan') as $file) {
                 $extension = $file->getClientOriginalExtension();
                 $filename = time() . '_' . uniqid() . '.' . $extension;
@@ -200,9 +197,10 @@ class PropertyController extends Controller
             }
         }
 
+        // Geocode the address
         $address = $request->input('address');
         $apiKey = env('GEO_CODE_GOOGLE_MAP_API');
-        $client = new Client();
+        $client = new \GuzzleHttp\Client();
         $response = $client->get('https://maps.googleapis.com/maps/api/geocode/json', [
             'query' => [
                 'address' => $address,
@@ -212,8 +210,8 @@ class PropertyController extends Controller
 
         $geoData = json_decode($response->getBody(), true);
 
-        $latitude = $property->latitude;
-        $longitude = $property->longitude;
+        $latitude = null;
+        $longitude = null;
 
         if (!empty($geoData['results'][0])) {
             $location = $geoData['results'][0]['geometry']['location'];
@@ -221,6 +219,7 @@ class PropertyController extends Controller
             $longitude = $location['lng'];
         }
 
+        // Prepare data for database update
         $facilities = $request->input('facilities', []);
         $propertyData = $request->except('image', 'floor_plan', 'facilities', 'featured');
         $propertyData['image'] = serialize($imagePaths);
@@ -229,11 +228,15 @@ class PropertyController extends Controller
         $propertyData['latitude'] = $latitude;
         $propertyData['longitude'] = $longitude;
         $propertyData['featured'] = $request->has('featured');
+        $video = explode("=", $request->video);
+        $propertyData['video'] = $video[1];
 
+        // Update the property
         $property->update($propertyData);
 
         return redirect()->route('property.index')->with('success', 'Property has been updated successfully.');
     }
+
     public function destroy($id)
     {
         $property = Property::findOrFail($id);
