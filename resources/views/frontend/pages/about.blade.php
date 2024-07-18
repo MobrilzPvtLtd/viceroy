@@ -64,10 +64,8 @@
 
                         <h4 class="pt-4">And why just stop there?</h4>
                                                 <ul class="d-flex flex-wrap pt_15">
-                        <p>_Unlock the Potential of Your Home… _by availing of our Holiday Home rental management services. We can transform your vacation home into a thriving business thereby allowing you to maximise rental income, simplify guest communication and also ensure a seamless guest experience.</p>
-                        <p>Imagine turning your underutilised property into a source of consistent income and joy for travellers. You would have the benefits of professional booking and inquiry management thereby freeing up your time along with top-notch cleaning, maintenance and guest support for worry-free rentals.</p>                      <ul class="d-flex flex-wrap pt_15">
-                        <p>Bonus advantage is that the Home Owner (or their personal guests) would have the ability to utilise their now fully serviced apartment whenever they visit Goa by simply blocking the dates on the calendar themselves.</p>                        <ul class="d-flex flex-wrap pt_15">
-                        <p>We also provide a solution to a common problem that most home owners face when they can’t take time off to visit Goa for the purpose of civil, repair, legal or administrative work for the apartment /house. To resolve this issue we extend comprehensive estate management services for the estate owner; be it for scheduled maintenance, timely legal support, earning potential revenue or estate related accounting.</p>
+                        <p>Unlock the Potential of Your Home… by availing of our Holiday Home rental management services. We can transform your vacation home into a thriving business thereby allowing you to maximise rental income, simplify guest communication and also ensure a seamless guest experience.</p>
+                        <p>Imagine turning your underutilised property into a source of consistent income and joy for travellers. You would have the benefits of professional booking and inquiry management thereby freeing up your time along with top-notch cleaning, maintenance and guest support for worry-free rentals.</p>
 
 
                         {{-- <ul class="d-flex flex-wrap pt_15">
