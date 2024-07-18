@@ -300,7 +300,7 @@
                   animation-name: fadeInUp;
                 ">
                             <div class="section_heading mb_25">
-                                <h2>Effortless path to discover your ideal apartment</h2>
+                                <h2>Hassle-Free Rentals, Happy Tenants</h2>
                             </div>
                         </div>
                     </div>
