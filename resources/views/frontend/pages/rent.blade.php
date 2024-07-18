@@ -430,8 +430,8 @@
                                                     </div>
 
 
-                                                    <a class="item_title"
-                                                        href="{{ route('property', $property->slag) }} ">{{ $property->title }}</a>
+                                                    {{-- <a class="item_title"
+                                                        href="{{ route('property', $property->slag) }} ">{{ $property->title }}</a> --}}
 
                                                     <p>
                                                         <i class="fas fa-map-marker-alt"></i>{{ $property->address }}
