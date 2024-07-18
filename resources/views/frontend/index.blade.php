@@ -21,29 +21,29 @@
                                 psychology.
                             </p>
                         </div>
-                            <div class="tab-content" id="pills-tabContent">
-                                <div class="form-container">
-                                    <h2>Want do you want ? </h2>
-                                    <form id="property-form" method="post">
-                                        <div class="checkbox-group">
-                                            <label>
-                                                <input type="radio" name="property-action" value="rent-house">
-                                                <span> Rent  Property</span>
-                                            </label>
-                                            <label>
-                                                <input type="radio" name="property-action" value="buy-house">
-                                                <span> Buy Property</span>
-                                            </label>
-                                            <label>
-                                                <input type="radio" name="property-action" value="holiday-rental">
-                                                <span> Book holiday rental</span>
-                                            </label>
-                                        </div>
-                                        <button type="submit" class="submit-btn">Submit</button>
-                                    </form>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="form-container">
+                                <h2>Want do you want ? </h2>
+                                <form id="property-form" method="post">
+                                    <div class="checkbox-group">
+                                        <label>
+                                            <input type="radio" name="property-action" value="rent-house">
+                                            <span> Rent Property</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="property-action" value="buy-house">
+                                            <span> Buy Property</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="property-action" value="holiday-rental">
+                                            <span> Book holiday rental</span>
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="submit-btn">Submit</button>
+                                </form>
 
-                                </div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -125,12 +125,12 @@
         </div>
     </section>
     <!--=============================
-                                                                                        ABOUT END
-                                                                                    ==============================-->
+                                                                                            ABOUT END
+                                                                                        ==============================-->
 
     <!--=============================
-                                                                                        DESTINATION START
-                                                                                    ==============================-->
+                                                                                            DESTINATION START
+                                                                                        ==============================-->
     <section class="destination_area pt_115 xs_pt_110 pb_60 xs_pb_90">
         <div class="container">
             <div class="row justify-content-center">
@@ -265,12 +265,12 @@
         </div>
     </section>
     <!--=============================
-                                                                                        DESTINATION END
-                                                                                    ==============================-->
+                                                                                            DESTINATION END
+                                                                                        ==============================-->
 
     <!--=============================
-                                                                                        PROPERTY START
-                                                                                    ==============================-->
+                                                                                            PROPERTY START
+                                                                                        ==============================-->
     <section class="property_area pt_60 xs_pt_95 pb_50 xs_pb_95">
         <div class="container">
             <div class="row justify-content-center text-align-center">
@@ -307,9 +307,10 @@
                             <div class="single_property_text">
                                 <div class="single_property_top">
                                     <div class="wish001">
-                                    <a class="item_title" href="{{ route('property', $property->slag) }}">{{ $property->title }}</a>
-                                    <button type="submit" id="addToCart" data-id="{{ $property->id }}"
-                                        class=" btn btn-primary"><i class="fa fa-heart"></i></button>
+                                        <a class="item_title"
+                                            href="{{ route('property', $property->slag) }}">{{ $property->title }}</a>
+                                        <button type="submit" id="addToCart" data-id="{{ $property->id }}"
+                                            class=" btn btn-primary"><i class="fa fa-heart"></i></button>
                                     </div>
                                     <p>
                                         <i class="fas fa-map-marker-alt"></i>{{ $property->address }}
@@ -333,17 +334,17 @@
                                         <li>
                                             <span><img src="assets/images/hall.png" alt="img"
                                                     class="img-fluid w-100" /></span>
-                                            {{ $property->hall }}  Hall
+                                            {{ $property->hall }} Hall
                                         </li>
                                         <li>
                                             <span><img src="assets/images/amenities_img_7.png" alt="img"
                                                     class="img-fluid w-100" /></span>
-                                            {{ $property->kichan }}  Kitchen
+                                            {{ $property->kichan }} Kitchen
                                         </li>
                                         <li>
                                             <span><img src="assets/images/dining.png" alt="img"
                                                     class="img-fluid w-100" /></span>
-                                            {{ $property->dining }}  dining
+                                            {{ $property->dining }} dining
                                         </li>
                                     </ul>
                                 </div>
@@ -406,9 +407,9 @@
 
                             <div class="single_property_text">
                                 <div class="single_property_top">
-                                    <div class="wish001" >
+                                    <div class="wish001">
                                         <a target="blank" class="item_title"
-                                        href="{{ $holiday->url }}">{{ $holiday->name }}</a>
+                                            href="{{ $holiday->url }}">{{ $holiday->name }}</a>
                                         <button type="submit" id="addToCart" data-id="{{ $property->id }}"
                                             class=" btn btn-primary"><i class="fa fa-heart"></i></button>
                                     </div>
@@ -456,12 +457,12 @@
     </section>
 
     <!--=============================
-                                                                                        PROPERTY END
-                                                                                    ==============================-->
+                                                                                            PROPERTY END
+                                                                                        ==============================-->
 
     <!--=============================
-                                                                                        AGENT START
-                                                                                    ==============================-->
+                                                                                            AGENT START
+                                                                                        ==============================-->
     <section class="agent_area pt_60 xs_pt_95 pb_70 xs_pb_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -636,12 +637,12 @@
 
     </section>
     <!--=============================
-                                                                                        AGENT END
-                                                                                    ==============================-->
+                                                                                            AGENT END
+                                                                                        ==============================-->
 
     <!--=============================
-                                                                                        FIND STATE START
-                                                                                    ==============================-->
+                                                                                            FIND STATE START
+                                                                                        ==============================-->
     <section class="find_state" style="background: url(assets/images/find_state.jpg)">
         <div id="vbg12" data-vbg-loop="true" data-vbg="https://youtu.be/ec_fXMrD7Ow?si=m9LJu9X3lzTP5Erz"></div>
         <div class="container">
@@ -656,24 +657,24 @@
         </div>
     </section>
     <!--=============================
-                                                                                        FIND STATE END
-                                                                                    ==============================-->
+                                                                                            FIND STATE END
+                                                                                        ==============================-->
 
     <!--=============================
-                                                                                        BLOG START
-                                                                                    ==============================-->
+                                                                                            BLOG START
+                                                                                        ==============================-->
 
     <!--=============================
-                                                                                        BLOG END
-                                                                                    ==============================-->
+                                                                                            BLOG END
+                                                                                        ==============================-->
 
     <!--=============================
-                                                                                        DISCOVER START
-                                                                                    ==============================-->
+                                                                                            DISCOVER START
+                                                                                        ==============================-->
 
     <!--=============================
-                                                                                        PARTNER START
-                                                                                    ==============================-->
+                                                                                            PARTNER START
+                                                                                        ==============================-->
     <section class="partner_area pt_30 pb_30">
         <div class="container">
             <div class="row justify-content-center">
@@ -688,33 +689,87 @@
                     </div>
                 </div>
             </div>
-        <marquee width="100%" behavior="scroll" direction="left" scrollamount="12" loop="infinite">
-            <div class="row justify-content-between">
-                <div class="col-xl-12">
-                    <div class="marquee_animi">
-                        <ul class="single_partner">
-                            @foreach ($brands as $brand)
-                                @if ($brand->image)
-                                    <li>
-                                        <a href="agencies_details.html">
-                                            <img src="{{ asset('public/images/' . $brand->image) }}" alt="img"
-                                                class="img-fluid w-100" />
-                                        </a>
-                                    </li>
-                                @else
-                                    No Image
-                                @endif
-                            @endforeach
-                        </ul>
+            <marquee width="100%" behavior="scroll" direction="left" scrollamount="12" loop="infinite">
+                <div class="row justify-content-between">
+                    <div class="col-xl-12">
+                        <div class="marquee_animi">
+                            <ul class="single_partner">
+                                @foreach ($brands as $brand)
+                                    @if ($brand->image)
+                                        <li>
+                                            <a href="agencies_details.html">
+                                                <img src="{{ asset('public/images/' . $brand->image) }}" alt="img"
+                                                    class="img-fluid w-100" />
+                                            </a>
+                                        </li>
+                                    @else
+                                        No Image
+                                    @endif
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </marquee>
+            </marquee>
         </div>
     </section>
-
 @endsection
 @section('script')
+    <script>
+        var isAuthenticated = @json(Auth::check());
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#addToCart').click(function() {
+                if (!isAuthenticated) {
+                    window.location.href = '{{ route('login') }}';
+                    return;
+                }
+
+                var itemId = $(this).data('id');
+                $.ajax({
+                    url: '/cart/add',
+                    type: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        id: itemId
+                    },
+                    success: function(response) {
+                        var responseData = JSON.parse(response);
+                        $('#cartItems').html('');
+                        console.log(responseData);
+
+                        var cartCount = 0;
+
+                        // var cartCount = responseData.CartDetails.length;
+
+                        $.each(responseData.CartDetails, function(key, val) {
+                            var cartItems = val;
+
+                            $('#cartItems').prepend(
+                                '<li class="grid_4 item container"><div class="preview">   <img style="width: 100px;" src="/public/' +
+                                cartItems.image +
+                                '"></div>                 <div class="details" data-price="15.50"><h3>' +
+                                cartItems.title +
+                                '</h3>      </div><div class="inner_container"><div class="col_1of2 align-center picker"><p><a href="#" OnClick="RemoveFromCart(' +
+                                cartItems.id +
+                                ')" class="btn-remove"><i class="far fa-trash-alt"></i></a></p></div></div></li>'
+                            );
+
+                            cartCount++;
+                        });
+
+                        // Update cart count
+                        $('#cartCount').text(cartCount);
+
+                    },
+                    error: function(xhr, status, error) {
+                        console.log('An error occurred: ' + error);
+                    }
+                });
+            });
+        });
+    </script>
     <script>
         $(document).ready(function() {
             $('#co_name').change(function() {
@@ -764,7 +819,7 @@
             event.preventDefault();
             const selectedAction = document.querySelector('input[name="property-action"]:checked').value;
             let redirectUrl = '';
-            switch(selectedAction) {
+            switch (selectedAction) {
                 case 'rent-house':
                     redirectUrl = '/rent';
                     break;
@@ -779,6 +834,5 @@
             }
             window.location.href = redirectUrl;
         });
-        </script>
-
+    </script>
 @endsection

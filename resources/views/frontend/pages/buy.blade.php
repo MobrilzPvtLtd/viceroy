@@ -546,6 +546,7 @@
     </section>
 @endsection
 @section('script')
+
     <script>
         $(document).ready(function() {
             $('#co_name').change(function() {
