@@ -125,12 +125,12 @@
         </div>
     </section>
     <!--=============================
-                                                                                            ABOUT END
-                                                                                        ==============================-->
+                                                                                                        ABOUT END
+                                                                                                    ==============================-->
 
     <!--=============================
-                                                                                            DESTINATION START
-                                                                                        ==============================-->
+                                                                                                        DESTINATION START
+                                                                                                    ==============================-->
     <section class="destination_area pt_115 xs_pt_110 pb_60 xs_pb_90">
         <div class="container">
             <div class="row justify-content-center">
@@ -265,12 +265,12 @@
         </div>
     </section>
     <!--=============================
-                                                                                            DESTINATION END
-                                                                                        ==============================-->
+                                                                                                        DESTINATION END
+                                                                                                    ==============================-->
 
     <!--=============================
-                                                                                            PROPERTY START
-                                                                                        ==============================-->
+                                                                                                        PROPERTY START
+                                                                                                    ==============================-->
     <section class="property_area pt_60 xs_pt_95 pb_50 xs_pb_95">
         <div class="container">
             <div class="row justify-content-center text-align-center">
@@ -310,7 +310,8 @@
                                         <a class="item_title"
                                             href="{{ route('property', $property->slag) }}">{{ $property->title }}</a>
                                         <button type="submit" id="addToCart" data-id="{{ $property->id }}"
-                                            class=" btn btn-primary"><i class="fa fa-heart"></i></button>
+                                            class="addToCart btn btn-primary"><i class="fa fa-heart"></i></button>
+
                                     </div>
                                     <p>
                                         <i class="fas fa-map-marker-alt"></i>{{ $property->address }}
@@ -410,8 +411,8 @@
                                     <div class="wish001">
                                         <a target="blank" class="item_title"
                                             href="{{ $holiday->url }}">{{ $holiday->name }}</a>
-                                        <button type="submit" id="addToCart" data-id="{{ $property->id }}"
-                                            class=" btn btn-primary"><i class="fa fa-heart"></i></button>
+                                        <button type="submit" id="addToCart" data-id="" class=" btn btn-primary"><i
+                                                class="fa fa-heart"></i></button>
                                     </div>
                                     <p>
                                         <i class="fas fa-map-marker-alt"></i>{{ $holiday->address }}
@@ -457,12 +458,12 @@
     </section>
 
     <!--=============================
-                                                                                            PROPERTY END
-                                                                                        ==============================-->
+                                                                                                        PROPERTY END
+                                                                                                    ==============================-->
 
     <!--=============================
-                                                                                            AGENT START
-                                                                                        ==============================-->
+                                                                                                        AGENT START
+                                                                                                    ==============================-->
     <section class="agent_area pt_60 xs_pt_95 pb_70 xs_pb_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -637,12 +638,12 @@
 
     </section>
     <!--=============================
-                                                                                            AGENT END
-                                                                                        ==============================-->
+                                                                                                        AGENT END
+                                                                                                    ==============================-->
 
     <!--=============================
-                                                                                            FIND STATE START
-                                                                                        ==============================-->
+                                                                                                        FIND STATE START
+                                                                                                    ==============================-->
     <section class="find_state" style="background: url(assets/images/find_state.jpg)">
         <div id="vbg12" data-vbg-loop="true" data-vbg="https://youtu.be/ec_fXMrD7Ow?si=m9LJu9X3lzTP5Erz"></div>
         <div class="container">
@@ -657,24 +658,24 @@
         </div>
     </section>
     <!--=============================
-                                                                                            FIND STATE END
-                                                                                        ==============================-->
+                                                                                                        FIND STATE END
+                                                                                                    ==============================-->
 
     <!--=============================
-                                                                                            BLOG START
-                                                                                        ==============================-->
+                                                                                                        BLOG START
+                                                                                                    ==============================-->
 
     <!--=============================
-                                                                                            BLOG END
-                                                                                        ==============================-->
+                                                                                                        BLOG END
+                                                                                                    ==============================-->
 
     <!--=============================
-                                                                                            DISCOVER START
-                                                                                        ==============================-->
+                                                                                                        DISCOVER START
+                                                                                                    ==============================-->
 
     <!--=============================
-                                                                                            PARTNER START
-                                                                                        ==============================-->
+                                                                                                        PARTNER START
+                                                                                                    ==============================-->
     <section class="partner_area pt_30 pb_30">
         <div class="container">
             <div class="row justify-content-center">
@@ -720,7 +721,9 @@
     </script>
     <script>
         $(document).ready(function() {
-            $('#addToCart').click(function() {
+            $('.addToCart').click(function(event) {
+                event.preventDefault();
+
                 if (!isAuthenticated) {
                     window.location.href = '{{ route('login') }}';
                     return;
@@ -736,22 +739,21 @@
                     },
                     success: function(response) {
                         var responseData = JSON.parse(response);
-                        $('#cartItems').html('');
                         console.log(responseData);
 
                         var cartCount = 0;
 
-                        // var cartCount = responseData.CartDetails.length;
+                        $('#cartItems').html('');
 
                         $.each(responseData.CartDetails, function(key, val) {
                             var cartItems = val;
 
-                            $('#cartItems').prepend(
-                                '<li class="grid_4 item container"><div class="preview">   <img style="width: 100px;" src="/public/' +
+                            $('#cartItems').append(
+                                '<li class="grid_4 item container"><div class="preview"><img style="width: 100px;" src="/public/' +
                                 cartItems.image +
-                                '"></div>                 <div class="details" data-price="15.50"><h3>' +
+                                '"></div><div class="details" data-price="15.50"><h3>' +
                                 cartItems.title +
-                                '</h3>      </div><div class="inner_container"><div class="col_1of2 align-center picker"><p><a href="#" OnClick="RemoveFromCart(' +
+                                '</h3></div><div class="inner_container"><div class="col_1of2 align-center picker"><p><a href="#" OnClick="RemoveFromCart(' +
                                 cartItems.id +
                                 ')" class="btn-remove"><i class="far fa-trash-alt"></i></a></p></div></div></li>'
                             );
@@ -759,9 +761,7 @@
                             cartCount++;
                         });
 
-                        // Update cart count
                         $('#cartCount').text(cartCount);
-
                     },
                     error: function(xhr, status, error) {
                         console.log('An error occurred: ' + error);

@@ -144,14 +144,14 @@ $total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
         @can('Brand')
             <li class="nav-item">
                 <a class="nav-link" href="/admin/brand">
-                    <i class="nav-icon fa-solid fa-hotel"></i>&nbsp;@lang('Our Brands')
+                    <i class="nav-icon fa-solid fa-bars"></i>&nbsp;@lang('Our Brands')
                 </a>
             </li>
         @endcan
         @can('professionals')
             <li class="nav-item">
                 <a class="nav-link" href="/admin/professionals">
-                    <i class="nav-icon fa-solid fa-hotel"></i>&nbsp;@lang('Our Realtors')
+                    <i class="nav-icon fa-solid fa-user"></i>&nbsp;@lang('Our Realtors')
                 </a>
             </li>
         @endcan

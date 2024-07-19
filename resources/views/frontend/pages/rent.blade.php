@@ -27,12 +27,12 @@
         </div>
     </section>
     <!--=============================
-                                                                            BREADCRUMBS END
-                                                                        ==============================-->
+                                                                                        BREADCRUMBS END
+                                                                                    ==============================-->
 
     <!--=============================
-                                                                            PROPERTY GRID VIEW START
-                                                                        ==============================-->
+                                                                                        PROPERTY GRID VIEW START
+                                                                                    ==============================-->
     <section class="property_grid_view pb_120 xs_pb_100">
         <div class="container-fluid">
             <div class="row justify-content-center wow fadeInUp" data-wow-duration="1.5s">
@@ -47,15 +47,15 @@
                                 </button>
                             </li>
                             <!--<li class="nav-item" role="presentation">
-                                                                                                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                                                                            data-bs-target="#pills-profile" type="button" role="tab"
-                                                                                                            aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                                                                                    </li>-->
+                                                                                                                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                                                                                        data-bs-target="#pills-profile" type="button" role="tab"
+                                                                                                                        aria-controls="pills-profile" aria-selected="false">Sell</button>
+                                                                                                                </li>-->
                             <!--<li class="nav-item" role="presentation">
-                                                                                                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                                                                                            data-bs-target="#pills-contact" type="button" role="tab"
-                                                                                                            aria-controls="pills-contact" aria-selected="false">Rent</button>
-                                                                                                    </li>-->
+                                                                                                                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                                                                                                        data-bs-target="#pills-contact" type="button" role="tab"
+                                                                                                                        aria-controls="pills-contact" aria-selected="false">Rent</button>
+                                                                                                                </li>-->
                         </ul>
 
                         <div class="tab-content" id="pills-tabContent">
@@ -281,7 +281,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                            </div>-->
+                                                                                                                        </div>-->
                                 </form>
                             </div>
                         </div>
@@ -361,8 +361,8 @@
                 </div>
             </section>
             <!--=============================
-                                          PROPERTY GRID VIEW END
-                                         ==============================-->
+                                                      PROPERTY GRID VIEW END
+                                                     ==============================-->
             <div class="container">
                 <div class="row mt_95 xs_mt_75">
                     <button id="btn001" onclick="func()" name="map-view">
@@ -424,14 +424,14 @@
                                                 <div class="single_property_top">
 
                                                     <div class="wish001">
-                                                        <a class="item_title" href="{{ route('property', $property->slag) }} ">{{ $property->title }}</a>
-                                                    <button type="submit" id="addToCart" data-id="{{ $property->id }}"
-                                                        class=" btn btn-primary"><i class="fa fa-heart"></i></button>
+                                                        <a class="item_title"
+                                                            href="{{ route('property', $property->slag) }} ">{{ $property->title }}</a>
+                                                        <button type="submit" id="addToCart"
+                                                            data-id="{{ $property->id }}"
+                                                            class="addToCart btn btn-primary"><i
+                                                                class="fa fa-heart"></i></button>
                                                     </div>
 
-
-                                                    {{-- <a class="item_title"
-                                                        href="{{ route('property', $property->slag) }} ">{{ $property->title }}</a> --}}
 
                                                     <p>
                                                         <i class="fas fa-map-marker-alt"></i>{{ $property->address }}
@@ -559,6 +559,60 @@
     </section>
 @endsection
 @section('script')
+    <script>
+        var isAuthenticated = @json(Auth::check());
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.addToCart').click(function(event) {
+                event.preventDefault();
+
+                if (!isAuthenticated) {
+                    window.location.href = '{{ route('login') }}';
+                    return;
+                }
+
+                var itemId = $(this).data('id');
+                $.ajax({
+                    url: '/cart/add',
+                    type: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        id: itemId
+                    },
+                    success: function(response) {
+                        var responseData = JSON.parse(response);
+                        console.log(responseData);
+
+                        var cartCount = 0;
+
+                        $('#cartItems').html('');
+
+                        $.each(responseData.CartDetails, function(key, val) {
+                            var cartItems = val;
+
+                            $('#cartItems').append(
+                                '<li class="grid_4 item container"><div class="preview"><img style="width: 100px;" src="/public/' +
+                                cartItems.image +
+                                '"></div><div class="details" data-price="15.50"><h3>' +
+                                cartItems.title +
+                                '</h3></div><div class="inner_container"><div class="col_1of2 align-center picker"><p><a href="#" OnClick="RemoveFromCart(' +
+                                cartItems.id +
+                                ')" class="btn-remove"><i class="far fa-trash-alt"></i></a></p></div></div></li>'
+                            );
+
+                            cartCount++;
+                        });
+
+                        $('#cartCount').text(cartCount);
+                    },
+                    error: function(xhr, status, error) {
+                        console.log('An error occurred: ' + error);
+                    }
+                });
+            });
+        });
+    </script>
     <script>
         $(document).ready(function() {
             $('#co_name').change(function() {

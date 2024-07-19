@@ -45,27 +45,39 @@ class BrandsController extends Controller
     }
 
     public function update(Request $request, $id)
-    {
-        $request->validate([
-            'image' => 'nullable',
-        ]);
+{
+    // Fetch the existing brand by ID
+    $brand = Brands::findOrFail($id);
 
-        $brand = Brands::findOrFail($id);
+    // Validate the incoming request
+    $request->validate([
+        'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
 
-        if ($request->hasFile('image')) {
+    // Check if a new image is uploaded
+    if ($request->hasFile('image')) {
+        // Generate a new filename
+        $imageName = time() . '.' . $request->image->extension();
 
-            $imageName = time() . '.' . $request->image->extension();
-            $request->image->move(public_path('images'), $imageName);
+        // Move the new image to the public/images directory
+        $request->image->move(public_path('images'), $imageName);
 
-            if (public_path('images/' . $brand->image)) {
-                unlink(public_path('images/' . $brand->image));
-            }
-            $brand->update(['image' => $imageName]);
+        // Delete the old image if it exists
+        if ($brand->image && file_exists(public_path('images/' . $brand->image))) {
+            unlink(public_path('images/' . $brand->image));
         }
-        $brand->save();
 
-        return redirect()->route('brand.index')->with('success', 'Brand has been updated successfully.');
+        // Update the brand's image
+        $brand->image = $imageName;
     }
+
+    // Save the updated brand details
+    $brand->save();
+
+    // Redirect to the brand index page with a success message
+    return redirect()->route('brand.index')->with('success', 'Brand has been updated successfully.');
+}
+
 
     public function destroy(Brands $brand)
     {
