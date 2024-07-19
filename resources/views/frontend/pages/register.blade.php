@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('title')
-    {{ app_name()}}
+    {{ app_name() }}
 @endsection
 
 @section('content')
@@ -23,13 +23,13 @@
         </div>
     </section>
     <!--=============================
-        BREADCRUMBS END
-    ==============================-->
+            BREADCRUMBS END
+        ==============================-->
 
 
     <!--=============================
-        REGISTRATION  START
-    ==============================-->
+            REGISTRATION  START
+        ==============================-->
     <section class="login_area registration pt_120 xs_pt_100 pb_120 xs_pb_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -50,7 +50,7 @@
                                         </div>
                                         <div class="single_input">
                                             <label>Password</label>
-                                            <input type="password" placeholder="********">
+                                            <input type="password" id="password" placeholder="********">
                                             <span class="show_password">
                                                 <i class="far fa-eye open_eye"></i>
                                                 <i class="far fa-eye-slash close_eye"></i>
@@ -82,7 +82,26 @@
             </div>
         </div>
     </section>
+@endsection
+@section('script')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.show_password').click(function() {
+                var passwordField = $('#password');
+                var openEyeIcon = $('.open_eye');
+                var closeEyeIcon = $('.close_eye');
 
-
-    @endsection
-
+                if (passwordField.attr('type') === 'password') {
+                    passwordField.attr('type', 'text');
+                    openEyeIcon.hide();
+                    closeEyeIcon.show();
+                } else {
+                    passwordField.attr('type', 'password');
+                    openEyeIcon.show();
+                    closeEyeIcon.hide();
+                }
+            });
+        });
+    </script>
+@endsection

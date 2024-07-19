@@ -125,12 +125,12 @@
         </div>
     </section>
     <!--=============================
-                                                                                                        ABOUT END
-                                                                                                    ==============================-->
+                                                                                                            ABOUT END
+                                                                                                        ==============================-->
 
     <!--=============================
-                                                                                                        DESTINATION START
-                                                                                                    ==============================-->
+                                                                                                            DESTINATION START
+                                                                                                        ==============================-->
     <section class="destination_area pt_115 xs_pt_110 pb_60 xs_pb_90">
         <div class="container">
             <div class="row justify-content-center">
@@ -265,12 +265,12 @@
         </div>
     </section>
     <!--=============================
-                                                                                                        DESTINATION END
-                                                                                                    ==============================-->
+                                                                                                            DESTINATION END
+                                                                                                        ==============================-->
 
     <!--=============================
-                                                                                                        PROPERTY START
-                                                                                                    ==============================-->
+                                                                                                            PROPERTY START
+                                                                                                        ==============================-->
     <section class="property_area pt_60 xs_pt_95 pb_50 xs_pb_95">
         <div class="container">
             <div class="row justify-content-center text-align-center">
@@ -458,12 +458,12 @@
     </section>
 
     <!--=============================
-                                                                                                        PROPERTY END
-                                                                                                    ==============================-->
+                                                                                                            PROPERTY END
+                                                                                                        ==============================-->
 
     <!--=============================
-                                                                                                        AGENT START
-                                                                                                    ==============================-->
+                                                                                                            AGENT START
+                                                                                                        ==============================-->
     <section class="agent_area pt_60 xs_pt_95 pb_70 xs_pb_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -514,7 +514,12 @@
                                             {{ $professional->number }}</a>
                                     </li>
                                     <li>
-                                        <a href=""><i class="fas fa-envelope"></i>{{ $professional->email }}</a>
+                                        {{-- <a href=""><i class="fas fa-envelope"></i>{{ $professional->email }}</a> --}}
+                                        @if (!empty($professional->email))
+                                            <a href="mailto:{{ $professional->email }}">
+                                                <i class="fas fa-envelope"></i>{{ $professional->email }}
+                                            </a>
+                                        @endif
                                     </li>
                                 </ul>
                             </div>
@@ -638,12 +643,12 @@
 
     </section>
     <!--=============================
-                                                                                                        AGENT END
-                                                                                                    ==============================-->
+                                                                                                            AGENT END
+                                                                                                        ==============================-->
 
     <!--=============================
-                                                                                                        FIND STATE START
-                                                                                                    ==============================-->
+                                                                                                            FIND STATE START
+                                                                                                        ==============================-->
     <section class="find_state" style="background: url(assets/images/find_state.jpg)">
         <div id="vbg12" data-vbg-loop="true" data-vbg="https://youtu.be/ec_fXMrD7Ow?si=m9LJu9X3lzTP5Erz"></div>
         <div class="container">
@@ -658,24 +663,24 @@
         </div>
     </section>
     <!--=============================
-                                                                                                        FIND STATE END
-                                                                                                    ==============================-->
+                                                                                                            FIND STATE END
+                                                                                                        ==============================-->
 
     <!--=============================
-                                                                                                        BLOG START
-                                                                                                    ==============================-->
+                                                                                                            BLOG START
+                                                                                                        ==============================-->
 
     <!--=============================
-                                                                                                        BLOG END
-                                                                                                    ==============================-->
+                                                                                                            BLOG END
+                                                                                                        ==============================-->
 
     <!--=============================
-                                                                                                        DISCOVER START
-                                                                                                    ==============================-->
+                                                                                                            DISCOVER START
+                                                                                                        ==============================-->
 
     <!--=============================
-                                                                                                        PARTNER START
-                                                                                                    ==============================-->
+                                                                                                            PARTNER START
+                                                                                                        ==============================-->
     <section class="partner_area pt_30 pb_30">
         <div class="container">
             <div class="row justify-content-center">

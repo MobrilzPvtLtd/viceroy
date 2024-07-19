@@ -27,9 +27,7 @@
                                         class="img-fluid w-100" />
                                 </a>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetu adipiscing elit.
-                                    Aenean quis orci sit amet odio maximus sagittis et eu
-                                    odio.
+                                    Welcome home! Whether you're a seasoned investor or a first-time buyer, we understand that finding the perfect property is a journey! At Viceroy Realty, we are here to guide you every step of the way. Browse through our extensive listings, explore vibrant neighbourhoods and connect with our team of dedicated realtors. Let's turn your dream into your reality.
                                 </p>
                                 {{-- <ul class="d-flex flex-wrap">
                                     <li>

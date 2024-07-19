@@ -25,7 +25,7 @@ class ProfessionalsController extends Controller
             'name' => 'required',
             'post' => 'required',
             'number' => 'required',
-            'email' => 'required',
+            'email' => '',
             'image' => 'required',
         ]);
 
@@ -64,7 +64,7 @@ class ProfessionalsController extends Controller
             'name' => 'required',
             'post' => 'required',
             'number' => 'required',
-            'email' => 'required',
+            'email' => '',
             'image' => 'nullable',
         ]);
 
