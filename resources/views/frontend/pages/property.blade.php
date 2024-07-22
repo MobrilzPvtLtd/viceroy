@@ -30,15 +30,13 @@ div#testimonial-slider {
     width: 99% !important;
 }
 </style> --}}
-{{-- <style>
+<style>
     button#addCart {
-        /* color: aqua; */
-        background-color: #e6b025;
-        border: solid 1px #e6b025;
+        background-color: #e6b025 !important;
         border-radius: 50px;
-        /* height: 10vh; */
+        border: solid 1px #e6b025;
     }
-</style> --}}
+</style>
 
 @section('content')
     <section class="breadcrumbs" style="background: url('{{ asset('assets/images/breadcrumbs_bg.jpg') }}')">
@@ -60,13 +58,13 @@ div#testimonial-slider {
         </div>
     </section>
     <!--=============================
-                                                                                                                BREADCRUMBS END
-                                                                                                            ==============================-->
+                                                                                                                    BREADCRUMBS END
+                                                                                                                ==============================-->
 
 
     <!--=============================
-                                                                                                                PROPERTY DETAILS START
-                                                                                                            ==============================-->
+                                                                                                                    PROPERTY DETAILS START
+                                                                                                                ==============================-->
     <section class="property_details pt_50 xs_pt_100 pb_105 xs_pb_85">
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
@@ -523,7 +521,6 @@ div#testimonial-slider {
             });
         });
     </script>
-    //relatede property
     <script>
         var isAuthenticated = @json(Auth::check());
     </script>
