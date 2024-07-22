@@ -71,7 +71,7 @@
                                                     Remember me
                                                 </label>
                                             </div>
-                                            <a class="forget_password" href="forgot_password.html">Forgot password ?</a>
+                                            <a class="forget_password" href="{{ route('password.email') }}">Forgot password ?</a>
                                         </div>
                                         <button class="common_btn" type="submit">Login</button>
                                     </form>
