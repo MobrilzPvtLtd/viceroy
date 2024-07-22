@@ -406,11 +406,9 @@
                                                     <div class="wish001">
                                                         <a class="item_title"
                                                             href="{{ route('property', $property->slag) }}">{{ $property->title }}</a>
-                                                        {{-- @foreach ($propertys as $property) --}}
                                                         <button type="submit" id="addToCart"
                                                             data-id="{{ $property->id }}" class="addToCart btn btn-primary"><i
                                                                 class="fa fa-heart"></i></button>
-                                                        {{-- @endforeach --}}
                                                     </div>
 
                                                     <p>

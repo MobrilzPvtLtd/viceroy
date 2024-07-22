@@ -17,10 +17,10 @@
                     <p>
                         {{ $$module_name_singular->address }}
                     </p>
-                    <a class="text-blue-800 hover:text-gray-800"
+                    {{-- <a class="text-blue-800 hover:text-gray-800"
                         href="{{ route('frontend.users.profile', $$module_name_singular->username) }}" target="_blank">
                         {{ str_replace(['http://', 'https://'], '', route('frontend.users.profile', $$module_name_singular->username)) }}
-                    </a>
+                    </a> --}}
                     @if ($$module_name_singular->url_website)
                         <a class="text-blue-800 hover:text-gray-800" href="{{ $$module_name_singular->url_website }}"
                             target="_blank">
