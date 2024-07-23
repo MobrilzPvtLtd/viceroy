@@ -96,7 +96,7 @@
                         <div class="col-md-6 col-lg-12 col-xl-6">
                             <div class="contact_input">
                                 <label for="Name">Name</label>
-                                <input type="text"umbername="name" placeholder="e.g John Paul" required />
+                                <input type="text"umbername="name" value="{{ auth()->check() ? auth()->user()->name : '' }}" placeholder="e.g John Paul" required />
                                 <span class="contact_input_icon">
                                     <img src="assets/images/user_icon_3.png" alt="icon" class="img-fluid w-100" />
                                 </span>
