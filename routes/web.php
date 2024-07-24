@@ -19,6 +19,7 @@ use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Backend\BrandsController;
 use App\Http\Controllers\Backend\ProfessionalsController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
 
 
@@ -85,7 +86,8 @@ Route::get('holiday', [FrontendController::class, 'holiday'])->name('holiday');
 Route::get('services', [FrontendController::class, 'services'])->name('services');
 Route::get('contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('login', [FrontendController::class, 'login'])->name('login');
-Route::get('register', [FrontendController::class, 'register'])->name('register');
+// Route::get('register', [FrontendController::class, 'register'])->name('register');
+// Route::post('register', [RegisteredUserController::class, 'store'])->name('register');
 Route::get('property/{slag}', [FrontendController::class, 'propertydetails'])->name('property');
 Route::get('checkout', [FrontendController::class, 'cartform'])->name('cartform');
 Route::get('terms&con', [FrontendController::class, 'terms'])->name('terms&con');

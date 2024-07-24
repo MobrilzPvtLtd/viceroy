@@ -12,6 +12,7 @@ use App\Models\Currency;
 use App\Models\City;
 use App\Models\Property;
 use App\Models\Brands;
+use App\Models\User;
 use App\Models\Professionals;
 use Illuminate\Support\Facades\DB;
 

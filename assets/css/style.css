@@ -8023,3 +8023,6 @@ marquee {
     display: flex;
     justify-content: center;
 }
+.phpdebugbar {
+    display: none;
+}

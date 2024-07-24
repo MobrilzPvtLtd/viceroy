@@ -74,9 +74,8 @@
                                         <div class="home_form_label s2">
                                             <label>Bedrooms</label>
                                             <div class="adv_search_icon" id="select_bedroom_btn">
-                                                <input class="select_label select_bedroom_btn" name="state" type="button"
-                                                    value="Select bedrooms">
-                                                </input>
+                                                <input class="select_label select_bedroom_btn" id="bedroomButton"
+                                                    name="state" type="button" value="Select bedrooms">
                                             </div>
 
                                             <div class="adv_search_area show_search1" id="close001">
@@ -85,14 +84,14 @@
                                                 </div>
 
                                                 <div id="min_max">
-                                                    <select class="select_2" name="state">
+                                                    <select class="select_2" id="bedroomMin" name="state">
                                                         <option value="">Min</option>
                                                         @foreach ($uniqueBedrooms as $bedroom)
                                                             <option value="{{ $bedroom }}">{{ $bedroom }}</option>
                                                         @endforeach
                                                     </select>
 
-                                                    <select class="select_2" name="state">
+                                                    <select class="select_2" id="bedroomMax" name="state">
                                                         <option value="">Max</option>
                                                         @foreach ($uniqueBedrooms as $bedroom)
                                                             <option value="{{ $bedroom }}">{{ $bedroom }}
@@ -103,21 +102,20 @@
                                             </div>
                                         </div>
 
+
                                         <div class="home_form_label s2">
                                             <label>Price</label>
                                             <div class="adv_search_icon2" id="select_price_btn">
                                                 <input type="button" value="Select Price" class="select_label s22"
-                                                    name="state">
-
-                                                </input>
+                                                    id="priceButton" name="state">
                                             </div>
 
                                             <div class="adv_search_area2" id="close002">
                                                 <div class="adv_search_close3">
                                                 </div>
-                                                <div class="" id="min_max2">
-                                                    <div class="">
-                                                        <select class="select_2" name="state">
+                                                <div id="min_max2">
+                                                    <div>
+                                                        <select class="select_2" id="priceMin" name="state">
                                                             <option value="">Min</option>
                                                             @foreach ($uniquePrices as $price)
                                                                 <option value="{{ $price }}">{{ $price }}
@@ -125,19 +123,19 @@
                                                             @endforeach
                                                         </select>
                                                     </div>
-                                                    <div class="">
-                                                        <select class="select_2" name="state">
+                                                    <div>
+                                                        <select class="select_2" id="priceMax" name="state">
                                                             <option value="">Max</option>
                                                             @foreach ($uniquePrices as $price)
                                                                 <option value="{{ $price }}">{{ $price }}
                                                                 </option>
                                                             @endforeach
-                                                            </option>
                                                         </select>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
 
                                         <div class="home_form_label">
                                             <label>Property Type</label>
@@ -268,7 +266,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                                                                        </div>-->
+                                                                                                                                                                        </div>-->
                                 </form>
                             </div>
                         </div>
@@ -407,7 +405,8 @@
                                                         <a class="item_title"
                                                             href="{{ route('property', $property->slag) }}">{{ $property->title }}</a>
                                                         <button type="submit" id="addToCart"
-                                                            data-id="{{ $property->id }}" class="addToCart btn btn-primary"><i
+                                                            data-id="{{ $property->id }}"
+                                                            class="addToCart btn btn-primary"><i
                                                                 class="fa fa-heart"></i></button>
                                                     </div>
 
@@ -576,7 +575,9 @@
 
                         var cartCount = 0;
 
-                        $('#cartItems').html('');
+                        // $('#cartItems').html('');
+                        var datas = $('#cartItems').html('');
+                        console.log(datas);
 
                         $.each(responseData.CartDetails, function(key, val) {
                             var cartItems = val;
@@ -775,5 +776,47 @@
 
                 );
         }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const bedroomButton = document.getElementById('bedroomButton');
+            const bedroomMin = document.getElementById('bedroomMin');
+            const bedroomMax = document.getElementById('bedroomMax');
+
+            function updateBedroomButton() {
+                const min = bedroomMin.value;
+                const max = bedroomMax.value;
+
+                let label = 'Select bedrooms';
+                if (min || max) {
+                    label = ` ${min } - ${max}`;
+                }
+                bedroomButton.value = label;
+            }
+
+            bedroomMin.addEventListener('change', updateBedroomButton);
+            bedroomMax.addEventListener('change', updateBedroomButton);
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const priceButton = document.getElementById('priceButton');
+            const priceMin = document.getElementById('priceMin');
+            const priceMax = document.getElementById('priceMax');
+
+            function updatePriceButton() {
+                const min = priceMin.value;
+                const max = priceMax.value;
+
+                let label = 'Select Price';
+                if (min || max) {
+                    label = ` ${min} - ${max}`;
+                }
+                priceButton.value = label;
+            }
+
+            priceMin.addEventListener('change', updatePriceButton);
+            priceMax.addEventListener('change', updatePriceButton);
+        });
     </script>
 @endsection

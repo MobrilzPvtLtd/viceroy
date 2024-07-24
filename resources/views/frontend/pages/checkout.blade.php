@@ -3,10 +3,8 @@
     {{ app_name() }}
 @endsection
 @section('CustomCss')
-
-<meta name="description" content="test">
-<link rel="stylesheet" href="{{ asset('assets/css/checkout.css') }}" />
-
+    <meta name="description" content="test">
+    <link rel="stylesheet" href="{{ asset('assets/css/checkout.css') }}" />
 @endsection
 
 @section('content')
@@ -30,12 +28,12 @@
         </div>
     </section>
     <!--=============================
-                            BREADCRUMBS END
-                        ==============================-->
+                                BREADCRUMBS END
+                            ==============================-->
 
     <!--=============================
-                            CONTACT START
-                        ==============================-->
+                                CONTACT START
+                            ==============================-->
     <section class="contact_area pt_40 xs_pt_100 pb_120 xs_pb_100">
         <div class="container d-flex">
             <div class="row justify-content-between">
@@ -77,10 +75,12 @@
                 @endif
             </div>
             <div class="col-xxl-7 col-lg-7 wow fadeInRight" data-wow-duration="1.5s">
-                <form action="{{route('checkout.submit')}}" method="POST">
+                <form action="{{ route('checkout.submit') }}" method="POST">
                     @csrf
                     @php
                         $titles = [];
+                        $images = []; // Initialize the $images array
+
                         foreach ($sessionData['CartDetails'] as $cartItems) {
                             $titles[] = $cartItems['title'];
                             $images[] = $cartItems['image'];
@@ -89,6 +89,7 @@
                         $titlesString = implode(', ', $titles);
                         $imagesString = implode(', ', $images);
                     @endphp
+
                     <input type="hidden" name="title[]" value="{{ $titlesString }}">
                     <input type="hidden" value="{{ $imagesString }}" name="image[]">
                     <div class="row">
@@ -96,7 +97,9 @@
                         <div class="col-md-6 col-lg-12 col-xl-6">
                             <div class="contact_input">
                                 <label for="Name">Name</label>
-                                <input type="text"umbername="name" value="{{ auth()->check() ? auth()->user()->name : '' }}" placeholder="e.g John Paul" required />
+                                <input type="text"umbername="name"
+                                    value="{{ auth()->check() ? auth()->user()->name : '' }}" placeholder="e.g John Paul"
+                                    required />
                                 <span class="contact_input_icon">
                                     <img src="assets/images/user_icon_3.png" alt="icon" class="img-fluid w-100" />
                                 </span>
@@ -122,7 +125,8 @@
                         <div class="col-md-6 col-lg-12 col-xl-6 dt" style="display: flex">
                             <div class="contact_input">
                                 <label for="startTime">Start Time</label>
-                                <input type="time" id="startTime" name="st_time" placeholder="Start Time" required value="fgsdf"/>
+                                <input type="time" id="startTime" name="st_time" placeholder="Start Time" required
+                                    value="fgsdf" />
                             </div>
                             <div class="contact_input">
                                 <label for="endTime">End Time</label>
@@ -136,7 +140,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="contact_input">
-                                <button  type="submit" class="common_btn">Submit your inquiry</button>
+                                <button type="submit" class="common_btn">Submit your inquiry</button>
                             </div>
                         </div>
                     </div>
