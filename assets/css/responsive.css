@@ -205,9 +205,12 @@
     .container {
         max-width: 1140px !important;
     }
+    .single_property_top {
 
+        height: 225px !important;
+    }
     .main_menu .navbar-nav .nav-item .nav-link {
-        font-size: 15px;
+        font-size: 14px;
         margin: 0px 12px;
     }
 
@@ -393,6 +396,7 @@
 
     .single_discover {
         padding: 40px;
+        height: 650px !important;
     }
 
     /*================================
@@ -2860,7 +2864,15 @@
     ================================*/
     /* menu start */
     .main_menu .container {
-        padding: 20px 0px;
+        padding: 5px 0px;
+    }
+    button#addToCart {
+        width: 13vw !important;
+    }
+    p.notify001 {
+
+        width: 8vw !important;
+
     }
 
     .main_menu #navbarNav {
@@ -3827,3 +3839,11 @@
         DASHBOARD END
     ================================*/
 }
+
+
+@media screen and (min-width:1850px) and (max-width:1950px) {
+    .single_discover {
+        height: 500px;
+    }
+}
+

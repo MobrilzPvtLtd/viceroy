@@ -86,11 +86,13 @@
                         <div class="content">
                             <div class="test-cart" id='cart'>
                                 <i class="fa fa-heart" aria-hidden="true"></i>
+                                <p class="notify001" id="cartCount">
+                                    {{ session()->has('cart') ? count(session('cart')) : 0 }}
+                                </p>
                             </div>
+
                         </div>
-                        <p class="notify001" id="cartCount">
-                            {{ session()->has('cart') ? count(session('cart')) : 0 }}
-                        </p>
+
                     </li>
                 </ul>
             </div>
@@ -220,6 +222,15 @@
             .dropdown {
                 margin-top: -20px;
             }
+            .content {
+
+                position: relative !important;
+                width: 100px !important;
+                z-index: 1 !important;
+            }
+            p.notify001 {
+                top: -15px !important;
+}
         </style>
 
 
