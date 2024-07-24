@@ -8024,3 +8024,11 @@ marquee {
     display: flex;
     justify-content: center;
 }
+@media screen and (max-width:768px) {
+    #container2{
+        position: sticky !important;
+    }
+    #home_form {
+        flex-direction: column;
+    }
+}
