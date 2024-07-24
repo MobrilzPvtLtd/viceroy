@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('title')
-    {{ app_name()}}
+    {{ app_name() }}
 @endsection
 
 @section('content')
@@ -23,13 +23,13 @@
         </div>
     </section>
     <!--=============================
-        BREADCRUMBS END
-    ==============================-->
+            BREADCRUMBS END
+        ==============================-->
 
 
     <!--=============================
-        REGISTRATION  START
-    ==============================-->
+            REGISTRATION  START
+        ==============================-->
     <section class="login_area registration pt_120 xs_pt_100 pb_120 xs_pb_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -39,18 +39,19 @@
                             <div class="col-xl-6 wow fadeInLeft" data-wow-duration="1.5s">
                                 <div class="login_text">
                                     <h4>Registration</h4>
-                                    <form action="#">
+                                    <form action="{{ route('register') }}" method="post">
+                                        @csrf
                                         <div class="single_input">
                                             <label>Name</label>
-                                            <input type="text" placeholder="Name">
+                                            <input type="text" name="name" placeholder="Name">
                                         </div>
                                         <div class="single_input">
                                             <label>Email</label>
-                                            <input type="email" placeholder="Email">
+                                            <input type="email" name="email" placeholder="Email">
                                         </div>
                                         <div class="single_input">
                                             <label>Password</label>
-                                            <input type="password" placeholder="********">
+                                            <input type="password" name="password" id="password" placeholder="********">
                                             <span class="show_password">
                                                 <i class="far fa-eye open_eye"></i>
                                                 <i class="far fa-eye-slash close_eye"></i>
@@ -58,13 +59,13 @@
                                         </div>
                                         <div class="single_input">
                                             <label>Confirm password</label>
-                                            <input type="password" placeholder="********">
-                                            <span class="show_confirm_password">
+                                            <input type="password" name="password_confirmation" placeholder="********" id="password">
+                                            <span class="show_password">
                                                 <i class="far fa-eye open_eye"></i>
                                                 <i class="far fa-eye-slash close_eye"></i>
                                             </span>
                                         </div>
-                                        <button class="common_btn">Registration </button>
+                                        <button  class="common_btn" type="submit" >Registration </button>
                                     </form>
 
 
@@ -82,7 +83,27 @@
             </div>
         </div>
     </section>
+@endsection
+@section('script')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector('.show_password').addEventListener('click', function() {
+                var passwordField = document.getElementById('password');
+                var openEyeIcon = document.querySelector('.open_eye');
+                var closeEyeIcon = document.querySelector('.close_eye');
 
+                if (passwordField.type === 'password') {
+                    passwordField.type = 'text';
+                    openEyeIcon.style.display = 'none';
+                    closeEyeIcon.style.display = 'inline';
+                } else {
+                    passwordField.type = 'password';
+                    openEyeIcon.style.display = 'inline';
+                    closeEyeIcon.style.display = 'none';
+                }
+            });
+        });
+    </script>
 
-    @endsection
-
+@endsection

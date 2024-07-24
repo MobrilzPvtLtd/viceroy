@@ -163,9 +163,9 @@
          font-size: 27px;
          margin-bottom: 0px;
          cursor: pointer;
-         text-align:center;
+         text-align: center;
          transition: all 0.2s ease-in-out;
-         color:#000000;
+         color: #000000;
          margin-right: 52px;
      }
 
@@ -233,7 +233,9 @@
      }
  </style>
 
-
+{{-- @php
+    dd(request()->session()->get('cart'));
+@endphp --}}
  <!-- CART CSS ENDS -->
  <div class="sidecart__overlay sidecart__overlay--hide"></div>
  <div class="sidecart sidecart--close">
@@ -241,22 +243,61 @@
          <a href="#" class="sidecart__close">
              <i class="fa fa-times" aria-hidden="true"></i>
          </a>
-         <h1 class="sidecart__title-text">Cart</h1>
+         <h1 id="myForm" class="sidecart__title-text">Cart</h1>
      </div>
-     <div class="sidecart__items sidecart__items--empty">
+     <div class="sidecart__items sidecart__items--empty" id="cartContainer">
+         <ul class="items" id="cartItems">
+             <!-- Cart items will be dynamically added here -->
+        </ul>
+        @if (!request()->session()->get('cart'))
+            <ul class="items">
+                <li class="grid_4 item container">
+                    <div class="details" data-price="15.50">
+                        <h5 class="items" id="noProduct">Your cart is empty</h5>
+                    </div>
+                </li>
+            </ul>
+        @endif
+    </div>
 
-         <ul class="items" id ="cartItems">
+            <div class="sidecart__footer"  @if (!request()->session()->get('cart')) style="display: none"@endif>
+            <a href="/checkout" class="common_btn" id="checkoutButton">More Details</a>
 
-
-         </ul>
-     </div>
-     <div class="sidecart__footer">
-         <a href="/checkout" class="common_btn">More Details</a>
-     </div>
+    </div>
  </div>
 
- <!-- CART SCRIPT STARTS -->
+ {{-- <script>
+    $(document).ready(function() {
+        const $checkoutButton = $('#checkoutButton');
+        const $emptyMessage = $('#emptyMessage');
+        const $cartContainer = $('#cartContainer');
 
+        function checkCart() {
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            return cart.length > 0;
+        }
+
+        function updateCartUI() {
+            if (checkCart()) {
+                $checkoutButton.show();
+                $emptyMessage.hide();
+                $cartContainer.removeClass('sidecart__items--empty');
+            } else {
+                $checkoutButton.hide();
+                $emptyMessage.show();
+                $cartContainer.addClass('sidecart__items--empty');
+            }
+        }
+
+        // Initial update
+        updateCartUI();
+
+        // Listen for cart updates
+        $(document).on('cartUpdated', function() {
+            updateCartUI();
+        });
+    });
+</script> --}}
 
  <script>
      var APP = APP || {};

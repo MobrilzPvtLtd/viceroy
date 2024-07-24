@@ -12,6 +12,7 @@ use App\Models\Currency;
 use App\Models\City;
 use App\Models\Property;
 use App\Models\Brands;
+use App\Models\User;
 use App\Models\Professionals;
 use Illuminate\Support\Facades\DB;
 
@@ -150,9 +151,9 @@ class FrontendController extends Controller
     public function propertydetails($slag)
     {
         $property = Property::where('slag', $slag)->firstOrFail();
-        // dd($property->video);
-        // Geocode the address
         $address = $property->address;
+
+        // Geocode the main property's address
         $apiKey = env('GEO_CODE_GOOGLE_MAP_API');
         $client = new \GuzzleHttp\Client();
         $response = $client->get('https://maps.googleapis.com/maps/api/geocode/json', [
@@ -173,7 +174,22 @@ class FrontendController extends Controller
             $longitude = $location['lng'];
         }
 
-        // Create the markers array
+        // Update the main property with latitude and longitude if not already set
+        if ($property->latitude === null || $property->longitude === null) {
+            $property->latitude = $latitude;
+            $property->longitude = $longitude;
+            $property->save();
+        }
+
+        // Radius in kilometers
+        $radius = 10; // Adjust this value as needed
+
+        $relatedProperties = Property::where('id', '!=', $property->id)
+            ->whereBetween('latitude', [$latitude - $radius, $latitude + $radius])
+            ->whereBetween('longitude', [$longitude - $radius, $longitude + $radius])
+            ->get();
+
+        // Prepare markers and infowindows
         $markers = [
             [$property->title, $latitude, $longitude]
         ];
@@ -182,13 +198,22 @@ class FrontendController extends Controller
             [$property->title]
         ];
 
-        return view('frontend.pages.property', compact('property', 'latitude', 'longitude', 'markers', 'infowindow'));
+        return view('frontend.pages.property', compact('property', 'latitude', 'longitude', 'markers', 'infowindow', 'relatedProperties'));
     }
+
+
 
     //     public function show($id)
     // {
     //     $property = Property::findOrFail($id);
     //     return view('frontend.pages.property_details', compact('property'));
+    // }
+    // public function showPropertiesByAddress(Request $request)
+    // {
+    //     $address = $request->input('address');
+
+    //     $properties = Property::where('address', 'LIKE', '%' . $address . '%')->get();
+    //     return view('frontend.pages.property', compact('properties', 'address'));
     // }
     public function services()
     {

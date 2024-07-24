@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/aryann.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}" />
 
-    @yield('CustomCss')
+
 
     <!--jquery library js-->
     <script src="/assets/js/jquery-3.7.1.min.js"></script>
@@ -44,6 +44,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css" />
 
     @include('frontend.layouts.style')
+    @yield('CustomCss')
+
 
     {{-- @yield('style') --}}
     <!-- CSRF Token -->

@@ -27,9 +27,7 @@
                                         class="img-fluid w-100" />
                                 </a>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetu adipiscing elit.
-                                    Aenean quis orci sit amet odio maximus sagittis et eu
-                                    odio.
+                                    Welcome home! Whether you're a seasoned investor or a first-time buyer, we understand that finding the perfect property is a journey! At Viceroy Realty, we are here to guide you every step of the way. Browse through our extensive listings, explore vibrant neighbourhoods and connect with our team of dedicated realtors. Let's turn your dream into your reality.
                                 </p>
                                 {{-- <ul class="d-flex flex-wrap">
                                     <li>
@@ -146,35 +144,35 @@
   =================================-->
 
 <!--jquery library js-->
-<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
 <!--bootstrap js-->
-<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 <!--font-awesome js-->
-<script src="assets/js/Font-Awesome.js"></script>
+<script src="{{ asset('assets/js/Font-Awesome.js') }}"></script>
 <!--nice-select js-->
-<script src="assets/js/jquery.nice-select.min.js"></script>
+<script src="{{ asset('assets/js/jquery.nice-select.min.js') }}"></script>
 <!--select-2 js-->
-<script src="assets/js/select2.min.js"></script>
+<script src="{{ asset('assets/js/select2.min.js') }}"></script>
 <!--slick js-->
-<script src="assets/js/slick.min.js"></script>
+<script src="{{ asset('assets/js/slick.min.js') }}"></script>
 <!--marquee js-->
-<script src="assets/js/jquery.marquee.min.js"></script>
+<script src="{{ asset('assets/js/jquery.marquee.min.js') }}"></script>
 <!--YTPlayer js-->
-<script src="assets/js/jquery.youtube-background.min.js"></script>
+<script src="{{ asset('assets/js/jquery.youtube-background.min.js') }}"></script>
 <!--wow js-->
-<script src="assets/js/wow.min.js"></script>
+<script src="{{ asset('assets/js/wow.min.js') }}"></script>
 <!--animated barfiller js-->
-<script src="assets/js/animated_barfiller.js"></script>
+<script src="{{ asset('assets/js/animated_barfiller.js') }}"></script>
 <!--simple-bar-graph js-->
-<script src="assets/js/jquery.simple-bar-graph.min.js"></script>
+<script src="{{ asset('assets/js/jquery.simple-bar-graph.min.js') }}"></script>
 <!--sticky sidebar js-->
-<script src="assets/js/sticky_sidebar.js"></script>
+<script src="{{ asset('assets/js/sticky_sidebar.js') }}"></script>
 <!--summernote js-->
-<script src="assets/js/summernote.min.js"></script>
+<script src="{{ asset('assets/js/summernote.min.js') }}"></script>
 <!--scroll button js-->
-<script src="assets/js/scroll_button.js"></script>
+<script src="{{ asset('assets/js/scroll_button.js') }}"></script>
 <!--main/custom js-->
-<script src="assets/js/script.js"></script>
+<script src="{{ asset('assets/js/script.js') }}"></script>
 
 <script type="text/javascript">
     function showDiv(select) {

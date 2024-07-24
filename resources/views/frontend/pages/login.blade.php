@@ -23,13 +23,13 @@
         </div>
     </section>
     <!--=============================
-                            BREADCRUMBS END
-                        ==============================-->
+                                    BREADCRUMBS END
+                                ==============================-->
 
 
     <!--=============================
-                            LOGIN START
-                        ==============================-->
+                                    LOGIN START
+                                ==============================-->
     <section class="login_area pt_120 xs_pt_100 pb_120 xs_pb_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -56,7 +56,7 @@
                                         <div class="single_input">
 
                                             <label>Password</label>
-                                            <input type="password" name="password" placeholder="********">
+                                            <input type="password" name="password" id="password" placeholder="********">
                                             <span class="show_password">
                                                 <i class="far fa-eye open_eye"></i>
                                                 <i class="far fa-eye-slash close_eye"></i>
@@ -71,7 +71,7 @@
                                                     Remember me
                                                 </label>
                                             </div>
-                                            <a class="forget_password" href="forgot_password.html">Forgot password ?</a>
+                                            <a class="forget_password" href="{{ route('password.email') }}">Forgot password ?</a>
                                         </div>
                                         <button class="common_btn" type="submit">Login</button>
                                     </form>
@@ -90,4 +90,26 @@
             </div>
         </div>
     </section>
+@endsection
+@section('script')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector('.show_password').addEventListener('click', function() {
+                var passwordField = document.getElementById('password');
+                var openEyeIcon = document.querySelector('.open_eye');
+                var closeEyeIcon = document.querySelector('.close_eye');
+
+                if (passwordField.type === 'password') {
+                    passwordField.type = 'text';
+                    openEyeIcon.style.display = 'none';
+                    closeEyeIcon.style.display = 'inline';
+                } else {
+                    passwordField.type = 'password';
+                    openEyeIcon.style.display = 'inline';
+                    closeEyeIcon.style.display = 'none';
+                }
+            });
+        });
+    </script>
 @endsection

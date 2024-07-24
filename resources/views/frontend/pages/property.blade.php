@@ -30,6 +30,16 @@ div#testimonial-slider {
     width: 99% !important;
 }
 </style> --}}
+@section('CustomCss')
+    <style>
+        button#addCart {
+            background-color: #e6b025 !important;
+            border-radius: 50px;
+            border: solid 1px #e6b025;
+        }
+    </style>
+@endsection
+
 @section('content')
     <section class="breadcrumbs" style="background: url('{{ asset('assets/images/breadcrumbs_bg.jpg') }}')">
 
@@ -50,13 +60,13 @@ div#testimonial-slider {
         </div>
     </section>
     <!--=============================
-                                                    BREADCRUMBS END
-                                                ==============================-->
+                                                                                                                            BREADCRUMBS END
+                                                                                                                        ==============================-->
 
 
     <!--=============================
-                                                    PROPERTY DETAILS START
-                                                ==============================-->
+                                                                                                                            PROPERTY DETAILS START
+                                                                                                                        ==============================-->
     <section class="property_details pt_50 xs_pt_100 pb_105 xs_pb_85">
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
@@ -283,7 +293,11 @@ div#testimonial-slider {
                     <div class="single_property_details mt_25 wow fadeInUp" data-wow-duration="1.5s">
                         <h4>Property Video</h4>
                         <div class=" apertment_video">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$property->video}}?v=HieAP-xAlq4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/{{ $property->video }}?v=HieAP-xAlq4"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
 
@@ -349,7 +363,7 @@ div#testimonial-slider {
             <div class="container">
                 <div class="row mt_115 xs_mt_95">
                     <div class="row wow fadeInUp" data-wow-duration="1.5s">
-                        <div class=" col-xl-6">
+                        <div class="col-xl-6">
                             <div class="section_heading section_heading_left mb_25">
                                 <h2>Related Properties</h2>
                             </div>
@@ -357,209 +371,99 @@ div#testimonial-slider {
                     </div>
                 </div>
 
-                <div class="row related_property_slider">
-                    <div class="col-xl-4 wow fadeInUp" data-wow-duration="1.5s">
-                        <div class=" single_property">
-                            <div class="single_property_img">
-                                <img src="{{ asset('assets/images/property_4.jpg') }}" alt="img"
-                                    class="img-fluid w-100">
-                                <a class="feature_link" href="#">for sale</a>
-                                <ul class="d-flex flex-wrap">
-                                    <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="single_property_text">
-                                <div class="single_property_top">
-                                    <a class="item_title " href="#">Stunning mansion in Reno</a>
-                                    <p><i class="fas fa-map-marker-alt"></i>28B Highgate Road, London</p>
-                                    <ul class="d-flex flex-wrap">
-                                        <li>
-                                            <span><img src="{{ asset('assets/images/bad.png') }}" alt="img"
-                                                    class="img-fluid w-100"></span>
-                                            6 Beds
-                                        </li>
-                                        <li>
-                                            <span><img src="{{ asset('assets/images/bathtab.png') }}" alt="img"
-                                                    class="img-fluid w-100"></span>
-                                            4 Baths
-                                        </li>
-                                        <li>
-                                            <span><img src="{{ asset('assets/images/squre.png') }}" alt="img"
-                                                    class="img-fluid w-100"></span>
-                                            2500 Sq Ft
-                                        </li>
-                                    </ul>
+                <div class="row">
+                    @foreach ($relatedProperties as $relatedProperty)
+                        <div class="col-xl-4 wow fadeInUp" data-wow-duration="1.5s">
+                            <div class="single_property">
+                                <div class="single_property_img">
+                                    @php
+                                        $images = unserialize($relatedProperty->image);
+                                    @endphp
+                                    @if ($images !== false && is_array($images))
+                                        @foreach ($images as $image)
+                                            <img src="{{ asset('public/' . $image) }}" alt="Image"
+                                                style="width: 100%">
+                                        @endforeach
+                                    @else
+                                        <p>No images available</p>
+                                    @endif
+                                    <a class="feature_link" href="#">{{ $relatedProperty->type }}</a>
+                                    @if ($relatedProperty->featured)
+                                        <a class="feature_link feature" href="#">Featured</a>
+                                    @endif
+                                    <div id="testimonial-slider1" class="owl-carousel">
+                                        <div class="testimonial">
+                                            <div class="pic">
+                                                <a class="feature_link" href="#"></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                    <a class="read_btn" href="#">More Details<i class="fas fa-arrow-right"></i></a>
-                                    <p>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <span>4.5</span>
-                                    </p>
+                                <div class="single_property_text">
+                                    <div class="single_property_top">
+                                        <div class="wish001">
+                                            <a class="item_title"
+                                                href="{{ route('property', $relatedProperty->slag) }}">{{ $relatedProperty->title }}</a>
+                                            <button type="submit" id="addCart" data-id="{{ $relatedProperty->id }}"
+                                                class="addCart btn btn-primary " style=""><i
+                                                    class="fa fa-heart"></i></button>
+                                        </div>
+                                        <p>
+                                            <i class="fas fa-map-marker-alt"></i>{{ $relatedProperty->address }}
+                                        </p>
+                                        <ul class="d-flex flex-wrap">
+                                            <li>
+                                                <span><img src="{{ asset('assets/images/bad.png') }}" alt="img"
+                                                        class="img-fluid w-100" /></span>
+                                                {{ $relatedProperty->bed }} Beds
+                                            </li>
+                                            <li>
+                                                <span><img src="{{ asset('assets/images/bath.png') }}" alt="img"
+                                                        class="img-fluid w-100" /></span>
+                                                {{ $relatedProperty->number_bathroom }} Baths
+                                            </li>
+                                            <li>
+                                                <span><img src="{{ asset('assets/images/LAND.png') }}" alt="img"
+                                                        class="img-fluid w-100" /></span>
+                                                {{ $relatedProperty->area }} {{ $relatedProperty->size }}
+                                            </li>
+                                            <li>
+                                                <span><img src="{{ asset('assets/images/hall.png') }}" alt="img"
+                                                        class="img-fluid w-100" /></span>
+                                                {{ $relatedProperty->hall }} Hall
+                                            </li>
+                                            <li>
+                                                <span><img src="{{ asset('assets/images/amenities_img_7.png') }}"
+                                                        alt="img" class="img-fluid w-100" /></span>
+                                                {{ $relatedProperty->kichen }} Kitchen
+                                            </li>
+                                            <li>
+                                                <span><img src="{{ asset('assets/images/dining.png') }}" alt="img"
+                                                        class="img-fluid w-100" /></span>
+                                                {{ $relatedProperty->dining }} Dining
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="single_property_bottom d-flex flex-wrap justify-content-between">
+                                        <a class="read_btn" href="{{ route('property', $relatedProperty->slag) }}">More
+                                            Details<i class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                    <span class="property_price">${{ $relatedProperty->price }}</span>
                                 </div>
-                                <span class="property_price">$24,000</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 wow fadeInUp" data-wow-duration="1.5s">
-                        <div class=" single_property">
-                            <div class="single_property_img">
-                                <img src=" {{ asset('assets/images/property_5.jpg') }}" alt="img"
-                                    class="img-fluid w-100">
-                                <a class="feature_link" href="#">for rent</a>
-                                <a class="feature_link feature" href="#">Featured</a>
-                                <ul class="d-flex flex-wrap">
-                                    <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="single_property_text">
-                                <div class="single_property_top">
-                                    <a class="item_title" href="#">Beautiful Condo in London</a>
-                                    <p><i class="fas fa-map-marker-alt"></i>28B Highgate Road, London</p>
-                                    <ul class="d-flex flex-wrap">
-                                        <li>
-                                            <span><img src="{{ asset(' assets/images/property_4.jpg') }}" alt="img"
-                                                    class="img-fluid w-100"></span>
-                                            4 Beds
-                                        </li>
-                                        <li>
-                                            <span><img src="{{ asset('assets/images/bathtab.png') }}" alt="img"
-                                                    class="img-fluid w-100"></span>
-                                            3 Baths
-                                        </li>
-                                        <li>
-                                            <span><img src="{{ asset('assets/images/squre.png') }}" alt="img"
-                                                    class="img-fluid w-100"></span>
-                                            2200 Sq Ft
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                    <a class="read_btn" href="#">More Details<i class="fas fa-arrow-right"></i></a>
-                                    <p>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <span>4.5</span>
-                                    </p>
-                                </div>
-                                <span class="property_price">$9,000</span>
+
+
+
+
+
+
+
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-4 wow fadeInUp" data-wow-duration="1.5s">
-                        <div class=" single_property">
-                            <div class="single_property_img">
-                                <img src="{{ asset('assets/images/property_3.jpg') }}" alt="img"
-                                    class="img-fluid w-100">
-                                <a class="feature_link" href="#">for rent</a>
-                                <a class="feature_link feature" href="#">Featured</a>
-                                <ul class="d-flex flex-wrap">
-                                    <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="single_property_text">
-                                <div class="single_property_top">
-                                    <a class="item_title" href="#">South Side Garden House</a>
-                                    <p><i class="fas fa-map-marker-alt"></i>28B Highgate Road, London</p>
-                                    <ul class="d-flex flex-wrap">
-                                        <li>
-                                            <span><img src="{{ asset('assets/images/bad.png') }}" alt="img"
-                                                    class="img-fluid w-100"></span>
-                                            5 Beds
-                                        </li>
-                                        <li>
-                                            <span><img src="{{ asset('assets/images/bathtab.png') }}" alt="img"
-                                                    class="img-fluid w-100"></span>
-                                            4 Baths
-                                        </li>
-                                        <li>
-                                            <span><img src="{{ asset('assets/images/squre.png') }}" alt="img"
-                                                    class="img-fluid w-100"></span>
-                                            2300 Sq Ft
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                    <a class="read_btn" href="#">More Details<i class="fas fa-arrow-right"></i></a>
-                                    <p>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <span>4.5</span>
-                                    </p>
-                                </div>
-                                <span class="property_price">$29,000</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 wow fadeInUp" data-wow-duration="1.5s">
-                        <div class=" single_property">
-                            <div class="single_property_img">
-                                <img src="{{ asset('assets/images/property_8.jpg') }}" alt="img"
-                                    class="img-fluid w-100">
-                                <a class="feature_link" href="#">for rent</a>
-                                <a class="feature_link feature" href="#">Featured</a>
-                                <ul class="d-flex flex-wrap">
-                                    <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="single_property_text">
-                                <div class="single_property_top">
-                                    <a class="item_title" href="#">Beautiful Condo in London</a>
-                                    <p><i class="fas fa-map-marker-alt"></i>28B Highgate Road, London</p>
-                                    <ul class="d-flex flex-wrap">
-                                        <li>
-                                            <span><img src="{{asset('assets/images/bad.png')}}" alt="img"
-                                                    class="img-fluid w-100"></span>
-                                            4 Beds
-                                        </li>
-                                        <li>
-                                            <span><img src="{{asset('assets/images/bathtab.png') }}" alt="img"
-                                                    class="img-fluid w-100"></span>
-                                            3 Baths
-                                        </li>
-                                        <li>
-                                            <span><img src="{{ asset('assets/images/squre.png') }}" alt="img"
-                                                    class="img-fluid w-100"></span>
-                                            2200 Sq Ft
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                    <a class="read_btn" href="#">More Details<i class="fas fa-arrow-right"></i></a>
-                                    <p>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <span>4.5</span>
-                                    </p>
-                                </div>
-                                <span class="property_price">$9,000</span>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
+
     </section>
 
 @endsection
@@ -619,6 +523,61 @@ div#testimonial-slider {
             });
         });
     </script>
+    <script>
+        var isAuthenticated = @json(Auth::check());
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.addCart').click(function(event) {
+                event.preventDefault();
+
+                if (!isAuthenticated) {
+                    window.location.href = '{{ route('login') }}';
+                    return;
+                }
+
+                var itemId = $(this).data('id');
+                $.ajax({
+                    url: '/cart/add',
+                    type: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        id: itemId
+                    },
+                    success: function(response) {
+                        var responseData = JSON.parse(response);
+                        console.log(responseData);
+
+                        var cartCount = 0;
+
+                        $('#cartItems').html('');
+
+                        $.each(responseData.CartDetails, function(key, val) {
+                            var cartItems = val;
+
+                            $('#cartItems').append(
+                                '<li class="grid_4 item container"><div class="preview"><img style="width: 100px;" src="/public/' +
+                                cartItems.image +
+                                '"></div><div class="details" data-price="15.50"><h3>' +
+                                cartItems.title +
+                                '</h3></div><div class="inner_container"><div class="col_1of2 align-center picker"><p><a href="#" OnClick="RemoveFromCart(' +
+                                cartItems.id +
+                                ')" class="btn-remove"><i class="far fa-trash-alt"></i></a></p></div></div></li>'
+                            );
+
+                            cartCount++;
+                        });
+
+                        $('#cartCount').text(cartCount);
+                    },
+                    error: function(xhr, status, error) {
+                        console.log('An error occurred: ' + error);
+                    }
+                });
+            });
+        });
+    </script>
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js">
     </script>
