@@ -306,7 +306,7 @@
                   animation-duration: 1.5s;
                   animation-name: fadeInUp;
                 ">
-                            <div class="single_discover">
+                            <div class="single_discover" style="height: 225px">
                                 <div class="discover_img">
                                     <img src="assets/images/search.png" alt="icon" class="img-fluid w-100" />
                                 </div>
@@ -319,7 +319,7 @@
                   animation-duration: 1.5s;
                   animation-name: fadeInUp;
                 ">
-                            <div class="single_discover">
+                            <div class="single_discover" style="height: 225px">
                                 <div class="discover_img">
                                     <img src="assets/images/house.png" alt="icon" class="img-fluid w-100" />
                                 </div>
@@ -332,7 +332,7 @@
                   animation-duration: 1.5s;
                   animation-name: fadeInUp;
                 ">
-                            <div class="single_discover">
+                            <div class="single_discover" style="height: 225px">
                                 <div class="discover_img">
                                     <img src="assets/images/bag.png" alt="icon" class="img-fluid w-100" />
                                 </div>
@@ -345,7 +345,7 @@
                   animation-duration: 1.5s;
                   animation-name: fadeInUp;
                 ">
-                            <div class="single_discover">
+                            <div class="single_discover" style="height: 225px">
                                 <div class="discover_img">
                                     <img src="assets/images/happy.png" alt="icon" class="img-fluid w-100" />
                                 </div>

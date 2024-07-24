@@ -30,6 +30,7 @@
             -ms-transition: all linear .3s;
             -o-transition: all linear .3s;
             text-align: center;
+            height: 500px;
         }
 
 
