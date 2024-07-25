@@ -175,24 +175,24 @@
                                 aria-labelledby="pills-contact-tab" tabindex="0">
                                 <form action="#">
                                     <div class="row">
-                                        <div class="col-lg-2">
-                                            <label>Country</label>
-                                            <select class="select_label" name="state">
-                                                <option value="">Select Country</option>
-                                                <option value="">India</option>
-                                                <option value="">United Arab Emirates Dubai</option>
-                                                <option value="">United Kingdom London</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <label>City</label>
-                                            <select class="select_2" name="state">
-                                                <option value="">Select City</option>
-                                                <option value="">India</option>
-                                                <option value="">United Arab Emirates Dubai</option>
-                                                <option value="">United Kingdom London</option>
-                                            </select>
-                                        </div>
+                                            <div class="col-lg-2">
+                                                <label>Country</label>
+                                                <select class="select_label" name="state">
+                                                    <option value="">Select Country</option>
+                                                    <option value="">India</option>
+                                                    <option value="">United Arab Emirates Dubai</option>
+                                                    <option value="">United Kingdom London</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <label>City</label>
+                                                <select class="select_2" name="state">
+                                                    <option value="">Select City</option>
+                                                    <option value="">India</option>
+                                                    <option value="">United Arab Emirates Dubai</option>
+                                                    <option value="">United Kingdom London</option>
+                                                </select>
+                                            </div>
 
                                         <div class="col-lg-4">
                                             <label>Rooms</label>
