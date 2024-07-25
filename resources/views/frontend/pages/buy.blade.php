@@ -266,7 +266,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                                                                                            </div>-->
+                                                                                                                                                                        </div>-->
                                 </form>
                             </div>
                         </div>
@@ -528,7 +528,7 @@
                         window.initMap = initMap;
                     </script>
 
-                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key{{ env('GOOGLE_MAP_API') }}" defer>
+                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ $_ENV['GOOGLE_MAP_API'] }}" defer>
                     </script>
 
                     <style>
@@ -575,8 +575,9 @@
 
                         var cartCount = 0;
 
-                        $('#noProduct').html('');
-                        $('.sidecart__footer').show();
+                        // $('#cartItems').html('');
+                        var datas = $('#cartItems').html('');
+                        console.log(datas);
 
                         $.each(responseData.CartDetails, function(key, val) {
                             var cartItems = val;

@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Checkout;
 use Illuminate\Http\Request;
-use App\Mail\CheckoutMail;
-use Illuminate\Support\Facades\Mail;
 
 
 class CheckoutController extends Controller
@@ -40,7 +38,7 @@ class CheckoutController extends Controller
         $checkout->en_time = $en_time;
         $checkout->massage = $massage;
         $checkout->save();
-        Mail::to($checkout->email)->send(new CheckoutMail($checkout));
+
         // Redirect back with success message
         return redirect()->route('thanks')->with('success', 'Inquiry has been submitted successfully.');
 

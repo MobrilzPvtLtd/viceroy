@@ -748,8 +748,7 @@
 
                         var cartCount = 0;
 
-                        $('#noProduct').html('');
-                        $('.sidecart__footer').show();
+                        $('#cartItems').html('');
 
                         $.each(responseData.CartDetails, function(key, val) {
                             var cartItems = val;
