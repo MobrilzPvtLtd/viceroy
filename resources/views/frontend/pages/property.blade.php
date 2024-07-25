@@ -60,13 +60,13 @@ div#testimonial-slider {
         </div>
     </section>
     <!--=============================
-                                                                                                                            BREADCRUMBS END
-                                                                                                                        ==============================-->
+                                                                                                                                BREADCRUMBS END
+                                                                                                                            ==============================-->
 
 
     <!--=============================
-                                                                                                                            PROPERTY DETAILS START
-                                                                                                                        ==============================-->
+                                                                                                                                PROPERTY DETAILS START
+                                                                                                                            ==============================-->
     <section class="property_details pt_50 xs_pt_100 pb_105 xs_pb_85">
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
@@ -494,6 +494,9 @@ div#testimonial-slider {
 
                         var cartCount = 0;
 
+                        $('#noProduct').html('');
+                        $('.sidecart__footer').show();
+
                         // var cartCount = responseData.CartDetails.length;
 
                         $.each(responseData.CartDetails, function(key, val) {
@@ -550,7 +553,8 @@ div#testimonial-slider {
 
                         var cartCount = 0;
 
-                        $('#cartItems').html('');
+                        $('#noProduct').html('');
+                        $('.sidecart__footer').show();
 
                         $.each(responseData.CartDetails, function(key, val) {
                             var cartItems = val;
