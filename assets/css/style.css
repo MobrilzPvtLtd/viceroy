@@ -8025,7 +8025,7 @@ marquee {
     justify-content: center;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:768px){
     #container2{
         position: sticky !important;
     }
@@ -8036,4 +8036,5 @@ marquee {
 .phpdebugbar {
     display: none;
 
+}
 }
