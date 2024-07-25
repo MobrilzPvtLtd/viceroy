@@ -9,6 +9,6 @@ class Checkout extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'title','image','name','number','date','st_time','en_time','massage',
+        'title','image','name','number','email','date','st_time','en_time','massage',
     ];
 }

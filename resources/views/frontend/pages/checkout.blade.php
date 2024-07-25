@@ -77,6 +77,7 @@
             <div class="col-xxl-7 col-lg-7 wow fadeInRight" data-wow-duration="1.5s">
                 <form action="{{ route('checkout.submit') }}" method="POST">
                     @csrf
+                    <input type="hidden" name="url_type" value="checkout">
                     @php
                         $titles = [];
                         $images = []; // Initialize the $images array
@@ -110,6 +111,15 @@
                             <div class="contact_input">
                                 <label for="Phone">Phone Number</label>
                                 <input type="text" name="number" placeholder="e.g 9098876234" required />
+                                <span class="contact_input_icon">
+                                    <img src="assets/images/call_2.png" alt="icon" class="img-fluid w-100" />
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-12 col-xl-6">
+                            <div class="contact_input">
+                                <label for="Phone">Email</label>
+                                <input type="email" name="email" value="{{ auth()->check() ? auth()->user()->email : '' }}" placeholder="" required />
                                 <span class="contact_input_icon">
                                     <img src="assets/images/call_2.png" alt="icon" class="img-fluid w-100" />
                                 </span>

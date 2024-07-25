@@ -60,13 +60,13 @@ div#testimonial-slider {
         </div>
     </section>
     <!--=============================
-                                                                                                                            BREADCRUMBS END
-                                                                                                                        ==============================-->
+                                                                                                                                BREADCRUMBS END
+                                                                                                                            ==============================-->
 
 
     <!--=============================
-                                                                                                                            PROPERTY DETAILS START
-                                                                                                                        ==============================-->
+                                                                                                                                PROPERTY DETAILS START
+                                                                                                                            ==============================-->
     <section class="property_details pt_50 xs_pt_100 pb_105 xs_pb_85">
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
@@ -309,8 +309,32 @@ div#testimonial-slider {
                             <h4>Schedule a Call</h4>
                             <form action="{{ route('checkout.submit') }}" method="POST" class="schedule_form">
                                 @csrf
+                                <input type="hidden" name="url_type" value="property">
                                 <input type="hidden" name="title" value="{{ $property->title }}">
+                                <input type="hidden" value="{{ $property->image}}" name="image">
                                 <div class="row">
+                                    <div class="col-lg-12 col-md-6">
+                                        <div class="schedule_input">
+                                            <label for="startTime">Name</label>
+                                            <input type="text" name="name"
+                                                value="{{ auth()->check() ? auth()->user()->name : '' }}"
+                                                placeholder="Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-6">
+                                        <div class="schedule_input">
+                                            <label for="startTime">Email</label>
+                                            <input type="email" name="email"
+                                                value="{{ auth()->check() ? auth()->user()->email : '' }}" placeholder=""
+                                                required />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-6">
+                                        <div class="schedule_input">
+                                            <label for="startTime">Phone</label>
+                                            <input type="text" name="number" placeholder="Phone">
+                                        </div>
+                                    </div>
                                     <div class="col-lg-12 col-md-6">
                                         <div class="schedule_input">
                                             <label for="startTime"> Date</label>
@@ -329,18 +353,7 @@ div#testimonial-slider {
                                             <input type="time" name="en_time" placeholder="End Time">
                                         </div>
                                     </div>
-                                    <div class="col-lg-12 col-md-6">
-                                        <div class="schedule_input">
-                                            <label for="startTime">Name</label>
-                                            <input type="text" name="name" placeholder="Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-6">
-                                        <div class="schedule_input">
-                                            <label for="startTime">Phone</label>
-                                            <input type="text" name="number" placeholder="Phone">
-                                        </div>
-                                    </div>
+
                                     <div class="col-xl-12">
                                         <div class="schedule_input">
                                             <textarea rows="5" name="massage" placeholder="Message"></textarea>

@@ -175,24 +175,24 @@
                                 aria-labelledby="pills-contact-tab" tabindex="0">
                                 <form action="#">
                                     <div class="row">
-                                            <div class="col-lg-2">
-                                                <label>Country</label>
-                                                <select class="select_label" name="state">
-                                                    <option value="">Select Country</option>
-                                                    <option value="">India</option>
-                                                    <option value="">United Arab Emirates Dubai</option>
-                                                    <option value="">United Kingdom London</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-lg-2">
-                                                <label>City</label>
-                                                <select class="select_2" name="state">
-                                                    <option value="">Select City</option>
-                                                    <option value="">India</option>
-                                                    <option value="">United Arab Emirates Dubai</option>
-                                                    <option value="">United Kingdom London</option>
-                                                </select>
-                                            </div>
+                                        <div class="col-lg-2">
+                                            <label>Country</label>
+                                            <select class="select_label" name="state">
+                                                <option value="">Select Country</option>
+                                                <option value="">India</option>
+                                                <option value="">United Arab Emirates Dubai</option>
+                                                <option value="">United Kingdom London</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <label>City</label>
+                                            <select class="select_2" name="state">
+                                                <option value="">Select City</option>
+                                                <option value="">India</option>
+                                                <option value="">United Arab Emirates Dubai</option>
+                                                <option value="">United Kingdom London</option>
+                                            </select>
+                                        </div>
 
                                         <div class="col-lg-4">
                                             <label>Rooms</label>
@@ -266,7 +266,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                                                                                        </div>-->
+                                                                                                                                                                            </div>-->
                                 </form>
                             </div>
                         </div>
@@ -528,7 +528,7 @@
                         window.initMap = initMap;
                     </script>
 
-                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ $_ENV['GOOGLE_MAP_API'] }}" defer>
+                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ env('GOOGLE_MAP_API') }}" defer>
                     </script>
 
                     <style>
@@ -576,8 +576,9 @@
                         var cartCount = 0;
 
                         // $('#cartItems').html('');
-                        var datas = $('#cartItems').html('');
-                        console.log(datas);
+                        $('#noProduct').html('');
+                        $('.sidecart__footer').show();
+
 
                         $.each(responseData.CartDetails, function(key, val) {
                             var cartItems = val;

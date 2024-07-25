@@ -19,15 +19,17 @@ class CheckoutMail extends Mailable
      */
 
     public $checkout;
+    public $url_type;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Checkout $checkout)
+    public function __construct(Checkout $checkout, $url_type)
     {
         $this->checkout = $checkout;
+        $this->url_type = $url_type;
     }
 
     /**
@@ -38,6 +40,7 @@ class CheckoutMail extends Mailable
     public function build()
     {
 
-        return $this->view('mail.checkout-email')->subject("A new email for contact form");
+        return $this->view('mail.checkout-email')->subject("A new email for contact form")
+        ->with(['checkout'=> $this->checkout, 'url_type' => $this->url_type]);
     }
 }

@@ -253,7 +253,7 @@
             <ul class="items">
                 <li class="grid_4 item container">
                     <div class="details" data-price="15.50">
-                        <h5 class="items" id="noProduct">Your cart is empty</h5>
+                        <h5 class="items"  style="text-align: center; margin-left: 133px; margin-top: -60px;"  id="noProduct">Your cart is empty</h5>
                     </div>
                 </li>
             </ul>

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('name');
             $table->string('number');
+            $table->string('email');
             $table->string('date');
             $table->string('st_time');
             $table->string('en_time');
