@@ -175,7 +175,6 @@
                                 aria-labelledby="pills-contact-tab" tabindex="0">
                                 <form action="#">
                                     <div class="row">
-                                        <div class="a007">
                                             <div class="col-lg-2">
                                                 <label>Country</label>
                                                 <select class="select_label" name="state">
@@ -194,7 +193,6 @@
                                                     <option value="">United Kingdom London</option>
                                                 </select>
                                             </div>
-                                        </div>
 
                                         <div class="col-lg-4">
                                             <label>Rooms</label>
