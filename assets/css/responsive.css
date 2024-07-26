@@ -197,7 +197,7 @@
     ================================*/
 }
 
-@media (min-width: 1200px) and (max-width: 1249.99px) {
+@media (min-width: 1200px) and (max-width: 1399.99px) {
 
     /*================================
         HOME PAGE 01 START
@@ -3845,6 +3845,13 @@
     .single_discover {
         height: 500px;
     }
+}
+@media  screen and (min-with:1200px) and (max-width:1259) {
+    .single_discover {
+        padding: 40px;
+        height: 650px !important;
+    }
+
 }
 
 @media  screen and (min-width:1260px) and (max-width:1400px) {
