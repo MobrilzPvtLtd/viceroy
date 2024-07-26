@@ -3847,3 +3847,8 @@
     }
 }
 
+@media  screen and (min-width:1260px) and (max-width:1400px) {
+.card0001{
+    height: 200px !important;
+}
+}
