@@ -121,7 +121,7 @@
                                 <label for="Phone">Email</label>
                                 <input type="email" name="email" value="{{ auth()->check() ? auth()->user()->email : '' }}" placeholder="" required />
                                 <span class="contact_input_icon">
-                                    <img src="assets/images/call_2.png" alt="icon" class="img-fluid w-100" />
+                                    <img src="assets/images/massage_4.png" alt="icon" class="img-fluid w-100" />
                                 </span>
                             </div>
                         </div>
