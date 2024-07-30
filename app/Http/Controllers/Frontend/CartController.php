@@ -41,8 +41,6 @@ class CartController extends Controller
         $SessionData['Status'] = 1;
         $SessionData['Message'] = 'Property added to cart';
 
-        // dd(count($SessionData));
-
         echo json_encode($SessionData);
     }
 

@@ -727,12 +727,16 @@
     <script>
         $(document).ready(function() {
             $('.addToCart').click(function(event) {
+                var oneTimeCount = 1;
+                // if (oneTimeCount > 1) {
+                //     console.log(123);
+                // }
                 event.preventDefault();
 
-                if (!isAuthenticated) {
-                    window.location.href = '{{ route('login') }}';
-                    return;
-                }
+                // if (!isAuthenticated) {
+                //     window.location.href = '{{ route('login') }}';
+                //     return;
+                // }
 
                 var itemId = $(this).data('id');
                 $.ajax({

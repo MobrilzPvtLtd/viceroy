@@ -197,7 +197,7 @@
     ================================*/
 }
 
-@media (min-width: 1200px) and (max-width: 1399.99px) {
+@media (min-width: 1281px) and (max-width: 1399.99px) {
 
     /*================================
         HOME PAGE 01 START
@@ -3863,4 +3863,22 @@
 
 .phpdebugbar.phpdebugbar-closed {
     display: none !important;
+}
+@media (min-width: 1025px) and (max-width: 1281px) {
+    .banner_text h1 {
+        font-size: 48px;
+    }
+    .banner_text p {
+        font-size: 16px;
+        margin-top: 15px;
+        width: 40vw;
+        padding-right: 0px;
+    }
+    .form-container {
+        background-color: #ffffff17;
+        padding: 5px 25px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        text-align: center;
+    }
 }
