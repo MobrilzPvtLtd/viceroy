@@ -8038,3 +8038,6 @@ marquee {
 
 }
 }
+.phpdebugbar.phpdebugbar-minimized {
+    display: none !important;
+}
