@@ -59,6 +59,40 @@
             font-size: 60px;
             color: #fff;
         }
+
+        .container01 {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .image-circle01 {
+            width: 332px;
+            height: 332px;
+            border-radius: 50%;
+            border-top: 2px dashed #ffcc00;
+            border-right: 2px dashed #ffcc00;
+            border-left: 2px dashed #000000;
+            border-bottom: 2px dashed #000000;
+            padding: 10px;
+            animation: spin 10s infinite linear;
+        }
+
+        .image-circle01 img {
+            animation: spin 10s infinite reverse linear;
+            width: 100%;
+            border-radius: 50%;
+        }
+
+
+
+        @keyframes spin {
+            100% {
+                transform: rotate(1turn);
+            }
+        }
     </style>
 
 
@@ -81,20 +115,40 @@
         </div>
     </section>
     <!--=============================
-            BREADCRUMBS END
-        ==============================-->
+                BREADCRUMBS END
+            ==============================-->
 
 
     <!--=============================
-            ABOUT US PAGE START
-        ==============================-->
-    <section class="about_area pt_80 pb_60 xs_pt_100">
+                ABOUT US PAGE START
+            ==============================-->
+    <section class="about_area pt_80 xs_pt_100">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-8 wow fadeInUp" data-wow-duration="1.5s">
                     <div class="section_heading mb_25">
                         <h2>From Maintenance to Relations <br> We’ve Got You Covered</h2>
                     </div>
+                </div>
+            </div>
+            <div class="d-flex ">
+                <div class="container01">
+                    <div class="image-circle01">
+                        <img src="assets\images\india.png" />
+                    </div>
+                    <h3>INDIA</h3>
+                </div>
+                <div class="container01">
+                    <div class="image-circle01">
+                        <img src="assets\images\UAE.png" />
+                    </div>
+                    <h3>UAE</h3>
+                </div>
+                <div class="container01">
+                    <div class="image-circle01">
+                        <img src="assets\images\uk.png" />
+                    </div>
+                    <h3>UK</h3>
                 </div>
             </div>
 
@@ -190,7 +244,7 @@
 
 
 
-    <section class="partner_area pt_60 pb_60">
+    <section class="partner_area pb_60">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-7 wow fadeInUp" data-wow-duration="1.5s"
