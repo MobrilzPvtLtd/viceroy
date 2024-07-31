@@ -108,7 +108,7 @@
                                     <label for="city">Area</label>
                                     <div class="d-flex">
                                         <input type="number" class="form-control"  name="area"
-                                        value="{{ old('area') }}" placeholder="">
+                                        value="{{ old('size') }}" placeholder="">
                                         <select class="form-control" value="" name="size">
                                             <option value="Sq fit">Sq fit</option>
                                             <option value="Sq meter">Sq meter</option>

@@ -19,7 +19,7 @@ class PropertyController extends Controller
 
     public function index()
     {
-        $propertys = Property::all();
+        $propertys =  Property::paginate(10);
         return view('backend.property.index', compact('propertys'));
     }
     public function fetchCity(Request $request)
