@@ -8,92 +8,6 @@
     <link rel="stylesheet" href="{{ asset('assets/css/services.css') }}" />
 @endsection
 @section('content')
-    <style>
-        .about_text {
-            height: 100%;
-            display: block;
-            flex-direction: column;
-            justify-content: center;
-            align-items: start;
-        }
-
-        .single_discover {
-            margin-top: 25px;
-            padding: 20px 15px 10px 15px;
-            border: 1px solid var(--colorWhite);
-            background: var(--colorWhite);
-            box-shadow: 0px 24px 60px 0px rgba(3, 26, 38, 0.14);
-            transition: all linear .3s;
-            -webkit-transition: all linear .3s;
-            -moz-transition: all linear .3s;
-            -ms-transition: all linear .3s;
-            -o-transition: all linear .3s;
-            text-align: center;
-            height: 525px;
-        }
-
-
-        .single_discover h6 {
-            font-size: 25px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        .single_discover p {
-            font-size: 18px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-
-        .discover_img {
-            width: 80px;
-            height: 80px;
-            background: #cf9f3f;
-            font-size: 40px;
-            border-radius: 40px;
-            margin: 0 auto;
-        }
-
-        .discover_img h3 {
-            font-size: 60px;
-            color: #fff;
-        }
-
-        .container01 {
-            padding: 50px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .image-circle01 {
-            width: 332px;
-            height: 332px;
-            border-radius: 50%;
-            border-top: 2px dashed #ffcc00;
-            border-right: 2px dashed #ffcc00;
-            border-left: 2px dashed #000000;
-            border-bottom: 2px dashed #000000;
-            padding: 10px;
-            animation: spin 10s infinite linear;
-        }
-
-        .image-circle01 img {
-            animation: spin 10s infinite reverse linear;
-            width: 100%;
-            border-radius: 50%;
-        }
-
-
-
-        @keyframes spin {
-            100% {
-                transform: rotate(1turn);
-            }
-        }
-    </style>
 
 
 
@@ -103,7 +17,7 @@
                 <div class="row">
                     <div class="col-12 justify-content-center">
                         <div class="breadcrumb_text wow fadeInUp" data-wow-duration="1.5s">
-                            <h1>India</h1>
+                            <h1>INDIA</h1>
                             <ul class="d-flex flex-wrap justify-content-center">
                                 <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
                                 <li><a href="#">India</a></li>
@@ -114,6 +28,156 @@
             </div>
         </div>
     </section>
+    <section class="about_area pt_80 pb_60 xs_pt_100">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="row align-items-center">
+                        <div class="col-xl-6 col-sm-6 wow fadeInLeft" data-wow-duration="1.5s">
+                            <div class="about_area_img_1">
+                                <img src="assets/images/about_1.jpg" alt="img" class="img-fluid w-100">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-sm-6">
+                            <div class="about_area_img_2 wow fadeInUp" data-wow-duration="1.5s">
+                                <img src="assets/images/about_2.jpg" alt="img" class="img-fluid w-100">
+                            </div>
+                            <div class="about_area_img_3 wow fadeInUp" data-wow-duration="1.5s">
+                                <img src="assets/images/about_3.jpg" alt="img" class="img-fluid w-100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-6 wow fadeInRight" data-wow-duration="1.5s">
+                    <div class="about_text">
+                        <div class="section_heading section_heading_left">
+                            <h2>Lorem ipsum dolor sit.</h2>
+                        </div>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae odit mollitia quaerat corrupti veritatis in, rem ut provident tempora voluptates dolores, id inventore, molestias iure.</p>
+
+                        <h4 class="pt-4">Lorem ipsum dolor sit amet.</h4>
+                                                <ul class="d-flex flex-wrap pt_15">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi quos omnis numquam recusandae voluptatem fuga consequatur eum suscipit! Nulla dolor repellat veritatis accusamus, pariatur corrupti?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, harum blanditiis! Veniam, quod fugiat explicabo natus quas, nesciunt numquam ullam pariatur iusto, porro nemo quis.</p>
+
+
+                        {{-- <ul class="d-flex flex-wrap pt_15">
+                            <li>
+                                <div class="about_icon">
+                                    <img src="assets/images/about_icon_1.png" alt="icon" class="img-fluid w-100">
+                                </div>
+                                <div class="about_description">
+                                    <h6>Sell your home</h6>
+                                    <span>Free Services</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="about_icon">
+                                    <img src="assets/images/about_icon_2.png" alt="icon" class="img-fluid w-100">
+                                </div>
+                                <div class="about_description">
+                                    <h6>Buy a home</h6>
+                                    <span>No fees asked</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="about_icon">
+                                    <img src="assets/images/about_icon_3.png" alt="icon" class="img-fluid w-100">
+                                </div>
+                                <div class="about_description">
+                                    <h6>Free Appraisal</h6>
+                                    <span>No fees asked</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="about_icon">
+                                    <img src="assets/images/about_icon_4.png" alt="icon" class="img-fluid w-100">
+                                </div>
+                                <div class="about_description">
+                                    <h6>Free Photoshoot</h6>
+                                    <span>Professional services</span>
+                                </div>
+                            </li>
+                        </ul> --}}
+
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-6 wow fadeInRight" data-wow-duration="1.5s">
+                    <div class="about_text">
+                        <div class="section_heading section_heading_left">
+                            <h2>Lorem ipsum dolor sit.</h2>
+                        </div>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde quod nobis expedita exercitationem quos hic, rem rerum distinctio dolore iusto illo perferendis provident, inventore modi!</p>
+
+                        <h4 class="pt-4">Lorem ipsum dolor sit amet.</h4>
+                                                <ul class="d-flex flex-wrap pt_15">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam placeat officiis, consequuntur omnis inventore ipsum accusamus error nostrum ducimus, voluptas possimus deserunt, doloribus amet magnam.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus corporis nobis ullam itaque recusandae consequuntur aut debitis impedit explicabo tempore, non obcaecati odit modi vel!</p>
+
+
+                        {{-- <ul class="d-flex flex-wrap pt_15">
+                            <li>
+                                <div class="about_icon">
+                                    <img src="assets/images/about_icon_1.png" alt="icon" class="img-fluid w-100">
+                                </div>
+                                <div class="about_description">
+                                    <h6>Sell your home</h6>
+                                    <span>Free Services</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="about_icon">
+                                    <img src="assets/images/about_icon_2.png" alt="icon" class="img-fluid w-100">
+                                </div>
+                                <div class="about_description">
+                                    <h6>Buy a home</h6>
+                                    <span>No fees asked</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="about_icon">
+                                    <img src="assets/images/about_icon_3.png" alt="icon" class="img-fluid w-100">
+                                </div>
+                                <div class="about_description">
+                                    <h6>Free Appraisal</h6>
+                                    <span>No fees asked</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="about_icon">
+                                    <img src="assets/images/about_icon_4.png" alt="icon" class="img-fluid w-100">
+                                </div>
+                                <div class="about_description">
+                                    <h6>Free Photoshoot</h6>
+                                    <span>Professional services</span>
+                                </div>
+                            </li>
+                        </ul> --}}
+
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="row align-items-center">
+                        <div class="col-xl-6 col-sm-6 wow fadeInLeft" data-wow-duration="1.5s">
+                            <div class="about_area_img_1">
+                                <img src="assets/images/about_1.jpg" alt="img" class="img-fluid w-100">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-sm-6">
+                            <div class="about_area_img_2 wow fadeInUp" data-wow-duration="1.5s">
+                                <img src="assets/images/about_2.jpg" alt="img" class="img-fluid w-100">
+                            </div>
+                            <div class="about_area_img_3 wow fadeInUp" data-wow-duration="1.5s">
+                                <img src="assets/images/about_3.jpg" alt="img" class="img-fluid w-100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
 
 
 

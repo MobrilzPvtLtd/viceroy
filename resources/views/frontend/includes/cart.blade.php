@@ -273,7 +273,6 @@
         <div class="cart_del_icon" style="width: 20%">
             <i class="fa fa-trash" aria-hidden="true"></i>
         </div>
-=======
 
     </div>
     <hr>
