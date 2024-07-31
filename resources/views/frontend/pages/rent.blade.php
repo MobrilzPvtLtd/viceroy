@@ -295,11 +295,11 @@
                   animation-name: fadeInUp;
                 ">
                             <div class="section_heading mb_25">
-                                <h2>Hassle-Free Rentals, Happy Tenants</h2>
+                                <h2>Hassle-Free Rentals <br> Happy Tenants</h2>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
                             style="
                   visibility: visible;
@@ -353,7 +353,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </section>
             <!--=============================
                                                                   PROPERTY GRID VIEW END

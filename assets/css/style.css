@@ -8038,6 +8038,21 @@ marquee {
 
 }
 }
+
+.cart_img{
+    width: 7vw;
+}
+.cart_del_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart_tittle {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
 .phpdebugbar.phpdebugbar-minimized {
     display: none !important;
+
 }

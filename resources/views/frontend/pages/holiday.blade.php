@@ -97,7 +97,7 @@
                 <div class="col-xl-7 wow fadeInUp" data-wow-duration="1.5s"
                     style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                     <div class="section_heading mb_50">
-                        <h2>Managing Your Property, Maximising Your Returns</h2>
+                        <h2>Managing Your Property Maximising Your Returns</h2>
                     </div>
                 </div>
             </div>
