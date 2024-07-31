@@ -131,7 +131,7 @@
     <!--=============================
                                                                                                             DESTINATION START
                                                                                                         ==============================-->
-    <section class="destination_area pt_115 xs_pt_110 pb_60 xs_pb_90">
+    {{-- <section class="destination_area pt_115 xs_pt_110 pb_60 xs_pb_90">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-7 wow fadeInUp" data-wow-duration="1.5s">
@@ -263,7 +263,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--=============================
                                                                                                             DESTINATION END
                                                                                                         ==============================-->
@@ -271,7 +271,7 @@
     <!--=============================
                                                                                                             PROPERTY START
                                                                                                         ==============================-->
-    <section class="property_area pt_60 xs_pt_95 pb_50 xs_pb_95">
+    <section class="property_area pt_60 xs_pt_95 pb_50 xs_pb_95 mt_25">
         <div class="container">
             <div class="row justify-content-center text-align-center">
                 <div class="col-xl-6 wow fadeInUp" data-wow-duration="1.5s">
@@ -381,7 +381,7 @@
             <div class="row justify-content-center text-align-center">
                 <div class="col-xl-6 wow fadeInUp" data-wow-duration="1.5s">
                     <div class="section_heading mb_25">
-                        <h2> Book your Holiday Rental Listings1.</h2>
+                        <h2> Book your Holiday Rental.</h2>
                     </div>
                 </div>
             </div>
