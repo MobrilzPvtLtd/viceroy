@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}" />
 @endsection
 @section('content')
-    <section class="banner_area" style="background: url(assets/images/banner_bg.jpg)">
+    <section class="banner_area" style="background: url(assets/images/top_banner.jpg)">
         <div class="container container_large">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
                 <div class="col-xl-11 col-xxl-9">
