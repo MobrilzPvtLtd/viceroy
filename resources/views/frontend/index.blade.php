@@ -256,7 +256,7 @@
                             <a href="#"><i class="far fa-arrow-right"></i></a>
                             <div class="destination_text">
                                 <h5>Argentina</h5>
-                                <p>06 Properties.</p>
+                                <p>06 Properties</p>
                             </div>
                         </div>
                     </div>
