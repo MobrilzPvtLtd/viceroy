@@ -33,6 +33,15 @@
                                         @endforeach
                                     </select>
                                 </div>
+                                <div class="form-group mb-2 col-4">
+                                    <label>State</label>
+                                    <select class="form-control" name="state_id" id="st_name" required>
+                                        <option value="" disabled selected> select state</option>
+                                        @foreach ($states as $state)
+                                            <option value="{{ $state->id }}">{{ $state->st_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
                                 <div class="form-group mb-2 col-4">
                                     <label>City</label>
@@ -185,15 +194,57 @@
         </div>
     </div>
     <script>
+        // $(document).ready(function() {
+        //     $('#co_name').change(function() {
+        //         var country = $(this).val();
+
+        //         $.ajax({
+        //             type: 'GET',
+        //             url: '{{ route('fetch-city') }}',
+        //             data: {
+        //                 country: country
+        //             },
+        //             success: function(result) {
+        //                 console.log(result);
+        //                 $("#city").html(result);
+        //             },
+        //             error: function(xhr, status, error) {
+        //                 console.error(xhr.responseText);
+        //             }
+        //         });
+        //     });
+        // });
+    </script>
+    <script>
         $(document).ready(function() {
             $('#co_name').change(function() {
                 var country = $(this).val();
+                console.log(country);
+                $.ajax({
+                    type: 'GET',
+                    url: '{{ route('fetch-states') }}',
+                    data: {
+                        country: country
+                    },
+                    success: function(result) {
+                        console.log(result);
+                        $("#st_name").html(result);
+                        $("#city").html('<option value="">Select City</option>');
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
 
+            $('#st_name').change(function() {
+                var state = $(this).val();
+                console.log(state);
                 $.ajax({
                     type: 'GET',
                     url: '{{ route('fetch-city') }}',
                     data: {
-                        country: country
+                        state: state
                     },
                     success: function(result) {
                         console.log(result);

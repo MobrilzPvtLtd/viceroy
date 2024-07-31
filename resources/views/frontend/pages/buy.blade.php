@@ -60,14 +60,24 @@
                                                 @endforeach
                                             </select>
                                         </div>
+                                        <div class="home_form_label">
+                                            <label>State</label>
+                                            <select class="select_label s1" name="st_name" id="st_name" required focus>
+                                                <option value="" disabled selected>select state </option>
+
+                                                {{-- @foreach ($states as $state)
+                                                    <option value="{{ $state->id }}">{{ $state->st_name }}</option>
+                                                @endforeach --}}
+                                            </select>
+                                        </div>
 
                                         <div class="home_form_label">
                                             <label>City</label>
-                                            <select class="select_label s1" name="ct_name" id="city" required>
-                                                <option value=""> select city</option>
-                                                @foreach ($citys as $city)
+                                            <select class="select_label s1" name="ct_name" id="city" required focus>
+                                                <option value="" disabled selected> select city</option>
+                                                {{-- @foreach ($citys as $city)
                                                     <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
-                                                @endforeach
+                                                @endforeach --}}
                                             </select>
                                         </div>
 
@@ -87,7 +97,8 @@
                                                     <select class="select_2" id="bedroomMin" name="state">
                                                         <option value="">Min</option>
                                                         @foreach ($uniqueBedrooms as $bedroom)
-                                                            <option value="{{ $bedroom }}">{{ $bedroom }}</option>
+                                                            <option value="{{ $bedroom }}">{{ $bedroom }}
+                                                            </option>
                                                         @endforeach
                                                     </select>
 
@@ -266,7 +277,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                                                                                            </div>-->
+                                                                                                                                                                                        </div>-->
                                 </form>
                             </div>
                         </div>
@@ -528,8 +539,7 @@
                         window.initMap = initMap;
                     </script>
 
-                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ env('GOOGLE_MAP_API') }}" defer>
-                    </script>
+                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ env('GOOGLE_MAP_API') }}" defer></script>
 
                     <style>
                         #mapCanvas {
@@ -548,28 +558,48 @@
     </section>
 @endsection
 @section('script')
-    <script>
-        $(document).ready(function() {
-            $('#co_name').change(function() {
-                var country = $(this).val();
-
-                $.ajax({
-                    type: 'GET',
-                    url: '{{ route('fetch-city') }}',
-                    data: {
-                        country: country
-                    },
-                    success: function(result) {
-                        console.log(result);
-                        $("#city").html(result);
-                    },
-                    error: function(xhr, status, error) {
-                        console.error(xhr.responseText);
-                    }
-                });
+<script>
+    $(document).ready(function() {
+        $('#co_name').change(function() {
+            var country = $(this).val();
+            console.log(country);
+            $.ajax({
+                type: 'GET',
+                url: '{{ route('fetch-states') }}',
+                data: {
+                    country: country
+                },
+                success: function(result) {
+                    console.log(result);
+                    $("#st_name").html(result);
+                    $("#city").html('<option value="">Select City</option>');
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                }
             });
         });
-    </script>
+
+        $('#st_name').change(function() {
+            var state = $(this).val();
+            console.log(state);
+            $.ajax({
+                type: 'GET',
+                url: '{{ route('fetch-city') }}',
+                data: {
+                    state: state
+                },
+                success: function(result) {
+                    console.log(result);
+                    $("#city").html(result);
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                }
+            });
+        });
+    });
+</script>
     <script>
         $(document).ready(function() {
             $("#testimonial-slider").owlCarousel({

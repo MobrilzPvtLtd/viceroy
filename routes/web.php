@@ -65,6 +65,7 @@ Route::resource('admin/inquairy', InquairyController::class);
 // property
 Route::resource('admin/property',  PropertyController::class);
 Route::get('fetch-city', [PropertyController::class, 'fetchCity'])->name('fetch-city');
+Route::get('fetch-states', [PropertyController::class, 'fetchStates'])->name('fetch-states');
 // Facilities
 Route::resource('admin/facility',  FacilitiesController::class);
 //holiday
@@ -82,6 +83,7 @@ Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/buy', [FrontendController::class, 'buy'])->name('buy');
 Route::get('/rent', [FrontendController::class, 'rent'])->name('rent');
 Route::get('/fetch-city', [FrontendController::class, 'fetchCity'])->name('fetch-city');
+Route::get('/fetch-states', [FrontendController::class, 'fetchStates'])->name('fetch-states');
 Route::get('/holiday', [FrontendController::class, 'holiday'])->name('holiday');
 Route::get('/services', [FrontendController::class, 'services'])->name('services');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
