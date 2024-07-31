@@ -233,7 +233,7 @@
      }
  </style>
 
-{{-- @php
+ {{-- @php
     dd(request()->session()->get('cart'));
 @endphp --}}
  <!-- CART CSS ENDS -->
@@ -243,23 +243,24 @@
          <a href="" class="sidecart__close">
              <i class="fa fa-times" aria-hidden="true"></i>
          </a>
-         <h1 id="myForm" class="sidecart__title-text">Cart</h1>
+         <h1 id="myForm" class="sidecart__title-text">Wishlist List</h1>
      </div>
      <div class="sidecart__items sidecart__items--empty" id="cartContainer">
          <ul class="items" id="cartItems">
-             <!-- Cart items will be dynamically added here -->
-        </ul>
-        {{-- @if (!request()->session()->get('cart'))
-            <ul class="items">
-                <li class="grid_4 item container">
-                    <div class="details" data-price="15.50">
-                        <h5 class="items"  style="text-align: center; margin-left: 133px; margin-top: -60px;"  id="noProduct">Your cart is empty</h5>
-                    </div>
-                </li>
-            </ul>
-        @endif --}}
+         </ul>
+         {{-- @if (!request()->session()->get('cart'))
+             <ul class="items">
+                 <li class="grid_4 item container">
+                     <div class="details" data-price="15.50">
+                         <h5 class="items" style="text-align: center; margin-left: 133px; margin-top: -60px;"
+                             id="noProduct">Your cart is empty</h5>
+                     </div>
+                 </li>
+             </ul>
+         @endif --}}
 
 
+<<<<<<< Updated upstream
     </div>
     <hr>
     <div class="d-flex" style="width: 100%">
@@ -273,11 +274,26 @@
         <div class="cart_del_icon" style="width: 20%">
             <i class="fa fa-trash" aria-hidden="true"></i>
         </div>
+=======
+     </div>
+     <hr>
+     <div class="d-flex" style="width: 100%">
+         <div class="d-flex gap-4" style="width: 80%">'
+             <img src="assets\images\agencies_img_1.jpg" alt="" class="cart_img">
+             <div class="cart_tittle">
+                 <h5>Property name</h5>
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+             </div>
+         </div>
+         <div class="cart_del_icon" style="width: 20%">
+             <i class="fa fa-trash" aria-hidden="true"></i>
+         </div>
+>>>>>>> Stashed changes
 
-    </div>
-    <hr>
+     </div>
+     <hr>
 
-    {{-- <div class="sidecart__footer"  @if (!request()->session()->get('cart')) style="display: none"@endif>
+     {{-- <div class="sidecart__footer"  @if (!request()->session()->get('cart')) style="display: none"@endif>
         <a href="/checkout" class="common_btn" id="checkoutButton">Checkout</a>
     </div> --}}
  </div>

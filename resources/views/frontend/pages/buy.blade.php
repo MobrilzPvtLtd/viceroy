@@ -150,7 +150,7 @@
 
                                         <div class="home_form_label">
                                             <label>Property Type</label>
-                                            <select class="select_label" name="p_type">
+                                            <select class="select_label" name="p_type" >
                                                 <option value="">Select property</option>
                                                 {{-- @foreach ($uniquePropertyTypes as $p_type)
                                                     <option value="{{ $p_type }}">{{ $p_type }}</option>
