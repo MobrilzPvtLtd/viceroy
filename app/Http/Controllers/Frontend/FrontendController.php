@@ -297,4 +297,18 @@ class FrontendController extends Controller
     {
         return view('frontend.pages.thanks');
     }
+
+    public function india()
+    {
+        return view('frontend.pages.india');
+    }
+
+    public function uk()
+    {
+        return view('frontend.pages.uk');
+    }
+    public function uae()
+    {
+        return view('frontend.pages.uae');
+    }
 }
