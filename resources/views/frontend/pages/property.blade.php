@@ -60,13 +60,13 @@ div#testimonial-slider {
         </div>
     </section>
     <!--=============================
-                                                                                                                                BREADCRUMBS END
-                                                                                                                            ==============================-->
+                                                                                                                                    BREADCRUMBS END
+                                                                                                                                ==============================-->
 
 
     <!--=============================
-                                                                                                                                PROPERTY DETAILS START
-                                                                                                                            ==============================-->
+                                                                                                                                    PROPERTY DETAILS START
+                                                                                                                                ==============================-->
     <section class="property_details pt_50 xs_pt_100 pb_105 xs_pb_85">
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
@@ -96,7 +96,7 @@ div#testimonial-slider {
                             <h4>{{ $property->title }}</h4>
                             <ul class="property_details_share d-flex flex-wrap">
 
-                                <button type="submit" id="addToCart" data-id="{{ $property->id }}"
+                                <button type="submit" id="addToCart" onclick="addToCartOrRemove({{ $property->id }})"
                                     class=" btn btn-primary"><i class="fa fa-heart"></i></button>
 
                             </ul>
@@ -311,7 +311,7 @@ div#testimonial-slider {
                                 @csrf
                                 <input type="hidden" name="url_type" value="property">
                                 <input type="hidden" name="title" value="{{ $property->title }}">
-                                <input type="hidden" value="{{ $property->image}}" name="image">
+                                <input type="hidden" value="{{ $property->image }}" name="image">
                                 <div class="row">
                                     <div class="col-lg-12 col-md-6">
                                         <div class="schedule_input">
@@ -417,7 +417,8 @@ div#testimonial-slider {
                                         <div class="wish001">
                                             <a class="item_title"
                                                 href="{{ route('property', $relatedProperty->slag) }}">{{ $relatedProperty->title }}</a>
-                                            <button type="submit" id="addCart" data-id="{{ $relatedProperty->id }}"
+                                            <button type="submit" id="addCart"
+                                                onclick="addToCartOrRemove({{ $relatedProperty->id }})"
                                                 class="addCart btn btn-primary " style=""><i
                                                     class="fa fa-heart"></i></button>
                                         </div>
@@ -481,116 +482,6 @@ div#testimonial-slider {
 
 @endsection
 @section('script')
-    <script>
-        var isAuthenticated = @json(Auth::check());
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('#addToCart').click(function() {
-                if (!isAuthenticated) {
-                    window.location.href = '{{ route('login') }}';
-                    return;
-                }
-
-                var itemId = $(this).data('id');
-                $.ajax({
-                    url: '/cart/add',
-                    type: 'POST',
-                    data: {
-                        _token: '{{ csrf_token() }}',
-                        id: itemId
-                    },
-                    success: function(response) {
-                        var responseData = JSON.parse(response);
-                        $('#cartItems').html('');
-                        console.log(responseData);
-
-                        var cartCount = 0;
-
-                        // var cartCount = responseData.CartDetails.length;
-
-                        $.each(responseData.CartDetails, function(key, val) {
-                            var cartItems = val;
-
-                            $('#cartItems').prepend(
-                                '<li class="grid_4 item container"><div class="preview">   <img style="width: 100px;" src="/public/' +
-                                cartItems.image +
-                                '"></div>                 <div class="details" data-price="15.50"><h3>' +
-                                cartItems.title +
-                                '</h3>      </div><div class="inner_container"><div class="col_1of2 align-center picker"><p><a href="#" OnClick="RemoveFromCart(' +
-                                cartItems.id +
-                                ')" class="btn-remove"><i class="far fa-trash-alt"></i></a></p></div></div></li>'
-                            );
-
-                            cartCount++;
-                        });
-
-                        // Update cart count
-                        $('#cartCount').text(cartCount);
-
-                    },
-                    error: function(xhr, status, error) {
-                        console.log('An error occurred: ' + error);
-                    }
-                });
-            });
-        });
-    </script>
-    <script>
-        var isAuthenticated = @json(Auth::check());
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.addCart').click(function(event) {
-                event.preventDefault();
-
-                if (!isAuthenticated) {
-                    window.location.href = '{{ route('login') }}';
-                    return;
-                }
-
-                var itemId = $(this).data('id');
-                $.ajax({
-                    url: '/cart/add',
-                    type: 'POST',
-                    data: {
-                        _token: '{{ csrf_token() }}',
-                        id: itemId
-                    },
-                    success: function(response) {
-                        var responseData = JSON.parse(response);
-                        console.log(responseData);
-
-                        var cartCount = 0;
-
-                        $('#cartItems').html('');
-
-                        $.each(responseData.CartDetails, function(key, val) {
-                            var cartItems = val;
-
-                            $('#cartItems').append(
-                                '<li class="grid_4 item container"><div class="preview"><img style="width: 100px;" src="/public/' +
-                                cartItems.image +
-                                '"></div><div class="details" data-price="15.50"><h3>' +
-                                cartItems.title +
-                                '</h3></div><div class="inner_container"><div class="col_1of2 align-center picker"><p><a href="#" OnClick="RemoveFromCart(' +
-                                cartItems.id +
-                                ')" class="btn-remove"><i class="far fa-trash-alt"></i></a></p></div></div></li>'
-                            );
-
-                            cartCount++;
-                        });
-
-                        $('#cartCount').text(cartCount);
-                    },
-                    error: function(xhr, status, error) {
-                        console.log('An error occurred: ' + error);
-                    }
-                });
-            });
-        });
-    </script>
-
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js">
     </script>

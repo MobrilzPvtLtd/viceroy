@@ -6,7 +6,6 @@
                 <a class="btn btn-success" href="{{ route('property.create') }}"> Create Property</a>
             </div>
             <div class="row mt-4">
-
                 <div class="col">
                     <div class="table-responsive">
                         <table id="datatable" class="table table-hover">
@@ -14,22 +13,21 @@
                                 <tr>
                                     <th scope="col">Id</th>
                                     <th scope="col">Property Name</th>
-                                    <th scope="col">Type of Property</th>
+                                    <th scope="col">Property List</th>
+                                    <th scope="col"> Type of Property</th>
                                     <th scope="col"> Address</th>
-                                    <th scope="col">Beds Rooms </th>
-                                    <th scope="col">Bath Rooms</th>
-                                    <th scope="col">Number of Rooms</th>
+                                    <th scope="col">Bed Rooms</th>
                                     <th scope="col">Hall</th>
-                                    <th scope="col">kichen</th>
+                                    <th scope="col">Kitchen</th>
                                     <th scope="col">Dining</th>
-                                    <th scope="col">Area</th>
-                                    <th scope="col">Discription</th>
+                                    <th scope="col">Bath Rooms</th>
+                                    <th scope="col">Total Rooms</th>
                                     <th scope="col">price</th>
-                                    <th scope="col">Originating Year</th>
+                                    <th scope="col">Area</th>
                                     <th scope="col">Property Images</th>
                                     <th scope="col">Property floor_plan</th>
-                                    <th scope="col">Property Video</th>
-                                    <th scope="col">Property Map</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col"> Originating Year</th>
                                     <th scope="col">Slag</th>
                                     <th scope="col">facilities</th>
                                     <th scope="col">Action</th>
@@ -44,17 +42,13 @@
                                         <td>{{ $property->p_type }}</td>
                                         <td>{{ $property->address }}</td>
                                         <td>{{ $property->bed }}</td>
+                                        <td>{{ $property->hall }}</td>
+                                        <td>{{ $property->kichen }}</td>
+                                        <td>{{ $property->dining }}</td>
                                         <td>{{ $property->number_bathroom }}</td>
                                         <td>{{ $property->number_of_room }}</td>
-                                        <td>{{ $property->hall }}</td>
-                                        <td>{{ $property->kichan }}</td>
-                                        <td>{{ $property->dining }}</td>
-                                        <td>{{ $property->area }}</td>
-                                        <td>{{ $property->size }}</td>
-                                        <td>{{ $property->desc }}</td>
                                         <td>{{ $property->price }}</td>
-                                        <td>{{ $property->year }}</td>
-
+                                        <td>{{ $property->size }}</td>
                                         <td>
                                             @php
                                                 $images = unserialize($property->image);
@@ -81,11 +75,9 @@
                                                 <p>No floor plans available</p>
                                             @endif
                                         </td>
-
-                                        <td>{{ $property->video }}</td>
-                                        <td>{{ $property->map }}</td>
+                                        <td>{{ $property->desc }}</td>
+                                        <td>{{ $property->year }}</td>
                                         <td>{{ $property->slag }}</td>
-
                                         <td>
                                             @php
                                                 $facilitiesy = unserialize($property->facilities);
@@ -120,19 +112,8 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="card-footer">
-            <div class="row">
-                <div class="col-7">
-                    <div class="float-left">
-                        <!-- Any additional content you want to add -->
-                    </div>
-                </div>
-                <div class="col-5">
-                    <div class="float-end">
-                        <!-- Any additional content you want to add -->
+                    <div class="d-flex justify-content-end">
+                        {{ $propertys->links('pagination::bootstrap-4') }}
                     </div>
                 </div>
             </div>
