@@ -307,10 +307,9 @@
                             <div class="single_property_text">
                                 <div class="single_property_top">
                                     <div class="wish001">
-                                        <a class="item_title"
-                                            href="{{ route('property', $property->slag) }}">{{ $property->title }}</a>
-                                        <button type="submit" id="addToCart" data-id="{{ $property->id }}"
-                                            class="addToCart btn btn-primary"><i class="fa fa-heart"></i></button>
+                                        <a class="item_title" href="{{ route('property', $property->slag) }}">{{ $property->title }}</a>
+
+                                        <button type="submit" id="addToCart" onclick="addToCartOrRemove({{ $property->id }})" class="addToCart btn btn-primary"><i class="fa fa-heart"></i></button>
 
                                     </div>
                                     <p>
@@ -667,18 +666,6 @@
                                                                                                         ==============================-->
 
     <!--=============================
-                                                                                                            BLOG START
-                                                                                                        ==============================-->
-
-    <!--=============================
-                                                                                                            BLOG END
-                                                                                                        ==============================-->
-
-    <!--=============================
-                                                                                                            DISCOVER START
-                                                                                                        ==============================-->
-
-    <!--=============================
                                                                                                             PARTNER START
                                                                                                         ==============================-->
     <section class="partner_area pt_30 pb_30">
@@ -721,87 +708,31 @@
     </section>
 @endsection
 @section('script')
-    <script>
-        var isAuthenticated = @json(Auth::check());
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.addToCart').click(function(event) {
-                var oneTimeCount = 1;
-                // if (oneTimeCount > 1) {
-                //     console.log(123);
-                // }
-                event.preventDefault();
+<script>
+    var isAuthenticated = @json(Auth::check());
+</script>
+<script>
+    $(document).ready(function() {
+        $('#co_name').change(function() {
+            var country = $(this).val();
 
-                // if (!isAuthenticated) {
-                //     window.location.href = '{{ route('login') }}';
-                //     return;
-                // }
-
-                var itemId = $(this).data('id');
-                $.ajax({
-                    url: '/cart/add',
-                    type: 'POST',
-                    data: {
-                        _token: '{{ csrf_token() }}',
-                        id: itemId
-                    },
-                    success: function(response) {
-                        var responseData = JSON.parse(response);
-                        console.log(responseData);
-
-                        var cartCount = 0;
-
-                        $('#noProduct').html('');
-                        $('.sidecart__footer').show();
-
-                        $.each(responseData.CartDetails, function(key, val) {
-                            var cartItems = val;
-
-                            $('#cartItems').append(
-                                '<li class="grid_4 item container"><div class="preview"><img style="width: 100px;" src="/public/' +
-                                cartItems.image +
-                                '"></div><div class="details" data-price="15.50"><h3>' +
-                                cartItems.title +
-                                '</h3></div><div class="inner_container"><div class="col_1of2 align-center picker"><p><a href="#" OnClick="RemoveFromCart(' +
-                                cartItems.id +
-                                ')" class="btn-remove"><i class="far fa-trash-alt"></i></a></p></div></div></li>'
-                            );
-
-                            cartCount++;
-                        });
-
-                        $('#cartCount').text(cartCount);
-                    },
-                    error: function(xhr, status, error) {
-                        console.log('An error occurred: ' + error);
-                    }
-                });
+            $.ajax({
+                type: 'GET',
+                url: '{{ route('fetch-city') }}',
+                data: {
+                    country: country
+                },
+                success: function(result) {
+                    console.log(result);
+                    $("#city").html(result);
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                }
             });
         });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('#co_name').change(function() {
-                var country = $(this).val();
-
-                $.ajax({
-                    type: 'GET',
-                    url: '{{ route('fetch-city') }}',
-                    data: {
-                        country: country
-                    },
-                    success: function(result) {
-                        console.log(result);
-                        $("#city").html(result);
-                    },
-                    error: function(xhr, status, error) {
-                        console.error(xhr.responseText);
-                    }
-                });
-            });
-        });
-    </script>
+    });
+</script>
     <script>
         $(document).ready(function() {
             $('#rent_co_name').change(function() {

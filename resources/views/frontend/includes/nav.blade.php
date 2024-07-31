@@ -98,85 +98,6 @@
             </div>
         </div>
 
-        <script>
-            function RemoveFromCart(id) {
-                $.ajax({
-                    url: '/cart/delete',
-                    type: 'POST',
-                    data: {
-                        _token: '{{ csrf_token() }}',
-                        id: id
-                    },
-                    success: function(response) {
-                        $('#cartItems').html('');
-                        $.each(response.CartDetails, function(key, cartItem) {
-                            console.log(cartItem);
-
-                            $('#cartItems').prepend(
-                                '<li class="grid_4 item container">' +
-                                '<div class="preview">' +
-                                '<img style="width: 100px;" src="/public/' + cartItem.image + '">' +
-                                '</div>' +
-                                '<div class="details" data-price="' + cartItem.price + '">' +
-                                '<h3>' + cartItem.title + '</h3>' +
-                                '</div>' +
-                                '<div class="inner_container">' +
-                                '<div class="col_1of2 align-center picker">' +
-                                '<p><a href="#" onclick="RemoveFromCart(' + cartItem.id +
-                                ')" class="btn-remove">' +
-                                '<i class="far fa-trash-alt"></i></a></p>' +
-                                '</div>' +
-                                '</div>' +
-                                '</li>'
-                            );
-                        });
-                        // location.reload();
-                    },
-                    error: function(xhr, status, error) {
-                        console.log('An error occurred: ' + error);
-                    }
-                });
-
-            }
-            $(document).ready(function() {
-
-                $.ajax({
-                    url: '/cart/view',
-                    type: 'GET',
-                    data: {
-                        _token: '{{ csrf_token() }}',
-                    },
-                    success: function(response) {
-
-                        var responseData = JSON.parse(response);
-
-                        $('#cartItems').html('');
-
-                        $.each(responseData.CartDetails, function(key, val) {
-
-                            var cartItems = val;
-
-                            //console.log(cartItems);
-
-                            $('#cartItems').prepend(
-                                '<li class="grid_4 item container"><div class="preview">   <img style="width: 100px;" src="/public/' +
-                                cartItems.image +
-                                '"></div>                 <div class="details" data-price="15.50"><h3>' +
-                                cartItems.title +
-                                '</h3>      </div><div class="inner_container"><div class="col_1of2 align-center picker"><p><a href="#" OnClick="RemoveFromCart(' +
-                                cartItems.id +
-                                ')" class="btn-remove"><i class="far fa-trash-alt"></i></a></p></div></div></li>'
-                            );
-
-                        });
-
-                    },
-                    error: function(xhr, status, error) {
-                        console.log('An error occurred: ' + error);
-                    }
-                });
-            });
-        </script>
 
         <style>
             /* Dropdown Button */
@@ -230,8 +151,8 @@
             }
             p.notify001 {
                 top: -15px !important;
-}
+            }
         </style>
 
-
+        @include('frontend.includes.script')
     </nav>

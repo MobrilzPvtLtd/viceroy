@@ -249,7 +249,7 @@
          <ul class="items" id="cartItems">
              <!-- Cart items will be dynamically added here -->
         </ul>
-        @if (!request()->session()->get('cart'))
+        {{-- @if (!request()->session()->get('cart'))
             <ul class="items">
                 <li class="grid_4 item container">
                     <div class="details" data-price="15.50">
@@ -257,13 +257,12 @@
                     </div>
                 </li>
             </ul>
-        @endif
+        @endif --}}
     </div>
 
-            <div class="sidecart__footer"  @if (!request()->session()->get('cart')) style="display: none"@endif>
-            <a href="/checkout" class="common_btn" id="checkoutButton">Checkout</a>
-
-    </div>
+    {{-- <div class="sidecart__footer"  @if (!request()->session()->get('cart')) style="display: none"@endif>
+        <a href="/checkout" class="common_btn" id="checkoutButton">Checkout</a>
+    </div> --}}
  </div>
 
  {{-- <script>
