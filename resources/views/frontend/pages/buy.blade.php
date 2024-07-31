@@ -175,24 +175,24 @@
                                 aria-labelledby="pills-contact-tab" tabindex="0">
                                 <form action="#">
                                     <div class="row">
-                                            <div class="col-lg-2">
-                                                <label>Country</label>
-                                                <select class="select_label" name="state">
-                                                    <option value="">Select Country</option>
-                                                    <option value="">India</option>
-                                                    <option value="">United Arab Emirates Dubai</option>
-                                                    <option value="">United Kingdom London</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-lg-2">
-                                                <label>City</label>
-                                                <select class="select_2" name="state">
-                                                    <option value="">Select City</option>
-                                                    <option value="">India</option>
-                                                    <option value="">United Arab Emirates Dubai</option>
-                                                    <option value="">United Kingdom London</option>
-                                                </select>
-                                            </div>
+                                        <div class="col-lg-2">
+                                            <label>Country</label>
+                                            <select class="select_label" name="state">
+                                                <option value="">Select Country</option>
+                                                <option value="">India</option>
+                                                <option value="">United Arab Emirates Dubai</option>
+                                                <option value="">United Kingdom London</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <label>City</label>
+                                            <select class="select_2" name="state">
+                                                <option value="">Select City</option>
+                                                <option value="">India</option>
+                                                <option value="">United Arab Emirates Dubai</option>
+                                                <option value="">United Kingdom London</option>
+                                            </select>
+                                        </div>
 
                                         <div class="col-lg-4">
                                             <label>Rooms</label>
@@ -266,7 +266,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                                                                                        </div>-->
+                                                                                                                                                                                        </div>-->
                                 </form>
                             </div>
                         </div>
@@ -285,11 +285,11 @@
                   animation-name: fadeInUp;
                 ">
                             <div class="section_heading mb_25">
-                                <h2>Maximising Property Value, Minimising Hassles</h2>
+                                <h2>Maximising Property Value <br> Minimising Hassles</h2>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
                             style="
                   visibility: visible;
@@ -343,7 +343,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </section>
 
 
