@@ -14,6 +14,7 @@ use App\Models\Property;
 use App\Models\Brands;
 use App\Models\User;
 use App\Models\Professionals;
+use App\Models\State;
 use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
@@ -62,6 +63,9 @@ class FrontendController extends Controller
         if ($request->has('co_name') && $request->co_name != '') {
             $query->where('country_id', $request->co_name);
         }
+        if ($request->has('st_name') && $request->st_name != '') {
+            $query->where('state_id', $request->st_name);
+        }
         if ($request->has('ct_name') && $request->ct_name != '') {
             $query->where('city_id', $request->ct_name);
         }
@@ -81,6 +85,7 @@ class FrontendController extends Controller
         $currencys = Currency::all();
         $countrys = Country::all();
         $citys = City::all();
+        $states = State::all();
         // get map data
         $markers = [];
         $infowindow = [];
@@ -93,7 +98,7 @@ class FrontendController extends Controller
         }
         $markers = $markers;
         $infowindow = $infowindow;
-        return view('frontend.pages.buy', compact('propertys', 'countrys', 'citys', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes', 'markers', 'infowindow'));
+        return view('frontend.pages.buy', compact('propertys', 'countrys', 'states','citys', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes', 'markers', 'infowindow'));
     }
     public function rent(Request $request)
     {
@@ -136,12 +141,29 @@ class FrontendController extends Controller
     }
     public function fetchCity(Request $request)
     {
-        $options = "";
-        $city = City::where('co_name', $request->country)->get();
-        foreach ($city as $cit) {
-            $options .= "<option value=" . $cit->id . ">" . $cit->ct_name . "</option>";
+        $state = $request->state;
+        // dd($state);
+        $cities = City::where('st_name', $state)->get();
+
+        $options = '<option value="">Select City</option>';
+        foreach ($cities as $city) {
+            $options .= '<option value="' . $city->id . '">' . $city->ct_name . '</option>';
         }
+
         return response()->json($options);
+    }
+    public function fetchStates(Request $request)
+    {
+        $country = $request->country;
+        $states = State::where('co_name', $country)->get(); // Assuming country_id is the foreign key
+
+        $options = '<option value="">Select State</option>';
+        foreach ($states as $state) {
+            $options .= '<option value="' . $state->id . '">' . $state->st_name . '</option>';
+        }
+
+        return response()->json($options);
+
     }
     public function holiday()
     {

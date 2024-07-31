@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Contact;
+use App\Models\User;
+
 
 class ContactController extends Controller
 {
@@ -29,8 +31,18 @@ class ContactController extends Controller
         $contact->message = $request->message;
         $contact->save();
 
+        $admin = User::where('id', 1)->first();
+
+        if ($contact->email) {
+            Mail::to($contact->email)->send(new ContactMail($contact));
+        }
+
+        if ($admin->email) {
+            Mail::to($admin->email)->send(new ContactMail($contact));
+        }
+
         // Send email
-        Mail::to($contact->email)->send(new ContactMail($contact));
+        // Mail::to($contact->email)->send(new ContactMail($contact));
 
         return redirect()->back()->with('success', 'Message sent successfully!');
     }

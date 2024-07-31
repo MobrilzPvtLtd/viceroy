@@ -240,7 +240,7 @@
  <div class="sidecart__overlay sidecart__overlay--hide"></div>
  <div class="sidecart sidecart--close">
      <div class="sidecart__title">
-         <a href="#" class="sidecart__close">
+         <a href="" class="sidecart__close">
              <i class="fa fa-times" aria-hidden="true"></i>
          </a>
          <h1 id="myForm" class="sidecart__title-text">Cart</h1>
@@ -253,11 +253,12 @@
             <ul class="items">
                 <li class="grid_4 item container">
                     <div class="details" data-price="15.50">
-                        <h5 class="items" id="noProduct">Your cart is empty</h5>
+                        <h5 class="items"  style="text-align: center; margin-left: 133px; margin-top: -60px;"  id="noProduct">Your cart is empty</h5>
                     </div>
                 </li>
             </ul>
         @endif --}}
+
 
     </div>
     <hr>
@@ -272,13 +273,14 @@
         <div class="cart_del_icon" style="width: 20%">
             <i class="fa fa-trash" aria-hidden="true"></i>
         </div>
+=======
+
     </div>
     <hr>
 
-            <div class="sidecart__footer"  @if (!request()->session()->get('cart')) style="display: none"@endif>
-            <a href="/checkout" class="common_btn" id="checkoutButton">More Details</a>
-
-    </div>
+    {{-- <div class="sidecart__footer"  @if (!request()->session()->get('cart')) style="display: none"@endif>
+        <a href="/checkout" class="common_btn" id="checkoutButton">Checkout</a>
+    </div> --}}
  </div>
 
  {{-- <script>

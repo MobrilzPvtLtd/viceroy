@@ -10,6 +10,7 @@ use App\Models\Facilities;
 use App\Models\City;
 use App\Models\Currency;
 use App\Models\Country;
+use App\Models\State;
 use GuzzleHttp\Client;
 
 
@@ -19,7 +20,7 @@ class PropertyController extends Controller
 
     public function index()
     {
-        $propertys = Property::all();
+        $propertys =  Property::paginate(10);
         return view('backend.property.index', compact('propertys'));
     }
     public function fetchCity(Request $request)
@@ -31,12 +32,26 @@ class PropertyController extends Controller
         }
         return response()->json($options);
     }
+    public function fetchStates(Request $request)
+    {
+        $country = $request->country;
+        $states = State::where('co_name', $country)->get(); // Assuming country_id is the foreign key
+
+        $options = '<option value="">Select State</option>';
+        foreach ($states as $state) {
+            $options .= '<option value="' . $state->id . '">' . $state->st_name . '</option>';
+        }
+
+        return response()->json($options);
+
+    }
     public function create()
     {
         $facilitiesy = Facilities::all();
         $countrys = Country::all();
         $citys = City::all();
-        return view('backend.property.create', compact('facilitiesy', 'countrys', 'citys'));
+        $states = State::all();
+        return view('backend.property.create', compact('facilitiesy', 'countrys', 'states','citys'));
     }
 
 

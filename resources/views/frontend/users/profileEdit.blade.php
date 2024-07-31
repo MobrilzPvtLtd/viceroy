@@ -368,7 +368,7 @@
                         {{ html()->textarea($field_name)->placeholder($field_placeholder)->attributes(["$required", 'rows' => 5]) }}
                     </div> --}}
 
-                    <div class="row">
+                    {{-- <div class="row">
                         <label for="avatar">Photo</label>
                         <div class="col-md-4">
                             <div class="form-group">
@@ -380,7 +380,7 @@
                                 <input type="file" id="avatar" name="avatar">
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <button type="submit" class="submit-button">Save</button>
             </form>

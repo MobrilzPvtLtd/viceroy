@@ -65,6 +65,7 @@ Route::resource('admin/inquairy', InquairyController::class);
 // property
 Route::resource('admin/property',  PropertyController::class);
 Route::get('fetch-city', [PropertyController::class, 'fetchCity'])->name('fetch-city');
+Route::get('fetch-states', [PropertyController::class, 'fetchStates'])->name('fetch-states');
 // Facilities
 Route::resource('admin/facility',  FacilitiesController::class);
 //holiday
@@ -77,22 +78,23 @@ Route::resource('admin/state', StateController::class);
 Route::resource('admin/city', CityController::class);
 Route::get('fetch-state', [CityController::class, 'fetchState'])->name('fetch-state'); //auto select country data
 // home route
-Route::get('home', [FrontendController::class, 'index'])->name('home');
-Route::get('about', [FrontendController::class, 'about'])->name('about');
-Route::get('buy', [FrontendController::class, 'buy'])->name('buy');
-Route::get('rent', [FrontendController::class, 'rent'])->name('rent');
-Route::get('fetch-city', [FrontendController::class, 'fetchCity'])->name('fetch-city');
-Route::get('holiday', [FrontendController::class, 'holiday'])->name('holiday');
-Route::get('services', [FrontendController::class, 'services'])->name('services');
-Route::get('contact', [FrontendController::class, 'contact'])->name('contact');
-Route::get('login', [FrontendController::class, 'login'])->name('login');
+Route::get('/', [FrontendController::class, 'index'])->name('home');
+Route::get('/about', [FrontendController::class, 'about'])->name('about');
+Route::get('/buy', [FrontendController::class, 'buy'])->name('buy');
+Route::get('/rent', [FrontendController::class, 'rent'])->name('rent');
+Route::get('/fetch-city', [FrontendController::class, 'fetchCity'])->name('fetch-city');
+Route::get('/fetch-states', [FrontendController::class, 'fetchStates'])->name('fetch-states');
+Route::get('/holiday', [FrontendController::class, 'holiday'])->name('holiday');
+Route::get('/services', [FrontendController::class, 'services'])->name('services');
+Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
+Route::get('/login', [FrontendController::class, 'login'])->name('login');
 // Route::get('register', [FrontendController::class, 'register'])->name('register');
 // Route::post('register', [RegisteredUserController::class, 'store'])->name('register');
-Route::get('property/{slag}', [FrontendController::class, 'propertydetails'])->name('property');
-Route::get('checkout', [FrontendController::class, 'cartform'])->name('cartform');
-Route::get('terms&con', [FrontendController::class, 'terms'])->name('terms&con');
-Route::get('privacy&poly', [FrontendController::class, 'privacy'])->name('privacy&poly');
-Route::get('thanks', [FrontendController::class, 'thanks'])->name('thanks');
+Route::get('/property/{slag}', [FrontendController::class, 'propertydetails'])->name('property');
+Route::get('/checkout', [FrontendController::class, 'cartform'])->name('cartform');
+Route::get('/terms&con', [FrontendController::class, 'terms'])->name('terms&con');
+Route::get('/privacy&poly', [FrontendController::class, 'privacy'])->name('privacy&poly');
+Route::get('/thanks', [FrontendController::class, 'thanks'])->name('thanks');
 
 // Route::get('search', [PropertyController::class, 'search'])->name('property.search');
 

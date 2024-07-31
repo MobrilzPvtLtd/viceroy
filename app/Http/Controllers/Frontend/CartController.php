@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Helpers\CartHelper;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Property;
@@ -11,81 +12,68 @@ class CartController extends Controller
 
     public function add(Request $request)
     {
-        $propertyId = $request->input('id');
-        $SessionData = [];
+        $sessionData = [];
+        $cartExists = $request->session()->has('cart');
+        $cart = $request->session()->get('cart', []);
 
-        $property = Property::find($propertyId);
+        if ($request->remove) {
+            if (isset($cart[$request->id])) {
+                unset($cart[$request->id]);
+            }
+            $request->session()->put('cart', $cart);
 
-        if (!$property) {
-
-            $SessionData['Status'] = 0;
-            $SessionData['Message'] = 'Propertu not found';
-        }
-
-        if ($request->session()->exists('cart')) {
-            $cart = $request->session()->get('cart');
+            $sessionData['CartCount'] = count($cart);
+            $sessionData['Status'] = 1;
+            $sessionData['Message'] = 'Property removed from cart';
         } else {
-            $cart = [];
+            $property = Property::find($request->id);
+
+            if (!$property) {
+                $sessionData['Status'] = 0;
+                $sessionData['Message'] = 'Property not found';
+                return response()->json($sessionData);
+            }
+
+            $cart[$request->id] = [
+                "id" => $property->id,
+                "title" => $property->title,
+                "price" => $property->price,
+                "image" => $property->image ? unserialize($property->image)[0] : null,
+            ];
+
+            $request->session()->put('cart', $cart);
+
+            $sessionData['CartCount'] = count($cart);
+            $sessionData['Status'] = 1;
+            $sessionData['Message'] = 'Property added to cart';
         }
 
-        $cart[$propertyId] = [
-            "id" => $property->id,
-            "title" => $property->title,
-            "price" => $property->price,
-            "image" => $property->image ? unserialize($property->image)[0] : null,
-        ];
+        if ($cartExists && !empty($cart)) {
+            $sessionData['CartHTML'] = CartHelper::generateCartHTML($cart);
+        } else {
+            $sessionData['CartHTML'] = '<li><h5 style="text-align: center;margin-top: 52px;">Your cart is empty</h5></li>';
+        }
 
-        $request->session()->put('cart', $cart);
-        $SessionData['CartCount'] = count($request->session()->get('cart'));
-        $SessionData['CartDetails'] = $request->session()->get('cart');
-        $SessionData['Status'] = 1;
-        $SessionData['Message'] = 'Property added to cart';
-
-        // dd(count($SessionData));
-
-        echo json_encode($SessionData);
+        return response()->json($sessionData);
     }
 
-    // public function show(Request $request)
-    // {
-
-    //     $cart = $request->session()->get('cart');
-
-
-    //     return view('frontend.includes.cart', compact('cart'));
-    // }
     public function viewCartData(Request $request)
     {
+        $responseData = [
+            'CartCount' => 0,
+            'CartHTML' => '',
+        ];
 
-        $SessionData = [];
-        if ($request->session()->has('cart'))
-        {
-            $SessionData['CartCount'] = count($request->session()->get('cart'));
-            $SessionData['CartDetails'] = $request->session()->get('cart');
+        $cartExists = $request->session()->has('cart');
+        $cart = $request->session()->get('cart', []);
 
-        }else{
-            $SessionData['CartCount'] = 0;
-            $SessionData['CartDetails'] = array();
+        if ($cartExists && !empty($cart)) {
+            $responseData['CartCount'] = count($cart);
+            $responseData['CartHTML'] = CartHelper::generateCartHTML($cart);
+        } else {
+            $responseData['CartHTML'] = '<li><h5 style="text-align: center;margin-top: 52px;">Your cart is empty</h5></li>';
         }
 
-
-
-        echo json_encode($SessionData);
-    }
-
-    public function DeleteIteme(Request $request)
-    {
-        $id = $request->input('id');
-        // Remove from cart and retunr crurrent cart value
-        $cartData = $request->session()->get('cart', []);
-        if (isset($cartData[$id])) {
-            unset($cartData[$id]);
-        }
-        $request->session()->put('cart', $cartData);
-        $sessionData = [];
-        $sessionData['CartCount'] = count($cartData);
-        $sessionData['CartDetails'] = $cartData;
-        return response()->json($sessionData);
-
+        return response()->json($responseData);
     }
 }

@@ -197,7 +197,7 @@
     ================================*/
 }
 
-@media (min-width: 1200px) and (max-width: 1399.99px) {
+@media (min-width: 1281px) and (max-width: 1399.99px) {
 
     /*================================
         HOME PAGE 01 START
@@ -633,8 +633,8 @@
     }
 
     .main_menu .navbar-nav .nav-item .nav-link {
-        font-size: 14px;
-        margin: 0px 12px;
+        font-size: 11px;
+        margin: 0px 10px;
     }
 
     .user_icon {
@@ -3846,4 +3846,39 @@
         height: 500px;
     }
 }
+@media  screen and (min-with:1200px) and (max-width:1259) {
+    .single_discover {
+        padding: 40px;
+        height: 650px !important;
+    }
 
+}
+
+@media  screen and (min-width:1260px) and (max-width:1400px) {
+.card0001{
+    height: 200px !important;
+}
+}
+
+
+.phpdebugbar.phpdebugbar-closed {
+    display: none !important;
+}
+@media (min-width: 1025px) and (max-width: 1281px) {
+    .banner_text h1 {
+        font-size: 48px;
+    }
+    .banner_text p {
+        font-size: 16px;
+        margin-top: 15px;
+        width: 40vw;
+        padding-right: 0px;
+    }
+    .form-container {
+        background-color: #ffffff17;
+        padding: 5px 25px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        text-align: center;
+    }
+}
