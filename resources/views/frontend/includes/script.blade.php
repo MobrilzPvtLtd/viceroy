@@ -1,5 +1,11 @@
 <script>
+    var isAuthenticated = @json(Auth::check());
+
     function addToCartOrRemove(propertyId, remove) {
+        if (!isAuthenticated) {
+            window.location.href = '{{ route('login') }}';
+            return;
+        }
         $.ajax({
             url: '/cart/add',
             type: 'POST',

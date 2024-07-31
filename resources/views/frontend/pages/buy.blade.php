@@ -405,7 +405,7 @@
                                                         <a class="item_title"
                                                             href="{{ route('property', $property->slag) }}">{{ $property->title }}</a>
                                                         <button type="submit" id="addToCart"
-                                                            data-id="{{ $property->id }}"
+                                                            onclick="addToCartOrRemove({{ $property->id }})"
                                                             class="addToCart btn btn-primary"><i
                                                                 class="fa fa-heart"></i></button>
                                                     </div>
@@ -548,64 +548,6 @@
     </section>
 @endsection
 @section('script')
-    <script>
-        var isAuthenticated = @json(Auth::check());
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.addToCart').click(function(event) {
-                event.preventDefault();
-
-                if (!isAuthenticated) {
-                    window.location.href = '{{ route('login') }}';
-                    return;
-                }
-
-                var itemId = $(this).data('id');
-                $.ajax({
-                    url: '/cart/add',
-                    type: 'POST',
-                    data: {
-                        _token: '{{ csrf_token() }}',
-                        id: itemId
-                    },
-                    success: function(response) {
-                        var responseData = JSON.parse(response);
-                        console.log(responseData);
-
-                        var cartCount = 0;
-
-                        // $('#cartItems').html('');
-                        $('#noProduct').html('');
-                        $('.sidecart__footer').show();
-
-
-                        $.each(responseData.CartDetails, function(key, val) {
-                            var cartItems = val;
-
-                            $('#cartItems').append(
-                                '<li class="grid_4 item container"><div class="preview"><img style="width: 100px;" src="/public/' +
-                                cartItems.image +
-                                '"></div><div class="details" data-price="15.50"><h3>' +
-                                cartItems.title +
-                                '</h3></div><div class="inner_container"><div class="col_1of2 align-center picker"><p><a href="#" OnClick="RemoveFromCart(' +
-                                cartItems.id +
-                                ')" class="btn-remove"><i class="far fa-trash-alt"></i></a></p></div></div></li>'
-                            );
-
-                            cartCount++;
-                        });
-
-                        $('#cartCount').text(cartCount);
-                    },
-                    error: function(xhr, status, error) {
-                        console.log('An error occurred: ' + error);
-                    }
-                });
-            });
-        });
-    </script>
-
     <script>
         $(document).ready(function() {
             $('#co_name').change(function() {
