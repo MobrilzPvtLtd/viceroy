@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AuthTableSeeder::class);
 
         Schema::enableForeignKeyConstraints();
-
+//gfgfgf
         // User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
