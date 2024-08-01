@@ -131,7 +131,7 @@
     <!--=============================
                                                                                                             DESTINATION START
                                                                                                         ==============================-->
-    <section class="destination_area pt_115 xs_pt_110 pb_60 xs_pb_90">
+    {{-- <section class="destination_area pt_115 xs_pt_110 pb_60 xs_pb_90">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-7 wow fadeInUp" data-wow-duration="1.5s">
@@ -264,6 +264,27 @@
             </div>
         </div>
     </section> --}}
+    <section class="find_state mt_115" style="background: url(assets/images/Untitled-1.jpg) ; height : 30vw;">
+
+        <div class="video_player_div" style="position : relative; width : 100vw ; height : 30vw ; overflow : hidden ;">
+            <video style="margin-top : -12vw ; width : 100vw ; height:auto ; position : absolute; z-index : 5 ; " data-vbg-loop="true"
+                src="assets/images/Mid section.mp4" autoplay muted loop></video>
+
+
+            <div class="container" style="position: absolute ; z-index : 10 ; transform : translate(25% , 0);">
+
+                <div class="row wow fadeInUp"  data-wow-duration="1.5s">
+                    <div class="col-xl-12">
+                        <div class="find_state_text">
+                            <h2>Residential</h2>
+                            <a href="#">Discover The Project<i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
     <!--=============================
                                                                                                                     DESTINATION END
                                                                                                                 ==============================-->
@@ -651,7 +672,7 @@
     <!--=============================
                                                                                                             FIND STATE START
                                                                                                         ==============================-->
-    <section class="find_state" style="background: url(assets/images/find_state.jpg)">
+    {{-- <section class="find_state" style="background: url(assets/images/find_state.jpg)">
         <div id="vbg12" data-vbg-loop="true" data-vbg="https://youtu.be/ec_fXMrD7Ow?si=m9LJu9X3lzTP5Erz"></div>
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
@@ -668,7 +689,7 @@
 
         <div class="video_player_div" style="position : relative; width : 100vw ; height : 30vw ; overflow : hidden ;">
             <video style="margin-top : -12vw ; width : 100vw ; height:auto ; position : absolute; z-index : 5 ; " data-vbg-loop="true"
-                src="assets/images/bottom Banner.mp4" autoplay muted loop></video>
+                src="https://viceroy.ultimatetrueweb.com/public/videos/bottomBanner.mp4" autoplay muted loop></video>
 
 
             <div class="container" style="position: absolute ; z-index : 10 ; transform : translate(25% , 0);">

@@ -130,7 +130,7 @@
 
         <div class="video_player_div" style="position : relative; width : 100vw ; height : 30vw ; overflow : hidden ;">
             <video style="margin-top : -12vw ; width : 100vw ; height:auto ; position : absolute; z-index : 5 ; " data-vbg-loop="true"
-                src="assets/images/198898-909564555.mp4" autoplay muted loop></video>
+                src="https://viceroy.ultimatetrueweb.com/public/videos/198898-909564555.mp4" autoplay muted loop></video>
 
 
             <div class="container" style="position: absolute ; z-index : 10 ; transform : translate(25% , 0);">
