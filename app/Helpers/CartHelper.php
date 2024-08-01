@@ -26,26 +26,6 @@ class CartHelper
                     </div>
                 </div>
             ';
-
-            // $html .= '
-            //     <li class="grid_4 item container">
-            //         <div class="preview">
-            //             <img style="width: 100px;" src="/public/' . $item['image'] . '" alt="' . $item['title'] . '">
-            //         </div>
-            //         <div class="details" data-price="' . $item['price'] . '">
-            //             <h3>' . $item['title'] . '</h3>
-            //         </div>
-            //         <div class="inner_container">
-            //             <div class="col_1of2 align-center picker">
-            //                 <p>
-            //                     <a href="#" onclick="addToCartOrRemove(' . intval($item['id']) . ', \'remove\')" class="btn-remove">
-            //                         <i class="far fa-trash-alt"></i>
-            //                     </a>
-            //                 </p>
-            //             </div>
-            //         </div>
-            //     </li>
-            // ';
         }
 
         $html .= '

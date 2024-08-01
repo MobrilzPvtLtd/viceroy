@@ -162,8 +162,9 @@ class PropertyController extends Controller
         // Retrieve countries and cities
         $countrys = Country::all();
         $citys = City::all();
+        $states = State::all();
 
-        return view('backend.property.edit', compact('property', 'facilities', 'selectedFacilities', 'countrys', 'citys'));
+        return view('backend.property.edit', compact('property', 'facilities', 'selectedFacilities', 'countrys', 'states','citys'));
     }
 
 

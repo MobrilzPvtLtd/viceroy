@@ -28,7 +28,7 @@
                                 <div class="form-group mb-2 col-4">
                                     <label for="exampleInputEmail1">Country Name</label>
                                     <select class="form-control" id="co_name" name="country_id" required>
-                                        <option value="" disabled>Select Country</option>
+                                        <option value="" disabled selected>Select Country</option>
                                         @foreach ($countrys as $country)
                                             <option value="{{ $country->id }}"
                                                 {{ $country->id == $property->country_id ? 'selected' : '' }}>
@@ -39,9 +39,22 @@
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
+                                    <label>State</label>
+                                    <select class="form-control" name="state_id" id="st_name" required>
+                                        <option value="" disabled selected>Select State</option>
+                                        @foreach ($states as $state)
+                                            <option value="{{ $state->id }}"
+                                                {{ $state->id == $property->state_id ? 'selected' : '' }}>
+                                                {{ $state->st_name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="form-group mb-2 col-4">
                                     <label>City</label>
                                     <select class="form-control" name="city_id" id="city" required>
-                                        <option value="" disabled>Select City</option>
+                                        <option value="" disabled selected>Select City</option>
                                         @foreach ($citys as $city)
                                             <option value="{{ $city->id }}"
                                                 {{ $city->id == $property->city_id ? 'selected' : '' }}>
@@ -50,7 +63,6 @@
                                         @endforeach
                                     </select>
                                 </div>
-
                                 <div class="form-group mb-2 col-4">
                                     <label for="exampleInputEmail1">Property Name</label>
                                     <input type="text" class="form-control" name="title"
@@ -250,12 +262,32 @@
         $(document).ready(function() {
             $('#co_name').change(function() {
                 var country = $(this).val();
+                console.log(country);
+                $.ajax({
+                    type: 'GET',
+                    url: '{{ route('fetch-states') }}',
+                    data: {
+                        country: country
+                    },
+                    success: function(result) {
+                        console.log(result);
+                        $("#st_name").html(result);
+                        $("#city").html('<option value="">Select City</option>');
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
 
+            $('#st_name').change(function() {
+                var state = $(this).val();
+                console.log(state);
                 $.ajax({
                     type: 'GET',
                     url: '{{ route('fetch-city') }}',
                     data: {
-                        country: country
+                        state: state
                     },
                     success: function(result) {
                         console.log(result);
