@@ -125,12 +125,26 @@
         </div>
     </section>
     <!--=============================
-                                                                                                            ABOUT END
-                                                                                                        ==============================-->
+                                                                                                                ABOUT END
+                                                                                                            ==============================-->
 
     <!--=============================
-                                                                                                            DESTINATION START
-                                                                                                        ==============================-->
+                                                                                                                DESTINATION START
+                                                                                                            ==============================-->
+
+    <section class="find_state mt_115" style="background: url(assets/images/find_state.jpg)">
+        <div id="vbg12" data-vbg-loop="true" data-vbg="https://viceroy.ultimatetrueweb.com/public/videos/Mid_section.mp4"></div>
+        <div class="container">
+            <div class="row wow fadeInUp" data-wow-duration="1.5s">
+                <div class="col-xl-12">
+                    {{-- <div class="find_state_text">
+                        <h2>Residential</h2>
+                        <a href="#">Discover The Project<i class="fas fa-arrow-right"></i></a>
+                    </div> --}}
+                </div>
+            </div>
+        </div>
+    </section>
     {{-- <section class="destination_area pt_115 xs_pt_110 pb_60 xs_pb_90">
         <div class="container">
             <div class="row justify-content-center">
@@ -265,12 +279,12 @@
         </div>
     </section> --}}
     <!--=============================
-                                                                                                            DESTINATION END
-                                                                                                        ==============================-->
+                                                                                                                DESTINATION END
+                                                                                                            ==============================-->
 
     <!--=============================
-                                                                                                            PROPERTY START
-                                                                                                        ==============================-->
+                                                                                                                PROPERTY START
+                                                                                                            ==============================-->
     <section class="property_area pt_60 xs_pt_95 pb_50 xs_pb_95 mt_25">
         <div class="container">
             <div class="row justify-content-center text-align-center">
@@ -307,9 +321,12 @@
                             <div class="single_property_text">
                                 <div class="single_property_top">
                                     <div class="wish001">
-                                        <a class="item_title" href="{{ route('property', $property->slag) }}">{{ $property->title }}</a>
+                                        <a class="item_title"
+                                            href="{{ route('property', $property->slag) }}">{{ $property->title }}</a>
 
-                                        <button type="submit" id="addToCart" onclick="addToCartOrRemove({{ $property->id }})" class="addToCart btn btn-primary"><i class="fa fa-heart"></i></button>
+                                        <button type="submit" id="addToCart"
+                                            onclick="addToCartOrRemove({{ $property->id }})"
+                                            class="addToCart btn btn-primary"><i class="fa fa-heart"></i></button>
 
                                     </div>
                                     <p>
@@ -457,12 +474,12 @@
     </section>
 
     <!--=============================
-                                                                                                            PROPERTY END
-                                                                                                        ==============================-->
+                                                                                                                PROPERTY END
+                                                                                                            ==============================-->
 
     <!--=============================
-                                                                                                            AGENT START
-                                                                                                        ==============================-->
+                                                                                                                AGENT START
+                                                                                                            ==============================-->
     <section class="agent_area pt_60 xs_pt_95 pb_70 xs_pb_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -642,12 +659,12 @@
 
     </section>
     <!--=============================
-                                                                                                            AGENT END
-                                                                                                        ==============================-->
+                                                                                                                AGENT END
+                                                                                                            ==============================-->
 
     <!--=============================
-                                                                                                            FIND STATE START
-                                                                                                        ==============================-->
+                                                                                                                FIND STATE START
+                                                                                                            ==============================-->
     <section class="find_state" style="background: url(assets/images/find_state.jpg)">
         <div id="vbg12" data-vbg-loop="true" data-vbg="https://youtu.be/ec_fXMrD7Ow?si=m9LJu9X3lzTP5Erz"></div>
         <div class="container">
@@ -662,12 +679,12 @@
         </div>
     </section>
     <!--=============================
-                                                                                                            FIND STATE END
-                                                                                                        ==============================-->
+                                                                                                                FIND STATE END
+                                                                                                            ==============================-->
 
     <!--=============================
-                                                                                                            PARTNER START
-                                                                                                        ==============================-->
+                                                                                                                PARTNER START
+                                                                                                            ==============================-->
     <section class="partner_area pt_30 pb_30">
         <div class="container">
             <div class="row justify-content-center">
@@ -708,31 +725,31 @@
     </section>
 @endsection
 @section('script')
-<script>
-    var isAuthenticated = @json(Auth::check());
-</script>
-<script>
-    $(document).ready(function() {
-        $('#co_name').change(function() {
-            var country = $(this).val();
+    <script>
+        var isAuthenticated = @json(Auth::check());
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#co_name').change(function() {
+                var country = $(this).val();
 
-            $.ajax({
-                type: 'GET',
-                url: '{{ route('fetch-city') }}',
-                data: {
-                    country: country
-                },
-                success: function(result) {
-                    console.log(result);
-                    $("#city").html(result);
-                },
-                error: function(xhr, status, error) {
-                    console.error(xhr.responseText);
-                }
+                $.ajax({
+                    type: 'GET',
+                    url: '{{ route('fetch-city') }}',
+                    data: {
+                        country: country
+                    },
+                    success: function(result) {
+                        console.log(result);
+                        $("#city").html(result);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
             });
         });
-    });
-</script>
+    </script>
     <script>
         $(document).ready(function() {
             $('#rent_co_name').change(function() {
