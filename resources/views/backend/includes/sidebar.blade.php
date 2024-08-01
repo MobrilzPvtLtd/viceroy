@@ -173,13 +173,13 @@ $total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
             </li>
         @endcan
 
-        {{-- @can('view_roles')
+        @can('view_roles')
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('backend.roles.index') }}">
                     <i class="nav-icon fa-solid fa-user-shield"></i>&nbsp;@lang('Roles')
                 </a>
             </li>
-        @endcan --}}
+        @endcan
 
         {{-- @can('view_logs')
             <li class="nav-group" aria-expanded="true">
