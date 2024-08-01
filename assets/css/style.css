@@ -7940,6 +7940,17 @@ gap: 10px;
 
     padding-top: 50px;
 }
+.video_player_div{
+    position: relative;
+    overflow: hidden;
+    height: 10vw;
+    width: 100%;
+}
+.video_player_div video{
+    position: absolute;
+    height: 10vw;
+    width: 100%;
+}
 @media screen and (min-width:1025px) and (max-width:1300px) {
     .form-container {
         height: 15.5rem !important;
@@ -8051,6 +8062,10 @@ marquee {
     display: flex;
     flex-direction: column;
     gap: 15px;
+
+
+}
+
 
 .phpdebugbar.phpdebugbar-minimized {
     display: none !important;

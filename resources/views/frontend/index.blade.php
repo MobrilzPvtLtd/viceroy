@@ -125,15 +125,20 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                ABOUT END
-                                                                                                            ==============================-->
+                                                                                                                    ABOUT END
+                                                                                                                ==============================-->
 
     <!--=============================
-                                                                                                                DESTINATION START
-                                                                                                            ==============================-->
+                                                                                                                    DESTINATION START
+                                                                                                                ==============================-->
 
-    <section class="find_state mt_115" style="background: url(assets/images/find_state.jpg)">
-        <div id="vbg12" data-vbg-loop="true" data-vbg="https://viceroy.ultimatetrueweb.com/public/videos/Mid_section.mp4"></div>
+    <section class="find_state mt_115" style="background: url(assets/images/find_state.jpg) ; height : 30vw;">
+
+        <div class="video_player_div" style=" width : 100vw ; height : 30vw ; overflow : hidden ;">
+            <video style="margin-top : -11vw; width : 100vw ; overflow : hidden ; " data-vbg-loop="true"
+                src="https://viceroy.ultimatetrueweb.com/public/videos/Mid_section.mp4" autoplay controls muted loop></video>
+        </div>
+
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
                 <div class="col-xl-12">
@@ -279,12 +284,12 @@
         </div>
     </section> --}}
     <!--=============================
-                                                                                                                DESTINATION END
-                                                                                                            ==============================-->
+                                                                                                                    DESTINATION END
+                                                                                                                ==============================-->
 
     <!--=============================
-                                                                                                                PROPERTY START
-                                                                                                            ==============================-->
+                                                                                                                    PROPERTY START
+                                                                                                                ==============================-->
     <section class="property_area pt_60 xs_pt_95 pb_50 xs_pb_95 mt_25">
         <div class="container">
             <div class="row justify-content-center text-align-center">
@@ -474,12 +479,12 @@
     </section>
 
     <!--=============================
-                                                                                                                PROPERTY END
-                                                                                                            ==============================-->
+                                                                                                                    PROPERTY END
+                                                                                                                ==============================-->
 
     <!--=============================
-                                                                                                                AGENT START
-                                                                                                            ==============================-->
+                                                                                                                    AGENT START
+                                                                                                                ==============================-->
     <section class="agent_area pt_60 xs_pt_95 pb_70 xs_pb_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -659,12 +664,12 @@
 
     </section>
     <!--=============================
-                                                                                                                AGENT END
-                                                                                                            ==============================-->
+                                                                                                                    AGENT END
+                                                                                                                ==============================-->
 
     <!--=============================
-                                                                                                                FIND STATE START
-                                                                                                            ==============================-->
+                                                                                                                    FIND STATE START
+                                                                                                                ==============================-->
     <section class="find_state" style="background: url(assets/images/find_state.jpg)">
         <div id="vbg12" data-vbg-loop="true" data-vbg="https://youtu.be/ec_fXMrD7Ow?si=m9LJu9X3lzTP5Erz"></div>
         <div class="container">
@@ -679,12 +684,12 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                FIND STATE END
-                                                                                                            ==============================-->
+                                                                                                                    FIND STATE END
+                                                                                                                ==============================-->
 
     <!--=============================
-                                                                                                                PARTNER START
-                                                                                                            ==============================-->
+                                                                                                                    PARTNER START
+                                                                                                                ==============================-->
     <section class="partner_area pt_30 pb_30">
         <div class="container">
             <div class="row justify-content-center">
