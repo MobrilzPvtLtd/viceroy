@@ -685,7 +685,7 @@
             </div>
         </div>
     </section> --}}
-    <section class="find_state mt_115" style="background: url(assets/images/Untitled-1.jpg) ; height : 30vw;">
+    <section class="find_state mt_115" style="background: url(assets/images/bottom_img.jpg) ; height : 30vw;">
 
         <div class="video_player_div" style="position : relative; width : 100vw ; height : 30vw ; overflow : hidden ;">
             <video style="margin-top : -12vw ; width : 100vw ; height:auto ; position : absolute; z-index : 5 ; " data-vbg-loop="true"
