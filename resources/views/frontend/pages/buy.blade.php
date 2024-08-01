@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-    <section class="breadcrumbs" style="background: url(assets/images/breadcrumbs_bg.jpg)">
+    <section class="breadcrumbs" style="background: url(assets/images/top_banner_buy.jpg)">
         <div class="breadcrumbs_overly">
             <div class="container">
                 <div class="row">
@@ -58,6 +58,16 @@
                                                 @foreach ($countrys as $country)
                                                     <option value="{{ $country->id }}">{{ $country->co_name }}</option>
                                                 @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="home_form_label">
+                                            <label>State</label>
+                                            <select class="select_label s1" name="st_name" id="st_name" required focus>
+                                                <option value="" disabled selected>select state </option>
+
+                                                {{-- @foreach ($states as $state)
+                                                    <option value="{{ $state->id }}">{{ $state->st_name }}</option>
+                                                @endforeach --}}
                                             </select>
                                         </div>
                                         <div class="home_form_label">
@@ -150,7 +160,7 @@
 
                                         <div class="home_form_label">
                                             <label>Property Type</label>
-                                            <select class="select_label" name="p_type" >
+                                            <select class="select_label" name="p_type">
                                                 <option value="">Select property</option>
                                                 {{-- @foreach ($uniquePropertyTypes as $p_type)
                                                     <option value="{{ $p_type }}">{{ $p_type }}</option>
@@ -556,6 +566,24 @@
 
         </div>
     </section>
+    <section class="find_state mt_115" style="background: url() ; height : 30vw; margin-bottom:200px ">
+
+<div class="video_player_div" style="position : relative; width : 100vw ; height : 40vw ; overflow : hidden ;">
+    <video style="margin-top : -12vw ; width : 100vw ; height:auto ; position : absolute; z-index : 5 ; " data-vbg-loop="true"
+        src="assets/images/top_banner.mp4" autoplay muted loop></video>
+
+
+    <div class="container" style="position: absolute ; z-index : 10 ; transform : translate(25% , 0);">
+
+        <div class="row wow fadeInUp"  data-wow-duration="1.5s">
+            <div class="col-xl-12">
+
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
 @endsection
 @section('script')
 <script>

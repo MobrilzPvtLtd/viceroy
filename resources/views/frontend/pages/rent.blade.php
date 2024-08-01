@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/rent.css') }}" />
 @endsection
 @section('content')
-    <section class="breadcrumbs" style="background: url(assets/images/breadcrumbs_bg.jpg)">
+    <section class="breadcrumbs" style="background: url(assets/images/rent02.jpg)">
         <div class="breadcrumbs_overly">
             <div class="container">
                 <div class="row">
@@ -562,6 +562,24 @@
         </div>
         </div>
     </section>
+    <section class="find_state mt_115" style="background: url() ; height : 30vw; margin-bottom:200px ">
+
+<div class="video_player_div" style="position : relative; width : 100vw ; height : 40vw ; overflow : hidden ;">
+    <video style="margin-top : -12vw ; width : 100vw ; height:auto ; position : absolute; z-index : 5 ; " data-vbg-loop="true"
+        src="assets/images/rent001.mp4" autoplay muted loop></video>
+
+
+    <div class="container" style="position: absolute ; z-index : 10 ; transform : translate(25% , 0);">
+
+        <div class="row wow fadeInUp"  data-wow-duration="1.5s">
+            <div class="col-xl-12">
+
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
 @endsection
 @section('script')
     <script>
