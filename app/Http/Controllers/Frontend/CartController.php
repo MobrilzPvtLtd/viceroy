@@ -37,6 +37,7 @@ class CartController extends Controller
             $cart[$request->id] = [
                 "id" => $property->id,
                 "title" => $property->title,
+                "desc" => $property->desc,
                 "price" => $property->price,
                 "image" => $property->image ? unserialize($property->image)[0] : null,
             ];
