@@ -78,7 +78,7 @@ Route::resource('admin/state', StateController::class);
 Route::resource('admin/city', CityController::class);
 Route::get('fetch-state', [CityController::class, 'fetchState'])->name('fetch-state'); //auto select country data
 // home route
-Route::get('/', [FrontendController::class, 'index'])->name('home');
+// Route::get('/', [FrontendController::class, 'index'])->name('home');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/buy', [FrontendController::class, 'buy'])->name('buy');
 Route::get('/rent', [FrontendController::class, 'rent'])->name('rent');

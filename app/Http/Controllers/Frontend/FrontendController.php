@@ -106,6 +106,9 @@ class FrontendController extends Controller
         if ($request->has('co_name') && $request->co_name != '') {
             $query->where('country_id', $request->co_name);
         }
+        if ($request->has('st_name') && $request->st_name != '') {
+            $query->where('state_id', $request->st_name);
+        }
         if ($request->has('ct_name') && $request->ct_name != '') {
             $query->where('city_id', $request->ct_name);
         }
@@ -125,6 +128,7 @@ class FrontendController extends Controller
         $countrys = Country::all();
         $citys = City::all();
         $currencys = Currency::all();
+        $states = State::all();
         $markers = [];
         $infowindow = [];
         foreach ($propertys as $property) {
@@ -137,7 +141,7 @@ class FrontendController extends Controller
 
         $markers = $markers;
         $infowindow = $infowindow;
-        return view('frontend.pages.rent', compact('propertys', 'countrys', 'citys', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes', 'markers', 'infowindow'));
+        return view('frontend.pages.rent', compact('propertys', 'countrys', 'citys','states', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes', 'markers', 'infowindow'));
     }
     public function fetchCity(Request $request)
     {

@@ -27,12 +27,12 @@
         </div>
     </section>
     <!--=============================
-                                                                                                    BREADCRUMBS END
-                                                                                                ==============================-->
+                                                                                                        BREADCRUMBS END
+                                                                                                    ==============================-->
 
     <!--=============================
-                                                                                                    PROPERTY GRID VIEW START
-                                                                                                ==============================-->
+                                                                                                        PROPERTY GRID VIEW START
+                                                                                                    ==============================-->
     <section class="property_grid_view pb_120 xs_pb_100">
         <div class="container-fluid">
             <div class="row justify-content-center wow fadeInUp" data-wow-duration="1.5s">
@@ -47,15 +47,15 @@
                                 </button>
                             </li>
                             <!--<li class="nav-item" role="presentation">
-                                                                                                                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                                                                                                    data-bs-target="#pills-profile" type="button" role="tab"
-                                                                                                                                    aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                                                                                                            </li>-->
+                                                                                                                                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                                                                                                        data-bs-target="#pills-profile" type="button" role="tab"
+                                                                                                                                        aria-controls="pills-profile" aria-selected="false">Sell</button>
+                                                                                                                                </li>-->
                             <!--<li class="nav-item" role="presentation">
-                                                                                                                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                                                                                                                    data-bs-target="#pills-contact" type="button" role="tab"
-                                                                                                                                    aria-controls="pills-contact" aria-selected="false">Rent</button>
-                                                                                                                            </li>-->
+                                                                                                                                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                                                                                                                        data-bs-target="#pills-contact" type="button" role="tab"
+                                                                                                                                        aria-controls="pills-contact" aria-selected="false">Rent</button>
+                                                                                                                                </li>-->
                         </ul>
 
                         <div class="tab-content" id="pills-tabContent">
@@ -72,14 +72,24 @@
                                                 @endforeach
                                             </select>
                                         </div>
+                                        <div class="home_form_label">
+                                            <label>State</label>
+                                            <select class="select_label s1" name="st_name" id="st_name" required focus>
+                                                <option value="" disabled selected>select state </option>
+
+                                                {{-- @foreach ($states as $state)
+                                                    <option value="{{ $state->id }}">{{ $state->st_name }}</option>
+                                                @endforeach --}}
+                                            </select>
+                                        </div>
 
                                         <div class="home_form_label">
                                             <label>City</label>
                                             <select class="select_label" name="ct_name" id="city" required>
                                                 <option value="" disabled selected> select city</option>
-                                                @foreach ($citys as $city)
+                                                {{-- @foreach ($citys as $city)
                                                     <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
-                                                @endforeach
+                                                @endforeach --}}
                                             </select>
                                         </div>
 
@@ -99,7 +109,8 @@
                                                     <select class="select_2" id="bedroomMin" name="state">
                                                         <option value="">Min</option>
                                                         @foreach ($uniqueBedrooms as $bedroom)
-                                                            <option value="{{ $bedroom }}">{{ $bedroom }}</option>
+                                                            <option value="{{ $bedroom }}">{{ $bedroom }}
+                                                            </option>
                                                         @endforeach
                                                     </select>
 
@@ -276,7 +287,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                                                    </div>-->
+                                                                                                                                        </div>-->
                                 </form>
                             </div>
                         </div>
@@ -356,8 +367,8 @@
                 </div> --}}
             </section>
             <!--=============================
-                                                                  PROPERTY GRID VIEW END
-                                                                 ==============================-->
+                                                                      PROPERTY GRID VIEW END
+                                                                     ==============================-->
             <div class="container">
                 <div class="row mt_95 xs_mt_75">
                     <button id="btn001" onclick="func()" name="map-view">
@@ -422,7 +433,7 @@
                                                         <a class="item_title"
                                                             href="{{ route('property', $property->slag) }} ">{{ $property->title }}</a>
                                                         <button type="submit" id="addToCart"
-                                                           onclick="addToCartOrRemove({{ $property->id }})"
+                                                            onclick="addToCartOrRemove({{ $property->id }})"
                                                             class="addToCart btn btn-primary"><i
                                                                 class="fa fa-heart"></i></button>
                                                     </div>
@@ -545,8 +556,7 @@
                         window.initMap = initMap;
                     </script>
 
-                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ env('GOOGLE_MAP_API') }}" defer>
-                    </script>
+                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ env('GOOGLE_MAP_API') }}" defer></script>
                 </div>
             </div>
         </div>
@@ -558,12 +568,32 @@
         $(document).ready(function() {
             $('#co_name').change(function() {
                 var country = $(this).val();
+                console.log(country);
+                $.ajax({
+                    type: 'GET',
+                    url: '{{ route('fetch-states') }}',
+                    data: {
+                        country: country
+                    },
+                    success: function(result) {
+                        console.log(result);
+                        $("#st_name").html(result);
+                        $("#city").html('<option value="">Select City</option>');
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
 
+            $('#st_name').change(function() {
+                var state = $(this).val();
+                console.log(state);
                 $.ajax({
                     type: 'GET',
                     url: '{{ route('fetch-city') }}',
                     data: {
-                        country: country
+                        state: state
                     },
                     success: function(result) {
                         console.log(result);
