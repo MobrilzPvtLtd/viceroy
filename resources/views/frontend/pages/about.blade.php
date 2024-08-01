@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <section class="breadcrumbs" style="background: url(assets/images/breadcrumbs_bg.jpg);">
+    <section class="breadcrumbs" style="background: url(assets/images/top_banner_about.jpg); background-position: top !important;">
         <div class="breadcrumbs_overly">
             <div class="container">
                 <div class="row">
@@ -42,15 +42,15 @@
                     <div class="row align-items-center">
                         <div class="col-xl-6 col-sm-6 wow fadeInLeft" data-wow-duration="1.5s">
                             <div class="about_area_img_1">
-                                <img src="assets/images/about_1.jpg" alt="img" class="img-fluid w-100">
+                                <img src="assets/images/Picture 1 .jpg" alt="img" class="img-fluid w-100">
                             </div>
                         </div>
                         <div class="col-xl-6 col-sm-6">
                             <div class="about_area_img_2 wow fadeInUp" data-wow-duration="1.5s">
-                                <img src="assets/images/about_2.jpg" alt="img" class="img-fluid w-100">
+                                <img src="assets/images/pictue 2 .jpg" alt="img" class="img-fluid w-100">
                             </div>
                             <div class="about_area_img_3 wow fadeInUp" data-wow-duration="1.5s">
-                                <img src="assets/images/about_3.jpg" alt="img" class="img-fluid w-100">
+                                <img src="assets/images/picture 3.jpg" alt="img" class="img-fluid w-100">
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
             </div>
         </div>
     </section>
-    <section class="find_state" style="background: url(assets/images/find_state.jpg);">
+    {{-- <section class="find_state" style="background: url(assets/images/find_state.jpg);">
         <div id="vbg12" data-vbg-loop="true" data-vbg="https://youtu.be/ec_fXMrD7Ow?si=m9LJu9X3lzTP5Erz">
         </div>
         <div class="container">
@@ -123,6 +123,27 @@
                         <a href="#">Discover The Project<i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section> --}}
+    <section class="find_state mt_115" style="background: url() ; height : 30vw;">
+
+        <div class="video_player_div" style="position : relative; width : 100vw ; height : 30vw ; overflow : hidden ;">
+            <video style="margin-top : -12vw ; width : 100vw ; height:auto ; position : absolute; z-index : 5 ; " data-vbg-loop="true"
+                src="https://viceroy.ultimatetrueweb.com/public/videos/198898-909564555.mp4" autoplay muted loop></video>
+
+
+            <div class="container" style="position: absolute ; z-index : 10 ; transform : translate(25% , 0);">
+
+                <div class="row wow fadeInUp"  data-wow-duration="1.5s">
+                    <div class="col-xl-12">
+                        <div class="find_state_text">
+                            <h2 style="color:#e6b025;">Residential</h2>
+                            <a href="#">Discover The Project<i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>

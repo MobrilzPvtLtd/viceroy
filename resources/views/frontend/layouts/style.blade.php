@@ -23,7 +23,7 @@
     /* padding-right: 5px; */
     font-size: 16px;
     position: relative;
-    width: 100%;
+    width: 12vw;
 }
 .select_label::after {
     content: '\25BC';
