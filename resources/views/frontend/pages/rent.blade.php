@@ -432,7 +432,7 @@
                                                     <div class="wish001">
                                                         <a class="item_title"
                                                             href="{{ route('property', $property->slag) }} ">{{ $property->title }}</a>
-                                                        <button type="submit" id="addToCart"
+                                                        <button type="submit" id=""
                                                             onclick="addToCartOrRemove({{ $property->id }})"
                                                             class="addToCart btn btn-primary"><i
                                                                 class="fa fa-heart"></i></button>

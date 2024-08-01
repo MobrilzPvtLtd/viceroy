@@ -151,7 +151,7 @@
                                         <div class="home_form_label">
                                             <label>Property Type</label>
                                             <select class="select_label" name="p_type" >
-                                                <option value="">Select property</option>
+                                                <option value="[]">Select property</option>
                                                 {{-- @foreach ($uniquePropertyTypes as $p_type)
                                                     <option value="{{ $p_type }}">{{ $p_type }}</option>
                                                 @endforeach --}}
@@ -415,7 +415,7 @@
                                                     <div class="wish001">
                                                         <a class="item_title"
                                                             href="{{ route('property', $property->slag) }}">{{ $property->title }}</a>
-                                                        <button type="submit" id="addToCart"
+                                                        <button type="submit" id=""
                                                             onclick="addToCartOrRemove({{ $property->id }})"
                                                             class="addToCart btn btn-primary"><i
                                                                 class="fa fa-heart"></i></button>

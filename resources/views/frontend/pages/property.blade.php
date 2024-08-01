@@ -96,7 +96,7 @@ div#testimonial-slider {
                             <h4>{{ $property->title }}</h4>
                             <ul class="property_details_share d-flex flex-wrap">
 
-                                <button type="submit" id="addToCart" onclick="addToCartOrRemove({{ $property->id }})"
+                                <button type="submit" id="" onclick="addToCartOrRemove({{ $property->id }})"
                                     class=" btn btn-primary"><i class="fa fa-heart"></i></button>
 
                             </ul>

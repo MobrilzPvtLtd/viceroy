@@ -16,9 +16,11 @@
             },
             success: function(responseData) {
                 if (responseData.Status === 1) {
+                    console.log(responseData.disabled);
                     $('#cartCount').text(responseData.CartCount);
                     $('#cartItems').html(responseData.CartHTML);
-                    // $('.sidecart__footer').show();
+                    $('#addtocart-'+responseData.disabled).prop('disabled', true);
+                    //$(button).prop('disabled', true);
                 } else {
                     alert(responseData.Message);
                 }

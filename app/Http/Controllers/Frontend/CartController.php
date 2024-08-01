@@ -47,6 +47,7 @@ class CartController extends Controller
             $sessionData['CartCount'] = count($cart);
             $sessionData['Status'] = 1;
             $sessionData['Message'] = 'Property added to cart';
+            $sessionData['disabled'] = $property->id;
         }
 
         if ($cartExists && !empty($cart)) {
