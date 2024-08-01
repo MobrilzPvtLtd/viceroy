@@ -260,21 +260,7 @@
          @endif --}}
 
 
-<<<<<<< Updated upstream
-    </div>
-    <hr>
-    <div class="d-flex" style="width: 100%">
-        <div class="d-flex gap-4" style="width: 80%">'
-            <img src="assets\images\agencies_img_1.jpg" alt="" class="cart_img">
-            <div class="cart_tittle">
-                <h5>Property name</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-        </div>
-        <div class="cart_del_icon" style="width: 20%">
-            <i class="fa fa-trash" aria-hidden="true"></i>
-        </div>
-=======
+
      </div>
      <hr>
      <div class="d-flex" style="width: 100%">
@@ -288,7 +274,7 @@
          <div class="cart_del_icon" style="width: 20%">
              <i class="fa fa-trash" aria-hidden="true"></i>
          </div>
->>>>>>> Stashed changes
+
 
      </div>
      <hr>
