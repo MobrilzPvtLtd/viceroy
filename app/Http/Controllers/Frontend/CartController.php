@@ -116,6 +116,8 @@ class CartController extends Controller
                         </div>
                     </div>
                 ';
+                $responseData['disabled'] = $item['id'];
+
             }
 
             $html .= '

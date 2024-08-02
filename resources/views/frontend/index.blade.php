@@ -331,9 +331,7 @@
                                         <a class="item_title"
                                             href="{{ route('property', $property->slag) }}">{{ $property->title }}</a>
 
-                                        <button id="addtocart-{{ $property->id }}" type="submit"
-                                            onclick="addToCartOrRemove({{ $property->id }})"
-                                            class="addToCart btn btn-primary"><i class="fa fa-heart"></i></button>
+                                        <button id="addtocart-{{ $property->id }}" type="submit" onclick="addToCartOrRemove({{ $property->id }})" class="addToCart btn btn-primary"><i class="fa fa-heart"></i></button>
 
                                     </div>
                                     <p>

@@ -41,6 +41,7 @@
                 if (responseData) {
                     $('#cartCount').text(responseData.CartCount);
                     $('#cartItems').html(responseData.CartHTML);
+                    $('#addtocart-'+responseData.disabled).prop('disabled', true);
                     // $('.sidecart__footer').show();
                 } else {
                     console.log(responseData.Message);
