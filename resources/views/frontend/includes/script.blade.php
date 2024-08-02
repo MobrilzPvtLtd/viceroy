@@ -21,7 +21,7 @@
                     $('#cartItems').html(sessionData.CartHTML);
                     $('#addtocart-'+sessionData.disabled).prop('disabled', true);
                 } else {
-                    alert(sessionData.Message);
+                    console.log(responseData.Message);
                 }
             },
             error: function(xhr, status, error) {
@@ -43,7 +43,7 @@
                     $('#cartItems').html(responseData.CartHTML);
                     // $('.sidecart__footer').show();
                 } else {
-                    alert(responseData.Message);
+                    console.log(responseData.Message);
                 }
             },
             error: function(xhr, status, error) {
