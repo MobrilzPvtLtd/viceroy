@@ -160,8 +160,8 @@
 
                                         <div class="home_form_label">
                                             <label>Property Type</label>
-                                            <select class="select_label" name="p_type" >
-                                                <option value="">Select property</option>
+                                            <select class="select_label select3" name="p_type" multiple>
+                                                {{-- <option value="">Select property</option> --}}
                                                 {{-- @foreach ($uniquePropertyTypes as $p_type)
                                                     <option value="{{ $p_type }}">{{ $p_type }}</option>
                                                 @endforeach --}}
@@ -183,10 +183,11 @@
                                             </select>
                                         </div>
                                         <div class="">
-                                            <button class="common_btn banner_input_btn" type="submit"
+                                            <button class="common_btn banner_input_btn"   type="submit"
                                                 style="width: 100%; margin-top: 30px">
                                                 search
                                             </button>
+
                                         </div>
                                     </div>
                                 </form>
@@ -287,7 +288,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                                                                                                        </div>-->
+                                                                                                                                                                                            </div>-->
                                 </form>
                             </div>
                         </div>
@@ -429,9 +430,10 @@
                                                             onclick="addToCartOrRemove({{ $property->id }})"
                                                             class="addToCart btn btn-primary"><i
                                                                 class="fa fa-heart"></i></button> --}}
-                                                            <button id="addtocart-{{ $property->id }}" type="submit"
-                                                                onclick="addToCartOrRemove({{ $property->id }})"
-                                                                class="addToCart btn btn-primary"><i class="fa fa-heart"></i></button>
+                                                        <button id="addtocart-{{ $property->id }}" type="submit"
+                                                            onclick="addToCartOrRemove({{ $property->id }})"
+                                                            class="addToCart btn btn-primary"><i
+                                                                class="fa fa-heart"></i></button>
 
                                                     </div>
 
@@ -572,66 +574,75 @@
     </section>
     <section class="find_state mt_115" style="background: url() ; height : 30vw; margin-bottom:200px ">
 
-<div class="video_player_div" style="position : relative; width : 100vw ; height : 40vw ; overflow : hidden ;">
-    <video style="margin-top : -12vw ; width : 100vw ; height:auto ; position : absolute; z-index : 5 ; " data-vbg-loop="true"
-        src="https://viceroy.ultimatetrueweb.com/public/videos/TopBanner.mp4" autoplay muted loop></video>
+        <div class="video_player_div" style="position : relative; width : 100vw ; height : 40vw ; overflow : hidden ;">
+            <video style="margin-top : -12vw ; width : 100vw ; height:auto ; position : absolute; z-index : 5 ; "
+                data-vbg-loop="true" src="https://viceroy.ultimatetrueweb.com/public/videos/TopBanner.mp4" autoplay muted
+                loop></video>
 
 
-    <div class="container" style="position: absolute ; z-index : 10 ; transform : translate(25% , 0);">
+            <div class="container" style="position: absolute ; z-index : 10 ; transform : translate(25% , 0);">
 
-        <div class="row wow fadeInUp"  data-wow-duration="1.5s">
-            <div class="col-xl-12">
+                <div class="row wow fadeInUp" data-wow-duration="1.5s">
+                    <div class="col-xl-12">
+
+                    </div>
+                </div>
 
             </div>
         </div>
-
-    </div>
-</div>
-</section>
+    </section>
 @endsection
 @section('script')
-<script>
-    $(document).ready(function() {
-        $('#co_name').change(function() {
-            var country = $(this).val();
-            console.log(country);
-            $.ajax({
-                type: 'GET',
-                url: '{{ route('fetch-states') }}',
-                data: {
-                    country: country
-                },
-                success: function(result) {
-                    console.log(result);
-                    $("#st_name").html(result);
-                    $("#city").html('<option value="">Select City</option>');
-                },
-                error: function(xhr, status, error) {
-                    console.error(xhr.responseText);
-                }
+    <script>
+        $(document).ready(function() {
+            $('.select3').select2({
+                theme: 'bootstrap4',
+                placeholder: '-- Select an option --',
             });
         });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#co_name').change(function() {
+                var country = $(this).val();
+                console.log(country);
+                $.ajax({
+                    type: 'GET',
+                    url: '{{ route('fetch-states') }}',
+                    data: {
+                        country: country
+                    },
+                    success: function(result) {
+                        console.log(result);
+                        $("#st_name").html(result);
+                        $("#city").html('<option value="">Select City</option>');
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
 
-        $('#st_name').change(function() {
-            var state = $(this).val();
-            console.log(state);
-            $.ajax({
-                type: 'GET',
-                url: '{{ route('fetch-city') }}',
-                data: {
-                    state: state
-                },
-                success: function(result) {
-                    console.log(result);
-                    $("#city").html(result);
-                },
-                error: function(xhr, status, error) {
-                    console.error(xhr.responseText);
-                }
+            $('#st_name').change(function() {
+                var state = $(this).val();
+                console.log(state);
+                $.ajax({
+                    type: 'GET',
+                    url: '{{ route('fetch-city') }}',
+                    data: {
+                        state: state
+                    },
+                    success: function(result) {
+                        console.log(result);
+                        $("#city").html(result);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
             });
         });
-    });
-</script>
+    </script>
     <script>
         $(document).ready(function() {
             $("#testimonial-slider").owlCarousel({
