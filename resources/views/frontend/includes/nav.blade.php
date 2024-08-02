@@ -67,7 +67,7 @@
                             </ul> -->
 
                             <div class="dropdown">
-                                <button class="dropdown-btn"> <i class="fa fa-user" aria-hidden="true"></i> Hello
+                                <button class="dropdown-btn"> <i class="fa fa-user" aria-hidden="true"></i>
                                     {{ Auth::user()->first_name }} </button>
                                 <div class="dropdown-content">
                                     @can('view_backend') <a>Admin</a>@endif
