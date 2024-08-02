@@ -12,7 +12,7 @@ class CartController extends Controller
 
     public function add(Request $request)
     {
-        $sessionData = [];
+        $responseData = [];
         $cartExists = $request->session()->has('cart');
         $cart = $request->session()->get('cart', []);
 
@@ -22,16 +22,16 @@ class CartController extends Controller
             }
             $request->session()->put('cart', $cart);
 
-            $sessionData['CartCount'] = count($cart);
-            $sessionData['Status'] = 1;
-            $sessionData['Message'] = 'Property removed from cart';
+            $responseData['CartCount'] = count($cart);
+            $responseData['Status'] = 1;
+            $responseData['Message'] = 'Property removed from cart';
         } else {
             $property = Property::find($request->id);
 
             if (!$property) {
-                $sessionData['Status'] = 0;
-                $sessionData['Message'] = 'Property not found';
-                return response()->json($sessionData);
+                $responseData['Status'] = 0;
+                $responseData['Message'] = 'Property not found';
+                return response()->json($responseData);
             }
 
             $cart[$request->id] = [
@@ -44,19 +44,46 @@ class CartController extends Controller
 
             $request->session()->put('cart', $cart);
 
-            $sessionData['CartCount'] = count($cart);
-            $sessionData['Status'] = 1;
-            $sessionData['Message'] = 'Property added to cart';
-            $sessionData['disabled'] = $property->id;
+            $responseData['CartCount'] = count($cart);
+            $responseData['Status'] = 1;
+            $responseData['Message'] = 'Property added to cart';
+            $responseData['disabled'] = $property->id;
         }
 
         if ($cartExists && !empty($cart)) {
-            $sessionData['CartHTML'] = CartHelper::generateCartHTML($cart);
+            // $responseData['CartHTML'] = CartHelper::generateCartHTML($cart);
+            $html = '';
+            $cartIsEmpty = empty($cart);
+
+            foreach ($cart as $item) {
+                $html .= '
+                    <div class="d-flex" style="width: 100%">
+                        <div class="d-flex gap-4" style="width: 80%; padding: 16px;">
+                            <img src="/public/' . htmlspecialchars($item['image'], ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') . '" class="cart_img">
+                            <div class="cart_tittle" data-price="' . htmlspecialchars($item['price'], ENT_QUOTES, 'UTF-8') . '">
+                                <h5>' . htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') . '</h5>
+                                <p>' . htmlspecialchars($item['desc'], ENT_QUOTES, 'UTF-8') . '</p>
+                            </div>
+                        </div>
+                        <div class="cart_del_icon" style="width: 20%">
+                            <i class="fa fa-trash" onclick="addToCartOrRemove(' . intval($item['id']) . ', \'remove\')" class="btn-remove" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                ';
+            }
+
+            $html .= '
+                <div class="sidecart__footer"' . ($cartIsEmpty ? ' style="display: none;"' : '') . '>
+                    <a href="/checkout" class="common_btn" id="checkoutButton">Checkout</a>
+                </div>
+            ';
+
+            $responseData['CartHTML'] = $html;
         } else {
-            $sessionData['CartHTML'] = '<li><h5 style="text-align: center;margin-top: 52px;">Your cart is empty</h5></li>';
+            $responseData['CartHTML'] = '<li><h5 style="text-align: center;margin-top: 52px;">Your cart is empty</h5></li>';
         }
 
-        return response()->json($sessionData);
+        return response()->json($responseData);
     }
 
     public function viewCartData(Request $request)
@@ -71,9 +98,36 @@ class CartController extends Controller
 
         if ($cartExists && !empty($cart)) {
             $responseData['CartCount'] = count($cart);
-            $responseData['CartHTML'] = CartHelper::generateCartHTML($cart);
+            $html = '';
+            $cartIsEmpty = empty($cart);
+
+            foreach ($cart as $item) {
+                $html .= '
+                    <div class="d-flex" style="width: 100%">
+                        <div class="d-flex gap-4" style="width: 80%; padding: 16px;">
+                            <img src="/public/' . htmlspecialchars($item['image'], ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') . '" class="cart_img">
+                            <div class="cart_tittle" data-price="' . htmlspecialchars($item['price'], ENT_QUOTES, 'UTF-8') . '">
+                                <h5>' . htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') . '</h5>
+                                <p>' . htmlspecialchars($item['desc'], ENT_QUOTES, 'UTF-8') . '</p>
+                            </div>
+                        </div>
+                        <div class="cart_del_icon" style="width: 20%">
+                            <i class="fa fa-trash" onclick="addToCartOrRemove(' . intval($item['id']) . ', \'remove\')" class="btn-remove" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                ';
+            }
+
+            $html .= '
+                <div class="sidecart__footer"' . ($cartIsEmpty ? ' style="display: none;"' : '') . '>
+                    <a href="/checkout" class="common_btn" id="checkoutButton">Checkout</a>
+                </div>
+            ';
+
+            $responseData['CartHTML'] = $html;
+
         } else {
-            $responseData['CartHTML'] = '<li><h5 style="text-align: center;margin-top: 52px;">Your cart is empty</h5></li>';
+            $responseData['CartHTML'] = '<li><h5 style="text-align: center; margin-top: 52px;">Your cart is empty</h5></li>';
         }
 
         return response()->json($responseData);
