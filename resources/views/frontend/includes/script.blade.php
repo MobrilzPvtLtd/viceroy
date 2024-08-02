@@ -14,14 +14,14 @@
                 id: propertyId,
                 remove: remove,
             },
-            success: function(responseData) {
-                if (responseData.Status === 1) {
-                    console.log(responseData.disabled);
-                    $('#cartCount').text(responseData.CartCount);
-                    $('#cartItems').html(responseData.CartHTML);
-                    $('#addtocart-'+responseData.disabled).prop('disabled', true);
+            success: function(sessionData) {
+                if (sessionData.Status === 1) {
+                    console.log(sessionData.disabled);
+                    $('#cartCount').text(sessionData.CartCount);
+                    $('#cartItems').html(sessionData.CartHTML);
+                    $('#addtocart-'+sessionData.disabled).prop('disabled', true);
                 } else {
-                    alert(responseData.Message);
+                    alert(sessionData.Message);
                 }
             },
             error: function(xhr, status, error) {
