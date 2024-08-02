@@ -706,13 +706,6 @@
             </div>
         </div>
     </section>
-    <!--=============================
-                                                                                                                    FIND STATE END
-                                                                                                                ==============================-->
-
-    <!--=============================
-                                                                                                                    PARTNER START
-                                                                                                                ==============================-->
     <section class="partner_area pt_30 pb_30">
         <div class="container">
             <div class="row justify-content-center">

@@ -27,12 +27,12 @@
         </div>
     </section>
     <!--=============================
-                                                                                                        BREADCRUMBS END
-                                                                                                    ==============================-->
+                                                                                                                BREADCRUMBS END
+                                                                                                            ==============================-->
 
     <!--=============================
-                                                                                                        PROPERTY GRID VIEW START
-                                                                                                    ==============================-->
+                                                                                                                PROPERTY GRID VIEW START
+                                                                                                            ==============================-->
     <section class="property_grid_view pb_120 xs_pb_100">
         <div class="container-fluid">
             <div class="row justify-content-center wow fadeInUp" data-wow-duration="1.5s">
@@ -47,15 +47,15 @@
                                 </button>
                             </li>
                             <!--<li class="nav-item" role="presentation">
-                                                                                                                                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                                                                                                        data-bs-target="#pills-profile" type="button" role="tab"
-                                                                                                                                        aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                                                                                                                </li>-->
+                                                                                                                                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                                                                                                                data-bs-target="#pills-profile" type="button" role="tab"
+                                                                                                                                                aria-controls="pills-profile" aria-selected="false">Sell</button>
+                                                                                                                                        </li>-->
                             <!--<li class="nav-item" role="presentation">
-                                                                                                                                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                                                                                                                        data-bs-target="#pills-contact" type="button" role="tab"
-                                                                                                                                        aria-controls="pills-contact" aria-selected="false">Rent</button>
-                                                                                                                                </li>-->
+                                                                                                                                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                                                                                                                                data-bs-target="#pills-contact" type="button" role="tab"
+                                                                                                                                                aria-controls="pills-contact" aria-selected="false">Rent</button>
+                                                                                                                                        </li>-->
                         </ul>
 
                         <div class="tab-content" id="pills-tabContent">
@@ -287,7 +287,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                                                        </div>-->
+                                                                                                                                                </div>-->
                                 </form>
                             </div>
                         </div>
@@ -367,8 +367,8 @@
                 </div> --}}
             </section>
             <!--=============================
-                                                                      PROPERTY GRID VIEW END
-                                                                     ==============================-->
+                                                                              PROPERTY GRID VIEW END
+                                                                             ==============================-->
             <div class="container">
                 <div class="row mt_95 xs_mt_75">
                     <button id="btn001" onclick="func()" name="map-view">
@@ -432,10 +432,11 @@
                                                     <div class="wish001">
                                                         <a class="item_title"
                                                             href="{{ route('property', $property->slag) }} ">{{ $property->title }}</a>
-                                                        <button type="submit" id=""
+                                                        <button id="addtocart-{{ $property->id }}" type="submit"
                                                             onclick="addToCartOrRemove({{ $property->id }})"
                                                             class="addToCart btn btn-primary"><i
                                                                 class="fa fa-heart"></i></button>
+
                                                     </div>
 
 
@@ -564,22 +565,23 @@
     </section>
     <section class="find_state mt_115" style="background: url() ; height : 30vw; margin-bottom:200px ">
 
-<div class="video_player_div" style="position : relative; width : 100vw ; height : 40vw ; overflow : hidden ;">
-    <video style="margin-top : -12vw ; width : 100vw ; height:auto ; position : absolute; z-index : 5 ; " data-vbg-loop="true"
-        src="https://viceroy.ultimatetrueweb.com/public/videos/Banner1.mp4" autoplay muted loop></video>
+        <div class="video_player_div" style="position : relative; width : 100vw ; height : 40vw ; overflow : hidden ;">
+            <video style="margin-top : -12vw ; width : 100vw ; height:auto ; position : absolute; z-index : 5 ; "
+                data-vbg-loop="true" src="https://viceroy.ultimatetrueweb.com/public/videos/Banner1.mp4" autoplay muted
+                loop></video>
 
 
-    <div class="container" style="position: absolute ; z-index : 10 ; transform : translate(25% , 0);">
+            <div class="container" style="position: absolute ; z-index : 10 ; transform : translate(25% , 0);">
 
-        <div class="row wow fadeInUp"  data-wow-duration="1.5s">
-            <div class="col-xl-12">
+                <div class="row wow fadeInUp" data-wow-duration="1.5s">
+                    <div class="col-xl-12">
+
+                    </div>
+                </div>
 
             </div>
         </div>
-
-    </div>
-</div>
-</section>
+    </section>
 @endsection
 @section('script')
     <script>

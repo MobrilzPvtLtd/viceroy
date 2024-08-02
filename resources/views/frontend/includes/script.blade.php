@@ -20,7 +20,6 @@
                     $('#cartCount').text(responseData.CartCount);
                     $('#cartItems').html(responseData.CartHTML);
                     $('#addtocart-'+responseData.disabled).prop('disabled', true);
-                    //$(button).prop('disabled', true);
                 } else {
                     alert(responseData.Message);
                 }
