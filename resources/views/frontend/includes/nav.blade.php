@@ -68,7 +68,7 @@
 
                             <div class="dropdown">
                                 <button class="dropdown-btn"> <i class="fa fa-user" aria-hidden="true"></i> Hello
-                                    {{ Auth::user()->last_name }} </button>
+                                    {{ Auth::user()->first_name }} </button>
                                 <div class="dropdown-content">
                                     @can('view_backend') <a>Admin</a>@endif
                                     <a href="{{ route('frontend.users.profile') }}"> Profile</a>
