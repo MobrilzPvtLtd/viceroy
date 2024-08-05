@@ -574,7 +574,7 @@
 
                     </div>
                 </div>
-                
+
 
             </div>
         </div>
@@ -585,7 +585,7 @@
         $(document).ready(function() {
             $('.select3').select2({
                 theme: 'bootstrap4',
-                placeholder: '-- Select an option --'
+                placeholder: '-- All Property --'
             }).on('select2:select', function(e) {
                 var selectedValue = e.params.data.id;
                 $(this).find('option[value="' + selectedValue + '"]').prop('disabled', true);
