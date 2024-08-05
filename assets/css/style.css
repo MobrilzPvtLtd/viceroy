@@ -8061,6 +8061,7 @@ marquee {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 .cart_tittle {
     display: flex;
@@ -8163,4 +8164,10 @@ marquee {
 }
 .select_label {
     width: 8vw !important;
+}
+.select2-container .select2-selection--multiple .select2-selection__rendered {
+    list-style: none;
+    padding: 0;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
 }
