@@ -2051,6 +2051,10 @@ button {
 
 .find_state div {
     height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .find_state_text {
@@ -8080,4 +8084,52 @@ marquee {
     color: #ffffff !important;
     background-color: #e6b025 !important;
     border-color: #e6b025 !important;
+}
+
+
+@media screen and (min-width:1240px) and (max-width:1250px) {
+    .main_menu .navbar-nav .nav-item .nav-link {
+        font-size: 15px !important;
+
+    }
+    .banner_text p {
+        margin-left: 25px !important;
+    }
+    .banner_text h1 {
+
+        margin-left: 25px;
+    }
+}
+
+@media screen and (min-width:1090px) and (max-width:1099px) {
+
+.banner_text h1 {
+    font-size: 38px;
+    padding-top: 25px;
+}
+.banner_text p {
+    font-size: 14px;
+    margin-top: 5px;
+    width: 42vw;
+
+}
+.form-container {
+    background-color: #ffffff17;
+    padding: 10px 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.form-container h2{
+
+        margin-bottom: 5px;
+
+}
+.banner_area {
+    height: 115vh;
+}
+.banner_text {
+    padding-top: 0px;
+}
 }

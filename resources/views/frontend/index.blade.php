@@ -271,7 +271,7 @@
                 src="assets/images/Mid section.mp4" autoplay muted loop></video>
 
 
-            <div class="container" style="position: absolute ; z-index : 10 ; transform : translate(25% , 0);">
+            <div class="container" style="position: absolute ; z-index : 10 ; transform : translate(0 , 0);">
 
                 <div class="row wow fadeInUp"  data-wow-duration="1.5s">
                     <div class="col-xl-12">
@@ -690,7 +690,7 @@
                 src="https://viceroy.ultimatetrueweb.com/public/videos/bottomBanner.mp4" autoplay muted loop></video>
 
 
-            <div class="container" style="position: absolute ; z-index : 10 ; transform : translate(25% , 0);">
+            <div class="container" style="position: absolute ; z-index : 10 ; transform : translate(0 , 0);">
 
                 <div class="row wow fadeInUp"  data-wow-duration="1.5s">
                     <div class="col-xl-12">
