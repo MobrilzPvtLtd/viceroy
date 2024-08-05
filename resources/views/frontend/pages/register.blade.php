@@ -23,13 +23,13 @@
         </div>
     </section>
     <!--=============================
-            BREADCRUMBS END
-        ==============================-->
+                BREADCRUMBS END
+            ==============================-->
 
 
     <!--=============================
-            REGISTRATION  START
-        ==============================-->
+                REGISTRATION  START
+            ==============================-->
     <section class="login_area registration pt_120 xs_pt_100 pb_120 xs_pb_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -52,20 +52,21 @@
                                         <div class="single_input">
                                             <label>Password</label>
                                             <input type="password" name="password" id="password" placeholder="********">
-                                            <span class="show_password">
+                                            <span class="show_password" data-target="password">
                                                 <i class="far fa-eye open_eye"></i>
                                                 <i class="far fa-eye-slash close_eye"></i>
                                             </span>
                                         </div>
                                         <div class="single_input">
                                             <label>Confirm password</label>
-                                            <input type="password" name="password_confirmation" placeholder="********" id="password">
-                                            <span class="show_password">
+                                            <input type="password" name="password_confirmation" id="confirm_password" placeholder="********"
+                                                id="password">
+                                            <span class="show_password"  data-target="confirm_password">
                                                 <i class="far fa-eye open_eye"></i>
                                                 <i class="far fa-eye-slash close_eye"></i>
                                             </span>
                                         </div>
-                                        <button  class="common_btn" type="submit" >Registration </button>
+                                        <button class="common_btn" type="submit">Registration </button>
                                     </form>
 
 
@@ -88,22 +89,24 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            document.querySelector('.show_password').addEventListener('click', function() {
-                var passwordField = document.getElementById('password');
-                var openEyeIcon = document.querySelector('.open_eye');
-                var closeEyeIcon = document.querySelector('.close_eye');
+            document.querySelectorAll('.show_password').forEach(function(span) {
+                span.addEventListener('click', function() {
+                    var targetId = this.getAttribute('data-target');
+                    var passwordField = document.getElementById(targetId);
+                    var openEyeIcon = this.querySelector('.open_eye');
+                    var closeEyeIcon = this.querySelector('.close_eye');
 
-                if (passwordField.type === 'password') {
-                    passwordField.type = 'text';
-                    openEyeIcon.style.display = 'none';
-                    closeEyeIcon.style.display = 'inline';
-                } else {
-                    passwordField.type = 'password';
-                    openEyeIcon.style.display = 'inline';
-                    closeEyeIcon.style.display = 'none';
-                }
+                    if (passwordField.type === 'password') {
+                        passwordField.type = 'text';
+                        openEyeIcon.style.display = 'none';
+                        closeEyeIcon.style.display = 'inline';
+                    } else {
+                        passwordField.type = 'password';
+                        openEyeIcon.style.display = 'inline';
+                        closeEyeIcon.style.display = 'none';
+                    }
+                });
             });
         });
     </script>
-
 @endsection
