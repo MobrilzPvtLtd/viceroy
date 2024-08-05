@@ -100,6 +100,7 @@ class CartController extends Controller
             $responseData['CartCount'] = count($cart);
             $html = '';
             $cartIsEmpty = empty($cart);
+            $disabledItems = [];
 
             foreach ($cart as $item) {
                 $html .= '
@@ -116,7 +117,7 @@ class CartController extends Controller
                         </div>
                     </div>
                 ';
-                $responseData['disabled'] = $item['id'];
+                $disabledItems[] = $item['id'];
 
             }
 
@@ -127,9 +128,12 @@ class CartController extends Controller
             ';
 
             $responseData['CartHTML'] = $html;
+            $responseData['disabled'] = $disabledItems;
 
         } else {
             $responseData['CartHTML'] = '<li><h5 style="text-align: center; margin-top: 52px;">Your cart is empty</h5></li>';
+            $responseData['CartCount'] = 0;
+            $responseData['disabled'] = [];
         }
 
         return response()->json($responseData);

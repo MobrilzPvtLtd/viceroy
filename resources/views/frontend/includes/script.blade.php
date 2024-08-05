@@ -41,8 +41,12 @@
                 if (responseData) {
                     $('#cartCount').text(responseData.CartCount);
                     $('#cartItems').html(responseData.CartHTML);
-                    $('#addtocart-'+responseData.disabled).prop('disabled', true);
-                    // $('.sidecart__footer').show();
+                    responseData.disabled.forEach(function(itemId) {
+                        $('#addtocart-' + itemId).prop('disabled', true);
+                    });
+                    if (responseData.Message) {
+                        console.log(responseData.Message);
+                    }
                 } else {
                     console.log(responseData.Message);
                 }
