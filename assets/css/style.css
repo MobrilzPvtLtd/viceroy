@@ -8071,3 +8071,13 @@ marquee {
     display: none !important;
 
 }
+.addToCart {
+    color: #ffffff;
+    background-color: #e6b025;
+    border-color: #e6b025;
+}
+.addToCart:hover {
+    color: #ffffff !important;
+    background-color: #e6b025 !important;
+    border-color: #e6b025 !important;
+}

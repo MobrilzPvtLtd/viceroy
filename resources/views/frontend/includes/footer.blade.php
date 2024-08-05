@@ -9,7 +9,7 @@
         <li class="whtsup-btn">
             <a
                 href="https://api.whatsapp.com/send?phone=919876543210&amp;text=Please%20contact,%20I%20am%20looking%20for%20your%20services%20"><img
-                    src="{{ asset('assets/images/ww.png') }}"" style="width: 60px; float: left; padding: 4px" />
+                    src="{{ asset('assets/images/ww.png') }}" style="width: 60px; float: left; padding: 4px" />
             </a>
         </li>
     </ul>
@@ -18,7 +18,7 @@
     <div class="container container_large">
         <div class="row">
             <div class="col-xl-7">
-                <div class="footer_left pt_50 pb_40">
+                <div class="footer_left pt_50">
                     <div class="row justify-content-between">
                         <div class="col-xl-6 col-sm-10 col-md-4 wow fadeInLeft" data-wow-duration="2s">
                             <div class="footer_description">
