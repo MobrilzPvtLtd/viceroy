@@ -25,6 +25,8 @@ class CartController extends Controller
             $responseData['CartCount'] = count($cart);
             $responseData['Status'] = 1;
             $responseData['Message'] = 'Property removed from cart';
+            $responseData['enabled'] = $request->id;
+
         } else {
             $property = Property::find($request->id);
 

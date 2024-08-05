@@ -16,10 +16,15 @@
             },
             success: function(responseData) {
                 if (responseData.Status === 1) {
-                    console.log(responseData.disabled);
+                    // console.log(responseData.enabled);
                     $('#cartCount').text(responseData.CartCount);
                     $('#cartItems').html(responseData.CartHTML);
-                    $('#addtocart-'+responseData.disabled).prop('disabled', true);
+
+                    if (responseData.enabled) {
+                        $('#addtocart-'+responseData.enabled).prop('disabled', false);
+                    }else{
+                        $('#addtocart-'+responseData.disabled).prop('disabled', true);
+                    }
                 } else {
                     console.log(responseData.Message);
                 }
