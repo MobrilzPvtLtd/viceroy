@@ -152,10 +152,6 @@
                                         <div class="home_form_label">
                                             <label>Property Type</label>
                                             <select class="select_label select3" name="p_type" multiple>
-                                                {{-- <option value="">Select property</option> --}}
-                                                {{-- @foreach ($uniquePropertyTypes as $p_type)
-                                                    <option value="{{ $p_type }}">{{ $p_type }}</option>
-                                                @endforeach --}}
                                                 <option value="Apartment">Apartment</option>
                                                 <option value="Villa">Villa</option>
                                                 <option value="Plot">Plot</option>
@@ -174,7 +170,7 @@
                                             </select>
                                         </div>
                                         <div class="">
-                                            <button class="common_btn banner_input_btn"   type="submit"
+                                            <button class="common_btn banner_input_btn" type="submit"
                                                 style="width: 100%; margin-top: 30px">
                                                 search
                                             </button>
@@ -279,7 +275,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                                                                                                            </div>-->
+                                                                                                                                                                                                        </div>-->
                                 </form>
                             </div>
                         </div>
@@ -588,7 +584,15 @@
         $(document).ready(function() {
             $('.select3').select2({
                 theme: 'bootstrap4',
-                placeholder: '-- Select an option --',
+                placeholder: '-- Select an option --'
+            }).on('select2:select', function(e) {
+                var selectedValue = e.params.data.id;
+                $(this).find('option[value="' + selectedValue + '"]').prop('disabled', true);
+                $(this).select2('close');
+                $(this).select2('open');
+            }).on('select2:unselect', function(e) {
+                var unselectedValue = e.params.data.id;
+                $(this).find('option[value="' + unselectedValue + '"]').prop('disabled', false);
             });
         });
     </script>
@@ -634,103 +638,116 @@
             });
         });
     </script>
-    // <script>
-    //     $(document).ready(function() {
-    //         $("#testimonial-slider").owlCarousel({
-    //             items: 1,
-    //             itemsDesktop: [1000, 1],
-    //             itemsDesktopSmall: [979, 1],
-    //             itemsTablet: [768, 1],
-    //             pagination: false,
-    //             navigation: true,
-    //             navigationText: ["", ""],
-    //             autoPlay: true,
-    //         });
-    //     });
-    // </script>
-    // <script>
-    //     $(document).ready(function() {
-    //         $("#testimonial-slider1").owlCarousel({
-    //             items: 1,
-    //             itemsDesktop: [1000, 1],
-    //             itemsDesktopSmall: [979, 1],
-    //             itemsTablet: [768, 1],
-    //             pagination: false,
-    //             navigation: true,
-    //             navigationText: ["", ""],
-    //             autoPlay: true,
-    //         });
-    //     });
-    // </script>
-    // <script>
-    //     $(document).ready(function() {
-    //         $("#testimonial-slider2").owlCarousel({
-    //             items: 1,
-    //             itemsDesktop: [1000, 1],
-    //             itemsDesktopSmall: [979, 1],
-    //             itemsTablet: [768, 1],
-    //             pagination: false,
-    //             navigation: true,
-    //             navigationText: ["", ""],
-    //             autoPlay: true,
-    //         });
-    //     });
-    // </script>
-    // <script>
-    //     $(document).ready(function() {
-    //         $("#testimonial-slider3").owlCarousel({
-    //             items: 1,
-    //             itemsDesktop: [1000, 1],
-    //             itemsDesktopSmall: [979, 1],
-    //             itemsTablet: [768, 1],
-    //             pagination: false,
-    //             navigation: true,
-    //             navigationText: ["", ""],
-    //             autoPlay: true,
-    //         });
-    //     });
-    // </script>
-    // <script>
-    //     $(document).ready(function() {
-    //         $("#testimonial-slider5").owlCarousel({
-    //             items: 1,
-    //             itemsDesktop: [1000, 1],
-    //             itemsDesktopSmall: [979, 1],
-    //             itemsTablet: [768, 1],
-    //             pagination: false,
-    //             navigation: true,
-    //             navigationText: ["", ""],
-    //             autoPlay: true,
-    //         });
-    //     });
-    // </script>
-    // <script>
-    //     $(document).ready(function() {
-    //         $("#testimonial-slider4").owlCarousel({
-    //             items: 1,
-    //             itemsDesktop: [1000, 1],
-    //             itemsDesktopSmall: [979, 1],
-    //             itemsTablet: [768, 1],
-    //             pagination: false,
-    //             navigation: true,
-    //             navigationText: ["", ""],
-    //             autoPlay: true,
-    //         });
-    //     });
-    // </script>
-    // <script>
-    //     $(document).ready(function() {
-    //         $("#testimonial-slider6").owlCarousel({
-    //             items: 1,
-    //             itemsDesktop: [1000, 1],
-    //             itemsDesktopSmall: [979, 1],
-    //             itemsTablet: [768, 1],
-    //             pagination: false,
-    //             navigation: true,
-    //             navigationText: ["", ""],
-    //             autoPlay: true,
-    //         });
-    //     });
+    //
+    <script>
+        //     $(document).ready(function() {
+        //         $("#testimonial-slider").owlCarousel({
+        //             items: 1,
+        //             itemsDesktop: [1000, 1],
+        //             itemsDesktopSmall: [979, 1],
+        //             itemsTablet: [768, 1],
+        //             pagination: false,
+        //             navigation: true,
+        //             navigationText: ["", ""],
+        //             autoPlay: true,
+        //         });
+        //     });
+        //
+    </script>
+    //
+    <script>
+        //     $(document).ready(function() {
+        //         $("#testimonial-slider1").owlCarousel({
+        //             items: 1,
+        //             itemsDesktop: [1000, 1],
+        //             itemsDesktopSmall: [979, 1],
+        //             itemsTablet: [768, 1],
+        //             pagination: false,
+        //             navigation: true,
+        //             navigationText: ["", ""],
+        //             autoPlay: true,
+        //         });
+        //     });
+        //
+    </script>
+    //
+    <script>
+        //     $(document).ready(function() {
+        //         $("#testimonial-slider2").owlCarousel({
+        //             items: 1,
+        //             itemsDesktop: [1000, 1],
+        //             itemsDesktopSmall: [979, 1],
+        //             itemsTablet: [768, 1],
+        //             pagination: false,
+        //             navigation: true,
+        //             navigationText: ["", ""],
+        //             autoPlay: true,
+        //         });
+        //     });
+        //
+    </script>
+    //
+    <script>
+        //     $(document).ready(function() {
+        //         $("#testimonial-slider3").owlCarousel({
+        //             items: 1,
+        //             itemsDesktop: [1000, 1],
+        //             itemsDesktopSmall: [979, 1],
+        //             itemsTablet: [768, 1],
+        //             pagination: false,
+        //             navigation: true,
+        //             navigationText: ["", ""],
+        //             autoPlay: true,
+        //         });
+        //     });
+        //
+    </script>
+    //
+    <script>
+        //     $(document).ready(function() {
+        //         $("#testimonial-slider5").owlCarousel({
+        //             items: 1,
+        //             itemsDesktop: [1000, 1],
+        //             itemsDesktopSmall: [979, 1],
+        //             itemsTablet: [768, 1],
+        //             pagination: false,
+        //             navigation: true,
+        //             navigationText: ["", ""],
+        //             autoPlay: true,
+        //         });
+        //     });
+        //
+    </script>
+    //
+    <script>
+        //     $(document).ready(function() {
+        //         $("#testimonial-slider4").owlCarousel({
+        //             items: 1,
+        //             itemsDesktop: [1000, 1],
+        //             itemsDesktopSmall: [979, 1],
+        //             itemsTablet: [768, 1],
+        //             pagination: false,
+        //             navigation: true,
+        //             navigationText: ["", ""],
+        //             autoPlay: true,
+        //         });
+        //     });
+        //
+    </script>
+    //
+    <script>
+        //     $(document).ready(function() {
+        //         $("#testimonial-slider6").owlCarousel({
+        //             items: 1,
+        //             itemsDesktop: [1000, 1],
+        //             itemsDesktopSmall: [979, 1],
+        //             itemsTablet: [768, 1],
+        //             pagination: false,
+        //             navigation: true,
+        //             navigationText: ["", ""],
+        //             autoPlay: true,
+        //         });
+        //     });
 
 
 
