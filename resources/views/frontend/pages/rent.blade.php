@@ -32,7 +32,7 @@
 
     <!--=============================
                                                                                                                     PROPERTY GRID VIEW START
-                                                                                                                ==============================-->
+-->
     <section class="property_grid_view pb_120 xs_pb_100">
         <div class="container-fluid">
             <div class="row justify-content-center wow fadeInUp" data-wow-duration="1.5s">

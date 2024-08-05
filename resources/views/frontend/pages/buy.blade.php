@@ -70,16 +70,7 @@
                                                 @endforeach --}}
                                             </select>
                                         </div>
-                                        <div class="home_form_label">
-                                            <label>State</label>
-                                            <select class="select_label s1" name="st_name" id="st_name" required focus>
-                                                <option value="" disabled selected>select state </option>
 
-                                                {{-- @foreach ($states as $state)
-                                                    <option value="{{ $state->id }}">{{ $state->st_name }}</option>
-                                                @endforeach --}}
-                                            </select>
-                                        </div>
 
                                         <div class="home_form_label">
                                             <label>City</label>

@@ -115,13 +115,13 @@
         </div>
     </section>
     <!--=============================
-                BREADCRUMBS END
-            ==============================-->
+                    BREADCRUMBS END
+                ==============================-->
 
 
     <!--=============================
-                ABOUT US PAGE START
-            ==============================-->
+                    ABOUT US PAGE START
+                ==============================-->
     <section class="about_area pt_80 xs_pt_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -132,25 +132,26 @@
                 </div>
             </div>
             <div class="d-flex ">
-                <div class="container01">
+                <a href="{{ route('india') }}" class="container01">
                     <div class="image-circle01">
-                        <img src="assets\images\india.png" />
+                        <img src="assets/images/india.png" />
                     </div>
-                    <h3>INDIA</h3>
-                </div>
-                <div class="container01">
+                    <h3 href="{{ route('india') }}" >INDIA</h3>
+                </a>
+                <a href="{{ route('uae') }}" class="container01">
                     <div class="image-circle01">
-                        <img src="assets\images\UAE.png" />
+                        <img src="assets/images/UAE.png" />
                     </div>
-                    <h3>UAE</h3>
-                </div>
-                <div class="container01">
+                    <h3 href="{{ route('uae') }}" >UAE</h3>
+                </a>
+                <a href="{{ route('uk') }}" class="container01">
                     <div class="image-circle01">
-                        <img src="assets\images\uk.png" />
+                        <img src="assets/images/uk.png" />
                     </div>
-                    <h3>UK</h3>
-                </div>
+                    <h3 href="{{ route('uk') }}">UK</h3>
+                </a>
             </div>
+
 
             {{-- <div class="row">
                 <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
