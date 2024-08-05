@@ -106,6 +106,7 @@ class CartController extends Controller
 
             foreach ($cart as $item) {
                 $html .= '
+                <hr>
                     <div class="d-flex" style="width: 100%">
                         <div class="d-flex gap-4" style="width: 80%; padding: 16px;">
                             <img src="/public/' . htmlspecialchars($item['image'], ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') . '" class="cart_img">
@@ -118,6 +119,7 @@ class CartController extends Controller
                             <i class="fa fa-trash" onclick="addToCartOrRemove(' . intval($item['id']) . ', \'remove\')" class="btn-remove" aria-hidden="true"></i>
                         </div>
                     </div>
+                    <hr>
                 ';
                 $disabledItems[] = $item['id'];
 
