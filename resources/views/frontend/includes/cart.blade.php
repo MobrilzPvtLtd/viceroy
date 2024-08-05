@@ -240,7 +240,7 @@
  <div class="sidecart__overlay sidecart__overlay--hide"></div>
  <div class="sidecart sidecart--close">
      <div class="sidecart__title">
-         <a href="#" class="sidecart__close">
+         <a  class="sidecart__close">
              <i class="fa fa-times" aria-hidden="true"></i>
          </a>
          <h1 id="myForm" class="sidecart__title-text">Wishlist </h1>
