@@ -93,6 +93,47 @@
                 transform: rotate(1turn);
             }
         }
+
+        @media screen and (max-width:768px) {
+            .flags {
+                flex-direction: column;
+            }
+            .image-circle01 {
+    width: 232px;
+    height: 232px;
+}
+p.notify001 {
+    width: 4vw;
+    height: 3vh;
+
+}
+
+        }
+        @media screen and (min-width:769px)and (max-width:1024px) {
+            .image-circle01 {
+    width: 232px;
+    height: 232px;
+}
+.container01 {
+    padding: 25px;
+}
+.flags {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+}
+p.notify001 {
+    width: 4vw;
+    height: 3vh;
+
+}
+
+        }
+
+
+.flags h3 {
+    width: 35vw;
+    text-align: center;
+}
     </style>
 
 
@@ -115,13 +156,13 @@
         </div>
     </section>
     <!--=============================
-                    BREADCRUMBS END
-                ==============================-->
+                        BREADCRUMBS END
+                    ==============================-->
 
 
     <!--=============================
-                    ABOUT US PAGE START
-                ==============================-->
+                        ABOUT US PAGE START
+                    ==============================-->
     <section class="about_area pt_80 xs_pt_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -131,24 +172,24 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex ">
+            <div class=" flags d-flex ">
                 <a href="{{ route('india') }}" class="container01">
                     <div class="image-circle01">
                         <img src="assets/images/india.png" />
                     </div>
-                    <h3 href="{{ route('india') }}" >INDIA</h3>
+                    <h3 href="{{ route('india') }}">INDIA</h3>
                 </a>
                 <a href="{{ route('uae') }}" class="container01">
                     <div class="image-circle01">
                         <img src="assets/images/UAE.png" />
                     </div>
-                    <h3 href="{{ route('uae') }}" >UAE</h3>
+                    <h3 href="{{ route('uae') }}">United Arab Emirates</h3>
                 </a>
                 <a href="{{ route('uk') }}" class="container01">
                     <div class="image-circle01">
                         <img src="assets/images/uk.png" />
                     </div>
-                    <h3 href="{{ route('uk') }}">UK</h3>
+                    <h3 href="{{ route('uk') }}">United Kingdom</h3>
                 </a>
             </div>
 

@@ -8133,3 +8133,34 @@ marquee {
     padding-top: 0px;
 }
 }
+
+@media screen and (max-width:768px) {
+
+    img.img-fluid {
+        width: 100vw !important;
+    }
+    .find_state, .video_player_div{
+        height: 50vw !important;
+    }
+
+}
+@media screen and (max-width:1024px) {
+
+    .form-container {
+        background-color: #ffffffdb !important;
+
+    }
+    .checkbox-group span {
+        width: 35vw;
+    }
+}
+.select2-container .select2-search--inline .select2-search__field {
+    border: 1px solid #ccc !important;
+    padding: 15px 0px !important;
+    height: 50px !important;
+    width: 10vw !important;
+    margin-top: 0px;
+}
+.select_label {
+    width: 8vw !important;
+}

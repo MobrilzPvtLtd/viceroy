@@ -20,7 +20,7 @@
                             <h1>UK</h1>
                             <ul class="d-flex flex-wrap justify-content-center">
                                 <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
-                                <li><a href="#">UK</a></li>
+                                <li><a href="#">United Kingdom</a></li>
                             </ul>
                         </div>
                     </div>

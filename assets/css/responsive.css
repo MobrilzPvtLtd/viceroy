@@ -3054,11 +3054,11 @@
     }
 
     .footer_link {
-        margin-top: 50px;
+        margin: 25px 0px;
     }
 
     .footer_description {
-        padding-bottom: 110px;
+        padding-bottom: 10px;
     }
 
     .progress-wrap {
