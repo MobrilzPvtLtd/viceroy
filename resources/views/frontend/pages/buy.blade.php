@@ -11,7 +11,6 @@
 .modal-box {
   width: 100%;
   max-width: 500px;
-  margin: 100px auto;
 }
 
 .sd-multiSelect {
