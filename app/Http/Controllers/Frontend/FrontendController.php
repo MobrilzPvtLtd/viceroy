@@ -79,7 +79,12 @@ class FrontendController extends Controller
             $query->where('p_type', $request->type);
         }
         $propertys = $query->orderBy('id', 'desc')->get();
-        $uniquePropertyTypes = Property::where('type', 'buy')->distinct()->pluck('p_type')->sort();
+
+        $uniquePropertyTypes = Property::where('type', 'buy')->distinct()->pluck('p_type');
+        if (!$uniquePropertyTypes->contains('Villa','Apartment','Plot','Bungalows','Flats')) {
+            $uniquePropertyTypes->push('Villa','Apartment','Plot','Bungalows','Flats');
+        }
+        $uniquePropertyTypes = $uniquePropertyTypes->unique()->sort()->values()->all();
         $uniqueBedrooms = Property::where('type', 'buy')->distinct()->pluck('number_of_room')->sort();
         $uniquePrices = Property::where('type', 'buy')->distinct()->pluck('price')->sort();
         $currencys = Currency::all();
@@ -98,7 +103,7 @@ class FrontendController extends Controller
         }
         $markers = $markers;
         $infowindow = $infowindow;
-        return view('frontend.pages.buy', compact('propertys', 'countrys', 'states','citys', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes', 'markers', 'infowindow'));
+        return view('frontend.pages.buy', compact('propertys', 'countrys', 'states', 'citys', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes', 'markers', 'infowindow'));
     }
     public function rent(Request $request)
     {
@@ -122,7 +127,11 @@ class FrontendController extends Controller
             $query->where('p_type', $request->type);
         }
         $propertys = $query->orderBy('id', 'desc')->get();
-        $uniquePropertyTypes = Property::where('type', 'rent')->distinct()->pluck('p_type')->sort();
+        $uniquePropertyTypes = Property::where('type', 'buy')->distinct()->pluck('p_type');
+        if (!$uniquePropertyTypes->contains('Villa','Apartment','Plot','Bungalows','Flats')) {
+            $uniquePropertyTypes->push('Villa','Apartment','Plot','Bungalows','Flats');
+        }
+        $uniquePropertyTypes = $uniquePropertyTypes->unique()->sort()->values()->all();
         $uniqueBedrooms = Property::where('type', 'rent')->distinct()->pluck('number_of_room')->sort();
         $uniquePrices = Property::where('type', 'rent')->distinct()->pluck('price')->sort();
         $countrys = Country::all();
@@ -141,7 +150,7 @@ class FrontendController extends Controller
 
         $markers = $markers;
         $infowindow = $infowindow;
-        return view('frontend.pages.rent', compact('propertys', 'countrys', 'citys','states', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes', 'markers', 'infowindow'));
+        return view('frontend.pages.rent', compact('propertys', 'countrys', 'citys', 'states', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes', 'markers', 'infowindow'));
     }
     public function fetchCity(Request $request)
     {
@@ -167,7 +176,6 @@ class FrontendController extends Controller
         }
 
         return response()->json($options);
-
     }
     public function holiday()
     {
