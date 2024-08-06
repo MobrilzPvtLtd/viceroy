@@ -7,7 +7,6 @@
     <meta name="description" content="test">
     <link rel="stylesheet" href="{{ asset('assets/css/buy.css') }}" />
     <style>
-        }
 
 .modal-box {
   width: 100%;
@@ -38,7 +37,7 @@
 .sd-multiSelect .ms-choice {
   position: relative;
   text-align: left !important;
-  width: 100%;
+  width: 250px;
   border: 1px solid #e3e3e3;
   background: #ffff;
   box-shadow: none;
@@ -88,7 +87,9 @@
   display: none;
   cursor: pointer;
 }
-
+.ms-drop.bottom {
+    width: 250px;
+}
 .sd-multiSelect .ms-drop li label {
   cursor: pointer;
   user-select: none;
@@ -97,7 +98,7 @@
   -webkit-user-select: none;
 }
 
-.sd-multiSelect .ms-drop li label:before {
+/* .sd-multiSelect .ms-drop li label:before {
   content: "";
   -webkit-appearance: none;
   background-color: transparent;
@@ -122,7 +123,7 @@
   height: 10px;
   background: var(--theme-color);
   border-width: 0 2px 2px 0;
-}
+} */
 
     </style>
 @endsection
@@ -271,7 +272,7 @@
                                         <div class="modal-box">
                                             <div class="sd-multiSelect form-group">
                                               <label for="current-job-role">Property Type</label>
-                                              <select multiple id="current-job-role" class="sd-CustomSelect">
+                                              <select multiple id="current-job-role" class="sd-CustomSelect" aria-placeholder="yggv">
                                                   {{-- @foreach ($uniquePropertyTypes as $p_type)
                                                     <option value="{{ $p_type }}">{{ $p_type }}</option>
                                                 @endforeach --}}
