@@ -272,6 +272,9 @@
                                             <div class="sd-multiSelect form-group">
                                               <label for="current-job-role">Property Type</label>
                                               <select multiple id="current-job-role" class="sd-CustomSelect">
+                                                  {{-- @foreach ($uniquePropertyTypes as $p_type)
+                                                    <option value="{{ $p_type }}">{{ $p_type }}</option>
+                                                @endforeach --}}
                                                 <option value="Apartments">Apartments</option>
                                                 <option value="Villa">Villa</option>
                                                 <option value="House">House</option>
