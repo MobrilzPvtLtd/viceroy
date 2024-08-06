@@ -1,0 +1,28 @@
+[33ma80bddcc[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: commit: Update FrontendController.php
+[33mf22a165d[m HEAD@{1}: pull --ff --recurse-submodules --progress origin: Fast-forward
+[33m2db376d0[m HEAD@{2}: reset: moving to HEAD
+[33m2db376d0[m HEAD@{3}: reset: moving to HEAD
+[33m2db376d0[m HEAD@{4}: reset: moving to HEAD
+[33m2db376d0[m HEAD@{5}: reset: moving to HEAD
+[33m2db376d0[m HEAD@{6}: commit: Update buy.blade.php
+[33m67b14855[m HEAD@{7}: reset: moving to HEAD
+[33m67b14855[m HEAD@{8}: pull --ff --recurse-submodules --progress origin: Fast-forward
+[33m2accc703[m HEAD@{9}: pull --ff --recurse-submodules --progress origin: Fast-forward
+[33mba67f74e[m HEAD@{10}: commit: Update rent.blade.php
+[33m101b98f1[m HEAD@{11}: commit: Update buy.blade.php
+[33m2c40a655[m HEAD@{12}: pull --ff --recurse-submodules --progress origin: Fast-forward
+[33mc84f1dc0[m HEAD@{13}: commit: Update buy.css
+[33m85777d46[m HEAD@{14}: pull --ff --recurse-submodules --progress origin: Fast-forward
+[33m3e65dd2d[m HEAD@{15}: reset: moving to HEAD
+[33m3e65dd2d[m HEAD@{16}: commit: update buy.blade.php and rent.blade.php
+[33m208f5795[m HEAD@{17}: commit: Update cart.blade.php
+[33m9a5e0dd2[m HEAD@{18}: commit: Update register.blade.php
+[33m9b18c812[m HEAD@{19}: pull --ff --recurse-submodules --progress origin: Fast-forward
+[33mbd2fe4f8[m HEAD@{20}: commit: Update sidebar.blade.php
+[33m54d9b74e[m HEAD@{21}: commit: update cart.blade.php, buy.blade.php, rent.blade.php and services.blade.php
+[33m211baae7[m HEAD@{22}: pull --ff --recurse-submodules --progress origin: Fast-forward
+[33m90ab7574[m HEAD@{23}: reset: moving to HEAD
+[33m90ab7574[m HEAD@{24}: pull --ff --recurse-submodules --progress origin: Fast-forward
+[33me70fbce4[m HEAD@{25}: pull --ff --recurse-submodules --progress origin: Fast-forward
+[33mb4f192c1[m HEAD@{26}: pull --ff --recurse-submodules --progress origin: Fast-forward
+[33mcb7fed6f[m HEAD@{27}: clone: from https://github.com/MobrilzPvtLtd/viceroy.git
