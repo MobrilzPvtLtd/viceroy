@@ -43,7 +43,6 @@ class PropertyController extends Controller
         }
 
         return response()->json($options);
-
     }
     public function create()
     {
@@ -51,7 +50,7 @@ class PropertyController extends Controller
         $countrys = Country::all();
         $citys = City::all();
         $states = State::all();
-        return view('backend.property.create', compact('facilitiesy', 'countrys', 'states','citys'));
+        return view('backend.property.create', compact('facilitiesy', 'countrys', 'states', 'citys'));
     }
 
 
@@ -164,7 +163,7 @@ class PropertyController extends Controller
         $citys = City::all();
         $states = State::all();
 
-        return view('backend.property.edit', compact('property', 'facilities', 'selectedFacilities', 'countrys', 'states','citys'));
+        return view('backend.property.edit', compact('property', 'facilities', 'selectedFacilities', 'countrys', 'states', 'citys'));
     }
 
 
@@ -244,15 +243,20 @@ class PropertyController extends Controller
         $propertyData['latitude'] = $latitude;
         $propertyData['longitude'] = $longitude;
         $propertyData['featured'] = $request->has('featured');
+
+        // Safely handle the video field
         $video = explode("=", $request->video);
-        $propertyData['video'] = $video[1];
+        if (isset($video[1])) {
+            $propertyData['video'] = $video[1];
+        } else {
+            $propertyData['video'] = ''; // or null, or some default value
+        }
 
         // Update the property
         $property->update($propertyData);
 
         return redirect()->route('property.index')->with('success', 'Property has been updated successfully.');
     }
-
     public function destroy($id)
     {
         $property = Property::findOrFail($id);
