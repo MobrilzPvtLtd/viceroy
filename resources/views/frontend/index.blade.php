@@ -36,7 +36,7 @@
                                         </label>
                                         <label>
                                             <input type="radio" name="property-action" value="holiday-rental">
-                                            <span> Book holiday rental</span>
+                                            <span> Book Holiday Rental</span>
                                         </label>
                                     </div>
                                     <button type="submit" class="submit-btn">Submit</button>

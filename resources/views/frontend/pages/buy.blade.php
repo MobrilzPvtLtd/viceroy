@@ -136,7 +136,7 @@
                 <div class="row">
                     <div class="col-12 justify-content-center">
                         <div class="breadcrumb_text wow fadeInUp" data-wow-duration="1.5s">
-                            <h1>Buy Property</h1>
+                            <h1>Maximising Property Value <br> Minimising Hassles</h1>
                             <ul class="d-flex flex-wrap justify-content-center">
                                 <li>
                                     <a href="#"><i class="fas fa-home"></i>Home</a>
@@ -410,7 +410,7 @@
                 </div>
             </div>
 
-            <section class="discover_area pt_70 xs_pt_95 pb_70 xs_pb_100"
+            {{-- <section class="discover_area pt_70 xs_pt_95 pb_70 xs_pb_100"
                 style="background: url(assets/images/Discover_bg.jpg)">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -424,7 +424,7 @@
                                 <h2>Maximising Property Value <br> Minimising Hassles</h2>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     {{-- <div class="row">
                         <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
                             style="
@@ -480,7 +480,7 @@
                         </div>
                     </div>
                 </div> --}}
-            </section>
+            {{-- </section> --}}
 
 
             <div class="container">

@@ -70,7 +70,7 @@
     <!--=============================
                                                                             BREADCRUMBS START
                                                                         ==============================-->
-    <section class="breadcrumbs" style="background: url(assets/images/breadcrumbs_bg.jpg);">
+    <section class="breadcrumbs" style="background: url(assets/images/2151643440.jpg);">
         <div class="breadcrumbs_overly">
             <div class="container">
                 <div class="row">
@@ -310,7 +310,7 @@
                             after each stay. Peace of mind for guests as they check-in any time of day or night. </p>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
+                {{-- <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
                     style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                     <div class="single_discover">
                         <div class="discover_img">
@@ -322,12 +322,12 @@
                             is why we carefully vet all requests and only accept bookings from those guests who fit specific
                             criteria including positive past reviews and have verified government identification. </p>
                     </div>
-                </div>
+                </div> --}}
                 <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
                     style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
                     <div class="single_discover">
                         <div class="discover_img">
-                            <h3> 8</h3>
+                            <h3> 7</h3>
                         </div>
 
                         <h6>Right Price </h6>
