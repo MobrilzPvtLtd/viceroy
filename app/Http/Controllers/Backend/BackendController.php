@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
-
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Models\Property;
@@ -28,6 +27,5 @@ class BackendController extends Controller
 
         return view('backend.index',compact('propertys','rentCount','holidayCount','contacts','checkouts','properties'));
     }
-
 
 }
