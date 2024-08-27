@@ -134,6 +134,12 @@ p.notify001 {
     width: 35vw;
     text-align: center;
 }
+.flags{
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
     </style>
 
 
@@ -172,7 +178,7 @@ p.notify001 {
                     </div>
                 </div>
             </div>
-            <div class=" flags d-flex ">
+            <div class="flags">
                 <a href="{{ route('india') }}" class="container01">
                     <div class="image-circle01">
                         <img src="assets/images/india.png" />

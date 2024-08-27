@@ -35,21 +35,21 @@
 
         .sd-multiSelect .ms-choice {
             position: relative;
-            text-align: left !important;
-            width: 250px;
-            border: 1px solid #e3e3e3;
-            background: #ffff;
-            box-shadow: none;
-            font-size: 15px;
-            height: 44px;
-            font-weight: 500;
-            color: #212529;
-            line-height: 1.5;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            border-radius: 0.25rem;
-            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    text-align: left !important;
+    width: 250px;
+    border: 1px solid #cccccc;
+    background: #ffff;
+    box-shadow: none;
+    font-size: 15px;
+    height: 50px;
+    font-weight: 500;
+    color: #212529;
+    line-height: 1.5;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* border-radius: 0.25rem; */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
         }
 
         .sd-multiSelect .ms-choice:after {
@@ -296,7 +296,7 @@
                                             <div class="sd-multiSelect form-group">
                                                 <label for="current-job-role">Property Type</label>
                                                 <select multiple id="current-job-role" class="sd-CustomSelect"
-                                                    aria-placeholder="yggv">
+                                                    aria-placeholder="yggv" placeholder="Select Property type">
                                                     @foreach ($uniquePropertyTypes as $p_type)
                                                         <option value="{{ $p_type }}">{{ $p_type }}</option>
                                                     @endforeach
