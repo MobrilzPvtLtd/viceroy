@@ -23,7 +23,7 @@
                                 @foreach ($states as $state)
                                 <tr>
                                     <td>{{ $state->id }}</td>
-                                    <td>{{ $state->co_name }}</td>
+                                    <td>{{ $state->country_name }}</td>
                                     <td>{{ $state->st_name }}</td>
 
                                     <td>
