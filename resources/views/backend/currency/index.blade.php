@@ -46,7 +46,7 @@
                                     <td>{{ $currency->bcr }}</td>
                                     <td>
 
-                                      
+
 
                                         <!-- Modal -->
                                         <div class="modal fade" id="delete-confirm-{{ $currency->id }}" tabindex="-1"
@@ -54,12 +54,13 @@
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel-{{ $currency->id }}">Modal title</h5>
+                                                        <h5 class="modal-title" id="exampleModalLabel-{{ $currency->id }}">
+                                                           Confirm to delete</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        ...
+                                                        Do you want to delete: {{ $currency->code }}?
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary"
@@ -70,9 +71,8 @@
                                             </div>
                                         </div>
 
-                                        <button type="button" class="btn btn-danger"
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#delete-confirm-{{ $currency->id }}">Delete</button>
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                            data-bs-target="#delete-confirm-{{ $currency->id }}">Delete</button>
                                         <a class="btn btn-primary"
                                             href="{{ route('currency.edit', $currency->id) }}">Edit</a>
                                     </td>
