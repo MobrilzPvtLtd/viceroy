@@ -3,6 +3,12 @@
 @section('content')
     <div class="card">
         <div class="card-body">
+            {{-- Display flash messages --}}
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="pull-right mb-2">
                 <a class="btn btn-success" href="{{ route('state.create') }}"> Create State</a>
             </div>
@@ -21,22 +27,22 @@
                             </thead>
                             <tbody>
                                 @foreach ($states as $state)
-                                <tr>
-                                    <td>{{ $state->id }}</td>
-                                    <td>{{ $state->country_name }}</td>
-                                    <td>{{ $state->st_name }}</td>
+                                    <tr>
+                                        <td>{{ $state->id }}</td>
+                                        <td>{{ $state->country_name }}</td>
+                                        <td>{{ $state->st_name }}</td>
 
-                                    <td>
-                                        <form action="{{ route('state.destroy', $state->id) }}" method="Post">
-                                            <a class="btn btn-primary"
-                                                href="{{ route('state.edit', $state->id) }}">Edit</a>
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Delete</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
+                                        <td>
+                                            <form action="{{ route('state.destroy', $state->id) }}" method="Post">
+                                                <a class="btn btn-primary"
+                                                    href="{{ route('state.edit', $state->id) }}">Edit</a>
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

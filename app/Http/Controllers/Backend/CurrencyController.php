@@ -52,8 +52,7 @@ class CurrencyController extends Controller
         ]);
 
         $currency->fill($request->post())->save();
-
-        return redirect()->route('currency.index');
+        return redirect()->route('currency.index')->with('success', 'Currency has been updated successfully.');
     }
 
     public function destroy(Currency $currency)
