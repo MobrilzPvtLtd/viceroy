@@ -979,8 +979,8 @@ button {
 /* banner start */
 .banner_area {
     background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
+    background-position: 200px !important;
+    background-repeat: repeat !important;
     height: 100vh;
 }
 
@@ -994,6 +994,7 @@ button {
     align-items: flex-start;
     justify-content: center;
     padding-top: 70px;
+    padding-left: 25px;
 }
 
 .banner_text {
@@ -2381,7 +2382,7 @@ button {
 .footer_form_input textarea {
     margin-top: 40px;
     background: transparent;
-    padding: 0px 10px 10px 0px;
+    padding: 10px 10px 10px 10px;
     color: var(--colorWhite);
     border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
@@ -7966,6 +7967,10 @@ gap: 10px;
     .checkbox-group span {
         width: 16vw;
         text-align: left;
+    }
+    .user_icon span {
+        width: 20px;
+
     }
 
     .select_label {

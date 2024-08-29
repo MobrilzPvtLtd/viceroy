@@ -77,7 +77,7 @@
                             @include('flash::alert-message')
                             <div class="col-md-6">
                                 <div class="footer_form_input">
-                                    <input type="text"name="name" placeholder="your name" />
+                                    <input type="text"name="name" placeholder="Your name" />
                                 </div>
                             </div>
                             {{-- <div class="col-md-6">
@@ -97,7 +97,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="footer_form_input">
-                                    <input type="text"name="sub" placeholder="subject" />
+                                    <input type="text"name="sub" placeholder="Subject" />
                                 </div>
                             </div>
 
