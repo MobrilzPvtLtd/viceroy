@@ -1,18 +1,13 @@
 @extends ('backend.layouts.app')
-
-
-
 @section('content')
     <div class="card">
         <div class="card-body">
-
             <div class="pull-right mb-2">
                 <a class="btn btn-success" href="{{ route('currency.index') }}"> Currency</a>
             </div>
             <div class="row mt-4">
                 <div class="col">
                     <div class="container mt-5">
-
                         <form method="POST" action="{{ route('currency.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">

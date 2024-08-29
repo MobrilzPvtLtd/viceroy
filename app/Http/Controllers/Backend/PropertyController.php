@@ -17,12 +17,20 @@ use GuzzleHttp\Client;
 
 class PropertyController extends Controller
 {
-
-    public function index()
+    public function index(Request $request)
     {
-        $propertys =  Property::paginate(10);
+        $query = Property::query();
+
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where('id', 'like', "%$search%")
+                ->orWhere('title', 'like', "%$search%");
+        }
+        $propertys = $query->paginate(10);
         return view('backend.property.index', compact('propertys'));
     }
+
+
     public function fetchCity(Request $request)
     {
         $options = "";
@@ -146,9 +154,7 @@ class PropertyController extends Controller
         return redirect()->route('property.index')->with('success', 'Property has been created successfully.');
     }
 
-    public function show()
-    {
-    }
+    public function show() {}
 
     public function edit($id)
     {
