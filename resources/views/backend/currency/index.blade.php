@@ -37,6 +37,34 @@
                                         <td>{{ $currency->suffix }}</td>
                                         <td>{{ $currency->bcr }}</td>
                                         <td>
+
+                                        <div class="container">
+
+<!-- Button to trigger modal -->
+<a href="#myModal-{{ $currency->id }}" class="btn btn-primary" data-toggle="modal">Launch demo modal</a>
+ 
+  <!-- Modal -->
+  <div class="modal fade" id="myModal-{{ $currency->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          <h4 class="modal-title">Warning!</h4>
+        </div>
+        <div class="modal-body">
+          Your current session will expire in 5 minutes. Please Save your changes to continue your session, otherwise you will lose all unsaved data and your session will time out.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  
+</div>
+
                                             <button type="button" class="btn btn-danger"
                                                 onclick="confirmDelete({{ $currency->id }})">Delete</button>
                                             <a class="btn btn-primary"
