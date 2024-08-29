@@ -749,6 +749,18 @@
     .banner_search .tab-content {
         padding: 25px;
     }
+    .sd-multiSelect label {
+
+        padding-bottom: 5px !important;
+    }
+    .sd-CustomSelect span.placeholder {
+        font-size: 10px;
+
+    }
+    .sd-multiSelect .ms-choice:after {
+        font-size: 10px !important;
+    }
+
 
     /*================================
         HOME PAGE 01 END

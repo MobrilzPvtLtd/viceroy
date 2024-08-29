@@ -1166,7 +1166,7 @@ button {
     font-size: 16px;
     cursor: pointer;
     width: 100%;
-    line-height: 30px;
+    /* line-height: 30px; */
 
 }
 
@@ -1177,7 +1177,7 @@ button {
     font-size: 16px;
     cursor: pointer;
     width: 100%;
-    line-height: 30px;
+    /* line-height: 30px; */
 
 }
 .adv_search_icon3 {
@@ -1187,7 +1187,7 @@ button {
     font-size: 16px;
     cursor: pointer;
     width: 100%;
-    line-height: 30px;
+    /* line-height: 30px; */
 
 }
 .adv_search_icon4 {
@@ -1197,7 +1197,7 @@ button {
     font-size: 16px;
     cursor: pointer;
     width: 100%;
-    line-height: 30px;
+    /* line-height: 30px; */
 
 }
 
@@ -7986,11 +7986,12 @@ gap: 10px;
         width: 100%;
     }
     input.select_label.select_bedroom_btn {
-        padding: 3px 12px;
+        padding: 10px 12px;
     }
     .single_property_img ul li a {
         width: 60px;
     }
+
 }
 @media screen and (min-width:1325px) and (max-width:1600px) {
     .form-container {
@@ -8021,12 +8022,18 @@ gap: 10px;
         .home_form_label label {
             font-size: 15px;
         }
+        .select_label {
+            width: 8.3vw !important;
+        }
         }
     @media screen and (min-width:1251px) and (max-width:1450px) {
         .home_form_label label {
             font-size: 15px;
         }
         }
+        @media screen and (min-width:900px) and (max-width:980px) {
+            
+            }
 
 
 
@@ -8185,7 +8192,7 @@ marquee {
 }
 .sd-multiSelect label {
     font-weight: 600;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
 }
 /* .sd-multiSelect .ms-choice {
     width: 250px !important;
@@ -8207,6 +8214,14 @@ marquee {
     #home_form {
         gap: 25px !important;
     }
+    .select_label {
+        font-size: 15px !important;
+
+    }
+    .sd-CustomSelect span.placeholder{
+        font-size: 15px !important;
+
+    }
 }
 @media screen and (min-width:1301px) and (max-width:1600px) {
     .sd-multiSelect .ms-choice {
@@ -8223,6 +8238,17 @@ marquee {
     #home_form {
         gap: 20px !important;
     }
+    .select_label {
+        width: 8.2vw !important;
+    }
+    .select_label {
+        font-size: 13px !important;
+
+    }
+    .sd-CustomSelect span.placeholder{
+        font-size: 13px !important;
+
+    }
 }
 @media screen and (min-width:1100px) and (max-width:1300px) {
     .sd-multiSelect .ms-choice {
@@ -8238,6 +8264,7 @@ marquee {
     #home_form {
         gap: 15px !important;
     }
+
 }
 
 
@@ -8300,3 +8327,23 @@ marquee {
     width: 12vw;
     color: #000;
 }
+@media screen and (min-width:1240px) and (max-width:1350px) {
+    .home_form_label label {
+        font-size: 15px;
+    }
+    .select_label {
+        width: 8.3vw !important;
+    }
+    input.select_label.select_bedroom_btn {
+        padding: 10px 12px;
+    }
+    .s22 {
+        padding: 10px 15px !important;
+    }
+    .sd-CustomSelect span.placeholder {
+        font-size: 10px;
+    }
+    .sd-multiSelect .ms-choice:after {
+        font-size: 10px;
+    }
+    }

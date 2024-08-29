@@ -212,5 +212,9 @@ i.fa-solid.fa-list {
         padding: 9px 9px;
 
     }
+    .sd-CustomSelect span.placeholder {
+        width: 29vw;
+
+    }
 
 }

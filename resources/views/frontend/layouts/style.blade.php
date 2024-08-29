@@ -522,7 +522,7 @@ select.select_2 {
     width: 23%;
 }
 .s22 {
-        padding: 3px 15px;
+        padding: 10px 15px;
     }
 }
 

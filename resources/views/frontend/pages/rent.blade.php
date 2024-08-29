@@ -41,7 +41,7 @@
     background: #ffff;
     box-shadow: none;
     font-size: 15px;
-    height: 50px;
+    /* height: 50px; */
     font-weight: 500;
     color: #212529;
     line-height: 1.5;
@@ -197,7 +197,7 @@
                                 aria-labelledby="pills-home-tab" tabindex="0">
                                 <form action="{{ route('rent') }}" method="GET">
                                     <div class="" id="home_form">
-                                        <div class="home_form_label">
+                                        <div id="cancel_rqst1" class="home_form_label">
                                             <label>Country</label>
                                             <select class="select_label" name="co_name" id="co_name" required focus>
                                                 <option value="" disabled selected> select country</option>
@@ -206,7 +206,7 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="home_form_label">
+                                        <div id="cancel_rqst2" class="home_form_label">
                                             <label>State</label>
                                             <select class="select_label s1" name="st_name" id="st_name" required focus>
                                                 <option value="" disabled selected>select state </option>
@@ -217,7 +217,7 @@
                                             </select>
                                         </div>
 
-                                        <div class="home_form_label">
+                                        <div id="cancel_rqst3" class="home_form_label">
                                             <label>City</label>
                                             <select class="select_label" name="ct_name" id="city" required>
                                                 <option value="" disabled selected> select city</option>
@@ -292,8 +292,8 @@
                                             </div>
                                         </div>
 
-                                        <div class="modal-box">
-                                            <div class="sd-multiSelect form-group">
+                                        <div class="modal-box home_form_label">
+                                            <div id="cancel_rqst4" class="sd-multiSelect form-group ">
                                                 <label for="current-job-role">Property Type</label>
                                                 <select multiple id="current-job-role" class="sd-CustomSelect"
                                                     aria-placeholder="yggv" placeholder="Select Property type">
@@ -308,7 +308,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="home_form_label">
+                                        <div id="cancel_rqst5" class="home_form_label">
                                             <label>Currency</label>
                                             <select class="select_label" name="code">
                                                 <option value="" disabled selected> select currency</option>
@@ -331,7 +331,7 @@
                                 aria-labelledby="pills-contact-tab" tabindex="0">
                                 <form action="#">
                                     <div class="row">
-                                        <div class="col-lg-2">
+                                        <div id="cancel_rqst1" class="col-lg-2">
                                             <label>Country</label>
                                             <select class="select_2" name="state">
                                                 <option value="">Select country</option>
@@ -702,7 +702,7 @@
 
         <div class="video_player_div" style="position : relative; width : 100vw ; height : 40vw ; overflow : hidden ;">
             <video style="margin-top : -12vw ; width : 100vw ; height:auto ; position : absolute; z-index : 5 ; "
-                data-vbg-loop="true" src="https://viceroy.ultimatetrueweb.com/public/videos/Banner1.mp4" autoplay muted
+                data-vbg-loop="true" src="http://viceroy.ultimatetrueweb.com/assets/videos/Banner.mp4" autoplay muted
                 loop></video>
 
 

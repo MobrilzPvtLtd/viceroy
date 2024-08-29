@@ -244,10 +244,14 @@
     }))
     const adv_search_icon = document.querySelector(".adv_search_icon")
     const adv_search_icon2 = document.querySelector(".adv_search_icon2")
+    const cancel_rqst1 = document.querySelector("#cancel_rqst1")
+    const cancel_rqst2 = document.querySelector("#cancel_rqst2")
+    const cancel_rqst3 = document.querySelector("#cancel_rqst3")
+    const cancel_rqst4 = document.querySelector("#cancel_rqst4")
+    const cancel_rqst5 = document.querySelector("#cancel_rqst5")
     const min_max = document.querySelector("#close_btn_minmax")
 
     select_bedroom_btn.addEventListener('click', (() => {
-        console.log("hariom")
         if (close001.style.display == "none") {
             close001.style.display = "block";
             close002.style.display = "none";
@@ -265,6 +269,51 @@
         } else {
             close002.style.display = "none"
         }
+    }))
+    cancel_rqst1.addEventListener('click', (() => {
+        console.log("pills_tabContent")
+        // if (close002.style.display == "none") {
+            close002.style.display = "none";
+            close001.style.display = "none";
+        // } else {
+        //     close002.style.display = "none"
+        // }
+    }))
+    cancel_rqst2.addEventListener('click', (() => {
+        console.log("pills_tabContent")
+        // if (close002.style.display == "none") {
+            close002.style.display = "none";
+            close001.style.display = "none";
+        // } else {
+        //     close002.style.display = "none"
+        // }
+    }))
+    cancel_rqst3.addEventListener('click', (() => {
+        console.log("pills_tabContent")
+        // if (close002.style.display == "none") {
+            close002.style.display = "none";
+            close001.style.display = "none";
+        // } else {
+        //     close002.style.display = "none"
+        // }
+    }))
+    cancel_rqst4.addEventListener('click', (() => {
+        console.log("pills_tabContent")
+        // if (close002.style.display == "none") {
+            close002.style.display = "none";
+            close001.style.display = "none";
+        // } else {
+        //     close002.style.display = "none"
+        // }
+    }))
+    cancel_rqst5.addEventListener('click', (() => {
+        console.log("pills_tabContent")
+        // if (close002.style.display == "none") {
+            close002.style.display = "none";
+            close001.style.display = "none";
+        // } else {
+        //     close002.style.display = "none"
+        // }
     }))
 
 

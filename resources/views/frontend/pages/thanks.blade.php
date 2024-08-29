@@ -47,7 +47,7 @@
       transition: background-color 0.3s ease;
     }
     .container .cta-button:hover {
-      background-color: #000;
+      background-color: #000; 
     }
   </style>
 </head>
