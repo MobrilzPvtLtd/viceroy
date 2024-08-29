@@ -46,11 +46,7 @@
                                     <td>{{ $currency->bcr }}</td>
                                     <td>
 
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#delete-confirm-{{ $currency->id }}">
-                                            Launch demo modal
-                                        </button>
+                                      
 
                                         <!-- Modal -->
                                         <div class="modal fade" id="delete-confirm-{{ $currency->id }}" tabindex="-1"
@@ -75,7 +71,8 @@
                                         </div>
 
                                         <button type="button" class="btn btn-danger"
-                                            onclick="confirmDelete({{ $currency->id }})">Delete</button>
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#delete-confirm-{{ $currency->id }}">Delete</button>
                                         <a class="btn btn-primary"
                                             href="{{ route('currency.edit', $currency->id) }}">Edit</a>
                                     </td>
