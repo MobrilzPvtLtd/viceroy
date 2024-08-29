@@ -46,39 +46,29 @@
                                     <td>{{ $currency->bcr }}</td>
                                     <td>
 
-                                        <div class="container">
+                                        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
 
-                                            <!-- Button to trigger modal -->
-                                            <a href="#myModal-{{ $currency->id }}" class="btn btn-primary"
-                                                data-toggle="modal">Launch demo modal</a>
-
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="myModal-{{ $currency->id }}" tabindex="-1"
-                                                role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal"
-                                                                aria-hidden="true">x</button>
-                                                            <h4 class="modal-title">Warning!</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Your current session will expire in 5 minutes. Please Save your
-                                                            changes to continue your session, otherwise you will lose all
-                                                            unsaved data and your session will time out.
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default"
-                                                                data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Save
-                                                                changes</button>
-                                                        </div>
-                                                    </div><!-- /.modal-content -->
-                                                </div><!-- /.modal-dialog -->
-                                            </div><!-- /.modal -->
-
-
-                                        </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
                                         <button type="button" class="btn btn-danger"
                                             onclick="confirmDelete({{ $currency->id }})">Delete</button>
@@ -110,30 +100,7 @@
     </div>
 
     <!-- Confirmation Modal -->
-    <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="confirmationModalLabel">Confirm Delete</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Are you sure you want to delete this currency?
-                </div>
-                <div class="modal-footer">
-                    <form id="delete-form" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 </div>
 
 @endsection
