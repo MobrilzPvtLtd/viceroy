@@ -63,9 +63,10 @@
                                                         Do you want to delete: {{ $currency->code }}?
                                                     </div>
                                                     <div class="modal-footer">
+                                                        
+                                                        <button type="button" class="btn btn-danger">Yes</button>
                                                         <button type="button" class="btn btn-secondary"
                                                             data-bs-dismiss="modal">No</button>
-                                                        <button type="button" class="btn btn-danger">Yes</button>
                                                     </div>
                                                 </div>
                                             </div>
