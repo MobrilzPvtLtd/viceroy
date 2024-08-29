@@ -687,7 +687,7 @@
 
         <div class="video_player_div" style="position : relative; width : 100vw ; height : 30vw ; overflow : hidden ;">
             <video style="margin-top : -12vw ; width : 100vw ; height:auto ; position : absolute; z-index : 5 ; " data-vbg-loop="true"
-                src="https://viceroy.ultimatetrueweb.com/public/videos/bottomBanner.mp4" autoplay muted loop></video>
+                src="{{ asset('public/videos/bottomBanner.mp4') }}" autoplay muted loop></video>
 
 
             <div class="container" style="position: absolute ; z-index : 10 ; transform : translate(0 , 0);">

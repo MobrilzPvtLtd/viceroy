@@ -690,7 +690,7 @@
 
         <div class="video_player_div" style="position : relative; width : 100vw ; height : 40vw ; overflow : hidden ;">
             <video style="margin-top : -12vw ; width : 100vw ; height:auto ; position : absolute; z-index : 5 ; "
-                data-vbg-loop="true" src="https://viceroy.ultimatetrueweb.com/public/videos/TopBanner.mp4" autoplay muted
+                data-vbg-loop="true" src="{{ asset('public/videos/TopBanner.mp4') }}" autoplay muted
                 loop></video>
 
 
