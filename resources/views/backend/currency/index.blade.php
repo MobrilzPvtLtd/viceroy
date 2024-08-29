@@ -125,15 +125,9 @@
 @push('scripts')
     <!-- jQuery and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-            window.confirmDelete = function(id) {
-                var form = document.getElementById('delete-form');
-                form.action = '/currency.index' + id;
-                $('#confirmationModal').modal('show');
-            }
-        });
+      
     </script>
 @endpush
