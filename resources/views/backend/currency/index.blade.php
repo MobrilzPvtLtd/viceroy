@@ -1,5 +1,7 @@
 @extends('backend.layouts.app')
 @section('content')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+
     <div class="card">
         <div class="card-body">
             {{-- Display flash messages --}}
