@@ -3,6 +3,12 @@
 @section('content')
     <div class="card">
         <div class="card-body">
+            {{-- Display flash messages --}}
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="pull-right mb-2">
                 <a class="btn btn-success" href="{{ route('professionals.create') }}"> Create Brand</a>
             </div>
@@ -42,7 +48,8 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <form action="{{ route('professionals.destroy', $professional->id) }}" method="Post">
+                                            <form action="{{ route('professionals.destroy', $professional->id) }}"
+                                                method="Post">
                                                 <a class="btn btn-primary"
                                                     href="{{ route('professionals.edit', $professional->id) }}">Edit</a>
                                                 @csrf

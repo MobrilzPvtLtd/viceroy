@@ -3,6 +3,12 @@
 @section('content')
     <div class="card">
         <div class="card-body">
+            {{-- Display flash messages --}}
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="pull-right mb-2">
                 <a class="btn btn-success" href="{{ route('brand.create') }}"> Create Brand</a>
             </div>
@@ -25,8 +31,8 @@
                                         <td>{{ $brand->id }}</td>
                                         <td>
                                             @if ($brand->image)
-                                                <img src="{{ asset('public/images/' . $brand->image) }}" alt="{{ $brand->image }}"
-                                                    width="100">
+                                                <img src="{{ asset('public/images/' . $brand->image) }}"
+                                                    alt="{{ $brand->image }}" width="100">
                                             @else
                                                 No Image
                                             @endif

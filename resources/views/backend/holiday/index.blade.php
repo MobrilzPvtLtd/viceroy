@@ -2,6 +2,12 @@
 @section('content')
     <div class="card">
         <div class="card-body">
+            {{-- Display flash messages --}}
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="pull-right mb-2">
                 <a class="btn btn-success" href="{{ route('holiday.create') }}"> Create Holiday</a>
             </div>
@@ -41,11 +47,12 @@
                                             @php
                                                 $images = json_decode($holiday->image, true);
                                             @endphp
-                                            @if($images)
+                                            @if ($images)
                                                 @php
                                                     $latestImage = end($images);
                                                 @endphp
-                                                <img src="{{ asset('public/uploads/' . trim($latestImage)) }}" alt="Image" style="width: 100px; height: auto;">
+                                                <img src="{{ asset('public/uploads/' . trim($latestImage)) }}"
+                                                    alt="Image" style="width: 100px; height: auto;">
                                             @else
                                                 <p>No images available</p>
                                             @endif

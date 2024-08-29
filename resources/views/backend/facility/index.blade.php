@@ -3,6 +3,12 @@
 @section('content')
     <div class="card">
         <div class="card-body">
+            {{-- Display flash messages --}}
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="pull-right mb-2">
                 <a class="btn btn-success" href="{{ route('facility.create') }}"> Create facilities</a>
             </div>
@@ -25,8 +31,7 @@
                                         <td>{{ $facility->name }}</td>
 
                                         <td>
-                                            <form action="{{ route('facility.destroy', $facility->id) }}"
-                                                method="Post">
+                                            <form action="{{ route('facility.destroy', $facility->id) }}" method="Post">
                                                 <a class="btn btn-primary"
                                                     href="{{ route('facility.edit', $facility->id) }}">Edit</a>
                                                 @csrf

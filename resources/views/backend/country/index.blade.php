@@ -3,6 +3,11 @@
 @section('content')
     <div class="card">
         <div class="card-body">
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="pull-right mb-2">
                 <a class="btn btn-success" href="{{ route('country.create') }}"> Create Country</a>
             </div>

@@ -1,19 +1,25 @@
 @extends('backend.layouts.app')
 @section('content')
-<style>
-    .property_search01 {
-    display: flex;
-    justify-content: space-between;
-}
-.row.mb-4.property_search02 {
-    display: flex;
-    justify-content: end;
-    width: 50vw;
-}
-</style>
+    <style>
+        .property_search01 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .row.mb-4.property_search02 {
+            display: flex;
+            justify-content: end;
+            width: 50vw;
+        }
+    </style>
     <div class="card">
         <div class="card-body">
-
+            {{-- Display flash messages --}}
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="property_search01">
                 <div class="pull-right mb-2">
                     <a class="btn btn-success" href="{{ route('property.create') }}"> Create Property</a>
@@ -76,4 +82,3 @@
         </div>
     </div>
 @endsection
-
