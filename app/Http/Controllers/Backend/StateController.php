@@ -11,10 +11,11 @@ class StateController extends Controller
 {
     public function index()
     {
-        $states = State::all();
+        $states = State::join('countries', 'countries.id', '=', 'states.co_name')
+        ->select('states.*', 'countries.co_name as country_name')
+        ->get();
         return view('backend.state.index', compact('states'));
     }
-
     public function create()
     {
         $country = Country::all();
@@ -24,17 +25,14 @@ class StateController extends Controller
     {
         $request->validate([
             'co_name' => 'required',
-            'st_name'=> 'required',
+            'st_name' => 'required',
         ]);
 
         State::create($request->post());
 
         return redirect()->route('state.index')->with('success', 'Country has been created successfully.');
     }
-    public function show()
-    {
-
-    }
+    public function show() {}
 
     public function edit(State $state)
     {
@@ -58,5 +56,4 @@ class StateController extends Controller
         $state->delete();
         return redirect()->route('state.index');
     }
-
 }

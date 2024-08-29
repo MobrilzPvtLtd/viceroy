@@ -12,7 +12,6 @@ class CityController extends Controller
 {
     public function index()
     {
-        // $citys = City::with('country', 'state')->get();
 
         $citys = City::join('countries', 'countries.id', '=', 'cities.co_name')
                 ->join('states', 'states.id', '=', 'cities.st_name')

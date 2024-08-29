@@ -16,7 +16,7 @@
                                     <th scope="col">Property List</th>
                                     <th scope="col"> Type of Property</th>
                                     <th scope="col"> Address</th>
-                                    <th scope="col">Bed Rooms</th>
+                                    {{-- <th scope="col">Bed Rooms</th>
                                     <th scope="col">Hall</th>
                                     <th scope="col">Kitchen</th>
                                     <th scope="col">Dining</th>
@@ -29,7 +29,7 @@
                                     <th scope="col">Description</th>
                                     <th scope="col"> Originating Year</th>
                                     <th scope="col">Slag</th>
-                                    <th scope="col">facilities</th>
+                                    <th scope="col">facilities</th> --}}
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -41,7 +41,7 @@
                                         <td>{{ $property->type }}</td>
                                         <td>{{ $property->p_type }}</td>
                                         <td>{{ $property->address }}</td>
-                                        <td>{{ $property->bed }}</td>
+                                        {{-- <td>{{ $property->bed }}</td>
                                         <td>{{ $property->hall }}</td>
                                         <td>{{ $property->kichen }}</td>
                                         <td>{{ $property->dining }}</td>
@@ -96,7 +96,7 @@
                                             @else
                                                 <p>No facilities available</p>
                                             @endif
-                                        </td>
+                                        </td> --}}
 
                                         <td>
                                             <form action="{{ route('property.destroy', $property->id) }}" method="Post">
