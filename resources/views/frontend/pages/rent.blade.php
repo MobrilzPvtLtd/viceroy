@@ -693,7 +693,7 @@
                     </script>
 
 
-                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ config('services.google_map.key') }}"
+                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyC5oJyFp78LqQzen5Dtp1m4zlS3a2M3de4"
                         defer></script>
 
 
