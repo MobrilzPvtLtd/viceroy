@@ -12,6 +12,7 @@ use App\Models\Currency;
 use App\Models\Country;
 use App\Models\State;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Log;
 
 
 
@@ -29,7 +30,6 @@ class PropertyController extends Controller
         $propertys = $query->paginate(10);
         return view('backend.property.index', compact('propertys'));
     }
-
 
     public function fetchCity(Request $request)
     {
@@ -85,6 +85,7 @@ class PropertyController extends Controller
             'dining' => 'required',
         ]);
 
+        // Handle image upload
         $imagePaths = [];
         if ($request->hasFile('image')) {
             foreach ($request->file('image') as $file) {
@@ -95,6 +96,7 @@ class PropertyController extends Controller
             }
         }
 
+        // Handle floor plan upload
         $floor_planPaths = [];
         if ($request->hasFile('floor_plan')) {
             foreach ($request->file('floor_plan') as $file) {
@@ -107,7 +109,8 @@ class PropertyController extends Controller
 
         // Geocode the address
         $address = $request->input('address');
-        $apiKey = env('GEO_CODE_GOOGLE_MAP_API');
+        $apiKey = "AIzaSyC5oJyFp78LqQzen5Dtp1m4zlS3a2M3de4";
+
         $client = new Client();
         $response = $client->get('https://maps.googleapis.com/maps/api/geocode/json', [
             'query' => [
@@ -125,7 +128,13 @@ class PropertyController extends Controller
             $location = $geoData['results'][0]['geometry']['location'];
             $latitude = $location['lat'];
             $longitude = $location['lng'];
+        } else {
+            Log::error('Google Geocoding API error', [
+                'address' => $address,
+                'response' => $geoData
+            ]);
         }
+        // dd($latitude,$longitude);
 
         // Prepare data for database insertion
         $facilities = $request->input('facilities', []);
@@ -136,6 +145,8 @@ class PropertyController extends Controller
         $propertyData['latitude'] = $latitude;
         $propertyData['longitude'] = $longitude;
         $propertyData['featured'] = $request->has('featured');
+
+        // Handle video embedding
         if (!empty($request->video)) {
             $video = explode("=", $request->video);
 
@@ -220,7 +231,7 @@ class PropertyController extends Controller
 
         // Geocode the address
         $address = $request->input('address');
-        $apiKey = env('GEO_CODE_GOOGLE_MAP_API');
+        $apiKey = "AIzaSyC5oJyFp78LqQzen5Dtp1m4zlS3a2M3de4";
         $client = new \GuzzleHttp\Client();
         $response = $client->get('https://maps.googleapis.com/maps/api/geocode/json', [
             'query' => [

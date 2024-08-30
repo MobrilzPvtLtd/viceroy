@@ -14,6 +14,10 @@
                             enctype="multipart/form-data">
                             @csrf
                             <div class="row">
+
+                                <input type="hidden"  name="latitude" value="{{ old('latitude') }}">
+                                <input type="hidden"  name="longitude" value="{{ old('longitude') }}">
+
                                 <div class="form-group mb-2 col-4">
                                     <label for="">Property List</label>
                                     <select class="form-control" name="type" value="{{ old('type') }}">
@@ -71,18 +75,18 @@
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Hall</label>
-                                    <input type="number" class="form-control" name="hall"
-                                        value="{{ old('hall') }}" placeholder="">
+                                    <input type="number" class="form-control" name="hall" value="{{ old('hall') }}"
+                                        placeholder="">
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Kitchen</label>
-                                    <input type="number" class="form-control"  name="kichen"
-                                        value="{{ old('kichen') }}" placeholder="">
+                                    <input type="number" class="form-control" name="kichen" value="{{ old('kichen') }}"
+                                        placeholder="">
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Dining</label>
-                                    <input type="number" class="form-control"  name="dining"
-                                        value="{{ old('dining') }}" placeholder="">
+                                    <input type="number" class="form-control" name="dining" value="{{ old('dining') }}"
+                                        placeholder="">
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Bath Rooms</label>
@@ -116,8 +120,8 @@
                                 <div class="form-group mb-2 col-4">
                                     <label for="city">Area</label>
                                     <div class="d-flex">
-                                        <input type="number" class="form-control"  name="area"
-                                        value="{{ old('size') }}" placeholder="">
+                                        <input type="number" class="form-control" name="area"
+                                            value="{{ old('size') }}" placeholder="">
                                         <select class="form-control" value="" name="size">
                                             <option value="Sq fit">Sq fit</option>
                                             <option value="Sq meter">Sq meter</option>
@@ -131,7 +135,7 @@
                                         value="{{ old('image[]') }}" multiple>
                                 </div>
                                 <div class="form-group mb-2 col-4">
-                                    <label >Property Video</label>
+                                    <label>Property Video</label>
                                     <input type="text" class="form-control" name="video"
                                         value="{{ old('video') }}">
                                 </div>

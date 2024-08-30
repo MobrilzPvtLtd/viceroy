@@ -669,7 +669,9 @@
                         window.initMap = initMap;
                     </script>
 
-                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ env('GOOGLE_MAP_API') }}" defer></script>
+
+                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ config('services.google_map.key') }}" defer></script>
+
 
                     <style>
                         #mapCanvas {

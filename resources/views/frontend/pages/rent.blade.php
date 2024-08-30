@@ -35,21 +35,21 @@
 
         .sd-multiSelect .ms-choice {
             position: relative;
-    text-align: left !important;
-    width: 250px;
-    border: 1px solid #cccccc;
-    background: #ffff;
-    box-shadow: none;
-    font-size: 15px;
-    /* height: 50px; */
-    font-weight: 500;
-    color: #212529;
-    line-height: 1.5;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    /* border-radius: 0.25rem; */
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            text-align: left !important;
+            width: 250px;
+            border: 1px solid #cccccc;
+            background: #ffff;
+            box-shadow: none;
+            font-size: 15px;
+            /* height: 50px; */
+            font-weight: 500;
+            color: #212529;
+            line-height: 1.5;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            /* border-radius: 0.25rem; */
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
         }
 
         .sd-multiSelect .ms-choice:after {
@@ -100,31 +100,31 @@
         }
 
         /* .sd-multiSelect .ms-drop li label:before {
-      content: "";
-      -webkit-appearance: none;
-      background-color: transparent;
-      border: 2px solid var(--theme-color);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
-        inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-      padding: 8px;
-      display: inline-block;
-      position: relative;
-      vertical-align: middle;
-      cursor: pointer;
-      margin-right: 5px;
-    }
+          content: "";
+          -webkit-appearance: none;
+          background-color: transparent;
+          border: 2px solid var(--theme-color);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+            inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+          padding: 8px;
+          display: inline-block;
+          position: relative;
+          vertical-align: middle;
+          cursor: pointer;
+          margin-right: 5px;
+        }
 
-    .sd-multiSelect .ms-drop li input:checked + span:after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 9px;
-      left: 5px;
-      width: 10px;
-      height: 10px;
-      background: var(--theme-color);
-      border-width: 0 2px 2px 0;
-    } */
+        .sd-multiSelect .ms-drop li input:checked + span:after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 9px;
+          left: 5px;
+          width: 10px;
+          height: 10px;
+          background: var(--theme-color);
+          border-width: 0 2px 2px 0;
+        } */
     </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -161,12 +161,12 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                BREADCRUMBS END
-                                                                                                                            ==============================-->
+                                                                                                                                    BREADCRUMBS END
+                                                                                                                                ==============================-->
 
     <!--=============================
-                                                                                                                                PROPERTY GRID VIEW START
-            -->
+                                                                                                                                    PROPERTY GRID VIEW START
+                -->
     <section class="property_grid_view pb_120 xs_pb_100">
         <div class="container-fluid">
             <div class="row justify-content-center wow fadeInUp" data-wow-duration="1.5s">
@@ -181,15 +181,15 @@
                                 </button>
                             </li>
                             <!--<li class="nav-item" role="presentation">
-                                                                                                                                                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                                                                                                                                                data-bs-target="#pills-profile" type="button" role="tab"
-                                                                                                                                                                aria-controls="pills-profile" aria-selected="false">Sell</button>
-                                                                                                                                                        </li>-->
+                                                                                                                                                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                                                                                                                                    data-bs-target="#pills-profile" type="button" role="tab"
+                                                                                                                                                                    aria-controls="pills-profile" aria-selected="false">Sell</button>
+                                                                                                                                                            </li>-->
                             <!--<li class="nav-item" role="presentation">
-                                                                                                                                                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                                                                                                                                                data-bs-target="#pills-contact" type="button" role="tab"
-                                                                                                                                                                aria-controls="pills-contact" aria-selected="false">Rent</button>
-                                                                                                                                                        </li>-->
+                                                                                                                                                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                                                                                                                                                    data-bs-target="#pills-contact" type="button" role="tab"
+                                                                                                                                                                    aria-controls="pills-contact" aria-selected="false">Rent</button>
+                                                                                                                                                            </li>-->
                         </ul>
 
                         <div class="tab-content" id="pills-tabContent">
@@ -422,7 +422,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                                                                                </div>-->
+                                                                                                                                                                    </div>-->
                                 </form>
                             </div>
                         </div>
@@ -502,8 +502,8 @@
                 </div> --}}
             </section>
             <!--=============================
-                                                                                              PROPERTY GRID VIEW END
-                                                                                             ==============================-->
+                                                                                                  PROPERTY GRID VIEW END
+                                                                                                 ==============================-->
             <div class="container">
                 <div class="row mt_95 xs_mt_75">
                     <button id="btn001" onclick="func()" name="map-view">
@@ -684,7 +684,7 @@
                             // Set zoom level based on bounds
                             var boundsListener = google.maps.event.addListener(map, 'bounds_changed', function(event) {
                                 // Set the zoom level after the map bounds are changed
-                                this.setZoom(Math.min(this.getZoom(), 14)); // You can adjust the max zoom level here
+                                this.setZoom(Math.min(this.getZoom(), 10)); // You can adjust the max zoom level here
                                 google.maps.event.removeListener(boundsListener);
                             });
                         }
@@ -692,10 +692,23 @@
                         window.initMap = initMap;
                     </script>
 
-                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ env('GOOGLE_MAP_API') }}" defer></script>
+
+                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ config('services.google_map.key') }}"
+                        defer></script>
+
+
+                    <style>
+                        #mapCanvas {
+                            height: 400px;
+                            /* The height is 400 pixels */
+                            width: 100%;
+                            /* The width is the width of the web page */
+                        }
+                    </style>
                 </div>
             </div>
         </div>
+
         </div>
     </section>
     <section class="find_state mt_115" style="background: url() ; height : 30vw; margin-bottom:200px ">

@@ -277,8 +277,7 @@ div#testimonial-slider {
                             window.initMap = initMap;
                         </script>
 
-                        <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={{ env('GEO_CODE_GOOGLE_MAP_API') }}" defer>
-                        </script>
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5oJyFp78LqQzen5Dtp1m4zlS3a2M3de4&callback=initMap"></script>
 
                         <style>
                             #mapCanvas {

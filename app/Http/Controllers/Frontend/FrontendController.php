@@ -103,6 +103,7 @@ class FrontendController extends Controller
         }
         $markers = $markers;
         $infowindow = $infowindow;
+        // dd($infowindow);
         return view('frontend.pages.buy', compact('propertys', 'countrys', 'states', 'citys', 'currencys', 'uniqueBedrooms', 'uniquePrices', 'uniquePropertyTypes', 'markers', 'infowindow'));
     }
     public function rent(Request $request)
@@ -188,7 +189,7 @@ class FrontendController extends Controller
         $address = $property->address;
 
         // Geocode the main property's address
-        $apiKey = env('GEO_CODE_GOOGLE_MAP_API');
+        $apiKey = "AIzaSyC5oJyFp78LqQzen5Dtp1m4zlS3a2M3de4";
         $client = new \GuzzleHttp\Client();
         $response = $client->get('https://maps.googleapis.com/maps/api/geocode/json', [
             'query' => [
