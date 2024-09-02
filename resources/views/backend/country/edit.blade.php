@@ -4,8 +4,8 @@
 <div class="card">
     <div class="card-body">
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('country.index') }}" enctype="multipart/form-data">
-                Back</a>
+            <a class="btn btn-light" href="{{ route('country.index') }}" enctype="multipart/form-data">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
         </div>
         <div class="row mt-4">
             <div class="col">
@@ -14,10 +14,10 @@
                         @csrf
                         @method('PUT')
                         <div class="form-group mb-2">
-                            <label for="exampleInputEmail1">Services Name</label>
+                            <label for="exampleInputEmail1">Country Name</label>
                             <input type="text" class="form-control" name="co_name" value="{{ $country->co_name}}">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
                     </form>
                 </div>
             </div>

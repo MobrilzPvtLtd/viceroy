@@ -122,7 +122,7 @@ $total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
         @can('facilities')
             <li class="nav-item">
                 <a class="nav-link" href="/admin/facility">
-                    <i class="nav-icon fa-solid fa-font-awesome"></i>&nbsp;@lang('facilities')
+                    <i class="nav-icon fa-solid fa-font-awesome"></i>&nbsp;Facilities
                 </a>
             </li>
         @endcan

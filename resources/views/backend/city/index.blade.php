@@ -23,6 +23,7 @@
                                     <th scope="col">Country Name</th>
                                     <th scope="col">State Name</th>
                                     <th scope="col">City Name</th>
+                                    <th scope="col">Address/Location</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -33,6 +34,7 @@
                                         <td>{{ $city->co_name }}</td>
                                         <td>{{ $city->st_name }}</td>
                                         <td>{{ $city->ct_name }}</td>
+                                        <td>{{ $city->address }}</td>
                                         <td>
                                             <form action="{{ route('city.destroy', $city->id) }}" method="Post">
                                                 <a class="btn btn-primary"

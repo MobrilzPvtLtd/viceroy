@@ -12,7 +12,6 @@ class CityController extends Controller
 {
     public function index()
     {
-
         $citys = City::join('countries', 'countries.id', '=', 'cities.co_name')
                 ->join('states', 'states.id', '=', 'cities.st_name')
                 ->select('cities.*', 'states.st_name', 'countries.co_name')
@@ -30,13 +29,13 @@ class CityController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'co_name' => 'required',
-            'st_name' => 'required',
-            'ct_name' => 'required',
-        ]);
+        $city = new City();
+        $city->co_name = $request->co_name;
+        $city->st_name = $request->st_name;
+        $city->ct_name = $request->ct_name;
+        $city->address = $request->address;
+        $city->save();
 
-        City::create($request->post());
         return redirect()->route('city.index')->with('success', 'Country has been created successfully.');
     }
     public function show()
@@ -63,14 +62,12 @@ class CityController extends Controller
 
     public function update(Request $request, City  $city)
     {
-        $request->validate([
-            'co_name' => 'required',
-            'st_name' => 'required',
-            'ct_name' => 'required',
-
-        ]);
-
-        $city->fill($request->post())->save();
+        $city = City::find($city->id);
+        $city->co_name = $request->co_name;
+        $city->st_name = $request->st_name;
+        $city->ct_name = $request->ct_name;
+        $city->address = $request->address;
+        $city->save();
 
         return redirect()->route('city.index');
     }

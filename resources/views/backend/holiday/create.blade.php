@@ -7,7 +7,7 @@
         <div class="card-body">
 
             <div class="pull-right mb-2">
-                <a class="btn btn-success" href="{{ route('holiday.index') }}"> holiday</a>
+                <a class="btn btn-light" href="{{ route('holiday.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
             </div>
             <div class="row mt-4">
                 <div class="col">
@@ -36,14 +36,14 @@
                                     <input type="text" class="form-control" id="city" name="bath" value="{{ old('bath') }}" placeholder="">
                                 </div>
                                 <div class="form-group mb-2 col-4">
-                                    <label for="city">price</label>
+                                    <label for="city">Price</label>
                                     <input type="text" class="form-control" id="city" name="price" value="{{ old('price') }}" placeholder="">
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
                                     <label for="p_type">Type of Property</label>
                                     <select class="form-control" id="p_type" name="p_type" value="{{ old('p_type') }}">
-                                        <option value="">select property </option>
+                                        <option value="">Select Property </option>
                                         <option value="premium">Premium</option>
                                         <option value="budget">Budget</option>
                                         <option value="standard">Standard</option>
@@ -68,7 +68,7 @@
 
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-success">Submit</button>
                         </form>
                     </div>
                 </div>

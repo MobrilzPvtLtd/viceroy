@@ -4,7 +4,7 @@
 <div class="card">
     <div class="card-body">
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('facility.index') }}">Back</a>
+            <a class="btn btn-light" href="{{ route('facility.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
         </div>
         <div class="row mt-4">
             <div class="col">
@@ -13,10 +13,10 @@
                         @csrf
                         @method('PUT')
                         <div class="form-group mb-2">
-                            <label for="exampleInputEmail1">Services Name</label>
+                            <label for="exampleInputEmail1">Facilities Name</label>
                             <input type="text" class="form-control" name="name" value="{{ $facility->name }}">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
                     </form>
                 </div>
             </div>

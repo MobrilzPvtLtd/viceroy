@@ -7,7 +7,7 @@
         <div class="card-body">
 
             <div class="pull-right mb-2">
-                <a class="btn btn-success" href="{{ route('state.index') }}"> State</a>
+                <a class="btn btn-light" href="{{ route('state.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
             </div>
             <div class="row mt-4">
                 <div class="col">
@@ -31,7 +31,7 @@
                                 <label for="">State Name</label>
                                 <input type="text" class="form-control" name="st_name" value="{{ old('st_name') }}" placeholder="">
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-success">Submit</button>
                         </form>
                     </div>
                 </div>

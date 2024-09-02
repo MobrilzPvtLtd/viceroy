@@ -4,7 +4,7 @@
         <div class="card-body">
 
             <div class="pull-right mb-2">
-                <a class="btn btn-success" href="{{ route('professionals.index') }}">Brand</a>
+                <a class="btn btn-light col-md-1" href="{{ route('professionals.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
             </div>
             <div class="row mt-4">
                 <div class="col">
@@ -30,11 +30,11 @@
                                     <input type="email" class="form-control" name="email"  value="" placeholder="">
                                 </div>
                                 <div class="form-group mb-2 col-4">
-                                    <label for="city">Professional Image</label>
+                                    <label for="city"> Image</label>
                                     <input type="file" class="form-control" name="image"  value="" placeholder="">
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-success">Submit</button>
                         </form>
                     </div>
                 </div>

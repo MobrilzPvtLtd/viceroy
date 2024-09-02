@@ -4,8 +4,8 @@
     <div class="card">
         <div class="card-body">
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('holiday.index') }}" enctype="multipart/form-data">
-                    Back</a>
+                <a class="btn btn-light" href="{{ route('holiday.index') }}" enctype="multipart/form-data">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
             </div>
             <div class="row mt-4">
                 <div class="col">
@@ -21,21 +21,21 @@
                                     <input type="text" class="form-control" name="name" value="{{ $holiday->name }}">
                                 </div>
                                 <div class="form-group mb-2 col-4">
-                                    <label for="ct_name">Address </label>
+                                    <label for="address">Address </label>
                                     <input class="form-control"  name="address" value="{{ $holiday->address }}">
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
-                                    <label for="city">Beds</label>
+                                    <label for="beds">Beds</label>
                                     <input type="text" class="form-control" name="beds" value="{{ $holiday->beds }}">
                                 </div>
 
                                 <div class="form-group mb-2 col-4">
-                                    <label for="city">Bath</label>
+                                    <label for="bath">Bath</label>
                                     <input type="text" class="form-control"  name="bath" value="{{ $holiday->bath }}">
                                 </div>
                                 <div class="form-group mb-2 col-4">
-                                    <label for="city">price</label>
+                                    <label for="price">Price</label>
                                     <input type="text" class="form-control"  name="price" value="{{ $holiday->price }}">
                                 </div>
 
@@ -54,8 +54,8 @@
                                     <input type="text" class="form-control" id="city" name="area" value="{{ $holiday->area }}">
                                 </div>
                                 <div class="form-group mb-2 col-4">
-                                    <label for="city">URL</label>
-                                    <input type="text" class="form-control" id="city" name="url" value="{{ $holiday->url }}">
+                                    <label for="url">URL</label>
+                                    <input type="text" class="form-control" id="url" name="url" value="{{ $holiday->url }}">
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <label for="featured">Featured</label>
@@ -79,7 +79,7 @@
                                 </div>
 
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-success">Submit</button>
                         </form>
                     </div>
                 </div>

@@ -10,7 +10,7 @@
                 </div>
             @endif
             <div class="pull-right mb-2">
-                <a class="btn btn-success" href="{{ route('professionals.create') }}"> Create Brand</a>
+                <a class="btn btn-success" href="{{ route('professionals.create') }}"> Create Professional</a>
             </div>
             <div class="row mt-4">
 

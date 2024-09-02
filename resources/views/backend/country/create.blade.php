@@ -7,7 +7,7 @@
     <div class="card-body">
 
         <div class="pull-right mb-2">
-            <a class="btn btn-success" href="{{ route('country.index') }}"> Country</a>
+            <a class="btn btn-light" href="{{ route('country.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
         </div>
         <div class="row mt-4">
             <div class="col">
@@ -19,7 +19,7 @@
                             <label for="exampleInputEmail1">Country Name</label>
                             <input type="text" class="form-control"value="{{ old('co_name') }}" name="co_name" placeholder="">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
                     </form>
                 </div>
             </div>

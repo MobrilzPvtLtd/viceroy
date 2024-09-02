@@ -7,7 +7,7 @@
     <div class="card-body">
 
         <div class="pull-right mb-2">
-            <a class="btn btn-success" href="{{ route('facility.index') }}"> facilities</a>
+            <a class="btn btn-light" href="{{ route('facility.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
         </div>
         <div class="row mt-4">
             <div class="col">
@@ -16,10 +16,10 @@
                     <form method="POST" action="{{ route('facility.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group mb-2">
-                            <label for="exampleInputEmail1">facilities Name</label>
+                            <label for="exampleInputEmail1">Facilities Name</label>
                             <input type="text" class="form-control"value="{{ old('name') }}" name="name" placeholder="">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
                     </form>
                 </div>
             </div>

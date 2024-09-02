@@ -4,8 +4,8 @@
 <div class="card">
     <div class="card-body">
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('state.index') }}" enctype="multipart/form-data">
-                Back</a>
+            <a class="btn btn-light" href="{{ route('state.index') }}" enctype="multipart/form-data">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
         </div>
         <div class="row mt-4">
             <div class="col">
@@ -21,7 +21,7 @@
                             <label for="exampleInputEmail1">State</label>
                             <input type="text" class="form-control" name="st_name" value="{{ $state->st_name }}">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
                     </form>
                 </div>
             </div>

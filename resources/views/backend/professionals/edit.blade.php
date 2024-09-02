@@ -4,8 +4,8 @@
     <div class="card">
         <div class="card-body">
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('professionals.index') }}" enctype="multipart/form-data">
-                    Back</a>
+                <a class="btn btn-light" href="{{ route('professionals.index') }}" enctype="multipart/form-data">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
             </div>
             <div class="row mt-4">
                 <div class="col">
@@ -32,12 +32,12 @@
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <div class="form-group mb-2">
-                                        <label for="exampleInputEmail1">Professionals Image</label>
+                                        <label for="exampleInputEmail1">Image</label>
                                         <input type="file" class="form-control" name="image" value="{{ $professional->image }}">
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-success">Submit</button>
                         </form>
                     </div>
                 </div>

@@ -4,8 +4,8 @@
     <div class="card">
         <div class="card-body">
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('city.index') }}" enctype="multipart/form-data">
-                    Back</a>
+                <a class="btn btn-light" href="{{ route('city.index') }}" enctype="multipart/form-data">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
             </div>
             <div class="row mt-4">
                 <div class="col">
@@ -26,7 +26,7 @@
                             <input type="text" class="form-control" name="ct_name" value="{{ $city->ct_name }}">
                         </div> --}}
                             <div class="row">
-                                <div class="form-group mb-2 col-4">
+                                <div class="form-group mb-2 col-6">
                                     <label for="exampleInputEmail1">Country Name</label>
                                     <select class="form-control" id="co_name" name="co_name" required focus>
                                         <option value="" disabled selected> select Country</option>
@@ -35,7 +35,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="form-group mb-2 col-4">
+                                <div class="form-group mb-2 col-6">
                                     <label for="st_name">State</label>
                                     <select class="form-control" id="state" name="st_name" required>
                                         <option value="" disabled selected> select State</option>
@@ -50,12 +50,16 @@
                                 </div>
                                 <div class="form-group mb-2 col-4">
                                     <div class="form-group mb-2">
-                                        <label for="exampleInputEmail1">Citie Name</label>
+                                        <label for="exampleInputEmail1">City</label>
                                         <input type="text" class="form-control" name="ct_name" value="{{ $city->ct_name }}">
                                     </div>
                                 </div>
+                                <div class="form-group mb-3 col-8">
+                                    <label for="address">Address/Location</label>
+                                    <input class="form-control" id="address" name="address" value="{{ old('address') }}" placeholder="">
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-success">Submit</button>
                         </form>
                     </div>
                 </div>

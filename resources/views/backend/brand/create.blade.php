@@ -4,7 +4,7 @@
         <div class="card-body">
 
             <div class="pull-right mb-2">
-                <a class="btn btn-success" href="{{ route('brand.index') }}">Brand</a>
+                <a class="btn btn-light" href="{{ route('brand.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i> back</a>
             </div>
             <div class="row mt-4">
                 <div class="col">
@@ -18,7 +18,7 @@
                                     <input type="file" class="form-control" name="image"  value="" placeholder="">
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-success">Submit</button>
                         </form>
                     </div>
                 </div>

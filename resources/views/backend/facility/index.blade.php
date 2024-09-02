@@ -10,7 +10,7 @@
                 </div>
             @endif
             <div class="pull-right mb-2">
-                <a class="btn btn-success" href="{{ route('facility.create') }}"> Create facilities</a>
+                <a class="btn btn-success" href="{{ route('facility.create') }}"> Create Facilities</a>
             </div>
             <div class="row mt-4">
 
@@ -20,7 +20,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Id</th>
-                                    <th scope="col">facilities Name</th>
+                                    <th scope="col">Facilities Name</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
