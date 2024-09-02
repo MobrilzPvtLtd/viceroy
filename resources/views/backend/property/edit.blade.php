@@ -26,6 +26,12 @@
                                     </select>
                                 </div>
                                 <div class="form-group mb-3 col-4">
+                                    <label for="exampleInputEmail1">Property Name</label>
+                                    <input type="text" class="form-control" name="title"
+                                        value="{{ $property->title }}" placeholder="">
+                                </div>
+
+                                <div class="form-group mb-3 col-4">
                                     <label for="exampleInputEmail1">Country Name</label>
                                     <select class="form-control" id="co_name" name="country_id" required>
                                         <option value="" disabled selected>Select Country</option>
@@ -38,7 +44,7 @@
                                     </select>
                                 </div>
 
-                                <div class="form-group mb-3 col-4">
+                                <div class="form-group mb-3 col-3">
                                     <label>State</label>
                                     <select class="form-control" name="state_id" id="st_name" required>
                                         <option value="" disabled selected>Select State</option>
@@ -63,13 +69,8 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="form-group mb-3 col-4">
-                                    <label for="exampleInputEmail1">Property Name</label>
-                                    <input type="text" class="form-control" name="title"
-                                        value="{{ $property->title }}" placeholder="">
-                                </div>
 
-                                <div class="form-group mb-3 col-5">
+                                <div class="form-group mb-3 col-6">
                                     <label for="ct_name">Full Address </label>
                                     <input class="form-control" name="address" value="{{ $property->address }}" placeholder="">
                                 </div>
