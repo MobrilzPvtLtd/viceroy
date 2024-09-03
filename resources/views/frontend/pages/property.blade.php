@@ -106,7 +106,19 @@ div#testimonial-slider {
                                 <li><i class="fas fa-map-marker-alt"></i>{{ $property->address }}</li>
                                 <li><span>{{ $property->type }}</span></li>
                             </ul>
-                            <h3>$ {{ $property->price }}</h3>
+                            <select name="currency" id="currency" style="margin-left: 75%;">
+                                @foreach (App\Models\Currency::get(); as $currency)
+                                    <option value="{{ $currency->code }}"
+                                        {{ $currency->code == request()->session()->get('currency') ? 'selected' : '' }}
+                                        >{{ $currency->code }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            <h3>
+                                {{ request()->session()->get('prefix', '$') }}
+                                {{ number_format(request()->session()->get('price', $currencyPrice->bcr), 2) }}
+                            </h3>
+
                         </div>
                         <ul class="flat_details d-flex flex-wrap">
                             <li>
@@ -299,8 +311,6 @@ div#testimonial-slider {
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
-
-
                 </div>
                 <div class="col-lg-4">
                     <div class="sticky_sidebar">
@@ -463,13 +473,6 @@ div#testimonial-slider {
                                     </div>
                                     <span class="property_price">${{ $relatedProperty->price }}</span>
                                 </div>
-
-
-
-
-
-
-
                             </div>
                         </div>
                     @endforeach
@@ -497,5 +500,30 @@ div#testimonial-slider {
                 autoPlay: true
             });
         });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#currency').change(function() {
+                var currency = $(this).val();
+                $.ajax({
+                    type: 'POST',
+                    url: '{{ route('change-currency') }}',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        currency: currency,
+                        slug: '{{ $relatedProperty->slag }}',
+                    },
+                    success: function(response) {
+                        console.log('Currency changed successfully');
+
+                        location.reload();
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error changing currency:', error);
+                    }
+                });
+            });
+        });
+
     </script>
 @endsection

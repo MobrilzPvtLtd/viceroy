@@ -100,6 +100,8 @@ Route::get('/india', [FrontendController::class, 'india'])->name('india');
 Route::get('/uk', [FrontendController::class, 'uk'])->name('uk');
 Route::get('/uae', [FrontendController::class, 'uae'])->name('uae');
 Route::get('/property/{slag}', [FrontendController::class, 'propertydetails'])->name('property');
+Route::post('/change-currency', [FrontendController::class, 'changeCurrency'])->name('change-currency');
+
 Route::get('/checkout', [FrontendController::class, 'cartform'])->name('cartform');
 Route::get('/terms&con', [FrontendController::class, 'terms'])->name('terms&con');
 Route::get('/privacy&poly', [FrontendController::class, 'privacy'])->name('privacy&poly');

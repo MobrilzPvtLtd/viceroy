@@ -233,16 +233,26 @@ class FrontendController extends Controller
             [$property->title]
         ];
 
-        return view('frontend.pages.property', compact('property', 'latitude', 'longitude', 'markers', 'infowindow', 'relatedProperties'));
+        $currencyPrice = Currency::where('code', 'USD')->first();
+
+        return view('frontend.pages.property', compact('property', 'latitude', 'longitude', 'markers', 'infowindow', 'relatedProperties','currencyPrice'));
     }
 
+    public function changeCurrency(Request $request) {
+        $property = Property::where('slag', $request->slug)->first();
 
+        $currency = Currency::where('code', $request->currency)->first();
+        if (!$currency) {
+            return response()->json(['error' => 'Currency not found'], 404);
+        }
 
-    //     public function show($id)
-    // {
-    //     $property = Property::findOrFail($id);
-    //     return view('frontend.pages.property_details', compact('property'));
-    // }
+        $request->session()->put('prefix', $currency->prefix);
+        $request->session()->put('price', $currency->bcr);
+        $request->session()->put('currency', $currency->code);
+
+        return redirect()->route('property',$property->slag);
+    }
+
     // public function showPropertiesByAddress(Request $request)
     // {
     //     $address = $request->input('address');
