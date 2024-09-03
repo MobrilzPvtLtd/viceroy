@@ -106,7 +106,7 @@ div#testimonial-slider {
                                 <li><i class="fas fa-map-marker-alt"></i>{{ $property->address }}</li>
                                 <li><span>{{ $property->type }}</span></li>
                             </ul>
-                            <select name="currency" id="currency" style="margin-left: 75%;">
+                            <select name="currency" id="currency" style="margin-left: 70%;">
                                 @foreach (App\Models\Currency::get(); as $currency)
                                     <option value="{{ $currency->code }}"
                                         {{ $currency->code == request()->session()->get('currency') ? 'selected' : '' }}
@@ -115,8 +115,12 @@ div#testimonial-slider {
                                 @endforeach
                             </select>
                             <h3>
+                                @php
+                                    $price = request()->session()->get('price') * $property->price;
+                                    $defaultPrice = $currencyPrice->bcr * $property->price;
+                                @endphp
                                 {{ request()->session()->get('prefix', '$') }}
-                                {{ number_format(request()->session()->get('price', $currencyPrice->bcr), 2) }}
+                                {{ number_format($price ? $price : $defaultPrice, 2) }}
                             </h3>
 
                         </div>
