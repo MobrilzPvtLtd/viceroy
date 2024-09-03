@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Currency;
+use Illuminate\Support\Facades\Http;
 
 class CurrencyController extends Controller
 {
@@ -20,6 +21,7 @@ class CurrencyController extends Controller
     }
     public function store(Request $request)
     {
+
         $request->validate([
             'code' => 'required',
             'prefix'=> 'required',
@@ -29,7 +31,15 @@ class CurrencyController extends Controller
 
         Currency::create($request->post());
 
-        return redirect()->route('currency.index')->with('success', 'currency has been created successfully.');
+        $response = Http::get(url('/admin/update-currency'));
+
+        if ($response->successful()) {
+            return redirect()->route('currency.index')
+                             ->with('success', 'Currency has been created successfully and updated.');
+        } else {
+            return redirect()->route('currency.index')
+                             ->with('error', 'Currency created but failed to update.');
+        }
     }
 
     public function show()
@@ -52,7 +62,16 @@ class CurrencyController extends Controller
         ]);
 
         $currency->fill($request->post())->save();
-        return redirect()->route('currency.index')->with('success', 'Currency has been updated successfully.');
+
+        $response = Http::get(url('/admin/update-currency'));
+
+        if ($response->successful()) {
+            return redirect()->route('currency.index')
+                             ->with('success', 'Currency has been updated successfully and updated.');
+        } else {
+            return redirect()->route('currency.index')
+                             ->with('error', 'Currency updated but failed to update.');
+        }
     }
 
     public function destroy(Currency $currency)

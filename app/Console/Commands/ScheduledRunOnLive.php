@@ -27,7 +27,7 @@ class ScheduledRunOnLive extends Command
 
             if ($response->ok()) {
                 $data = $response->json();
-
+                // dd($data);
                 if (isset($data['rates']) && is_array($data['rates'])) {
                     foreach ($data['rates'] as $code => $rate) {
                         Currency::where('code',$code)->update(

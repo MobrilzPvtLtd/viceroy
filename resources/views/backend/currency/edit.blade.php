@@ -30,10 +30,10 @@
                                     <input type="text" class="form-control" name="suffix" value="{{ $currency->suffix }}" >
                                 </div>
 
-                                <div class="form-group mb-2 col-4">
+                                <input type="hidden" class="form-control"  name="bcr" value="{{ $currency->bcr }}" >
+                                {{-- <div class="form-group mb-2 col-4">
                                     <label for="city">Base Conv. Rate</label>
-                                    <input type="text" class="form-control"  name="bcr" value="{{ $currency->bcr }}" >
-                                </div>
+                                </div> --}}
                             </div>
                             <button type="submit" class="btn btn-success">Submit</button>
                         </form>

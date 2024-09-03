@@ -26,12 +26,10 @@
                                     <input type="text" class="form-control" value="{{ old('suffix') }}" name="suffix" placeholder="">
                                 </div>
 
-                                <div class="form-group mb-2 col-4">
+                                <input type="hidden" class="form-control" value="0.00"  name="bcr">
+                                {{-- <div class="form-group mb-2 col-4">
                                     <label for="city">Base Conv. Rate</label>
-                                    <input type="text" class="form-control" value="{{ old('bcr') }}"  name="bcr" placeholder="">
-                                </div>
-
-
+                                </div> --}}
                             </div>
                             <button type="submit" class="btn btn-success">Submit</button>
                         </form>
