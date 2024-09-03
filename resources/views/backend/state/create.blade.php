@@ -15,21 +15,21 @@
 
                         <form method="POST" action="{{ route('state.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-
-
-                            <div class="form-group mb-2">
-                                <label for="exampleInputEmail1">Country Name</label>
-                                <select class="form-control" name="co_name"  value="{{ old('co_name') }}"required focus>
-                                    <option value="" disabled selected> select Country</option>
-                                    @foreach ($country as $country)
-                                        {{-- <input type="text" class="form-control" name="co_name" placeholder=""> --}}
-                                        <option value="{{ $country->id }}">{{ $country->co_name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group mb-2">
-                                <label for="">State Name</label>
-                                <input type="text" class="form-control" name="st_name" value="{{ old('st_name') }}" placeholder="">
+                            <div class="row">
+                                <div class="form-group col-md-6 mb-2">
+                                    <label for="exampleInputEmail1">Country Name</label>
+                                    <select class="form-control" name="co_name"  value="{{ old('co_name') }}"required focus>
+                                        <option value="" disabled selected> select Country</option>
+                                        @foreach ($countries as $country)
+                                            {{-- <input type="text" class="form-control" name="co_name" placeholder=""> --}}
+                                            <option value="{{ $country->id }}">{{ $country->co_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6 mb-2">
+                                    <label for="">State Name</label>
+                                    <input type="text" class="form-control" name="st_name" value="{{ old('st_name') }}" placeholder="">
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-success">Submit</button>
                         </form>

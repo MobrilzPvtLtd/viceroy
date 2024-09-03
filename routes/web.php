@@ -20,6 +20,7 @@ use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Backend\BrandsController;
 use App\Http\Controllers\Backend\ProfessionalsController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use Illuminate\Support\Facades\Artisan;
 
 
 
@@ -55,6 +56,13 @@ Route::post('contact', [ContactController::class, 'submit'])->name('contact.subm
 Route::post('checkout', [CheckoutController::class, 'submit'])->name('checkout.submit');
 //Currency
 Route::resource('admin/currency', CurrencyController::class);
+
+Route::get('/admin/update-currency', function () {
+    Artisan::call('scheduledRunOnLive:run');
+    $output = Artisan::output();
+    return response()->json(['message' => 'Scheduled commands executed.', 'output' => $output]);
+});
+
 //Contact
 Route::resource('admin/massage', ContactsController::class);
 Route::post('is_view', [ContactsController::class, 'is_view'])->name('is_view');

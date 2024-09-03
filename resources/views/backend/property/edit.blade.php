@@ -108,7 +108,7 @@
                                 </div>
 
                                 <div class="form-group mb-3 col-4">
-                                    <label for="city">price</label>
+                                    <label for="city">Price in (USD)</label>
                                     <input type="text" class="form-control" id="city" name="price"
                                         value="{{ $property->price }}" placeholder="">
                                 </div>

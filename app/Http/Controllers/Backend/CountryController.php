@@ -15,7 +15,7 @@ class CountryController extends Controller
      */
     public function index()
     {
-        $countrys = Country::all();
+        $countrys = Country::get();
         return view('backend.country.index', compact('countrys'));
     }
 

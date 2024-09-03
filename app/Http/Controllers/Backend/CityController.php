@@ -22,9 +22,9 @@ class CityController extends Controller
 
     public function create()
     {
-        $country = Country::all();
+        $countries = Country::all();
         $state = State::all();
-        return view('backend.city.create',compact('country','state'));
+        return view('backend.city.create',compact('countries','state'));
     }
 
     public function store(Request $request)

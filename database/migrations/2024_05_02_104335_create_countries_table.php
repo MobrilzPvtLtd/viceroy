@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('currencys', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
-            $table->string('prefix');
-            $table->string('suffix');
-            $table->string('bcr');
+            $table->string('co_name');
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('currencys');
+        Schema::dropIfExists('countrys');
     }
 };

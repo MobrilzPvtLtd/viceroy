@@ -17,7 +17,7 @@
                                     <label for="exampleInputEmail1">Country Name</label>
                                     <select class="form-control" id="co_name" name="co_name" value="{{ old('co_name') }}"required focus>
                                         <option value="" disabled selected> select Country</option>
-                                        @foreach ($country as $country)
+                                        @foreach ($countries as $country)
                                             <option value="{{ $country->id }}">{{ $country->co_name }}</option>
                                         @endforeach
                                     </select>

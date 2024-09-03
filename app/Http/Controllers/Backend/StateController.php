@@ -18,8 +18,8 @@ class StateController extends Controller
     }
     public function create()
     {
-        $country = Country::all();
-        return view('backend.state.create', compact('country'));
+        $countries = Country::all();
+        return view('backend.state.create', compact('countries'));
     }
     public function store(Request $request)
     {
@@ -36,7 +36,8 @@ class StateController extends Controller
 
     public function edit(State $state)
     {
-        return view('backend.state.edit', compact('state'));
+        $countries = Country::all();
+        return view('backend.state.edit', compact('state','countries'));
     }
 
     public function update(Request $request, State  $state)
