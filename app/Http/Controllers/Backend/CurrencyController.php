@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Currency;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
 
 class CurrencyController extends Controller
 {
     public function index()
     {
-        $currencys = Currency::all();
+        $currencys = Currency::where('deleted_at', null)->get();
         return view('backend.currency.index', compact('currencys'));
     }
     public function create()
@@ -74,10 +75,36 @@ class CurrencyController extends Controller
         }
     }
 
-    public function destroy(Currency $currency)
-    {
-        $currency->delete();
-        return redirect()->route('currency.index');
+    public function currencyTrash() {
+        $currencies = Currency::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->paginate();
+
+        return view("backend.currency.trash", compact('currencies'));
     }
 
+    public function destroy($id)
+    {
+        $currency = Currency::find($id);
+        if ($currency) {
+            $currency->deleted_at = Carbon::now();
+            $currency->save();
+        }
+        return redirect()->route('currency.index')->with('success', 'Currency successfully deleted!');
+    }
+
+    public function currencyRestore($id)
+    {
+        $currency = Currency::find($id);
+        if ($currency) {
+            $currency->deleted_at = null;
+            $currency->save();
+        }
+        return redirect()->route('currency.index')->with('success', 'Currency successfully restored!');
+    }
+
+    public function currencyDelete($id)
+    {
+        $currency = Currency::find($id);
+        $currency->delete();
+        return redirect()->route('currency-trash')->with('success', 'Currency successfully permanently deleted!');
+    }
 }

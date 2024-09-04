@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title') {{ 'Currency List' }} @endsection
+@section('title') {{ 'Currency Trash' }} @endsection
 
 @section('content')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -20,26 +20,14 @@
         <div class="d-flex justify-content-between">
             <div class="align-self-center">
                 <h4 class="card-title mb-0">
-                    <i class="nav-icon  fa-solid fa-money-bill-1-wave"></i> Currency <small class="text-muted">List</small>
+                    <i class="nav-icon  fa-solid fa-money-bill-1-wave"></i> Currency <small class="text-muted">Deleted List</small>
                 </h4>
             </div>
 
             <div class="btn-toolbar d-block text-end" role="toolbar" aria-label="Toolbar with buttons">
-                <a class="btn btn-success" data-toggle="tooltip" href="{{ route('currency.create') }}" aria-label="Create User" data-coreui-original-title="Create Currency">
-                    <i class="fas fa-plus fa-fw"></i>
-                </a>
-                <div class="btn-group">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-coreui-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-cog"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item" href="{{ route('currency-trash') }}">
-                                <i class="fas fa-eye-slash"></i> View trash
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <button onclick="window.history.back();" class="btn btn-warning m-1 " data-toggle="tooltip" aria-label="Return Back" data-coreui-original-title="Return Back"><i class="fas fa-reply fa-fw"></i>&nbsp;</button>
+
+                <a href='{{ route('currency.index') }}' class="btn btn-secondary" data-toggle="tooltip" title="Currency List"><i class="fas fa-list"></i> List</a>
             </div>
         </div>
         <hr>
@@ -59,7 +47,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($currencys as $currency)
+                            @foreach ($currencies as $currency)
                                 <tr>
                                     <td>{{ $currency->id }}</td>
                                     <td>{{ $currency->code }}</td>
@@ -79,12 +67,11 @@
                                                             aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                       <p class="text-start">Do you want to delete: {{ $currency->code }} ?</p>
+                                                       <p class="text-start">Do you want to permanently delete: {{ $currency->code }} ?</p>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <form action="{{ route('currency.destroy', $currency->id) }}" method="POST" id="delete-form-{{ $currency->id }}">
+                                                        <form action="{{ route('currency-delete', $currency->id) }}" method="POST" id="delete-form-{{ $currency->id }}">
                                                             @csrf
-                                                            @method('DELETE')
                                                             <button type="submit" class="btn btn-danger">Yes</button>
                                                         </form>
                                                         <button type="button" class="btn btn-secondary"
@@ -93,10 +80,40 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <a class="btn btn-primary btn-sm"
-                                            href="{{ route('currency.edit', $currency->id) }}">Edit</a>
                                         <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                                            data-bs-target="#delete-confirm-{{ $currency->id }}">Delete</button>
+                                            data-bs-target="#delete-confirm-{{ $currency->id }}"><i class="fas fa-trash" title="Delete"></i>
+                                        </button>
+
+
+                                        <div class="modal fade" id="restore-confirm-{{ $currency->id }}" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel-{{ $currency->id }}" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel-{{ $currency->id }}">
+                                                            Confirm to delete</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p class="text-start">Do you want to restore: {{ $currency->code }} ?</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <form action="{{ route('currency-restore', $currency->id) }}" method="POST" style="display: inline;">
+                                                            @csrf
+                                                            @method('PATCH')
+                                                            <button type="submit" class="btn btn-danger">Yes</button>
+                                                        </form>
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">No</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#restore-confirm-{{ $currency->id }}" data-coreui-original-title="Restore">
+                                            <i class="fas fa-undo"></i>
+                                        </button>
                                     </td>
                                 </tr>
                             @endforeach

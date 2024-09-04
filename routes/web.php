@@ -41,83 +41,93 @@ require __DIR__.'/auth.php';
 *
 * --------------------------------------------------------------------
 *///professionals
-Route::resource('admin/professionals', ProfessionalsController::class);
-//Brands
-Route::resource('admin/brand', BrandsController::class);
-// cart
-Route::post('cart/add', [CartController::class, 'add'])->name('cart.add');
-Route::get('cart/view', [CartController::class, 'viewCartData']);
-Route::post('cart/delete', [CartController::class, 'DeleteIteme']);
-Route::get('/cart/count', [CartController::class, 'count'])->name('cart.count');
-
-// contact
-Route::post('contact', [ContactController::class, 'submit'])->name('contact.submit');
-// checkout
-Route::post('checkout', [CheckoutController::class, 'submit'])->name('checkout.submit');
-//Currency
-Route::resource('admin/currency', CurrencyController::class);
-
 Route::get('/admin/update-currency', function () {
     Artisan::call('scheduledRunOnLive:run');
     $output = Artisan::output();
     return response()->json(['message' => 'Scheduled commands executed.', 'output' => $output]);
 });
 
-//Contact
-Route::resource('admin/massage', ContactsController::class);
-Route::post('is_view', [ContactsController::class, 'is_view'])->name('is_view');
-Route::post('is_viewchackout', [ContactsController::class, 'is_viewchackout'])->name('is_viewchackout');
+Route::group(['middleware' => ['auth']], function () {
 
-//Inquairy property
-Route::resource('admin/inquairy', InquairyController::class);
-// property
-Route::resource('admin/property',  PropertyController::class);
-Route::get('fetch-city', [PropertyController::class, 'fetchCity'])->name('fetch-city');
-Route::get('fetch-states', [PropertyController::class, 'fetchStates'])->name('fetch-states');
-// Facilities
-Route::resource('admin/facility',  FacilitiesController::class);
-//holiday
-Route::resource('admin/holiday', HolidayController::class);
-//Country
-Route::resource('admin/country', CountryController::class);
-//city
-Route::resource('admin/state', StateController::class);
-//state
-Route::resource('admin/city', CityController::class);
-Route::get('fetch-state', [CityController::class, 'fetchState'])->name('fetch-state'); //auto select country data
-// home route
-// Route::get('/', [FrontendController::class, 'index'])->name('home');
-Route::get('/about', [FrontendController::class, 'about'])->name('about');
-Route::get('/buy', [FrontendController::class, 'buy'])->name('buy');
-Route::get('/rent', [FrontendController::class, 'rent'])->name('rent');
-Route::get('/fetch-city', [FrontendController::class, 'fetchCity'])->name('fetch-city');
-Route::get('/fetch-states', [FrontendController::class, 'fetchStates'])->name('fetch-states');
-Route::get('/holiday', [FrontendController::class, 'holiday'])->name('holiday');
-Route::get('/services', [FrontendController::class, 'services'])->name('services');
-Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
-Route::get('/login', [FrontendController::class, 'login'])->name('login');
-Route::get('/india', [FrontendController::class, 'india'])->name('india');
-Route::get('/uk', [FrontendController::class, 'uk'])->name('uk');
-Route::get('/uae', [FrontendController::class, 'uae'])->name('uae');
-Route::get('/property/{slag}', [FrontendController::class, 'propertydetails'])->name('property');
-Route::post('/change-currency', [FrontendController::class, 'changeCurrency'])->name('change-currency');
+    Route::resource('admin/professionals', ProfessionalsController::class);
+    //Brands
+    Route::resource('admin/brand', BrandsController::class);
+    //Currency
+    Route::resource('admin/currency', CurrencyController::class);
+    Route::get('/admin/currency-trash', [CurrencyController::class, 'currencyTrash'])->name('currency-trash');
+    Route::patch('/admin/currency-restore/{id}', [CurrencyController::class, 'currencyRestore'])->name('currency-restore');
+    Route::post('/admin/currency-delete/{id}', [CurrencyController::class, 'currencyDelete'])->name('currency-delete');
 
-Route::get('/checkout', [FrontendController::class, 'cartform'])->name('cartform');
-Route::get('/terms&con', [FrontendController::class, 'terms'])->name('terms&con');
-Route::get('/privacy&poly', [FrontendController::class, 'privacy'])->name('privacy&poly');
-Route::get('/thanks', [FrontendController::class, 'thanks'])->name('thanks');
+    //Contact
+    Route::resource('admin/massage', ContactsController::class);
+    Route::post('is_view', [ContactsController::class, 'is_view'])->name('is_view');
+    Route::post('is_viewchackout', [ContactsController::class, 'is_viewchackout'])->name('is_viewchackout');
 
-// Route::get('search', [PropertyController::class, 'search'])->name('property.search');
+    //Inquairy property
+    Route::resource('admin/inquairy', InquairyController::class);
+    // property
+    Route::resource('admin/property',  PropertyController::class);
+    Route::get('fetch-city', [PropertyController::class, 'fetchCity'])->name('fetch-city');
+    Route::get('fetch-states', [PropertyController::class, 'fetchStates'])->name('fetch-states');
+    // Facilities
+    Route::resource('admin/facility',  FacilitiesController::class);
+    //holiday
+    Route::resource('admin/holiday', HolidayController::class);
+    //Country
+    Route::resource('admin/country', CountryController::class);
+    //city
+    Route::resource('admin/state', StateController::class);
+    //state
+    Route::resource('admin/city', CityController::class);
+});
+
+    Route::get('fetch-state', [CityController::class, 'fetchState'])->name('fetch-state'); //auto select country data
+
+    // home route
+    // contact
+    Route::post('contact', [ContactController::class, 'submit'])->name('contact.submit');
+    // checkout
+    Route::post('checkout', [CheckoutController::class, 'submit'])->name('checkout.submit');
+
+    // cart
+    Route::post('cart/add', [CartController::class, 'add'])->name('cart.add');
+    Route::get('cart/view', [CartController::class, 'viewCartData']);
+    Route::post('cart/delete', [CartController::class, 'DeleteIteme']);
+    Route::get('/cart/count', [CartController::class, 'count'])->name('cart.count');
+
+    // Route::get('/', [FrontendController::class, 'index'])->name('home');
+    Route::get('/about', [FrontendController::class, 'about'])->name('about');
+    Route::get('/buy', [FrontendController::class, 'buy'])->name('buy');
+    Route::get('/rent', [FrontendController::class, 'rent'])->name('rent');
+    Route::get('/fetch-city', [FrontendController::class, 'fetchCity'])->name('fetch-city');
+    Route::get('/fetch-states', [FrontendController::class, 'fetchStates'])->name('fetch-states');
+    Route::get('/holiday', [FrontendController::class, 'holiday'])->name('holiday');
+    Route::get('/services', [FrontendController::class, 'services'])->name('services');
+    Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
+    Route::get('/login', [FrontendController::class, 'login'])->name('login');
+    Route::get('/india', [FrontendController::class, 'india'])->name('india');
+    Route::get('/uk', [FrontendController::class, 'uk'])->name('uk');
+    Route::get('/uae', [FrontendController::class, 'uae'])->name('uae');
+    Route::get('/property/{slag}', [FrontendController::class, 'propertydetails'])->name('property');
+    Route::post('/change-currency', [FrontendController::class, 'changeCurrency'])->name('change-currency');
+
+    Route::get('/checkout', [FrontendController::class, 'cartform'])->name('cartform');
+    Route::get('/terms&con', [FrontendController::class, 'terms'])->name('terms&con');
+    Route::get('/privacy&poly', [FrontendController::class, 'privacy'])->name('privacy&poly');
+    Route::get('/thanks', [FrontendController::class, 'thanks'])->name('thanks');
+
+    // Route::get('search', [PropertyController::class, 'search'])->name('property.search');
 
 
-// Language Switch
-Route::get('language/{language}', [LanguageController::class, 'switch'])->name('language.switch');
+    // Language Switch
+    Route::get('language/{language}', [LanguageController::class, 'switch'])->name('language.switch');
 
-Route::get('dashboard', 'App\Http\Controllers\Frontend\FrontendController@index')->name('dashboard');
+    Route::get('dashboard', 'App\Http\Controllers\Frontend\FrontendController@index')->name('dashboard');
 
-// pages
-Route::get('terms', Terms::class)->name('terms');
-Route::get('privacy', Privacy::class)->name('privacy');
+    // pages
+    Route::get('terms', Terms::class)->name('terms');
+    Route::get('privacy', Privacy::class)->name('privacy');
+
 
 Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.'], function () {
     Route::get('/', 'FrontendController@index')->name('index');
