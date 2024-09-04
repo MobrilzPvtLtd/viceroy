@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Country;
-
+use Carbon\Carbon;
 
 
 class CountryController extends Controller
@@ -15,7 +15,7 @@ class CountryController extends Controller
      */
     public function index()
     {
-        $countrys = Country::get();
+        $countrys = Country::where('deleted_at', null)->get();
         return view('backend.country.index', compact('countrys'));
     }
 
@@ -55,9 +55,36 @@ class CountryController extends Controller
         return redirect()->route('country.index');
     }
 
-    public function destroy(Country $country)
+    public function countryTrash() {
+        $countries = Country::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->paginate();
+
+        return view("backend.country.trash", compact('countries'));
+    }
+
+    public function destroy($id)
     {
+        $country = Country::find($id);
+        if ($country) {
+            $country->deleted_at = Carbon::now();
+            $country->save();
+        }
+        return redirect()->route('country.index')->with('success', 'Country successfully deleted!');
+    }
+
+    public function countryRestore($id)
+    {
+        $country = Country::find($id);
+        if ($country) {
+            $country->deleted_at = null;
+            $country->save();
+        }
+        return redirect()->route('country.index')->with('success', 'Country successfully restored!');
+    }
+
+    public function countryDelete($id)
+    {
+        $country = Country::find($id);
         $country->delete();
-        return redirect()->route('country.index');
+        return redirect()->route('country-trash')->with('success', 'Country successfully permanently deleted!');
     }
 }

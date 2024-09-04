@@ -1,6 +1,6 @@
 @extends ('backend.layouts.app')
 
-
+@section('title') {{ 'Country Create' }} @endsection
 
 @section('content')
 <div class="card">

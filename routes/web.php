@@ -52,11 +52,30 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('admin/professionals', ProfessionalsController::class);
     //Brands
     Route::resource('admin/brand', BrandsController::class);
+
     //Currency
     Route::resource('admin/currency', CurrencyController::class);
     Route::get('/admin/currency-trash', [CurrencyController::class, 'currencyTrash'])->name('currency-trash');
     Route::patch('/admin/currency-restore/{id}', [CurrencyController::class, 'currencyRestore'])->name('currency-restore');
     Route::post('/admin/currency-delete/{id}', [CurrencyController::class, 'currencyDelete'])->name('currency-delete');
+
+    //Country
+    Route::resource('admin/country', CountryController::class);
+    Route::get('/admin/country-trash', [CountryController::class, 'countryTrash'])->name('country-trash');
+    Route::patch('/admin/country-restore/{id}', [CountryController::class, 'countryRestore'])->name('country-restore');
+    Route::post('/admin/country-delete/{id}', [CountryController::class, 'countryDelete'])->name('country-delete');
+
+    //state
+    Route::resource('admin/state', StateController::class);
+    Route::get('/admin/state-trash', [StateController::class, 'stateTrash'])->name('state-trash');
+    Route::patch('/admin/state-restore/{id}', [StateController::class, 'stateRestore'])->name('state-restore');
+    Route::post('/admin/state-delete/{id}', [StateController::class, 'stateDelete'])->name('state-delete');
+
+    //city
+    Route::resource('admin/city', CityController::class);
+    Route::get('/admin/city-trash', [CityController::class, 'cityTrash'])->name('city-trash');
+    Route::patch('/admin/city-restore/{id}', [CityController::class, 'cityRestore'])->name('city-restore');
+    Route::post('/admin/city-delete/{id}', [CityController::class, 'cityDelete'])->name('city-delete');
 
     //Contact
     Route::resource('admin/massage', ContactsController::class);
@@ -73,12 +92,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('admin/facility',  FacilitiesController::class);
     //holiday
     Route::resource('admin/holiday', HolidayController::class);
-    //Country
-    Route::resource('admin/country', CountryController::class);
-    //city
-    Route::resource('admin/state', StateController::class);
-    //state
-    Route::resource('admin/city', CityController::class);
 });
 
     Route::get('fetch-state', [CityController::class, 'fetchState'])->name('fetch-state'); //auto select country data

@@ -1,6 +1,6 @@
 @extends ('backend.layouts.app')
 
-
+@section('title') {{ 'State Create' }} @endsection
 
 @section('content')
     <div class="card">
@@ -21,7 +21,6 @@
                                     <select class="form-control" name="co_name"  value="{{ old('co_name') }}"required focus>
                                         <option value="" disabled selected> select Country</option>
                                         @foreach ($countries as $country)
-                                            {{-- <input type="text" class="form-control" name="co_name" placeholder=""> --}}
                                             <option value="{{ $country->id }}">{{ $country->co_name }}</option>
                                         @endforeach
                                     </select>
