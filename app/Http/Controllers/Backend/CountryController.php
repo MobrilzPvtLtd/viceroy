@@ -78,7 +78,7 @@ class CountryController extends Controller
             $country->deleted_at = null;
             $country->save();
         }
-        return redirect()->route('country.index')->with('success', 'Country successfully restored!');
+        return redirect()->route('country-trash')->with('success', 'Country successfully restored!');
     }
 
     public function countryDelete($id)

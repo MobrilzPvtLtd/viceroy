@@ -84,7 +84,7 @@ class StateController extends Controller
             $state->deleted_at = null;
             $state->save();
         }
-        return redirect()->route('state.index')->with('success', 'State successfully restored!');
+        return redirect()->route('state-trash')->with('success', 'State successfully restored!');
     }
 
     public function stateDelete($id)

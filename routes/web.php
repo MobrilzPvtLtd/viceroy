@@ -47,11 +47,15 @@ Route::get('/admin/update-currency', function () {
     return response()->json(['message' => 'Scheduled commands executed.', 'output' => $output]);
 });
 
-Route::group(['middleware' => ['auth']], function () {
 
-    Route::resource('admin/professionals', ProfessionalsController::class);
-    //Brands
-    Route::resource('admin/brand', BrandsController::class);
+Route::group(['middleware' => ['auth']], function () {
+    //Contact
+    Route::post('is_view', [ContactsController::class, 'is_view'])->name('is_view');
+    Route::post('is_viewchackout', [ContactsController::class, 'is_viewchackout'])->name('is_viewchackout');
+    Route::resource('admin/massage', ContactsController::class);
+
+    //Inquairy property
+    Route::resource('admin/inquairy', InquairyController::class);
 
     //Currency
     Route::resource('admin/currency', CurrencyController::class);
@@ -77,21 +81,29 @@ Route::group(['middleware' => ['auth']], function () {
     Route::patch('/admin/city-restore/{id}', [CityController::class, 'cityRestore'])->name('city-restore');
     Route::post('/admin/city-delete/{id}', [CityController::class, 'cityDelete'])->name('city-delete');
 
-    //Contact
-    Route::resource('admin/massage', ContactsController::class);
-    Route::post('is_view', [ContactsController::class, 'is_view'])->name('is_view');
-    Route::post('is_viewchackout', [ContactsController::class, 'is_viewchackout'])->name('is_viewchackout');
-
-    //Inquairy property
-    Route::resource('admin/inquairy', InquairyController::class);
     // property
     Route::resource('admin/property',  PropertyController::class);
+    Route::get('/admin/property-trash', [PropertyController::class, 'propertyTrash'])->name('property-trash');
+    Route::patch('/admin/property-restore/{id}', [PropertyController::class, 'propertyRestore'])->name('property-restore');
+    Route::post('/admin/property-delete/{id}', [PropertyController::class, 'propertyDelete'])->name('property-delete');
+
     Route::get('fetch-city', [PropertyController::class, 'fetchCity'])->name('fetch-city');
     Route::get('fetch-states', [PropertyController::class, 'fetchStates'])->name('fetch-states');
+
     // Facilities
     Route::resource('admin/facility',  FacilitiesController::class);
+    Route::get('/admin/facility-trash', [FacilitiesController::class, 'facilityTrash'])->name('facility-trash');
+    Route::patch('/admin/facility-restore/{id}', [FacilitiesController::class, 'facilityRestore'])->name('facility-restore');
+    Route::post('/admin/facility-delete/{id}', [FacilitiesController::class, 'facilityDelete'])->name('facility-delete');
+
     //holiday
     Route::resource('admin/holiday', HolidayController::class);
+
+    //Professionals
+    Route::resource('admin/professionals', ProfessionalsController::class);
+
+    //Brands
+    Route::resource('admin/brand', BrandsController::class);
 });
 
     Route::get('fetch-state', [CityController::class, 'fetchState'])->name('fetch-state'); //auto select country data

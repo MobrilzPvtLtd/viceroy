@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 use App\Models\Property;
 use App\Models\Facilities;
 use App\Models\City;
-use App\Models\Currency;
 use App\Models\Country;
 use App\Models\State;
 use GuzzleHttp\Client;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 
 
@@ -27,7 +27,7 @@ class PropertyController extends Controller
             $query->where('id', 'like', "%$search%")
                 ->orWhere('title', 'like', "%$search%");
         }
-        $propertys = $query->paginate(10);
+        $propertys = $query->where('deleted_at', null)->paginate(10);
         return view('backend.property.index', compact('propertys'));
     }
 
@@ -60,8 +60,6 @@ class PropertyController extends Controller
         $states = State::all();
         return view('backend.property.create', compact('facilitiesy', 'countrys', 'states', 'citys'));
     }
-
-
 
     public function store(Request $request)
     {
@@ -183,8 +181,6 @@ class PropertyController extends Controller
         return view('backend.property.edit', compact('property', 'facilities', 'selectedFacilities', 'countrys', 'states', 'citys'));
     }
 
-
-
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -274,9 +270,36 @@ class PropertyController extends Controller
 
         return redirect()->route('property.index')->with('success', 'Property has been updated successfully.');
     }
+
+    public function propertyTrash() {
+        $properties = Property::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->paginate();
+
+        return view("backend.property.trash", compact('properties'));
+    }
+
     public function destroy($id)
     {
-        $property = Property::findOrFail($id);
+        $property = Property::find($id);
+        if ($property) {
+            $property->deleted_at = Carbon::now();
+            $property->save();
+        }
+        return redirect()->route('property.index')->with('success', 'Property successfully deleted!');
+    }
+
+    public function propertyRestore($id)
+    {
+        $property = Property::find($id);
+        if ($property) {
+            $property->deleted_at = null;
+            $property->save();
+        }
+        return redirect()->route('property-trash')->with('success', 'Property successfully restored!');
+    }
+
+    public function propertyDelete($id)
+    {
+        $property = Property::find($id);
 
         if (!empty($property->image)) {
             $imagePaths = unserialize($property->image);
@@ -297,6 +320,6 @@ class PropertyController extends Controller
 
         $property->delete();
 
-        return redirect()->route('property.index')->with('success', 'Rent has been deleted successfully.');
+        return redirect()->route('property-trash')->with('success', 'Property successfully permanently deleted!');
     }
 }

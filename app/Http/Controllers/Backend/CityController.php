@@ -102,7 +102,7 @@ class CityController extends Controller
             $city->deleted_at = null;
             $city->save();
         }
-        return redirect()->route('city.index')->with('success', 'City successfully restored!');
+        return redirect()->route('city-trash')->with('success', 'City successfully restored!');
     }
 
     public function cityDelete($id)

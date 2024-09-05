@@ -15,7 +15,7 @@
         <div class="d-flex justify-content-between">
             <div class="align-self-center">
                 <h4 class="card-title mb-0">
-                    <i class="nav-icon  fa-solid fa-money-bill-1-wave"></i> Country <small class="text-muted">Deleted List</small>
+                    <i class="nav-icon fa-sharp-duotone fa-solid fa-globe"></i> Country <small class="text-muted">Deleted List</small>
                 </h4>
             </div>
 

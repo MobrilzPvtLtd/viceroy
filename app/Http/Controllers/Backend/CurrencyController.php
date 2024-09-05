@@ -98,7 +98,7 @@ class CurrencyController extends Controller
             $currency->deleted_at = null;
             $currency->save();
         }
-        return redirect()->route('currency.index')->with('success', 'Currency successfully restored!');
+        return redirect()->route('currency-trash')->with('success', 'Currency successfully restored!');
     }
 
     public function currencyDelete($id)
