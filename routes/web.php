@@ -98,12 +98,22 @@ Route::group(['middleware' => ['auth']], function () {
 
     //holiday
     Route::resource('admin/holiday', HolidayController::class);
-
-    //Professionals
-    Route::resource('admin/professionals', ProfessionalsController::class);
+    Route::get('/admin/holiday-trash', [HolidayController::class, 'holidayTrash'])->name('holiday-trash');
+    Route::patch('/admin/holiday-restore/{id}', [HolidayController::class, 'holidayRestore'])->name('holiday-restore');
+    Route::post('/admin/holiday-delete/{id}', [HolidayController::class, 'holidayDelete'])->name('holiday-delete');
 
     //Brands
     Route::resource('admin/brand', BrandsController::class);
+    Route::get('/admin/brand-trash', [BrandsController::class, 'brandTrash'])->name('brand-trash');
+    Route::patch('/admin/brand-restore/{id}', [BrandsController::class, 'brandRestore'])->name('brand-restore');
+    Route::post('/admin/brand-delete/{id}', [BrandsController::class, 'brandDelete'])->name('brand-delete');
+
+    //Professionals
+    Route::resource('admin/professionals', ProfessionalsController::class);
+    Route::get('/admin/professionals-trash', [ProfessionalsController::class, 'professionalsTrash'])->name('professionals-trash');
+    Route::patch('/admin/professionals-restore/{id}', [ProfessionalsController::class, 'professionalsRestore'])->name('professionals-restore');
+    Route::post('/admin/professionals-delete/{id}', [ProfessionalsController::class, 'professionalsDelete'])->name('professionals-delete');
+
 });
 
     Route::get('fetch-state', [CityController::class, 'fetchState'])->name('fetch-state'); //auto select country data

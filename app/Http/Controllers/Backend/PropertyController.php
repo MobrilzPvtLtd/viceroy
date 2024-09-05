@@ -27,7 +27,7 @@ class PropertyController extends Controller
             $query->where('id', 'like', "%$search%")
                 ->orWhere('title', 'like', "%$search%");
         }
-        $propertys = $query->where('deleted_at', null)->paginate(10);
+        $propertys = $query->where('deleted_at', null)->get();
         return view('backend.property.index', compact('propertys'));
     }
 
@@ -272,7 +272,7 @@ class PropertyController extends Controller
     }
 
     public function propertyTrash() {
-        $properties = Property::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->paginate();
+        $properties = Property::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->get();
 
         return view("backend.property.trash", compact('properties'));
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Holiday;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class HolidayController extends Controller
@@ -12,17 +13,14 @@ class HolidayController extends Controller
 
     public function index()
     {
-        $holidays = Holiday::orderBy('id', 'desc')->paginate(5);
+        $holidays = Holiday::where('deleted_at', null)->orderBy('id', 'desc')->get();
         return view('backend.holiday.index', compact('holidays'));
     }
-
-
 
     public function create()
     {
         return view('backend.holiday.create');
     }
-
 
     public function store(Request $request)
     {
@@ -108,10 +106,38 @@ class HolidayController extends Controller
         return redirect()->route('holiday.index')->with('success', 'Holiday has been updated successfully.');
     }
 
+    public function holidayTrash() {
+        $holidays = Holiday::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->get();
 
-    public function destroy(Holiday $holiday)
+        return view("backend.holiday.trash", compact('holidays'));
+    }
+
+    public function destroy($id)
     {
+        $holiday = Holiday::find($id);
+        if ($holiday) {
+            $holiday->deleted_at = Carbon::now();
+            $holiday->save();
+        }
+        return redirect()->route('holiday.index')->with('success', 'Holiday successfully deleted!');
+    }
+
+    public function holidayRestore($id)
+    {
+        $holiday = Holiday::find($id);
+        if ($holiday) {
+            $holiday->deleted_at = null;
+            $holiday->save();
+        }
+        return redirect()->route('holiday-trash')->with('success', 'Holiday successfully restored!');
+    }
+
+    public function holidayDelete($id)
+    {
+        $holiday = Holiday::find($id);
+
         $holiday->delete();
-        return redirect()->route('holiday.index');
+
+        return redirect()->route('holiday-trash')->with('success', 'Holiday successfully permanently deleted!');
     }
 }

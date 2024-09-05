@@ -76,7 +76,7 @@ class CurrencyController extends Controller
     }
 
     public function currencyTrash() {
-        $currencies = Currency::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->paginate();
+        $currencies = Currency::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->get();
 
         return view("backend.currency.trash", compact('currencies'));
     }

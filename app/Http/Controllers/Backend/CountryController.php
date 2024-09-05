@@ -56,7 +56,7 @@ class CountryController extends Controller
     }
 
     public function countryTrash() {
-        $countries = Country::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->paginate();
+        $countries = Country::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->get();
 
         return view("backend.country.trash", compact('countries'));
     }

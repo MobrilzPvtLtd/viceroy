@@ -1,5 +1,7 @@
 @extends('backend.layouts.app')
 
+@section('title') {{ 'Holiday Edit' }} @endsection
+
 @section('content')
     <div class="card">
         <div class="card-body">

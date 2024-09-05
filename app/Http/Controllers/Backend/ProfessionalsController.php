@@ -5,12 +5,13 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Professionals;
+use Carbon\Carbon;
 
 class ProfessionalsController extends Controller
 {
     public function index()
     {
-        $professionals = Professionals::all();
+        $professionals = Professionals::where('deleted_at', null)->get();
         return view('backend.professionals.index', compact('professionals'));
     }
     public function create()
@@ -85,10 +86,38 @@ class ProfessionalsController extends Controller
         return redirect()->route('professionals.index')->with('success', 'Professional has been updated successfully.');
     }
 
+    public function professionalsTrash() {
+        $professionals = Professionals::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->get();
 
-    public function destroy(Professionals $professional)
+        return view("backend.professionals.trash", compact('professionals'));
+    }
+
+    public function destroy($id)
     {
+        $professional = Professionals::find($id);
+        if ($professional) {
+            $professional->deleted_at = Carbon::now();
+            $professional->save();
+        }
+        return redirect()->route('professionals.index')->with('success', 'Professionals successfully deleted!');
+    }
+
+    public function professionalsRestore($id)
+    {
+        $professional = Professionals::find($id);
+        if ($professional) {
+            $professional->deleted_at = null;
+            $professional->save();
+        }
+        return redirect()->route('professionals-trash')->with('success', 'Professionals successfully restored!');
+    }
+
+    public function professionalsDelete($id)
+    {
+        $professional = Professionals::find($id);
+
         $professional->delete();
-        return redirect()->route('professionals.index');
+
+        return redirect()->route('professionals-trash')->with('success', 'Professionals successfully permanently deleted!');
     }
 }

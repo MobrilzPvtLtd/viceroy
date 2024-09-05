@@ -1,6 +1,6 @@
 @extends ('backend.layouts.app')
 
-
+@section('title') {{ 'Holiday Create' }} @endsection
 
 @section('content')
     <div class="card">

@@ -52,7 +52,7 @@ class FacilitiesController extends Controller
     }
 
     public function facilityTrash() {
-        $facilities = Facilities::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->paginate();
+        $facilities = Facilities::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->get();
 
         return view("backend.facility.trash", compact('facilities'));
     }

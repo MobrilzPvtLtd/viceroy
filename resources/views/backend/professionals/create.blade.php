@@ -1,4 +1,7 @@
 @extends ('backend.layouts.app')
+
+@section('title') {{ 'Professional Create' }} @endsection
+
 @section('content')
     <div class="card">
         <div class="card-body">

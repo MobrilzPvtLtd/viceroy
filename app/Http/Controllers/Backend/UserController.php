@@ -573,7 +573,7 @@ class UserController extends Controller
 
         $$module_name_singular->restore();
 
-        $$module_name_singular->userprofile()->withTrashed()->restore();
+        // $$module_name_singular->userprofile()->withTrashed()->restore();
 
         event(new UserUpdated($$module_name_singular));
 

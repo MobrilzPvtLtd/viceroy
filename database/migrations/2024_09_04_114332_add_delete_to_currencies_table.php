@@ -38,6 +38,12 @@ return new class extends Migration
         Schema::table('checkouts', function (Blueprint $table) {
             $table->softDeletes();
         });
+        Schema::table('brands', function (Blueprint $table) {
+            $table->softDeletes();
+        });
+        Schema::table('professionals', function (Blueprint $table) {
+            $table->softDeletes();
+        });
     }
 
     /**
@@ -70,6 +76,12 @@ return new class extends Migration
             $table->dropSoftDeletes();
         });
         Schema::table('checkouts', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
+        Schema::table('brands', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
+        Schema::table('professionals', function (Blueprint $table) {
             $table->dropSoftDeletes();
         });
     }
