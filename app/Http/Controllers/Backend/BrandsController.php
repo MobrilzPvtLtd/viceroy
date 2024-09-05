@@ -11,7 +11,7 @@ class BrandsController extends Controller
 {
     public function index()
     {
-        $brands = Brands::where('deleted_at', null)->get();
+        $brands = Brands::whereNull('deleted_at')->get();
         return view('backend.brand.index', compact('brands'));
     }
     public function create()
@@ -80,7 +80,7 @@ class BrandsController extends Controller
     }
 
     public function brandTrash() {
-        $brands = Brands::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->get();
+        $brands = Brands::onlyTrashed()->orderBy('deleted_at', 'desc')->get();
 
         return view("backend.brand.trash", compact('brands'));
     }
@@ -97,20 +97,26 @@ class BrandsController extends Controller
 
     public function brandRestore($id)
     {
-        $brand = Brands::find($id);
-        if ($brand) {
-            $brand->deleted_at = null;
-            $brand->save();
+        $brand = Brands::withTrashed()->find($id);
+
+        if ($brand && $brand->trashed()) {
+            $brand->restore();
+            return redirect()->route('brand-trash')->with('success', 'Brand successfully restored!');
         }
-        return redirect()->route('brand-trash')->with('success', 'Brands successfully restored!');
+
+        return redirect()->route('brand-trash')->with('error', 'Brand not found or already restored.');
     }
 
     public function brandDelete($id)
     {
-        $brand = Brands::find($id);
+        $brand = Brands::withTrashed()->find($id);
 
-        $brand->delete();
+        if ($brand) {
+            $brand->forceDelete();
 
-        return redirect()->route('brand-trash')->with('success', 'Brands successfully permanently deleted!');
+            return redirect()->route('brand-trash')->with('success', 'Brand successfully permanently deleted!');
+        }
+
+        return redirect()->route('brand-trash')->with('error', 'Brand not found.');
     }
 }

@@ -27,7 +27,7 @@ class PropertyController extends Controller
             $query->where('id', 'like', "%$search%")
                 ->orWhere('title', 'like', "%$search%");
         }
-        $propertys = $query->where('deleted_at', null)->get();
+        $propertys = $query->whereNull('deleted_at')->paginate(10);
         return view('backend.property.index', compact('propertys'));
     }
 
@@ -272,7 +272,7 @@ class PropertyController extends Controller
     }
 
     public function propertyTrash() {
-        $properties = Property::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->get();
+        $properties = Property::onlyTrashed()->orderBy('deleted_at', 'desc')->paginate(10);
 
         return view("backend.property.trash", compact('properties'));
     }
@@ -289,17 +289,19 @@ class PropertyController extends Controller
 
     public function propertyRestore($id)
     {
-        $property = Property::find($id);
-        if ($property) {
-            $property->deleted_at = null;
-            $property->save();
+        $property = Property::withTrashed()->find($id);
+
+        if ($property && $property->trashed()) {
+            $property->restore();
+            return redirect()->route('property-trash')->with('success', 'Property successfully restored!');
         }
-        return redirect()->route('property-trash')->with('success', 'Property successfully restored!');
+
+        return redirect()->route('property-trash')->with('error', 'Property not found or already restored.');
     }
 
     public function propertyDelete($id)
     {
-        $property = Property::find($id);
+        $property = Property::withTrashed()->find($id);
 
         if (!empty($property->image)) {
             $imagePaths = unserialize($property->image);
@@ -318,8 +320,12 @@ class PropertyController extends Controller
             }
         }
 
-        $property->delete();
+        if ($property) {
+            $property->forceDelete();
 
-        return redirect()->route('property-trash')->with('success', 'Property successfully permanently deleted!');
+            return redirect()->route('property-trash')->with('success', 'Property successfully permanently deleted!');
+        }
+
+        return redirect()->route('property-trash')->with('error', 'Property not found.');
     }
 }

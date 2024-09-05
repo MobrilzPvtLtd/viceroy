@@ -15,7 +15,7 @@ class CountryController extends Controller
      */
     public function index()
     {
-        $countrys = Country::where('deleted_at', null)->get();
+        $countrys = Country::whereNull('deleted_at')->get();
         return view('backend.country.index', compact('countrys'));
     }
 
@@ -56,7 +56,7 @@ class CountryController extends Controller
     }
 
     public function countryTrash() {
-        $countries = Country::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->get();
+        $countries = Country::onlyTrashed()->get();
 
         return view("backend.country.trash", compact('countries'));
     }
@@ -73,18 +73,26 @@ class CountryController extends Controller
 
     public function countryRestore($id)
     {
-        $country = Country::find($id);
-        if ($country) {
-            $country->deleted_at = null;
-            $country->save();
+        $country = Country::withTrashed()->find($id);
+
+        if ($country && $country->trashed()) {
+            $country->restore();
+            return redirect()->route('country-trash')->with('success', 'Country successfully restored!');
         }
-        return redirect()->route('country-trash')->with('success', 'Country successfully restored!');
+
+        return redirect()->route('country-trash')->with('error', 'Country not found or already restored.');
     }
 
     public function countryDelete($id)
     {
-        $country = Country::find($id);
-        $country->delete();
-        return redirect()->route('country-trash')->with('success', 'Country successfully permanently deleted!');
+        $country = Country::withTrashed()->find($id);
+
+        if ($country) {
+            $country->forceDelete();
+
+            return redirect()->route('country-trash')->with('success', 'Country successfully permanently deleted!');
+        }
+
+        return redirect()->route('country-trash')->with('error', 'Country not found.');
     }
 }

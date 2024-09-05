@@ -11,7 +11,7 @@ class FacilitiesController extends Controller
 {
     public function index()
     {
-        $facilitiesy = Facilities::where('deleted_at', null)->get();
+        $facilitiesy = Facilities::whereNull('deleted_at')->get();
         return view('backend.facility.index',compact('facilitiesy'));
     }
 
@@ -52,7 +52,7 @@ class FacilitiesController extends Controller
     }
 
     public function facilityTrash() {
-        $facilities = Facilities::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->get();
+        $facilities = Facilities::onlyTrashed()->get();
 
         return view("backend.facility.trash", compact('facilities'));
     }
@@ -69,21 +69,27 @@ class FacilitiesController extends Controller
 
     public function facilityRestore($id)
     {
-        $facility = Facilities::find($id);
-        if ($facility) {
-            $facility->deleted_at = null;
-            $facility->save();
+        $facility = Facilities::withTrashed()->find($id);
+
+        if ($facility && $facility->trashed()) {
+            $facility->restore();
+            return redirect()->route('facility-trash')->with('success', 'Facilities successfully restored!');
         }
-        return redirect()->route('facility-trash')->with('success', 'Facilities successfully restored!');
+
+        return redirect()->route('facility-trash')->with('error', 'Facilities not found or already restored.');
     }
 
     public function facilityDelete($id)
     {
-        $facility = Facilities::find($id);
+        $facility = Facilities::withTrashed()->find($id);
 
-        $facility->delete();
+        if ($facility) {
+            $facility->forceDelete();
 
-        return redirect()->route('facility-trash')->with('success', 'Facilities successfully permanently deleted!');
+            return redirect()->route('facility-trash')->with('success', 'Facilities successfully permanently deleted!');
+        }
+
+        return redirect()->route('facility-trash')->with('error', 'Facilities not found.');
     }
 }
 

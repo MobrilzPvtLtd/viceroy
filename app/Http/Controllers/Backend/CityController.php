@@ -15,7 +15,7 @@ class CityController extends Controller
     {
         $cities = City::join('countries', 'countries.id', '=', 'cities.co_name')
                 ->join('states', 'states.id', '=', 'cities.st_name')
-                ->where('cities.deleted_at', null)
+                ->whereNull('cities.deleted_at')
                 ->select('cities.*', 'states.st_name', 'countries.co_name')
                 ->get();
         return view('backend.city.index', compact('cities'));
@@ -24,8 +24,8 @@ class CityController extends Controller
 
     public function create()
     {
-        $countries = Country::where('deleted_at', null)->get();
-        $state = State::where('deleted_at', null)->get();
+        $countries = Country::whereNull('deleted_at')->get();
+        $state = State::whereNull('deleted_at')->get();
         return view('backend.city.create',compact('countries','state'));
     }
 
@@ -47,7 +47,7 @@ class CityController extends Controller
 
     public function fetchState(Request $request){
         $options = "";
-        $state = State::where('deleted_at', null)->where('co_name', $request->country)->get();
+        $state = State::whereNull('deleted_at')->where('co_name', $request->country)->get();
         foreach($state as $sta){
             $options .="<option value=".$sta->id.">".$sta->st_name."</option>";
         }
@@ -57,8 +57,8 @@ class CityController extends Controller
     public function edit(Request $request, City $city)
     {
         // dd($city);
-        $country = Country::where('deleted_at', null)->get();
-        $state = State::where('deleted_at', null)->get();
+        $country = Country::whereNull('deleted_at')->get();
+        $state = State::whereNull('deleted_at')->get();
         return view('backend.city.edit', compact('city','country','state'));
     }
 
@@ -77,10 +77,9 @@ class CityController extends Controller
     public function cityTrash() {
         $cities = City::join('countries', 'countries.id', '=', 'cities.co_name')
                 ->join('states', 'states.id', '=', 'cities.st_name')
-                ->where('cities.deleted_at', '!=', null)
                 ->select('cities.*', 'states.st_name', 'countries.co_name')
                 ->orderBy('deleted_at', 'desc')
-                ->get();
+                ->onlyTrashed()->get();
 
         return view("backend.city.trash", compact('cities'));
     }
@@ -97,18 +96,26 @@ class CityController extends Controller
 
     public function cityRestore($id)
     {
-        $city = City::find($id);
-        if ($city) {
-            $city->deleted_at = null;
-            $city->save();
+        $city = City::withTrashed()->find($id);
+
+        if ($city && $city->trashed()) {
+            $city->restore();
+            return redirect()->route('city-trash')->with('success', 'City successfully restored!');
         }
-        return redirect()->route('city-trash')->with('success', 'City successfully restored!');
+
+        return redirect()->route('city-trash')->with('error', 'City not found or already restored.');
     }
 
     public function cityDelete($id)
     {
-        $city = City::find($id);
-        $city->delete();
-        return redirect()->route('city-trash')->with('success', 'City successfully permanently deleted!');
+        $city = City::withTrashed()->find($id);
+
+        if ($city) {
+            $city->forceDelete();
+
+            return redirect()->route('city-trash')->with('success', 'City successfully permanently deleted!');
+        }
+
+        return redirect()->route('city-trash')->with('error', 'City not found.');
     }
 }

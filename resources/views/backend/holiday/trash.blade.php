@@ -113,7 +113,7 @@
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="exampleModalLabel-{{ $holiday->id }}">
-                                                            Confirm to delete</h5>
+                                                            Confirm to Restore</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                                     </div>
@@ -133,7 +133,7 @@
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                                        data-bs-target="#restore-confirm-{{ $holiday->id }}" data-coreui-original-title="Restore">
+                                        data-bs-target="#restore-confirm-{{ $holiday->id }}" title="Restore">
                                             <i class="fas fa-undo"></i>
                                         </button>
                                     </td>

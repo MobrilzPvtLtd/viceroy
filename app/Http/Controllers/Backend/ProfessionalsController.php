@@ -11,7 +11,7 @@ class ProfessionalsController extends Controller
 {
     public function index()
     {
-        $professionals = Professionals::where('deleted_at', null)->get();
+        $professionals = Professionals::whereNull('deleted_at')->get();
         return view('backend.professionals.index', compact('professionals'));
     }
     public function create()
@@ -87,7 +87,7 @@ class ProfessionalsController extends Controller
     }
 
     public function professionalsTrash() {
-        $professionals = Professionals::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->get();
+        $professionals = Professionals::onlyTrashed()->orderBy('deleted_at', 'desc')->get();
 
         return view("backend.professionals.trash", compact('professionals'));
     }
@@ -104,20 +104,26 @@ class ProfessionalsController extends Controller
 
     public function professionalsRestore($id)
     {
-        $professional = Professionals::find($id);
-        if ($professional) {
-            $professional->deleted_at = null;
-            $professional->save();
+        $professional = Professionals::withTrashed()->find($id);
+
+        if ($professional && $professional->trashed()) {
+            $professional->restore();
+            return redirect()->route('professionals-trash')->with('success', 'Professionals successfully restored!');
         }
-        return redirect()->route('professionals-trash')->with('success', 'Professionals successfully restored!');
+
+        return redirect()->route('professionals-trash')->with('error', 'Professionals not found or already restored.');
     }
 
     public function professionalsDelete($id)
     {
-        $professional = Professionals::find($id);
+        $professional = Professionals::withTrashed()->find($id);
 
-        $professional->delete();
+        if ($professional) {
+            $professional->forceDelete();
 
-        return redirect()->route('professionals-trash')->with('success', 'Professionals successfully permanently deleted!');
+            return redirect()->route('professionals-trash')->with('success', 'Professionals successfully permanently deleted!');
+        }
+
+        return redirect()->route('professionals-trash')->with('error', 'Professionals not found.');
     }
 }

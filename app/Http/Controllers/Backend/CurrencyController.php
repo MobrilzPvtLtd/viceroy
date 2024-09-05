@@ -12,8 +12,8 @@ class CurrencyController extends Controller
 {
     public function index()
     {
-        $currencys = Currency::where('deleted_at', null)->get();
-        return view('backend.currency.index', compact('currencys'));
+        $currencies = Currency::whereNull('deleted_at')->get();
+        return view('backend.currency.index', compact('currencies'));
     }
     public function create()
     {
@@ -76,7 +76,7 @@ class CurrencyController extends Controller
     }
 
     public function currencyTrash() {
-        $currencies = Currency::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->get();
+        $currencies = Currency::onlyTrashed()->get();
 
         return view("backend.currency.trash", compact('currencies'));
     }
@@ -93,18 +93,26 @@ class CurrencyController extends Controller
 
     public function currencyRestore($id)
     {
-        $currency = Currency::find($id);
-        if ($currency) {
-            $currency->deleted_at = null;
-            $currency->save();
+        $currency = Currency::withTrashed()->find($id);
+
+        if ($currency && $currency->trashed()) {
+            $currency->restore();
+            return redirect()->route('currency-trash')->with('success', 'Currency successfully restored!');
         }
-        return redirect()->route('currency-trash')->with('success', 'Currency successfully restored!');
+
+        return redirect()->route('currency-trash')->with('error', 'Currency not found or already restored.');
     }
 
     public function currencyDelete($id)
     {
-        $currency = Currency::find($id);
-        $currency->delete();
-        return redirect()->route('currency-trash')->with('success', 'Currency successfully permanently deleted!');
+        $currency = Currency::withTrashed()->find($id);
+
+        if ($currency) {
+            $currency->forceDelete();
+
+            return redirect()->route('currency-trash')->with('success', 'Currency successfully permanently deleted!');
+        }
+
+        return redirect()->route('currency-trash')->with('error', 'Currency not found.');
     }
 }

@@ -13,14 +13,14 @@ class StateController extends Controller
     public function index()
     {
         $states = State::join('countries', 'countries.id', '=', 'states.co_name')
-            ->where('states.deleted_at', null)
+            ->whereNull('states.deleted_at')
             ->select('states.*', 'countries.co_name as country_name')
             ->get();
         return view('backend.state.index', compact('states'));
     }
     public function create()
     {
-        $countries = Country::where('deleted_at', null)->get();
+        $countries = Country::whereNull('deleted_at')->get();
         return view('backend.state.create', compact('countries'));
     }
     public function store(Request $request)
@@ -41,7 +41,7 @@ class StateController extends Controller
 
     public function edit(State $state)
     {
-        $countries = Country::where('deleted_at', null)->get();
+        $countries = Country::whereNull('deleted_at')->get();
         return view('backend.state.edit', compact('state','countries'));
     }
 
@@ -59,10 +59,9 @@ class StateController extends Controller
 
     public function stateTrash() {
         $states = State::join('countries', 'countries.id', '=', 'states.co_name')
-                ->where('states.deleted_at', '!=', null)
                 ->select('states.*', 'countries.co_name as country_name')
                 ->orderBy('deleted_at', 'desc')
-                ->get();
+                ->onlyTrashed()->get();
 
         return view("backend.state.trash", compact('states'));
     }
@@ -79,18 +78,26 @@ class StateController extends Controller
 
     public function stateRestore($id)
     {
-        $state = State::find($id);
-        if ($state) {
-            $state->deleted_at = null;
-            $state->save();
+        $state = State::withTrashed()->find($id);
+
+        if ($state && $state->trashed()) {
+            $state->restore();
+            return redirect()->route('state-trash')->with('success', 'State successfully restored!');
         }
-        return redirect()->route('state-trash')->with('success', 'State successfully restored!');
+
+        return redirect()->route('state-trash')->with('error', 'State not found or already restored.');
     }
 
     public function stateDelete($id)
     {
-        $state = State::find($id);
-        $state->delete();
-        return redirect()->route('state-trash')->with('success', 'State successfully permanently deleted!');
+        $state = State::withTrashed()->find($id);
+
+        if ($state) {
+            $state->forceDelete();
+
+            return redirect()->route('state-trash')->with('success', 'State successfully permanently deleted!');
+        }
+
+        return redirect()->route('state-trash')->with('error', 'State not found.');
     }
 }

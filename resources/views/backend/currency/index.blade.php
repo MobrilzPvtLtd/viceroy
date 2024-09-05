@@ -54,7 +54,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($currencys as $currency)
+                            @foreach ($currencies as $currency)
                                 <tr>
                                     <td>{{ $currency->id }}</td>
                                     <td>{{ $currency->code }}</td>

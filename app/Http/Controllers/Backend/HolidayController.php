@@ -13,7 +13,7 @@ class HolidayController extends Controller
 
     public function index()
     {
-        $holidays = Holiday::where('deleted_at', null)->orderBy('id', 'desc')->get();
+        $holidays = Holiday::whereNull('deleted_at')->orderBy('id', 'desc')->get();
         return view('backend.holiday.index', compact('holidays'));
     }
 
@@ -107,7 +107,7 @@ class HolidayController extends Controller
     }
 
     public function holidayTrash() {
-        $holidays = Holiday::where('deleted_at', '!=', null)->orderBy('deleted_at', 'desc')->get();
+        $holidays = Holiday::onlyTrashed()->get();
 
         return view("backend.holiday.trash", compact('holidays'));
     }
@@ -124,20 +124,26 @@ class HolidayController extends Controller
 
     public function holidayRestore($id)
     {
-        $holiday = Holiday::find($id);
-        if ($holiday) {
-            $holiday->deleted_at = null;
-            $holiday->save();
+        $holiday = Holiday::withTrashed()->find($id);
+
+        if ($holiday && $holiday->trashed()) {
+            $holiday->restore();
+            return redirect()->route('holiday-trash')->with('success', 'Holiday successfully restored!');
         }
-        return redirect()->route('holiday-trash')->with('success', 'Holiday successfully restored!');
+
+        return redirect()->route('holiday-trash')->with('error', 'Holiday not found or already restored.');
     }
 
     public function holidayDelete($id)
     {
-        $holiday = Holiday::find($id);
+        $holiday = Holiday::withTrashed()->find($id);
 
-        $holiday->delete();
+        if ($holiday) {
+            $holiday->forceDelete();
 
-        return redirect()->route('holiday-trash')->with('success', 'Holiday successfully permanently deleted!');
+            return redirect()->route('holiday-trash')->with('success', 'Holiday successfully permanently deleted!');
+        }
+
+        return redirect()->route('holiday-trash')->with('error', 'Holiday not found.');
     }
 }
