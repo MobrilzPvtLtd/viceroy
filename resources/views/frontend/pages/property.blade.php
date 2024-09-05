@@ -515,7 +515,7 @@ div#testimonial-slider {
                     data: {
                         _token: '{{ csrf_token() }}',
                         currency: currency,
-                        slug: '{{ $relatedProperty->slag }}',
+                        slug: '{{ $property->slag }}',
                     },
                     success: function(response) {
                         console.log('Currency changed successfully');

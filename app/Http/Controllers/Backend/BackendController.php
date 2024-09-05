@@ -18,12 +18,12 @@ class BackendController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::all()->count();
-        $checkouts = Checkout::all()->count();
-        $properties = Property::all()->count();
-        $propertys = Property::where('type', 'buy')->count();
-        $rentCount = Property::where('type', 'rent')->count();
-        $holidayCount = Holiday::all()->count();
+        $contacts = Contact::count();
+        $checkouts = Checkout::count();
+        $properties = Property::whereNull('deleted_at')->count();
+        $propertys = Property::whereNull('deleted_at')->where('type', 'buy')->count();
+        $rentCount = Property::whereNull('deleted_at')->where('type', 'rent')->count();
+        $holidayCount = Holiday::whereNull('deleted_at')->count();
 
         return view('backend.index',compact('propertys','rentCount','holidayCount','contacts','checkouts','properties'));
     }

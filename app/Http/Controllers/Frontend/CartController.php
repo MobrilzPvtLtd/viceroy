@@ -12,6 +12,7 @@ class CartController extends Controller
 
     public function add(Request $request)
     {
+        // dd($request);
         $responseData = [];
         $cartExists = $request->session()->has('cart');
         $cart = $request->session()->get('cart', []);

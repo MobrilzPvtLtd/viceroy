@@ -10,7 +10,13 @@ class InquairyController extends Controller
 {
     public function index()
     {
-        $checkouts = Checkout::all();
+        $checkouts = Checkout::get();
         return view('backend.inquairy.inquairy', compact('checkouts'));
+    }
+
+    public function show($id)
+    {
+        $checkout = Checkout::findOrFail($id);
+        return view('backend.inquairy.show',compact('checkout'));
     }
 }

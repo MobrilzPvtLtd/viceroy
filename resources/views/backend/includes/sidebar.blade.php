@@ -55,7 +55,7 @@ $total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
                 </a>
                 <ul class="nav-group-items compact" style="height: auto;">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('massage.index') }}">
+                        <a class="nav-link" href="{{ route('message.index') }}">
                             <span class="nav-icon">
                                 <span class="nav-icon-bullet"></span>
                             </span> <span id="is_view">Contact enquiry</span>

@@ -1,11 +1,12 @@
 @extends('backend.layouts.app')
 
+@section('title')
+    @lang('Contact Enquiry')
+@endsection
+
 @section('content')
     <div class="card">
         <div class="card-body">
-            {{-- <div class="pull-right mb-2">
-                <a class="btn btn-success" href="{{ route('country.create') }}"> Create Country</a>
-            </div> --}}
             <div class="row mt-4">
                 <div class="col">
                     <div class="table-responsive">
@@ -17,8 +18,8 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">Phone</th>
                                     <th scope="col">Subject</th>
-                                    <th scope="col">Message</th>
-                                    {{-- <th scope="col">Action</th> --}}
+                                    <th scope="col">Status</th>
+                                    <th scope="col" class="text-end">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -29,11 +30,15 @@
                                     <td>{{ $contact->email }}</td>
                                     <td>{{ $contact->phone }}</td>
                                     <td>{{ $contact->sub }}</td>
-                                    <td>{{ $contact->message }}</td>
+                                    <td>
+                                        <button class="{{ $contact->status == 'open' ? 'btn btn-success' : 'btn btn-danger' }} btn-sm text-white" style="cursor: auto;">{{ $contact->status == 'open' ? 'Open' : 'Close' }}</button>
+                                    </td>
 
-
+                                    <td class="text-end">
+                                        <a class="btn btn-primary btn-sm" href="{{ route('message.show', $contact->id) }}">View</a>
+                                    </td>
                                 </tr>
-                            @endforeach
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

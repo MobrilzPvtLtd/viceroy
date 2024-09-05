@@ -30,7 +30,7 @@ class ApiController extends Controller
 
           return response()->json([
               'status'=>true,
-              'massage'=>'user created successfuly',
+              'message'=>'user created successfuly',
               'token'=> $user->createToken("API TOKEN")->plainTextToken
           ],200);
 
@@ -64,7 +64,7 @@ class ApiController extends Controller
             $user = User::where('email',$request->email)->first();
             return response()->json([
                 'status'=>true,
-                'massage'=>'login successfuly',
+                'message'=>'login successfuly',
                 'token'=> $user->createToken("API TOKEN")->plainTextToken
             ],200);
 

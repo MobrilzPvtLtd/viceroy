@@ -43,13 +43,15 @@
 
             <div class="row py-3">
                 <div class="col-xl-3 col-md-6">
-                    <div class="card radius-10 border-start border-end border-top border-bottom border-0 border-1 border-info">
+                    <div class="card radius-10 border-start border-end border-top border-bottom border-0 border-1 border-danger">
                         <div class="card-body">
                             <div class="float-right">
                                 <i class="fa-solid fa-house" style="font-size: 20px"></i>
                             </div>
-                            <h3 class="font-size-20 mt-0 pt-1 text-info">{{ $propertys }}</h3>
-                        <p class="text-muted mb-0">Total Buy Property</p>
+                            <a href="{{ route('property.index') }}">
+                                <h3 class="font-size-20 mt-0 pt-1 text-danger">{{ $propertys }}</h3>
+                                <p class="text-muted mb-0">Total Buy Property</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -60,46 +62,10 @@
                             <div class="float-right">
                                 <i class="fa-solid fa-house ml-3" style="font-size: 20px"></i>
                             </div>
-                            <h3 class="font-size-20 mt-0 pt-1 text-danger">{{ $rentCount }}</h3>
-                            <p class="text-muted mb-0">Total Rent Property</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-md-6">
-                    <div class="card radius-10 border-start border-end border-top border-bottom border-0 border-1 border-success">
-                        <div class="card-body">
-                            <div class="float-right">
-                                <i class="fa-solid  fa-house ml-3" style="font-size: 20px"></i>
-                            </div>
-                            <h3 class="font-size-20 mt-0 pt-1 text-success">{{ $holidayCount }}</h3>
-                        <p class="text-muted mb-0">Total Holiday Rental</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-md-6">
-                    <div class="card radius-10 border-start border-end border-top border-bottom border-0 border-1 border-warning">
-                        <div class="card-body">
-                            <div class="float-right">
-                                <i class="fa fa-cab ml-3" style="font-size: 20px"></i>
-                            </div>
-                            <h3 class="font-size-20 mt-0 pt-1 text-warning">{{$contacts}}</h3>
-                            <p class="text-muted mb-0">Total Contact Inquiry</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xl-3 col-md-6">
-                    <div class="card radius-10 border-start border-end border-top border-bottom border-0 border-1 border-info">
-                        <div class="card-body">
-                            <div class="float-right">
-                                <i class="fa fa-ship ml-3" style="font-size: 20px"></i>
-                            </div>
-                            <h3 class="font-size-20 mt-0 pt-1 text-info">{{$checkouts}}</h3>
-                        <p class="text-muted mb-0">Total Property Inquiry</p>
+                            <a href="{{ route('property.index') }}">
+                                <h3 class="font-size-20 mt-0 pt-1 text-danger">{{ $rentCount }}</h3>
+                                <p class="text-muted mb-0">Total Rent Property</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -110,19 +76,10 @@
                             <div class="float-right">
                                 <i class="fa fa-home ml-3" style="font-size: 20px"></i>
                             </div>
-                            <h3 class="font-size-20 mt-0 pt-1 text-danger">{{ $properties }}</h3>
-                        <p class="text-muted mb-0">Total Property</p>
-                        </div>
-                    </div>
-                </div>
-                {{-- <div class="col-xl-3 col-md-6">
-                    <div class="card radius-10 border-start border-end border-top border-bottom border-0 border-1 border-danger">
-                        <div class="card-body">
-                            <div class="float-right">
-                                <i class="fa fa-users ml-3" style="font-size: 20px"></i>
-                            </div>
-                            <h3 class="font-size-20 mt-0 pt-1 text-danger">{{ $completeContracts ?? '-' }}</h3>
-                            <p class="text-muted mb-0">Complete Property</p>
+                            <a href="{{ route('property.index') }}">
+                                <h3 class="font-size-20 mt-0 pt-1 text-danger">{{ $properties }}</h3>
+                                <p class="text-muted mb-0">Total Property</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -131,13 +88,44 @@
                     <div class="card radius-10 border-start border-end border-top border-bottom border-0 border-1 border-success">
                         <div class="card-body">
                             <div class="float-right">
-                                <i class="fab fa-first-order ml-3" style="font-size: 20px"></i>
+                                <i class="fa-solid fa-hotel ml-3" style="font-size: 20px"></i>
                             </div>
-                            <h3 class="font-size-20 mt-0 pt-1 text-success">{{ $completedContracts ?? '-' }}</h3>
-                            <p class="text-muted mb-0">Property</p>
+                            <a href="{{ route('holiday.index') }}">
+                                <h3 class="font-size-20 mt-0 pt-1 text-success">{{ $holidayCount }}</h3>
+                                <p class="text-muted mb-0">Total Holiday Rental</p>
+                            </a>
                         </div>
                     </div>
-                </div> --}}
+                </div>
+            </div>
+            <div class="row py-3">
+                <div class="col-xl-3 col-md-6">
+                    <div class="card radius-10 border-start border-end border-top border-bottom border-0 border-1 border-warning">
+                        <div class="card-body">
+                            <div class="float-right">
+                                <i class="fa fa-phone ml-3" style="font-size: 20px"></i>
+                            </div>
+                            <a href="{{ route('message.index') }}">
+                                <h3 class="font-size-20 mt-0 pt-1 text-warning">{{$contacts}}</h3>
+                                <p class="text-muted mb-0">Total Contact Inquiry</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="card radius-10 border-start border-end border-top border-bottom border-0 border-1 border-info">
+                        <div class="card-body">
+                            <div class="float-right">
+                                <i class="fab fa-first-order ml-3" style="font-size: 20px"></i>
+                            </div>
+                            <a href="{{ route('inquairy.index') }}">
+                                <h3 class="font-size-20 mt-0 pt-1 text-info">{{$checkouts}}</h3>
+                                <p class="text-muted mb-0">Total Property Inquiry</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

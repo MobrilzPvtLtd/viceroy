@@ -52,7 +52,7 @@ Route::group(['middleware' => ['auth']], function () {
     //Contact
     Route::post('is_view', [ContactsController::class, 'is_view'])->name('is_view');
     Route::post('is_viewchackout', [ContactsController::class, 'is_viewchackout'])->name('is_viewchackout');
-    Route::resource('admin/massage', ContactsController::class);
+    Route::resource('admin/message', ContactsController::class);
 
     //Inquairy property
     Route::resource('admin/inquairy', InquairyController::class);
