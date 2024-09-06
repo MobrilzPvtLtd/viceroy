@@ -152,7 +152,7 @@ class PropertyController extends Controller
             ]);
         }
 
-        // $facilities = $request->input('facilities', []);
+        $facilities = $request->input('facilities');
         $propertyData = $request->except('image', 'floor_plan', 'facilities', 'featured');
         if (!empty($imagePaths)) {
             $propertyData['image'] = json_encode($imagePaths);
@@ -302,7 +302,7 @@ class PropertyController extends Controller
         }
 
         // Prepare data for database update
-        // $facilities = $request->input('facilities', []);
+        $facilities = $request->input('facilities');
         $propertyData = $request->except('floor_plan', 'featured');
         // $propertyData['image'] = serialize($imagePaths);
         if (!empty($imagePaths)) {
