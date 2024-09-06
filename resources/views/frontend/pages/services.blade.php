@@ -144,6 +144,9 @@ p.notify001 {
             .flags {
                 display: block !important;
             }
+            .container01 {
+                padding: 15px;
+            }
         }
     </style>
 
@@ -297,7 +300,7 @@ p.notify001 {
 
 
 
-    <section class="partner_area pb_60">
+    {{-- <section class="partner_area pb_60">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-7 wow fadeInUp" data-wow-duration="1.5s"
@@ -331,5 +334,5 @@ p.notify001 {
                 </div>
             </marquee>
         </div>
-    </section>
+    </section> --}}
 @endsection

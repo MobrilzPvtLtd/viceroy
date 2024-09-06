@@ -2377,13 +2377,17 @@ button {
     font-size: 20px;
     font-weight: 700;
 }
+.footer_form_input input::placeholder,.footer_form_input textarea::placeholder {
+    color: #000 !important;
+    font-weight: 600 !important;
+}
 
 .footer_form_input input,
 .footer_form_input textarea {
     margin-top: 40px;
-    background: transparent;
+    background: #fff;
     padding: 10px 10px 10px 10px;
-    color: var(--colorWhite);
+    color: #000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
@@ -8155,6 +8159,12 @@ marquee {
     .find_state, .video_player_div{
         height: 50vw !important;
     }
+    .common_btn {
+        margin: 25px 0px;
+    }
+    ul.d-flex.flex-wrap.pt_15 {
+        display: none !important;
+    }
 
 }
 @media screen and (max-width:1024px) {
@@ -8165,6 +8175,9 @@ marquee {
     }
     .checkbox-group span {
         width: 35vw;
+    }
+    .about_area_img_1.z001, .about_area_img_2.z002 {
+        display: none;
     }
 }
 .select2-container .select2-search--inline .select2-search__field {
@@ -8348,7 +8361,7 @@ marquee {
         padding: 10px 12px;
     }
     .s22 {
-        padding: 10px 15px !important;
+        padding: 10px 15px !important;  
     }
     .sd-CustomSelect span.placeholder {
         font-size: 10px;
@@ -8356,9 +8369,24 @@ marquee {
     .sd-multiSelect .ms-choice:after {
         font-size: 10px;
     }
+    .main_menu .navbar-brand {
+        width: 175px;
+        padding-right: 0px;
+
+    }
     }
     @media screen and (max-width:768px) {
         section.find_state.mt_115 {
             margin: 0px 0px !important;
+        }
+        .single_discover {
+            height: 45vh !important;
+        }
+        .contact_address {
+            height: 450px;
+
+        }
+        select#currency {
+            margin-left: 100px !important;
         }
     }

@@ -23,7 +23,7 @@
                         <div class="col-xl-6 col-sm-10 col-md-4 wow fadeInLeft" data-wow-duration="2s">
                             <div class="footer_description">
                                 <a class="footer_logo" href="">
-                                    <img src="{{ asset('assets/images/logo_1.png') }}" alt="logo"
+                                    <img src="{{ asset('assets/images/Viceroy_Realty_logo_V2-01.png') }}" alt="logo"
                                         class="img-fluid w-100" />
                                 </a>
                                 <p>

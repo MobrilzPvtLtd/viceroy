@@ -9563,11 +9563,11 @@
 	}
 
 	.xs_pt_95 {
-		padding-top: 95px !important;
+		padding-top: 1px !important;
 	}
 
 	.xs_pt_100 {
-		padding-top: 100px !important;
+		padding-top: 25px !important;
 	}
 
 	.xs_pt_105 {
@@ -9575,7 +9575,7 @@
 	}
 
 	.xs_pt_110 {
-		padding-top: 110px !important;
+		padding-top: 35px !important;
 	}
 
 	.xs_pt_115 {
@@ -9773,7 +9773,7 @@
 	}
 
 	.xs_pb_100 {
-		padding-bottom: 100px !important;
+		padding-bottom: 25px !important;
 	}
 
 	.xs_pb_105 {

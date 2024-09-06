@@ -2987,7 +2987,7 @@
     /* about start */
     .about_area_img_1 {
         height: auto;
-        margin-bottom: 25px;
+        margin-top: 25px;
     }
 
     .about_area_img_2 {
@@ -2996,10 +2996,11 @@
 
     .section_heading h2 {
         font-size: 22px;
+        margin-top: 15px;
     }
 
     .about_text {
-        margin-top: 20px;
+        margin-top: 1px;
     }
 
     .about_text ul li {
@@ -3013,6 +3014,7 @@
 
     .single_property_img {
         height: auto;
+        display: flex;
     }
 
     .single_property_text {

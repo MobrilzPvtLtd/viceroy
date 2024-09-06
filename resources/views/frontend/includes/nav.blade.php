@@ -5,7 +5,7 @@
     <nav class="navbar navbar-expand-lg main_menu">
         <div class="container container_large">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('assets/images/logo_1.png') }}" alt="FaxEstate" class="img-fluid" />
+                <img src="{{ asset('assets/images/Viceroy_Realty_logo_V2-03.png') }}" alt="FaxEstate" class="img-fluid" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,6 +36,7 @@
                         <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
                     </li>
                 </ul>
+
                 <ul class="menu_right d-flex align-items-center">
                     @guest
                         <li>
@@ -83,19 +84,32 @@
                     @endauth
 
                     <li>
-                        <div class="content">
-                            <div class="test-cart" id='cart'>
-                                <i class="fa fa-heart" aria-hidden="true"></i>
-                                <p class="notify001" id="cartCount">
-                                    {{ session()->has('cart') ? count(session('cart')) : 0 }}
-                                </p>
-                            </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="content">
+                                <div class="test-cart" id='cart'>
+                                    <i class="fa fa-heart" aria-hidden="true"></i>
+                                    <p class="notify001" id="cartCount">
+                                        {{ session()->has('cart') ? count(session('cart')) : 0 }}
+                                    </p>
+                                </div>
 
+                            </div>
+                            <div>
+                                <select name="currency" id="currency">
+                                    @foreach (App\Models\Currency::get(); as $currency)
+                                        <option value="{{ $currency->code }}"
+                                            {{ $currency->code == request()->session()->get('currency') ? 'selected' : '' }}
+                                            >{{ $currency->code }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
 
                     </li>
                 </ul>
             </div>
+
         </div>
 
 
@@ -151,6 +165,13 @@
             }
             p.notify001 {
                 top: -15px !important;
+            }
+            select#currency {
+                background-color: #e6b025;
+                padding: 5px;
+                border-radius: 5px;
+                font-weight: 700;
+                margin-left: -25px
             }
         </style>
 

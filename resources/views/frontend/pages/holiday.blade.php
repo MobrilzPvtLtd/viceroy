@@ -357,8 +357,9 @@
                                 @endphp
 
                                 @foreach ($images as $image)
-                                    <img src="{{ asset('public/uploads/' . trim($image)) }}" alt="Image"
+                                        <img src="{{ asset('public/uploads/' . trim($image)) }}" alt="Image"
                                         class="img-fluid w-100">
+
                                 @endforeach
                                 {{-- <a class="feature_link" href="#">for sale</a> --}}
                                 @if ($holiday->featured)

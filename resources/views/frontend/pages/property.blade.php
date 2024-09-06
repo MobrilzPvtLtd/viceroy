@@ -88,6 +88,7 @@ div#testimonial-slider {
                         @endif
                     </div>
                 </div>
+
             </div>
             <div class="row mt_50">
                 <div class="col-lg-8">
@@ -106,14 +107,7 @@ div#testimonial-slider {
                                 <li><i class="fas fa-map-marker-alt"></i>{{ $property->address }}</li>
                                 <li><span>{{ $property->type }}</span></li>
                             </ul>
-                            <select name="currency" id="currency" style="margin-left: 70%;">
-                                @foreach (App\Models\Currency::get(); as $currency)
-                                    <option value="{{ $currency->code }}"
-                                        {{ $currency->code == request()->session()->get('currency') ? 'selected' : '' }}
-                                        >{{ $currency->code }}
-                                    </option>
-                                @endforeach
-                            </select>
+                            
                             <h3>
                                 @php
                                     $price = request()->session()->get('price') * $property->price;

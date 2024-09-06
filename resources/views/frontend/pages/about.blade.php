@@ -41,12 +41,12 @@
                 <div class="col-xl-6 col-lg-6">
                     <div class="row align-items-center">
                         <div class="col-xl-6 col-sm-6 wow fadeInLeft" data-wow-duration="1.5s">
-                            <div class="about_area_img_1">
+                            <div class="about_area_img_1 z001">
                                 <img src="assets/images/Picture 1 .jpg" alt="img" class="img-fluid w-100">
                             </div>
                         </div>
                         <div class="col-xl-6 col-sm-6">
-                            <div class="about_area_img_2 wow fadeInUp" data-wow-duration="1.5s">
+                            <div class="about_area_img_2 z002 wow fadeInUp" data-wow-duration="1.5s">
                                 <img src="assets/images/pictue 2 .jpg" alt="img" class="img-fluid w-100">
                             </div>
                             <div class="about_area_img_3 wow fadeInUp" data-wow-duration="1.5s">
@@ -320,7 +320,7 @@
 
     </section>
 
-    <section class="testimonial pt_60 xs_pt_95 pb_120 xs_pb_100 mt_120 xs_mt_100">
+    {{-- <section class="testimonial pt_60 xs_pt_95 pb_120 xs_pb_100 mt_120 xs_mt_100">
         <div class="container">
             <div class="row justify-content-between align-items-end">
                 <div class="col-xxl-4 col-lg-5 wow fadeInLeft" data-wow-duration="1.5s">
@@ -448,7 +448,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section class="partner_area pt_30 pb_30">
         <div class="container">
