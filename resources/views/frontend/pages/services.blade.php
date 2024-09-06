@@ -140,6 +140,11 @@ p.notify001 {
     align-items: center !important;
     justify-content: center !important;
 }
+@media screen and (max-width:768px) {
+            .flags {
+                display: block !important;
+            }
+        }
     </style>
 
 

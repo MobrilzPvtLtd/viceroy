@@ -213,7 +213,15 @@ i.fa-solid.fa-list {
 
     }
     .sd-CustomSelect span.placeholder {
-        width: 29vw;
+        width: 35vw;
+
+    }
+    .sd-CustomSelect span.placeholder {
+        padding: 10px 2px;
+        font-size: 11px;
+    }
+    .select_label {
+        font-size: 11px !important;
 
     }
 
