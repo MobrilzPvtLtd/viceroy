@@ -74,12 +74,12 @@ div#testimonial-slider {
                     <div id="testimonial-slider" class="">
                         @if ($property->image)
                             @php
-                                $images = unserialize($property->image);
+                                $images = json_decode($property->image);
                             @endphp
                             @if ($images && count($images) > 0)
                                 @foreach ($images as $index => $image)
                                     <div class="img-fluid w-100 {{ $index == 0 ? 'active' : '' }}">
-                                        <img width="100" src="{{ asset('public/' . $image) }}" alt="Image">
+                                        <img width="100" src="{{ asset('public/storage/' . $image) }}" alt="Image">
                                     </div>
                                 @endforeach
                             @endif
@@ -195,7 +195,7 @@ div#testimonial-slider {
                         <div class="property_facilities">
                             <h4>Facilities</h4>
                             @php
-                                $facilitiesy = unserialize($property->facilities);
+                                $facilitiesy = json_decode($property->facilities);
                             @endphp
                             @if (!empty($facilitiesy))
                                 <ul class="d-flex flex-wrap">
@@ -221,11 +221,11 @@ div#testimonial-slider {
                         <div class=" apertment_layout">
                             {{-- <img src="assets/images/layout.jpg" alt="img" class="img-fluid w-100"> --}}
                             @php
-                                $floorPlans = unserialize($property->floor_plan);
+                                $floorPlans = json_decode($property->floor_plan);
                             @endphp
-                            @if ($floorPlans !== false && is_array($floorPlans))
+                            @if ($floorPlans && count($floorPlans) > 0)
                                 @foreach ($floorPlans as $floorPlan)
-                                    <img src="{{ asset('public/' . $floorPlan) }}" alt="Floor Plan" style="width: 100%">
+                                    <img src="{{ asset('public/storage/' . $image) }}" alt="Floor Plan" style="width: 100%">
                                 @endforeach
                             @else
                                 <p>No floor plans available</p>
@@ -403,11 +403,11 @@ div#testimonial-slider {
                             <div class="single_property">
                                 <div class="single_property_img">
                                     @php
-                                        $images = unserialize($relatedProperty->image);
+                                        $images = json_decode($relatedProperty->image);
                                     @endphp
-                                    @if ($images !== false && is_array($images))
+                                    @if ($images && count($images) > 0)
                                         @foreach ($images as $image)
-                                            <img src="{{ asset('public/' . $image) }}" alt="Image"
+                                            <img src="{{ asset('public/storage/' . $image) }}" alt="Image"
                                                 style="width: 100%">
                                         @endforeach
                                     @else

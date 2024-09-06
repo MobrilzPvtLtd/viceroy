@@ -499,12 +499,12 @@
                                         <div class="single_property">
                                             <div class="single_property_img">
                                                 @php
-                                                    $images = unserialize($property->image);
+                                                    $images = json_decode($property->image);
                                                 @endphp
-                                                @if ($images !== false && is_array($images))
+                                                @if ($images && count($images) > 0)
                                                     {{-- asset('public/uploads/' . $image) --}}
                                                     @foreach ($images as $image)
-                                                        <img src="{{ asset('public/' . $image) }}" alt="Image"
+                                                        <img src="{{ asset('public/storage/' . $image) }}" alt="Image"
                                                             style="width: 100%">
                                                     @endforeach
                                                 @else
@@ -518,12 +518,12 @@
                                                     <div class="testimonial">
                                                         <div class="pic">
                                                             @php
-                                                                $images = unserialize($property->image);
+                                                                $images = json_decode($property->image);
                                                             @endphp
-                                                            @if ($images !== false && is_array($images))
+                                                            @if ($images && count($images) > 0)
                                                                 {{-- asset('public/uploads/' . $image) --}}
                                                                 @foreach ($images as $image)
-                                                                    <img src="{{ asset('public/' . $image) }}"
+                                                                    <img src="{{ asset('public/storage/' . $image) }}"
                                                                         alt="Image" style="width: 100%">
                                                                 @endforeach
                                                             @else
