@@ -7,7 +7,7 @@
             return;
         }
         $.ajax({
-            url: '/cart/add',
+            url: '{{ route('cart.add') }}',
             type: 'POST',
             data: {
                 _token: '{{ csrf_token() }}',

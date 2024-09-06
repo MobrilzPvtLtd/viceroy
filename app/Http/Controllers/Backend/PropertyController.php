@@ -12,6 +12,7 @@ use App\Models\Country;
 use App\Models\State;
 use GuzzleHttp\Client;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
 
 
@@ -84,26 +85,44 @@ class PropertyController extends Controller
         ]);
 
         // Handle image upload
+        // $imagePaths = [];
+        // if ($request->hasFile('image')) {
+        //     foreach ($request->file('image') as $file) {
+        //         $extension = $file->getClientOriginalExtension();
+        //         $filename = time() . '_' . uniqid() . '.' . $extension;
+        //         $file->move(public_path('uploads'), $filename);
+        //         $imagePaths[] = 'uploads/' . $filename;
+        //     }
+        // }
+        $propertyData = $request->except('image');
         $imagePaths = [];
+
         if ($request->hasFile('image')) {
             foreach ($request->file('image') as $file) {
-                $extension = $file->getClientOriginalExtension();
-                $filename = time() . '_' . uniqid() . '.' . $extension;
-                $file->move(public_path('uploads'), $filename);
-                $imagePaths[] = 'uploads/' . $filename;
+                $imagePath = $file->store('property', 'public');
+                $imagePaths[] = $imagePath;
             }
         }
 
         // Handle floor plan upload
+        $propertyData = $request->except('floor_plan');
         $floor_planPaths = [];
+
         if ($request->hasFile('floor_plan')) {
             foreach ($request->file('floor_plan') as $file) {
-                $extension = $file->getClientOriginalExtension();
-                $filename = time() . '_' . uniqid() . '.' . $extension;
-                $file->move(public_path('uploads/blueprints'), $filename);
-                $floor_planPaths[] = 'uploads/blueprints/' . $filename;
+                $floor_planPath = $file->store('property', 'public');
+                $floor_planPaths[] = $floor_planPath;
             }
         }
+        // $floor_planPaths = [];
+        // if ($request->hasFile('floor_plan')) {
+        //     foreach ($request->file('floor_plan') as $file) {
+        //         $extension = $file->getClientOriginalExtension();
+        //         $filename = time() . '_' . uniqid() . '.' . $extension;
+        //         $file->move(public_path('uploads/blueprints'), $filename);
+        //         $floor_planPaths[] = 'uploads/blueprints/' . $filename;
+        //     }
+        // }
 
         // Geocode the address
         $address = $request->input('address');
@@ -132,19 +151,22 @@ class PropertyController extends Controller
                 'response' => $geoData
             ]);
         }
-        // dd($latitude,$longitude);
 
-        // Prepare data for database insertion
-        $facilities = $request->input('facilities', []);
+        // $facilities = $request->input('facilities', []);
         $propertyData = $request->except('image', 'floor_plan', 'facilities', 'featured');
-        $propertyData['image'] = serialize($imagePaths);
-        $propertyData['floor_plan'] = serialize($floor_planPaths);
-        $propertyData['facilities'] = serialize($facilities);
+        if (!empty($imagePaths)) {
+            $propertyData['image'] = json_encode($imagePaths);
+        }
+        if (!empty($imagePaths)) {
+            $propertyData['floor_plan'] = json_encode($floor_planPaths);
+        }
+        if (!empty($facilities)) {
+            $propertyData['facilities'] = json_encode($facilities);
+        }
         $propertyData['latitude'] = $latitude;
         $propertyData['longitude'] = $longitude;
         $propertyData['featured'] = $request->has('featured');
 
-        // Handle video embedding
         if (!empty($request->video)) {
             $video = explode("=", $request->video);
 
@@ -157,7 +179,6 @@ class PropertyController extends Controller
             $propertyData['video'] = null;
         }
 
-        // Create the property
         Property::create($propertyData);
 
         return redirect()->route('property.index')->with('success', 'Property has been created successfully.');
@@ -168,12 +189,12 @@ class PropertyController extends Controller
     public function edit($id)
     {
         $property = Property::findOrFail($id);
-        $property->image = unserialize($property->image);
-        $property->floor_plan = unserialize($property->floor_plan);
+        // $property->image = unserialize($property->image);
+        // $property->floor_plan = unserialize($property->floor_plan);
         $facilities = Facilities::all();
-        $selectedFacilities = unserialize($property->facilities);
+        $selectedFacilities = json_decode($property->facilities);
+        $selectedFacilities = $selectedFacilities ?? [];
 
-        // Retrieve countries and cities
         $countrys = Country::all();
         $citys = City::all();
         $states = State::all();
@@ -205,23 +226,56 @@ class PropertyController extends Controller
 
         $property = Property::findOrFail($id);
 
-        $imagePaths = unserialize($property->image) ?: [];
+        // $imagePaths = unserialize($property->image) ?: [];
+        // if ($request->hasFile('image')) {
+        //     foreach ($request->file('image') as $file) {
+        //         $extension = $file->getClientOriginalExtension();
+        //         $filename = time() . '_' . uniqid() . '.' . $extension;
+        //         $file->move(public_path('uploads'), $filename);
+        //         $imagePaths[] = 'uploads/' . $filename;
+        //     }
+        // }
+
+        // $floor_planPaths = unserialize($property->floor_plan) ?: [];
+        // if ($request->hasFile('floor_plan')) {
+        //     foreach ($request->file('floor_plan') as $file) {
+        //         $extension = $file->getClientOriginalExtension();
+        //         $filename = time() . '_' . uniqid() . '.' . $extension;
+        //         $file->move(public_path('uploads/blueprints'), $filename);
+        //         $floor_planPaths[] = 'uploads/blueprints/' . $filename;
+        //     }
+        // }
+
+        // Handle image upload
+        $oldImagePath = $property->image;
+        $propertyData = $request->except('image');
+        $imagePaths = [];
+
         if ($request->hasFile('image')) {
             foreach ($request->file('image') as $file) {
-                $extension = $file->getClientOriginalExtension();
-                $filename = time() . '_' . uniqid() . '.' . $extension;
-                $file->move(public_path('uploads'), $filename);
-                $imagePaths[] = 'uploads/' . $filename;
+                $imagePath = $file->store('property', 'public');
+                $imagePaths[] = $imagePath;
+            }
+
+            if ($oldImagePath) {
+                Storage::disk('public')->delete($oldImagePath);
             }
         }
 
-        $floor_planPaths = unserialize($property->floor_plan) ?: [];
+        // Handle floor plan upload
+        $oldFloorPaths = $property->floor_plan;
+
+        $propertyData = $request->except('floor_plan');
+        $floor_planPaths = [];
+
         if ($request->hasFile('floor_plan')) {
             foreach ($request->file('floor_plan') as $file) {
-                $extension = $file->getClientOriginalExtension();
-                $filename = time() . '_' . uniqid() . '.' . $extension;
-                $file->move(public_path('uploads/blueprints'), $filename);
-                $floor_planPaths[] = 'uploads/blueprints/' . $filename;
+                $floor_planPath = $file->store('property', 'public');
+                $floor_planPaths[] = $floor_planPath;
+            }
+
+            if ($oldFloorPaths) {
+                Storage::disk('public')->delete($oldFloorPaths);
             }
         }
 
@@ -248,11 +302,21 @@ class PropertyController extends Controller
         }
 
         // Prepare data for database update
-        $facilities = $request->input('facilities', []);
-        $propertyData = $request->except('image', 'floor_plan', 'facilities', 'featured');
-        $propertyData['image'] = serialize($imagePaths);
-        $propertyData['floor_plan'] = serialize($floor_planPaths);
-        $propertyData['facilities'] = serialize($facilities);
+        // $facilities = $request->input('facilities', []);
+        $propertyData = $request->except('floor_plan', 'featured');
+        // $propertyData['image'] = serialize($imagePaths);
+        if (!empty($imagePaths)) {
+            $propertyData['image'] = json_encode($imagePaths);
+        }
+        if (!empty($floor_planPaths)) {
+            $propertyData['floor_plan'] = json_encode($floor_planPaths);
+        }
+        if (!empty($facilities)) {
+            $propertyData['facilities'] = json_encode($facilities);
+        }
+
+        // $propertyData['floor_plan'] = serialize($floor_planPaths);
+        // $propertyData['facilities'] = serialize($facilities);
         $propertyData['latitude'] = $latitude;
         $propertyData['longitude'] = $longitude;
         $propertyData['featured'] = $request->has('featured');
@@ -304,16 +368,16 @@ class PropertyController extends Controller
         $property = Property::withTrashed()->find($id);
 
         if (!empty($property->image)) {
-            $imagePaths = unserialize($property->image);
-            foreach ($imagePaths as $imagePath) {
+            // $imagePaths = json_encode($property->image);
+            foreach (json_decode($property->image) as $imagePath) {
                 if (file_exists(public_path($imagePath))) {
                     unlink(public_path($imagePath));
                 }
             }
         }
         if (!empty($property->floor_plan)) {
-            $floorPlanPaths = unserialize($property->floor_plan);
-            foreach ($floorPlanPaths as $floorPlanPath) {
+            // $floorPlanPaths = unserialize($property->floor_plan);
+            foreach (json_decode($property->image) as $floorPlanPath) {
                 if (file_exists(public_path($floorPlanPath))) {
                     unlink(public_path($floorPlanPath));
                 }

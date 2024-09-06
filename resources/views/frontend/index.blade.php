@@ -306,15 +306,19 @@
                     <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
                         <div class="single_property">
                             <div class="single_property_img">
-                                @php
-                                    $images = unserialize($property->image);
-                                @endphp
-                                @if (!empty($images) && is_array($images) && count($images) > 0)
-                                    <img src="{{ asset('public/' . $images[0]) }}" alt="Image"
-                                        class="img-fluid w-100">
-                                @else
-                                    <p>No images available</p>
+                                @if ($property->image)
+                                    @php
+                                        $images = json_decode($property->image);
+                                    @endphp
+                                    @if ($images && count($images) > 0)
+                                        @foreach ($images as $image)
+                                            <img src="{{ asset('public/storage/' . $image) }}" alt="Image" class="img-fluid w-100">
+                                        @endforeach
+                                    @else
+                                        <p>No images available</p>
+                                    @endif
                                 @endif
+
                                 <a class="feature_link" href="">for {{ $property->type }}</a>
                                 @if ($property->featured)
                                     <a class="feature_link feature" href="#">Featured</a>

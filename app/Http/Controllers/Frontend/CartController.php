@@ -12,7 +12,6 @@ class CartController extends Controller
 
     public function add(Request $request)
     {
-        // dd($request);
         $responseData = [];
         $cartExists = $request->session()->has('cart');
         $cart = $request->session()->get('cart', []);
@@ -42,7 +41,8 @@ class CartController extends Controller
                 "title" => $property->title,
                 "desc" => $property->desc,
                 "price" => $property->price,
-                "image" => $property->image ? unserialize($property->image)[0] : null,
+                "type" => $property->type,
+                "image" => $property->image ? json_decode($property->image)[0] : null,
             ];
 
             $request->session()->put('cart', $cart);
@@ -57,13 +57,13 @@ class CartController extends Controller
             // $responseData['CartHTML'] = CartHelper::generateCartHTML($cart);
             $html = '';
             $cartIsEmpty = empty($cart);
-
             foreach ($cart as $item) {
                 $html .= '
                     <div class="d-flex" style="width: 100%">
                         <div class="d-flex gap-4" style="width: 80%; padding: 16px;">
-                            <img src="/public/' . htmlspecialchars($item['image'], ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') . '" class="cart_img">
+                            <img src="' . (asset('public/storage/' . $item['image'])) . '" alt="" class="cart_img">
                             <div class="cart_tittle" data-price="' . htmlspecialchars($item['price'], ENT_QUOTES, 'UTF-8') . '">
+                                <a class="feature_link" href="' . route($item['type']) . '">'.$item['type'].'</a>
                                 <h5>' . htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') . '</h5>
                                 <p>' . htmlspecialchars($item['desc'], ENT_QUOTES, 'UTF-8') . '</p>
                             </div>
@@ -107,11 +107,11 @@ class CartController extends Controller
 
             foreach ($cart as $item) {
                 $html .= '
-                <hr>
                     <div class="d-flex" style="width: 100%">
                         <div class="d-flex gap-4" style="width: 80%; padding: 16px;">
-                            <img src="/public/' . htmlspecialchars($item['image'], ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') . '" class="cart_img">
+                            <img src="' . (asset('public/storage/' . $item['image'])) . '" alt="" class="cart_img">
                             <div class="cart_tittle" data-price="' . htmlspecialchars($item['price'], ENT_QUOTES, 'UTF-8') . '">
+                                <a class="feature_link" href="' . route($item['type']) . '">'.$item['type'].'</a>
                                 <h5>' . htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') . '</h5>
                                 <p>' . htmlspecialchars($item['desc'], ENT_QUOTES, 'UTF-8') . '</p>
                             </div>
@@ -120,7 +120,6 @@ class CartController extends Controller
                             <i class="fa fa-trash" onclick="addToCartOrRemove(' . intval($item['id']) . ', \'remove\')" class="btn-remove" aria-hidden="true"></i>
                         </div>
                     </div>
-                    <hr>
                 ';
                 $disabledItems[] = $item['id'];
 

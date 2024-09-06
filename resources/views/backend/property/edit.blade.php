@@ -144,16 +144,20 @@
                                 <div class="form-group mb-3 col-4">
                                     <label for="image">Property Images</label>
                                     <input type="file" class="form-control" name="image[]" value="" multiple>
-                                    @if (!empty($property->image) && is_array($property->image))
+                                    @if ($property->image)
                                         <div class="form-group mb-3 col-12">
                                             <label>Existing Images:</label>
                                             <div class="row">
-                                                @foreach ($property->image as $image)
+                                                @php
+                                                    $images = json_decode($property->image);
+                                                @endphp
+                                                @if ($images && count($images) > 0)
+                                                    @foreach ($images as $index => $image)
                                                     <div class="col-md-2">
-                                                        <img src="{{ asset('public/' . $image) }}" alt="Property Image"
-                                                            class="img-thumbnail" style="width: 100px; height: auto;">
+                                                        <img src="{{ asset('public/storage/' . $image) }}" alt="Hotel" class="img-thumbnail" style="width: 100px; height: auto;">
                                                     </div>
-                                                @endforeach
+                                                    @endforeach
+                                                @endif
                                             </div>
                                         </div>
                                     @endif
@@ -172,28 +176,22 @@
                                 <div class="form-group mb-3 col-4">
                                     <label for="floor_plan">Floor Plan</label>
                                     <input type="file" class="form-control" name="floor_plan[]" multiple>
-                                    @php
-                                        // Check if $property->floor_plan is serialized
-                                        $floorPlans = is_string($property->floor_plan)
-                                            ? unserialize($property->floor_plan)
-                                            : $property->floor_plan;
-                                    @endphp
-
-                                    @if (!empty($floorPlans) && is_array($floorPlans))
+                                    @if ($property->floor_plan)
                                         <div class="form-group mb-3 col-12">
                                             <label>Existing Floor Plans:</label>
                                             <div class="row">
-                                                @foreach ($floorPlans as $floor_plan)
+                                                @php
+                                                    $floor_plan = json_decode($property->floor_plan);
+                                                @endphp
+                                                @if ($floor_plan && count($floor_plan) > 0)
+                                                    @foreach ($floor_plan as $index => $floorImg)
                                                     <div class="col-md-2">
-                                                        <img src="{{ asset('public/' . $floor_plan) }}"
-                                                            alt="Property Floor Plan" class="img-thumbnail"
-                                                            style="width: 100px; height: auto;">
+                                                        <img src="{{ asset('public/storage/' . $floorImg) }}" alt="Hotel" class="img-thumbnail" style="width: 100px; height: auto;">
                                                     </div>
-                                                @endforeach
+                                                    @endforeach
+                                                @endif
                                             </div>
                                         </div>
-                                    @else
-                                        <p>No floor plans available</p>
                                     @endif
                                 </div>
 
@@ -228,7 +226,10 @@
                                         <div class="col-md-6">
                                             <input type="checkbox" id="{{ $facility->id }}" name="facilities[]"
                                                 value="{{ $facility->id }}"
-                                                {{ in_array($facility->id, $selectedFacilities) ? 'checked' : '' }}>
+                                                @if(in_array($facility->id, $selectedFacilities))
+                                                    checked
+                                                @endif
+                                                >
                                             <label for="{{ $facility->id }}">{{ $facility->name }}</label><br>
                                         </div>
                                     @endforeach
