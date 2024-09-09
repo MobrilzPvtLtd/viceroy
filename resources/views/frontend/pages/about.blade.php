@@ -149,7 +149,7 @@
     </section>
 
 
-    <section class="agent_area pt_60 xs_pt_95 pb_70 xs_pb_100">
+    <section class="agent_area pt_60 xs_pt_95 pb_70 xs_pb_100 custom_slider">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-7 wow fadeInUp" data-wow-duration="1.5s">
@@ -158,163 +158,271 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                @foreach ($professionals as $professional)
-                    <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
-                        <div class="single_agent">
-                            <div class="single_agent_img">
-                                @if ($professional->image)
-                                    <li>
-                                        <a href="agencies_details.html">
-                                            <img src="{{ asset('public/images/' . $professional->image) }}" alt="img"
-                                                class="img-fluid w-100" />
-                                        </a>
-                                    </li>
-                                @else
-                                    No Image
-                                @endif
-                                <div class="single_agent_overly">
-                                    {{-- <p>4 listings</p> --}}
-                                    {{-- <ul class="d-flex flex-wrap">
+                <div class="or001">
+                    @foreach ($professionals as $professional)
+                        <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
+                            <div class="single_agent">
+                                <div class="single_agent_img">
+                                    @if ($professional->image)
                                         <li>
-                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="agencies_details.html">
+                                                <img src="{{ asset('public/images/' . $professional->image) }}"
+                                                    alt="img" class="img-fluid w-100" />
+                                            </a>
                                         </li>
-                                        <li>
-                                            <a href="#"><i class="fab fa-twitter"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                        </li>
-                                    </ul> --}}
+                                    @else
+                                        No Image
+                                    @endif
+                                    <div class="single_agent_overly">
+                                        {{-- <p>4 listings</p> --}}
+                                        {{-- <ul class="d-flex flex-wrap">
+                                            <li>
+                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </li>
+                                        </ul> --}}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="agent_text">
-                                <div class="agent_name">
-                                    <a class="item_title" href="">{{ $professional->name }}</a>
-                                    <span>{{ $professional->post }}</span>
+                                <div class="agent_text">
+                                    <div class="agent_name">
+                                        <a class="item_title" href="">{{ $professional->name }}</a>
+                                        <span>{{ $professional->post }}</span>
+                                    </div>
+                                    <ul class="agent_contact">
+                                        <li>
+                                            <a href=""><i class="fas fa-phone-alt"></i>
+                                                {{ $professional->number }}</a>
+                                        </li>
+                                        <li>
+                                            {{-- <a href=""><i class="fas fa-envelope"></i>{{ $professional->email }}</a> --}}
+                                            @if (!empty($professional->email))
+                                                <a href="mailto:{{ $professional->email }}">
+                                                    <i class="fas fa-envelope"></i>{{ $professional->email }}
+                                                </a>
+                                            @endif
+                                        </li>
+                                    </ul>
                                 </div>
-                                <ul class="agent_contact">
-                                    <li>
-                                        <a href=""><i class="fas fa-phone-alt"></i>
-                                            {{ $professional->number }}</a>
-                                    </li>
-                                    <li>
-                                        <a href=""><i class="fas fa-envelope"></i>{{ $professional->email }}</a>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
-                    </div>
-                    {{-- <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
-                                                    <div class="single_agent">
-                                                        <div class="single_agent_img">
-                                                            <img src="assets/images/agent_2.jpg" alt="img" class="img-fluid w-100" />
-                                                            <div class="single_agent_overly">
-                                                                <p>03 listings</p>
-                                                                <ul class="d-flex flex-wrap">
-                                                                    <li>
-                                                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="agent_text">
-                                                            <div class="agent_name">
-                                                                <a class="item_title" href="#">Nathaneal Down</a>
-                                                                <span>Real Estate Broker</span>
-                                                            </div>
-                                                            <ul class="agent_contact">
-                                                                <li>
-                                                                    <a href="callto:1234567890"><i class="fas fa-phone-alt"></i>(+88) 587 - 5643</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="mailto:example@gmail.com"><i
-                                                                            class="fas fa-envelope"></i>example@gmail.com</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                    {{-- <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
-                                                    <div class="single_agent">
-                                                        <div class="single_agent_img">
-                                                            <img src="assets/images/agent_3.jpg" alt="img" class="img-fluid w-100" />
-                                                            <div class="single_agent_overly">
-                                                                <p>6 listings</p>
-                                                                <ul class="d-flex flex-wrap">
-                                                                    <li>
-                                                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="agent_text">
-                                                            <div class="agent_name">
-                                                                <a class="item_title" href="#">Hugh Saturation</a>
-                                                                <span>Buying Agent</span>
-                                                            </div>
-                                                            <ul class="agent_contact">
-                                                                <li>
-                                                                    <a href="callto:1234567890"><i class="fas fa-phone-alt"></i>(+88) 587 - 5643</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="mailto:example@gmail.com"><i
-                                                                            class="fas fa-envelope"></i>example@gmail.com</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                    {{-- <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
-                                <div class="single_agent">
-                                    <div class="single_agent_img">
-                                        <img src="assets/images/agent_4.jpg" alt="img" class="img-fluid w-100" />
-                                        <div class="single_agent_overly">
-                                            <p>10 listings</p>
-                                            <ul class="d-flex flex-wrap">
-                                                <li>
-                                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="agent_text">
-                                        <div class="agent_name">
-                                            <a class="item_title" href="#">Lance Bogrol</a>
-                                            <span>Sales Executive</span>
-                                        </div>
-                                        <ul class="agent_contact">
+                    @endforeach
+                    @foreach ($professionals as $professional)
+                        <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
+                            <div class="single_agent">
+                                <div class="single_agent_img">
+                                    @if ($professional->image)
+                                        <li>
+                                            <a href="agencies_details.html">
+                                                <img src="{{ asset('public/images/' . $professional->image) }}"
+                                                    alt="img" class="img-fluid w-100" />
+                                            </a>
+                                        </li>
+                                    @else
+                                        No Image
+                                    @endif
+                                    <div class="single_agent_overly">
+                                        {{-- <p>4 listings</p> --}}
+                                        {{-- <ul class="d-flex flex-wrap">
                                             <li>
-                                                <a href="callto:1234567890"><i class="fas fa-phone-alt"></i>(+88) 587 - 5643</a>
+                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
                                             </li>
                                             <li>
-                                                <a href="mailto:example@gmail.com"><i
-                                                        class="fas fa-envelope"></i>example@gmail.com</a>
+                                                <a href="#"><i class="fab fa-twitter"></i></a>
                                             </li>
-                                        </ul>
+                                            <li>
+                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </li>
+                                        </ul> --}}
                                     </div>
                                 </div>
-                            </div> --}}
-                @endforeach
-            </div>
+                                <div class="agent_text">
+                                    <div class="agent_name">
+                                        <a class="item_title" href="">{{ $professional->name }}</a>
+                                        <span>{{ $professional->post }}</span>
+                                    </div>
+                                    <ul class="agent_contact">
+                                        <li>
+                                            <a href=""><i class="fas fa-phone-alt"></i>
+                                                {{ $professional->number }}</a>
+                                        </li>
+                                        <li>
+                                            {{-- <a href=""><i class="fas fa-envelope"></i>{{ $professional->email }}</a> --}}
+                                            @if (!empty($professional->email))
+                                                <a href="mailto:{{ $professional->email }}">
+                                                    <i class="fas fa-envelope"></i>{{ $professional->email }}
+                                                </a>
+                                            @endif
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                    @foreach ($professionals as $professional)
+                        <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
+                            <div class="single_agent">
+                                <div class="single_agent_img">
+                                    @if ($professional->image)
+                                        <li>
+                                            <a href="agencies_details.html">
+                                                <img src="{{ asset('public/images/' . $professional->image) }}"
+                                                    alt="img" class="img-fluid w-100" />
+                                            </a>
+                                        </li>
+                                    @else
+                                        No Image
+                                    @endif
+                                    <div class="single_agent_overly">
+                                        {{-- <p>4 listings</p> --}}
+                                        {{-- <ul class="d-flex flex-wrap">
+                                            <li>
+                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </li>
+                                        </ul> --}}
+                                    </div>
+                                </div>
+                                <div class="agent_text">
+                                    <div class="agent_name">
+                                        <a class="item_title" href="">{{ $professional->name }}</a>
+                                        <span>{{ $professional->post }}</span>
+                                    </div>
+                                    <ul class="agent_contact">
+                                        <li>
+                                            <a href=""><i class="fas fa-phone-alt"></i>
+                                                {{ $professional->number }}</a>
+                                        </li>
+                                        <li>
+                                            {{-- <a href=""><i class="fas fa-envelope"></i>{{ $professional->email }}</a> --}}
+                                            @if (!empty($professional->email))
+                                                <a href="mailto:{{ $professional->email }}">
+                                                    <i class="fas fa-envelope"></i>{{ $professional->email }}
+                                                </a>
+                                            @endif
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                    @foreach ($professionals as $professional)
+                        <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
+                            <div class="single_agent">
+                                <div class="single_agent_img">
+                                    @if ($professional->image)
+                                        <li>
+                                            <a href="agencies_details.html">
+                                                <img src="{{ asset('public/images/' . $professional->image) }}"
+                                                    alt="img" class="img-fluid w-100" />
+                                            </a>
+                                        </li>
+                                    @else
+                                        No Image
+                                    @endif
+                                    <div class="single_agent_overly">
+                                        {{-- <p>4 listings</p> --}}
+                                        {{-- <ul class="d-flex flex-wrap">
+                                            <li>
+                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </li>
+                                        </ul> --}}
+                                    </div>
+                                </div>
+                                <div class="agent_text">
+                                    <div class="agent_name">
+                                        <a class="item_title" href="">{{ $professional->name }}</a>
+                                        <span>{{ $professional->post }}</span>
+                                    </div>
+                                    <ul class="agent_contact">
+                                        <li>
+                                            <a href=""><i class="fas fa-phone-alt"></i>
+                                                {{ $professional->number }}</a>
+                                        </li>
+                                        <li>
+                                            {{-- <a href=""><i class="fas fa-envelope"></i>{{ $professional->email }}</a> --}}
+                                            @if (!empty($professional->email))
+                                                <a href="mailto:{{ $professional->email }}">
+                                                    <i class="fas fa-envelope"></i>{{ $professional->email }}
+                                                </a>
+                                            @endif
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                    @foreach ($professionals as $professional)
+                        <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
+                            <div class="single_agent">
+                                <div class="single_agent_img">
+                                    @if ($professional->image)
+                                        <li>
+                                            <a href="agencies_details.html">
+                                                <img src="{{ asset('public/images/' . $professional->image) }}"
+                                                    alt="img" class="img-fluid w-100" />
+                                            </a>
+                                        </li>
+                                    @else
+                                        No Image
+                                    @endif
+                                    <div class="single_agent_overly">
+                                        {{-- <p>4 listings</p> --}}
+                                        {{-- <ul class="d-flex flex-wrap">
+                                            <li>
+                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            </li>
+                                        </ul> --}}
+                                    </div>
+                                </div>
+                                <div class="agent_text">
+                                    <div class="agent_name">
+                                        <a class="item_title" href="">{{ $professional->name }}</a>
+                                        <span>{{ $professional->post }}</span>
+                                    </div>
+                                    <ul class="agent_contact">
+                                        <li>
+                                            <a href=""><i class="fas fa-phone-alt"></i>
+                                                {{ $professional->number }}</a>
+                                        </li>
+                                        <li>
+                                            {{-- <a href=""><i class="fas fa-envelope"></i>{{ $professional->email }}</a> --}}
+                                            @if (!empty($professional->email))
+                                                <a href="mailto:{{ $professional->email }}">
+                                                    <i class="fas fa-envelope"></i>{{ $professional->email }}
+                                                </a>
+                                            @endif
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                    {{-- <div style="text-align: center">
+                        {!! $professionals->links() !!}
+                    </div> --}}
+                </div>
 
         </div>
 

@@ -436,3 +436,23 @@
     })(APP, jQuery);
     APP.sidecart.init();
   </script> --}}
+  <script>
+    const or001 = document.querySelector(".or001")
+
+
+    value= 0;
+    setInterval(() => {
+            value += 10;
+
+            if(value > 4000){
+                value = 0
+                return or001;
+                or001.style.transition = "none"
+
+            }
+            or001.style.transform = `translate(-${value}px , 0px)`;
+            console.log("value" , value)
+
+        }, 100);
+
+  </script>
