@@ -76,11 +76,11 @@
                 <div class="row">
                     <div class="col-12 justify-content-center">
                         <div class="breadcrumb_text wow fadeInUp" data-wow-duration="1.5s">
-                            <h1>Holiday Rental</h1>
-                            <ul class=" d-flex flex-wrap justify-content-center">
+                            <h1>Managing Your Property <br> Maximising Your Returns</h1>
+                            {{-- <ul class=" d-flex flex-wrap justify-content-center">
                                 <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
                                 <li><a href="#">Holiday Rental</a></li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </div>
                 </div>
@@ -96,9 +96,9 @@
             <div class="row justify-content-center">
                 <div class="col-xl-7 wow fadeInUp" data-wow-duration="1.5s"
                     style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">
-                    <div class="section_heading mb_50">
+                    {{-- <div class="section_heading mb_50">
                         <h2>Managing Your Property Maximising Your Returns</h2>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 

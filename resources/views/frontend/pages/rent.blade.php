@@ -147,13 +147,13 @@
                 <div class="row">
                     <div class="col-12 justify-content-center">
                         <div class="breadcrumb_text wow fadeInUp" data-wow-duration="1.5s">
-                            <h1>Rent Property</h1>
-                            <ul class="d-flex flex-wrap justify-content-center">
+                            <h1>Hassle-Free Rentals <br> Happy Tenants</h1>
+                            {{-- <ul class="d-flex flex-wrap justify-content-center">
                                 <li>
                                     <a href="#"><i class="fas fa-home"></i>Home</a>
                                 </li>
                                 <li><a href="#">Rent Property</a></li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </div>
                 </div>
@@ -430,7 +430,7 @@
                 </div>
             </div>
 
-            <section class="discover_area pt_70 xs_pt_95 pb_70 xs_pb_100"
+            {{-- <section class="discover_area pt_70 xs_pt_95 pb_70 xs_pb_100"
                 style="background: url(assets/images/Discover_bg.jpg)">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -439,12 +439,12 @@
                   visibility: visible;
                   animation-duration: 1.5s;
                   animation-name: fadeInUp;
-                ">
-                            <div class="section_heading mb_25">
+                "> --}}
+                            {{-- <div class="section_heading mb_25">
                                 <h2>Hassle-Free Rentals <br> Happy Tenants</h2>
-                            </div>
-                        </div>
-                    </div>
+                            </div> --}}
+                        {{-- </div>
+                    </div> --}}
                     {{-- <div class="row">
                         <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
                             style="
@@ -500,7 +500,7 @@
                         </div>
                     </div>
                 </div> --}}
-            </section>
+            {{-- </section> --}}
             <!--=============================
                                                                                                   PROPERTY GRID VIEW END
                                                                                                  ==============================-->

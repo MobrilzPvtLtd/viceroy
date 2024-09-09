@@ -138,6 +138,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/fetch-states', [FrontendController::class, 'fetchStates'])->name('fetch-states');
     Route::get('/holiday', [FrontendController::class, 'holiday'])->name('holiday');
     Route::get('/services', [FrontendController::class, 'services'])->name('services');
+    Route::get('/realtors', [FrontendController::class, 'realtors'])->name('realtors');
+    Route::get('/brand', [FrontendController::class, 'brand'])->name('brand');
+    Route::get('/testimonials', [FrontendController::class, 'testimonials'])->name('testimonials');
     Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
     Route::get('/login', [FrontendController::class, 'login'])->name('login');
     Route::get('/india', [FrontendController::class, 'india'])->name('india');

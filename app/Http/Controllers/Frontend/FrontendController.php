@@ -262,8 +262,24 @@ class FrontendController extends Controller
     // }
     public function services()
     {
-        $brands = Brands::all();
+        $brands = Brands::get();
         return view('frontend.pages.services', compact('brands'));
+    }
+    public function testimonials()
+    {
+        $brands = Brands::get();
+        return view('frontend.pages.testimonials', compact('brands'));
+    }
+    public function brand()
+    {
+        $brands = Brands::get();
+        return view('frontend.pages.brand', compact('brands'));
+    }
+    public function realtors()
+    {
+        $brands = Brands::get();
+        $professionals = Professionals::get();
+        return view('frontend.pages.realtors', compact('brands','professionals'));
     }
     public function contact()
     {
