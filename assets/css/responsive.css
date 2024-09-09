@@ -3026,7 +3026,8 @@
     }
 
     .single_agent_img {
-        height: auto;
+        height: 300px;
+        width: 300px;
     }
 
     .find_state_text h2 {

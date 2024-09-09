@@ -525,7 +525,16 @@ select.select_2 {
         padding: 10px 15px;
     }
 }
-
+@media screen and (max-width: 768px) {
+    #close001 {
+        top: 50vw !important;
+        left: 45vw !important;
+    }
+}
+#close002 {
+    top: 73vw !important;
+    left: 15vw;
+}
 
 
 

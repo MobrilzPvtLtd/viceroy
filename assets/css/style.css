@@ -1800,8 +1800,8 @@ button {
 }
 
 .single_property_top {
-    padding: 22px 25px 25px 25px;
-    height: 300px;
+    padding: 22px 25px 0px 25px;
+    height: 250px;
 }
 
 .single_property_top p {
@@ -2235,7 +2235,7 @@ button {
 
 .footer_description {
     position: relative;
-    padding-bottom: 165px;
+    padding-bottom: 25px;
 }
 
 .footer_logo {
@@ -8104,9 +8104,6 @@ marquee {
     .video_player_div {
         height: 50vw !important;
     }
-    .common_btn {
-        margin: 25px 0px;
-    }
     ul.d-flex.flex-wrap.pt_15 {
         display: none !important;
     }
@@ -8180,7 +8177,7 @@ marquee {
         width: 190px !important;
     }
     .ms-drop.bottom {
-        width: 1690px !important;
+        width: 190px !important;
     }
     .ms-choice span {
         font-size: 14px;
@@ -8254,7 +8251,7 @@ marquee {
         width: 100% !important;
     }
     .select_label {
-        width: 30vw !important;
+        width: 35vw !important;
     }
     .ms-drop.bottom {
         width: 100% !important;
@@ -8336,4 +8333,7 @@ marquee {
         width: 80vw;
         margin: 0 3rem;
     }
+}
+.progress-wrap.active-progress {
+    display: none;
 }

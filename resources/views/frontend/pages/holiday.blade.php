@@ -373,8 +373,8 @@
                                     <div class="wish001">
                                     <a target="blank" class="item_title"
                                         href="{{ $holiday->url }}">{{ $holiday->name }}</a>
-                                                    <button type="submit" id="addToCart" data-id=""
-                                                        class=" btn btn-primary"><i class="fa fa-heart"></i></button>
+                                                    {{-- <button type="submit" id="addToCart" data-id=""
+                                                        class=" btn btn-primary"><i class="fa fa-heart"></i></button> --}}
                                                     </div>
                                     <p>
                                         <i class="fas fa-map-marker-alt"></i>{{ $holiday->address }}

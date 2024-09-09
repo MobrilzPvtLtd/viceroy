@@ -568,18 +568,172 @@
                     </div>
                 </div>
             </div>
-            <marquee width="100%" behavior="scroll" direction="left" scrollamount="12" loop="infinite">
+            <marquee width="100%" behavior="scroll" direction="left" scrollamount="10" loop="infinite">
                 <div class="row justify-content-between">
                     <div class="col-xl-12">
-                        <div class="marquee_animi">
+                        <div class="marquee_animi d-flex">
                             <ul class="single_partner">
                                 @foreach ($brands as $brand)
                                     @if ($brand->image)
                                         <li>
-                                            <a href="agencies_details.html">
-                                                <img src="{{ asset('public/images/' . $brand->image) }}" alt="img"
-                                                    class="img-fluid w-100" />
-                                            </a>
+                                                <a href="agencies_details.html">
+                                                    <img src="{{ asset('public/images/' . $brand->image) }}" alt="img"
+                                                        class="img-fluid w-100" />
+                                                </a>
+                                        </li>
+                                    @else
+                                        No Image
+                                    @endif
+                                @endforeach
+                            </ul>
+                            <ul class="single_partner">
+                                @foreach ($brands as $brand)
+                                    @if ($brand->image)
+                                        <li>
+                                                <a href="agencies_details.html">
+                                                    <img src="{{ asset('public/images/' . $brand->image) }}" alt="img"
+                                                        class="img-fluid w-100" />
+                                                </a>
+                                        </li>
+                                    @else
+                                        No Image
+                                    @endif
+                                @endforeach
+                            </ul>
+                            <ul class="single_partner">
+                                @foreach ($brands as $brand)
+                                    @if ($brand->image)
+                                        <li>
+                                                <a href="agencies_details.html">
+                                                    <img src="{{ asset('public/images/' . $brand->image) }}" alt="img"
+                                                        class="img-fluid w-100" />
+                                                </a>
+                                        </li>
+                                    @else
+                                        No Image
+                                    @endif
+                                @endforeach
+                            </ul>
+                            <ul class="single_partner">
+                                @foreach ($brands as $brand)
+                                    @if ($brand->image)
+                                        <li>
+                                                <a href="agencies_details.html">
+                                                    <img src="{{ asset('public/images/' . $brand->image) }}" alt="img"
+                                                        class="img-fluid w-100" />
+                                                </a>
+                                        </li>
+                                    @else
+                                        No Image
+                                    @endif
+                                @endforeach
+                            </ul>
+                            <ul class="single_partner">
+                                @foreach ($brands as $brand)
+                                    @if ($brand->image)
+                                        <li>
+                                                <a href="agencies_details.html">
+                                                    <img src="{{ asset('public/images/' . $brand->image) }}" alt="img"
+                                                        class="img-fluid w-100" />
+                                                </a>
+                                        </li>
+                                    @else
+                                        No Image
+                                    @endif
+                                @endforeach
+                            </ul>
+                            <ul class="single_partner">
+                                @foreach ($brands as $brand)
+                                    @if ($brand->image)
+                                        <li>
+                                                <a href="agencies_details.html">
+                                                    <img src="{{ asset('public/images/' . $brand->image) }}" alt="img"
+                                                        class="img-fluid w-100" />
+                                                </a>
+                                        </li>
+                                    @else
+                                        No Image
+                                    @endif
+                                @endforeach
+                            </ul>
+                            <ul class="single_partner">
+                                @foreach ($brands as $brand)
+                                    @if ($brand->image)
+                                        <li>
+                                                <a href="agencies_details.html">
+                                                    <img src="{{ asset('public/images/' . $brand->image) }}" alt="img"
+                                                        class="img-fluid w-100" />
+                                                </a>
+                                        </li>
+                                    @else
+                                        No Image
+                                    @endif
+                                @endforeach
+                            </ul>
+                            <ul class="single_partner">
+                                @foreach ($brands as $brand)
+                                    @if ($brand->image)
+                                        <li>
+                                                <a href="agencies_details.html">
+                                                    <img src="{{ asset('public/images/' . $brand->image) }}" alt="img"
+                                                        class="img-fluid w-100" />
+                                                </a>
+                                        </li>
+                                    @else
+                                        No Image
+                                    @endif
+                                @endforeach
+                            </ul>
+                            <ul class="single_partner">
+                                @foreach ($brands as $brand)
+                                    @if ($brand->image)
+                                        <li>
+                                                <a href="agencies_details.html">
+                                                    <img src="{{ asset('public/images/' . $brand->image) }}" alt="img"
+                                                        class="img-fluid w-100" />
+                                                </a>
+                                        </li>
+                                    @else
+                                        No Image
+                                    @endif
+                                @endforeach
+                            </ul>
+                            <ul class="single_partner">
+                                @foreach ($brands as $brand)
+                                    @if ($brand->image)
+                                        <li>
+                                                <a href="agencies_details.html">
+                                                    <img src="{{ asset('public/images/' . $brand->image) }}" alt="img"
+                                                        class="img-fluid w-100" />
+                                                </a>
+                                        </li>
+                                    @else
+                                        No Image
+                                    @endif
+                                @endforeach
+                            </ul>
+                            <ul class="single_partner">
+                                @foreach ($brands as $brand)
+                                    @if ($brand->image)
+                                        <li>
+                                                <a href="agencies_details.html">
+                                                    <img src="{{ asset('public/images/' . $brand->image) }}" alt="img"
+                                                        class="img-fluid w-100" />
+                                                </a>
+                                        </li>
+                                    @else
+                                        No Image
+                                    @endif
+                                @endforeach
+                            </ul>
+                            <ul class="single_partner">
+                                @foreach ($brands as $brand)
+                                    @if ($brand->image)
+                                        <li>
+                                                <a href="agencies_details.html">
+                                                    <img src="{{ asset('public/images/' . $brand->image) }}" alt="img"
+                                                        class="img-fluid w-100" />
+                                                </a>
                                         </li>
                                     @else
                                         No Image
@@ -589,6 +743,7 @@
                         </div>
                     </div>
                 </div>
+
             </marquee>
         </div>
     </section>
