@@ -42,7 +42,7 @@
                         <div class="col-xxl-4 col-lg-5 wow fadeInLeft w-75" data-wow-duration="1.5s">
                             <li class="grid_4 item">
                                 <div class="preview">
-                                    <img src="public/{{ $cartItem['image'] }}" />
+                                    <img src="{{ asset('public/storage/' . $cartItem['image']) }}" />
                                 </div>
                                 <div class="details" data-price="15.50">
                                     <h3>
