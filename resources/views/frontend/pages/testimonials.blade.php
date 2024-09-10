@@ -129,7 +129,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row d-none d-lg-block wow fadeInLeft" data-wow-duration="1.5s">
+                <div class="row d-none wow fadeInLeft" data-wow-duration="1.5s">
                     <div class="col-xl-3">
                         <div class="testimonial_img_area">
                             <div class="row slider-nav">

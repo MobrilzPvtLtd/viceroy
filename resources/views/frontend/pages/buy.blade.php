@@ -174,7 +174,7 @@
                                         <div id="cancel_rqst1" class="home_form_label">
                                             <label>Country</label>
                                             <select class="select_label s1" name="co_name" id="co_name" required focus>
-                                                <option value="" disabled selected>select country </option>
+                                                <option value="" disabled selected>Select country </option>
 
                                                 @foreach ($countrys as $country)
                                                     <option value="{{ $country->id }}">{{ $country->co_name }}</option>
@@ -184,7 +184,7 @@
                                         <div id="cancel_rqst2" class="home_form_label">
                                             <label>State</label>
                                             <select class="select_label s1" name="st_name" id="st_name" required focus>
-                                                <option value="" disabled selected>select state </option>
+                                                <option value="" disabled selected>Select state </option>
 
                                                 {{-- @foreach ($states as $state)
                                                     <option value="{{ $state->id }}">{{ $state->st_name }}</option>
@@ -196,7 +196,7 @@
                                         <div id="cancel_rqst3" class="home_form_label">
                                             <label>City</label>
                                             <select class="select_label s1" name="ct_name" id="city" required focus>
-                                                <option value="" disabled selected> select city</option>
+                                                <option value="" disabled selected> Select city</option>
                                                 {{-- @foreach ($citys as $city)
                                                     <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
                                                 @endforeach --}}
@@ -290,7 +290,7 @@
                                         <div id="cancel_rqst5" class="home_form_label">
                                             <label>Currency</label>
                                             <select class="select_label" name="code">
-                                                <option value="" disabled selected> select currency</option>
+                                                <option value="" disabled selected> Select currency</option>
                                                 @foreach ($currencys as $currency)
                                                     <option value="{{ $currency->id }}">{{ $currency->code }}</option>
                                                 @endforeach
