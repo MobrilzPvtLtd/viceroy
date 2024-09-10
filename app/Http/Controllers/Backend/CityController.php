@@ -35,7 +35,7 @@ class CityController extends Controller
         $city->co_name = $request->co_name;
         $city->st_name = $request->st_name;
         $city->ct_name = $request->ct_name;
-        $city->address = $request->address;
+        // $city->address = $request->address;
         $city->save();
 
         return redirect()->route('city.index')->with('success', 'Country has been created successfully.');
@@ -68,7 +68,7 @@ class CityController extends Controller
         $city->co_name = $request->co_name;
         $city->st_name = $request->st_name;
         $city->ct_name = $request->ct_name;
-        $city->address = $request->address;
+        // $city->address = $request->address;
         $city->save();
 
         return redirect()->route('city.index');

@@ -31,7 +31,7 @@
                                 <div class="form-group mb-2 col-6">
                                     <label for="exampleInputEmail1">Country Name</label>
                                     <select class="form-control" id="co_name" name="co_name" required focus>
-                                        <option value="" disabled selected> select Country</option>
+                                        <option value="" disabled selected> Select Country</option>
                                         @foreach ($country as $country)
                                             <option value="{{ $country->id }}"  @if($city->co_name == $country->id) selected @endif>{{ $country->co_name }}</option>
                                         @endforeach
@@ -40,7 +40,7 @@
                                 <div class="form-group mb-2 col-6">
                                     <label for="st_name">State</label>
                                     <select class="form-control" id="state" name="st_name" required>
-                                        <option value="" disabled selected> select State</option>
+                                        <option value="" disabled selected> Select State</option>
                                         @foreach ($state as $st)
                                         <option value="{{ $st->id }}"
                                             @if($city->st_name == $st->id) selected @endif
@@ -56,10 +56,10 @@
                                         <input type="text" class="form-control" name="ct_name" value="{{ $city->ct_name }}">
                                     </div>
                                 </div>
-                                <div class="form-group mb-3 col-8">
+                                {{-- <div class="form-group mb-3 col-8">
                                     <label for="address">Address/Location</label>
                                     <input class="form-control" id="address" name="address" value="{{ old('address') }}" placeholder="">
-                                </div>
+                                </div> --}}
                             </div>
                             <button type="submit" class="btn btn-success">Submit</button>
                         </form>

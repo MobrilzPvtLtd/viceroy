@@ -19,7 +19,7 @@
                                 <div class="form-group mb-2 col-6">
                                     <label for="exampleInputEmail1">Country Name</label>
                                     <select class="form-control" id="co_name" name="co_name" value="{{ old('co_name') }}"required focus>
-                                        <option value="" disabled selected> select Country</option>
+                                        <option value="" disabled selected> Select Country</option>
                                         @foreach ($countries as $country)
                                             <option value="{{ $country->id }}">{{ $country->co_name }}</option>
                                         @endforeach
@@ -28,7 +28,7 @@
                                 <div class="form-group mb-2 col-6">
                                     <label for="st_name">State</label>
                                     <select class="form-control" id="state" name="st_name" value="{{ old('st_name') }}" required>
-                                        <option value="" disabled selected> select State</option>
+                                        <option value="" disabled selected> Select State</option>
                                         {{-- @foreach ($state as $state)
                                         @endforeach --}}
                                     </select>
@@ -40,10 +40,10 @@
                                     <input type="text" class="form-control" id="city" name="ct_name"  value="{{ old('ct_name') }}" placeholder="">
                                 </div>
 
-                                <div class="form-group mb-3 col-8">
+                                {{-- <div class="form-group mb-3 col-8">
                                     <label for="address">Address/Location</label>
                                     <input class="form-control" id="address" name="address" value="{{ old('address') }}" placeholder="">
-                                </div>
+                                </div> --}}
                             </div>
                             <button type="submit" class="btn btn-success">Submit</button>
                         </form>

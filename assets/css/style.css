@@ -2658,7 +2658,7 @@ button {
     position: fixed;
     bottom: 50px;
     left: 0px;
-    z-index: 999;
+    z-index: 99;
 }
 .whtcall-mob-btn ul {
     margin: 0px;
@@ -2695,7 +2695,7 @@ button {
     position: fixed;
     bottom: 8px;
     left: 0px;
-    z-index: 999;
+    z-index: 99;
 }
 .whtcall-mob-btn ul {
     margin: 0px;
@@ -8377,4 +8377,7 @@ marquee {
     .drop002{
         display: none;
     }
+}
+.cc {
+    z-index: 999 !important;
 }

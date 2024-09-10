@@ -24,7 +24,7 @@
                         <a class="nav-link" href="{{ route('rent') }}">Rent Property </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('holiday') }}">Holiday Rental </a>
+                        <a class="nav-link" href="{{ route('holiday') }}">Estate Management </a>
                     </li>
                     <li class="nav-item drop001">
                         <a class="nav-link" href="{{ route('about') }}">about us</a>
