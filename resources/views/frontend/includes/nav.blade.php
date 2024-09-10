@@ -28,22 +28,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('about') }}">about us</a>
-                        {{-- <ul>
-                            <li>
-                                <a class="menu-item" href="#">User</a>
-                                <ul>
-                                    <li>
-                                        <a class="menu-item" href="">Admin</a>
-                                    </li>
-                                    <li>
-                                        <a class="menu-item"
-                                            href="">Profile</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul> --}}
-
-
                     </li>
 
                     <li class="nav-item">
