@@ -26,8 +26,17 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('holiday') }}">Holiday Rental </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item drop001">
                         <a class="nav-link" href="{{ route('about') }}">about us</a>
+                    </li>
+                    <li class="nav-item drop003">
+                        <a class="nav-link" href="{{ route('realtors') }}">Our Realtors</a>
+                    </li>
+                    <li class="nav-item drop003">
+                        <a class="nav-link" href="{{ route('brand') }}">Our Brands </a>
+                    </li>
+                    <li class="nav-item drop003">
+                        <a class="nav-link" href="{{ route('testimonials') }}">Tetimonials</a>
                     </li>
 
                     <li class="nav-item">
@@ -36,6 +45,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
                     </li>
+                    <div class="drop002">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('realtors') }}">Our Realtors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('brand') }}">Our Brands </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('testimonials') }}">Tetimonials</a>
+                        </li>
+
+                    </div>
                 </ul>
 
                 <ul class="menu_right d-flex align-items-center">
