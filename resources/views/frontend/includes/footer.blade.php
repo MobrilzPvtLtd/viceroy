@@ -456,3 +456,28 @@
         }, 100);
 
   </script>
+
+<script>
+    const drop = document.querySelector(".drop001")
+    const drop2 = document.querySelector(".drop002")
+    drop.addEventListener("mouseover", (()=>{
+        drop2.style.visibility = "visible"
+        drop2.style.opacity = 1
+        drop2.style.scale = 1
+        drop2.style.transform ="translate(0, 0px)" ;
+
+    }))
+    drop.addEventListener("mouseout", (()=>{
+        drop2.style.visibility = "hidden"
+        drop2.style.opacity = 0
+
+    }))
+    drop2.addEventListener("mouseover", (()=>{
+        drop2.style.visibility = "visible"
+        drop2.style.opacity = 1
+    }))
+    drop2.addEventListener("mouseout", (()=>{
+        drop2.style.visibility = "hidden"
+        drop2.style.opacity = 0
+    }))
+</script>

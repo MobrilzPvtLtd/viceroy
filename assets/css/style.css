@@ -8151,6 +8151,24 @@ marquee {
     width: 250px !important;
 
 } */
+.drop002 {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #000;
+    padding: 0px 25px 25px 25px;
+    border-radius: 25px;
+    left: 1015px;
+    top: 85px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    transform: translate(0, -50px) ;
+    scale: 1.1;
+}
+.main_menu .navbar-nav .drop002 .nav-item .nav-link{
+    height: 50px;
+}
 
 @media screen and (min-width: 1601px) and (max-width: 1800px) {
     .sd-multiSelect .ms-choice {
@@ -8170,6 +8188,9 @@ marquee {
     }
     .sd-CustomSelect span.placeholder {
         font-size: 15px !important;
+    }
+    .drop002 {
+        left: 915px;
     }
 }
 @media screen and (min-width: 1301px) and (max-width: 1600px) {
@@ -8197,6 +8218,9 @@ marquee {
     .banner_text {
         padding-top: 50px;
     }
+    .drop002 {
+        left: 800px;
+    }
 }
 @media screen and (min-width: 1100px) and (max-width: 1300px) {
     .sd-multiSelect .ms-choice {
@@ -8214,6 +8238,9 @@ marquee {
     .banner_text {
         padding-top: 40px;
     }
+    .drop002 {
+        left: 650px;
+    }
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1099px) {
@@ -8229,6 +8256,9 @@ marquee {
     }
     .ms-drop.bottom {
         width: 165px !important;
+    }
+    .drop002 {
+        left: 525px;
     }
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -8336,4 +8366,15 @@ marquee {
 }
 .progress-wrap.active-progress {
     display: none;
+}
+
+@media screen and (min-width:992px) and (max-width:1920px) {
+    .drop003{
+        display: none;
+    }
+}
+@media screen and (max-width:991px) {
+    .drop002{
+        display: none;
+    }
 }
