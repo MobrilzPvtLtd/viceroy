@@ -32,8 +32,6 @@
             BREADCRUMBS END
         ==============================-->
 
-
-
         <section class="testimonial pt_60 pb_120 xs_pb_100">
             <div class="container">
                 <div class="row justify-content-between align-items-end">
@@ -47,87 +45,34 @@
                     </div>
                 </div>
                 <div class="row mt_40 slider-for">
-                    <div class="col-12">
-                        <div class="testimonial_item">
-                            <div class="row">
-                                <div class="col-lg-4 wow fadeInLeft" data-wow-duration="1.5s">
-                                    <div class="testimonial_item_tetle">
-                                        <h4>Douglas Lyphe</h4>
-                                        <p>Operations Manager - Static Mania</p>
+                    @foreach ($testimonials as $testimonial)
+                        <div class="col-12">
+                            <div class="testimonial_item">
+                                <div class="row">
+                                    <div class="col-lg-4 wow fadeInLeft" data-wow-duration="1.5s">
+                                        <div class="testimonial_item_tetle">
+                                            <h4>{{ $testimonial->name }}</h4>
+                                            <p>{{ $testimonial->company }}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-8 wow fadeInRight" data-wow-duration="1.5s">
-                                    <div class="testimonial_description">
-                                        <span>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </span>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni magnam amet
-                                            impedit ab odit. Omnis doloribus libero obcaecati, nihil aliquam perspiciatis
-                                            facilis deleniti reprehenderit velit voluptate amet ab hic nesciunt ipsa
-                                            delectus recusandae provident? Deleniti minus mollitia provident quo dolore?</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="testimonial_item">
-                            <div class="row">
-                                <div class="col-lg-4 wow fadeInLeft" data-wow-duration="1.5s">
-                                    <div class="testimonial_item_tetle">
-                                        <h4>Douglas Lyphe</h4>
-                                        <p>Operations Manager - Static Mania</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-8 wow fadeInRight" data-wow-duration="1.5s">
-                                    <div class="testimonial_description">
-                                        <span>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </span>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni magnam amet
-                                            impedit ab odit. Omnis doloribus libero obcaecati, nihil aliquam perspiciatis
-                                            facilis deleniti reprehenderit velit voluptate amet ab hic nesciunt ipsa
-                                            delectus recusandae provident? Deleniti minus mollitia provident quo dolore?</p>
+                                    <div class="col-lg-8 wow fadeInRight" data-wow-duration="1.5s">
+                                        <div class="testimonial_description">
+                                            <span>
+                                                @for ($i = 0; $i < $testimonial->rating; $i++)
+                                                    <i class="fas fa-star"></i>
+                                                @endfor
+                                                {{-- <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i> --}}
+                                            </span>
+                                            <p>{{ $testimonial->description }}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="testimonial_item">
-                            <div class="row">
-                                <div class="col-lg-4 wow fadeInLeft" data-wow-duration="1.5s">
-                                    <div class="testimonial_item_tetle">
-                                        <h4>Douglas Lyphe</h4>
-                                        <p>Operations Manager - Static Mania</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-8 wow fadeInRight" data-wow-duration="1.5s">
-                                    <div class="testimonial_description">
-                                        <span>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </span>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni magnam amet
-                                            impedit ab odit. Omnis doloribus libero obcaecati, nihil aliquam perspiciatis
-                                            facilis deleniti reprehenderit velit voluptate amet ab hic nesciunt ipsa
-                                            delectus recusandae provident? Deleniti minus mollitia provident quo dolore?</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <div class="row d-none wow fadeInLeft" data-wow-duration="1.5s">
                     <div class="col-xl-3">

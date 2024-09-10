@@ -20,6 +20,7 @@ use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Backend\BrandsController;
 use App\Http\Controllers\Backend\ProfessionalsController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Backend\TestimonialController;
 use Illuminate\Support\Facades\Artisan;
 
 
@@ -113,6 +114,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/professionals-trash', [ProfessionalsController::class, 'professionalsTrash'])->name('professionals-trash');
     Route::patch('/admin/professionals-restore/{id}', [ProfessionalsController::class, 'professionalsRestore'])->name('professionals-restore');
     Route::post('/admin/professionals-delete/{id}', [ProfessionalsController::class, 'professionalsDelete'])->name('professionals-delete');
+
+    //Testimonial
+    Route::resource('admin/testimonial', TestimonialController::class);
+    Route::get('/admin/testimonial-trash', [TestimonialController::class, 'testimonialTrash'])->name('testimonial-trash');
+    Route::patch('/admin/testimonial-restore/{id}', [TestimonialController::class, 'testimonialRestore'])->name('testimonial-restore');
+    Route::post('/admin/testimonial-delete/{id}', [TestimonialController::class, 'testimonialDelete'])->name('testimonial-delete');
 
 });
 

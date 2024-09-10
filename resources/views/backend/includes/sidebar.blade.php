@@ -155,6 +155,13 @@ $total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
                 </a>
             </li>
         @endcan
+        @can('testimonial')
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('testimonial.index') }}">
+                    <i class="nav-icon fa fa-quote-left" aria-hidden="true"></i>&nbsp;@lang('Testimonial')
+                </a>
+            </li>
+        @endcan
 
 
         {{-- @can('view_backups')

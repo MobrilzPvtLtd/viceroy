@@ -15,6 +15,7 @@ use App\Models\Brands;
 use App\Models\User;
 use App\Models\Professionals;
 use App\Models\State;
+use App\Models\Testimonial;
 use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
@@ -267,8 +268,8 @@ class FrontendController extends Controller
     }
     public function testimonials()
     {
-        $brands = Brands::get();
-        return view('frontend.pages.testimonials', compact('brands'));
+        $testimonials = Testimonial::get();
+        return view('frontend.pages.testimonials', compact('testimonials'));
     }
     public function brand()
     {
