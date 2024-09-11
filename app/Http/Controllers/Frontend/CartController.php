@@ -13,10 +13,10 @@ class CartController extends Controller
     public function add(Request $request)
     {
         $responseData = [];
-        $cartExists = $request->session()->has('cart');
         $cart = $request->session()->get('cart', []);
 
         if ($request->remove) {
+
             if (isset($cart[$request->id])) {
                 unset($cart[$request->id]);
             }
@@ -53,10 +53,10 @@ class CartController extends Controller
             $responseData['disabled'] = $property->id;
         }
 
-        if ($cartExists && !empty($cart)) {
-            // $responseData['CartHTML'] = CartHelper::generateCartHTML($cart);
-            $html = '';
-            $cartIsEmpty = empty($cart);
+        $html = '';
+        $cartIsEmpty = empty($cart);
+
+        if (!$cartIsEmpty) {
             foreach ($cart as $item) {
                 $html .= '
                     <div class="d-flex" style="width: 100%">

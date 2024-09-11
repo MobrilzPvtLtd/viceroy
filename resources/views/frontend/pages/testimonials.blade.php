@@ -61,10 +61,6 @@
                                                 @for ($i = 0; $i < $testimonial->rating; $i++)
                                                     <i class="fas fa-star"></i>
                                                 @endfor
-                                                {{-- <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i> --}}
                                             </span>
                                             <p>{{ $testimonial->description }}</p>
                                         </div>

@@ -16,6 +16,7 @@ use App\Models\User;
 use App\Models\Professionals;
 use App\Models\State;
 use App\Models\Testimonial;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
@@ -293,9 +294,11 @@ class FrontendController extends Controller
         $brands = Brands::all();
         return view('frontend.pages.about', compact('professionals', 'brands'));
     }
-    public function login()
+    public function login(Request $request)
     {
-
+        if (!$request->session()->has('backUrl') && !Auth::check()) {
+            $request->session()->put('backUrl', url()->previous());
+        }
         return view('frontend.pages.login');
     }
     public function register()

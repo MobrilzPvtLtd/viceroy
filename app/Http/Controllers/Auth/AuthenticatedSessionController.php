@@ -8,6 +8,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
 class AuthenticatedSessionController extends Controller
@@ -41,7 +42,9 @@ class AuthenticatedSessionController extends Controller
 
             event(new UserLoginSuccess($request, $user));
 
-            return redirect()->intended(route('frontend.index', absolute: false));
+            // return redirect()->intended(route('frontend.index', absolute: false));
+            $url = $request->session()->get('backUrl');
+            return $url ? Redirect::to($url) : Redirect::route('frontend.index');
         }
 
         return back()->withErrors([
