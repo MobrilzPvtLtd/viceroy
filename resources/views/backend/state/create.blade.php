@@ -19,7 +19,7 @@
                                 <div class="form-group col-md-6 mb-2">
                                     <label for="exampleInputEmail1">Country Name</label>
                                     <select class="form-control" name="co_name"  value="{{ old('co_name') }}"required focus>
-                                        <option value="" disabled selected> select Country</option>
+                                        <option value="" disabled selected> Select Country</option>
                                         @foreach ($countries as $country)
                                             <option value="{{ $country->id }}">{{ $country->co_name }}</option>
                                         @endforeach

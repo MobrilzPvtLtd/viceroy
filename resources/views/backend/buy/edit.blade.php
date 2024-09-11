@@ -42,7 +42,7 @@
                                 <div class="form-group mb-2 col-4">
                                     <label for="p_type">Type of Property</label>
                                     <select class="form-control" name="p_type">
-                                        <option value="">Select property type</option>
+                                        <option value="">Select Property Type</option>
                                         <option value="premium" {{ $buy->p_type === 'premium' ? 'selected' : '' }}>Premium</option>
                                         <option value="budget" {{ $buy->p_type === 'budget' ? 'selected' : '' }}>Budget</option>
                                         <option value="standard" {{ $buy->p_type === 'standard' ? 'selected' : '' }}>Standard</option>

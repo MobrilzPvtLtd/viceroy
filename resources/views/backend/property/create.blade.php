@@ -23,7 +23,7 @@
                                 <div class="form-group mb-3 col-4">
                                     <label for="">Property List</label>
                                     <select class="form-control" name="type" value="{{ old('type') }}">
-                                        <option value="">select property </option>
+                                        <option value="">Select Property </option>
                                         <option value="rent">For Rent </option>
                                         <option value="buy">For Buy</option>
 
@@ -38,7 +38,7 @@
                                     <label for="exampleInputEmail1">Country</label>
                                     <select class="form-control" id="co_name" name="country_id"
                                         value="{{ old('country_id') }}"required focus>
-                                        <option value="" disabled selected> select Country</option>
+                                        <option value="" disabled selected> Select Country</option>
                                         @foreach ($countrys as $country)
                                             <option value="{{ $country->id }}">{{ $country->co_name }}</option>
                                         @endforeach
@@ -109,7 +109,7 @@
                                 <div class="form-group mb-3 col-4">
                                     <label>Type of Property</label>
                                     <select class="form-control" name="p_type" value="">
-                                        <option value="{{ old('p_type') }}">select property </option>
+                                        <option value="{{ old('p_type') }}">Select Property Type </option>
                                         <option value="Apartment">Apartment</option>
                                         <option value="Villa">Villa</option>
                                         <option value="Plot">Plot</option>

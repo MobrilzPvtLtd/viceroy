@@ -43,7 +43,7 @@
                                 <div class="form-group mb-2 col-4">
                                     <label for="p_type">Type of Property</label>
                                     <select class="form-control" id="p_type" name="p_type" value="{{ old('p_type') }}">
-                                        <option value="">Select Property </option>
+                                        <option value="">Select Property Type </option>
                                         <option value="premium">Premium</option>
                                         <option value="budget">Budget</option>
                                         <option value="standard">Standard</option>
