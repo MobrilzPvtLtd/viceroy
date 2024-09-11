@@ -66,7 +66,6 @@ $total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('inquairy.index') }}">
-
                             <span class="nav-icon">
                                 <span class="nav-icon-bullet"></span>
                             </span> <span id="is_viewchackout">Property enquiry</span>

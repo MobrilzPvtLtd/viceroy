@@ -54,8 +54,9 @@ class ContactsController extends Controller
             }
         } else {
             $checkouts = Checkout::get();
+
             foreach ($checkouts as $checkout) {
-                $checkout->is_view = 1;
+                $checkout->is_viewchackout = 1;
                 $checkout->save();
             }
 
