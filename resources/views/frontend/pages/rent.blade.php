@@ -313,7 +313,7 @@
                                             <select class="select_label" name="code">
                                                 <option value="" disabled selected> select currency</option>
                                                 @foreach ($currencys as $currency)
-                                                    <option value="{{ $currency->id }}">{{ $currency->code }}</option>
+                                                    <option value="{{ $currency->code }}" {{ $currency->code == request()->session()->get('currency') ? 'selected' : '' }}>{{ $currency->code }}</option>
                                                 @endforeach
                                             </select>
                                         </div>

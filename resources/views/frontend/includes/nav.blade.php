@@ -117,7 +117,7 @@
 
                             </div>
                             <div>
-                                <select name="currency" id="currency">
+                                <select name="currency" id="currency" class="currency">
                                     @foreach (App\Models\Currency::get(); as $currency)
                                         <option value="{{ $currency->code }}"
                                             {{ $currency->code == request()->session()->get('currency') ? 'selected' : '' }}
@@ -188,7 +188,7 @@
             p.notify001 {
                 top: -15px !important;
             }
-            select#currency {
+            .currency {
                 background-color: #e6b025;
                 padding: 5px;
                 border-radius: 5px;

@@ -80,6 +80,15 @@ class FrontendController extends Controller
         if ($request->has('p_type') && $request->type != '') {
             $query->where('p_type', $request->type);
         }
+
+        $currency = Currency::where('code', $request->code)->first();
+
+        if ($currency) {
+            $request->session()->put('prefix', $currency->prefix);
+            $request->session()->put('price', $currency->bcr);
+            $request->session()->put('currency', $currency->code);
+        }
+
         $propertys = $query->orderBy('id', 'desc')->get();
 
         $uniquePropertyTypes = Property::where('type', 'buy')->distinct()->pluck('p_type');
@@ -129,6 +138,15 @@ class FrontendController extends Controller
         if ($request->has('p_type') && $request->type != '') {
             $query->where('p_type', $request->type);
         }
+
+        $currency = Currency::where('code', $request->code)->first();
+
+        if ($currency) {
+            $request->session()->put('prefix', $currency->prefix);
+            $request->session()->put('price', $currency->bcr);
+            $request->session()->put('currency', $currency->code);
+        }
+
         $propertys = $query->orderBy('id', 'desc')->get();
         $uniquePropertyTypes = Property::where('type', 'buy')->distinct()->pluck('p_type');
         if (!$uniquePropertyTypes->contains('Villa','Apartment','Plot','Bungalows','Flats')) {
