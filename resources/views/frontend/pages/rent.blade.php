@@ -308,7 +308,7 @@
                                             </div>
                                         </div>
 
-                                        <div id="cancel_rqst5" class="home_form_label">
+                                        {{-- <div id="cancel_rqst5" class="home_form_label">
                                             <label>Currency</label>
                                             <select class="select_label" name="code">
                                                 <option value="" disabled selected> select currency</option>
@@ -316,7 +316,7 @@
                                                     <option value="{{ $currency->code }}" {{ $currency->code == request()->session()->get('currency') ? 'selected' : '' }}>{{ $currency->code }}</option>
                                                 @endforeach
                                             </select>
-                                        </div>
+                                        </div> --}}
                                         <div class="">
                                             <button class="common_btn banner_input_btn" type="submit"
                                                 style="width: 100%; margin-top: 30px">
