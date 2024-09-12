@@ -207,7 +207,7 @@
                                             <label>Bedrooms</label>
                                             <div class="adv_search_icon" id="select_bedroom_btn">
                                                 <input class="select_label select_bedroom_btn" id="bedroomButton"
-                                                    name="state" type="button" value="Select bedrooms">
+                                                    name="bedrooms" type="button" value="Select bedrooms">
                                             </div>
 
                                             <div class="adv_search_area show_search1" id="close001">
@@ -216,7 +216,7 @@
                                                 </div>
 
                                                 <div id="min_max">
-                                                    <select class="select_2" id="bedroomMin" name="state">
+                                                    <select class="select_2" id="bedroomMin" name="bedrooms">
                                                         <option value="">Min</option>
                                                         @foreach ($uniqueBedrooms as $bedroom)
                                                             <option value="{{ $bedroom }}">{{ $bedroom }}
@@ -224,7 +224,7 @@
                                                         @endforeach
                                                     </select>
 
-                                                    <select class="select_2" id="bedroomMax" name="state">
+                                                    <select class="select_2" id="bedroomMax" name="bedrooms">
                                                         <option value="">Max</option>
                                                         @foreach ($uniqueBedrooms as $bedroom)
                                                             <option value="{{ $bedroom }}">{{ $bedroom }}
@@ -235,12 +235,11 @@
                                             </div>
                                         </div>
 
-
                                         <div class="home_form_label s2">
                                             <label>Price</label>
                                             <div class="adv_search_icon2" id="select_price_btn">
                                                 <input type="button" value="Select Price" class="select_label s22"
-                                                    id="priceButton" name="state">
+                                                    id="priceButton" name="price">
                                             </div>
 
                                             <div class="adv_search_area2" id="close002">
@@ -248,7 +247,7 @@
                                                 </div>
                                                 <div id="min_max2">
                                                     <div>
-                                                        <select class="select_2" id="priceMin" name="state">
+                                                        <select class="select_2" id="priceMin" name="price">
                                                             <option value="">Min</option>
                                                             @foreach ($uniquePrices as $price)
                                                                 <option value="{{ $price }}">{{ $price }}
@@ -257,7 +256,7 @@
                                                         </select>
                                                     </div>
                                                     <div>
-                                                        <select class="select_2" id="priceMax" name="state">
+                                                        <select class="select_2" id="priceMax" name="price">
                                                             <option value="">Max</option>
                                                             @foreach ($uniquePrices as $price)
                                                                 <option value="{{ $price }}">{{ $price }}
@@ -269,12 +268,11 @@
                                             </div>
                                         </div>
 
-
                                         <div class="modal-box">
                                             <div id="cancel_rqst4" class="sd-multiSelect form-group">
                                                 <label for="current-job-role">Property Type</label>
                                                 <select multiple id="current-job-role" class="sd-CustomSelect"
-                                                    aria-placeholder="yggv" placeholder="Select Property type">
+                                                    aria-placeholder="yggv" placeholder="Select Property type" name="p_type">
                                                     @foreach ($uniquePropertyTypes as $p_type)
                                                         <option value="{{ $p_type }}">{{ $p_type }}</option>
                                                     @endforeach
