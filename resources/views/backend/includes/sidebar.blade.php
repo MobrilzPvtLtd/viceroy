@@ -147,23 +147,28 @@ $total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
             </a>
             <ul class="nav-group-items compact" style="height: auto;">
                 @can('Brand')
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/country">
+                        <span class="nav-icon"><span class="nav-icon-bullet"></span></span> Country
+                    </a>
+                </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/brand">
-                            <i class="nav-icon fa-solid fa-bars"></i>&nbsp;@lang('Our Brands')
+                            <span class="nav-icon"><span class="nav-icon-bullet"></span></span> &nbsp;@lang('Our Brands')
                         </a>
                     </li>
                 @endcan
                 @can('professionals')
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/professionals">
-                            <i class="nav-icon fa-solid fa-user"></i>&nbsp;@lang('Our Realtors')
+                            <span class="nav-icon"><span class="nav-icon-bullet"></span></span> &nbsp;@lang('Our Realtors')
                         </a>
                     </li>
                 @endcan
                 @can('testimonial')
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('testimonial.index') }}">
-                            <i class="nav-icon fa fa-quote-left" aria-hidden="true"></i>&nbsp;@lang('Testimonial')
+                            <span class="nav-icon"><span class="nav-icon-bullet"></span></span> &nbsp;@lang('Testimonials')
                         </a>
                     </li>
                 @endcan
