@@ -147,11 +147,6 @@ $total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
             </a>
             <ul class="nav-group-items compact" style="height: auto;">
                 @can('Brand')
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin/country">
-                        <span class="nav-icon"><span class="nav-icon-bullet"></span></span> Country
-                    </a>
-                </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/brand">
                             <span class="nav-icon"><span class="nav-icon-bullet"></span></span> &nbsp;@lang('Our Brands')
