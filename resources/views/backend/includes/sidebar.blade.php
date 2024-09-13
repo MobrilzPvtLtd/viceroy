@@ -140,28 +140,35 @@ $total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
                 </a>
             </li>
         @endcan
-        @can('Brand')
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/brand">
-                    <i class="nav-icon fa-solid fa-bars"></i>&nbsp;@lang('Our Brands')
-                </a>
-            </li>
-        @endcan
-        @can('professionals')
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/professionals">
-                    <i class="nav-icon fa-solid fa-user"></i>&nbsp;@lang('Our Realtors')
-                </a>
-            </li>
-        @endcan
-        @can('testimonial')
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('testimonial.index') }}">
-                    <i class="nav-icon fa fa-quote-left" aria-hidden="true"></i>&nbsp;@lang('Testimonial')
-                </a>
-            </li>
-        @endcan
 
+        <li class="nav-group" aria-expanded="true">
+            <a class="nav-link nav-group-toggle" href="#">
+                <i class="nav-icon fa fa-book" aria-hidden="true"></i>&nbsp;About Us
+            </a>
+            <ul class="nav-group-items compact" style="height: auto;">
+                @can('Brand')
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/brand">
+                            <i class="nav-icon fa-solid fa-bars"></i>&nbsp;@lang('Our Brands')
+                        </a>
+                    </li>
+                @endcan
+                @can('professionals')
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/professionals">
+                            <i class="nav-icon fa-solid fa-user"></i>&nbsp;@lang('Our Realtors')
+                        </a>
+                    </li>
+                @endcan
+                @can('testimonial')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('testimonial.index') }}">
+                            <i class="nav-icon fa fa-quote-left" aria-hidden="true"></i>&nbsp;@lang('Testimonial')
+                        </a>
+                    </li>
+                @endcan
+            </ul>
+        </li>
 
         {{-- @can('view_backups')
             <li class="nav-item">
@@ -178,7 +185,7 @@ $total_checkouts = App\Models\Checkout::where('is_viewchackout', 0)->count();
                 </a>
             </li>
         @endcan
-{{--
+        {{--
         @can('view_roles')
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('backend.roles.index') }}">
