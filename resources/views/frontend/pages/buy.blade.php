@@ -482,18 +482,18 @@
 
 
             <div class="container">
-                <div class="row mt_95 xs_mt_75 ">
-                    <button id="btn001" onclick="func()" name="map-view">
+                <div class="mt_95 xs_mt_75 view001">
+                    {{-- <button id="btn001" onclick="func()" name="map-view">
                         <i class="fa-solid fa-map"> Map view</i>
                     </button>
                     <button id="btn002" onclick="func()" name="list-view">
                         <i class="fa-solid fa-list"> List view</i>
-                    </button>
+                    </button> --}}
                     <div class="col-md-9 " id="list001">
                         <div class="row" id="lits-item">
                             @if (count($propertys) > 0)
                                 @foreach ($propertys as $property)
-                                    <div class="col-xl-4 col-md-6 wow fadeInUp " data-wow-duration="1.5s">
+                                    <div class="col-xl-4 col-md-6 wow fadeInUp c01 " data-wow-duration="1.5s">
                                         <div class="single_property">
                                             <div class="single_property_img">
                                                 @php

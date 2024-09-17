@@ -167,19 +167,22 @@ button#btn001 {
 
 }
 #map001{
-    display: none;
-    width: 100vw !important;
+    /* display: none; */
+    width: 35% !important;
 
     /* position: absolute; */
 }
 #list001{
     display: block;
-    width: 100vw !important;
+    width: 65% !important;
 
     /* position: absolute; */
 }
+.mt_95.xs_mt_75.view001 {
+    display: flex;
+}
 #btn002{
-    display: none;
+    /* display: none; */
     background-color: #fff;
     padding-bottom: 15px;
 }
