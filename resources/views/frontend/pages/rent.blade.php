@@ -661,10 +661,13 @@
                             // Add multiple markers to map
                             var infoWindow = new google.maps.InfoWindow();
 
+                            var hasValidMarkers = false;
                             // Place each marker on the map
                             for (var i = 0; i < markers.length; i++) {
                                 var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
                                 bounds.extend(position); // Extend bounds to include each marker's position
+                                var hasValidMarkers = true;
+
                                 marker = new google.maps.Marker({
                                     position: position,
                                     map: map,
@@ -680,15 +683,17 @@
                                 })(marker, i);
                             }
 
-                            // Fit the map bounds to include all markers
-                            map.fitBounds(bounds);
+                            if (hasValidMarkers) {
+                                map.fitBounds(bounds);
 
-                            // Set zoom level based on bounds
-                            var boundsListener = google.maps.event.addListener(map, 'bounds_changed', function(event) {
-                                // Set the zoom level after the map bounds are changed
-                                this.setZoom(Math.min(this.getZoom(), 14)); // You can adjust the max zoom level here
-                                google.maps.event.removeListener(boundsListener);
-                            });
+                                var boundsListener = google.maps.event.addListener(map, 'bounds_changed', function(event) {
+                                    this.setZoom(Math.min(this.getZoom(), 14));
+                                    google.maps.event.removeListener(boundsListener);
+                                });
+                            } else {
+                                map.setCenter(new google.maps.LatLng(0, 0));
+                                map.setZoom(2);
+                            }
 
                             // Initialize Autocomplete
                             var autocompleteOptions = {
