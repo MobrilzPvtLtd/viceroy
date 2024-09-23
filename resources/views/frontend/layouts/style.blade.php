@@ -143,7 +143,7 @@
     position: absolute;
     top: 8vw !important;
     opacity: 1;
-    left: 24vw;
+    left: 30vw;
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
@@ -532,8 +532,8 @@ select.select_2 {
     }
 }
 #close002 {
-    top: 73vw !important;
-    left: 15vw;
+    /* top: 73vw !important; */
+    left: 40vw;
 }
 
 
