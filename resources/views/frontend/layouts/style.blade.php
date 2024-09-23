@@ -206,10 +206,10 @@ select.select_2 {
     margin: 0;
     padding: 0px 0px;
     height: 100%;
-    width: 95%;
+    width: 100%;
     position: absolute;
     top: 0px;
-    left: 9px;
+    /* left: 9px; */
     gap: 15px;
     justify-content: center;
     align-items: center;
@@ -262,7 +262,7 @@ select.select_2 {
     /* margin-left: 20px; */
 }
 .adv_search_area{
-    width: 25%;
+    width: 22%;
 }
 
 .adv_search_close3 {
@@ -421,10 +421,10 @@ select.select_2 {
     margin: 0;
     padding: 0px 0px;
     height: 100%;
-    width: 95%;
+    width: 100%;
     position: absolute;
     top: 0px;
-    left: 9px;
+    left: 1px;
     gap: 15px;
     justify-content: center;
     align-items: center;
@@ -541,5 +541,8 @@ select.select_2 {
 button.gm-control-active {
     height: 19px !important;
     top: 19px !important;
+}
+#min_max2 select {
+    padding: 15px 24px;
 }
 </style>

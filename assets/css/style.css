@@ -1224,7 +1224,7 @@ button {
     position: absolute;
     top: 100%;
     left: 310ox;
-    padding: 35px;
+    padding: 30px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     transform: scaleY(0);
     transform-origin: top;
@@ -1424,13 +1424,13 @@ button {
 /* banner end */
 
 .adv_search_area2 {
-    width: 25%;
+    width: 21%;
     background: var(--colorWhite);
     height: auto !important;
     position: absolute;
     top: 100%;
     /* left: 310px; */
-    padding: 35px;
+    padding: 30px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     transform: scaleY(0);
     transform-origin: top;
