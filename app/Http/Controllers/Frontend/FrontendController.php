@@ -61,16 +61,41 @@ class FrontendController extends Controller
     }
     public function buy(Request $request)
     {
-        $query = Property::where('type', 'buy');
-        if ($request->has('co_name') && $request->co_name != '') {
-            $query->where('country_id', $request->co_name);
+        $query = Property::leftJoin('countries', 'properties.country_id', '=', 'countries.id')
+        ->leftJoin('states', 'properties.state_id', '=', 'states.id')
+        ->leftJoin('cities', 'properties.city_id', '=', 'cities.id')
+        ->select('properties.*', 'countries.co_name', 'states.st_name', 'cities.ct_name')
+        ->where('properties.type', 'buy');
+
+    // Check for search input
+    if ($request->has('search') && !empty($request->search)) {
+        $searchTerm = $request->search;
+
+        // Split the search term by comma
+        $parts = array_map('trim', explode(',', $searchTerm));
+
+        // Initialize variables for city, state, and country
+        $city = $state = $country = null;
+
+        // Assign values based on the number of parts
+        if (count($parts) === 3) {
+            list($city, $state, $country) = $parts;
+
+            // Update the query to filter based on the exact parts
+            $query->where(function($query) use ($city, $state, $country) {
+                if ($city) {
+                    $query->where('cities.ct_name', '=', $city);
+                }
+                if ($state) {
+                    $query->where('states.st_name', '=', $state);
+                }
+                if ($country) {
+                    $query->where('countries.co_name', '=', $country);
+                }
+            });
         }
-        if ($request->has('st_name') && $request->st_name != '') {
-            $query->where('state_id', $request->st_name);
-        }
-        if ($request->has('ct_name') && $request->ct_name != '') {
-            $query->where('city_id', $request->ct_name);
-        }
+    }
+
         if ($request->has('bedrooms') && $request->bedrooms != '') {
             $query->where('number_of_room', $request->bedrooms);
         }
@@ -111,16 +136,40 @@ class FrontendController extends Controller
     }
     public function rent(Request $request)
     {
-        $query = Property::query()->where('type', 'rent');
-        if ($request->has('co_name') && $request->co_name != '') {
-            $query->where('country_id', $request->co_name);
-        }
-        if ($request->has('st_name') && $request->st_name != '') {
-            $query->where('state_id', $request->st_name);
-        }
-        if ($request->has('ct_name') && $request->ct_name != '') {
-            $query->where('city_id', $request->ct_name);
-        }
+    $query = Property::leftJoin('countries', 'properties.country_id', '=', 'countries.id')
+    ->leftJoin('states', 'properties.state_id', '=', 'states.id')
+    ->leftJoin('cities', 'properties.city_id', '=', 'cities.id')
+    ->select('properties.*', 'countries.co_name', 'states.st_name', 'cities.ct_name')
+    ->where('properties.type', 'buy');
+
+  // Check for search input
+  if ($request->has('search') && !empty($request->search)) {
+    $searchTerm = $request->search;
+
+    // Split the search term by comma
+    $parts = array_map('trim', explode(',', $searchTerm));
+
+    // Initialize variables for city, state, and country
+    $city = $state = $country = null;
+
+    // Assign values based on the number of parts
+    if (count($parts) === 3) {
+        list($city, $state, $country) = $parts;
+
+        // Update the query to filter based on the exact parts
+        $query->where(function($query) use ($city, $state, $country) {
+            if ($city) {
+                $query->where('cities.ct_name', '=', $city);
+            }
+            if ($state) {
+                $query->where('states.st_name', '=', $state);
+            }
+            if ($country) {
+                $query->where('countries.co_name', '=', $country);
+            }
+        });
+    }
+    }
         if ($request->has('bedrooms') && $request->bedrooms != '') {
             $query->where('number_of_room', $request->bedrooms);
         }

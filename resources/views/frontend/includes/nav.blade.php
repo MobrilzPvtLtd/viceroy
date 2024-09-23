@@ -117,8 +117,9 @@
 
                             </div>
                             <div>
+                                {{-- //removed unneccessary semi colon  --}}
                                 <select name="currency" id="currency" class="currency">
-                                    @foreach (App\Models\Currency::get(); as $currency)
+                                    @foreach (App\Models\Currency::get() as $currency)
                                         <option value="{{ $currency->code }}"
                                             {{ $currency->code == request()->session()->get('currency') ? 'selected' : '' }}
                                             >{{ $currency->code }}
