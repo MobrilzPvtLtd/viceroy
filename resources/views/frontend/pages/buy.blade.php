@@ -7,6 +7,41 @@
     <meta name="description" content="test">
     <link rel="stylesheet" href="{{ asset('assets/css/buy.css') }}" />
     <style>
+
+        .input-group {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 10px;
+            /* Space from the left */
+            z-index: 1;
+            /* Ensure it stays on top */
+            color: #aaa;
+            /* Icon color */
+        }
+
+        .form-control {
+            padding-left: 30px;
+            /* Space for the icon */
+            width: 300px;
+            /* Set desired width */
+            border-radius: 0;
+        }
+
+        .select_address {
+            width: 100%;
+            /* Adjust width as needed */
+            height: 40px;
+            /* Adjust height as needed */
+            font-size: 16px;
+            /* Optional: increase font size */
+        }
+
+
         .modal-box {
             width: 100%;
             max-width: 500px;
@@ -36,21 +71,21 @@
 
         .sd-multiSelect .ms-choice {
             position: relative;
-    text-align: left !important;
-    width: 250px;
-    border: 1px solid #cccccc;
-    background: #ffff;
-    box-shadow: none;
-    font-size: 15px;
-    /* height: 50px; */
-    font-weight: 500;
-    color: #212529;
-    line-height: 1.5;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    /* border-radius: 0.25rem; */
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            text-align: left !important;
+            width: 250px;
+            border: 1px solid #cccccc;
+            background: #ffff;
+            box-shadow: none;
+            font-size: 15px;
+            /* height: 50px; */
+            font-weight: 500;
+            color: #212529;
+            line-height: 1.5;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            /* border-radius: 0.25rem; */
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
         }
 
         .sd-multiSelect .ms-choice:after {
@@ -101,31 +136,31 @@
         }
 
         /* .sd-multiSelect .ms-drop li label:before {
-      content: "";
-      -webkit-appearance: none;
-      background-color: transparent;
-      border: 2px solid var(--theme-color);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
-        inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-      padding: 8px;
-      display: inline-block;
-      position: relative;
-      vertical-align: middle;
-      cursor: pointer;
-      margin-right: 5px;
-    }
+          content: "";
+          -webkit-appearance: none;
+          background-color: transparent;
+          border: 2px solid var(--theme-color);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+            inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+          padding: 8px;
+          display: inline-block;
+          position: relative;
+          vertical-align: middle;
+          cursor: pointer;
+          margin-right: 5px;
+        }
 
-    .sd-multiSelect .ms-drop li input:checked + span:after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 9px;
-      left: 5px;
-      width: 10px;
-      height: 10px;
-      background: var(--theme-color);
-      border-width: 0 2px 2px 0;
-    } */
+        .sd-multiSelect .ms-drop li input:checked + span:after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 9px;
+          left: 5px;
+          width: 10px;
+          height: 10px;
+          background: var(--theme-color);
+          border-width: 0 2px 2px 0;
+        } */
     </style>
 @endsection
 
@@ -170,38 +205,20 @@
                             <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                                 aria-labelledby="pills-home-tab" tabindex="0">
                                 <form action="{{ route('buy') }}" method="GET">
-                                    <div class="" id="home_form">
-                                        <div id="cancel_rqst1" class="home_form_label">
-                                            <label>Country</label>
-                                            <select class="select_label s1" name="co_name" id="co_name" required focus>
-                                                <option value="" disabled selected>Select country </option>
 
-                                                @foreach ($countrys as $country)
-                                                    <option value="{{ $country->id }}">{{ $country->co_name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div id="cancel_rqst2" class="home_form_label">
-                                            <label>State</label>
-                                            <select class="select_label s1" name="st_name" id="st_name" required focus>
-                                                <option value="" disabled selected>Select state </option>
-
-                                                {{-- @foreach ($states as $state)
-                                                    <option value="{{ $state->id }}">{{ $state->st_name }}</option>
-                                                @endforeach --}}
-                                            </select>
+                                    <div id="home_form">
+                                        <div class="home_form_label">
+                                            <label for="locationInput">Location</label>
+                                            <div class="input-group">
+                                                <div class="input-icon">
+                                                    <i class="fas fa-search"></i>
+                                                </div>
+                                                <input type="search" id="locationInput" class="form-control" name="search"
+                                                    placeholder="Search location..." required
+                                                    style=" width: 300px;  border-radius: 0;" />
+                                            </div>
                                         </div>
 
-
-                                        <div id="cancel_rqst3" class="home_form_label">
-                                            <label>City</label>
-                                            <select class="select_label s1" name="ct_name" id="city" required focus>
-                                                <option value="" disabled selected> Select city</option>
-                                                {{-- @foreach ($citys as $city)
-                                                    <option value="{{ $city->id }}">{{ $city->ct_name }}</option>
-                                                @endforeach --}}
-                                            </select>
-                                        </div>
 
                                         <div class="home_form_label s2">
                                             <label>Bedrooms</label>
@@ -272,7 +289,8 @@
                                             <div id="cancel_rqst4" class="sd-multiSelect form-group">
                                                 <label for="current-job-role">Property Type</label>
                                                 <select multiple id="current-job-role" class="sd-CustomSelect"
-                                                    aria-placeholder="yggv" placeholder="Select Property type" name="p_type">
+                                                    aria-placeholder="yggv" placeholder="Select Property type"
+                                                    name="p_type">
                                                     @foreach ($uniquePropertyTypes as $p_type)
                                                         <option value="{{ $p_type }}">{{ $p_type }}</option>
                                                     @endforeach
@@ -400,7 +418,7 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                                                                                                                            </div>-->
+                                                                                                                                                                                                                </div>-->
                                 </form>
                             </div>
                         </div>
@@ -423,7 +441,7 @@
                             </div>
                         </div>
                     </div> --}}
-                    {{-- <div class="row">
+            {{-- <div class="row">
                         <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
                             style="
                   visibility: visible;
@@ -480,21 +498,16 @@
                 </div> --}}
             {{-- </section> --}}
 
+            <div class="container ">
+                <div class="row mt_95 xs_mt_75  ">
 
-            <div class="container">
-                <div class="mt_95 xs_mt_75 view001">
-                    {{-- <button id="btn001" onclick="func()" name="map-view">
-                        <i class="fa-solid fa-map"> Map view</i>
-                    </button>
-                    <button id="btn002" onclick="func()" name="list-view">
-                        <i class="fa-solid fa-list"> List view</i>
-                    </button> --}}
-                    <div class="col-md-9 " id="list001">
-                        <div class="row" id="lits-item">
+                    <div class="text-start col-md-6" id="list001">
+
+                        <div class="row " id="lits-item">
                             @if (count($propertys) > 0)
                                 @foreach ($propertys as $property)
-                                    <div class="col-xl-4 col-md-6 wow fadeInUp c01 " data-wow-duration="1.5s">
-                                        <div class="single_property">
+                                    <div class="col-xl-6 col-md-3 wow fadeInUp c01 " data-wow-duration="1.5s">
+                                        <div class="single_property ">
                                             <div class="single_property_img">
                                                 @php
                                                     $images = json_decode($property->image);
@@ -512,6 +525,7 @@
                                                 @if ($property->featured)
                                                     <a class="feature_link feature" href="#">Featured</a>
                                                 @endif
+
                                                 <div id="testimonial-slider1" class="owl-carousel">
                                                     <div class="testimonial">
                                                         <div class="pic">
@@ -604,86 +618,113 @@
                                 {!! $propertys->links() !!}
                             </div> --}}
                         </div>
-
+                    </div>
+                    <div class="col-md-4 ">
+                        <div id="mapCanvas" style=""></div>
                     </div>
 
-                    <div class="col-md-3" id="map001">
-                        <div id="mapCanvas" style="height: 600px"></div>
-                    </div>
-
-                    <script>
-                        // Initialize and add the map
-                        function initMap() {
-                            var map;
-                            var bounds = new google.maps.LatLngBounds();
-                            var mapOptions = {
-                                mapTypeId: 'roadmap'
-                            };
-
-                            // Display a map on the web page
-                            map = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
-                            map.setTilt(50);
-
-                            // Multiple markers location, latitude, and longitude
-                            var markers = <?php echo json_encode($markers); ?>;
-
-                            // Info window content
-                            var infoWindowContent = <?php echo json_encode($infowindow); ?>;
-
-                            // Add multiple markers to map
-                            var infoWindow = new google.maps.InfoWindow(),
-                                marker, i;
-
-                            // Place each marker on the map
-                            for (i = 0; i < markers.length; i++) {
-                                var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-                                bounds.extend(position); // Extend bounds to include each marker's position
-                                marker = new google.maps.Marker({
-                                    position: position,
-                                    map: map,
-                                    title: markers[i][0]
-                                });
-
-                                // Add info window to marker
-                                google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                                    return function() {
-                                        infoWindow.setContent(infoWindowContent[i][0]);
-                                        infoWindow.open(map, marker);
-                                    }
-                                })(marker, i));
-                            }
-
-                            // Fit the map bounds to include all markers
-                            map.fitBounds(bounds);
-
-                            // Set zoom level based on bounds
-                            var boundsListener = google.maps.event.addListener(map, 'bounds_changed', function(event) {
-                                // Set the zoom level after the map bounds are changed
-                                this.setZoom(Math.min(this.getZoom(), 14)); // You can adjust the max zoom level here
-                                google.maps.event.removeListener(boundsListener);
-                            });
-                        }
-
-                        window.initMap = initMap;
-                    </script>
-
-
-                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyC5oJyFp78LqQzen5Dtp1m4zlS3a2M3de4" defer></script>
-
-
-                    <style>
-                        #mapCanvas {
-                            height: 400px;
-                            /* The height is 400 pixels */
-                            width: 100%;
-                            /* The width is the width of the web page */
-                        }
-                    </style>
 
                 </div>
 
-            </div>
 
+                <script>
+                    var map; // Declare map globally
+                    var marker; // Declare marker globally
+
+                    function initMap() {
+                        var bounds = new google.maps.LatLngBounds();
+                        var mapOptions = {
+                            mapTypeId: 'roadmap'
+                        };
+
+                        // Display a map on the web page
+                        map = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
+                        map.setTilt(50);
+
+                        // Multiple markers location, latitude, and longitude
+                        var markers = <?php echo json_encode($markers); ?>;
+
+                        // Info window content
+                        var infoWindowContent = <?php echo json_encode($infowindow); ?>;
+
+                        // Add multiple markers to map
+                        var infoWindow = new google.maps.InfoWindow();
+
+                        // Place each marker on the map
+                        for (var i = 0; i < markers.length; i++) {
+                            var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+                            bounds.extend(position); // Extend bounds to include each marker's position
+                            marker = new google.maps.Marker({
+                                position: position,
+                                map: map,
+                                title: markers[i][0]
+                            });
+
+                            // Add info window to marker
+                            (function(marker, i) {
+                                google.maps.event.addListener(marker, 'click', function() {
+                                    infoWindow.setContent(infoWindowContent[i][0]);
+                                    infoWindow.open(map, marker);
+                                });
+                            })(marker, i);
+                        }
+
+                        // Fit the map bounds to include all markers
+                        map.fitBounds(bounds);
+
+                        // Set zoom level based on bounds
+                        var boundsListener = google.maps.event.addListener(map, 'bounds_changed', function(event) {
+                            // Set the zoom level after the map bounds are changed
+                            this.setZoom(Math.min(this.getZoom(), 14)); // You can adjust the max zoom level here
+                            google.maps.event.removeListener(boundsListener);
+                        });
+
+                        // Initialize Autocomplete
+                        var autocompleteOptions = {
+                            types: ['(cities)']
+                        };
+
+                        var autocompleteLeavingFrom = new google.maps.places.Autocomplete(
+                            document.getElementById('locationInput'),
+                            autocompleteOptions
+                        );
+
+                        // Listener for place changes
+                        autocompleteLeavingFrom.addListener('place_changed', function() {
+                            var place = autocompleteLeavingFrom.getPlace();
+                            if (!place.geometry) {
+                                alert("No details available for input: '" + place.name + "'");
+                            } else {
+                                map.setCenter(place.geometry.location);
+                                if (marker) {
+                                    marker.setPosition(place.geometry.location);
+                                } else {
+                                    marker = new google.maps.Marker({
+                                        position: place.geometry.location,
+                                        map: map,
+                                        title: place.name
+                                    });
+                                }
+                            }
+                        });
+                    }
+
+                    window.initMap = initMap;
+                </script>
+
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5oJyFp78LqQzen5Dtp1m4zlS3a2M3de4&libraries=places&callback=initMap"
+                    defer></script>
+                <style>
+                    #mapCanvas {
+                        height: 600px;
+                        /* The height is 400 pixels */
+                        width: 100%;
+                        /* The width is the width of the web page */
+                        // margin-right: 0%
+                    }
+                </style>
+            </div>
         </div>
     </section>
     <section class="find_state mt_115" style="background: url() ; height : 30vw; margin-bottom:200px ">
@@ -778,10 +819,6 @@
         });
     </script>
     <script>
-
-
-
-
         window.addEventListener("scroll", function() {
             var container = document.getElementById("container");
             var scrollPosition =
