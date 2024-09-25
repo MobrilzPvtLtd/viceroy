@@ -1424,11 +1424,11 @@ button {
 /* banner end */
 
 .adv_search_area2 {
-    width: 20%;
+    width: fit-content !important;
     background: var(--colorWhite);
     height: auto !important;
     position: absolute;
-    top: 100%;
+    /* top: 100%; */
     /* left: 310px; */
     padding: 30px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -1444,8 +1444,7 @@ button {
     -moz-transition: all linear 0.3s;
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
-    z-index: 999999;
-}
+    z-index: 999999
 
 .adv_search_area2 .show_search {
     transform: scale(1);

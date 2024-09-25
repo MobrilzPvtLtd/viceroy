@@ -252,7 +252,7 @@
                                             </div>
 
                                             <div class="adv_search_area show_search1" id="close001">
-                                                <div id="close_btn_minmax" class="adv_search_close adv_search_close_1">
+                                                <div id="close_btn_minmax">
                                                     <i class="fal fa-times"></i>
                                                 </div>
 

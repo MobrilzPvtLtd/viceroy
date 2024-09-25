@@ -70,88 +70,10 @@
     display: flex ;
     justify-content: space-around;
     align-items: center;
-    padding: 15px 30px;
+    /* padding: 15px 30px; */
     gap: 30px;
 }
-.select2-container {
-    box-sizing: border-box;
-    display: inline-block;
-    margin: 0;
-    position: relative;
-    vertical-align: middle;
-    width: 110% !important;
 
-}
-#min_max{
-    display: flex;
-    margin: 0;
-    padding: 0 5px;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0;
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
-
-    /* justify-content: space-evenly; */
-    /* margin-left: 20px; */
-}
-#min_max2 {
-    display: flex;
-    margin: 0;
-    padding: 0 5px;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 15px;
-    left: 0;
-    gap: 25px;
-    /* justify-content: center; */
-    align-items: center;
-}
-#min_max .select2-selection__rendered{
-    width: 8vw !important;
-}
-#min_max2 .select2-selection__rendered{
-    width: 8vw !important;
-}
-.adv_search_area3.show_search {
-    padding: 15px 30px;
-    top: 150px;
-}
-.adv_search_area4.show_search {
-    padding: 15px 30px;
-    top: 150px;
-}
-#buy #min_max2 {
-
-    top: 5px;
-}
- #rent #home_form {
-    display: flex !important;
-    justify-content: normal;
-    align-items: center;
-    padding: 15px 0px;
-    gap: 30px;
-}
-.rent001 {
-    width: 70vw !important;
-}
-.rent001 .adv_search_area.show_search {
-    top: 6vw !important;
-}
-.rent001 .adv_search_area2.show_search {
-
-    top: 6vw !important;
-}
-.rent001 #min_max2 {
-    top: 2px;
-}
-.rent001 .adv_search_area2 {
-    width: 28%;
-}
 #buy #home_form {
 
     padding: 15px 0px;

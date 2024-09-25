@@ -302,6 +302,7 @@
         // if (close002.style.display == "none") {
             close002.style.display = "none";
             close001.style.display = "none";
+            cancel_rqst4.style.backgroudColor = "red"
         // } else {
         //     close002.style.display = "none"
         // }
@@ -364,6 +365,7 @@
         close003.style.display = "none"
 
     }))
+
     //         const closeBtn = document.querySelector("#close_btn_minmax")
     //     const close009 = document.querySelector("#close009")
     //     const select_bedroom_btn =  document.querySelector("#select_bedroom_btn")
@@ -436,6 +438,22 @@
     })(APP, jQuery);
     APP.sidecart.init();
   </script> --}}
+  <script>
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+// Toggle the dropdown when clicking the button
+dropdownToggle.addEventListener('click', function() {
+    dropdownMenu.classList.toggle('show');
+});
+
+// Close dropdown if clicked outside
+document.addEventListener('click', function(event) {
+    if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.classList.remove('show');
+    }
+});
+  </script>
   <script>
     const or001 = document.querySelector(".or001")
 
