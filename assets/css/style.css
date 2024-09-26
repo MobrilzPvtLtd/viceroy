@@ -1424,11 +1424,11 @@ button {
 /* banner end */
 
 .adv_search_area2 {
-    width: fit-content !important;
+    width: 20%;
     background: var(--colorWhite);
     height: auto !important;
     position: absolute;
-    /* top: 100%; */
+    top: 100%;
     /* left: 310px; */
     padding: 30px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -1444,7 +1444,8 @@ button {
     -moz-transition: all linear 0.3s;
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
-    z-index: 999999
+    z-index: 999999;
+}
 
 .adv_search_area2 .show_search {
     transform: scale(1);
@@ -8243,9 +8244,21 @@ marquee {
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1099px) {
+    div#cancel_rqst4 {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 5px !important;
+    }
+    input#locationInput::placeholder {
+        font-size: 12px !important;
+    }
     #home_form {
-        display: grid !important;
-        grid-template-columns: repeat(4, 1fr);
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+
     }
     .sd-multiSelect .ms-choice {
         width: 165px !important;
@@ -8263,7 +8276,8 @@ marquee {
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     #home_form {
         display: grid !important;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 30px;
     }
     .sd-multiSelect .ms-choice {
         width: 150px !important;

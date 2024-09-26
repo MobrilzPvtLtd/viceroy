@@ -370,11 +370,10 @@ select.select_2 {
   #min_max2 {
     display: flex;
     margin: 0;
-    padding: 0px 0px;
     height: fit-content;
-    width: fit-content;
     background-color: white;
     padding: 5px;
+    width: fit-content;
     position: absolute;
     top: 0px;
     left: -100px;

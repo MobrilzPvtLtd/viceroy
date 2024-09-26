@@ -3,6 +3,9 @@
     /*================================
         HOME PAGE 01 START
     ================================*/
+    .banner_search .tab-content{
+        margin-top: 10px;
+    }
     .container {
         max-width: 1320px;
     }
@@ -3879,7 +3882,53 @@
 .phpdebugbar.phpdebugbar-closed {
     display: none !important;
 }
-@media (min-width: 1025px) and (max-width: 1281px) {
+@media (min-width: 1025px) and (max-width: 1150px) {
+    .banner_search .tab-content{
+        margin-top: 15px;
+    }
+    .banner_search .tab-content .home_form_label{
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 10rem !important;
+    }
+    .banner_text h1 {
+        font-size: 48px;
+    }
+    .banner_text p {
+        font-size: 16px;
+        margin-top: 15px;
+        width: 40vw;
+        padding-right: 0px;
+    }
+    .form-container {
+        background-color: #ffffff17;
+        padding: 5px 25px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        text-align: center;
+    }
+}
+div#cancel_rqst4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+}
+@media (min-width: 1151px) and (max-width: 1281px) {
+    div#cancel_rqst4 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0px;
+    }
+    .banner_search .tab-content{
+        margin-top: 15px;
+    }
+
     .banner_text h1 {
         font-size: 48px;
     }

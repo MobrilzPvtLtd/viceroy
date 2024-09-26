@@ -252,7 +252,7 @@
                                             </div>
 
                                             <div class="adv_search_area show_search1" id="close001">
-                                                <div id="close_btn_minmax">
+                                                <div id="close_btn_minmax" class="adv_search_close adv_search_close_1">
                                                     <i class="fal fa-times"></i>
                                                 </div>
 
@@ -283,7 +283,7 @@
                                                     id="priceButton" name="state">
                                             </div>
 
-                                            <div class="adv_search_area2" id="close002">
+                                            <div class="adv_search_area show_search1" id="close002">
                                                 <div class="adv_search_close3">
                                                 </div>
                                                 <div id="min_max2">
