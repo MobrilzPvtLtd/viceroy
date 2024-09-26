@@ -2872,11 +2872,24 @@
     ================================*/
 }
 
-@media (max-width: 575.99px) {
+@media screen and (max-width: 575.99px) {
 
     /*================================
         HOME PAGE 01 START
     ================================*/
+
+    #min_max{
+        position: absolute !important;
+        top: -6rem !important;
+    }
+    #min_max2{
+        position: absolute !important;
+        top: 12rem !important;
+        left: -12rem !important;
+    }
+    .home_form_label{
+        width: 9rem;
+    }
     /* menu start */
     .main_menu .container {
         padding: 5px 0px;

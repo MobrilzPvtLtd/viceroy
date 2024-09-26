@@ -8,10 +8,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 10px
+    gap: 10px;
 }
 .home_form_label label{
     font-weight: 600;
+}
+#close001{
+    position: absolute !important;
+}
+#close002{
+    position: absolute !important;
 }
 .select_label{
     appearance: none;
