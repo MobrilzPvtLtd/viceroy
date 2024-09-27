@@ -58,6 +58,16 @@
     gap: 5px;
 
 }
+.dropdown1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    gap: 5px;
+
+}
 
 .dropbtn {
     padding: 10px;
@@ -86,13 +96,13 @@
     transform: translateY(10rem);
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown1:hover .dropdown-content {
     display: flex !important;
     justify-content: center;
     align-items: center;
     opacity: 1;
     visibility: visible;
-    transform: translateY(5rem);
+    transform: translateY(6rem);
 }
 
 .dropdown-column {

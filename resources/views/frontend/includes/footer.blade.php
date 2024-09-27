@@ -229,9 +229,13 @@
             .scrollTop;
 
         if (scrollPosition > window.innerHeight / 4) {
-            container2.style.top = '4.5%';
+            container2.style.top = '15%';
             container2.style.position = 'fixed';
             container2.style.width = '80vw';
+            container2.style.height = '10vw';
+            container2.style.zIndex = 999;
+            container2.style.backgroundColor = "white";
+
             // container2.style.zIndex = 0;
 
         } else {

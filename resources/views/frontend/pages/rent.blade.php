@@ -134,31 +134,31 @@
         }
 
         /* .sd-multiSelect .ms-drop li label:before {
-                  content: "";
-                  -webkit-appearance: none;
-                  background-color: transparent;
-                  border: 2px solid var(--theme-color);
-                  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
-                    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-                  padding: 8px;
-                  display: inline-block;
-                  position: relative;
-                  vertical-align: middle;
-                  cursor: pointer;
-                  margin-right: 5px;
-                }
+                      content: "";
+                      -webkit-appearance: none;
+                      background-color: transparent;
+                      border: 2px solid var(--theme-color);
+                      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+                        inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+                      padding: 8px;
+                      display: inline-block;
+                      position: relative;
+                      vertical-align: middle;
+                      cursor: pointer;
+                      margin-right: 5px;
+                    }
 
-                .sd-multiSelect .ms-drop li input:checked + span:after {
-                  content: "";
-                  display: block;
-                  position: absolute;
-                  top: 9px;
-                  left: 5px;
-                  width: 10px;
-                  height: 10px;
-                  background: var(--theme-color);
-                  border-width: 0 2px 2px 0;
-                } */
+                    .sd-multiSelect .ms-drop li input:checked + span:after {
+                      content: "";
+                      display: block;
+                      position: absolute;
+                      top: 9px;
+                      left: 5px;
+                      width: 10px;
+                      height: 10px;
+                      background: var(--theme-color);
+                      border-width: 0 2px 2px 0;
+                    } */
     </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -195,17 +195,17 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                            BREADCRUMBS END
-                                                                                                                                        ==============================-->
+                                                                                                                                                BREADCRUMBS END
+                                                                                                                                            ==============================-->
 
     <!--=============================
-                                                                                                                                            PROPERTY GRID VIEW START
-                        -->
+                                                                                                                                                PROPERTY GRID VIEW START
+                            -->
     <section class="property_grid_view pb_120 xs_pb_100">
         <div class="container-fluid">
             <div class="row justify-content-center wow fadeInUp" data-wow-duration="1.5s">
                 <div class="col-xl-12 col-lg-12 buy001">
-                    <div class="banner_search" id = "container2">
+                    <div class="banner_search" id="container2">
                         <ul class="nav nav-pills" id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
@@ -219,15 +219,17 @@
                         {{-- new search bar --}}
                         <div class="search-container">
                             <form action="{{ route('rent') }}" method="GET">
-                                <div class="dropdown sd-multiSelect form-group">
+                                <div class="dropdown1 sd-multiSelect form-group">
                                     <label for="dropdown-content">Select Location:</label>
-                                    <input type="search" id="locationInput" name="search" placeholder="Search location..." class="search-input" required/>
+                                    <input type="search" id="locationInput" name="search" placeholder="Search location..."
+                                        class="search-input" required />
                                 </div>
 
                                 <!-- Bedrooms Filter -->
-                                <div class="dropdown sd-multiSelect form-group">
+                                <div class="dropdown1 sd-multiSelect form-group">
                                     <label for="dropdown-content">Select Bedroom:</label>
-                                    <input class="dropbtn" id="bedroomButton" name="bedrooms" type="button" value="Select bedrooms">
+                                    <input class="dropbtn" id="bedroomButton" name="bedrooms" type="button"
+                                        value="Select bedrooms">
                                     <div class="dropdown-content">
                                         <div class="dropdown-column">
                                             <label>Min</label>
@@ -253,9 +255,10 @@
                                 </div>
 
                                 <!-- Price Filter -->
-                                <div class="dropdown sd-multiSelect form-group">
+                                <div class="dropdown1 sd-multiSelect form-group">
                                     <label for="dropdown-content">Select Price:</label>
-                                    <input type="button" value="Select Price" class="dropbtn" id="priceButton" name="price">
+                                    <input type="button" value="Select Price" class="dropbtn" id="priceButton"
+                                        name="price">
                                     <div class="dropdown-content">
                                         <div class="dropdown-column">
                                             <label>Min</label>
@@ -279,9 +282,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="dropdown sd-multiSelect form-group">
+                                <div class="dropdown1 sd-multiSelect form-group">
                                     <label for="dropdown-content">Property Type</label>
-                                    <select multiple id="current-job-role" class="sd-CustomSelect" aria-placeholder="yggv" placeholder="Select Property type" name="p_type">
+                                    <select multiple id="current-job-role" class="sd-CustomSelect" aria-placeholder="yggv"
+                                        placeholder="Select Property type" name="p_type">
                                         @foreach ($uniquePropertyTypes as $p_type)
                                             <option value="{{ $p_type }}">{{ $p_type }}</option>
                                         @endforeach
@@ -369,8 +373,8 @@
                 </div> --}}
             {{-- </section> --}}
             <!--=============================
-                                                                                                          PROPERTY GRID VIEW END
-                                                                                                         ==============================-->
+                                                                                                              PROPERTY GRID VIEW END
+                                                                                                             ==============================-->
             <div class="container ">
                 <div class="row mt_95 xs_mt_75  ">
 
