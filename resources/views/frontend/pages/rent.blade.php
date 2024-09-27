@@ -6,7 +6,7 @@
     <meta name="description" content="test">
     <link rel="stylesheet" href="{{ asset('assets/css/rent.css') }}" />
     <style>
-        .input-group {
+       .input-group {
             position: relative;
             display: flex;
             align-items: center;
@@ -84,6 +84,7 @@
             appearance: none;
             /* border-radius: 0.25rem; */
             transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            padding: 10px;
         }
 
         .sd-multiSelect .ms-choice:after {
@@ -132,7 +133,6 @@
             -moz-user-select: none;
             -webkit-user-select: none;
         }
-
         /* .sd-multiSelect .ms-drop li label:before {
                       content: "";
                       -webkit-appearance: none;
@@ -160,10 +160,10 @@
                       border-width: 0 2px 2px 0;
                     } */
     </style>
-
+{{--
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://bsite.net/savrajdutta/cdn/multi-select.js"></script>
-    <script>
+    <script src="https://bsite.net/savrajdutta/cdn/multi-select.js"></script> --}}
+    {{-- <script>
         $(document).ready(function() {
             $(".sd-CustomSelect").multipleSelect({
                 selectAll: false,
@@ -172,7 +172,7 @@
                 }
             });
         });
-    </script>
+    </script> --}}
 @endsection
 @section('content')
     <section class="breadcrumbs" style="background: url(assets/images/rent02.jpg)">
@@ -220,7 +220,7 @@
                         <div class="search-container">
                             <form action="{{ route('rent') }}" method="GET">
                                 <div class="dropdown1 sd-multiSelect form-group">
-                                    <label for="dropdown-content">Select Location:</label>
+                                    <label for="locationInput">Select Location:</label>
                                     <input type="search" id="locationInput" name="search" placeholder="Search location..."
                                         class="search-input" required />
                                 </div>
@@ -259,6 +259,7 @@
                                     <label for="dropdown-content">Select Price:</label>
                                     <input type="button" value="Select Price" class="dropbtn" id="priceButton"
                                         name="price">
+                                    {{-- <button class="dropbtn">Select Price</button> --}}
                                     <div class="dropdown-content">
                                         <div class="dropdown-column">
                                             <label>Min</label>
@@ -282,9 +283,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="dropdown1 sd-multiSelect form-group">
+                                <div class="dropdown1 sd-multiSelect ">
                                     <label for="dropdown-content">Property Type</label>
-                                    <select multiple id="current-job-role" class="sd-CustomSelect" aria-placeholder="yggv"
+                                    <select multiple id="current-job-role" class="sd-CustomSelect " aria-placeholder="yggv"
                                         placeholder="Select Property type" name="p_type">
                                         @foreach ($uniquePropertyTypes as $p_type)
                                             <option value="{{ $p_type }}">{{ $p_type }}</option>
@@ -292,7 +293,7 @@
                                     </select>
                                 </div>
                                 <div class="btn_div">
-                                    <button class="search-button">Search</button>
+                                    <button type="submit" class="search-button">Search</button>
                                 </div>
                             </form>
                         </div>

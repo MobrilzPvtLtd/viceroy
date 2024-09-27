@@ -189,6 +189,7 @@ button {
     -moz-transition: all linear 0.3s;
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
+    margin: 10px 0px;
 }
 
 .common_btn::after,

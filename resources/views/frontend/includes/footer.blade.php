@@ -173,8 +173,8 @@
 <script src="{{ asset('assets/js/scroll_button.js') }}"></script>
 <!--main/custom js-->
 <script src="{{ asset('assets/js/script.js') }}"></script>
-{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script> --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
 {{-- <script>
     $(document).ready(function () {
@@ -228,8 +228,8 @@
         var scrollPosition = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0]
             .scrollTop;
 
-        if (scrollPosition > window.innerHeight / 4) {
-            container2.style.top = '15%';
+        if (scrollPosition > window.innerHeight / 4 ) {
+            container2.style.top = '6.3rem';
             container2.style.position = 'fixed';
             container2.style.width = '80vw';
             container2.style.height = '10vw';

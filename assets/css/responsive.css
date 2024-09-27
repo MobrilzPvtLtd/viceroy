@@ -3035,6 +3035,9 @@
 
     .single_property_text {
         margin: 0;
+        width: 95vw;
+        padding-bottom: 15px;
+        margin-bottom: 25px;
     }
 
     .single_property_bottom p {
