@@ -198,306 +198,86 @@
                                     Buy
                                 </button>
                             </li>
-
                         </ul>
 
-                        <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                                aria-labelledby="pills-home-tab" tabindex="0">
-                                <form action="{{ route('buy') }}" method="GET">
-
-                                    <div id="home_form">
-                                        <div class="home_form_label">
-                                            <label for="locationInput">Location</label>
-                                            <div class="input-group">
-                                                <div class="input-icon">
-                                                    <i class="fas fa-search"></i>
-                                                </div>
-                                                <input type="search" id="locationInput" class="form-control" name="search"
-                                                    placeholder="Search location..." required
-                                                    style=" width: 300px;  border-radius: 0;" />
-                                            </div>
-                                        </div>
-
-
-                                        <div class="home_form_label s2">
-                                            <label>Bedrooms</label>
-                                            <div class="adv_search_icon" id="select_bedroom_btn">
-                                                <input class="select_label select_bedroom_btn" id="bedroomButton"
-                                                    name="bedrooms" type="button" value="Select bedrooms">
-                                            </div>
-
-                                            <div class="adv_search_area show_search1" id="close001">
-                                                <div id="close_btn_minmax" class="adv_search_close adv_search_close_1">
-                                                    <i class="fal fa-times"></i>
-                                                </div>
-
-                                                <div id="min_max">
-                                                    <select class="select_2" id="bedroomMin" name="bedrooms">
-                                                        <option value="">Min</option>
-                                                        @foreach ($uniqueBedrooms as $bedroom)
-                                                            <option value="{{ $bedroom }}">{{ $bedroom }}
-                                                            </option>
-                                                        @endforeach
-                                                    </select>
-
-                                                    <select class="select_2" id="bedroomMax" name="bedrooms">
-                                                        <option value="">Max</option>
-                                                        @foreach ($uniqueBedrooms as $bedroom)
-                                                            <option value="{{ $bedroom }}">{{ $bedroom }}
-                                                            </option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="home_form_label s2">
-                                            <label>Price</label>
-                                            <div class="adv_search_icon2" id="select_price_btn">
-                                                <input type="button" value="Select Price" class="select_label s22"
-                                                    id="priceButton" name="price">
-                                            </div>
-
-                                            <div class="adv_search_area show_search1" id="close002">
-                                                <div class="adv_search_close3">
-                                                </div>
-                                                <div id="min_max2">
-                                                    <div>
-                                                        <select class="select_2" id="priceMin" name="price">
-                                                            <option value="">Min</option>
-                                                            @foreach ($uniquePrices as $price)
-                                                                <option value="{{ $price }}">{{ $price }}
-                                                                </option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                    <div>
-                                                        <select class="select_2" id="priceMax" name="price">
-                                                            <option value="">Max</option>
-                                                            @foreach ($uniquePrices as $price)
-                                                                <option value="{{ $price }}">{{ $price }}
-                                                                </option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="modal-box">
-                                            <div id="cancel_rqst4" class="sd-multiSelect form-group">
-                                                <label for="current-job-role">Property Type</label>
-                                                <select multiple id="current-job-role" class="sd-CustomSelect"
-                                                    aria-placeholder="yggv" placeholder="Select Property type"
-                                                    name="p_type">
-                                                    @foreach ($uniquePropertyTypes as $p_type)
-                                                        <option value="{{ $p_type }}">{{ $p_type }}</option>
-                                                    @endforeach
-
-                                                    {{-- <option value="Apartments">Apartments</option>
-                                                <option value="Villa">Villa</option>
-                                                <option value="House">House</option>
-                                                <option value="Hotel">Hotel</option> --}}
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        {{-- <div id="cancel_rqst5" class="home_form_label">
-                                            <label>Currency</label>
-                                            <select class="select_label" name="code">
-                                                <option value="" disabled selected> Select Currency</option>
-                                                @foreach ($currencys as $currency)
-                                                    <option value="{{ $currency->code }}" {{ $currency->code == request()->session()->get('currency') ? 'selected' : '' }}>{{ $currency->code }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div> --}}
-                                        <div class="">
-                                            <button class="common_btn banner_input_btn" type="submit"
-                                                style="width: 100%; margin-top: 30px">
-                                                search
-                                            </button>
-
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-
-                            <div class="tab-pane fade" id="pills-contact" role="tabpanel"
-                                aria-labelledby="pills-contact-tab" tabindex="0">
-                                <form action="#">
-                                    <div class="row">
-                                        <div id="cancel_rqst1" class="col-lg-2">
-                                            <label>Country</label>
-                                            <select class="select_label" name="state">
-                                                <option value="">Select Country</option>
-                                                <option value="">India</option>
-                                                <option value="">United Arab Emirates Dubai</option>
-                                                <option value="">United Kingdom London</option>
-                                            </select>
-                                        </div>
-                                        <div id="cancel_rqst" class="col-lg-2">
-                                            <label>City</label>
-                                            <select class="select_2" name="state">
-                                                <option value="">Select City</option>
-                                                <option value="">India</option>
-                                                <option value="">United Arab Emirates Dubai</option>
-                                                <option value="">United Kingdom London</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="col-lg-4">
-                                            <label>Rooms</label>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <select class="select_2" name="state">
-                                                        <option value="">Min</option>
-                                                        <option value="">1</option>
-                                                        <option value="">2</option>
-                                                        <option value="">3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <select class="select_2" name="state">
-                                                        <option value="">Max</option>
-                                                        <option value="">1</option>
-                                                        <option value="">2</option>
-                                                        <option value="">3</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-4">
-                                            <label>Price</label>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <select class="select_2" name="state">
-                                                        <option value="">Min</option>
-                                                        <option value="">1</option>
-                                                        <option value="">2</option>
-                                                        <option value="">3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <select class="select_2" name="state">
-                                                        <option value="">Max</option>
-                                                        <option value="">1</option>
-                                                        <option value="">2</option>
-                                                        <option value="">3</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-4" style="margin-top: 10px">
-                                            <label>No. Of Bedrooms </label>
-                                            <select class="select_2" name="state">
-                                                <option value="">No. Of Bedrooms</option>
-                                                <option value="">1</option>
-                                                <option value="">2</option>
-                                                <option value="">2</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="col-lg-4" style="margin-top: 10px">
-                                            <label>Currency</label>
-                                            <select class="select_2" name="state">
-                                                <option value="">Select</option>
-                                                <option value="">India</option>
-                                                <option value="">United Arab Emirates Dubai</option>
-                                                <option value="">United Kingdom London</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <button class="common_btn banner_input_btn" type="submit"
-                                                style="width: 100%; margin-top: 30px">
-                                                search
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                                                                                                                                                </div>-->
-                                </form>
-                            </div>
-                        </div>
                         {{-- new search bar --}}
                         <div class="search-container">
-                            <div class="dropdown sd-multiSelect form-group">
-                                <label for="dropdown-content">Select Location:</label>
-                                <input type="text" placeholder="Search location..." class="search-input" />
-                            </div>
+                            <form action="{{ route('buy') }}" method="GET">
+                                <div class="dropdown sd-multiSelect form-group">
+                                    <label for="locationInput">Select Location:</label>
+                                    <input type="search" id="locationInput" placeholder="Search location..." class="search-input" required/>
+                                </div>
 
-                            <!-- Bedrooms Filter -->
-                            <div class="dropdown sd-multiSelect form-group">
-                                <label for="dropdown-content">Select Bedroom:</label>
-                                <button class="dropbtn">Select bedroom</button>
-                                <div class="dropdown-content">
-                                    <div class="dropdown-column">
-                                        <label>Min</label>
-                                        <select>
-                                            <option value="">Any</option>
-                                            @foreach ($uniqueBedrooms as $bedroom)
-                                                <option value="{{ $bedroom }}">{{ $bedroom }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="dropdown-column">
-                                        <label>Max</label>
-                                        <select>
-                                            <option value="">Any</option>
-                                            @foreach ($uniqueBedrooms as $bedroom)
-                                                <option value="{{ $bedroom }}">{{ $bedroom }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                <!-- Bedrooms Filter -->
+                                <div class="dropdown sd-multiSelect form-group">
+                                    <label for="dropdown-content">Select Bedroom:</label>
+                                    <input class="dropbtn" id="bedroomButton" name="bedrooms" type="button" value="Select bedrooms">
+                                    <div class="dropdown-content">
+                                        <div class="dropdown-column">
+                                            <label>Min</label>
+                                            <select id="bedroomMin" name="bedrooms">
+                                                <option value="">Any</option>
+                                                @foreach ($uniqueBedrooms as $bedroom)
+                                                    <option value="{{ $bedroom }}">{{ $bedroom }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="dropdown-column">
+                                            <label>Max</label>
+                                            <select id="bedroomMax" name="bedrooms">
+                                                <option value="">Any</option>
+                                                @foreach ($uniqueBedrooms as $bedroom)
+                                                    <option value="{{ $bedroom }}">{{ $bedroom }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!-- Price Filter -->
-                            <div class="dropdown sd-multiSelect form-group">
-                                <label for="dropdown-content">Select Price:</label>
-                                <button class="dropbtn">Select Price</button>
-                                <div class="dropdown-content">
-                                    <div class="dropdown-column">
-                                        <label>Min</label>
-                                        <select>
-                                            <option value="">Any</option>
-                                            @foreach ($uniquePrices as $price)
-                                                <option value="{{ $price }}">{{ $price }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="dropdown-column">
-                                        <label>Max</label>
-                                        <select>
-                                            <option value="">Any</option>
-                                            @foreach ($uniquePrices as $price)
-                                                <option value="{{ $price }}">{{ $price }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                <!-- Price Filter -->
+                                <div class="dropdown sd-multiSelect form-group">
+                                    <label for="dropdown-content">Select Price:</label>
+                                    <input type="button" value="Select Price" class="dropbtn" id="priceButton" name="price">
+                                    {{-- <button class="dropbtn">Select Price</button> --}}
+                                    <div class="dropdown-content">
+                                        <div class="dropdown-column">
+                                            <label>Min</label>
+                                            <select id="priceMin" name="price">
+                                                <option value="">Any</option>
+                                                @foreach ($uniquePrices as $price)
+                                                    <option value="{{ $price }}">{{ $price }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="dropdown-column">
+                                            <label>Max</label>
+                                            <select id="priceMax" name="price">
+                                                <option value="">Any</option>
+                                                @foreach ($uniquePrices as $price)
+                                                    <option value="{{ $price }}">{{ $price }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="dropdown sd-multiSelect form-group">
-                                <label for="dropdown-content">Property Type</label>
-                                <select multiple id="current-job-role" class="sd-CustomSelect" aria-placeholder="yggv"
-                                    placeholder="Select Property type" name="p_type">
-                                    @foreach ($uniquePropertyTypes as $p_type)
-                                        <option value="{{ $p_type }}">{{ $p_type }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="btn_div">
-                                <button class="search-button">Search</button>
-                            </div>
+                                <div class="dropdown sd-multiSelect form-group">
+                                    <label for="dropdown-content">Property Type</label>
+                                    <select multiple id="current-job-role" class="sd-CustomSelect" aria-placeholder="yggv"
+                                        placeholder="Select Property type" name="p_type">
+                                        @foreach ($uniquePropertyTypes as $p_type)
+                                            <option value="{{ $p_type }}">{{ $p_type }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="btn_div">
+                                    <button type="submit" class="search-button">Search</button>
+                                </div>
+                            </form>
                         </div>
-
                         {{-- new search bar ends --}}
                     </div>
                 </div>
