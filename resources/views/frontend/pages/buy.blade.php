@@ -205,7 +205,7 @@
                             <form action="{{ route('buy') }}" method="GET">
                                 <div class="dropdown sd-multiSelect form-group">
                                     <label for="locationInput">Select Location:</label>
-                                    <input type="search" id="locationInput" placeholder="Search location..." class="search-input" required/>
+                                    <input type="search" id="locationInput" name="search" placeholder="Search location..." class="search-input" required/>
                                 </div>
 
                                 <!-- Bedrooms Filter -->
