@@ -422,6 +422,92 @@
                                 </form>
                             </div>
                         </div>
+{{-- new search bar --}}
+<div class="search-container">
+    <div class="dropdown">
+      <label for="dropdown-content">Select Location:</label>
+      <input
+        type="text"
+        placeholder="Search location..."
+        class="search-input"
+      />
+    </div>
+
+    <!-- Bedrooms Filter -->
+    <div class="dropdown">
+      <label for="dropdown-content">Select Bedroom:</label>
+      <button class="dropbtn">Select bedroom</button>
+      <div class="dropdown-content">
+        <div class="dropdown-column">
+          <label>Min</label>
+          <select>
+            <option value="">Any</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div class="dropdown-column">
+          <label>Max</label>
+          <select>
+            <option value="">Any</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Price Filter -->
+    <div class="dropdown">
+      <label for="dropdown-content">Select Price:</label>
+      <button class="dropbtn">Select Price</button>
+      <div class="dropdown-content">
+        <div class="dropdown-column">
+          <label>Min</label>
+          <select>
+            <option value="">Any</option>
+            <option value="50000">$50,000</option>
+            <option value="100000">$100,000</option>
+            <option value="200000">$200,000</option>
+            <option value="300000">$300,000</option>
+            <option value="500000">$500,000</option>
+          </select>
+        </div>
+        <div class="dropdown-column">
+          <label>Max</label>
+          <select>
+            <option value="">Any</option>
+            <option value="100000">$100,000</option>
+            <option value="200000">$200,000</option>
+            <option value="300000">$300,000</option>
+            <option value="500000">$500,000</option>
+            <option value="1000000">$1,000,000</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="select-container">
+      <label for="property-type">Select Property Type:</label>
+      <select id="property-type" class="select-input" multiple="multiple">
+        <option>Villa</option>
+        <option>Hotel</option>
+        <option>Room</option>
+        <option>Room 2</option>
+        <option>Room 3</option>
+      </select>
+    </div>
+    <div class="btn_div">
+      <button class="search-button">Search</button>
+    </div>
+  </div>
+
+{{-- new search bar ends --}}
                     </div>
                 </div>
             </div>
