@@ -144,7 +144,7 @@
   =================================-->
 
 <!--jquery library js-->
-{{-- <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script> --}}
+<script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
 <!--bootstrap js-->
 <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 <!--font-awesome js-->
@@ -173,6 +173,18 @@
 <script src="{{ asset('assets/js/scroll_button.js') }}"></script>
 <!--main/custom js-->
 <script src="{{ asset('assets/js/script.js') }}"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script> --}}
+
+{{-- <script>
+    $(document).ready(function () {
+      // Initialize Select2
+      $("#property-type").select2({
+        placeholder: "Select Property Type",
+        width: "100%", // Make the dropdown responsive
+      });
+    });
+  </script> --}}
 
 <script type="text/javascript">
     function showDiv(select) {

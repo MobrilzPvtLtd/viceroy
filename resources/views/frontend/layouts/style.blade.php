@@ -69,8 +69,7 @@
 }
 
 .dropdown-content {
-    /* display: none; */
-        display: flex;
+        display: flex !important;
         justify-content: center;
         align-items: center;
     opacity: 0;
@@ -88,7 +87,7 @@
 }
 
 .dropdown:hover .dropdown-content {
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
     opacity: 1;

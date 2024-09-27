@@ -7,7 +7,6 @@
     <meta name="description" content="test">
     <link rel="stylesheet" href="{{ asset('assets/css/buy.css') }}" />
     <style>
-
         .input-group {
             position: relative;
             display: flex;
@@ -86,6 +85,7 @@
             appearance: none;
             /* border-radius: 0.25rem; */
             transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            padding: 10px;
         }
 
         .sd-multiSelect .ms-choice:after {
@@ -136,31 +136,31 @@
         }
 
         /* .sd-multiSelect .ms-drop li label:before {
-          content: "";
-          -webkit-appearance: none;
-          background-color: transparent;
-          border: 2px solid var(--theme-color);
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
-            inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-          padding: 8px;
-          display: inline-block;
-          position: relative;
-          vertical-align: middle;
-          cursor: pointer;
-          margin-right: 5px;
-        }
+                          content: "";
+                          -webkit-appearance: none;
+                          background-color: transparent;
+                          border: 2px solid var(--theme-color);
+                          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+                            inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+                          padding: 8px;
+                          display: inline-block;
+                          position: relative;
+                          vertical-align: middle;
+                          cursor: pointer;
+                          margin-right: 5px;
+                        }
 
-        .sd-multiSelect .ms-drop li input:checked + span:after {
-          content: "";
-          display: block;
-          position: absolute;
-          top: 9px;
-          left: 5px;
-          width: 10px;
-          height: 10px;
-          background: var(--theme-color);
-          border-width: 0 2px 2px 0;
-        } */
+                        .sd-multiSelect .ms-drop li input:checked + span:after {
+                          content: "";
+                          display: block;
+                          position: absolute;
+                          top: 9px;
+                          left: 5px;
+                          width: 10px;
+                          height: 10px;
+                          background: var(--theme-color);
+                          border-width: 0 2px 2px 0;
+                        } */
     </style>
 @endsection
 
@@ -418,96 +418,87 @@
                                     </div>
 
                                     <!--<div class="adv_search_icon adv_search_icon_1"><i class="far fa-ellipsis-v"></i>
-                                                                                                                                                                                                                </div>-->
+                                                                                                                                                                                                                                </div>-->
                                 </form>
                             </div>
                         </div>
-{{-- new search bar --}}
-<div class="search-container">
-    <div class="dropdown">
-      <label for="dropdown-content">Select Location:</label>
-      <input
-        type="text"
-        placeholder="Search location..."
-        class="search-input"
-      />
-    </div>
+                        {{-- new search bar --}}
+                        <div class="search-container">
+                            <div class="dropdown sd-multiSelect form-group">
+                                <label for="dropdown-content">Select Location:</label>
+                                <input type="text" placeholder="Search location..." class="search-input" />
+                            </div>
 
-    <!-- Bedrooms Filter -->
-    <div class="dropdown">
-      <label for="dropdown-content">Select Bedroom:</label>
-      <button class="dropbtn">Select bedroom</button>
-      <div class="dropdown-content">
-        <div class="dropdown-column">
-          <label>Min</label>
-          <select>
-            <option value="">Any</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </div>
-        <div class="dropdown-column">
-          <label>Max</label>
-          <select>
-            <option value="">Any</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </div>
-      </div>
-    </div>
+                            <!-- Bedrooms Filter -->
+                            <div class="dropdown sd-multiSelect form-group">
+                                <label for="dropdown-content">Select Bedroom:</label>
+                                <button class="dropbtn">Select bedroom</button>
+                                <div class="dropdown-content">
+                                    <div class="dropdown-column">
+                                        <label>Min</label>
+                                        <select>
+                                            <option value="">Any</option>
+                                            @foreach ($uniqueBedrooms as $bedroom)
+                                                <option value="{{ $bedroom }}">{{ $bedroom }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="dropdown-column">
+                                        <label>Max</label>
+                                        <select>
+                                            <option value="">Any</option>
+                                            @foreach ($uniqueBedrooms as $bedroom)
+                                                <option value="{{ $bedroom }}">{{ $bedroom }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
 
-    <!-- Price Filter -->
-    <div class="dropdown">
-      <label for="dropdown-content">Select Price:</label>
-      <button class="dropbtn">Select Price</button>
-      <div class="dropdown-content">
-        <div class="dropdown-column">
-          <label>Min</label>
-          <select>
-            <option value="">Any</option>
-            <option value="50000">$50,000</option>
-            <option value="100000">$100,000</option>
-            <option value="200000">$200,000</option>
-            <option value="300000">$300,000</option>
-            <option value="500000">$500,000</option>
-          </select>
-        </div>
-        <div class="dropdown-column">
-          <label>Max</label>
-          <select>
-            <option value="">Any</option>
-            <option value="100000">$100,000</option>
-            <option value="200000">$200,000</option>
-            <option value="300000">$300,000</option>
-            <option value="500000">$500,000</option>
-            <option value="1000000">$1,000,000</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="select-container">
-      <label for="property-type">Select Property Type:</label>
-      <select id="property-type" class="select-input" multiple="multiple">
-        <option>Villa</option>
-        <option>Hotel</option>
-        <option>Room</option>
-        <option>Room 2</option>
-        <option>Room 3</option>
-      </select>
-    </div>
-    <div class="btn_div">
-      <button class="search-button">Search</button>
-    </div>
-  </div>
+                            <!-- Price Filter -->
+                            <div class="dropdown sd-multiSelect form-group">
+                                <label for="dropdown-content">Select Price:</label>
+                                <button class="dropbtn">Select Price</button>
+                                <div class="dropdown-content">
+                                    <div class="dropdown-column">
+                                        <label>Min</label>
+                                        <select>
+                                            <option value="">Any</option>
+                                            @foreach ($uniquePrices as $price)
+                                                <option value="{{ $price }}">{{ $price }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="dropdown-column">
+                                        <label>Max</label>
+                                        <select>
+                                            <option value="">Any</option>
+                                            @foreach ($uniquePrices as $price)
+                                                <option value="{{ $price }}">{{ $price }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown sd-multiSelect form-group">
+                                <label for="dropdown-content">Property Type</label>
+                                <select multiple id="current-job-role" class="sd-CustomSelect" aria-placeholder="yggv"
+                                    placeholder="Select Property type" name="p_type">
+                                    @foreach ($uniquePropertyTypes as $p_type)
+                                        <option value="{{ $p_type }}">{{ $p_type }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="btn_div">
+                                <button class="search-button">Search</button>
+                            </div>
+                        </div>
 
-{{-- new search bar ends --}}
+                        {{-- new search bar ends --}}
                     </div>
                 </div>
             </div>

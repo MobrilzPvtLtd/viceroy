@@ -8310,7 +8310,7 @@ marquee {
     /* -webkit-appearance: none; */
     /* background: white; */
     /* border: 1px solid #ccc; */
-    padding: 10px 18px;
+    padding: 0px !important;
     /* padding-right: 5px; */
     font-size: 16px;
     position: relative;
