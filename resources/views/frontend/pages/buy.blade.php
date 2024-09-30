@@ -286,78 +286,7 @@
                 </div>
             </div>
 
-            {{-- <section class="discover_area pt_70 xs_pt_95 pb_70 xs_pb_100"
-                style="background: url(assets/images/Discover_bg.jpg)">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-6 wow fadeInUp" data-wow-duration="1.5s"
-                            style="
-                  visibility: visible;
-                  animation-duration: 1.5s;
-                  animation-name: fadeInUp;
-                ">
-                            <div class="section_heading mb_25">
-                                <h2>Maximising Property Value <br> Minimising Hassles</h2>
-                            </div>
-                        </div>
-                    </div> --}}
-            {{-- <div class="row">
-                        <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
-                            style="
-                  visibility: visible;
-                  animation-duration: 1.5s;
-                  animation-name: fadeInUp;
-                ">
-                            <div class="single_discover card0001" style="height: 225px">
-                                <div class="discover_img">
-                                    <img src="assets/images/search.png" alt="icon" class="img-fluid w-100" />
-                                </div>
-                                <a class="item_title" href="#">Search your Location</a>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
-                            style="
-                  visibility: visible;
-                  animation-duration: 1.5s;
-                  animation-name: fadeInUp;
-                ">
-                            <div class="single_discover card0001 " style="height: 225px">
-                                <div class="discover_img">
-                                    <img src="assets/images/house.png" alt="icon" class="img-fluid w-100" />
-                                </div>
-                                <a class="item_title" href="#">Check out The Residence</a>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
-                            style="
-                  visibility: visible;
-                  animation-duration: 1.5s;
-                  animation-name: fadeInUp;
-                ">
-                            <div class="single_discover  card0001 " style="height: 225px">
-                                <div class="discover_img">
-                                    <img src="assets/images/bag.png" alt="icon" class="img-fluid w-100" />
-                                </div>
-                                <a class="item_title" href="#">Obtain your Perfect House</a>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 wow fadeInUp" data-wow-duration="1.5s"
-                            style="
-                  visibility: visible;
-                  animation-duration: 1.5s;
-                  animation-name: fadeInUp;
-                ">
-                            <div class="single_discover card0001 " style="height: 225px">
-                                <div class="discover_img">
-                                    <img src="assets/images/happy.png" alt="icon" class="img-fluid w-100" />
-                                </div>
-                                <a class="item_title" href="#">Delight in your Residence</a>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-            {{-- </section> --}}
-
+           
             <div class="container ">
                 <div class="row mt_95 xs_mt_75  ">
 
@@ -613,6 +542,9 @@
     </section>
 @endsection
 @section('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <script>
         $(document).ready(function() {
             $('.select3').select2({
@@ -629,7 +561,8 @@
             });
         });
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
     <script src="https://bsite.net/savrajdutta/cdn/multi-select.js"></script>
     <script>
         $(document).ready(function() {

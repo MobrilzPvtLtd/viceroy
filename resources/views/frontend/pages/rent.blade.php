@@ -621,11 +621,14 @@
     </section>
 @endsection
 @section('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <script>
         $(document).ready(function() {
             $('.select3').select2({
                 theme: 'bootstrap4',
-                placeholder: '-- All Property --'
+                placeholder: ' --  All Property --'
             }).on('select2:select', function(e) {
                 var selectedValue = e.params.data.id;
                 $(this).find('option[value="' + selectedValue + '"]').prop('disabled', true);
@@ -634,6 +637,19 @@
             }).on('select2:unselect', function(e) {
                 var unselectedValue = e.params.data.id;
                 $(this).find('option[value="' + unselectedValue + '"]').prop('disabled', false);
+            });
+        });
+    </script>
+
+
+    <script src="https://bsite.net/savrajdutta/cdn/multi-select.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".sd-CustomSelect").multipleSelect({
+                selectAll: false,
+                onOptgroupClick: function(view) {
+                    $(view).parents("label").addClass("selected-optgroup");
+                }
             });
         });
     </script>
@@ -680,105 +696,6 @@
         });
     </script>
     <script>
-        $(document).ready(function() {
-            $("#testimonial-slider").owlCarousel({
-                items: 1,
-                itemsDesktop: [1000, 1],
-                itemsDesktopSmall: [979, 1],
-                itemsTablet: [768, 1],
-                pagination: false,
-                navigation: true,
-                navigationText: ["", ""],
-                autoPlay: true,
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#testimonial-slider1").owlCarousel({
-                items: 1,
-                itemsDesktop: [1000, 1],
-                itemsDesktopSmall: [979, 1],
-                itemsTablet: [768, 1],
-                pagination: false,
-                navigation: true,
-                navigationText: ["", ""],
-                autoPlay: true,
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#testimonial-slider2").owlCarousel({
-                items: 1,
-                itemsDesktop: [1000, 1],
-                itemsDesktopSmall: [979, 1],
-                itemsTablet: [768, 1],
-                pagination: false,
-                navigation: true,
-                navigationText: ["", ""],
-                autoPlay: true,
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#testimonial-slider3").owlCarousel({
-                items: 1,
-                itemsDesktop: [1000, 1],
-                itemsDesktopSmall: [979, 1],
-                itemsTablet: [768, 1],
-                pagination: false,
-                navigation: true,
-                navigationText: ["", ""],
-                autoPlay: true,
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#testimonial-slider5").owlCarousel({
-                items: 1,
-                itemsDesktop: [1000, 1],
-                itemsDesktopSmall: [979, 1],
-                itemsTablet: [768, 1],
-                pagination: false,
-                navigation: true,
-                navigationText: ["", ""],
-                autoPlay: true,
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#testimonial-slider4").owlCarousel({
-                items: 1,
-                itemsDesktop: [1000, 1],
-                itemsDesktopSmall: [979, 1],
-                itemsTablet: [768, 1],
-                pagination: false,
-                navigation: true,
-                navigationText: ["", ""],
-                autoPlay: true,
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#testimonial-slider6").owlCarousel({
-                items: 1,
-                itemsDesktop: [1000, 1],
-                itemsDesktopSmall: [979, 1],
-                itemsTablet: [768, 1],
-                pagination: false,
-                navigation: true,
-                navigationText: ["", ""],
-                autoPlay: true,
-            });
-        });
-
-
-
         window.addEventListener("scroll", function() {
             var container = document.getElementById("container");
             var scrollPosition =

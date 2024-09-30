@@ -194,22 +194,20 @@
             document.getElementById("hidden_div").style.display = "none";
         }
     }
-    const btn = document.querySelector(".buy_price")
-    const price_div = document.querySelector(".adv_search_area2_buy_price")
-    btn.addEventListener("click", (() => {
-        if (price_div.style.opacity == "0") {
-            price_div.style.opacity == "1";
-        } else {
-            price_div.style.opacity == "0";
-        }
-    }))
-</script>
-<script>
+    // const btn = document.querySelector(".buy_price")
+    // const price_div = document.querySelector(".adv_search_area2_buy_price")
+    // btn.addEventListener("click", (() => {
+    //     if (price_div.style.opacity == "0") {
+    //         price_div.style.opacity = "1";
+    //     } else {
+    //         price_div.style.opacity = "0";
+    //     }
+    // }))
     window.addEventListener('scroll', function() {
         var container = document.getElementById('container');
         var scrollPosition = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0]
             .scrollTop;
-
+if(container){
         if (scrollPosition > window.innerHeight / 1.8) {
             // container.style.top = '11%';
             container.style.position = 'fixed';
@@ -221,7 +219,7 @@
             container.style.position = 'sticky';
 
 
-        }
+        }}
     });
     window.addEventListener('scroll', function() {
         var container2 = document.getElementById('container2');
@@ -248,138 +246,138 @@
 
         }
     });
-    const closeBtn = document.querySelector("#close_btn_minmax")
-    const close001 = document.querySelector("#close001")
-    const select_bedroom_btn = document.querySelector("#select_bedroom_btn")
-    const select_price_btn = document.querySelector("#select_price_btn")
-    const select_price_btn2 = document.querySelector("#select_price_btn2")
-    const select_rooms_btn = document.querySelector("#select_rooms_btn")
-    closeBtn.addEventListener("click", (() => {
-        // console.log("hello guys");
-        // close001.style.visibility = "hidden";
-    }))
-    const adv_search_icon = document.querySelector(".adv_search_icon")
-    const adv_search_icon2 = document.querySelector(".adv_search_icon2")
-    const cancel_rqst1 = document.querySelector("#cancel_rqst1")
-    const cancel_rqst2 = document.querySelector("#cancel_rqst2")
-    const cancel_rqst3 = document.querySelector("#cancel_rqst3")
-    const cancel_rqst4 = document.querySelector("#cancel_rqst4")
-    const cancel_rqst5 = document.querySelector("#cancel_rqst5")
-    const min_max = document.querySelector("#close_btn_minmax")
+    // const closeBtn = document.querySelector("#close_btn_minmax")
+    // const close001 = document.querySelector("#close001")
+    // const select_bedroom_btn = document.querySelector("#select_bedroom_btn")
+    // const select_price_btn = document.querySelector("#select_price_btn")
+    // const select_price_btn2 = document.querySelector("#select_price_btn2")
+    // const select_rooms_btn = document.querySelector("#select_rooms_btn")
+    // closeBtn.addEventListener("click", (() => {
+    //     // console.log("hello guys");
+    //     // close001.style.visibility = "hidden";
+    // }))
+    // const adv_search_icon = document.querySelector(".adv_search_icon")
+    // const adv_search_icon2 = document.querySelector(".adv_search_icon2")
+    // const cancel_rqst1 = document.querySelector("#cancel_rqst1")
+    // const cancel_rqst2 = document.querySelector("#cancel_rqst2")
+    // const cancel_rqst3 = document.querySelector("#cancel_rqst3")
+    // const cancel_rqst4 = document.querySelector("#cancel_rqst4")
+    // const cancel_rqst5 = document.querySelector("#cancel_rqst5")
+    // const min_max = document.querySelector("#close_btn_minmax")
 
-    select_bedroom_btn.addEventListener('click', (() => {
-        if (close001.style.display == "none") {
-            close001.style.display = "block";
-            close002.style.display = "none";
-        } else {
-            close001.style.display = "none"
-        }
-    }))
-
-
-    select_price_btn.addEventListener('click', (() => {
-        // console.log("hariom")
-        if (close002.style.display == "none") {
-            close002.style.display = "block";
-            close001.style.display = "none";
-        } else {
-            close002.style.display = "none"
-        }
-    }))
-    cancel_rqst1.addEventListener('click', (() => {
-        console.log("pills_tabContent")
-        // if (close002.style.display == "none") {
-            close002.style.display = "none";
-            close001.style.display = "none";
-        // } else {
-        //     close002.style.display = "none"
-        // }
-    }))
-    cancel_rqst2.addEventListener('click', (() => {
-        console.log("pills_tabContent")
-        // if (close002.style.display == "none") {
-            close002.style.display = "none";
-            close001.style.display = "none";
-        // } else {
-        //     close002.style.display = "none"
-        // }
-    }))
-    cancel_rqst3.addEventListener('click', (() => {
-        console.log("pills_tabContent")
-        // if (close002.style.display == "none") {
-            close002.style.display = "none";
-            close001.style.display = "none";
-        // } else {
-        //     close002.style.display = "none"
-        // }
-    }))
-    cancel_rqst4.addEventListener('click', (() => {
-        console.log("pills_tabContent")
-        // if (close002.style.display == "none") {
-            close002.style.display = "none";
-            close001.style.display = "none";
-        // } else {
-        //     close002.style.display = "none"
-        // }
-    }))
-    cancel_rqst5.addEventListener('click', (() => {
-        console.log("pills_tabContent")
-        // if (close002.style.display == "none") {
-            close002.style.display = "none";
-            close001.style.display = "none";
-        // } else {
-        //     close002.style.display = "none"
-        // }
-    }))
+    // select_bedroom_btn.addEventListener('click', (() => {
+    //     if (close001.style.display == "none") {
+    //         close001.style.display = "block";
+    //         close002.style.display = "none";
+    //     } else {
+    //         close001.style.display = "none"
+    //     }
+    // }))
 
 
+    // select_price_btn.addEventListener('click', (() => {
+    //     // console.log("hariom")
+    //     if (close002.style.display == "none") {
+    //         close002.style.display = "block";
+    //         close001.style.display = "none";
+    //     } else {
+    //         close002.style.display = "none"
+    //     }
+    // }))
+    // cancel_rqst1.addEventListener('click', (() => {
+    //     console.log("pills_tabContent")
+    //     // if (close002.style.display == "none") {
+    //         close002.style.display = "none";
+    //         close001.style.display = "none";
+    //     // } else {
+    //     //     close002.style.display = "none"
+    //     // }
+    // }))
+    // cancel_rqst2.addEventListener('click', (() => {
+    //     console.log("pills_tabContent")
+    //     // if (close002.style.display == "none") {
+    //         close002.style.display = "none";
+    //         close001.style.display = "none";
+    //     // } else {
+    //     //     close002.style.display = "none"
+    //     // }
+    // }))
+    // cancel_rqst3.addEventListener('click', (() => {
+    //     console.log("pills_tabContent")
+    //     // if (close002.style.display == "none") {
+    //         close002.style.display = "none";
+    //         close001.style.display = "none";
+    //     // } else {
+    //     //     close002.style.display = "none"
+    //     // }
+    // }))
+    // cancel_rqst4.addEventListener('click', (() => {
+    //     console.log("pills_tabContent")
+    //     // if (close002.style.display == "none") {
+    //         close002.style.display = "none";
+    //         close001.style.display = "none";
+    //     // } else {
+    //     //     close002.style.display = "none"
+    //     // }
+    // }))
+    // cancel_rqst5.addEventListener('click', (() => {
+    //     console.log("pills_tabContent")
+    //     // if (close002.style.display == "none") {
+    //         close002.style.display = "none";
+    //         close001.style.display = "none";
+    //     // } else {
+    //     //     close002.style.display = "none"
+    //     // }
+    // }))
 
 
 
-    select_rooms_btn.addEventListener('click', (() => {
-
-        console.log("hariom")
-        if (close003.style.display == "none") {
-            close003.style.display = "block";
-        } else {
-            close003.style.display = "none"
-        }
-    }))
 
 
-    select_price_btn2.addEventListener('click', (() => {
-        console.log("hariom")
-        if (close004.style.display == "none") {
-            close004.style.display = "block";
-        } else {
-            close004.style.display = "none"
-        }
-    }))
+    // select_rooms_btn.addEventListener('click', (() => {
+
+    //     console.log("hariom")
+    //     if (close003.style.display == "none") {
+    //         close003.style.display = "block";
+    //     } else {
+    //         close003.style.display = "none"
+    //     }
+    // }))
 
 
-    select_price_btn.addEventListener("click", (() => {
-        console.log("hariom2", close001.style.display)
-        close001.style.display = "none"
-
-    }))
-    select_bedroom_btn.addEventListener("click", (() => {
-        console.log("hariom2", close002.style.display)
-        close002.style.display = "none"
-
-    }))
-    select_rooms_btn.addEventListener("click", (() => {
-        console.log("hariom2")
-        close004.style.display = "none"
-
-    }))
+    // select_price_btn2.addEventListener('click', (() => {
+    //     console.log("hariom")
+    //     if (close004.style.display == "none") {
+    //         close004.style.display = "block";
+    //     } else {
+    //         close004.style.display = "none"
+    //     }
+    // }))
 
 
+    // select_price_btn.addEventListener("click", (() => {
+    //     console.log("hariom2", close001.style.display)
+    //     close001.style.display = "none"
 
-    select_price_btn2.addEventListener("click", (() => {
-        console.log("hariom2")
-        close003.style.display = "none"
+    // }))
+    // select_bedroom_btn.addEventListener("click", (() => {
+    //     console.log("hariom2", close002.style.display)
+    //     close002.style.display = "none"
 
-    }))
+    // }))
+    // select_rooms_btn.addEventListener("click", (() => {
+    //     console.log("hariom2")
+    //     close004.style.display = "none"
+
+    // }))
+
+
+
+    // select_price_btn2.addEventListener("click", (() => {
+    //     console.log("hariom2")
+    //     close003.style.display = "none"
+
+    // }))
     //         const closeBtn = document.querySelector("#close_btn_minmax")
     //     const close009 = document.querySelector("#close009")
     //     const select_bedroom_btn =  document.querySelector("#select_bedroom_btn")
@@ -453,25 +451,30 @@
     APP.sidecart.init();
   </script> --}}
   <script>
-    const or001 = document.querySelector(".or001")
+    const or001 = document.querySelector(".or001");
+
+    let value = 0;
+    if(or001){
 
 
-    value= 0;
     setInterval(() => {
-            value += 10;
+        value += 10;
 
-            if(value > 4000){
-                value = 0
-                return or001;
-                or001.style.transition = "none"
+        // Reset value and remove transition when it exceeds 4000px
+        if (value > 4000) {
+            value = 0;
+            or001.style.transition = "none"; // Temporarily disable transition
+        } else {
+            or001.style.transition = "transform 0.1s linear"; // Reapply transition
+        }
 
-            }
-            or001.style.transform = `translate(-${value}px , 0px)`;
-            console.log("value" , value)
+        // Apply the transform based on the value
+        or001.style.transform = `translate(-${value}px, 0px)`;
 
-        }, 100);
+    }, 100);
+}
+</script>
 
-  </script>
 
 <script>
     const drop = document.querySelector(".drop001")
