@@ -118,7 +118,7 @@
                                 </div>
                             </li>
                         </ul>
-                        <a href="#" class="common_btn">More Details</a>
+                        <a href="https://viceroy.ultimatetrueweb.com/about" class="common_btn">More Details</a>
                     </div>
                 </div>
             </div>
