@@ -17,6 +17,7 @@
 
 namespace Symfony\Component\HttpKernel\HttpCache;
 
+use Symfony\Component\HttpFoundation\Exception\SuspiciousOperationException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
@@ -31,10 +32,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
 {
     public const BODY_EVAL_BOUNDARY_LENGTH = 24;
 
-    private HttpKernelInterface $kernel;
-    private StoreInterface $store;
     private Request $request;
-    private ?SurrogateInterface $surrogate;
     private ?ResponseCacheStrategyInterface $surrogateCacheStrategy = null;
     private array $options = [];
     private array $traces = [];
@@ -84,12 +82,12 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
      *                            This setting is overridden by the stale-if-error HTTP Cache-Control extension
      *                            (see RFC 5861).
      */
-    public function __construct(HttpKernelInterface $kernel, StoreInterface $store, ?SurrogateInterface $surrogate = null, array $options = [])
-    {
-        $this->store = $store;
-        $this->kernel = $kernel;
-        $this->surrogate = $surrogate;
-
+    public function __construct(
+        private HttpKernelInterface $kernel,
+        private StoreInterface $store,
+        private ?SurrogateInterface $surrogate = null,
+        array $options = [],
+    ) {
         // needed in case there is a fatal error because the backend is too slow to respond
         register_shutdown_function($this->store->cleanup(...));
 
@@ -151,7 +149,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
     {
         $log = [];
         foreach ($this->traces as $request => $traces) {
-            $log[] = sprintf('%s: %s', $request, implode(', ', $traces));
+            $log[] = \sprintf('%s: %s', $request, implode(', ', $traces));
         }
 
         return implode('; ', $log);
@@ -231,7 +229,9 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
 
         $response->prepare($request);
 
-        $response->isNotModified($request);
+        if (HttpKernelInterface::MAIN_REQUEST === $type) {
+            $response->isNotModified($request);
+        }
 
         return $response;
     }
@@ -390,7 +390,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
 
             // return the response and not the cache entry if the response is valid but not cached
             $etag = $response->getEtag();
-            if ($etag && \in_array($etag, $requestEtags) && !\in_array($etag, $cachedEtags)) {
+            if ($etag && \in_array($etag, $requestEtags, true) && !\in_array($etag, $cachedEtags, true)) {
                 return $response;
             }
 
@@ -705,7 +705,11 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
             $path .= '?'.$qs;
         }
 
-        return $request->getMethod().' '.$path;
+        try {
+            return $request->getMethod().' '.$path;
+        } catch (SuspiciousOperationException) {
+            return '_BAD_METHOD_ '.$path;
+        }
     }
 
     /**

@@ -277,17 +277,13 @@ class Command
             $statusCode = ($this->code)($input, $output);
         } else {
             $statusCode = $this->execute($input, $output);
-
-            if (!\is_int($statusCode)) {
-                throw new \TypeError(sprintf('Return value of "%s::execute()" must be of the type int, "%s" returned.', static::class, get_debug_type($statusCode)));
-            }
         }
 
         return is_numeric($statusCode) ? (int) $statusCode : 0;
     }
 
     /**
-     * Adds suggestions to $suggestions for the current completion input (e.g. option or argument).
+     * Supplies suggestions when resolving possible completion options for input (e.g. option or argument).
      */
     public function complete(CompletionInput $input, CompletionSuggestions $suggestions): void
     {
@@ -399,14 +395,14 @@ class Command
      */
     public function getNativeDefinition(): InputDefinition
     {
-        return $this->definition ?? throw new LogicException(sprintf('Command class "%s" is not correctly initialized. You probably forgot to call the parent constructor.', static::class));
+        return $this->definition ?? throw new LogicException(\sprintf('Command class "%s" is not correctly initialized. You probably forgot to call the parent constructor.', static::class));
     }
 
     /**
      * Adds an argument.
      *
-     * @param $mode    The argument mode: InputArgument::REQUIRED or InputArgument::OPTIONAL
-     * @param $default The default value (for InputArgument::OPTIONAL mode only)
+     * @param                                                                               $mode            The argument mode: InputArgument::REQUIRED or InputArgument::OPTIONAL
+     * @param                                                                               $default         The default value (for InputArgument::OPTIONAL mode only)
      * @param array|\Closure(CompletionInput,CompletionSuggestions):list<string|Suggestion> $suggestedValues The values used for input completion
      *
      * @return $this
@@ -424,9 +420,9 @@ class Command
     /**
      * Adds an option.
      *
-     * @param $shortcut The shortcuts, can be null, a string of shortcuts delimited by | or an array of shortcuts
-     * @param $mode     The option mode: One of the InputOption::VALUE_* constants
-     * @param $default  The default value (must be null for InputOption::VALUE_NONE)
+     * @param                                                                               $shortcut        The shortcuts, can be null, a string of shortcuts delimited by | or an array of shortcuts
+     * @param                                                                               $mode            The option mode: One of the InputOption::VALUE_* constants
+     * @param                                                                               $default         The default value (must be null for InputOption::VALUE_NONE)
      * @param array|\Closure(CompletionInput,CompletionSuggestions):list<string|Suggestion> $suggestedValues The values used for input completion
      *
      * @return $this
@@ -607,7 +603,7 @@ class Command
         $key = $short ? 'short' : 'long';
 
         if (!isset($this->synopsis[$key])) {
-            $this->synopsis[$key] = trim(sprintf('%s %s', $this->name, $this->definition->getSynopsis($short)));
+            $this->synopsis[$key] = trim(\sprintf('%s %s', $this->name, $this->definition->getSynopsis($short)));
         }
 
         return $this->synopsis[$key];
@@ -621,7 +617,7 @@ class Command
     public function addUsage(string $usage): static
     {
         if (!str_starts_with($usage, $this->name)) {
-            $usage = sprintf('%s %s', $this->name, $usage);
+            $usage = \sprintf('%s %s', $this->name, $usage);
         }
 
         $this->usages[] = $usage;
@@ -646,7 +642,7 @@ class Command
     public function getHelper(string $name): HelperInterface
     {
         if (null === $this->helperSet) {
-            throw new LogicException(sprintf('Cannot retrieve helper "%s" because there is no HelperSet defined. Did you forget to add your command to the application or to set the application on the command using the setApplication() method? You can also set the HelperSet directly using the setHelperSet() method.', $name));
+            throw new LogicException(\sprintf('Cannot retrieve helper "%s" because there is no HelperSet defined. Did you forget to add your command to the application or to set the application on the command using the setApplication() method? You can also set the HelperSet directly using the setHelperSet() method.', $name));
         }
 
         return $this->helperSet->get($name);
@@ -662,7 +658,7 @@ class Command
     private function validateName(string $name): void
     {
         if (!preg_match('/^[^\:]++(\:[^\:]++)*$/', $name)) {
-            throw new InvalidArgumentException(sprintf('Command name "%s" is invalid.', $name));
+            throw new InvalidArgumentException(\sprintf('Command name "%s" is invalid.', $name));
         }
     }
 }

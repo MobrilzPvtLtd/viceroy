@@ -24,12 +24,17 @@ return [
      * This queue will be used to generate derived and responsive images.
      * Leave empty to use the default queue.
      */
-    'queue_name' => '',
+    'queue_name' => env('MEDIA_QUEUE', ''),
 
     /*
      * By default all conversions will be performed on a queue.
      */
     'queue_conversions_by_default' => env('QUEUE_CONVERSIONS_BY_DEFAULT', true),
+
+    /*
+     * Should database transactions be run after database commits?
+     */
+    'queue_conversions_after_database_commit' => env('QUEUE_CONVERSIONS_AFTER_DB_COMMIT', true),
 
     /*
      * The fully qualified class name of the media model.
@@ -266,4 +271,10 @@ return [
      * If you set this to `/my-subdir`, all your media will be stored in a `/my-subdir` directory.
      */
     'prefix' => env('MEDIA_PREFIX', ''),
+
+    /*
+     * When forcing lazy loading, media will be loaded even if you don't eager load media and you have
+     * disabled lazy loading globally in the service provider.
+     */
+    'force_lazy_loading' => env('FORCE_MEDIA_LIBRARY_LAZY_LOADING', true),
 ];

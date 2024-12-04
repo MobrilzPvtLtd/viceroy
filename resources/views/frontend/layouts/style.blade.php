@@ -12,7 +12,6 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    background-color: white;
     padding: 10px;
     gap: 5px;
     border-radius: 5px;
@@ -36,7 +35,7 @@
 
 .search-button {
     padding: 11px 20px;
-    background-color: #A5672C;
+    background-color: #1a3b42;
     color: white;
     border: none;
     border-radius: 4px;
@@ -44,7 +43,7 @@
 }
 
 .search-button:hover {
-    background-color: #8A5025;
+    background-color: #11282c;
 }
 
 /* Dropdown Styling */
@@ -262,7 +261,7 @@
 
 #container2 {
 
-    background-color: #ffffff00;
+    background-color: #ffffff80 !important;
     width: 80vw;
     height: fit-content !important;
     position: sticky;

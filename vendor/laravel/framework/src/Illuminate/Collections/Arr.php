@@ -158,7 +158,7 @@ class Arr
      * Determine if the given key exists in the provided array.
      *
      * @param  \ArrayAccess|array  $array
-     * @param  string|int  $key
+     * @param  string|int|float  $key
      * @return bool
      */
     public static function exists($array, $key)
@@ -216,10 +216,14 @@ class Arr
     /**
      * Return the last element in an array passing a given truth test.
      *
-     * @param  array  $array
-     * @param  callable|null  $callback
-     * @param  mixed  $default
-     * @return mixed
+     * @template TKey
+     * @template TValue
+     * @template TLastDefault
+     *
+     * @param  iterable<TKey, TValue>  $array
+     * @param  (callable(TValue, TKey): bool)|null  $callback
+     * @param  TLastDefault|(\Closure(): TLastDefault)  $default
+     * @return TValue|TLastDefault
      */
     public static function last($array, ?callable $callback = null, $default = null)
     {
@@ -642,11 +646,12 @@ class Arr
     /**
      * Run a map over each nested chunk of items.
      *
-     * @template TMapSpreadValue
+     * @template TKey
+     * @template TValue
      *
-     * @param  array  $array
-     * @param  callable(mixed...): TMapSpreadValue  $callback
-     * @return array<TKey, TMapSpreadValue>
+     * @param  array<TKey, array>  $array
+     * @param  callable(mixed...): TValue  $callback
+     * @return array<TKey, TValue>
      */
     public static function mapSpread(array $array, callable $callback)
     {

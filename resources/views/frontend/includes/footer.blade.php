@@ -500,3 +500,17 @@ if(container){
         drop2.style.opacity = 0
     }))
 </script>
+<script>
+document.addEventListener("scroll", function () {
+    const mainMenu = document.querySelector(".main_menu");
+    const scrollHeight = document.documentElement.scrollHeight;
+    const triggerHeight = scrollHeight / 6; // 1/6 of the page height
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (scrollTop > triggerHeight) {
+        mainMenu.classList.add("scrolled");
+    } else {
+        mainMenu.classList.remove("scrolled");
+    }
+});
+</script>

@@ -11,6 +11,7 @@
 
 namespace Symfony\Component\HttpFoundation;
 
+use Symfony\Component\HttpFoundation\Exception\BadRequestException;
 use Symfony\Component\HttpFoundation\Exception\ConflictingHeadersException;
 use Symfony\Component\HttpFoundation\Exception\JsonException;
 use Symfony\Component\HttpFoundation\Exception\SessionNotFoundException;
@@ -193,8 +194,7 @@ class Request
         self::HEADER_X_FORWARDED_PREFIX => 'X_FORWARDED_PREFIX',
     ];
 
-    /** @var bool */
-    private $isIisRewrite = false;
+    private bool $isIisRewrite = false;
 
     /**
      * @param array                $query      The GET parameters
@@ -254,7 +254,7 @@ class Request
         $request = self::createRequestFromFactory($_GET, $_POST, [], $_COOKIE, $_FILES, $_SERVER);
 
         if (str_starts_with($request->headers->get('CONTENT_TYPE', ''), 'application/x-www-form-urlencoded')
-            && \in_array(strtoupper($request->server->get('REQUEST_METHOD', 'GET')), ['PUT', 'DELETE', 'PATCH'])
+            && \in_array(strtoupper($request->server->get('REQUEST_METHOD', 'GET')), ['PUT', 'DELETE', 'PATCH'], true)
         ) {
             parse_str($request->getContent(), $data);
             $request->request = new InputBag($data);
@@ -276,6 +276,8 @@ class Request
      * @param array                $files      The request files ($_FILES)
      * @param array                $server     The server parameters ($_SERVER)
      * @param string|resource|null $content    The raw body data
+     *
+     * @throws BadRequestException When the URI is invalid
      */
     public static function create(string $uri, string $method = 'GET', array $parameters = [], array $cookies = [], array $files = [], array $server = [], $content = null): static
     {
@@ -298,10 +300,20 @@ class Request
         $server['PATH_INFO'] = '';
         $server['REQUEST_METHOD'] = strtoupper($method);
 
-        $components = parse_url($uri);
-        if (false === $components) {
-            throw new \InvalidArgumentException(sprintf('Malformed URI "%s".', $uri));
+        if (false === $components = parse_url(\strlen($uri) !== strcspn($uri, '?#') ? $uri : $uri.'#')) {
+            throw new BadRequestException('Invalid URI.');
         }
+
+        if (false !== ($i = strpos($uri, '\\')) && $i < strcspn($uri, '?#')) {
+            throw new BadRequestException('Invalid URI: A URI cannot contain a backslash.');
+        }
+        if (\strlen($uri) !== strcspn($uri, "\r\n\t")) {
+            throw new BadRequestException('Invalid URI: A URI cannot contain CR/LF/TAB characters.');
+        }
+        if ('' !== $uri && (\ord($uri[0]) <= 32 || \ord($uri[-1]) <= 32)) {
+            throw new BadRequestException('Invalid URI: A URI must not start nor end with ASCII control characters or spaces.');
+        }
+
         if (isset($components['host'])) {
             $server['SERVER_NAME'] = $components['host'];
             $server['HTTP_HOST'] = $components['host'];
@@ -472,7 +484,7 @@ class Request
         }
 
         return
-            sprintf('%s %s %s', $this->getMethod(), $this->getRequestUri(), $this->server->get('SERVER_PROTOCOL'))."\r\n".
+            \sprintf('%s %s %s', $this->getMethod(), $this->getRequestUri(), $this->server->get('SERVER_PROTOCOL'))."\r\n".
             $this->headers.
             $cookieHeader."\r\n".
             $content;
@@ -521,20 +533,26 @@ class Request
      *
      * You should only list the reverse proxies that you manage directly.
      *
-     * @param array $proxies          A list of trusted proxies, the string 'REMOTE_ADDR' will be replaced with $_SERVER['REMOTE_ADDR']
-     * @param int   $trustedHeaderSet A bit field of Request::HEADER_*, to set which headers to trust from your proxies
+     * @param array                          $proxies          A list of trusted proxies, the string 'REMOTE_ADDR' will be replaced with $_SERVER['REMOTE_ADDR'] and 'PRIVATE_SUBNETS' by IpUtils::PRIVATE_SUBNETS
+     * @param int-mask-of<Request::HEADER_*> $trustedHeaderSet A bit field to set which headers to trust from your proxies
      */
     public static function setTrustedProxies(array $proxies, int $trustedHeaderSet): void
     {
-        self::$trustedProxies = array_reduce($proxies, function ($proxies, $proxy) {
-            if ('REMOTE_ADDR' !== $proxy) {
-                $proxies[] = $proxy;
-            } elseif (isset($_SERVER['REMOTE_ADDR'])) {
-                $proxies[] = $_SERVER['REMOTE_ADDR'];
+        if (false !== $i = array_search('REMOTE_ADDR', $proxies, true)) {
+            if (isset($_SERVER['REMOTE_ADDR'])) {
+                $proxies[$i] = $_SERVER['REMOTE_ADDR'];
+            } else {
+                unset($proxies[$i]);
+                $proxies = array_values($proxies);
             }
+        }
 
-            return $proxies;
-        }, []);
+        if (false !== ($i = array_search('PRIVATE_SUBNETS', $proxies, true)) || false !== ($i = array_search('private_ranges', $proxies, true))) {
+            unset($proxies[$i]);
+            $proxies = array_merge($proxies, IpUtils::PRIVATE_SUBNETS);
+        }
+
+        self::$trustedProxies = $proxies;
         self::$trustedHeaderSet = $trustedHeaderSet;
     }
 
@@ -567,7 +585,7 @@ class Request
      */
     public static function setTrustedHosts(array $hostPatterns): void
     {
-        self::$trustedHostPatterns = array_map(fn ($hostPattern) => sprintf('{%s}i', $hostPattern), $hostPatterns);
+        self::$trustedHostPatterns = array_map(fn ($hostPattern) => \sprintf('{%s}i', $hostPattern), $hostPatterns);
         // we need to reset trusted hosts on trusted host patterns change
         self::$trustedHosts = [];
     }
@@ -750,9 +768,7 @@ class Request
      */
     public function getClientIp(): ?string
     {
-        $ipAddresses = $this->getClientIps();
-
-        return $ipAddresses[0];
+        return $this->getClientIps()[0];
     }
 
     /**
@@ -1048,7 +1064,7 @@ class Request
 
         $https = $this->server->get('HTTPS');
 
-        return !empty($https) && 'off' !== strtolower($https);
+        return $https && 'off' !== strtolower($https);
     }
 
     /**
@@ -1084,13 +1100,13 @@ class Request
             }
             $this->isHostValid = false;
 
-            throw new SuspiciousOperationException(sprintf('Invalid Host "%s".', $host));
+            throw new SuspiciousOperationException(\sprintf('Invalid Host "%s".', $host));
         }
 
         if (\count(self::$trustedHostPatterns) > 0) {
             // to avoid host header injection attacks, you should provide a list of trusted host patterns
 
-            if (\in_array($host, self::$trustedHosts)) {
+            if (\in_array($host, self::$trustedHosts, true)) {
                 return $host;
             }
 
@@ -1107,7 +1123,7 @@ class Request
             }
             $this->isHostValid = false;
 
-            throw new SuspiciousOperationException(sprintf('Untrusted Host "%s".', $host));
+            throw new SuspiciousOperationException(\sprintf('Untrusted Host "%s".', $host));
         }
 
         return $host;
@@ -1164,7 +1180,7 @@ class Request
         }
 
         if (!preg_match('/^[A-Z]++$/D', $method)) {
-            throw new SuspiciousOperationException(sprintf('Invalid method override "%s".', $method));
+            throw new SuspiciousOperationException('Invalid HTTP method override.');
         }
 
         return $this->method = $method;
@@ -1221,10 +1237,10 @@ class Request
         }
 
         foreach (static::$formats as $format => $mimeTypes) {
-            if (\in_array($mimeType, (array) $mimeTypes)) {
+            if (\in_array($mimeType, (array) $mimeTypes, true)) {
                 return $format;
             }
-            if (null !== $canonicalMimeType && \in_array($canonicalMimeType, (array) $mimeTypes)) {
+            if (null !== $canonicalMimeType && \in_array($canonicalMimeType, (array) $mimeTypes, true)) {
                 return $format;
             }
         }
@@ -1447,7 +1463,7 @@ class Request
         }
 
         if (!\is_array($content)) {
-            throw new JsonException(sprintf('JSON content was expected to decode to an array, "%s" returned.', get_debug_type($content)));
+            throw new JsonException(\sprintf('JSON content was expected to decode to an array, "%s" returned.', get_debug_type($content)));
         }
 
         return new InputBag($content);
@@ -1473,7 +1489,7 @@ class Request
         }
 
         if (!\is_array($content)) {
-            throw new JsonException(sprintf('JSON content was expected to decode to an array, "%s" returned.', get_debug_type($content)));
+            throw new JsonException(\sprintf('JSON content was expected to decode to an array, "%s" returned.', get_debug_type($content)));
         }
 
         return $content;
@@ -1528,28 +1544,29 @@ class Request
     {
         $preferredLanguages = $this->getLanguages();
 
-        if (empty($locales)) {
+        if (!$locales) {
             return $preferredLanguages[0] ?? null;
         }
 
+        $locales = array_map($this->formatLocale(...), $locales);
         if (!$preferredLanguages) {
             return $locales[0];
         }
 
-        $extendedPreferredLanguages = [];
-        foreach ($preferredLanguages as $language) {
-            $extendedPreferredLanguages[] = $language;
-            if (false !== $position = strpos($language, '_')) {
-                $superLanguage = substr($language, 0, $position);
-                if (!\in_array($superLanguage, $preferredLanguages)) {
-                    $extendedPreferredLanguages[] = $superLanguage;
+        if ($matches = array_intersect($preferredLanguages, $locales)) {
+            return current($matches);
+        }
+
+        $combinations = array_merge(...array_map($this->getLanguageCombinations(...), $preferredLanguages));
+        foreach ($combinations as $combination) {
+            foreach ($locales as $locale) {
+                if (str_starts_with($locale, $combination)) {
+                    return $locale;
                 }
             }
         }
 
-        $preferredLanguages = array_values(array_intersect($extendedPreferredLanguages, $locales));
-
-        return $preferredLanguages[0] ?? $locales[0];
+        return $locales[0];
     }
 
     /**
@@ -1567,30 +1584,89 @@ class Request
         $this->languages = [];
         foreach ($languages as $acceptHeaderItem) {
             $lang = $acceptHeaderItem->getValue();
-            if (str_contains($lang, '-')) {
-                $codes = explode('-', $lang);
-                if ('i' === $codes[0]) {
-                    // Language not listed in ISO 639 that are not variants
-                    // of any listed language, which can be registered with the
-                    // i-prefix, such as i-cherokee
-                    if (\count($codes) > 1) {
-                        $lang = $codes[1];
-                    }
-                } else {
-                    for ($i = 0, $max = \count($codes); $i < $max; ++$i) {
-                        if (0 === $i) {
-                            $lang = strtolower($codes[0]);
-                        } else {
-                            $lang .= '_'.strtoupper($codes[$i]);
-                        }
-                    }
-                }
-            }
-
-            $this->languages[] = $lang;
+            $this->languages[] = self::formatLocale($lang);
         }
+        $this->languages = array_unique($this->languages);
 
         return $this->languages;
+    }
+
+    /**
+     * Strips the locale to only keep the canonicalized language value.
+     *
+     * Depending on the $locale value, this method can return values like :
+     * - language_Script_REGION: "fr_Latn_FR", "zh_Hans_TW"
+     * - language_Script: "fr_Latn", "zh_Hans"
+     * - language_REGION: "fr_FR", "zh_TW"
+     * - language: "fr", "zh"
+     *
+     * Invalid locale values are returned as is.
+     *
+     * @see https://wikipedia.org/wiki/IETF_language_tag
+     * @see https://datatracker.ietf.org/doc/html/rfc5646
+     */
+    private static function formatLocale(string $locale): string
+    {
+        [$language, $script, $region] = self::getLanguageComponents($locale);
+
+        return implode('_', array_filter([$language, $script, $region]));
+    }
+
+    /**
+     * Returns an array of all possible combinations of the language components.
+     *
+     * For instance, if the locale is "fr_Latn_FR", this method will return:
+     * - "fr_Latn_FR"
+     * - "fr_Latn"
+     * - "fr_FR"
+     * - "fr"
+     *
+     * @return string[]
+     */
+    private static function getLanguageCombinations(string $locale): array
+    {
+        [$language, $script, $region] = self::getLanguageComponents($locale);
+
+        return array_unique([
+            implode('_', array_filter([$language, $script, $region])),
+            implode('_', array_filter([$language, $script])),
+            implode('_', array_filter([$language, $region])),
+            $language,
+        ]);
+    }
+
+    /**
+     * Returns an array with the language components of the locale.
+     *
+     * For example:
+     * - If the locale is "fr_Latn_FR", this method will return "fr", "Latn", "FR"
+     * - If the locale is "fr_FR", this method will return "fr", null, "FR"
+     * - If the locale is "zh_Hans", this method will return "zh", "Hans", null
+     *
+     * @see https://wikipedia.org/wiki/IETF_language_tag
+     * @see https://datatracker.ietf.org/doc/html/rfc5646
+     *
+     * @return array{string, string|null, string|null}
+     */
+    private static function getLanguageComponents(string $locale): array
+    {
+        $locale = str_replace('_', '-', strtolower($locale));
+        $pattern = '/^([a-zA-Z]{2,3}|i-[a-zA-Z]{5,})(?:-([a-zA-Z]{4}))?(?:-([a-zA-Z]{2}))?(?:-(.+))?$/';
+        if (!preg_match($pattern, $locale, $matches)) {
+            return [$locale, null, null];
+        }
+        if (str_starts_with($matches[1], 'i-')) {
+            // Language not listed in ISO 639 that are not variants
+            // of any listed language, which can be registered with the
+            // i-prefix, such as i-cherokee
+            $matches[1] = substr($matches[1], 2);
+        }
+
+        return [
+            $matches[1],
+            isset($matches[2]) ? ucfirst(strtolower($matches[2])) : null,
+            isset($matches[3]) ? strtoupper($matches[3]) : null,
+        ];
     }
 
     /**
@@ -1759,7 +1835,7 @@ class Request
         }
 
         $basename = basename($baseUrl ?? '');
-        if (empty($basename) || !strpos(rawurldecode($truncatedRequestUri), $basename)) {
+        if (!$basename || !strpos(rawurldecode($truncatedRequestUri), $basename)) {
             // no match whatsoever; set it blank
             return '';
         }
@@ -1780,7 +1856,7 @@ class Request
     protected function prepareBasePath(): string
     {
         $baseUrl = $this->getBaseUrl();
-        if (empty($baseUrl)) {
+        if (!$baseUrl) {
             return '';
         }
 
@@ -1820,7 +1896,7 @@ class Request
         }
 
         $pathInfo = substr($requestUri, \strlen($baseUrl));
-        if (false === $pathInfo || '' === $pathInfo) {
+        if ('' === $pathInfo) {
             // If substr() returns false then PATH_INFO is set to an empty string
             return '/';
         }
@@ -1879,7 +1955,7 @@ class Request
 
         $len = \strlen($prefix);
 
-        if (preg_match(sprintf('#^(%%[[:xdigit:]]{2}|.){%d}#', $len), $string, $match)) {
+        if (preg_match(\sprintf('#^(%%[[:xdigit:]]{2}|.){%d}#', $len), $string, $match)) {
             return $match[0];
         }
 
@@ -1971,7 +2047,7 @@ class Request
         }
         $this->isForwardedValid = false;
 
-        throw new ConflictingHeadersException(sprintf('The request has both a trusted "%s" header and a trusted "%s" header, conflicting with each other. You should either configure your proxy to remove one of them, or configure your project to distrust the offending one.', self::TRUSTED_HEADERS[self::HEADER_FORWARDED], self::TRUSTED_HEADERS[$type]));
+        throw new ConflictingHeadersException(\sprintf('The request has both a trusted "%s" header and a trusted "%s" header, conflicting with each other. You should either configure your proxy to remove one of them, or configure your project to distrust the offending one.', self::TRUSTED_HEADERS[self::HEADER_FORWARDED], self::TRUSTED_HEADERS[$type]));
     }
 
     private function normalizeAndFilterClientIps(array $clientIps, string $ip): array

@@ -211,7 +211,7 @@ class Html
      *
      * @return \Spatie\Html\Elements\Input
      */
-    public function range($name = '', $value = '', $min = null, $max = null, $step = null)
+    public function range($name = '', $value = null, $min = null, $max = null, $step = null)
     {
         return $this->input('range', $name, $value)
             ->attributeIfNotNull($min, 'min', $min)
@@ -256,7 +256,7 @@ class Html
      */
     public function input($type = null, $name = null, $value = null)
     {
-        $hasValue = $name && ($type !== 'password' && ! is_null($this->old($name, $value)) || ! is_null($value));
+        $hasValue = ! is_null($value) || ($type !== 'password' && ! is_null($this->old($name, $value)));
 
         return Input::create()
             ->attributeIf($type, 'type', $type)
@@ -596,7 +596,7 @@ class Html
     protected function old($name, $value = null)
     {
         if (empty($name)) {
-            return;
+            return $value;
         }
 
         // Convert array format (sth[1]) to dot notation (sth.1)

@@ -12,6 +12,8 @@ namespace PHPUnit\Framework;
 use const PHP_EOL;
 use function array_keys;
 use function array_map;
+use function array_pop;
+use function array_reverse;
 use function assert;
 use function call_user_func;
 use function class_exists;
@@ -51,6 +53,8 @@ use Throwable;
 /**
  * @template-implements IteratorAggregate<int, Test>
  *
+ * @no-named-arguments Parameter names are not covered by the backward compatibility promise for PHPUnit
+ *
  * @internal This class is not covered by the backward compatibility promise for PHPUnit
  */
 class TestSuite implements IteratorAggregate, Reorderable, SelfDescribing, Test
@@ -80,6 +84,7 @@ class TestSuite implements IteratorAggregate, Reorderable, SelfDescribing, Test
      */
     private ?array $providedTests    = null;
     private ?Factory $iteratorFilter = null;
+    private bool $wasRun             = false;
 
     /**
      * @psalm-param non-empty-string $name
@@ -134,7 +139,7 @@ class TestSuite implements IteratorAggregate, Reorderable, SelfDescribing, Test
             $testSuite->addTestMethod($class, $method);
         }
 
-        if (count($testSuite) === 0) {
+        if ($testSuite->isEmpty()) {
             Event\Facade::emitter()->testRunnerTriggeredWarning(
                 sprintf(
                     'No tests found in class "%s".',
@@ -169,29 +174,31 @@ class TestSuite implements IteratorAggregate, Reorderable, SelfDescribing, Test
     {
         $class = new ReflectionClass($test);
 
-        if (!$class->isAbstract()) {
-            $this->tests[] = $test;
-            $this->clearCaches();
+        if ($class->isAbstract()) {
+            return;
+        }
 
-            if ($test instanceof self && empty($groups)) {
-                $groups = $test->groups();
-            }
+        $this->tests[] = $test;
+        $this->clearCaches();
 
-            if ($this->containsOnlyVirtualGroups($groups)) {
-                $groups[] = 'default';
-            }
+        if ($test instanceof self && empty($groups)) {
+            $groups = $test->groups();
+        }
 
-            foreach ($groups as $group) {
-                if (!isset($this->groups[$group])) {
-                    $this->groups[$group] = [$test];
-                } else {
-                    $this->groups[$group][] = $test;
-                }
-            }
+        if ($this->containsOnlyVirtualGroups($groups)) {
+            $groups[] = 'default';
+        }
 
-            if ($test instanceof TestCase) {
-                $test->setGroups($groups);
+        foreach ($groups as $group) {
+            if (!isset($this->groups[$group])) {
+                $this->groups[$group] = [$test];
+            } else {
+                $this->groups[$group][] = $test;
             }
+        }
+
+        if ($test instanceof TestCase) {
+            $test->setGroups($groups);
         }
     }
 
@@ -236,22 +243,14 @@ class TestSuite implements IteratorAggregate, Reorderable, SelfDescribing, Test
      */
     public function addTestFile(string $filename): void
     {
-        if (str_ends_with($filename, '.phpt') && is_file($filename)) {
-            try {
+        try {
+            if (str_ends_with($filename, '.phpt') && is_file($filename)) {
                 $this->addTest(new PhptTestCase($filename));
-            } catch (RunnerException $e) {
-                Event\Facade::emitter()->testRunnerTriggeredWarning(
-                    $e->getMessage(),
+            } else {
+                $this->addTestSuite(
+                    (new TestSuiteLoader)->load($filename),
                 );
             }
-
-            return;
-        }
-
-        try {
-            $this->addTestSuite(
-                (new TestSuiteLoader)->load($filename),
-            );
         } catch (RunnerException $e) {
             Event\Facade::emitter()->testRunnerTriggeredWarning(
                 $e->getMessage(),
@@ -287,7 +286,13 @@ class TestSuite implements IteratorAggregate, Reorderable, SelfDescribing, Test
 
     public function isEmpty(): bool
     {
-        return empty($this->tests);
+        foreach ($this as $test) {
+            if (count($test) !== 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**
@@ -326,7 +331,15 @@ class TestSuite implements IteratorAggregate, Reorderable, SelfDescribing, Test
      */
     public function run(): void
     {
-        if (count($this) === 0) {
+        if ($this->wasRun) {
+            // @codeCoverageIgnoreStart
+            throw new Exception('The tests aggregated by this TestSuite were already run');
+            // @codeCoverageIgnoreEnd
+        }
+
+        $this->wasRun = true;
+
+        if ($this->isEmpty()) {
             return;
         }
 
@@ -339,7 +352,19 @@ class TestSuite implements IteratorAggregate, Reorderable, SelfDescribing, Test
             return;
         }
 
+        /** @psalm-var list<Test> $tests */
+        $tests = [];
+
         foreach ($this as $test) {
+            $tests[] = $test;
+        }
+
+        $tests = array_reverse($tests);
+
+        $this->tests  = [];
+        $this->groups = [];
+
+        while (($test = array_pop($tests)) !== null) {
             if (TestResultFacade::shouldStop()) {
                 $emitter->testRunnerExecutionAborted();
 

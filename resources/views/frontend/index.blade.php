@@ -22,24 +22,24 @@
                             </p>
                         </div>
                         <div class="tab-content" id="pills-tabContent">
-                            <div class="form-container">
-                                <h2>Want do you want ? </h2>
+                            <div class="bg-[#233a41] w-fit h-fit p-4 rounded-4 border border-2" style="background-color: #233a4180;">
+                                <h2 class="text-white">Want do you want ? </h2>
                                 <form id="property-form" method="post">
                                     <div class="checkbox-group">
                                         <label>
                                             <input type="radio" name="property-action" value="rent-house">
-                                            <span> Rent Property</span>
+                                            <span class="text-white"> Rent Property</span>
                                         </label>
                                         <label>
-                                            <input type="radio" name="property-action" value="buy-house">
-                                            <span> Buy Property</span>
+                                            <input   type="radio" name="property-action" value="buy-house">
+                                            <span class="text-white"> Buy Property</span>
                                         </label>
                                         <label>
-                                            <input type="radio" name="property-action" value="holiday-rental">
-                                            <span> Book Holiday Rental</span>
+                                            <input  type="radio" name="property-action" value="holiday-rental">
+                                            <span class="text-white"> Book Holiday Rental</span>
                                         </label>
                                     </div>
-                                    <button type="submit" class="submit-btn">Submit</button>
+                                    <button type="submit" class="submit-btn">Find Property</button>
                                 </form>
 
                             </div>
@@ -72,7 +72,7 @@
                 <div class="col-xl-5 col-lg-6 wow fadeInRight" data-wow-duration="1.5s">
                     <div class="about_text">
                         <div class="section_heading section_heading_left">
-                            <h2>We help clients buy and Sell houses since 2001</h2>
+                            <h2>We help clients buy<br> and Sell houses since <br> 2001</h2>
                         </div>
                         <p>
                             Through a combination of lectures, readings, and discussions,
