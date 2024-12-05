@@ -525,7 +525,7 @@ button {
 .main_menu .navbar-brand {
     padding: 0;
     margin: 0;
-    width: 17vw;
+    width: 13rem;
     padding-right: 20px;
     border-right: 2px solid rgba(255, 255, 255, 0.1);
 }
