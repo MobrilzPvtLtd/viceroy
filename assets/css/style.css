@@ -543,7 +543,7 @@ button {
     font-weight: 500;
     font-family: var(--paraFont);
     color: var(--colorWhite);
-    margin: 0px 20px;
+    margin: 0px 0.8rem;
     padding: 0;
     text-transform: capitalize;
     transition: all linear 0.3s;
