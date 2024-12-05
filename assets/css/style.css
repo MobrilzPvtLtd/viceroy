@@ -526,8 +526,7 @@ button {
     padding: 0;
     margin: 0;
     width: 13rem;
-    padding-right: 20px;
-    border-right: 2px solid rgba(255, 255, 255, 0.1);
+    /* border-right: 2px solid rgba(255, 255, 255, 0.1); */
 }
 
 .main_menu .navbar-nav {
