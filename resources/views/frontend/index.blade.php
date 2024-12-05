@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}" />
 @endsection
 @section('content')
-    <section class="banner_area" style="background: url(assets/images/top_banner.jpg)">
+    <section class="banner_area" style="background: url(assets/images/viceroy_banner_bg.jpg);background-repeat: no-repeat !important;!i;!;background-position: left !important;!i;!;!i;!;!i;!; position:relative !important ;">
+        <div id="overlay_banner" ></div>
         <div class="container container_large">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
                 <div class="col-xl-11 col-xxl-9">
                     <div class="banner_contant">
                         <div class="banner_text">
                             <h1>Turning Dreams<br>into Addresses</h1>
-                            <p>
+                            <p class="text-white opacity-75">
                                 Through a combination of lectures, readings, and discussions,
                                 students will gain a solid foundation in educational
                                 psychology.

@@ -624,7 +624,15 @@
         DASHBOARD END
     ================================*/
 }
+@media (min-width: 1400px)  {
 
+    /*================================
+        HOME PAGE 01 START
+    ================================*/
+    /* menu start */
+    .main_menu .navbar-brand {
+        width: 13rem;
+    }}
 @media (min-width: 992px) and (max-width: 1199.99px) {
 
     /*================================
@@ -632,7 +640,7 @@
     ================================*/
     /* menu start */
     .main_menu .navbar-brand {
-        width: 160px;
+        width: 190px;
     }
 
     .main_menu .navbar-nav .nav-item .nav-link {
