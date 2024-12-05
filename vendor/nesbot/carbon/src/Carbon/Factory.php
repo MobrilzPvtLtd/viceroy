@@ -96,7 +96,7 @@ use Throwable;
  *                                                                                                                                                                  Support is considered enabled if the 4 sentences are translated in the given locale.
  * @method bool                localeHasShortUnits(string $locale)                                                                                                  Returns true if the given locale is internally supported and has short-units support.
  *                                                                                                                                                                  Support is considered enabled if either year, day or hour has a short variant translated.
- * @method ?Carbon             make($var)                                                                                                                           Make a Carbon instance from given variable if possible.
+ * @method ?Carbon             make($var, DateTimeZone|string|null $timezone = null)                                                                                Make a Carbon instance from given variable if possible.
  *                                                                                                                                                                  Always return a new instance. Parse only strings and only these likely to be dates (skip intervals
  *                                                                                                                                                                  and recurrences). Throw an exception for invalid format, but otherwise return null.
  * @method void                mixin(object|string $mixin)                                                                                                          Mix another object into the class.
@@ -203,9 +203,9 @@ class Factory
         'v' => '([0-9]{1,3})',
         'e' => '([a-zA-Z]{1,5})|([a-zA-Z]*\\/[a-zA-Z]*)',
         'I' => '(0|1)',
-        'O' => '([+-](1[012]|0[0-9])[0134][05])',
-        'P' => '([+-](1[012]|0[0-9]):[0134][05])',
-        'p' => '(Z|[+-](1[012]|0[0-9]):[0134][05])',
+        'O' => '([+-](1[0123]|0[0-9])[0134][05])',
+        'P' => '([+-](1[0123]|0[0-9]):[0134][05])',
+        'p' => '(Z|[+-](1[0123]|0[0-9]):[0134][05])',
         'T' => '([a-zA-Z]{1,5})',
         'Z' => '(-?[1-5]?[0-9]{1,4})',
         'U' => '([0-9]*)',

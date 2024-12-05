@@ -16,7 +16,7 @@ class PerformConversionAction
         Conversion $conversion,
         Media $media,
         string $copiedOriginalFile
-    ) {
+    ): void {
         $imageGenerator = ImageGeneratorFactory::forMedia($media);
 
         $copiedOriginalFile = $imageGenerator->convert($copiedOriginalFile, $conversion);
@@ -27,7 +27,7 @@ class PerformConversionAction
 
         event(new ConversionWillStartEvent($media, $conversion, $copiedOriginalFile));
 
-        $manipulationResult = (new PerformManipulationsAction())->execute($media, $conversion, $copiedOriginalFile);
+        $manipulationResult = (new PerformManipulationsAction)->execute($media, $conversion, $copiedOriginalFile);
 
         $newFileName = $conversion->getConversionFile($media);
 

@@ -22,6 +22,7 @@ use Spatie\Image\Enums\Fit;
 use Spatie\Image\Enums\FlipDirection;
 use Spatie\Image\Enums\Orientation;
 use Spatie\Image\Exceptions\InvalidFont;
+use Spatie\Image\Exceptions\MissingParameter;
 use Spatie\Image\Exceptions\UnsupportedImageFormat;
 use Spatie\Image\Point;
 use Spatie\Image\Size;
@@ -38,6 +39,8 @@ class ImagickDriver implements ImageDriver
 
     protected Imagick $image;
 
+    protected ?string $format = null;
+
     protected array $exif = [];
 
     protected string $originalPath;
@@ -45,14 +48,14 @@ class ImagickDriver implements ImageDriver
     public function new(int $width, int $height, ?string $backgroundColor = null): static
     {
         $color = new ImagickColor($backgroundColor);
-        $image = new Imagick();
+        $image = new Imagick;
 
         $image->newImage($width, $height, $color->getPixel(), 'png');
         $image->setType(Imagick::IMGTYPE_UNDEFINED);
         $image->setImageType(Imagick::IMGTYPE_UNDEFINED);
         $image->setColorspace(Imagick::COLORSPACE_UNDEFINED);
 
-        return (new self())->setImage($image);
+        return (new self)->setImage($image);
     }
 
     protected function setImage(Imagick $image): static
@@ -131,6 +134,18 @@ class ImagickDriver implements ImageDriver
             return $this->fitCrop($fit, $this->getWidth(), $this->getHeight(), $desiredWidth, $desiredHeight);
         }
 
+        if ($fit === Fit::FillMax) {
+            if (is_null($desiredWidth) || is_null($desiredHeight)) {
+                throw new MissingParameter('Both desiredWidth and desiredHeight must be set when using Fit::FillMax');
+            }
+
+            if (is_null($backgroundColor)) {
+                throw new MissingParameter('backgroundColor must be set when using Fit::FillMax');
+            }
+
+            return $this->fitFillMax($desiredWidth, $desiredHeight, $backgroundColor);
+        }
+
         $calculatedSize = $fit->calculateSize(
             $this->getWidth(),
             $this->getHeight(),
@@ -145,6 +160,14 @@ class ImagickDriver implements ImageDriver
         if ($fit->shouldResizeCanvas()) {
             $this->resizeCanvas($desiredWidth, $desiredHeight, AlignPosition::Center, $relative, $backgroundColor);
         }
+
+        return $this;
+    }
+
+    public function fitFillMax(int $desiredWidth, int $desiredHeight, string $backgroundColor, bool $relative = false): static
+    {
+        $this->resize($desiredWidth, $desiredHeight, [Constraint::PreserveAspectRatio]);
+        $this->resizeCanvas($desiredWidth, $desiredHeight, AlignPosition::Center, $relative, $backgroundColor);
 
         return $this;
     }
@@ -239,17 +262,25 @@ class ImagickDriver implements ImageDriver
         if (! $path) {
             $path = $this->originalPath;
         }
-
-        $extension = pathinfo($path, PATHINFO_EXTENSION);
-
+        if (is_null($this->format)) {
+            $format = pathinfo($path, PATHINFO_EXTENSION);
+        } else {
+            $format = $this->format;
+        }
         $formats = Imagick::queryFormats('*');
-
         if (in_array('JPEG', $formats)) {
             $formats[] = 'JFIF';
         }
+        if (! in_array(strtoupper($format), $formats)) {
+            throw UnsupportedImageFormat::make($format);
+        }
 
-        if (! in_array(strtoupper($extension), $formats)) {
-            throw UnsupportedImageFormat::make($extension);
+        foreach ($this->image as $image) {
+            if (strtoupper($format) === 'JFIF') {
+                $image->setFormat('JPEG');
+            } else {
+                $image->setFormat($format);
+            }
         }
 
         if ($this->isAnimated()) {
@@ -262,6 +293,7 @@ class ImagickDriver implements ImageDriver
         if ($this->optimize) {
             $this->optimizerChain->optimize($path);
         }
+        $this->format = null;
 
         return $this;
     }
@@ -453,6 +485,10 @@ class ImagickDriver implements ImageDriver
 
     public function pixelate(int $pixelate = 50): static
     {
+        if ($pixelate === 0) {
+            return $this;
+        }
+
         $width = $this->getWidth();
         $height = $this->getHeight();
 
@@ -473,7 +509,7 @@ class ImagickDriver implements ImageDriver
     ): static {
         $this->ensureNumberBetween($alpha, 0, 100, 'alpha');
         if (is_string($otherImage)) {
-            $otherImage = (new self())->loadFile($otherImage);
+            $otherImage = (new self)->loadFile($otherImage);
         }
 
         $otherImage->image->setImageOrientation(Imagick::ORIENTATION_UNDEFINED);
@@ -560,9 +596,9 @@ class ImagickDriver implements ImageDriver
         }
 
         if ($type === BorderType::Overlay) {
-            $shape = new ImagickDraw();
+            $shape = new ImagickDraw;
 
-            $backgroundColor = new ImagickColor();
+            $backgroundColor = new ImagickColor;
             $shape->setFillColor($backgroundColor->getPixel());
 
             $borderColor = new ImagickColor($color);
@@ -597,9 +633,7 @@ class ImagickDriver implements ImageDriver
 
     public function format(string $format): static
     {
-        foreach ($this->image as $image) {
-            $image->setFormat($format);
-        }
+        $this->format = $format;
 
         return $this;
     }
@@ -656,7 +690,7 @@ class ImagickDriver implements ImageDriver
 
         $textColor = new ImagickColor($color);
 
-        $draw = new ImagickDraw();
+        $draw = new ImagickDraw;
         $draw->setFillColor($textColor->getPixel());
         $draw->setFontSize($fontSize);
         if ($fontPath) {
@@ -688,13 +722,13 @@ class ImagickDriver implements ImageDriver
         foreach ($words as $word) {
             $teststring = "{$wrapped} {$word}";
 
-            $draw = new ImagickDraw();
+            $draw = new ImagickDraw;
             if ($fontPath) {
                 $draw->setFont($fontPath);
             }
             $draw->setFontSize($fontSize);
 
-            $metrics = (new Imagick())->queryFontMetrics($draw, $teststring);
+            $metrics = (new Imagick)->queryFontMetrics($draw, $teststring);
 
             if ($metrics['textWidth'] > $width) {
                 $wrapped .= "\n".$word;

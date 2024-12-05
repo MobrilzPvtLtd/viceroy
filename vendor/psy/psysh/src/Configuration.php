@@ -310,6 +310,11 @@ class Configuration
                     return self::VERBOSITY_VERY_VERBOSE;
                 case '3':
                 case 'vv': // `-vvv`
+                case 'vvv':
+                case 'vvvv':
+                case 'vvvvv':
+                case 'vvvvvv':
+                case 'vvvvvvv':
                     return self::VERBOSITY_DEBUG;
                 default: // implicitly normal, config file default wins
                     return;
@@ -618,16 +623,18 @@ class Configuration
     /**
      * Get the shell's temporary directory location.
      *
-     * Defaults to  `/psysh` inside the system's temp dir unless explicitly
+     * Defaults to `/psysh` inside the system's temp dir unless explicitly
      * overridden.
      *
      * @throws RuntimeException if no temporary directory is set and it is not possible to create one
+     *
+     * @param bool $create False to suppress directory creation if it does not exist
      */
-    public function getRuntimeDir(): string
+    public function getRuntimeDir($create = true): string
     {
         $runtimeDir = $this->configPaths->runtimeDir();
 
-        if (!\is_dir($runtimeDir)) {
+        if ($create && !\is_dir($runtimeDir)) {
             if (!@\mkdir($runtimeDir, 0700, true)) {
                 throw new RuntimeException(\sprintf('Unable to create PsySH runtime directory. Make sure PHP is able to write to %s in order to continue.', \dirname($runtimeDir)));
             }
@@ -652,7 +659,7 @@ class Configuration
      * Defaults to `/history` inside the shell's base config dir unless
      * explicitly overridden.
      */
-    public function getHistoryFile(): string
+    public function getHistoryFile(): ?string
     {
         if (isset($this->historyFile)) {
             return $this->historyFile;
@@ -669,7 +676,12 @@ class Configuration
             $this->setHistoryFile($files[0]);
         } else {
             // fallback: create our own history file
-            $this->setHistoryFile($this->configPaths->currentConfigDir().'/psysh_history');
+            $configDir = $this->configPaths->currentConfigDir();
+            if ($configDir === null) {
+                return null;
+            }
+
+            $this->setHistoryFile($configDir.'/psysh_history');
         }
 
         return $this->historyFile;
@@ -1018,7 +1030,11 @@ class Configuration
      */
     public function setErrorLoggingLevel($errorLoggingLevel)
     {
-        $this->errorLoggingLevel = (\E_ALL | \E_STRICT) & $errorLoggingLevel;
+        if (\PHP_VERSION_ID < 80400) {
+            $this->errorLoggingLevel = (\E_ALL | \E_STRICT) & $errorLoggingLevel;
+        } else {
+            $this->errorLoggingLevel = \E_ALL & $errorLoggingLevel;
+        }
     }
 
     /**
@@ -1258,9 +1274,11 @@ class Configuration
                 // let's not use it by default.
                 //
                 // See https://github.com/bobthecow/psysh/issues/778
-                $link = @\readlink($less);
-                if ($link !== false && \strpos($link, 'busybox') !== false) {
-                    return false;
+                if (@\is_link($less)) {
+                    $link = @\readlink($less);
+                    if ($link !== false && \strpos($link, 'busybox') !== false) {
+                        return false;
+                    }
                 }
 
                 $this->pager = $less.' -R -F -X';
@@ -1641,7 +1659,12 @@ class Configuration
      */
     public function getUpdateCheckCacheFile()
     {
-        return ConfigPaths::touchFileWithMkdir($this->configPaths->currentConfigDir().'/update_check.json');
+        $configDir = $this->configPaths->currentConfigDir();
+        if ($configDir === null) {
+            return false;
+        }
+
+        return ConfigPaths::touchFileWithMkdir($configDir.'/update_check.json');
     }
 
     /**

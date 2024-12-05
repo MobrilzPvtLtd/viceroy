@@ -36,8 +36,7 @@ class PermissionRegistrar
 
     public string $teamsKey;
 
-    /** @var int|string */
-    protected $teamId = null;
+    protected string|int|null $teamId = null;
 
     public string $cacheKey;
 
@@ -200,14 +199,6 @@ class PermissionRegistrar
             $this->cacheKey, $this->cacheExpirationTime, fn () => $this->getSerializedPermissionsForCache()
         );
 
-        // fallback for old cache method, must be removed on next mayor version
-        if (! isset($this->permissions['alias'])) {
-            $this->forgetCachedPermissions();
-            $this->loadPermissions();
-
-            return;
-        }
-
         $this->alias = $this->permissions['alias'];
 
         $this->hydrateRolesCache();
@@ -358,10 +349,10 @@ class PermissionRegistrar
 
     private function getHydratedPermissionCollection(): Collection
     {
-        $permissionInstance = new ($this->getPermissionClass())();
+        $permissionInstance = (new ($this->getPermissionClass())())->newInstance([], true);
 
         return Collection::make(array_map(
-            fn ($item) => $permissionInstance->newInstance([], true)
+            fn ($item) => (clone $permissionInstance)
                 ->setRawAttributes($this->aliasedArray(array_diff_key($item, ['r' => 0])), true)
                 ->setRelation('roles', $this->getHydratedRoleCollection($item['r'] ?? [])),
             $this->permissions['permissions']
@@ -377,10 +368,10 @@ class PermissionRegistrar
 
     private function hydrateRolesCache(): void
     {
-        $roleInstance = new ($this->getRoleClass())();
+        $roleInstance = (new ($this->getRoleClass())())->newInstance([], true);
 
         array_map(function ($item) use ($roleInstance) {
-            $role = $roleInstance->newInstance([], true)
+            $role = (clone $roleInstance)
                 ->setRawAttributes($this->aliasedArray($item), true);
             $this->cachedRoles[$role->getKey()] = $role;
         }, $this->permissions['roles']);
