@@ -1001,7 +1001,8 @@ button {
     background-size: cover !important;
     background-position: 200px !important;
     background-repeat: repeat !important;
-    height: 70vh;
+    /* height: 70vh; */
+    padding-bottom: 2rem ;
 }
 
 /* .banner_area div {
