@@ -427,7 +427,7 @@
                                 @endforeach
                                 {{-- <a class="feature_link" href="#">for sale</a> --}}
                                 @if ($holiday->featured)
-                                    <a class="feature_link feature" href="#">Featured</a>
+                                    <p class="feature_link feature">Featured</p>
                                 @endif
 
                             </div>

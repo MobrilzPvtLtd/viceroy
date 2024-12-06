@@ -107,7 +107,7 @@ div#testimonial-slider {
                                 <li><i class="fas fa-map-marker-alt"></i>{{ $property->address }}</li>
                                 <li><span>{{ $property->type }}</span></li>
                             </ul>
-                            
+
                             <h3>
                                 @php
                                     $price = request()->session()->get('price') * $property->price;
@@ -407,14 +407,14 @@ div#testimonial-slider {
                                     @else
                                         <p>No images available</p>
                                     @endif
-                                    <a class="feature_link" href="#">{{ $relatedProperty->type }}</a>
+                                    <p class="feature_link">{{ $relatedProperty->type }}</p>
                                     @if ($relatedProperty->featured)
-                                        <a class="feature_link feature" href="#">Featured</a>
+                                        <p class="feature_link feature">Featured</p>
                                     @endif
                                     <div id="testimonial-slider1" class="owl-carousel">
                                         <div class="testimonial">
                                             <div class="pic">
-                                                <a class="feature_link" href="#"></a>
+                                                <p class="feature_link"></p>
                                             </div>
                                         </div>
                                     </div>

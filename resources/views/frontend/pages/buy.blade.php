@@ -286,7 +286,7 @@
                 </div>
             </div>
 
-           
+
             <div class="container ">
                 <div class="row mt_95 xs_mt_75  ">
 
@@ -310,9 +310,9 @@
                                                 @else
                                                     <p>No images available</p>
                                                 @endif
-                                                <a class="feature_link" href="">{{ $property->type }}</a>
+                                                <p class="feature_link">{{ $property->type }}</p>
                                                 @if ($property->featured)
-                                                    <a class="feature_link feature" href="#">Featured</a>
+                                                    <p class="feature_link feature">Featured</p>
                                                 @endif
 
                                                 <div id="testimonial-slider1" class="owl-carousel">
@@ -330,8 +330,7 @@
                                                             @else
                                                                 <p>No images available</p>
                                                             @endif
-                                                            <a class="feature_link"
-                                                                href="">{{ $property->type }}</a>
+                                                            <p class="feature_link">{{ $property->type }}</p>
                                                         </div>
                                                     </div>
                                                 </div>
