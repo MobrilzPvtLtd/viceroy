@@ -320,9 +320,9 @@
                                     @endif
                                 @endif
 
-                                <a class="feature_link" href="">for {{ $property->type }}</a>
+                                <p class="feature_link">for {{ $property->type }}</p>
                                 @if ($property->featured)
-                                    <a class="feature_link feature" href="#">Featured</a>
+                                    <p class="feature_link feature">Featured</p>
                                 @endif
                                 <ul class="d-flex flex-wrap">
                                     {{-- <li>
