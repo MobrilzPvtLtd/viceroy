@@ -107,7 +107,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-12">
-                                <button type="submit" class="common_btn footer_btn">Send Message</button>
+                                <button type="submit" class="common_btn footer_btn d-flex justify-content-center ">Send Message</button>
                             </div>
                         </div>
                     </form>
