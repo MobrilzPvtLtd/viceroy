@@ -274,7 +274,7 @@
     }
 
     .footer_description {
-        padding-bottom: 140px;
+        /* padding-bottom: 140px; */
     }
 
     .footer_description::after {
