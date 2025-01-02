@@ -23,11 +23,11 @@
                         <div class="col-xl-6 col-sm-10 col-md-4 wow fadeInLeft" data-wow-duration="2s">
                             <div class="footer_description">
                                 <a class="footer_logo" href="">
-                                    <img src="{{ asset('assets/images/Viceroy_Realty_logo_V2-01.png') }}" alt="logo"
+                                    <img src="{{ asset('assets/images/Viceroy_Realty_logo_2.svg') }}" alt="logo"
                                         class="img-fluid w-100" />
                                 </a>
-                                <p>
-                                    Welcome home! Whether you're a seasoned investor or a first-time buyer, we understand that finding the perfect property is a journey! At Viceroy Realty, we are here to guide you every step of the way. Browse through our extensive listings, explore vibrant neighbourhoods and connect with our team of dedicated realtors. Let's turn your dream into your reality.
+                                <p class="text-justify">
+                                    Welcome home! Whether you're a seasoned investor or a first-time buyer, we understand that finding the perfect property is a journey ! At Viceroy Realty, we are here to guide you every step of the way. Browse through our extensive listings, explore vibrant neighbourhoods and connect with our team of dedicated realtors. Let's turn your dream into your reality.
                                 </p>
                                 {{-- <ul class="d-flex flex-wrap">
                                     <li>

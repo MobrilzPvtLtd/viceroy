@@ -227,10 +227,8 @@
             <div class="row justify-content-between">
                 <div class="col-xxl-4 col-lg-5 wow fadeInLeft" data-wow-duration="1.5s">
                     <div class="contact">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116833.83187883983!2d90.33728804060513!3d23.780975728310533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1701892197304!5m2!1sen!2sbd"
-                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2477.4732076976616!2d-0.15236342303049855!3d51.614540302870324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876199bd5d5a41f%3A0xaf2c7c4b973e644e!2sFriern%20Barnet%20Rd%2C%20London%2C%20UK!5e0!3m2!1sen!2sin!4v1735809959878!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
 
                     </div>
                 </div>

@@ -125,6 +125,7 @@
 
         .ms-drop.bottom {
             width: 250px;
+            overflow:auto;
         }
 
         .sd-multiSelect .ms-drop li label {

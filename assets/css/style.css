@@ -2336,6 +2336,7 @@ button {
     margin-top: 18px;
     color: var(--colorWhite);
     opacity: 0.7;
+    text-align:justify !important;
 }
 
 .footer_description ul {
@@ -8250,7 +8251,7 @@ marquee {
     background-color: #000;
     padding: 0px 25px 25px 25px;
     border-radius: 25px;
-    left: 1015px;
+    left:54%;
     top: 85px;
     visibility: hidden;
     opacity: 0;
@@ -8311,7 +8312,7 @@ marquee {
         padding-top: 50px;
     }
     .drop002 {
-        left: 800px;
+        left: 740px;
     }
     .dropbtn{
         font-size: 14px;
