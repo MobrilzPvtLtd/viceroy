@@ -1,7 +1,6 @@
 @extends('frontend.layouts.app')
 @section('title')
     {{ app_name() }}
-
 @endsection
 {{-- <style>
     .img-fluid img {
@@ -61,13 +60,13 @@ div#testimonial-slider {
         </div>
     </section>
     <!--=============================
-                                                                                                                                    BREADCRUMBS END
-                                                                                                                                ==============================-->
+                                                                                                                                        BREADCRUMBS END
+                                                                                                                                    ==============================-->
 
 
     <!--=============================
-                                                                                                                                    PROPERTY DETAILS START
-                                                                                                                                ==============================-->
+                                                                                                                                        PROPERTY DETAILS START
+                                                                                                                                    ==============================-->
     <section class="property_details pt_50 xs_pt_100 pb_105 xs_pb_85">
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
@@ -220,7 +219,8 @@ div#testimonial-slider {
                             @endphp
                             @if ($floorPlans && count($floorPlans) > 0)
                                 @foreach ($floorPlans as $floorPlan)
-                                    <img src="{{ asset('public/storage/' . $image) }}" alt="Floor Plan" style="width: 100%">
+                                    <img src="{{ asset('public/storage/' . $image) }}" alt="Floor Plan"
+                                        style="width: 100%">
                                 @endforeach
                             @else
                                 <p>No floor plans available</p>
@@ -288,7 +288,8 @@ div#testimonial-slider {
                             window.initMap = initMap;
                         </script>
 
-                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5oJyFp78LqQzen5Dtp1m4zlS3a2M3de4&callback=initMap"></script>
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5oJyFp78LqQzen5Dtp1m4zlS3a2M3de4&callback=initMap">
+                        </script>
 
                         <style>
                             #mapCanvas {
@@ -339,16 +340,12 @@ div#testimonial-slider {
                                     </div>
                                     <div class="col-lg-12 col-md-6">
                                         <div class="schedule_input">
-                                            <label for="startTime">Phone</label>
+                                            {{-- <label for="startTime">Phone</label> --}}
                                             <input type="tel" name="number" placeholder="Phone" id="mobile_code">
                                         </div>
                                     </div>
-                                    <script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
-
-                                        <!-- Include intl-tel-input JS -->
-                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-                                        // 
-                                        //  </script>
+                                    
+                                    
                                     <div class="col-lg-12 col-md-6">
                                         <div class="schedule_input">
                                             <label for="startTime"> Date</label>
@@ -529,25 +526,18 @@ div#testimonial-slider {
                 });
             });
         });
-
-        // -----Country Code Selection
-// $("#mobile_code").intlTelInput({
-// 	initialCountry: "in",
-// 	separateDialCode: true,
-// 	 utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.4/js/utils.js"
-// });
-
-const phoneInputField = document.querySelector("#mobile_code");
-  window.intlTelInput(phoneInputField, {
-    initialCountry: "auto", // Automatically detect the user's country
-    geoIpLookup: function(callback) {
-      fetch('https://ipinfo.io/json?token=YOUR_TOKEN') // Replace YOUR_TOKEN with a valid token
-        .then((response) => response.json())
-        .then((data) => callback(data.country))
-        .catch(() => callback("us")); // Default to the US if detection fails
-    },
-    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" // Enable validation/formatting
-  });
-
+    </script>
+    <script>
+        const phoneInputField = document.querySelector("#mobile_code");
+        window.intlTelInput(phoneInputField, {
+            initialCountry: "auto", // Automatically detect the user's country
+            geoIpLookup: function(callback) {
+                fetch('https://ipinfo.io/json?token=YOUR_TOKEN') // Replace YOUR_TOKEN with a valid token
+                    .then((response) => response.json())
+                    .then((data) => callback(data.country))
+                    .catch(() => callback("us")); // Default to the US if detection fails
+            },
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" // Enable validation/formatting
+        });
     </script>
 @endsection
