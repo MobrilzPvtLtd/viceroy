@@ -54,7 +54,7 @@
                                     <th scope="col">Type of Property</th>
                                     <th scope="col">Area</th>
                                     <th scope="col">Property Images</th>
-                                    <th scope="col">URL</th>
+                                    {{-- <th scope="col">URL</th> --}}
                                     <th scope="col" class="text-end">Action</th>
                                 </tr>
                             </thead>
@@ -86,7 +86,7 @@
                                         </td>
 
 
-                                        <td>{{ $holiday->url }}</td>
+                                        {{-- <td>{{ $holiday->url }}</td> --}}
 
                                         <td class="text-end">
                                             <!-- Modal -->

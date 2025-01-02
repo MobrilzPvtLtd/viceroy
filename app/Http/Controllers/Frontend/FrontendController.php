@@ -109,8 +109,8 @@ class FrontendController extends Controller
         $propertys = $query->orderBy('id', 'desc')->get();
 
         $uniquePropertyTypes = Property::where('type', 'buy')->distinct()->pluck('p_type');
-        if (!$uniquePropertyTypes->contains('Villa','Apartment','Plot','Bungalows','Flats')) {
-            $uniquePropertyTypes->push('Villa','Apartment','Plot','Bungalows','Flats');
+        if (!$uniquePropertyTypes->contains('Flats/Apartment','End Terraced House','Mid Terraced','Semi Detached','Detached','Penthouse','Villa/Bungalow','Villa Compound','Land')) {
+            $uniquePropertyTypes->push('Flats/Apartment','End Terraced House','Mid Terraced','Semi Detached','Detached','Penthouse','Villa/Bungalow','Villa Compound','Land');
         }
         $uniquePropertyTypes = $uniquePropertyTypes->unique()->sort()->values()->all();
         $uniqueBedrooms = Property::where('type', 'buy')->distinct()->pluck('number_of_room')->sort();
@@ -140,7 +140,7 @@ class FrontendController extends Controller
     ->leftJoin('states', 'properties.state_id', '=', 'states.id')
     ->leftJoin('cities', 'properties.city_id', '=', 'cities.id')
     ->select('properties.*', 'countries.co_name', 'states.st_name', 'cities.ct_name')
-    ->where('properties.type', 'buy');
+    ->where('properties.type', 'rent');
 
   // Check for search input
   if ($request->has('search') && !empty($request->search)) {
@@ -182,8 +182,8 @@ class FrontendController extends Controller
 
         $propertys = $query->orderBy('id', 'desc')->get();
         $uniquePropertyTypes = Property::where('type', 'buy')->distinct()->pluck('p_type');
-        if (!$uniquePropertyTypes->contains('Villa','Apartment','Plot','Bungalows','Flats')) {
-            $uniquePropertyTypes->push('Villa','Apartment','Plot','Bungalows','Flats');
+        if (!$uniquePropertyTypes->contains('Flats/Apartment','End Terraced House','Mid Terraced','Semi Detached','Detached','Penthouse','Villa/Bungalow','Villa Compound','Land')) {
+            $uniquePropertyTypes->push('Flats/Apartment','End Terraced House','Mid Terraced','Semi Detached','Detached','Penthouse','Villa/Bungalow','Villa Compound','Land');
         }
         $uniquePropertyTypes = $uniquePropertyTypes->unique()->sort()->values()->all();
         $uniqueBedrooms = Property::where('type', 'rent')->distinct()->pluck('number_of_room')->sort();

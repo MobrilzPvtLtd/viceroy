@@ -1,13 +1,16 @@
 @extends ('backend.layouts.app')
 
-@section('title') {{ 'Property Create' }} @endsection
+@section('title')
+    {{ 'Property Create' }}
+@endsection
 
 @section('content')
     <div class="card">
         <div class="card-body">
 
             <div class="pull-right">
-                <a class="btn btn-light" href="{{ route('property.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
+                <a class="btn btn-light" href="{{ route('property.index') }}"><i class="fa fa-arrow-left"
+                        aria-hidden="true"></i> Back</a>
             </div>
             <div class="row mt-4">
                 <div class="col">
@@ -17,8 +20,8 @@
                             enctype="multipart/form-data">
                             @csrf
                             <div class="row">
-                                <input type="hidden"  name="latitude" value="{{ old('latitude') }}">
-                                <input type="hidden"  name="longitude" value="{{ old('longitude') }}">
+                                <input type="hidden" name="latitude" value="{{ old('latitude') }}">
+                                <input type="hidden" name="longitude" value="{{ old('longitude') }}">
 
                                 <div class="form-group mb-3 col-4">
                                     <label for="">Property List</label>
@@ -66,7 +69,8 @@
 
                                 <div class="form-group mb-3 col-6">
                                     <label for="">Address/Location</label>
-                                    <input class="form-control" id="ct_name" name="address" value="{{ old('address') }}" placeholder="">
+                                    <input class="form-control" id="ct_name" name="address" value="{{ old('address') }}"
+                                        placeholder="">
                                 </div>
 
                                 <div class="form-group mb-3 col-4">
@@ -105,25 +109,28 @@
                                     <input type="number" class="form-control" id="city" name="price"
                                         value="{{ old('price') }}" placeholder="">
                                 </div>
-
                                 <div class="form-group mb-3 col-4">
                                     <label>Type of Property</label>
                                     <select class="form-control" name="p_type" value="">
                                         <option value="{{ old('p_type') }}">Select Property Type </option>
-                                        <option value="Apartment">Apartment</option>
-                                        <option value="Villa">Villa</option>
-                                        <option value="Plot">Plot</option>
-                                        <option value="Bungalows">Bungalows</option>
-                                        <option value="Flats">Flats</option>
-
+                                        <option value="Flats/Apartment">Flats/Apartment</option>
+                                        <option value="End Terraced House">End Terraced House</option>
+                                        <option value="Mid Terraced">Mid Terraced</option>
+                                        <option value="Semi Detached">Semi Detached</option>
+                                        <option value="Detached">Detached</option>
+                                        <option value="Penthouse">Penthouse</option>
+                                        <option value="Villa/Bungalow">Villa/Bungalow</option>
+                                        <option value="Villa Compound">Villa Compound</option>
+                                        <option value="Land">Land</option>
                                     </select>
                                 </div>
                                 <div class="form-group mb-3 col-4">
                                     <label for="city">Area</label>
                                     <div class="d-flex">
-                                        <input type="number" class="form-control" name="area" value="{{ old('size') }}" placeholder="">
+                                        <input type="number" class="form-control" name="area"
+                                            value="{{ old('size') }}" placeholder="">
                                         <select class="form-control" value="" name="size">
-                                            <option value="Sq fit">Sq fit</option>
+                                            <option value="Sq fit">Sq ft.</option>
                                             <option value="Sq meter">Sq meter</option>
                                         </select>
                                     </div>
@@ -169,7 +176,7 @@
                                         <div class="col-md-6">
                                             <input type="checkbox" id="{{ $facility->id }}" name="facilities[]"
                                                 value="{{ $facility->id }}">
-                                            <label for="{{ $facility->id }}">{{ $facility->name }}</label><br>
+                                            <label for="{{ $facility->id }}">{{ Str::ucfirst($facility->name) }}</label><br>
                                         </div>
                                     @endforeach
                                 </div>

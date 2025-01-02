@@ -119,12 +119,15 @@
                                     <label>Type of Property</label>
                                     <select class="form-control" name="p_type" value="">
                                         <option value="{{ $property->p_type }}">{{ $property->p_type }}</option>
-                                        <option value="Apartment">Apartment</option>
-                                        <option value="Villa">Villa</option>
-                                        <option value="Plot">Plot</option>
-                                        <option value="Unique">Unique</option>
-                                        <option value="Bungalows">Bungalows</option>
-                                        <option value="Flats">Flats</option>
+                                        <option value="Flats/Apartment">Flats/Apartment</option>
+                                        <option value="End Terraced House">End Terraced House</option>
+                                        <option value="Mid Terraced">Mid Terraced</option>
+                                        <option value="Semi Detached">Semi Detached</option>
+                                        <option value="Detached">Detached</option>
+                                        <option value="Penthouse">Penthouse</option>
+                                        <option value="Villa/Bungalow">Villa/Bungalow</option>
+                                        <option value="Villa/Compound">Villa Compound</option>
+                                        <option value="Land">Land</option>
 
                                     </select>
                                 </div>

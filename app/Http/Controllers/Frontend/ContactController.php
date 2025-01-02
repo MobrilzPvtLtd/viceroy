@@ -41,6 +41,8 @@ class ContactController extends Controller
             Mail::to($admin->email)->send(new ContactMail($contact));
         }
 
+       Mail::to('viceroyrealtyltd@gmail.com')->send(new ContactMail($contact));
+
         // Send email
         // Mail::to($contact->email)->send(new ContactMail($contact));
 
