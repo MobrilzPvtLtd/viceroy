@@ -344,8 +344,8 @@ div#testimonial-slider {
                                             <input type="tel" name="number" placeholder="Phone" id="mobile_code">
                                         </div>
                                     </div>
-                                    
-                                    
+
+
                                     <div class="col-lg-12 col-md-6">
                                         <div class="schedule_input">
                                             <label for="startTime"> Date</label>
@@ -537,6 +537,7 @@ div#testimonial-slider {
                     .then((data) => callback(data.country))
                     .catch(() => callback("us")); // Default to the US if detection fails
             },
+            separateDialCode: true,
             utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" // Enable validation/formatting
         });
     </script>
