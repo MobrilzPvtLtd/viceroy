@@ -75,7 +75,7 @@
                         <li>
                             <a class="user_icon" href="{{ route('login') }}">
                             </a>
-                            <ul>
+                            {{-- <ul>
                                 <button class="dropdown-btn"> <i class="fa fa-user" aria-hidden="true"></i>
                                     {{ Auth::user()->first_name }} </button>
                                  @can('view_backend')
@@ -88,7 +88,29 @@
                                          <button class="btn btn-text" type="submit">Logout</button>
                                         </form>
                                     </li>
-                                </ul>
+                            </ul> --}}
+
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    {{ Auth::user()->first_name }}
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li> @can('view_backend') <a class="dropdown-item"
+                                                href="{{ route('backend.dashboard') }}">Admin</a>@endif
+                                        </li>
+                                        <li><a class="dropdown-item" href="{{ route('frontend.users.profile') }}">Profile</a>
+                                        </li>
+                                        <li>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                                {{ csrf_field() }}
+                                                <button class="btn btn-text" type="submit">Logout</button>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
                         @endauth
 
