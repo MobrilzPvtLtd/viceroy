@@ -340,7 +340,7 @@ div#testimonial-slider {
                                     </div>
                                     <div class="col-lg-12 col-md-6">
                                         <div class="schedule_input">
-                                            {{-- <label for="startTime">Phone</label> --}}
+                                            <label for="startTime">Phone</label>
                                             <input type="tel" name="number" placeholder="Phone" id="mobile_code">
                                         </div>
                                     </div>
